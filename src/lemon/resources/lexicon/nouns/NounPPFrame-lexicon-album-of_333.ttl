@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :album-of_333 ;
+  lemon:entry    :album-of_333_form_preposition .
+
+:album-of_333 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :album-of_333_form ;
+  lemon:otherForm  :album-of_333_singular ;
+  lemon:otherForm  :album-of_333_plural ;
+  lemon:sense          :album-of_333_sense_1 ;
+  lemon:synBehavior    :album-of_333_nounpp .
+
+:album-of_333_form a lemon:Form ;
+  lemon:writtenRep "album"@en .
+
+:album-of_333_singular a    lemon:Form ;
+  lemon:writtenRep "album"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:album-of_333_plural a   lemon:Form ;
+  lemon:writtenRep "albums"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:album-of_333_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-653-653-653-651-650-650-650-650-650-650-638-638-638-638-625-625-625-625-301_album-of_333 ;
+  lexinfo:prepositionalAdjunct :arg2-653-653-653-651-650-650-650-650-650-650-638-638-638-638-625-625-625-625-301_album-of_333 .
+
+:album-of_333_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :album-of_333_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/album> ;
+  lemon:subjOfProp          :arg2-653-653-653-651-650-650-650-650-650-650-638-638-638-638-625-625-625-625-301_album-of_333 ;
+  lemon:objOfProp           :arg1-653-653-653-651-650-650-650-650-650-650-638-638-638-638-625-625-625-625-301_album-of_333 ;
+  lemon:condition           :album-of_333_sense_1_condition .
+
+:album-of_333_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Song> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Album> .
+
+:arg2-653-653-653-651-650-650-650-650-650-650-638-638-638-638-625-625-625-625-301_album-of_333 lemon:marker :album-of_333_form_preposition .
+## Prepositions ##
+:album-of_333_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

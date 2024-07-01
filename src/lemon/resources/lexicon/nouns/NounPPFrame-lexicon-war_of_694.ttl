@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :war_of_694 ;
+  lemon:entry    :war_of_694_form_preposition .
+
+:war_of_694 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :war_of_694_form ;
+  lemon:otherForm  :war_of_694_singular ;
+  lemon:otherForm  :war_of_694_plural ;
+  lemon:sense          :war_of_694_sense_1 ;
+  lemon:synBehavior    :war_of_694_nounpp .
+
+:war_of_694_form a lemon:Form ;
+  lemon:writtenRep "war"@en .
+
+:war_of_694_singular a    lemon:Form ;
+  lemon:writtenRep "war"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:war_of_694_plural a   lemon:Form ;
+  lemon:writtenRep "wars"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:war_of_694_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-529-529-528-527-526-526-526-526-526-526-516-516-516-516-506-506-506-506-256-256-559_war_of_694 ;
+  lexinfo:prepositionalAdjunct :arg2-529-529-528-527-526-526-526-526-526-526-516-516-516-516-506-506-506-506-256-256-559_war_of_694 .
+
+:war_of_694_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :war_of_694_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/battle> ;
+  lemon:subjOfProp          :arg2-529-529-528-527-526-526-526-526-526-526-516-516-516-516-506-506-506-506-256-256-559_war_of_694 ;
+  lemon:objOfProp           :arg1-529-529-528-527-526-526-526-526-526-526-516-516-516-516-506-506-506-506-256-256-559_war_of_694 ;
+  lemon:condition           :war_of_694_sense_1_condition .
+
+:war_of_694_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MilitaryConflict> .
+
+:arg2-529-529-528-527-526-526-526-526-526-526-516-516-516-516-506-506-506-506-256-256-559_war_of_694 lemon:marker :war_of_694_form_preposition .
+## Prepositions ##
+:war_of_694_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

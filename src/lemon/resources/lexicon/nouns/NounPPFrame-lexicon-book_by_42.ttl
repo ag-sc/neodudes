@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :book_by_42 ;
+  lemon:entry    :book_by_42_form_preposition .
+
+:book_by_42 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :book_by_42_form ;
+  lemon:otherForm  :book_by_42_singular ;
+  lemon:otherForm  :book_by_42_plural ;
+  lemon:sense          :book_by_42_sense_1 ;
+  lemon:synBehavior    :book_by_42_nounpp .
+
+:book_by_42_form a lemon:Form ;
+  lemon:writtenRep "book"@en .
+
+:book_by_42_singular a    lemon:Form ;
+  lemon:writtenRep "book"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:book_by_42_plural a   lemon:Form ;
+  lemon:writtenRep "books"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:book_by_42_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-356-356-355-355-354-354-354-354-354-354-347-347-347-347-342-342-342-342-168-168-45_book_by_42 ;
+  lexinfo:prepositionalAdjunct :arg1-356-356-355-355-354-354-354-354-354-354-347-347-347-347-342-342-342-342-168-168-45_book_by_42 .
+
+:book_by_42_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :book_by_42_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg1-356-356-355-355-354-354-354-354-354-354-347-347-347-347-342-342-342-342-168-168-45_book_by_42 ;
+  lemon:objOfProp           :arg2-356-356-355-355-354-354-354-354-354-354-347-347-347-347-342-342-342-342-168-168-45_book_by_42 ;
+  lemon:condition           :book_by_42_sense_1_condition .
+
+:book_by_42_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Writer> .
+
+:arg1-356-356-355-355-354-354-354-354-354-354-347-347-347-347-342-342-342-342-168-168-45_book_by_42 lemon:marker :book_by_42_form_preposition .
+## Prepositions ##
+:book_by_42_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

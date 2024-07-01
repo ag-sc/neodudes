@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :malian_127_281_sense_1_res ;
+  lemon:entry    :malian_127_281 .
+
+:malian_127_281 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :malian_127_281_lemma ;
+  lemon:sense          :malian_127_281_sense_1 ;
+  lemon:synBehavior    :malian_127_281_attrFrame, :malian_127_281_predFrame .
+
+:malian_127_281_lemma lemon:writtenRep "Malian"@en .
+
+:malian_127_281_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :malian_127_281_PredSynArg .
+
+:malian_127_281_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :malian_127_281_AttrSynArg .
+
+:malian_127_281_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :malian_127_281_sense_1_res ;
+  lemon:isA       :malian_127_281_AttrSynArg, :malian_127_281_PredSynArg .
+
+:malian_127_281_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Mali> .

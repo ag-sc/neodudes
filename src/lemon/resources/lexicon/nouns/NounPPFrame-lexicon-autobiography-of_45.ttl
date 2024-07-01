@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :autobiography-of_45 ;
+  lemon:entry    :autobiography-of_45_form_preposition .
+
+:autobiography-of_45 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :autobiography-of_45_form ;
+  lemon:otherForm  :autobiography-of_45_singular ;
+  lemon:otherForm  :autobiography-of_45_plural ;
+  lemon:sense          :autobiography-of_45_sense_1 ;
+  lemon:synBehavior    :autobiography-of_45_nounpp .
+
+:autobiography-of_45_form a lemon:Form ;
+  lemon:writtenRep "autobiography"@en .
+
+:autobiography-of_45_singular a    lemon:Form ;
+  lemon:writtenRep "autobiography"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:autobiography-of_45_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:autobiography-of_45_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1567-1567-1567-1564-1566-1566-1566-1566-1566-1566-1540-1540-1540-1540-1510-1510-1510-1510-742-742-108_autobiography-of_45 ;
+  lexinfo:prepositionalAdjunct :arg2-1567-1567-1567-1564-1566-1566-1566-1566-1566-1566-1540-1540-1540-1540-1510-1510-1510-1510-742-742-108_autobiography-of_45 .
+
+:autobiography-of_45_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :autobiography-of_45_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/literaryGenre> ;
+  lemon:subjOfProp          :arg2-1567-1567-1567-1564-1566-1566-1566-1566-1566-1566-1540-1540-1540-1540-1510-1510-1510-1510-742-742-108_autobiography-of_45 ;
+  lemon:objOfProp           :arg1-1567-1567-1567-1564-1566-1566-1566-1566-1566-1566-1540-1540-1540-1540-1510-1510-1510-1510-742-742-108_autobiography-of_45 ;
+  lemon:condition           :autobiography-of_45_sense_1_condition .
+
+:autobiography-of_45_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Autobiography> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Author> .
+
+:arg2-1567-1567-1567-1564-1566-1566-1566-1566-1566-1566-1540-1540-1540-1540-1510-1510-1510-1510-742-742-108_autobiography-of_45 lemon:marker :autobiography-of_45_form_preposition .
+## Prepositions ##
+:autobiography-of_45_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

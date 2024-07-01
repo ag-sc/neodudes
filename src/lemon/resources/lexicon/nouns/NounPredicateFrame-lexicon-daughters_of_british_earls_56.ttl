@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :daughters_of_british_earls_56_sense_1_res ;
+  lemon:entry    :daughters_of_british_earls_56 .
+
+:daughters_of_british_earls_56 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :daughters_of_british_earls_56_form ;
+  lemon:otherForm  :daughters_of_british_earls_56_singular ;
+  lemon:otherForm  :daughters_of_british_earls_56_plural ;
+  lemon:sense          :daughters_of_british_earls_56_sense_1 ;
+  lemon:synBehavior    :daughters_of_british_earls_56_predFrame .
+
+:daughters_of_british_earls_56_form
+ lemon:writtenRep "daughter of british earls"@en .
+
+:daughters_of_british_earls_56_singular a    lemon:Form ;
+  lemon:writtenRep "daughter of british earls"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:daughters_of_british_earls_56_plural a   lemon:Form ;
+  lemon:writtenRep "daughters of british earls"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:daughters_of_british_earls_56_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :daughters_of_british_earls_56_sense_1_res ;
+  lemon:isA       :daughters_of_british_earls_56_PredSynArg .
+
+:daughters_of_british_earls_56_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://purl.org/dc/terms/subject> ;
+  owl:hasValue   <http://dbpedia.org/class/yago/WikicatDaughtersOfBritishEarls> .

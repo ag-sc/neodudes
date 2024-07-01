@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :areatotal-of_371 ;
+  lemon:entry    :areatotal-of_371_form_preposition .
+
+:areatotal-of_371 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :areatotal-of_371_form ;
+  lemon:otherForm  :areatotal-of_371_singular ;
+  lemon:otherForm  :areatotal-of_371_plural ;
+  lemon:sense          :areatotal-of_371_sense_1 ;
+  lemon:synBehavior    :areatotal-of_371_nounpp .
+
+:areatotal-of_371_form a lemon:Form ;
+  lemon:writtenRep "alma mater"@en .
+
+:areatotal-of_371_singular a    lemon:Form ;
+  lemon:writtenRep "alma mater"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:areatotal-of_371_plural a   lemon:Form ;
+  lemon:writtenRep "alma maters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:areatotal-of_371_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1396-1396-1396-1393-1395-1395-1395-1395-1395-1395-1372-1372-1372-1372-1343-1343-1343-1343-683_areatotal-of_371 ;
+  lexinfo:prepositionalAdjunct :arg2-1396-1396-1396-1393-1395-1395-1395-1395-1395-1395-1372-1372-1372-1372-1343-1343-1343-1343-683_areatotal-of_371 .
+
+:areatotal-of_371_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :areatotal-of_371_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaTotal> ;
+  lemon:subjOfProp          :arg2-1396-1396-1396-1393-1395-1395-1395-1395-1395-1395-1372-1372-1372-1372-1343-1343-1343-1343-683_areatotal-of_371 ;
+  lemon:objOfProp           :arg1-1396-1396-1396-1393-1395-1395-1395-1395-1395-1395-1372-1372-1372-1372-1343-1343-1343-1343-683_areatotal-of_371 ;
+  lemon:condition           :areatotal-of_371_sense_1_condition .
+
+:areatotal-of_371_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1396-1396-1396-1393-1395-1395-1395-1395-1395-1395-1372-1372-1372-1372-1343-1343-1343-1343-683_areatotal-of_371 lemon:marker :areatotal-of_371_form_preposition .
+## Prepositions ##
+:areatotal-of_371_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

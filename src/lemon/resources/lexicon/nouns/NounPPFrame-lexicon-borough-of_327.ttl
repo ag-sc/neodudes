@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :borough-of_327 ;
+  lemon:entry    :borough-of_327_form_preposition .
+
+:borough-of_327 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :borough-of_327_form ;
+  lemon:otherForm  :borough-of_327_singular ;
+  lemon:otherForm  :borough-of_327_plural ;
+  lemon:sense          :borough-of_327_sense_1 ;
+  lemon:synBehavior    :borough-of_327_nounpp .
+
+:borough-of_327_form a lemon:Form ;
+  lemon:writtenRep "borough"@en .
+
+:borough-of_327_singular a    lemon:Form ;
+  lemon:writtenRep "borough"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:borough-of_327_plural a   lemon:Form ;
+  lemon:writtenRep "boroughs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:borough-of_327_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-940-940-940-937-936-936-936-936-936-936-918-918-918-918-895-895-895-895-447-447-357_borough-of_327 ;
+  lexinfo:prepositionalAdjunct :arg1-940-940-940-937-936-936-936-936-936-936-918-918-918-918-895-895-895-895-447-447-357_borough-of_327 .
+
+:borough-of_327_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :borough-of_327_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg1-940-940-940-937-936-936-936-936-936-936-918-918-918-918-895-895-895-895-447-447-357_borough-of_327 ;
+  lemon:objOfProp           :arg2-940-940-940-937-936-936-936-936-936-936-918-918-918-918-895-895-895-895-447-447-357_borough-of_327 ;
+  lemon:condition           :borough-of_327_sense_1_condition .
+
+:borough-of_327_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Town> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:arg1-940-940-940-937-936-936-936-936-936-936-918-918-918-918-895-895-895-895-447-447-357_borough-of_327 lemon:marker :borough-of_327_form_preposition .
+## Prepositions ##
+:borough-of_327_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

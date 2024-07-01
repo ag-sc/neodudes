@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :arachnid_654_sense_1_res ;
+  lemon:entry    :arachnid_654 .
+
+:arachnid_654 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :arachnid_654_form ;
+  lemon:otherForm  :arachnid_654_singular ;
+  lemon:otherForm  :arachnid_654_plural ;
+  lemon:sense          :arachnid_654_sense_1 ;
+  lemon:synBehavior    :arachnid_654_predFrame .
+
+:arachnid_654_form
+ lemon:writtenRep "arachnid"@en .
+
+:arachnid_654_singular a    lemon:Form ;
+  lemon:writtenRep "arachnid"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:arachnid_654_plural a   lemon:Form ;
+  lemon:writtenRep "arachnids"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:arachnid_654_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :arachnid_654_sense_1_res ;
+  lemon:isA       :arachnid_654_PredSynArg .
+
+:arachnid_654_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Arachnid> .

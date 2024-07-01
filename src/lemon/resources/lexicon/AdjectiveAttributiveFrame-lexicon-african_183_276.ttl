@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :african_183_276_sense_1_res ;
+  lemon:entry    :african_183_276 .
+
+:african_183_276 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :african_183_276_lemma ;
+  lemon:sense          :african_183_276_sense_1 ;
+  lemon:synBehavior    :african_183_276_attrFrame, :african_183_276_predFrame .
+
+:african_183_276_lemma lemon:writtenRep "African"@en .
+
+:african_183_276_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :african_183_276_PredSynArg .
+
+:african_183_276_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :african_183_276_AttrSynArg .
+
+:african_183_276_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :african_183_276_sense_1_res ;
+  lemon:isA       :african_183_276_AttrSynArg, :african_183_276_PredSynArg .
+
+:african_183_276_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Africa> .

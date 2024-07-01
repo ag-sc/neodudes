@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :height_of_15 ;
+  lemon:entry    :height_of_15_form_preposition .
+
+:height_of_15 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :height_of_15_form ;
+  lemon:otherForm  :height_of_15_singular ;
+  lemon:otherForm  :height_of_15_plural ;
+  lemon:sense          :height_of_15_sense_1 ;
+  lemon:synBehavior    :height_of_15_nounpp .
+
+:height_of_15_form a lemon:Form ;
+  lemon:writtenRep "height"@en .
+
+:height_of_15_singular a    lemon:Form ;
+  lemon:writtenRep "height"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:height_of_15_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:height_of_15_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-855-855-855-852-851-851-851-851-851-851-835-835-835-835-814-814-814-814-408-408-90_height_of_15 ;
+  lexinfo:prepositionalAdjunct :arg2-855-855-855-852-851-851-851-851-851-851-835-835-835-835-814-814-814-814-408-408-90_height_of_15 .
+
+:height_of_15_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :height_of_15_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/height> ;
+  lemon:subjOfProp          :arg2-855-855-855-852-851-851-851-851-851-851-835-835-835-835-814-814-814-814-408-408-90_height_of_15 ;
+  lemon:objOfProp           :arg1-855-855-855-852-851-851-851-851-851-851-835-835-835-835-814-814-814-814-408-408-90_height_of_15 ;
+  lemon:condition           :height_of_15_sense_1_condition .
+
+:height_of_15_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Model> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-855-855-855-852-851-851-851-851-851-851-835-835-835-835-814-814-814-814-408-408-90_height_of_15 lemon:marker :height_of_15_form_preposition .
+## Prepositions ##
+:height_of_15_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ecuadorian_55_247_sense_1_res ;
+  lemon:entry    :ecuadorian_55_247 .
+
+:ecuadorian_55_247 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :ecuadorian_55_247_lemma ;
+  lemon:sense          :ecuadorian_55_247_sense_1 ;
+  lemon:synBehavior    :ecuadorian_55_247_attrFrame, :ecuadorian_55_247_predFrame .
+
+:ecuadorian_55_247_lemma lemon:writtenRep "Ecuadorian"@en .
+
+:ecuadorian_55_247_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :ecuadorian_55_247_PredSynArg .
+
+:ecuadorian_55_247_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :ecuadorian_55_247_AttrSynArg .
+
+:ecuadorian_55_247_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :ecuadorian_55_247_sense_1_res ;
+  lemon:isA       :ecuadorian_55_247_AttrSynArg, :ecuadorian_55_247_PredSynArg .
+
+:ecuadorian_55_247_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Ecuador> .

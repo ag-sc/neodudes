@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :military_unit_772_sense_1_res ;
+  lemon:entry    :military_unit_772 .
+
+:military_unit_772 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :military_unit_772_form ;
+  lemon:otherForm  :military_unit_772_singular ;
+  lemon:otherForm  :military_unit_772_plural ;
+  lemon:sense          :military_unit_772_sense_1 ;
+  lemon:synBehavior    :military_unit_772_predFrame .
+
+:military_unit_772_form
+ lemon:writtenRep "military unit"@en .
+
+:military_unit_772_singular a    lemon:Form ;
+  lemon:writtenRep "military unit"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:military_unit_772_plural a   lemon:Form ;
+  lemon:writtenRep "military units"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:military_unit_772_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :military_unit_772_sense_1_res ;
+  lemon:isA       :military_unit_772_PredSynArg .
+
+:military_unit_772_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MilitaryUnit> .

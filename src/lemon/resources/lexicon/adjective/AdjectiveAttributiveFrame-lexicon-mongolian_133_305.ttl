@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mongolian_133_305_sense_1_res ;
+  lemon:entry    :mongolian_133_305 .
+
+:mongolian_133_305 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :mongolian_133_305_lemma ;
+  lemon:sense          :mongolian_133_305_sense_1 ;
+  lemon:synBehavior    :mongolian_133_305_attrFrame, :mongolian_133_305_predFrame .
+
+:mongolian_133_305_lemma lemon:writtenRep "Mongolian"@en .
+
+:mongolian_133_305_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :mongolian_133_305_PredSynArg .
+
+:mongolian_133_305_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :mongolian_133_305_AttrSynArg .
+
+:mongolian_133_305_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :mongolian_133_305_sense_1_res ;
+  lemon:isA       :mongolian_133_305_AttrSynArg, :mongolian_133_305_PredSynArg .
+
+:mongolian_133_305_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Mongolia> .

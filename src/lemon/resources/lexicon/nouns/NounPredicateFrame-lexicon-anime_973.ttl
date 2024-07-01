@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :anime_973_sense_1_res ;
+  lemon:entry    :anime_973 .
+
+:anime_973 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :anime_973_form ;
+  lemon:otherForm  :anime_973_singular ;
+  lemon:otherForm  :anime_973_plural ;
+  lemon:sense          :anime_973_sense_1 ;
+  lemon:synBehavior    :anime_973_predFrame .
+
+:anime_973_form
+ lemon:writtenRep "anime"@en .
+
+:anime_973_singular a    lemon:Form ;
+  lemon:writtenRep "anime"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:anime_973_plural a   lemon:Form ;
+  lemon:writtenRep "animes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:anime_973_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :anime_973_sense_1_res ;
+  lemon:isA       :anime_973_PredSynArg .
+
+:anime_973_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Anime> .

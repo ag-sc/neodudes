@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :manager-of_411 ;
+  lemon:entry    :manager-of_411_form_preposition .
+
+:manager-of_411 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :manager-of_411_form ;
+  lemon:otherForm  :manager-of_411_singular ;
+  lemon:otherForm  :manager-of_411_plural ;
+  lemon:sense          :manager-of_411_sense_1 ;
+  lemon:synBehavior    :manager-of_411_nounpp .
+
+:manager-of_411_form a lemon:Form ;
+  lemon:writtenRep "manager"@en .
+
+:manager-of_411_singular a    lemon:Form ;
+  lemon:writtenRep "manager"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:manager-of_411_plural a   lemon:Form ;
+  lemon:writtenRep "managers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:manager-of_411_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-166-166-166-167-167-167-167-167-167-167-164-164-164-164-160-160-160-160-85_manager-of_411 ;
+  lexinfo:prepositionalAdjunct :arg2-166-166-166-167-167-167-167-167-167-167-164-164-164-164-160-160-160-160-85_manager-of_411 .
+
+:manager-of_411_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :manager-of_411_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/manager> ;
+  lemon:subjOfProp          :arg2-166-166-166-167-167-167-167-167-167-167-164-164-164-164-160-160-160-160-85_manager-of_411 ;
+  lemon:objOfProp           :arg1-166-166-166-167-167-167-167-167-167-167-164-164-164-164-160-160-160-160-85_manager-of_411 ;
+  lemon:condition           :manager-of_411_sense_1_condition .
+
+:manager-of_411_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/SoccerManager> .
+
+:arg2-166-166-166-167-167-167-167-167-167-167-164-164-164-164-160-160-160-160-85_manager-of_411 lemon:marker :manager-of_411_form_preposition .
+## Prepositions ##
+:manager-of_411_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

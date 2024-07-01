@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :parent-of_71 ;
+  lemon:entry    :parent-of_71_form_preposition .
+
+:parent-of_71 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :parent-of_71_form ;
+  lemon:otherForm  :parent-of_71_singular ;
+  lemon:otherForm  :parent-of_71_plural ;
+  lemon:sense          :parent-of_71_sense_1 ;
+  lemon:synBehavior    :parent-of_71_nounpp .
+
+:parent-of_71_form a lemon:Form ;
+  lemon:writtenRep "parent"@en .
+
+:parent-of_71_singular a    lemon:Form ;
+  lemon:writtenRep "parent"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:parent-of_71_plural a   lemon:Form ;
+  lemon:writtenRep "parents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:parent-of_71_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1359-1359-1358-1354-1356-1356-1356-1356-1356-1356-1333-1333-1333-1333-1304-1304-1304-1304-643-643-535_parent-of_71 ;
+  lexinfo:prepositionalAdjunct :arg2-1359-1359-1358-1354-1356-1356-1356-1356-1356-1356-1333-1333-1333-1333-1304-1304-1304-1304-643-643-535_parent-of_71 .
+
+:parent-of_71_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :parent-of_71_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/parent> ;
+  lemon:subjOfProp          :arg2-1359-1359-1358-1354-1356-1356-1356-1356-1356-1356-1333-1333-1333-1333-1304-1304-1304-1304-643-643-535_parent-of_71 ;
+  lemon:objOfProp           :arg1-1359-1359-1358-1354-1356-1356-1356-1356-1356-1356-1333-1333-1333-1333-1304-1304-1304-1304-643-643-535_parent-of_71 ;
+  lemon:condition           :parent-of_71_sense_1_condition .
+
+:parent-of_71_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1359-1359-1358-1354-1356-1356-1356-1356-1356-1356-1333-1333-1333-1333-1304-1304-1304-1304-643-643-535_parent-of_71 lemon:marker :parent-of_71_form_preposition .
+## Prepositions ##
+:parent-of_71_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :establish_in_1 ;
+  lemon:entry    :form_establish_in_1_preposition .
+
+:establish_in_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_establish_in_1 ;
+  lemon:otherForm      :form_establish_in_1_present3rd ;
+  lemon:otherForm      :form_establish_in_1_past ;
+  lemon:otherForm      :form_establish_in_1_perfect ;
+  lemon:sense          :establish_in_1_sense_1 ;
+  lemon:synBehavior    :establish_in_1_frame .
+
+:form_establish_in_1 a           lemon:Form ;
+  lemon:writtenRep     "establish"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_establish_in_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "establishes"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_establish_in_1_past a lemon:Form ;
+  lemon:writtenRep  "established"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_establish_in_1_perfect a   lemon:Form ;
+  lemon:writtenRep "established"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:establish_in_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :establish_in_1_subj ;
+  lexinfo:prepositionalAdjunct :establish_in_1_obj .
+
+:establish_in_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :establish_in_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/firstPublicationYear> ;
+  lemon:subjOfProp  :establish_in_1_subj ;
+  lemon:objOfProp   :establish_in_1_obj ;
+  lemon:condition   :establish_in_1_sense_1_condition .
+
+:establish_in_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/PeriodicalLiterature> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+
+:establish_in_1_obj lemon:marker :form_establish_in_1_preposition .
+
+## Prepositions ##
+:form_establish_in_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

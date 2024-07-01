@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :paraguayan_158_184_sense_1_res ;
+  lemon:entry    :paraguayan_158_184 .
+
+:paraguayan_158_184 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :paraguayan_158_184_lemma ;
+  lemon:sense          :paraguayan_158_184_sense_1 ;
+  lemon:synBehavior    :paraguayan_158_184_attrFrame, :paraguayan_158_184_predFrame .
+
+:paraguayan_158_184_lemma lemon:writtenRep "Paraguayan"@en .
+
+:paraguayan_158_184_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :paraguayan_158_184_PredSynArg .
+
+:paraguayan_158_184_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :paraguayan_158_184_AttrSynArg .
+
+:paraguayan_158_184_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :paraguayan_158_184_sense_1_res ;
+  lemon:isA       :paraguayan_158_184_AttrSynArg, :paraguayan_158_184_PredSynArg .
+
+:paraguayan_158_184_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Paraguay> .

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :libyan_120_142_sense_1_res ;
+  lemon:entry    :libyan_120_142 .
+
+:libyan_120_142 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :libyan_120_142_lemma ;
+  lemon:sense          :libyan_120_142_sense_1 ;
+  lemon:synBehavior    :libyan_120_142_attrFrame, :libyan_120_142_predFrame .
+
+:libyan_120_142_lemma lemon:writtenRep "Libyan"@en .
+
+:libyan_120_142_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :libyan_120_142_PredSynArg .
+
+:libyan_120_142_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :libyan_120_142_AttrSynArg .
+
+:libyan_120_142_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :libyan_120_142_sense_1_res ;
+  lemon:isA       :libyan_120_142_AttrSynArg, :libyan_120_142_PredSynArg .
+
+:libyan_120_142_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Libya> .

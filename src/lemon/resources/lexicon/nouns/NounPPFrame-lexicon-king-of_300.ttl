@@ -1,0 +1,76 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :king-of_300 ;
+  lemon:entry    :king-of_300_form_preposition .
+
+:king-of_300 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :king-of_300_form ;
+  lemon:otherForm  :king-of_300_singular ;
+  lemon:otherForm  :king-of_300_plural ;
+  lemon:sense          :king-of_300_sense_1 ;
+  lemon:sense          :king-of_300_sense_2 ;
+  lemon:sense          :king-of_300_sense_3 ;
+  lemon:synBehavior    :king-of_300_nounpp .
+
+:king-of_300_form a lemon:Form ;
+  lemon:writtenRep "king"@en .
+
+:king-of_300_singular a    lemon:Form ;
+  lemon:writtenRep "king"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:king-of_300_plural a   lemon:Form ;
+  lemon:writtenRep "kings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:king-of_300_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lexinfo:prepositionalAdjunct :arg2-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 .
+
+:king-of_300_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :king-of_300_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:objOfProp           :arg1-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:condition           :king-of_300_sense_1_condition .
+
+:king-of_300_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Legislature> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:king-of_300_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :king-of_300_sense_2 ;
+  lemon:reference           <http://dbpedia.org/property/title> ;
+  lemon:subjOfProp          :arg2-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:objOfProp           :arg1-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:condition           :king-of_300_sense_2_condition .
+
+:king-of_300_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:king-of_300_sense_3 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :king-of_300_sense_3 ;
+  lemon:reference           <http://dbpedia.org/property/title> ;
+  lemon:subjOfProp          :arg2-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:objOfProp           :arg1-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 ;
+  lemon:condition           :king-of_300_sense_3_condition .
+
+:king-of_300_sense_3_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1476-1476-1476-1471-1473-1473-1473-1473-1473-1473-1449-1449-1449-1449-1420-1420-1420-1420-725_king-of_300 lemon:marker :king-of_300_form_preposition .
+## Prepositions ##
+:king-of_300_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

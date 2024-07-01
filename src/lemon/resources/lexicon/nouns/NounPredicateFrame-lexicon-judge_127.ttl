@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :judge_127_sense_1_res ;
+  lemon:entry    :judge_127 .
+
+:judge_127 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :judge_127_form ;
+  lemon:otherForm  :judge_127_singular ;
+  lemon:otherForm  :judge_127_plural ;
+  lemon:sense          :judge_127_sense_1 ;
+  lemon:synBehavior    :judge_127_predFrame .
+
+:judge_127_form
+ lemon:writtenRep "judge"@en .
+
+:judge_127_singular a    lemon:Form ;
+  lemon:writtenRep "judge"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:judge_127_plural a   lemon:Form ;
+  lemon:writtenRep "judges"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:judge_127_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :judge_127_sense_1_res ;
+  lemon:isA       :judge_127_PredSynArg .
+
+:judge_127_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Judge> .

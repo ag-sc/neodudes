@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :amusement_park_attraction_137_sense_1_res ;
+  lemon:entry    :amusement_park_attraction_137 .
+
+:amusement_park_attraction_137 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :amusement_park_attraction_137_form ;
+  lemon:otherForm  :amusement_park_attraction_137_singular ;
+  lemon:otherForm  :amusement_park_attraction_137_plural ;
+  lemon:sense          :amusement_park_attraction_137_sense_1 ;
+  lemon:synBehavior    :amusement_park_attraction_137_predFrame .
+
+:amusement_park_attraction_137_form
+ lemon:writtenRep "amusement park attraction"@en .
+
+:amusement_park_attraction_137_singular a    lemon:Form ;
+  lemon:writtenRep "amusement park attraction"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:amusement_park_attraction_137_plural a   lemon:Form ;
+  lemon:writtenRep "amusement park attractions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:amusement_park_attraction_137_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :amusement_park_attraction_137_sense_1_res ;
+  lemon:isA       :amusement_park_attraction_137_PredSynArg .
+
+:amusement_park_attraction_137_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AmusementParkAttraction> .

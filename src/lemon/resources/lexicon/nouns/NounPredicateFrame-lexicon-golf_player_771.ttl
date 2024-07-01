@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :golf_player_771_sense_1_res ;
+  lemon:entry    :golf_player_771 .
+
+:golf_player_771 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :golf_player_771_form ;
+  lemon:otherForm  :golf_player_771_singular ;
+  lemon:otherForm  :golf_player_771_plural ;
+  lemon:sense          :golf_player_771_sense_1 ;
+  lemon:synBehavior    :golf_player_771_predFrame .
+
+:golf_player_771_form
+ lemon:writtenRep "golf player"@en .
+
+:golf_player_771_singular a    lemon:Form ;
+  lemon:writtenRep "golf player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:golf_player_771_plural a   lemon:Form ;
+  lemon:writtenRep "golf players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:golf_player_771_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :golf_player_771_sense_1_res ;
+  lemon:isA       :golf_player_771_PredSynArg .
+
+:golf_player_771_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GolfPlayer> .

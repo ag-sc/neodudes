@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_express ;
+  lemon:entry    :expressed ;
+  lemon:entry    :form_express_preposition .
+
+:to_express a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_express ;
+  lemon:otherForm      :form_expresss ;
+  lemon:otherForm      :form_expressed ;
+  lemon:otherForm      :form_expressperfect ;
+  lemon:sense          :express_sense_1 ;
+  lemon:synBehavior    :express_frame_transitive .
+
+:form_express a         lemon:Form ;
+  lemon:writtenRep     "express"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_expresss a    lemon:Form ;
+  lemon:writtenRep "expresses"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_expressed a   lemon:Form ;
+  lemon:writtenRep "expressed"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_expressperfect a   lemon:Form ;
+  lemon:writtenRep "expressed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:express_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :express_obj ;
+  lexinfo:directObject     :express_subj .
+
+:express_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :express_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/connotation> ;
+  lemon:subjOfProp  :express_obj ;
+  lemon:objOfProp   :express_subj ;
+  lemon:condition   :express_sense_1_condition .
+
+
+:express_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Colour> ;
+  lemon:propertyRange  <http://www.w3.org/2002/07/owl#Thing> .
+
+
+:express_obj lemon:marker :form_express_preposition .
+
+## Prepositions ##
+:form_express_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

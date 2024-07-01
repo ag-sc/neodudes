@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :total-population-of_466 ;
+  lemon:entry    :total-population-of_466_form_preposition .
+
+:total-population-of_466 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :total-population-of_466_form ;
+  lemon:otherForm  :total-population-of_466_singular ;
+  lemon:otherForm  :total-population-of_466_plural ;
+  lemon:sense          :total-population-of_466_sense_1 ;
+  lemon:synBehavior    :total-population-of_466_nounpp .
+
+:total-population-of_466_form a lemon:Form ;
+  lemon:writtenRep "name"@en .
+
+:total-population-of_466_singular a    lemon:Form ;
+  lemon:writtenRep "name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:total-population-of_466_plural a   lemon:Form ;
+  lemon:writtenRep "names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:total-population-of_466_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1324-1324-1323-1318-1320-1320-1320-1320-1320-1320-1299-1299-1299-1299-1270-1270-1270-1270-641_total-population-of_466 ;
+  lexinfo:prepositionalAdjunct :arg2-1324-1324-1323-1318-1320-1320-1320-1320-1320-1320-1299-1299-1299-1299-1270-1270-1270-1270-641_total-population-of_466 .
+
+:total-population-of_466_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :total-population-of_466_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/populationTotal> ;
+  lemon:subjOfProp          :arg2-1324-1324-1323-1318-1320-1320-1320-1320-1320-1320-1299-1299-1299-1299-1270-1270-1270-1270-641_total-population-of_466 ;
+  lemon:objOfProp           :arg1-1324-1324-1323-1318-1320-1320-1320-1320-1320-1320-1299-1299-1299-1299-1270-1270-1270-1270-641_total-population-of_466 ;
+  lemon:condition           :total-population-of_466_sense_1_condition .
+
+:total-population-of_466_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-1324-1324-1323-1318-1320-1320-1320-1320-1320-1320-1299-1299-1299-1299-1270-1270-1270-1270-641_total-population-of_466 lemon:marker :total-population-of_466_form_preposition .
+## Prepositions ##
+:total-population-of_466_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

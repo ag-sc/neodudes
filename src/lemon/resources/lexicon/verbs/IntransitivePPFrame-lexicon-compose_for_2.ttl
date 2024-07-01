@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :compose_for_2 ;
+  lemon:entry    :form_compose_for_2_preposition .
+
+:compose_for_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_compose_for_2 ;
+  lemon:otherForm      :form_compose_for_2_present3rd ;
+  lemon:otherForm      :form_compose_for_2_past ;
+  lemon:otherForm      :form_compose_for_2_perfect ;
+  lemon:sense          :compose_for_2_sense_1 ;
+  lemon:synBehavior    :compose_for_2_frame .
+
+:form_compose_for_2 a           lemon:Form ;
+  lemon:writtenRep     "compose"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_compose_for_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "composes"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_compose_for_2_past a lemon:Form ;
+  lemon:writtenRep  "composed"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_compose_for_2_perfect a   lemon:Form ;
+  lemon:writtenRep "composed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:compose_for_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :compose_for_2_subj ;
+  lexinfo:prepositionalAdjunct :compose_for_2_obj .
+
+:compose_for_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :compose_for_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/composer> ;
+  lemon:subjOfProp  :compose_for_2_subj ;
+  lemon:objOfProp   :compose_for_2_obj ;
+  lemon:condition   :compose_for_2_sense_1_condition .
+
+:compose_for_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:compose_for_2_obj lemon:marker :form_compose_for_2_preposition .
+
+## Prepositions ##
+:form_compose_for_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "for"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

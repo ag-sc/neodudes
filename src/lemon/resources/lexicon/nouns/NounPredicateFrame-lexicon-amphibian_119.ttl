@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :amphibian_119_sense_1_res ;
+  lemon:entry    :amphibian_119 .
+
+:amphibian_119 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :amphibian_119_form ;
+  lemon:otherForm  :amphibian_119_singular ;
+  lemon:otherForm  :amphibian_119_plural ;
+  lemon:sense          :amphibian_119_sense_1 ;
+  lemon:synBehavior    :amphibian_119_predFrame .
+
+:amphibian_119_form
+ lemon:writtenRep "amphibian"@en .
+
+:amphibian_119_singular a    lemon:Form ;
+  lemon:writtenRep "amphibian"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:amphibian_119_plural a   lemon:Form ;
+  lemon:writtenRep "amphibians"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:amphibian_119_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :amphibian_119_sense_1_res ;
+  lemon:isA       :amphibian_119_PredSynArg .
+
+:amphibian_119_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Amphibian> .

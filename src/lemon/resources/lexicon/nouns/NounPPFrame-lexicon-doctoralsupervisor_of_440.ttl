@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :doctoralsupervisor_of_440 ;
+  lemon:entry    :doctoralsupervisor_of_440_form_preposition .
+
+:doctoralsupervisor_of_440 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :doctoralsupervisor_of_440_form ;
+  lemon:otherForm  :doctoralsupervisor_of_440_singular ;
+  lemon:otherForm  :doctoralsupervisor_of_440_plural ;
+  lemon:sense          :doctoralsupervisor_of_440_sense_1 ;
+  lemon:synBehavior    :doctoralsupervisor_of_440_nounpp .
+
+:doctoralsupervisor_of_440_form a lemon:Form ;
+  lemon:writtenRep "doctoral supervisor"@en .
+
+:doctoralsupervisor_of_440_singular a    lemon:Form ;
+  lemon:writtenRep "doctoral supervisor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:doctoralsupervisor_of_440_plural a   lemon:Form ;
+  lemon:writtenRep "doctoral supervisors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:doctoralsupervisor_of_440_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-565-565-565-563-562-562-562-562-562-562-552-552-552-552-541-541-541-541-265_doctoralsupervisor_of_440 ;
+  lexinfo:prepositionalAdjunct :arg2-565-565-565-563-562-562-562-562-562-562-552-552-552-552-541-541-541-541-265_doctoralsupervisor_of_440 .
+
+:doctoralsupervisor_of_440_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :doctoralsupervisor_of_440_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/doctoralAdvisor> ;
+  lemon:subjOfProp          :arg2-565-565-565-563-562-562-562-562-562-562-552-552-552-552-541-541-541-541-265_doctoralsupervisor_of_440 ;
+  lemon:objOfProp           :arg1-565-565-565-563-562-562-562-562-562-562-552-552-552-552-541-541-541-541-265_doctoralsupervisor_of_440 ;
+  lemon:condition           :doctoralsupervisor_of_440_sense_1_condition .
+
+:doctoralsupervisor_of_440_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Scientist> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-565-565-565-563-562-562-562-562-562-562-552-552-552-552-541-541-541-541-265_doctoralsupervisor_of_440 lemon:marker :doctoralsupervisor_of_440_form_preposition .
+## Prepositions ##
+:doctoralsupervisor_of_440_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

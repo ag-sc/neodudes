@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :official_website_of_317 ;
+  lemon:entry    :official_website_of_317_form_preposition .
+
+:official_website_of_317 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :official_website_of_317_form ;
+  lemon:otherForm  :official_website_of_317_singular ;
+  lemon:otherForm  :official_website_of_317_plural ;
+  lemon:sense          :official_website_of_317_sense_1 ;
+  lemon:synBehavior    :official_website_of_317_nounpp .
+
+:official_website_of_317_form a lemon:Form ;
+  lemon:writtenRep "official website"@en .
+
+:official_website_of_317_singular a    lemon:Form ;
+  lemon:writtenRep "official website"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:official_website_of_317_plural a   lemon:Form ;
+  lemon:writtenRep "official websites"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:official_website_of_317_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-318-318-317-317-316-316-316-316-316-316-309-309-309-309-304-304-304-304-153_official_website_of_317 ;
+  lexinfo:prepositionalAdjunct :arg2-318-318-317-317-316-316-316-316-316-316-309-309-309-309-304-304-304-304-153_official_website_of_317 .
+
+:official_website_of_317_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :official_website_of_317_sense_1 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/homepage> ;
+  lemon:subjOfProp          :arg2-318-318-317-317-316-316-316-316-316-316-309-309-309-309-304-304-304-304-153_official_website_of_317 ;
+  lemon:objOfProp           :arg1-318-318-317-317-316-316-316-316-316-316-309-309-309-309-304-304-304-304-153_official_website_of_317 ;
+  lemon:condition           :official_website_of_317_sense_1_condition .
+
+:official_website_of_317_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-318-318-317-317-316-316-316-316-316-316-309-309-309-309-304-304-304-304-153_official_website_of_317 lemon:marker :official_website_of_317_form_preposition .
+## Prepositions ##
+:official_website_of_317_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

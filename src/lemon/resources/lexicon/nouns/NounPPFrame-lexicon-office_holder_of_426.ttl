@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :office_holder_of_426 ;
+  lemon:entry    :office_holder_of_426_form_preposition .
+
+:office_holder_of_426 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :office_holder_of_426_form ;
+  lemon:otherForm  :office_holder_of_426_singular ;
+  lemon:otherForm  :office_holder_of_426_plural ;
+  lemon:sense          :office_holder_of_426_sense_1 ;
+  lemon:synBehavior    :office_holder_of_426_nounpp .
+
+:office_holder_of_426_form a lemon:Form ;
+  lemon:writtenRep "office holder"@en .
+
+:office_holder_of_426_singular a    lemon:Form ;
+  lemon:writtenRep "office holder"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:office_holder_of_426_plural a   lemon:Form ;
+  lemon:writtenRep "office holders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:office_holder_of_426_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-336-336-335-335-334-334-334-334-334-334-327-327-327-327-322-322-322-322-164_office_holder_of_426 ;
+  lexinfo:prepositionalAdjunct :arg2-336-336-335-335-334-334-334-334-334-334-327-327-327-327-322-322-322-322-164_office_holder_of_426 .
+
+:office_holder_of_426_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :office_holder_of_426_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/incumbent> ;
+  lemon:subjOfProp          :arg2-336-336-335-335-334-334-334-334-334-334-327-327-327-327-322-322-322-322-164_office_holder_of_426 ;
+  lemon:objOfProp           :arg1-336-336-335-335-334-334-334-334-334-334-327-327-327-327-322-322-322-322-164_office_holder_of_426 ;
+  lemon:condition           :office_holder_of_426_sense_1_condition .
+
+:office_holder_of_426_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-336-336-335-335-334-334-334-334-334-334-327-327-327-327-322-322-322-322-164_office_holder_of_426 lemon:marker :office_holder_of_426_form_preposition .
+## Prepositions ##
+:office_holder_of_426_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

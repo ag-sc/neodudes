@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sea_545_sense_1_res ;
+  lemon:entry    :sea_545 .
+
+:sea_545 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :sea_545_form ;
+  lemon:otherForm  :sea_545_singular ;
+  lemon:otherForm  :sea_545_plural ;
+  lemon:sense          :sea_545_sense_1 ;
+  lemon:synBehavior    :sea_545_predFrame .
+
+:sea_545_form
+ lemon:writtenRep "sea"@en .
+
+:sea_545_singular a    lemon:Form ;
+  lemon:writtenRep "sea"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:sea_545_plural a   lemon:Form ;
+  lemon:writtenRep "seas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:sea_545_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sea_545_sense_1_res ;
+  lemon:isA       :sea_545_PredSynArg .
+
+:sea_545_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Sea> .

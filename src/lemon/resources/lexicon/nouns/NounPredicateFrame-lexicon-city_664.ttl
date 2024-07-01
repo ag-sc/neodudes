@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :city_664_sense_1_res ;
+  lemon:entry    :city_664 .
+
+:city_664 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :city_664_form ;
+  lemon:otherForm  :city_664_singular ;
+  lemon:otherForm  :city_664_plural ;
+  lemon:sense          :city_664_sense_1 ;
+  lemon:synBehavior    :city_664_predFrame .
+
+:city_664_form
+ lemon:writtenRep "city"@en .
+
+:city_664_singular a    lemon:Form ;
+  lemon:writtenRep "city"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:city_664_plural a   lemon:Form ;
+  lemon:writtenRep "cities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:city_664_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :city_664_sense_1_res ;
+  lemon:isA       :city_664_PredSynArg .
+
+:city_664_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/City> .

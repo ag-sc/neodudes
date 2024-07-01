@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :child_of_19 ;
+  lemon:entry    :child_of_19_form_preposition .
+
+:child_of_19 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :child_of_19_form ;
+  lemon:otherForm  :child_of_19_singular ;
+  lemon:otherForm  :child_of_19_plural ;
+  lemon:sense          :child_of_19_sense_1 ;
+  lemon:synBehavior    :child_of_19_nounpp .
+
+:child_of_19_form a lemon:Form ;
+  lemon:writtenRep "child"@en .
+
+:child_of_19_singular a    lemon:Form ;
+  lemon:writtenRep "child"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:child_of_19_plural a   lemon:Form ;
+  lemon:writtenRep "children"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:child_of_19_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-918-918-918-915-914-914-914-914-914-914-896-896-896-896-874-874-874-874-435-435-289_child_of_19 ;
+  lexinfo:prepositionalAdjunct :arg2-918-918-918-915-914-914-914-914-914-914-896-896-896-896-874-874-874-874-435-435-289_child_of_19 .
+
+:child_of_19_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :child_of_19_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-918-918-918-915-914-914-914-914-914-914-896-896-896-896-874-874-874-874-435-435-289_child_of_19 ;
+  lemon:objOfProp           :arg1-918-918-918-915-914-914-914-914-914-914-896-896-896-896-874-874-874-874-435-435-289_child_of_19 ;
+  lemon:condition           :child_of_19_sense_1_condition .
+
+:child_of_19_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-918-918-918-915-914-914-914-914-914-914-896-896-896-896-874-874-874-874-435-435-289_child_of_19 lemon:marker :child_of_19_form_preposition .
+## Prepositions ##
+:child_of_19_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

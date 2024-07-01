@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :numberofpages-of_272 ;
+  lemon:entry    :numberofpages-of_272_form_preposition .
+
+:numberofpages-of_272 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :numberofpages-of_272_form ;
+  lemon:otherForm  :numberofpages-of_272_singular ;
+  lemon:otherForm  :numberofpages-of_272_plural ;
+  lemon:sense          :numberofpages-of_272_sense_1 ;
+  lemon:synBehavior    :numberofpages-of_272_nounpp .
+
+:numberofpages-of_272_form a lemon:Form ;
+  lemon:writtenRep "number of pages"@en .
+
+:numberofpages-of_272_singular a    lemon:Form ;
+  lemon:writtenRep "number of pages"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:numberofpages-of_272_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:numberofpages-of_272_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-0_numberofpages-of_272 ;
+  lexinfo:prepositionalAdjunct :arg2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-0_numberofpages-of_272 .
+
+:numberofpages-of_272_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :numberofpages-of_272_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfPages> ;
+  lemon:subjOfProp          :arg2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-0_numberofpages-of_272 ;
+  lemon:objOfProp           :arg1-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-0_numberofpages-of_272 ;
+  lemon:condition           :numberofpages-of_272_sense_1_condition .
+
+:numberofpages-of_272_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/WrittenWork> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+
+:arg2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-2-0_numberofpages-of_272 lemon:marker :numberofpages-of_272_form_preposition .
+## Prepositions ##
+:numberofpages-of_272_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cinema_movie_theater_240_sense_1_res ;
+  lemon:entry    :cinema_movie_theater_240 .
+
+:cinema_movie_theater_240 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cinema_movie_theater_240_form ;
+  lemon:otherForm  :cinema_movie_theater_240_singular ;
+  lemon:otherForm  :cinema_movie_theater_240_plural ;
+  lemon:sense          :cinema_movie_theater_240_sense_1 ;
+  lemon:synBehavior    :cinema_movie_theater_240_predFrame .
+
+:cinema_movie_theater_240_form
+ lemon:writtenRep "cinema"@en .
+
+:cinema_movie_theater_240_singular a    lemon:Form ;
+  lemon:writtenRep "cinema"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cinema_movie_theater_240_plural a   lemon:Form ;
+  lemon:writtenRep "cinemas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cinema_movie_theater_240_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cinema_movie_theater_240_sense_1_res ;
+  lemon:isA       :cinema_movie_theater_240_PredSynArg .
+
+:cinema_movie_theater_240_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Cinema> .

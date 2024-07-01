@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_own_2 ;
+  lemon:entry    :own_2ed ;
+  lemon:entry    :form_own_2_preposition .
+
+:to_own_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_own_2 ;
+  lemon:otherForm      :form_own_2s ;
+  lemon:otherForm      :form_own_2ed ;
+  lemon:otherForm      :form_own_2perfect ;
+  lemon:sense          :own_2_sense_1 ;
+  lemon:synBehavior    :own_2_frame_transitive .
+
+:form_own_2 a         lemon:Form ;
+  lemon:writtenRep     "own"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_own_2s a    lemon:Form ;
+  lemon:writtenRep "owns"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_own_2ed a   lemon:Form ;
+  lemon:writtenRep "owned"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_own_2perfect a   lemon:Form ;
+  lemon:writtenRep "owned"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:own_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :own_2_subj ;
+  lexinfo:directObject     :own_2_obj .
+
+:own_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :own_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/owner> ;
+  lemon:subjOfProp  :own_2_obj ;
+  lemon:objOfProp   :own_2_subj ;
+  lemon:condition   :own_2_sense_1_condition .
+
+
+:own_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Animal> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Agent> .
+
+
+:own_2_obj lemon:marker :form_own_2_preposition .
+
+## Prepositions ##
+:form_own_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

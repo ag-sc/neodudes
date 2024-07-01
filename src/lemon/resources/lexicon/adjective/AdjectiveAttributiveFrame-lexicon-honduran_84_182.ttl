@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :honduran_84_182_sense_1_res ;
+  lemon:entry    :honduran_84_182 .
+
+:honduran_84_182 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :honduran_84_182_lemma ;
+  lemon:sense          :honduran_84_182_sense_1 ;
+  lemon:synBehavior    :honduran_84_182_attrFrame, :honduran_84_182_predFrame .
+
+:honduran_84_182_lemma lemon:writtenRep "Honduran"@en .
+
+:honduran_84_182_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :honduran_84_182_PredSynArg .
+
+:honduran_84_182_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :honduran_84_182_AttrSynArg .
+
+:honduran_84_182_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :honduran_84_182_sense_1_res ;
+  lemon:isA       :honduran_84_182_AttrSynArg, :honduran_84_182_PredSynArg .
+
+:honduran_84_182_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Honduras> .

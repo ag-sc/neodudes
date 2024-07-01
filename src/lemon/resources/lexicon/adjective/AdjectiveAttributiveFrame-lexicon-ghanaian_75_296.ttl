@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ghanaian_75_296_sense_1_res ;
+  lemon:entry    :ghanaian_75_296 .
+
+:ghanaian_75_296 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :ghanaian_75_296_lemma ;
+  lemon:sense          :ghanaian_75_296_sense_1 ;
+  lemon:synBehavior    :ghanaian_75_296_attrFrame, :ghanaian_75_296_predFrame .
+
+:ghanaian_75_296_lemma lemon:writtenRep "Ghanaian"@en .
+
+:ghanaian_75_296_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :ghanaian_75_296_PredSynArg .
+
+:ghanaian_75_296_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :ghanaian_75_296_AttrSynArg .
+
+:ghanaian_75_296_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :ghanaian_75_296_sense_1_res ;
+  lemon:isA       :ghanaian_75_296_AttrSynArg, :ghanaian_75_296_PredSynArg .
+
+:ghanaian_75_296_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Ghana> .

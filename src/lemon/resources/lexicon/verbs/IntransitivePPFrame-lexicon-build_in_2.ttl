@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :build_in_2 ;
+  lemon:entry    :form_build_in_2_preposition .
+
+:build_in_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_build_in_2 ;
+  lemon:otherForm      :form_build_in_2_present3rd ;
+  lemon:otherForm      :form_build_in_2_past ;
+  lemon:otherForm      :form_build_in_2_perfect ;
+  lemon:sense          :build_in_2_sense_1 ;
+  lemon:synBehavior    :build_in_2_frame .
+
+:form_build_in_2 a           lemon:Form ;
+  lemon:writtenRep     "build"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_build_in_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "builds"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_build_in_2_past a lemon:Form ;
+  lemon:writtenRep  "built"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_build_in_2_perfect a   lemon:Form ;
+  lemon:writtenRep "built"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:build_in_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :build_in_2_subj ;
+  lexinfo:prepositionalAdjunct :build_in_2_obj .
+
+:build_in_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :build_in_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/buildingStartDate> ;
+  lemon:subjOfProp  :build_in_2_subj ;
+  lemon:objOfProp   :build_in_2_obj ;
+  lemon:condition   :build_in_2_sense_1_condition .
+
+:build_in_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Bridge> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+
+:build_in_2_obj lemon:marker :form_build_in_2_preposition .
+
+## Prepositions ##
+:form_build_in_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

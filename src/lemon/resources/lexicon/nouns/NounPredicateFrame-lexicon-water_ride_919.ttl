@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :water_ride_919_sense_1_res ;
+  lemon:entry    :water_ride_919 .
+
+:water_ride_919 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :water_ride_919_form ;
+  lemon:otherForm  :water_ride_919_singular ;
+  lemon:otherForm  :water_ride_919_plural ;
+  lemon:sense          :water_ride_919_sense_1 ;
+  lemon:synBehavior    :water_ride_919_predFrame .
+
+:water_ride_919_form
+ lemon:writtenRep "water ride"@en .
+
+:water_ride_919_singular a    lemon:Form ;
+  lemon:writtenRep "water ride"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:water_ride_919_plural a   lemon:Form ;
+  lemon:writtenRep "water rides"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:water_ride_919_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :water_ride_919_sense_1_res ;
+  lemon:isA       :water_ride_919_PredSynArg .
+
+:water_ride_919_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/WaterRide> .

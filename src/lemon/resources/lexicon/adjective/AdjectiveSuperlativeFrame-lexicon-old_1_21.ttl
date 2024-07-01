@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :old_1_21 ;
+  lemon:entry    :form_old_1_21_preposition ;
+  lemon:entry    :old_1_21_res .
+
+:old_1_21 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_old_1_21 ;
+  lemon:otherForm      :form_old_1_21_comperative ;
+  lemon:otherForm      :form_old_1_21_superlative ;
+  lemon:sense          :old_1_21_sense_1 ;
+  lemon:synBehavior    :old_1_21_predFrame .
+
+:form_old_1_21 lemon:writtenRep "old"@en .
+
+:form_old_1_21_comperative lemon:writtenRep "older"@en .
+
+:form_old_1_21_superlative lemon:writtenRep "oldest"@en .
+
+:old_1_21_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :old_1_21_PredSynArg .
+
+:old_1_21_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :old_1_21_res ;
+  lemon:isA       :old_1_21_PredSynArg ;
+  lemon:condition :old_1_21_sense_1_condition .
+
+:old_1_21_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/birthYear> ;
+  oils:degree   <http://localhost:8000/oils.owl/low> .
+
+:old_1_21_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Person> .
+
+## Prepositions ##
+:form_old_1_21_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :recordlabel_of_57 ;
+  lemon:entry    :recordlabel_of_57_form_preposition .
+
+:recordlabel_of_57 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :recordlabel_of_57_form ;
+  lemon:otherForm  :recordlabel_of_57_singular ;
+  lemon:otherForm  :recordlabel_of_57_plural ;
+  lemon:sense          :recordlabel_of_57_sense_1 ;
+  lemon:synBehavior    :recordlabel_of_57_nounpp .
+
+:recordlabel_of_57_form a lemon:Form ;
+  lemon:writtenRep "record label"@en .
+
+:recordlabel_of_57_singular a    lemon:Form ;
+  lemon:writtenRep "record label"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:recordlabel_of_57_plural a   lemon:Form ;
+  lemon:writtenRep "record labels"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:recordlabel_of_57_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1323-1323-1322-1317-1319-1319-1319-1319-1319-1319-1298-1298-1298-1298-1269-1269-1269-1269-628-628-585_recordlabel_of_57 ;
+  lexinfo:prepositionalAdjunct :arg2-1323-1323-1322-1317-1319-1319-1319-1319-1319-1319-1298-1298-1298-1298-1269-1269-1269-1269-628-628-585_recordlabel_of_57 .
+
+:recordlabel_of_57_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :recordlabel_of_57_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/RecordLabel> ;
+  lemon:subjOfProp          :arg2-1323-1323-1322-1317-1319-1319-1319-1319-1319-1319-1298-1298-1298-1298-1269-1269-1269-1269-628-628-585_recordlabel_of_57 ;
+  lemon:objOfProp           :arg1-1323-1323-1322-1317-1319-1319-1319-1319-1319-1319-1298-1298-1298-1298-1269-1269-1269-1269-628-628-585_recordlabel_of_57 ;
+  lemon:condition           :recordlabel_of_57_sense_1_condition .
+
+:recordlabel_of_57_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Genre> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1323-1323-1322-1317-1319-1319-1319-1319-1319-1319-1298-1298-1298-1298-1269-1269-1269-1269-628-628-585_recordlabel_of_57 lemon:marker :recordlabel_of_57_form_preposition .
+## Prepositions ##
+:recordlabel_of_57_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

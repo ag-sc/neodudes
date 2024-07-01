@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :birth_name_of_335 ;
+  lemon:entry    :birth_name_of_335_form_preposition .
+
+:birth_name_of_335 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :birth_name_of_335_form ;
+  lemon:otherForm  :birth_name_of_335_singular ;
+  lemon:otherForm  :birth_name_of_335_plural ;
+  lemon:sense          :birth_name_of_335_sense_1 ;
+  lemon:synBehavior    :birth_name_of_335_nounpp .
+
+:birth_name_of_335_form a lemon:Form ;
+  lemon:writtenRep "birth name"@en .
+
+:birth_name_of_335_singular a    lemon:Form ;
+  lemon:writtenRep "birth name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:birth_name_of_335_plural a   lemon:Form ;
+  lemon:writtenRep "birth name"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:birth_name_of_335_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-199-199-199-200-200-200-200-200-200-200-196-196-196-196-192-192-192-192-102_birth_name_of_335 ;
+  lexinfo:prepositionalAdjunct :arg2-199-199-199-200-200-200-200-200-200-200-196-196-196-196-192-192-192-192-102_birth_name_of_335 .
+
+:birth_name_of_335_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :birth_name_of_335_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/birthName> ;
+  lemon:subjOfProp          :arg2-199-199-199-200-200-200-200-200-200-200-196-196-196-196-192-192-192-192-102_birth_name_of_335 ;
+  lemon:objOfProp           :arg1-199-199-199-200-200-200-200-200-200-200-196-196-196-196-192-192-192-192-102_birth_name_of_335 ;
+  lemon:condition           :birth_name_of_335_sense_1_condition .
+
+:birth_name_of_335_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-199-199-199-200-200-200-200-200-200-200-196-196-196-196-192-192-192-192-102_birth_name_of_335 lemon:marker :birth_name_of_335_form_preposition .
+## Prepositions ##
+:birth_name_of_335_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

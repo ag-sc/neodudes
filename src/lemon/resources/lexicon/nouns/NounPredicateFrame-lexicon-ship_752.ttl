@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ship_752_sense_1_res ;
+  lemon:entry    :ship_752 .
+
+:ship_752 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ship_752_form ;
+  lemon:otherForm  :ship_752_singular ;
+  lemon:otherForm  :ship_752_plural ;
+  lemon:sense          :ship_752_sense_1 ;
+  lemon:synBehavior    :ship_752_predFrame .
+
+:ship_752_form
+ lemon:writtenRep "ship"@en .
+
+:ship_752_singular a    lemon:Form ;
+  lemon:writtenRep "ship"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ship_752_plural a   lemon:Form ;
+  lemon:writtenRep "ships"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ship_752_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :ship_752_sense_1_res ;
+  lemon:isA       :ship_752_PredSynArg .
+
+:ship_752_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Ship> .

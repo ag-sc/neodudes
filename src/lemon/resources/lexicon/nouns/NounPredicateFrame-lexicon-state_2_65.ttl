@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :state_2_65_sense_1_res ;
+  lemon:entry    :state_2_65 .
+
+:state_2_65 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :state_2_65_form ;
+  lemon:otherForm  :state_2_65_singular ;
+  lemon:otherForm  :state_2_65_plural ;
+  lemon:sense          :state_2_65_sense_1 ;
+  lemon:synBehavior    :state_2_65_predFrame .
+
+:state_2_65_form
+ lemon:writtenRep "state"@en .
+
+:state_2_65_singular a    lemon:Form ;
+  lemon:writtenRep "state"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:state_2_65_plural a   lemon:Form ;
+  lemon:writtenRep "states"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:state_2_65_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :state_2_65_sense_1_res ;
+  lemon:isA       :state_2_65_PredSynArg .
+
+:state_2_65_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://purl.org/dc/terms/subject> ;
+  owl:hasValue   <http://dbpedia.org/resource/Category:States_of_the_United_States> .

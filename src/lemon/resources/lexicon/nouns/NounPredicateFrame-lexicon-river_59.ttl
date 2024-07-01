@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :river_59_sense_1_res ;
+  lemon:entry    :river_59 .
+
+:river_59 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :river_59_form ;
+  lemon:otherForm  :river_59_singular ;
+  lemon:otherForm  :river_59_plural ;
+  lemon:sense          :river_59_sense_1 ;
+  lemon:synBehavior    :river_59_predFrame .
+
+:river_59_form
+ lemon:writtenRep "river"@en .
+
+:river_59_singular a    lemon:Form ;
+  lemon:writtenRep "river"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:river_59_plural a   lemon:Form ;
+  lemon:writtenRep "rivers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:river_59_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :river_59_sense_1_res ;
+  lemon:isA       :river_59_PredSynArg .
+
+:river_59_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/River> .

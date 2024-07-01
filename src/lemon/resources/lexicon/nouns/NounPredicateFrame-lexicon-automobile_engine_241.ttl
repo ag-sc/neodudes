@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :automobile_engine_241_sense_1_res ;
+  lemon:entry    :automobile_engine_241 .
+
+:automobile_engine_241 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :automobile_engine_241_form ;
+  lemon:otherForm  :automobile_engine_241_singular ;
+  lemon:otherForm  :automobile_engine_241_plural ;
+  lemon:sense          :automobile_engine_241_sense_1 ;
+  lemon:synBehavior    :automobile_engine_241_predFrame .
+
+:automobile_engine_241_form
+ lemon:writtenRep "automobile engine"@en .
+
+:automobile_engine_241_singular a    lemon:Form ;
+  lemon:writtenRep "automobile engine"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:automobile_engine_241_plural a   lemon:Form ;
+  lemon:writtenRep "automobile engines"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:automobile_engine_241_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :automobile_engine_241_sense_1_res ;
+  lemon:isA       :automobile_engine_241_PredSynArg .
+
+:automobile_engine_241_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AutomobileEngine> .

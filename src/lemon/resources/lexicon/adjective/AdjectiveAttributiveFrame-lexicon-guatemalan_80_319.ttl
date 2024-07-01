@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :guatemalan_80_319_sense_1_res ;
+  lemon:entry    :guatemalan_80_319 .
+
+:guatemalan_80_319 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :guatemalan_80_319_lemma ;
+  lemon:sense          :guatemalan_80_319_sense_1 ;
+  lemon:synBehavior    :guatemalan_80_319_attrFrame, :guatemalan_80_319_predFrame .
+
+:guatemalan_80_319_lemma lemon:writtenRep "Guatemalan"@en .
+
+:guatemalan_80_319_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :guatemalan_80_319_PredSynArg .
+
+:guatemalan_80_319_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :guatemalan_80_319_AttrSynArg .
+
+:guatemalan_80_319_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :guatemalan_80_319_sense_1_res ;
+  lemon:isA       :guatemalan_80_319_AttrSynArg, :guatemalan_80_319_PredSynArg .
+
+:guatemalan_80_319_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Guatemala> .

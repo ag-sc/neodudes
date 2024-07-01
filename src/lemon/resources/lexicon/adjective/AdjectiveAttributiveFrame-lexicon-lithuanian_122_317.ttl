@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lithuanian_122_317_sense_1_res ;
+  lemon:entry    :lithuanian_122_317 .
+
+:lithuanian_122_317 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :lithuanian_122_317_lemma ;
+  lemon:sense          :lithuanian_122_317_sense_1 ;
+  lemon:synBehavior    :lithuanian_122_317_attrFrame, :lithuanian_122_317_predFrame .
+
+:lithuanian_122_317_lemma lemon:writtenRep "Lithuanian"@en .
+
+:lithuanian_122_317_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :lithuanian_122_317_PredSynArg .
+
+:lithuanian_122_317_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :lithuanian_122_317_AttrSynArg .
+
+:lithuanian_122_317_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :lithuanian_122_317_sense_1_res ;
+  lemon:isA       :lithuanian_122_317_AttrSynArg, :lithuanian_122_317_PredSynArg .
+
+:lithuanian_122_317_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Lithuania> .

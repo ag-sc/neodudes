@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :highest_place_of_16 ;
+  lemon:entry    :highest_place_of_16_form_preposition .
+
+:highest_place_of_16 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :highest_place_of_16_form ;
+  lemon:otherForm  :highest_place_of_16_singular ;
+  lemon:otherForm  :highest_place_of_16_plural ;
+  lemon:sense          :highest_place_of_16_sense_1 ;
+  lemon:synBehavior    :highest_place_of_16_nounpp .
+
+:highest_place_of_16_form a lemon:Form ;
+  lemon:writtenRep "highest place"@en .
+
+:highest_place_of_16_singular a    lemon:Form ;
+  lemon:writtenRep "highest place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:highest_place_of_16_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:highest_place_of_16_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1286-1286-1285-1280-1282-1282-1282-1282-1282-1282-1261-1261-1261-1261-1234-1234-1234-1234-614-614-356_highest_place_of_16 ;
+  lexinfo:prepositionalAdjunct :arg2-1286-1286-1285-1280-1282-1282-1282-1282-1282-1282-1261-1261-1261-1261-1234-1234-1234-1234-614-614-356_highest_place_of_16 .
+
+:highest_place_of_16_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :highest_place_of_16_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/highest> ;
+  lemon:subjOfProp          :arg2-1286-1286-1285-1280-1282-1282-1282-1282-1282-1282-1261-1261-1261-1261-1234-1234-1234-1234-614-614-356_highest_place_of_16 ;
+  lemon:objOfProp           :arg1-1286-1286-1285-1280-1282-1282-1282-1282-1282-1282-1261-1261-1261-1261-1234-1234-1234-1234-614-614-356_highest_place_of_16 ;
+  lemon:condition           :highest_place_of_16_sense_1_condition .
+
+:highest_place_of_16_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1286-1286-1285-1280-1282-1282-1282-1282-1282-1282-1261-1261-1261-1261-1234-1234-1234-1234-614-614-356_highest_place_of_16 lemon:marker :highest_place_of_16_form_preposition .
+## Prepositions ##
+:highest_place_of_16_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

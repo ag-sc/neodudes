@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lake_723_sense_1_res ;
+  lemon:entry    :lake_723 .
+
+:lake_723 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :lake_723_form ;
+  lemon:otherForm  :lake_723_singular ;
+  lemon:otherForm  :lake_723_plural ;
+  lemon:sense          :lake_723_sense_1 ;
+  lemon:synBehavior    :lake_723_predFrame .
+
+:lake_723_form
+ lemon:writtenRep "lake"@en .
+
+:lake_723_singular a    lemon:Form ;
+  lemon:writtenRep "lake"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:lake_723_plural a   lemon:Form ;
+  lemon:writtenRep "lakes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:lake_723_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :lake_723_sense_1_res ;
+  lemon:isA       :lake_723_PredSynArg .
+
+:lake_723_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Lake> .

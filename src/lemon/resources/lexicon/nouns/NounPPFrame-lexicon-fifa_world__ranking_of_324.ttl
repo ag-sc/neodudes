@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :fifa_world__ranking_of_324 ;
+  lemon:entry    :fifa_world__ranking_of_324_form_preposition .
+
+:fifa_world__ranking_of_324 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :fifa_world__ranking_of_324_form ;
+  lemon:otherForm  :fifa_world__ranking_of_324_singular ;
+  lemon:otherForm  :fifa_world__ranking_of_324_plural ;
+  lemon:sense          :fifa_world__ranking_of_324_sense_1 ;
+  lemon:synBehavior    :fifa_world__ranking_of_324_nounpp .
+
+:fifa_world__ranking_of_324_form a lemon:Form ;
+  lemon:writtenRep "FIFA World Ranking"@en .
+
+:fifa_world__ranking_of_324_singular a    lemon:Form ;
+  lemon:writtenRep "FIFA World Ranking"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:fifa_world__ranking_of_324_plural a   lemon:Form ;
+  lemon:writtenRep "FIFA World Rankings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:fifa_world__ranking_of_324_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1015-1015-1015-1012-1011-1011-1011-1011-1011-1011-993-993-993-993-969-969-969-969-480_fifa_world__ranking_of_324 ;
+  lexinfo:prepositionalAdjunct :arg2-1015-1015-1015-1012-1011-1011-1011-1011-1011-1011-993-993-993-993-969-969-969-969-480_fifa_world__ranking_of_324 .
+
+:fifa_world__ranking_of_324_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :fifa_world__ranking_of_324_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/fifaMin> ;
+  lemon:subjOfProp          :arg2-1015-1015-1015-1012-1011-1011-1011-1011-1011-1011-993-993-993-993-969-969-969-969-480_fifa_world__ranking_of_324 ;
+  lemon:objOfProp           :arg1-1015-1015-1015-1012-1011-1011-1011-1011-1011-1011-993-993-993-993-969-969-969-969-480_fifa_world__ranking_of_324 ;
+  lemon:condition           :fifa_world__ranking_of_324_sense_1_condition .
+
+:fifa_world__ranking_of_324_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/SportsClub> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1015-1015-1015-1012-1011-1011-1011-1011-1011-1011-993-993-993-993-969-969-969-969-480_fifa_world__ranking_of_324 lemon:marker :fifa_world__ranking_of_324_form_preposition .
+## Prepositions ##
+:fifa_world__ranking_of_324_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

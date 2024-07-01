@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :resting_place_of_477 ;
+  lemon:entry    :resting_place_of_477_form_preposition .
+
+:resting_place_of_477 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :resting_place_of_477_form ;
+  lemon:otherForm  :resting_place_of_477_singular ;
+  lemon:otherForm  :resting_place_of_477_plural ;
+  lemon:sense          :resting_place_of_477_sense_1 ;
+  lemon:synBehavior    :resting_place_of_477_nounpp .
+
+:resting_place_of_477_form a lemon:Form ;
+  lemon:writtenRep "resting place"@en .
+
+:resting_place_of_477_singular a    lemon:Form ;
+  lemon:writtenRep "resting place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:resting_place_of_477_plural a   lemon:Form ;
+  lemon:writtenRep "resting places"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:resting_place_of_477_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-264-264-263-263-262-262-262-262-262-262-256-256-256-256-251-251-251-251-128_resting_place_of_477 ;
+  lexinfo:prepositionalAdjunct :arg2-264-264-263-263-262-262-262-262-262-262-256-256-256-256-251-251-251-251-128_resting_place_of_477 .
+
+:resting_place_of_477_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :resting_place_of_477_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/restingPlace> ;
+  lemon:subjOfProp          :arg2-264-264-263-263-262-262-262-262-262-262-256-256-256-256-251-251-251-251-128_resting_place_of_477 ;
+  lemon:objOfProp           :arg1-264-264-263-263-262-262-262-262-262-262-256-256-256-256-251-251-251-251-128_resting_place_of_477 ;
+  lemon:condition           :resting_place_of_477_sense_1_condition .
+
+:resting_place_of_477_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-264-264-263-263-262-262-262-262-262-262-256-256-256-256-251-251-251-251-128_resting_place_of_477 lemon:marker :resting_place_of_477_form_preposition .
+## Prepositions ##
+:resting_place_of_477_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

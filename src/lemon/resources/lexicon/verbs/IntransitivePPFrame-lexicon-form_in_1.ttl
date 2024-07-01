@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :form_in_1 ;
+  lemon:entry    :form_form_in_1_preposition .
+
+:form_in_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_form_in_1 ;
+  lemon:otherForm      :form_form_in_1_present3rd ;
+  lemon:otherForm      :form_form_in_1_past ;
+  lemon:otherForm      :form_form_in_1_perfect ;
+  lemon:sense          :form_in_1_sense_1 ;
+  lemon:synBehavior    :form_in_1_frame .
+
+:form_form_in_1 a           lemon:Form ;
+  lemon:writtenRep     "form"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_form_in_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "forms"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_form_in_1_past a lemon:Form ;
+  lemon:writtenRep  "formed"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_form_in_1_perfect a   lemon:Form ;
+  lemon:writtenRep "formed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:form_in_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :form_in_1_subj ;
+  lexinfo:prepositionalAdjunct :form_in_1_obj .
+
+:form_in_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :form_in_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/activeYearsStartYear> ;
+  lemon:subjOfProp  :form_in_1_subj ;
+  lemon:objOfProp   :form_in_1_obj ;
+  lemon:condition   :form_in_1_sense_1_condition .
+
+:form_in_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Band> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:form_in_1_obj lemon:marker :form_form_in_1_preposition .
+
+## Prepositions ##
+:form_form_in_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

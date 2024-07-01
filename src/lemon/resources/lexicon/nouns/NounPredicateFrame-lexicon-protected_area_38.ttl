@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :protected_area_38_sense_1_res ;
+  lemon:entry    :protected_area_38 .
+
+:protected_area_38 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :protected_area_38_form ;
+  lemon:otherForm  :protected_area_38_singular ;
+  lemon:otherForm  :protected_area_38_plural ;
+  lemon:sense          :protected_area_38_sense_1 ;
+  lemon:synBehavior    :protected_area_38_predFrame .
+
+:protected_area_38_form
+ lemon:writtenRep "protected area"@en .
+
+:protected_area_38_singular a    lemon:Form ;
+  lemon:writtenRep "protected area"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:protected_area_38_plural a   lemon:Form ;
+  lemon:writtenRep "protected areas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:protected_area_38_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :protected_area_38_sense_1_res ;
+  lemon:isA       :protected_area_38_PredSynArg .
+
+:protected_area_38_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ProtectedArea> .

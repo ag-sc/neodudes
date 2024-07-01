@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :result_of_1_414 ;
+  lemon:entry    :result_of_1_414_form_preposition .
+
+:result_of_1_414 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :result_of_1_414_form ;
+  lemon:otherForm  :result_of_1_414_singular ;
+  lemon:otherForm  :result_of_1_414_plural ;
+  lemon:sense          :result_of_1_414_sense_1 ;
+  lemon:synBehavior    :result_of_1_414_nounpp .
+
+:result_of_1_414_form a lemon:Form ;
+  lemon:writtenRep "result"@en .
+
+:result_of_1_414_singular a    lemon:Form ;
+  lemon:writtenRep "result"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:result_of_1_414_plural a   lemon:Form ;
+  lemon:writtenRep "results"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:result_of_1_414_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1391-1391-1391-1388-1390-1390-1390-1390-1390-1390-1367-1367-1367-1367-1338-1338-1338-1338-680_result_of_1_414 ;
+  lexinfo:prepositionalAdjunct :arg2-1391-1391-1391-1388-1390-1390-1390-1390-1390-1390-1367-1367-1367-1367-1338-1338-1338-1338-680_result_of_1_414 .
+
+:result_of_1_414_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :result_of_1_414_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/result> ;
+  lemon:subjOfProp          :arg2-1391-1391-1391-1388-1390-1390-1390-1390-1390-1390-1367-1367-1367-1367-1338-1338-1338-1338-680_result_of_1_414 ;
+  lemon:objOfProp           :arg1-1391-1391-1391-1388-1390-1390-1390-1390-1390-1390-1367-1367-1367-1367-1338-1338-1338-1338-680_result_of_1_414 ;
+  lemon:condition           :result_of_1_414_sense_1_condition .
+
+:result_of_1_414_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1391-1391-1391-1388-1390-1390-1390-1390-1390-1390-1367-1367-1367-1367-1338-1338-1338-1338-680_result_of_1_414 lemon:marker :result_of_1_414_form_preposition .
+## Prepositions ##
+:result_of_1_414_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

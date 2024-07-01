@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :artery_531_sense_1_res ;
+  lemon:entry    :artery_531 .
+
+:artery_531 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :artery_531_form ;
+  lemon:otherForm  :artery_531_singular ;
+  lemon:otherForm  :artery_531_plural ;
+  lemon:sense          :artery_531_sense_1 ;
+  lemon:synBehavior    :artery_531_predFrame .
+
+:artery_531_form
+ lemon:writtenRep "artery"@en .
+
+:artery_531_singular a    lemon:Form ;
+  lemon:writtenRep "artery"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:artery_531_plural a   lemon:Form ;
+  lemon:writtenRep "arteries"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:artery_531_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :artery_531_sense_1_res ;
+  lemon:isA       :artery_531_PredSynArg .
+
+:artery_531_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Artery> .

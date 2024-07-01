@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :speciality-of_484 ;
+  lemon:entry    :speciality-of_484_form_preposition .
+
+:speciality-of_484 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :speciality-of_484_form ;
+  lemon:otherForm  :speciality-of_484_singular ;
+  lemon:otherForm  :speciality-of_484_plural ;
+  lemon:sense          :speciality-of_484_sense_1 ;
+  lemon:synBehavior    :speciality-of_484_nounpp .
+
+:speciality-of_484_form a lemon:Form ;
+  lemon:writtenRep "speciality"@en .
+
+:speciality-of_484_singular a    lemon:Form ;
+  lemon:writtenRep "speciality"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:speciality-of_484_plural a   lemon:Form ;
+  lemon:writtenRep "specialities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:speciality-of_484_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-719-719-719-717-716-716-716-716-716-716-701-701-701-701-688-688-688-688-337_speciality-of_484 ;
+  lexinfo:prepositionalAdjunct :arg2-719-719-719-717-716-716-716-716-716-716-701-701-701-701-688-688-688-688-337_speciality-of_484 .
+
+:speciality-of_484_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :speciality-of_484_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/title> ;
+  lemon:subjOfProp          :arg2-719-719-719-717-716-716-716-716-716-716-701-701-701-701-688-688-688-688-337_speciality-of_484 ;
+  lemon:objOfProp           :arg1-719-719-719-717-716-716-716-716-716-716-701-701-701-701-688-688-688-688-337_speciality-of_484 ;
+  lemon:condition           :speciality-of_484_sense_1_condition .
+
+:speciality-of_484_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-719-719-719-717-716-716-716-716-716-716-701-701-701-701-688-688-688-688-337_speciality-of_484 lemon:marker :speciality-of_484_form_preposition .
+## Prepositions ##
+:speciality-of_484_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :agent_838_sense_1_res ;
+  lemon:entry    :agent_838 .
+
+:agent_838 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :agent_838_form ;
+  lemon:otherForm  :agent_838_singular ;
+  lemon:otherForm  :agent_838_plural ;
+  lemon:sense          :agent_838_sense_1 ;
+  lemon:synBehavior    :agent_838_predFrame .
+
+:agent_838_form
+ lemon:writtenRep "agent"@en .
+
+:agent_838_singular a    lemon:Form ;
+  lemon:writtenRep "agent"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:agent_838_plural a   lemon:Form ;
+  lemon:writtenRep "agents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:agent_838_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :agent_838_sense_1_res ;
+  lemon:isA       :agent_838_PredSynArg .
+
+:agent_838_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Agent> .

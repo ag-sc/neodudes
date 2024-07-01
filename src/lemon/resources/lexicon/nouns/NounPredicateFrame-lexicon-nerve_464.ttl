@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nerve_464_sense_1_res ;
+  lemon:entry    :nerve_464 .
+
+:nerve_464 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :nerve_464_form ;
+  lemon:otherForm  :nerve_464_singular ;
+  lemon:otherForm  :nerve_464_plural ;
+  lemon:sense          :nerve_464_sense_1 ;
+  lemon:synBehavior    :nerve_464_predFrame .
+
+:nerve_464_form
+ lemon:writtenRep "nerve"@en .
+
+:nerve_464_singular a    lemon:Form ;
+  lemon:writtenRep "nerve"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:nerve_464_plural a   lemon:Form ;
+  lemon:writtenRep "nerves"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:nerve_464_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :nerve_464_sense_1_res ;
+  lemon:isA       :nerve_464_PredSynArg .
+
+:nerve_464_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Nerve> .

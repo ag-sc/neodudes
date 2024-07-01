@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_manufacture_2_12 ;
+  lemon:entry    :manufacture_2_12ed ;
+  lemon:entry    :form_manufacture_2_12_preposition .
+
+:to_manufacture_2_12 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_manufacture_2_12 ;
+  lemon:otherForm      :form_manufacture_2_12s ;
+  lemon:otherForm      :form_manufacture_2_12ed ;
+  lemon:otherForm      :form_manufacture_2_12perfect ;
+  lemon:sense          :manufacture_2_12_sense_1 ;
+  lemon:synBehavior    :manufacture_2_12_frame_transitive .
+
+:form_manufacture_2_12 a         lemon:Form ;
+  lemon:writtenRep     "manufacture"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_manufacture_2_12s a    lemon:Form ;
+  lemon:writtenRep "manufactures"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_manufacture_2_12ed a   lemon:Form ;
+  lemon:writtenRep "of"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_manufacture_2_12perfect a   lemon:Form ;
+  lemon:writtenRep "-"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:manufacture_2_12_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :manufacture_2_12_subj ;
+  lexinfo:directObject     :manufacture_2_12_obj .
+
+:manufacture_2_12_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :manufacture_2_12_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/productionEndYear> ;
+  lemon:subjOfProp  :manufacture_2_12_obj ;
+  lemon:objOfProp   :manufacture_2_12_subj ;
+  lemon:condition   :manufacture_2_12_sense_1_condition .
+
+
+:manufacture_2_12_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+
+:manufacture_2_12_obj lemon:marker :form_manufacture_2_12_preposition .
+
+## Prepositions ##
+:form_manufacture_2_12_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

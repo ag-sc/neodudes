@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :isbn-of_288 ;
+  lemon:entry    :isbn-of_288_form_preposition .
+
+:isbn-of_288 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :isbn-of_288_form ;
+  lemon:otherForm  :isbn-of_288_singular ;
+  lemon:otherForm  :isbn-of_288_plural ;
+  lemon:sense          :isbn-of_288_sense_1 ;
+  lemon:synBehavior    :isbn-of_288_nounpp .
+
+:isbn-of_288_form a lemon:Form ;
+  lemon:writtenRep "isbn"@en .
+
+:isbn-of_288_singular a    lemon:Form ;
+  lemon:writtenRep "isbn"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:isbn-of_288_plural a   lemon:Form ;
+  lemon:writtenRep "isbns"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:isbn-of_288_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-830-830-830-828-827-827-827-827-827-827-811-811-811-811-790-790-790-790-389_isbn-of_288 ;
+  lexinfo:prepositionalAdjunct :arg2-830-830-830-828-827-827-827-827-827-827-811-811-811-811-790-790-790-790-389_isbn-of_288 .
+
+:isbn-of_288_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :isbn-of_288_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/isbn> ;
+  lemon:subjOfProp          :arg2-830-830-830-828-827-827-827-827-827-827-811-811-811-811-790-790-790-790-389_isbn-of_288 ;
+  lemon:objOfProp           :arg1-830-830-830-828-827-827-827-827-827-827-811-811-811-811-790-790-790-790-389_isbn-of_288 ;
+  lemon:condition           :isbn-of_288_sense_1_condition .
+
+:isbn-of_288_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-830-830-830-828-827-827-827-827-827-827-811-811-811-811-790-790-790-790-389_isbn-of_288 lemon:marker :isbn-of_288_form_preposition .
+## Prepositions ##
+:isbn-of_288_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

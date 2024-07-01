@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :alterego-of_487 ;
+  lemon:entry    :alterego-of_487_form_preposition .
+
+:alterego-of_487 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :alterego-of_487_form ;
+  lemon:otherForm  :alterego-of_487_singular ;
+  lemon:otherForm  :alterego-of_487_plural ;
+  lemon:sense          :alterego-of_487_sense_1 ;
+  lemon:synBehavior    :alterego-of_487_nounpp .
+
+:alterego-of_487_form a lemon:Form ;
+  lemon:writtenRep "alter ego"@en .
+
+:alterego-of_487_singular a    lemon:Form ;
+  lemon:writtenRep "alter ego"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:alterego-of_487_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:alterego-of_487_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1000-1000-1000-996-995-995-995-995-995-995-977-977-977-977-953-953-953-953-474_alterego-of_487 ;
+  lexinfo:prepositionalAdjunct :arg2-1000-1000-1000-996-995-995-995-995-995-995-977-977-977-977-953-953-953-953-474_alterego-of_487 .
+
+:alterego-of_487_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :alterego-of_487_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/alterEgo> ;
+  lemon:subjOfProp          :arg2-1000-1000-1000-996-995-995-995-995-995-995-977-977-977-977-953-953-953-953-474_alterego-of_487 ;
+  lemon:objOfProp           :arg1-1000-1000-1000-996-995-995-995-995-995-995-977-977-977-977-953-953-953-953-474_alterego-of_487 ;
+  lemon:condition           :alterego-of_487_sense_1_condition .
+
+:alterego-of_487_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ComicsCharacter> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1000-1000-1000-996-995-995-995-995-995-995-977-977-977-977-953-953-953-953-474_alterego-of_487 lemon:marker :alterego-of_487_form_preposition .
+## Prepositions ##
+:alterego-of_487_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

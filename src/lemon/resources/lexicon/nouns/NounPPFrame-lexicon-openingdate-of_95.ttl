@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :openingdate-of_95 ;
+  lemon:entry    :openingdate-of_95_form_preposition .
+
+:openingdate-of_95 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :openingdate-of_95_form ;
+  lemon:otherForm  :openingdate-of_95_singular ;
+  lemon:otherForm  :openingdate-of_95_plural ;
+  lemon:sense          :openingdate-of_95_sense_1 ;
+  lemon:synBehavior    :openingdate-of_95_nounpp .
+
+:openingdate-of_95_form a lemon:Form ;
+  lemon:writtenRep "opening Date"@en .
+
+:openingdate-of_95_singular a    lemon:Form ;
+  lemon:writtenRep "opening Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:openingdate-of_95_plural a   lemon:Form ;
+  lemon:writtenRep "opening Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:openingdate-of_95_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-237-237-236-237-236-236-236-236-236-236-230-230-230-230-226-226-226-226-107-107-258_openingdate-of_95 ;
+  lexinfo:prepositionalAdjunct :arg2-237-237-236-237-236-236-236-236-236-236-230-230-230-230-226-226-226-226-107-107-258_openingdate-of_95 .
+
+:openingdate-of_95_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :openingdate-of_95_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/openingDate> ;
+  lemon:subjOfProp          :arg2-237-237-236-237-236-236-236-236-236-236-230-230-230-230-226-226-226-226-107-107-258_openingdate-of_95 ;
+  lemon:objOfProp           :arg1-237-237-236-237-236-236-236-236-236-236-230-230-230-230-226-226-226-226-107-107-258_openingdate-of_95 ;
+  lemon:condition           :openingdate-of_95_sense_1_condition .
+
+:openingdate-of_95_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-237-237-236-237-236-236-236-236-236-236-230-230-230-230-226-226-226-226-107-107-258_openingdate-of_95 lemon:marker :openingdate-of_95_form_preposition .
+## Prepositions ##
+:openingdate-of_95_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

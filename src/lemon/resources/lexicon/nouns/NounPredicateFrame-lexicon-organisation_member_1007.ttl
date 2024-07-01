@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :organisation_member_1007_sense_1_res ;
+  lemon:entry    :organisation_member_1007 .
+
+:organisation_member_1007 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :organisation_member_1007_form ;
+  lemon:otherForm  :organisation_member_1007_singular ;
+  lemon:otherForm  :organisation_member_1007_plural ;
+  lemon:sense          :organisation_member_1007_sense_1 ;
+  lemon:synBehavior    :organisation_member_1007_predFrame .
+
+:organisation_member_1007_form
+ lemon:writtenRep "organisation member"@en .
+
+:organisation_member_1007_singular a    lemon:Form ;
+  lemon:writtenRep "organisation member"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:organisation_member_1007_plural a   lemon:Form ;
+  lemon:writtenRep "organisation members"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:organisation_member_1007_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :organisation_member_1007_sense_1_res ;
+  lemon:isA       :organisation_member_1007_PredSynArg .
+
+:organisation_member_1007_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/OrganisationMember> .

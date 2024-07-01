@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nick_name_of_433 ;
+  lemon:entry    :nick_name_of_433_form_preposition .
+
+:nick_name_of_433 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :nick_name_of_433_form ;
+  lemon:otherForm  :nick_name_of_433_singular ;
+  lemon:otherForm  :nick_name_of_433_plural ;
+  lemon:sense          :nick_name_of_433_sense_1 ;
+  lemon:synBehavior    :nick_name_of_433_nounpp .
+
+:nick_name_of_433_form a lemon:Form ;
+  lemon:writtenRep "nick name"@en .
+
+:nick_name_of_433_singular a    lemon:Form ;
+  lemon:writtenRep "nick name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:nick_name_of_433_plural a   lemon:Form ;
+  lemon:writtenRep "nick names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:nick_name_of_433_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-262-262-261-261-260-260-260-260-260-260-254-254-254-254-249-249-249-249-127_nick_name_of_433 ;
+  lexinfo:prepositionalAdjunct :arg2-262-262-261-261-260-260-260-260-260-260-254-254-254-254-249-249-249-249-127_nick_name_of_433 .
+
+:nick_name_of_433_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :nick_name_of_433_sense_1 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/nick> ;
+  lemon:subjOfProp          :arg2-262-262-261-261-260-260-260-260-260-260-254-254-254-254-249-249-249-249-127_nick_name_of_433 ;
+  lemon:objOfProp           :arg1-262-262-261-261-260-260-260-260-260-260-254-254-254-254-249-249-249-249-127_nick_name_of_433 ;
+  lemon:condition           :nick_name_of_433_sense_1_condition .
+
+:nick_name_of_433_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-262-262-261-261-260-260-260-260-260-260-254-254-254-254-249-249-249-249-127_nick_name_of_433 lemon:marker :nick_name_of_433_form_preposition .
+## Prepositions ##
+:nick_name_of_433_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

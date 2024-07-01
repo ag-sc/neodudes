@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :span_of_375 ;
+  lemon:entry    :span_of_375_form_preposition .
+
+:span_of_375 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :span_of_375_form ;
+  lemon:otherForm  :span_of_375_singular ;
+  lemon:otherForm  :span_of_375_plural ;
+  lemon:sense          :span_of_375_sense_1 ;
+  lemon:synBehavior    :span_of_375_nounpp .
+
+:span_of_375_form a lemon:Form ;
+  lemon:writtenRep "span"@en .
+
+:span_of_375_singular a    lemon:Form ;
+  lemon:writtenRep "span"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:span_of_375_plural a   lemon:Form ;
+  lemon:writtenRep "spans"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:span_of_375_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1126-1126-1126-1123-1122-1122-1122-1122-1122-1122-1103-1103-1103-1103-1077-1077-1077-1077-533_span_of_375 ;
+  lexinfo:prepositionalAdjunct :arg2-1126-1126-1126-1123-1122-1122-1122-1122-1122-1122-1103-1103-1103-1103-1077-1077-1077-1077-533_span_of_375 .
+
+:span_of_375_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :span_of_375_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/mainspan> ;
+  lemon:subjOfProp          :arg2-1126-1126-1126-1123-1122-1122-1122-1122-1122-1122-1103-1103-1103-1103-1077-1077-1077-1077-533_span_of_375 ;
+  lemon:objOfProp           :arg1-1126-1126-1126-1123-1122-1122-1122-1122-1122-1122-1103-1103-1103-1103-1077-1077-1077-1077-533_span_of_375 ;
+  lemon:condition           :span_of_375_sense_1_condition .
+
+:span_of_375_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Bridge> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1126-1126-1126-1123-1122-1122-1122-1122-1122-1122-1103-1103-1103-1103-1077-1077-1077-1077-533_span_of_375 lemon:marker :span_of_375_form_preposition .
+## Prepositions ##
+:span_of_375_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

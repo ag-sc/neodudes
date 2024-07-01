@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ruling-party-in_84 ;
+  lemon:entry    :ruling-party-in_84_form_preposition .
+
+:ruling-party-in_84 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ruling-party-in_84_form ;
+  lemon:otherForm  :ruling-party-in_84_singular ;
+  lemon:otherForm  :ruling-party-in_84_plural ;
+  lemon:sense          :ruling-party-in_84_sense_1 ;
+  lemon:synBehavior    :ruling-party-in_84_nounpp .
+
+:ruling-party-in_84_form a lemon:Form ;
+  lemon:writtenRep "ruling party "@en .
+
+:ruling-party-in_84_singular a    lemon:Form ;
+  lemon:writtenRep "ruling party "@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ruling-party-in_84_plural a   lemon:Form ;
+  lemon:writtenRep "ruling parties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ruling-party-in_84_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1263-1263-1263-1258-1260-1260-1260-1260-1260-1260-1239-1239-1239-1239-1212-1212-1212-1212-600-600-214_ruling-party-in_84 ;
+  lexinfo:prepositionalAdjunct :arg2-1263-1263-1263-1258-1260-1260-1260-1260-1260-1260-1239-1239-1239-1239-1212-1212-1212-1212-600-600-214_ruling-party-in_84 .
+
+:ruling-party-in_84_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :ruling-party-in_84_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/leaderParty> ;
+  lemon:subjOfProp          :arg2-1263-1263-1263-1258-1260-1260-1260-1260-1260-1260-1239-1239-1239-1239-1212-1212-1212-1212-600-600-214_ruling-party-in_84 ;
+  lemon:objOfProp           :arg1-1263-1263-1263-1258-1260-1260-1260-1260-1260-1260-1239-1239-1239-1239-1212-1212-1212-1212-600-600-214_ruling-party-in_84 ;
+  lemon:condition           :ruling-party-in_84_sense_1_condition .
+
+:ruling-party-in_84_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1263-1263-1263-1258-1260-1260-1260-1260-1260-1260-1239-1239-1239-1239-1212-1212-1212-1212-600-600-214_ruling-party-in_84 lemon:marker :ruling-party-in_84_form_preposition .
+## Prepositions ##
+:ruling-party-in_84_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

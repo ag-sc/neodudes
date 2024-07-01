@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :societal_event_975_sense_1_res ;
+  lemon:entry    :societal_event_975 .
+
+:societal_event_975 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :societal_event_975_form ;
+  lemon:otherForm  :societal_event_975_singular ;
+  lemon:otherForm  :societal_event_975_plural ;
+  lemon:sense          :societal_event_975_sense_1 ;
+  lemon:synBehavior    :societal_event_975_predFrame .
+
+:societal_event_975_form
+ lemon:writtenRep "societal event"@en .
+
+:societal_event_975_singular a    lemon:Form ;
+  lemon:writtenRep "societal event"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:societal_event_975_plural a   lemon:Form ;
+  lemon:writtenRep "societal events"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:societal_event_975_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :societal_event_975_sense_1_res ;
+  lemon:isA       :societal_event_975_PredSynArg .
+
+:societal_event_975_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SocietalEvent> .

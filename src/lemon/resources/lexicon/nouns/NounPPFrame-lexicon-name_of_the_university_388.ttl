@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :name_of_the_university_388 ;
+  lemon:entry    :name_of_the_university_388_form_preposition .
+
+:name_of_the_university_388 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :name_of_the_university_388_form ;
+  lemon:otherForm  :name_of_the_university_388_singular ;
+  lemon:otherForm  :name_of_the_university_388_plural ;
+  lemon:sense          :name_of_the_university_388_sense_1 ;
+  lemon:synBehavior    :name_of_the_university_388_nounpp .
+
+:name_of_the_university_388_form a lemon:Form ;
+  lemon:writtenRep "name of the university"@en .
+
+:name_of_the_university_388_singular a    lemon:Form ;
+  lemon:writtenRep "name of the university"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:name_of_the_university_388_plural a   lemon:Form ;
+  lemon:writtenRep "names of the university"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:name_of_the_university_388_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-333-333-332-332-331-331-331-331-331-331-324-324-324-324-319-319-319-319-163_name_of_the_university_388 ;
+  lexinfo:prepositionalAdjunct :arg2-333-333-332-332-331-331-331-331-331-331-324-324-324-324-319-319-319-319-163_name_of_the_university_388 .
+
+:name_of_the_university_388_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :name_of_the_university_388_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/almaMater> ;
+  lemon:subjOfProp          :arg2-333-333-332-332-331-331-331-331-331-331-324-324-324-324-319-319-319-319-163_name_of_the_university_388 ;
+  lemon:objOfProp           :arg1-333-333-332-332-331-331-331-331-331-331-324-324-324-324-319-319-319-319-163_name_of_the_university_388 ;
+  lemon:condition           :name_of_the_university_388_sense_1_condition .
+
+:name_of_the_university_388_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/EducationalInstitution> .
+
+:arg2-333-333-332-332-331-331-331-331-331-331-324-324-324-324-319-319-319-319-163_name_of_the_university_388 lemon:marker :name_of_the_university_388_form_preposition .
+## Prepositions ##
+:name_of_the_university_388_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

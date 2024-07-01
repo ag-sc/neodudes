@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :federal-minister_of_93 ;
+  lemon:entry    :federal-minister_of_93_form_preposition .
+
+:federal-minister_of_93 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :federal-minister_of_93_form ;
+  lemon:otherForm  :federal-minister_of_93_singular ;
+  lemon:otherForm  :federal-minister_of_93_plural ;
+  lemon:sense          :federal-minister_of_93_sense_1 ;
+  lemon:synBehavior    :federal-minister_of_93_nounpp .
+
+:federal-minister_of_93_form a lemon:Form ;
+  lemon:writtenRep "federal minister"@en .
+
+:federal-minister_of_93_singular a    lemon:Form ;
+  lemon:writtenRep "federal minister"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:federal-minister_of_93_plural a   lemon:Form ;
+  lemon:writtenRep "federal ministers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:federal-minister_of_93_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-389-389-388-388-387-387-387-387-387-387-380-380-380-380-373-373-373-373-187-187-221_federal-minister_of_93 ;
+  lexinfo:prepositionalAdjunct :arg2-389-389-388-388-387-387-387-387-387-387-380-380-380-380-373-373-373-373-187-187-221_federal-minister_of_93 .
+
+:federal-minister_of_93_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :federal-minister_of_93_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-389-389-388-388-387-387-387-387-387-387-380-380-380-380-373-373-373-373-187-187-221_federal-minister_of_93 ;
+  lemon:objOfProp           :arg1-389-389-388-388-387-387-387-387-387-387-380-380-380-380-373-373-373-373-187-187-221_federal-minister_of_93 ;
+  lemon:condition           :federal-minister_of_93_sense_1_condition .
+
+:federal-minister_of_93_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-389-389-388-388-387-387-387-387-387-387-380-380-380-380-373-373-373-373-187-187-221_federal-minister_of_93 lemon:marker :federal-minister_of_93_form_preposition .
+## Prepositions ##
+:federal-minister_of_93_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

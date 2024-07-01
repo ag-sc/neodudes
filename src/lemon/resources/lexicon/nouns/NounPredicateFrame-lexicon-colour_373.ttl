@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :colour_373_sense_1_res ;
+  lemon:entry    :colour_373 .
+
+:colour_373 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :colour_373_form ;
+  lemon:otherForm  :colour_373_singular ;
+  lemon:otherForm  :colour_373_plural ;
+  lemon:sense          :colour_373_sense_1 ;
+  lemon:synBehavior    :colour_373_predFrame .
+
+:colour_373_form
+ lemon:writtenRep "colour"@en .
+
+:colour_373_singular a    lemon:Form ;
+  lemon:writtenRep "colour"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:colour_373_plural a   lemon:Form ;
+  lemon:writtenRep "colours"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:colour_373_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :colour_373_sense_1_res ;
+  lemon:isA       :colour_373_PredSynArg .
+
+:colour_373_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Colour> .

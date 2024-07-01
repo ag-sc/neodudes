@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founder-of_2_474 ;
+  lemon:entry    :founder-of_2_474_form_preposition .
+
+:founder-of_2_474 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :founder-of_2_474_form ;
+  lemon:otherForm  :founder-of_2_474_singular ;
+  lemon:otherForm  :founder-of_2_474_plural ;
+  lemon:sense          :founder-of_2_474_sense_1 ;
+  lemon:synBehavior    :founder-of_2_474_nounpp .
+
+:founder-of_2_474_form a lemon:Form ;
+  lemon:writtenRep "founder"@en .
+
+:founder-of_2_474_singular a    lemon:Form ;
+  lemon:writtenRep "founder"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:founder-of_2_474_plural a   lemon:Form ;
+  lemon:writtenRep "founders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:founder-of_2_474_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-960-960-960-957-956-956-956-956-956-956-938-938-938-938-915-915-915-915-454_founder-of_2_474 ;
+  lexinfo:prepositionalAdjunct :arg2-960-960-960-957-956-956-956-956-956-956-938-938-938-938-915-915-915-915-454_founder-of_2_474 .
+
+:founder-of_2_474_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founder-of_2_474_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp          :arg2-960-960-960-957-956-956-956-956-956-956-938-938-938-938-915-915-915-915-454_founder-of_2_474 ;
+  lemon:objOfProp           :arg1-960-960-960-957-956-956-956-956-956-956-938-938-938-938-915-915-915-915-454_founder-of_2_474 ;
+  lemon:condition           :founder-of_2_474_sense_1_condition .
+
+:founder-of_2_474_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Pope> .
+
+:arg2-960-960-960-957-956-956-956-956-956-956-938-938-938-938-915-915-915-915-454_founder-of_2_474 lemon:marker :founder-of_2_474_form_preposition .
+## Prepositions ##
+:founder-of_2_474_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

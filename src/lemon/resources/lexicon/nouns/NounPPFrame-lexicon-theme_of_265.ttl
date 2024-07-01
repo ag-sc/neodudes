@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :theme_of_265 ;
+  lemon:entry    :theme_of_265_form_preposition .
+
+:theme_of_265 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :theme_of_265_form ;
+  lemon:otherForm  :theme_of_265_singular ;
+  lemon:otherForm  :theme_of_265_plural ;
+  lemon:sense          :theme_of_265_sense_1 ;
+  lemon:synBehavior    :theme_of_265_nounpp .
+
+:theme_of_265_form a lemon:Form ;
+  lemon:writtenRep "theme"@en .
+
+:theme_of_265_singular a    lemon:Form ;
+  lemon:writtenRep "theme"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:theme_of_265_plural a   lemon:Form ;
+  lemon:writtenRep "themes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:theme_of_265_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-502-502-501-500-499-499-499-499-499-499-490-490-490-490-480-480-480-480-232_theme_of_265 ;
+  lexinfo:prepositionalAdjunct :arg2-502-502-501-500-499-499-499-499-499-499-490-490-490-490-480-480-480-480-232_theme_of_265 .
+
+:theme_of_265_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :theme_of_265_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/openingTheme> ;
+  lemon:subjOfProp          :arg2-502-502-501-500-499-499-499-499-499-499-490-490-490-490-480-480-480-480-232_theme_of_265 ;
+  lemon:objOfProp           :arg1-502-502-501-500-499-499-499-499-499-499-490-490-490-490-480-480-480-480-232_theme_of_265 ;
+  lemon:condition           :theme_of_265_sense_1_condition .
+
+:theme_of_265_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-502-502-501-500-499-499-499-499-499-499-490-490-490-490-480-480-480-480-232_theme_of_265 lemon:marker :theme_of_265_form_preposition .
+## Prepositions ##
+:theme_of_265_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

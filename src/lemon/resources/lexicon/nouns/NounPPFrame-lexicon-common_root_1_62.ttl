@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :common_root_1_62 ;
+  lemon:entry    :common_root_1_62_form_preposition .
+
+:common_root_1_62 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :common_root_1_62_form ;
+  lemon:otherForm  :common_root_1_62_singular ;
+  lemon:otherForm  :common_root_1_62_plural ;
+  lemon:sense          :common_root_1_62_sense_1 ;
+  lemon:synBehavior    :common_root_1_62_nounpp .
+
+:common_root_1_62_form a lemon:Form ;
+  lemon:writtenRep "common root"@en .
+
+:common_root_1_62_singular a    lemon:Form ;
+  lemon:writtenRep "common root"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:common_root_1_62_plural a   lemon:Form ;
+  lemon:writtenRep "common roots"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:common_root_1_62_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-664-664-664-662-661-661-661-661-661-661-649-649-649-649-636-636-636-636-330-330-239_common_root_1_62 ;
+  lexinfo:prepositionalAdjunct :arg2-664-664-664-662-661-661-661-661-661-661-649-649-649-649-636-636-636-636-330-330-239_common_root_1_62 .
+
+:common_root_1_62_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :common_root_1_62_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/languageFamily> ;
+  lemon:subjOfProp          :arg2-664-664-664-662-661-661-661-661-661-661-649-649-649-649-636-636-636-636-330-330-239_common_root_1_62 ;
+  lemon:objOfProp           :arg1-664-664-664-662-661-661-661-661-661-661-649-649-649-649-636-636-636-636-330-330-239_common_root_1_62 ;
+  lemon:condition           :common_root_1_62_sense_1_condition .
+
+:common_root_1_62_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Language> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2-664-664-664-662-661-661-661-661-661-661-649-649-649-649-636-636-636-636-330-330-239_common_root_1_62 lemon:marker :common_root_1_62_form_preposition .
+## Prepositions ##
+:common_root_1_62_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

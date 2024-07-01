@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :state_in_382 ;
+  lemon:entry    :state_in_382_form_preposition .
+
+:state_in_382 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :state_in_382_form ;
+  lemon:otherForm  :state_in_382_singular ;
+  lemon:otherForm  :state_in_382_plural ;
+  lemon:sense          :state_in_382_sense_1 ;
+  lemon:synBehavior    :state_in_382_nounpp .
+
+:state_in_382_form a lemon:Form ;
+  lemon:writtenRep "state"@en .
+
+:state_in_382_singular a    lemon:Form ;
+  lemon:writtenRep "state"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:state_in_382_plural a   lemon:Form ;
+  lemon:writtenRep "states"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:state_in_382_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-810-810-810-808-807-807-807-807-807-807-792-792-792-792-773-773-773-773-380_state_in_382 ;
+  lexinfo:prepositionalAdjunct :arg2-810-810-810-808-807-807-807-807-807-807-792-792-792-792-773-773-773-773-380_state_in_382 .
+
+:state_in_382_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :state_in_382_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/type> ;
+  lemon:subjOfProp          :arg2-810-810-810-808-807-807-807-807-807-807-792-792-792-792-773-773-773-773-380_state_in_382 ;
+  lemon:objOfProp           :arg1-810-810-810-808-807-807-807-807-807-807-792-792-792-792-773-773-773-773-380_state_in_382 ;
+  lemon:condition           :state_in_382_sense_1_condition .
+
+:state_in_382_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Type> .
+
+:arg2-810-810-810-808-807-807-807-807-807-807-792-792-792-792-773-773-773-773-380_state_in_382 lemon:marker :state_in_382_form_preposition .
+## Prepositions ##
+:state_in_382_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

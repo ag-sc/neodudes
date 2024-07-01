@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :pakistani_153_260_sense_1_res ;
+  lemon:entry    :pakistani_153_260 .
+
+:pakistani_153_260 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :pakistani_153_260_lemma ;
+  lemon:sense          :pakistani_153_260_sense_1 ;
+  lemon:synBehavior    :pakistani_153_260_attrFrame, :pakistani_153_260_predFrame .
+
+:pakistani_153_260_lemma lemon:writtenRep "Pakistani"@en .
+
+:pakistani_153_260_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :pakistani_153_260_PredSynArg .
+
+:pakistani_153_260_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :pakistani_153_260_AttrSynArg .
+
+:pakistani_153_260_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :pakistani_153_260_sense_1_res ;
+  lemon:isA       :pakistani_153_260_AttrSynArg, :pakistani_153_260_PredSynArg .
+
+:pakistani_153_260_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Pakistan> .

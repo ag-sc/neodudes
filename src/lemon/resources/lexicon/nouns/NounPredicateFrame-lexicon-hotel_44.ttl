@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :hotel_44_sense_1_res ;
+  lemon:entry    :hotel_44 .
+
+:hotel_44 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :hotel_44_form ;
+  lemon:otherForm  :hotel_44_singular ;
+  lemon:otherForm  :hotel_44_plural ;
+  lemon:sense          :hotel_44_sense_1 ;
+  lemon:synBehavior    :hotel_44_predFrame .
+
+:hotel_44_form
+ lemon:writtenRep "hotel"@en .
+
+:hotel_44_singular a    lemon:Form ;
+  lemon:writtenRep "hotel"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:hotel_44_plural a   lemon:Form ;
+  lemon:writtenRep "hotels"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:hotel_44_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :hotel_44_sense_1_res ;
+  lemon:isA       :hotel_44_PredSynArg .
+
+:hotel_44_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Hotel> .

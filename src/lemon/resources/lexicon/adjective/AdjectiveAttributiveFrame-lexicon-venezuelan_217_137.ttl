@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :venezuelan_217_137_sense_1_res ;
+  lemon:entry    :venezuelan_217_137 .
+
+:venezuelan_217_137 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :venezuelan_217_137_lemma ;
+  lemon:sense          :venezuelan_217_137_sense_1 ;
+  lemon:synBehavior    :venezuelan_217_137_attrFrame, :venezuelan_217_137_predFrame .
+
+:venezuelan_217_137_lemma lemon:writtenRep "Venezuelan"@en .
+
+:venezuelan_217_137_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :venezuelan_217_137_PredSynArg .
+
+:venezuelan_217_137_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :venezuelan_217_137_AttrSynArg .
+
+:venezuelan_217_137_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :venezuelan_217_137_sense_1_res ;
+  lemon:isA       :venezuelan_217_137_AttrSynArg, :venezuelan_217_137_PredSynArg .
+
+:venezuelan_217_137_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Venezuela> .

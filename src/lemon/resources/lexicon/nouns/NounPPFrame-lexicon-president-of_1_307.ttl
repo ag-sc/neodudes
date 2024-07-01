@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president-of_1_307 ;
+  lemon:entry    :president-of_1_307_form_preposition .
+
+:president-of_1_307 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president-of_1_307_form ;
+  lemon:otherForm  :president-of_1_307_singular ;
+  lemon:otherForm  :president-of_1_307_plural ;
+  lemon:sense          :president-of_1_307_sense_1 ;
+  lemon:synBehavior    :president-of_1_307_nounpp .
+
+:president-of_1_307_form a lemon:Form ;
+  lemon:writtenRep "president"@en .
+
+:president-of_1_307_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president-of_1_307_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president-of_1_307_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-834-834-834-832-831-831-831-831-831-831-815-815-815-815-794-794-794-794-393_president-of_1_307 ;
+  lexinfo:prepositionalAdjunct :arg2-834-834-834-832-831-831-831-831-831-831-815-815-815-815-794-794-794-794-393_president-of_1_307 .
+
+:president-of_1_307_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :president-of_1_307_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/title> ;
+  lemon:subjOfProp          :arg2-834-834-834-832-831-831-831-831-831-831-815-815-815-815-794-794-794-794-393_president-of_1_307 ;
+  lemon:objOfProp           :arg1-834-834-834-832-831-831-831-831-831-831-815-815-815-815-794-794-794-794-393_president-of_1_307 ;
+  lemon:condition           :president-of_1_307_sense_1_condition .
+
+:president-of_1_307_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-834-834-834-832-831-831-831-831-831-831-815-815-815-815-794-794-794-794-393_president-of_1_307 lemon:marker :president-of_1_307_form_preposition .
+## Prepositions ##
+:president-of_1_307_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

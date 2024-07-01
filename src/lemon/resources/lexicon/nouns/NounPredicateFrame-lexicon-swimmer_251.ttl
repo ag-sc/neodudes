@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :swimmer_251_sense_1_res ;
+  lemon:entry    :swimmer_251 .
+
+:swimmer_251 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :swimmer_251_form ;
+  lemon:otherForm  :swimmer_251_singular ;
+  lemon:otherForm  :swimmer_251_plural ;
+  lemon:sense          :swimmer_251_sense_1 ;
+  lemon:synBehavior    :swimmer_251_predFrame .
+
+:swimmer_251_form
+ lemon:writtenRep "swimmer"@en .
+
+:swimmer_251_singular a    lemon:Form ;
+  lemon:writtenRep "swimmer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:swimmer_251_plural a   lemon:Form ;
+  lemon:writtenRep "swimmers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:swimmer_251_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :swimmer_251_sense_1_res ;
+  lemon:isA       :swimmer_251_PredSynArg .
+
+:swimmer_251_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Swimmer> .

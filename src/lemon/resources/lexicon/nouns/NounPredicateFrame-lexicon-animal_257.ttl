@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :animal_257_sense_1_res ;
+  lemon:entry    :animal_257 .
+
+:animal_257 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :animal_257_form ;
+  lemon:otherForm  :animal_257_singular ;
+  lemon:otherForm  :animal_257_plural ;
+  lemon:sense          :animal_257_sense_1 ;
+  lemon:synBehavior    :animal_257_predFrame .
+
+:animal_257_form
+ lemon:writtenRep "animal"@en .
+
+:animal_257_singular a    lemon:Form ;
+  lemon:writtenRep "animal"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:animal_257_plural a   lemon:Form ;
+  lemon:writtenRep "animals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:animal_257_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :animal_257_sense_1_res ;
+  lemon:isA       :animal_257_PredSynArg .
+
+:animal_257_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Animal> .

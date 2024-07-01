@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :battle_in_366 ;
+  lemon:entry    :battle_in_366_form_preposition .
+
+:battle_in_366 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :battle_in_366_form ;
+  lemon:otherForm  :battle_in_366_singular ;
+  lemon:otherForm  :battle_in_366_plural ;
+  lemon:sense          :battle_in_366_sense_1 ;
+  lemon:synBehavior    :battle_in_366_nounpp .
+
+:battle_in_366_form a lemon:Form ;
+  lemon:writtenRep "battle"@en .
+
+:battle_in_366_singular a    lemon:Form ;
+  lemon:writtenRep "battle"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:battle_in_366_plural a   lemon:Form ;
+  lemon:writtenRep "battles"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:battle_in_366_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1526-1526-1526-1523-1525-1525-1525-1525-1525-1525-1500-1500-1500-1500-1471-1471-1471-1471-749_battle_in_366 ;
+  lexinfo:prepositionalAdjunct :arg1-1526-1526-1526-1523-1525-1525-1525-1525-1525-1525-1500-1500-1500-1500-1471-1471-1471-1471-749_battle_in_366 .
+
+:battle_in_366_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :battle_in_366_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/date> ;
+  lemon:subjOfProp          :arg1-1526-1526-1526-1523-1525-1525-1525-1525-1525-1525-1500-1500-1500-1500-1471-1471-1471-1471-749_battle_in_366 ;
+  lemon:objOfProp           :arg2-1526-1526-1526-1523-1525-1525-1525-1525-1525-1525-1500-1500-1500-1500-1471-1471-1471-1471-749_battle_in_366 ;
+  lemon:condition           :battle_in_366_sense_1_condition .
+
+:battle_in_366_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/MilitaryConflict> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg1-1526-1526-1526-1523-1525-1525-1525-1525-1525-1525-1500-1500-1500-1500-1471-1471-1471-1471-749_battle_in_366 lemon:marker :battle_in_366_form_preposition .
+## Prepositions ##
+:battle_in_366_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

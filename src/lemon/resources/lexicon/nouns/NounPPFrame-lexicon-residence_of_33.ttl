@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :residence_of_33 ;
+  lemon:entry    :residence_of_33_form_preposition .
+
+:residence_of_33 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :residence_of_33_form ;
+  lemon:otherForm  :residence_of_33_singular ;
+  lemon:otherForm  :residence_of_33_plural ;
+  lemon:sense          :residence_of_33_sense_1 ;
+  lemon:synBehavior    :residence_of_33_nounpp .
+
+:residence_of_33_form a lemon:Form ;
+  lemon:writtenRep "residence"@en .
+
+:residence_of_33_singular a    lemon:Form ;
+  lemon:writtenRep "residence"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:residence_of_33_plural a   lemon:Form ;
+  lemon:writtenRep "residences"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:residence_of_33_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-273-273-272-272-271-271-271-271-271-271-265-265-265-265-260-260-260-260-129-129-688_residence_of_33 ;
+  lexinfo:prepositionalAdjunct :arg2-273-273-272-272-271-271-271-271-271-271-265-265-265-265-260-260-260-260-129-129-688_residence_of_33 .
+
+:residence_of_33_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :residence_of_33_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/residence> ;
+  lemon:subjOfProp          :arg2-273-273-272-272-271-271-271-271-271-271-265-265-265-265-260-260-260-260-129-129-688_residence_of_33 ;
+  lemon:objOfProp           :arg1-273-273-272-272-271-271-271-271-271-271-265-265-265-265-260-260-260-260-129-129-688_residence_of_33 ;
+  lemon:condition           :residence_of_33_sense_1_condition .
+
+:residence_of_33_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Building> .
+
+:arg2-273-273-272-272-271-271-271-271-271-271-265-265-265-265-260-260-260-260-129-129-688_residence_of_33 lemon:marker :residence_of_33_form_preposition .
+## Prepositions ##
+:residence_of_33_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

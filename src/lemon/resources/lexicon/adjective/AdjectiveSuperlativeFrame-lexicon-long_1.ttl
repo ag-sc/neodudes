@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :long_1 ;
+  lemon:entry    :form_long_1_preposition ;
+  lemon:entry    :long_1_res .
+
+:long_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_long_1 ;
+  lemon:otherForm      :form_long_1_comperative ;
+  lemon:otherForm      :form_long_1_superlative ;
+  lemon:sense          :long_1_sense_1 ;
+  lemon:synBehavior    :long_1_predFrame .
+
+:form_long_1 lemon:writtenRep "long"@en .
+
+:form_long_1_comperative lemon:writtenRep "longer"@en .
+
+:form_long_1_superlative lemon:writtenRep "longest"@en .
+
+:long_1_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :long_1_PredSynArg .
+
+:long_1_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :long_1_res ;
+  lemon:isA       :long_1_PredSynArg ;
+  lemon:condition :long_1_sense_1_condition .
+
+:long_1_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/length> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:long_1_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BodyOfWater> .## Prepositions ##
+:form_long_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

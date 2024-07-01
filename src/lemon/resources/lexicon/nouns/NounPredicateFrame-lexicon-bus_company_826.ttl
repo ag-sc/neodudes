@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bus_company_826_sense_1_res ;
+  lemon:entry    :bus_company_826 .
+
+:bus_company_826 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :bus_company_826_form ;
+  lemon:otherForm  :bus_company_826_singular ;
+  lemon:otherForm  :bus_company_826_plural ;
+  lemon:sense          :bus_company_826_sense_1 ;
+  lemon:synBehavior    :bus_company_826_predFrame .
+
+:bus_company_826_form
+ lemon:writtenRep "bus company"@en .
+
+:bus_company_826_singular a    lemon:Form ;
+  lemon:writtenRep "bus company"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:bus_company_826_plural a   lemon:Form ;
+  lemon:writtenRep "bus companies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:bus_company_826_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bus_company_826_sense_1_res ;
+  lemon:isA       :bus_company_826_PredSynArg .
+
+:bus_company_826_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/BusCompany> .

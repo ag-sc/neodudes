@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :king-of_30 ;
+  lemon:entry    :king-of_30_form_preposition .
+
+:king-of_30 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :king-of_30_form ;
+  lemon:otherForm  :king-of_30_singular ;
+  lemon:otherForm  :king-of_30_plural ;
+  lemon:sense          :king-of_30_sense_1 ;
+  lemon:synBehavior    :king-of_30_nounpp .
+
+:king-of_30_form a lemon:Form ;
+  lemon:writtenRep "king"@en .
+
+:king-of_30_singular a    lemon:Form ;
+  lemon:writtenRep "king"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:king-of_30_plural a   lemon:Form ;
+  lemon:writtenRep "kings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:king-of_30_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1435-1435-1435-1430-1432-1432-1432-1432-1432-1432-1409-1409-1409-1409-1380-1380-1380-1380-676-676-195_king-of_30 ;
+  lexinfo:prepositionalAdjunct :arg2-1435-1435-1435-1430-1432-1432-1432-1432-1432-1432-1409-1409-1409-1409-1380-1380-1380-1380-676-676-195_king-of_30 .
+
+:king-of_30_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :king-of_30_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-1435-1435-1435-1430-1432-1432-1432-1432-1432-1432-1409-1409-1409-1409-1380-1380-1380-1380-676-676-195_king-of_30 ;
+  lemon:objOfProp           :arg1-1435-1435-1435-1430-1432-1432-1432-1432-1432-1432-1409-1409-1409-1409-1380-1380-1380-1380-676-676-195_king-of_30 ;
+  lemon:condition           :king-of_30_sense_1_condition .
+
+:king-of_30_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Legislature> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1435-1435-1435-1430-1432-1432-1432-1432-1432-1432-1409-1409-1409-1409-1380-1380-1380-1380-676-676-195_king-of_30 lemon:marker :king-of_30_form_preposition .
+## Prepositions ##
+:king-of_30_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

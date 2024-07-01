@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :croatian_45_234_sense_1_res ;
+  lemon:entry    :croatian_45_234 .
+
+:croatian_45_234 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :croatian_45_234_lemma ;
+  lemon:sense          :croatian_45_234_sense_1 ;
+  lemon:synBehavior    :croatian_45_234_attrFrame, :croatian_45_234_predFrame .
+
+:croatian_45_234_lemma lemon:writtenRep "Croatian"@en .
+
+:croatian_45_234_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :croatian_45_234_PredSynArg .
+
+:croatian_45_234_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :croatian_45_234_AttrSynArg .
+
+:croatian_45_234_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :croatian_45_234_sense_1_res ;
+  lemon:isA       :croatian_45_234_AttrSynArg, :croatian_45_234_PredSynArg .
+
+:croatian_45_234_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Croatia> .

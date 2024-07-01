@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_serve_1 ;
+  lemon:entry    :serve_1ed ;
+  lemon:entry    :form_serve_1_preposition .
+
+:to_serve_1 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_serve_1 ;
+  lemon:otherForm      :form_serve_1s ;
+  lemon:otherForm      :form_serve_1ed ;
+  lemon:otherForm      :form_serve_1perfect ;
+  lemon:sense          :serve_1_sense_1 ;
+  lemon:synBehavior    :serve_1_frame_transitive .
+
+:form_serve_1 a         lemon:Form ;
+  lemon:writtenRep     "serve"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_serve_1s a    lemon:Form ;
+  lemon:writtenRep "serves"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_serve_1ed a   lemon:Form ;
+  lemon:writtenRep "served"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_serve_1perfect a   lemon:Form ;
+  lemon:writtenRep "served"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:serve_1_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :serve_1_obj ;
+  lexinfo:directObject     :serve_1_subj .
+
+:serve_1_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :serve_1_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/targetAirport> ;
+  lemon:subjOfProp  :serve_1_obj ;
+  lemon:objOfProp   :serve_1_subj ;
+  lemon:condition   :serve_1_sense_1_condition .
+
+
+:serve_1_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Airline> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Airport> .
+
+
+:serve_1_obj lemon:marker :form_serve_1_preposition .
+
+## Prepositions ##
+:form_serve_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

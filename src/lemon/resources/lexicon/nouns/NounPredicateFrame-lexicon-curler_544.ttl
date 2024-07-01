@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :curler_544_sense_1_res ;
+  lemon:entry    :curler_544 .
+
+:curler_544 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :curler_544_form ;
+  lemon:otherForm  :curler_544_singular ;
+  lemon:otherForm  :curler_544_plural ;
+  lemon:sense          :curler_544_sense_1 ;
+  lemon:synBehavior    :curler_544_predFrame .
+
+:curler_544_form
+ lemon:writtenRep "curler"@en .
+
+:curler_544_singular a    lemon:Form ;
+  lemon:writtenRep "curler"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:curler_544_plural a   lemon:Form ;
+  lemon:writtenRep "curlers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:curler_544_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :curler_544_sense_1_res ;
+  lemon:isA       :curler_544_PredSynArg .
+
+:curler_544_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Curler> .

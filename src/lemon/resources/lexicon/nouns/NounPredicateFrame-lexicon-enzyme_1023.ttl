@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :enzyme_1023_sense_1_res ;
+  lemon:entry    :enzyme_1023 .
+
+:enzyme_1023 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :enzyme_1023_form ;
+  lemon:otherForm  :enzyme_1023_singular ;
+  lemon:otherForm  :enzyme_1023_plural ;
+  lemon:sense          :enzyme_1023_sense_1 ;
+  lemon:synBehavior    :enzyme_1023_predFrame .
+
+:enzyme_1023_form
+ lemon:writtenRep "enzyme"@en .
+
+:enzyme_1023_singular a    lemon:Form ;
+  lemon:writtenRep "enzyme"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:enzyme_1023_plural a   lemon:Form ;
+  lemon:writtenRep "enzymes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:enzyme_1023_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :enzyme_1023_sense_1_res ;
+  lemon:isA       :enzyme_1023_PredSynArg .
+
+:enzyme_1023_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Enzyme> .

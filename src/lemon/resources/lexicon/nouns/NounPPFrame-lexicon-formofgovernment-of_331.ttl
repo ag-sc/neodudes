@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :formofgovernment-of_331 ;
+  lemon:entry    :formofgovernment-of_331_form_preposition .
+
+:formofgovernment-of_331 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :formofgovernment-of_331_form ;
+  lemon:otherForm  :formofgovernment-of_331_singular ;
+  lemon:otherForm  :formofgovernment-of_331_plural ;
+  lemon:sense          :formofgovernment-of_331_sense_1 ;
+  lemon:synBehavior    :formofgovernment-of_331_nounpp .
+
+:formofgovernment-of_331_form a lemon:Form ;
+  lemon:writtenRep "form of government"@en .
+
+:formofgovernment-of_331_singular a    lemon:Form ;
+  lemon:writtenRep "form of government"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:formofgovernment-of_331_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:formofgovernment-of_331_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1529-1529-1529-1526-1528-1528-1528-1528-1528-1528-1503-1503-1503-1503-1474-1474-1474-1474-752_formofgovernment-of_331 ;
+  lexinfo:prepositionalAdjunct :arg2-1529-1529-1529-1526-1528-1528-1528-1528-1528-1528-1503-1503-1503-1503-1474-1474-1474-1474-752_formofgovernment-of_331 .
+
+:formofgovernment-of_331_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :formofgovernment-of_331_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg2-1529-1529-1529-1526-1528-1528-1528-1528-1528-1528-1503-1503-1503-1503-1474-1474-1474-1474-752_formofgovernment-of_331 ;
+  lemon:objOfProp           :arg1-1529-1529-1529-1526-1528-1528-1528-1528-1528-1528-1503-1503-1503-1503-1474-1474-1474-1474-752_formofgovernment-of_331 ;
+  lemon:condition           :formofgovernment-of_331_sense_1_condition .
+
+:formofgovernment-of_331_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1529-1529-1529-1526-1528-1528-1528-1528-1528-1528-1503-1503-1503-1503-1474-1474-1474-1474-752_formofgovernment-of_331 lemon:marker :formofgovernment-of_331_form_preposition .
+## Prepositions ##
+:formofgovernment-of_331_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

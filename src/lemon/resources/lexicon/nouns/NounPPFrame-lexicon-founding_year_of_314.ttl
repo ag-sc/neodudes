@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founding_year_of_314 ;
+  lemon:entry    :founding_year_of_314_form_preposition .
+
+:founding_year_of_314 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :founding_year_of_314_form ;
+  lemon:otherForm  :founding_year_of_314_singular ;
+  lemon:otherForm  :founding_year_of_314_plural ;
+  lemon:sense          :founding_year_of_314_sense_1 ;
+  lemon:synBehavior    :founding_year_of_314_nounpp .
+
+:founding_year_of_314_form a lemon:Form ;
+  lemon:writtenRep "founding year"@en .
+
+:founding_year_of_314_singular a    lemon:Form ;
+  lemon:writtenRep "founding year"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:founding_year_of_314_plural a   lemon:Form ;
+  lemon:writtenRep "founding years"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:founding_year_of_314_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1442-1442-1442-1437-1439-1439-1439-1439-1439-1439-1416-1416-1416-1416-1387-1387-1387-1387-708_founding_year_of_314 ;
+  lexinfo:prepositionalAdjunct :arg2-1442-1442-1442-1437-1439-1439-1439-1439-1439-1439-1416-1416-1416-1416-1387-1387-1387-1387-708_founding_year_of_314 .
+
+:founding_year_of_314_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founding_year_of_314_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundingYear> ;
+  lemon:subjOfProp          :arg2-1442-1442-1442-1437-1439-1439-1439-1439-1439-1439-1416-1416-1416-1416-1387-1387-1387-1387-708_founding_year_of_314 ;
+  lemon:objOfProp           :arg1-1442-1442-1442-1437-1439-1439-1439-1439-1439-1439-1416-1416-1416-1416-1387-1387-1387-1387-708_founding_year_of_314 ;
+  lemon:condition           :founding_year_of_314_sense_1_condition .
+
+:founding_year_of_314_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#gYear> .
+
+:arg2-1442-1442-1442-1437-1439-1439-1439-1439-1439-1439-1416-1416-1416-1416-1387-1387-1387-1387-708_founding_year_of_314 lemon:marker :founding_year_of_314_form_preposition .
+## Prepositions ##
+:founding_year_of_314_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

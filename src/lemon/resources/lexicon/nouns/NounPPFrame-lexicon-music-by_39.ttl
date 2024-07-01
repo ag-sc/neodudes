@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :music-by_39 ;
+  lemon:entry    :music-by_39_form_preposition .
+
+:music-by_39 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :music-by_39_form ;
+  lemon:otherForm  :music-by_39_singular ;
+  lemon:otherForm  :music-by_39_plural ;
+  lemon:sense          :music-by_39_sense_1 ;
+  lemon:synBehavior    :music-by_39_nounpp .
+
+:music-by_39_form a lemon:Form ;
+  lemon:writtenRep "music"@en .
+
+:music-by_39_singular a    lemon:Form ;
+  lemon:writtenRep "music"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:music-by_39_plural a   lemon:Form ;
+  lemon:writtenRep "musics"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:music-by_39_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-308-308-307-307-306-306-306-306-306-306-299-299-299-299-294-294-294-294-146-146-232_music-by_39 ;
+  lexinfo:prepositionalAdjunct :arg2-308-308-307-307-306-306-306-306-306-306-299-299-299-299-294-294-294-294-146-146-232_music-by_39 .
+
+:music-by_39_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :music-by_39_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/musicBy> ;
+  lemon:subjOfProp          :arg2-308-308-307-307-306-306-306-306-306-306-299-299-299-299-294-294-294-294-146-146-232_music-by_39 ;
+  lemon:objOfProp           :arg1-308-308-307-307-306-306-306-306-306-306-299-299-299-299-294-294-294-294-146-146-232_music-by_39 ;
+  lemon:condition           :music-by_39_sense_1_condition .
+
+:music-by_39_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-308-308-307-307-306-306-306-306-306-306-299-299-299-299-294-294-294-294-146-146-232_music-by_39 lemon:marker :music-by_39_form_preposition .
+## Prepositions ##
+:music-by_39_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

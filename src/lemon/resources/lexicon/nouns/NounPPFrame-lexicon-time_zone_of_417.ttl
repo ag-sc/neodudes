@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :time_zone_of_417 ;
+  lemon:entry    :time_zone_of_417_form_preposition .
+
+:time_zone_of_417 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :time_zone_of_417_form ;
+  lemon:otherForm  :time_zone_of_417_singular ;
+  lemon:otherForm  :time_zone_of_417_plural ;
+  lemon:sense          :time_zone_of_417_sense_1 ;
+  lemon:synBehavior    :time_zone_of_417_nounpp .
+
+:time_zone_of_417_form a lemon:Form ;
+  lemon:writtenRep "time zone"@en .
+
+:time_zone_of_417_singular a    lemon:Form ;
+  lemon:writtenRep "time zone"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:time_zone_of_417_plural a   lemon:Form ;
+  lemon:writtenRep "time zones"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:time_zone_of_417_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-36-36-36-37-37-37-37-37-37-37-37-37-37-37-37-37-37-37-13_time_zone_of_417 ;
+  lexinfo:prepositionalAdjunct :arg2-36-36-36-37-37-37-37-37-37-37-37-37-37-37-37-37-37-37-13_time_zone_of_417 .
+
+:time_zone_of_417_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :time_zone_of_417_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-36-36-36-37-37-37-37-37-37-37-37-37-37-37-37-37-37-37-13_time_zone_of_417 ;
+  lemon:objOfProp           :arg1-36-36-36-37-37-37-37-37-37-37-37-37-37-37-37-37-37-37-13_time_zone_of_417 ;
+  lemon:condition           :time_zone_of_417_sense_1_condition .
+
+:time_zone_of_417_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-36-36-36-37-37-37-37-37-37-37-37-37-37-37-37-37-37-37-13_time_zone_of_417 lemon:marker :time_zone_of_417_form_preposition .
+## Prepositions ##
+:time_zone_of_417_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

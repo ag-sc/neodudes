@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :baronet_147_sense_1_res ;
+  lemon:entry    :baronet_147 .
+
+:baronet_147 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :baronet_147_form ;
+  lemon:otherForm  :baronet_147_singular ;
+  lemon:otherForm  :baronet_147_plural ;
+  lemon:sense          :baronet_147_sense_1 ;
+  lemon:synBehavior    :baronet_147_predFrame .
+
+:baronet_147_form
+ lemon:writtenRep "baronet"@en .
+
+:baronet_147_singular a    lemon:Form ;
+  lemon:writtenRep "baronet"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:baronet_147_plural a   lemon:Form ;
+  lemon:writtenRep "baronets"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:baronet_147_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :baronet_147_sense_1_res ;
+  lemon:isA       :baronet_147_PredSynArg .
+
+:baronet_147_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Baronet> .

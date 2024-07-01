@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :high_1_51 ;
+  lemon:entry    :form_high_1_51_preposition ;
+  lemon:entry    :high_1_51_res .
+
+:high_1_51 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_high_1_51 ;
+  lemon:otherForm      :form_high_1_51_comperative ;
+  lemon:otherForm      :form_high_1_51_superlative ;
+  lemon:sense          :high_1_51_sense_1 ;
+  lemon:synBehavior    :high_1_51_predFrame .
+
+:form_high_1_51 lemon:writtenRep "high"@en .
+
+:form_high_1_51_comperative lemon:writtenRep "higher"@en .
+
+:form_high_1_51_superlative lemon:writtenRep "highest"@en .
+
+:high_1_51_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :high_1_51_PredSynArg .
+
+:high_1_51_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :high_1_51_res ;
+  lemon:isA       :high_1_51_PredSynArg ;
+  lemon:condition :high_1_51_sense_1_condition .
+
+:high_1_51_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/elevation> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:high_1_51_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange    <http://www.w3.org/2001/XMLSchema#double> .
+
+## Prepositions ##
+:form_high_1_51_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

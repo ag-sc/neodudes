@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :father_of_2_48 ;
+  lemon:entry    :father_of_2_48_form_preposition .
+
+:father_of_2_48 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :father_of_2_48_form ;
+  lemon:otherForm  :father_of_2_48_singular ;
+  lemon:otherForm  :father_of_2_48_plural ;
+  lemon:sense          :father_of_2_48_sense_1 ;
+  lemon:synBehavior    :father_of_2_48_nounpp .
+
+:father_of_2_48_form a lemon:Form ;
+  lemon:writtenRep "father"@en .
+
+:father_of_2_48_singular a    lemon:Form ;
+  lemon:writtenRep "father"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:father_of_2_48_plural a   lemon:Form ;
+  lemon:writtenRep "fathers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:father_of_2_48_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-784-784-784-782-781-781-781-781-781-781-766-766-766-766-749-749-749-749-378-378-702_father_of_2_48 ;
+  lexinfo:prepositionalAdjunct :arg2-784-784-784-782-781-781-781-781-781-781-766-766-766-766-749-749-749-749-378-378-702_father_of_2_48 .
+
+:father_of_2_48_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :father_of_2_48_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-784-784-784-782-781-781-781-781-781-781-766-766-766-766-749-749-749-749-378-378-702_father_of_2_48 ;
+  lemon:objOfProp           :arg1-784-784-784-782-781-781-781-781-781-781-766-766-766-766-749-749-749-749-378-378-702_father_of_2_48 ;
+  lemon:condition           :father_of_2_48_sense_1_condition .
+
+:father_of_2_48_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-784-784-784-782-781-781-781-781-781-781-766-766-766-766-749-749-749-749-378-378-702_father_of_2_48 lemon:marker :father_of_2_48_form_preposition .
+## Prepositions ##
+:father_of_2_48_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

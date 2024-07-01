@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lebanese_117_106_sense_1_res ;
+  lemon:entry    :lebanese_117_106 .
+
+:lebanese_117_106 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :lebanese_117_106_lemma ;
+  lemon:sense          :lebanese_117_106_sense_1 ;
+  lemon:synBehavior    :lebanese_117_106_attrFrame, :lebanese_117_106_predFrame .
+
+:lebanese_117_106_lemma lemon:writtenRep "Lebanese"@en .
+
+:lebanese_117_106_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :lebanese_117_106_PredSynArg .
+
+:lebanese_117_106_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :lebanese_117_106_AttrSynArg .
+
+:lebanese_117_106_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :lebanese_117_106_sense_1_res ;
+  lemon:isA       :lebanese_117_106_AttrSynArg, :lebanese_117_106_PredSynArg .
+
+:lebanese_117_106_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Lebanon> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :horse_rider_145_sense_1_res ;
+  lemon:entry    :horse_rider_145 .
+
+:horse_rider_145 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :horse_rider_145_form ;
+  lemon:otherForm  :horse_rider_145_singular ;
+  lemon:otherForm  :horse_rider_145_plural ;
+  lemon:sense          :horse_rider_145_sense_1 ;
+  lemon:synBehavior    :horse_rider_145_predFrame .
+
+:horse_rider_145_form
+ lemon:writtenRep "horse rider"@en .
+
+:horse_rider_145_singular a    lemon:Form ;
+  lemon:writtenRep "horse rider"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:horse_rider_145_plural a   lemon:Form ;
+  lemon:writtenRep "horse riders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:horse_rider_145_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :horse_rider_145_sense_1_res ;
+  lemon:isA       :horse_rider_145_PredSynArg .
+
+:horse_rider_145_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/HorseRider> .

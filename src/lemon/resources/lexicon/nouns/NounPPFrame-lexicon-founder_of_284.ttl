@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founder_of_284 ;
+  lemon:entry    :founder_of_284_form_preposition .
+
+:founder_of_284 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :founder_of_284_form ;
+  lemon:otherForm  :founder_of_284_singular ;
+  lemon:otherForm  :founder_of_284_plural ;
+  lemon:sense          :founder_of_284_sense_1 ;
+  lemon:sense          :founder_of_284_sense_2 ;
+  lemon:synBehavior    :founder_of_284_nounpp .
+
+:founder_of_284_form a lemon:Form ;
+  lemon:writtenRep "founder"@en .
+
+:founder_of_284_singular a    lemon:Form ;
+  lemon:writtenRep "founder"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:founder_of_284_plural a   lemon:Form ;
+  lemon:writtenRep "founders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:founder_of_284_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 ;
+  lexinfo:prepositionalAdjunct :arg2-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 .
+
+:founder_of_284_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founder_of_284_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp          :arg2-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 ;
+  lemon:objOfProp           :arg1-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 ;
+  lemon:condition           :founder_of_284_sense_1_condition .
+
+:founder_of_284_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/BroadcastNetwork> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Company> .
+
+:founder_of_284_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founder_of_284_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp          :arg2-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 ;
+  lemon:objOfProp           :arg1-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 ;
+  lemon:condition           :founder_of_284_sense_2_condition .
+
+:founder_of_284_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/BroadcastNetwork> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Company> .
+
+:arg2-57-57-57-58-58-58-58-58-58-58-56-56-56-56-56-56-56-56-22_founder_of_284 lemon:marker :founder_of_284_form_preposition .
+## Prepositions ##
+:founder_of_284_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

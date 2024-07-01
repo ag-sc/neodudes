@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :protein_238_sense_1_res ;
+  lemon:entry    :protein_238 .
+
+:protein_238 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :protein_238_form ;
+  lemon:otherForm  :protein_238_singular ;
+  lemon:otherForm  :protein_238_plural ;
+  lemon:sense          :protein_238_sense_1 ;
+  lemon:synBehavior    :protein_238_predFrame .
+
+:protein_238_form
+ lemon:writtenRep "protein"@en .
+
+:protein_238_singular a    lemon:Form ;
+  lemon:writtenRep "protein"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:protein_238_plural a   lemon:Form ;
+  lemon:writtenRep "proteins"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:protein_238_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :protein_238_sense_1_res ;
+  lemon:isA       :protein_238_PredSynArg .
+
+:protein_238_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Protein> .

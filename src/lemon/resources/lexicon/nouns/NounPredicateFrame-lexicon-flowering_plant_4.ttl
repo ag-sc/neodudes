@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :flowering_plant_4_sense_1_res ;
+  lemon:entry    :flowering_plant_4 .
+
+:flowering_plant_4 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :flowering_plant_4_form ;
+  lemon:otherForm  :flowering_plant_4_singular ;
+  lemon:otherForm  :flowering_plant_4_plural ;
+  lemon:sense          :flowering_plant_4_sense_1 ;
+  lemon:synBehavior    :flowering_plant_4_predFrame .
+
+:flowering_plant_4_form
+ lemon:writtenRep "flowering plant"@en .
+
+:flowering_plant_4_singular a    lemon:Form ;
+  lemon:writtenRep "flowering plant"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:flowering_plant_4_plural a   lemon:Form ;
+  lemon:writtenRep "flowering plants"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:flowering_plant_4_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :flowering_plant_4_sense_1_res ;
+  lemon:isA       :flowering_plant_4_PredSynArg .
+
+:flowering_plant_4_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/FloweringPlant> .

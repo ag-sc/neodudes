@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :historic_place_496_sense_1_res ;
+  lemon:entry    :historic_place_496 .
+
+:historic_place_496 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :historic_place_496_form ;
+  lemon:otherForm  :historic_place_496_singular ;
+  lemon:otherForm  :historic_place_496_plural ;
+  lemon:sense          :historic_place_496_sense_1 ;
+  lemon:synBehavior    :historic_place_496_predFrame .
+
+:historic_place_496_form
+ lemon:writtenRep "historic place"@en .
+
+:historic_place_496_singular a    lemon:Form ;
+  lemon:writtenRep "historic place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:historic_place_496_plural a   lemon:Form ;
+  lemon:writtenRep "historic places"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:historic_place_496_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :historic_place_496_sense_1_res ;
+  lemon:isA       :historic_place_496_PredSynArg .
+
+:historic_place_496_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/HistoricPlace> .

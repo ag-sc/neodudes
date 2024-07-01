@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sumo_wrestler_954_sense_1_res ;
+  lemon:entry    :sumo_wrestler_954 .
+
+:sumo_wrestler_954 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :sumo_wrestler_954_form ;
+  lemon:otherForm  :sumo_wrestler_954_singular ;
+  lemon:otherForm  :sumo_wrestler_954_plural ;
+  lemon:sense          :sumo_wrestler_954_sense_1 ;
+  lemon:synBehavior    :sumo_wrestler_954_predFrame .
+
+:sumo_wrestler_954_form
+ lemon:writtenRep "sumo wrestler"@en .
+
+:sumo_wrestler_954_singular a    lemon:Form ;
+  lemon:writtenRep "sumo wrestler"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:sumo_wrestler_954_plural a   lemon:Form ;
+  lemon:writtenRep "sumo wrestlers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:sumo_wrestler_954_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sumo_wrestler_954_sense_1_res ;
+  lemon:isA       :sumo_wrestler_954_PredSynArg .
+
+:sumo_wrestler_954_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SumoWrestler> .

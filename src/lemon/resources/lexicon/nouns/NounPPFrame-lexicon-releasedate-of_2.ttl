@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :releasedate-of_2 ;
+  lemon:entry    :releasedate-of_2_form_preposition .
+
+:releasedate-of_2 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :releasedate-of_2_form ;
+  lemon:otherForm  :releasedate-of_2_singular ;
+  lemon:otherForm  :releasedate-of_2_plural ;
+  lemon:sense          :releasedate-of_2_sense_1 ;
+  lemon:synBehavior    :releasedate-of_2_nounpp .
+
+:releasedate-of_2_form a lemon:Form ;
+  lemon:writtenRep "release date"@en .
+
+:releasedate-of_2_singular a    lemon:Form ;
+  lemon:writtenRep "release date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:releasedate-of_2_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:releasedate-of_2_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-669-669-669-667-666-666-666-666-666-666-654-654-654-654-641-641-641-641-332-332-228_releasedate-of_2 ;
+  lexinfo:prepositionalAdjunct :arg2-669-669-669-667-666-666-666-666-666-666-654-654-654-654-641-641-641-641-332-332-228_releasedate-of_2 .
+
+:releasedate-of_2_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :releasedate-of_2_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/releaseDate> ;
+  lemon:subjOfProp          :arg2-669-669-669-667-666-666-666-666-666-666-654-654-654-654-641-641-641-641-332-332-228_releasedate-of_2 ;
+  lemon:objOfProp           :arg1-669-669-669-667-666-666-666-666-666-666-654-654-654-654-641-641-641-641-332-332-228_releasedate-of_2 ;
+  lemon:condition           :releasedate-of_2_sense_1_condition .
+
+:releasedate-of_2_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-669-669-669-667-666-666-666-666-666-666-654-654-654-654-641-641-641-641-332-332-228_releasedate-of_2 lemon:marker :releasedate-of_2_form_preposition .
+## Prepositions ##
+:releasedate-of_2_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

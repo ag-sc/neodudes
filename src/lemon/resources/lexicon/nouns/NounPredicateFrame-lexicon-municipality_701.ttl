@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :municipality_701_sense_1_res ;
+  lemon:entry    :municipality_701 .
+
+:municipality_701 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :municipality_701_form ;
+  lemon:otherForm  :municipality_701_singular ;
+  lemon:otherForm  :municipality_701_plural ;
+  lemon:sense          :municipality_701_sense_1 ;
+  lemon:synBehavior    :municipality_701_predFrame .
+
+:municipality_701_form
+ lemon:writtenRep "municipality"@en .
+
+:municipality_701_singular a    lemon:Form ;
+  lemon:writtenRep "municipality"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:municipality_701_plural a   lemon:Form ;
+  lemon:writtenRep "municipalities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:municipality_701_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :municipality_701_sense_1_res ;
+  lemon:isA       :municipality_701_PredSynArg .
+
+:municipality_701_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Municipality> .

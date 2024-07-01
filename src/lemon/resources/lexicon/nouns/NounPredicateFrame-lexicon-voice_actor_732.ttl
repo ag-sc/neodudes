@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :voice_actor_732_sense_1_res ;
+  lemon:entry    :voice_actor_732 .
+
+:voice_actor_732 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :voice_actor_732_form ;
+  lemon:otherForm  :voice_actor_732_singular ;
+  lemon:otherForm  :voice_actor_732_plural ;
+  lemon:sense          :voice_actor_732_sense_1 ;
+  lemon:synBehavior    :voice_actor_732_predFrame .
+
+:voice_actor_732_form
+ lemon:writtenRep "voice actor"@en .
+
+:voice_actor_732_singular a    lemon:Form ;
+  lemon:writtenRep "voice actor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:voice_actor_732_plural a   lemon:Form ;
+  lemon:writtenRep "voice actors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:voice_actor_732_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :voice_actor_732_sense_1_res ;
+  lemon:isA       :voice_actor_732_PredSynArg .
+
+:voice_actor_732_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/VoiceActor> .

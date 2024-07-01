@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :hockey_team_245_sense_1_res ;
+  lemon:entry    :hockey_team_245 .
+
+:hockey_team_245 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :hockey_team_245_form ;
+  lemon:otherForm  :hockey_team_245_singular ;
+  lemon:otherForm  :hockey_team_245_plural ;
+  lemon:sense          :hockey_team_245_sense_1 ;
+  lemon:synBehavior    :hockey_team_245_predFrame .
+
+:hockey_team_245_form
+ lemon:writtenRep "hockey team"@en .
+
+:hockey_team_245_singular a    lemon:Form ;
+  lemon:writtenRep "hockey team"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:hockey_team_245_plural a   lemon:Form ;
+  lemon:writtenRep "hockey teams"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:hockey_team_245_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :hockey_team_245_sense_1_res ;
+  lemon:isA       :hockey_team_245_PredSynArg .
+
+:hockey_team_245_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/HockeyTeam> .

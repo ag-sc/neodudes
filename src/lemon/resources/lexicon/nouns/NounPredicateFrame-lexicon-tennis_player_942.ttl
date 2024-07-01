@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tennis_player_942_sense_1_res ;
+  lemon:entry    :tennis_player_942 .
+
+:tennis_player_942 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :tennis_player_942_form ;
+  lemon:otherForm  :tennis_player_942_singular ;
+  lemon:otherForm  :tennis_player_942_plural ;
+  lemon:sense          :tennis_player_942_sense_1 ;
+  lemon:synBehavior    :tennis_player_942_predFrame .
+
+:tennis_player_942_form
+ lemon:writtenRep "tennis player"@en .
+
+:tennis_player_942_singular a    lemon:Form ;
+  lemon:writtenRep "tennis player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:tennis_player_942_plural a   lemon:Form ;
+  lemon:writtenRep "tennis players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:tennis_player_942_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tennis_player_942_sense_1_res ;
+  lemon:isA       :tennis_player_942_PredSynArg .
+
+:tennis_player_942_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/TennisPlayer> .

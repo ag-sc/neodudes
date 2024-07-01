@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :flow_into ;
+  lemon:entry    :form_flow_into_preposition .
+
+:flow_into a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_flow_into ;
+  lemon:otherForm      :form_flow_into_present3rd ;
+  lemon:otherForm      :form_flow_into_past ;
+  lemon:otherForm      :form_flow_into_perfect ;
+  lemon:sense          :flow_into_sense_1 ;
+  lemon:synBehavior    :flow_into_frame .
+
+:form_flow_into a           lemon:Form ;
+  lemon:writtenRep     "flow"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_flow_into_present3rd a      lemon:Form ;
+  lemon:writtenRep "flows"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_flow_into_past a lemon:Form ;
+  lemon:writtenRep  "flowed"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_flow_into_perfect a   lemon:Form ;
+  lemon:writtenRep "flown"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:flow_into_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :flow_into_subj ;
+  lexinfo:prepositionalAdjunct :flow_into_obj .
+
+:flow_into_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :flow_into_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/inflow> ;
+  lemon:subjOfProp  :flow_into_subj ;
+  lemon:objOfProp   :flow_into_obj ;
+  lemon:condition   :flow_into_sense_1_condition .
+
+:flow_into_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/River> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/River> .
+
+
+:flow_into_obj lemon:marker :form_flow_into_preposition .
+
+## Prepositions ##
+:form_flow_into_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "into"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

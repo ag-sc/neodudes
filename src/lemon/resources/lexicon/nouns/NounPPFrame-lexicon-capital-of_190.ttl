@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :capital-of_190 ;
+  lemon:entry    :capital-of_190_form_preposition .
+
+:capital-of_190 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :capital-of_190_form ;
+  lemon:otherForm  :capital-of_190_singular ;
+  lemon:otherForm  :capital-of_190_plural ;
+  lemon:sense          :capital-of_190_sense_1 ;
+  lemon:synBehavior    :capital-of_190_nounpp .
+
+:capital-of_190_form a lemon:Form ;
+  lemon:writtenRep "capital"@en .
+
+:capital-of_190_singular a    lemon:Form ;
+  lemon:writtenRep "capital"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:capital-of_190_plural a   lemon:Form ;
+  lemon:writtenRep "capitals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:capital-of_190_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-936-936-936-933-932-932-932-932-932-932-914-914-914-914-891-891-891-891-445-445-426_capital-of_190 ;
+  lexinfo:prepositionalAdjunct :arg2-936-936-936-933-932-932-932-932-932-932-914-914-914-914-891-891-891-891-445-445-426_capital-of_190 .
+
+:capital-of_190_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :capital-of_190_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/capital> ;
+  lemon:subjOfProp          :arg2-936-936-936-933-932-932-932-932-932-932-914-914-914-914-891-891-891-891-445-445-426_capital-of_190 ;
+  lemon:objOfProp           :arg1-936-936-936-933-932-932-932-932-932-932-914-914-914-914-891-891-891-891-445-445-426_capital-of_190 ;
+  lemon:condition           :capital-of_190_sense_1_condition .
+
+:capital-of_190_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-936-936-936-933-932-932-932-932-932-932-914-914-914-914-891-891-891-891-445-445-426_capital-of_190 lemon:marker :capital-of_190_form_preposition .
+## Prepositions ##
+:capital-of_190_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

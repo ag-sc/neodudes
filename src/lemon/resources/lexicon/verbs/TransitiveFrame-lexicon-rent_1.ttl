@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_rent_1 ;
+  lemon:entry    :rent_1ed ;
+  lemon:entry    :form_rent_1_preposition .
+
+:to_rent_1 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_rent_1 ;
+  lemon:otherForm      :form_rent_1s ;
+  lemon:otherForm      :form_rent_1ed ;
+  lemon:otherForm      :form_rent_1perfect ;
+  lemon:sense          :rent_1_sense_1 ;
+  lemon:synBehavior    :rent_1_frame_transitive .
+
+:form_rent_1 a         lemon:Form ;
+  lemon:writtenRep     "rent"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_rent_1s a    lemon:Form ;
+  lemon:writtenRep "rents"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_rent_1ed a   lemon:Form ;
+  lemon:writtenRep "rented"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_rent_1perfect a   lemon:Form ;
+  lemon:writtenRep "rented"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:rent_1_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :rent_1_subj ;
+  lexinfo:directObject     :rent_1_obj .
+
+:rent_1_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :rent_1_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/tenant> ;
+  lemon:subjOfProp  :rent_1_obj ;
+  lemon:objOfProp   :rent_1_subj ;
+  lemon:condition   :rent_1_sense_1_condition .
+
+
+:rent_1_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Organisation> .
+
+
+:rent_1_obj lemon:marker :form_rent_1_preposition .
+
+## Prepositions ##
+:form_rent_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :squash_player_786_sense_1_res ;
+  lemon:entry    :squash_player_786 .
+
+:squash_player_786 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :squash_player_786_form ;
+  lemon:otherForm  :squash_player_786_singular ;
+  lemon:otherForm  :squash_player_786_plural ;
+  lemon:sense          :squash_player_786_sense_1 ;
+  lemon:synBehavior    :squash_player_786_predFrame .
+
+:squash_player_786_form
+ lemon:writtenRep "squash player"@en .
+
+:squash_player_786_singular a    lemon:Form ;
+  lemon:writtenRep "squash player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:squash_player_786_plural a   lemon:Form ;
+  lemon:writtenRep "squash players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:squash_player_786_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :squash_player_786_sense_1_res ;
+  lemon:isA       :squash_player_786_PredSynArg .
+
+:squash_player_786_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SquashPlayer> .

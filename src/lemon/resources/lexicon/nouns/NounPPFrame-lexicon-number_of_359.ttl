@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :number_of_359 ;
+  lemon:entry    :number_of_359_form_preposition .
+
+:number_of_359 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :number_of_359_form ;
+  lemon:otherForm  :number_of_359_singular ;
+  lemon:otherForm  :number_of_359_plural ;
+  lemon:sense          :number_of_359_sense_1 ;
+  lemon:synBehavior    :number_of_359_nounpp .
+
+:number_of_359_form a lemon:Form ;
+  lemon:writtenRep "number of locations"@en .
+
+:number_of_359_singular a    lemon:Form ;
+  lemon:writtenRep "number of locations"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:number_of_359_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:number_of_359_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-624-624-624-622-621-621-621-621-621-621-609-609-609-609-597-597-597-597-288_number_of_359 ;
+  lexinfo:prepositionalAdjunct :arg2-624-624-624-622-621-621-621-621-621-621-609-609-609-609-597-597-597-597-288_number_of_359 .
+
+:number_of_359_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :number_of_359_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfLocations> ;
+  lemon:subjOfProp          :arg2-624-624-624-622-621-621-621-621-621-621-609-609-609-609-597-597-597-597-288_number_of_359 ;
+  lemon:objOfProp           :arg1-624-624-624-622-621-621-621-621-621-621-609-609-609-609-597-597-597-597-288_number_of_359 ;
+  lemon:condition           :number_of_359_sense_1_condition .
+
+:number_of_359_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-624-624-624-622-621-621-621-621-621-621-609-609-609-609-597-597-597-597-288_number_of_359 lemon:marker :number_of_359_form_preposition .
+## Prepositions ##
+:number_of_359_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :birthyear_of_465 ;
+  lemon:entry    :birthyear_of_465_form_preposition .
+
+:birthyear_of_465 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :birthyear_of_465_form ;
+  lemon:otherForm  :birthyear_of_465_singular ;
+  lemon:otherForm  :birthyear_of_465_plural ;
+  lemon:sense          :birthyear_of_465_sense_1 ;
+  lemon:synBehavior    :birthyear_of_465_nounpp .
+
+:birthyear_of_465_form a lemon:Form ;
+  lemon:writtenRep "birth year"@en .
+
+:birthyear_of_465_singular a    lemon:Form ;
+  lemon:writtenRep "birth year"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:birthyear_of_465_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:birthyear_of_465_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-824-824-824-822-821-821-821-821-821-821-805-805-805-805-784-784-784-784-387_birthyear_of_465 ;
+  lexinfo:prepositionalAdjunct :arg2-824-824-824-822-821-821-821-821-821-821-805-805-805-805-784-784-784-784-387_birthyear_of_465 .
+
+:birthyear_of_465_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :birthyear_of_465_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/birthYear> ;
+  lemon:subjOfProp          :arg2-824-824-824-822-821-821-821-821-821-821-805-805-805-805-784-784-784-784-387_birthyear_of_465 ;
+  lemon:objOfProp           :arg1-824-824-824-822-821-821-821-821-821-821-805-805-805-805-784-784-784-784-387_birthyear_of_465 ;
+  lemon:condition           :birthyear_of_465_sense_1_condition .
+
+:birthyear_of_465_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#gYear> .
+
+:arg2-824-824-824-822-821-821-821-821-821-821-805-805-805-805-784-784-784-784-387_birthyear_of_465 lemon:marker :birthyear_of_465_form_preposition .
+## Prepositions ##
+:birthyear_of_465_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

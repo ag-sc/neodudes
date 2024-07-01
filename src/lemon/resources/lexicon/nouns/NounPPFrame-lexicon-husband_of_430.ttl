@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :husband_of_430 ;
+  lemon:entry    :husband_of_430_form_preposition .
+
+:husband_of_430 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :husband_of_430_form ;
+  lemon:otherForm  :husband_of_430_singular ;
+  lemon:otherForm  :husband_of_430_plural ;
+  lemon:sense          :husband_of_430_sense_1 ;
+  lemon:synBehavior    :husband_of_430_nounpp .
+
+:husband_of_430_form a lemon:Form ;
+  lemon:writtenRep "husband_of"@en .
+
+:husband_of_430_singular a    lemon:Form ;
+  lemon:writtenRep "husband_of"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:husband_of_430_plural a   lemon:Form ;
+  lemon:writtenRep "husband_of"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:husband_of_430_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-862-862-862-859-858-858-858-858-858-858-842-842-842-842-821-821-821-821-408_husband_of_430 ;
+  lexinfo:prepositionalAdjunct :arg2-862-862-862-859-858-858-858-858-858-858-842-842-842-842-821-821-821-821-408_husband_of_430 .
+
+:husband_of_430_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :husband_of_430_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/spouse> ;
+  lemon:subjOfProp          :arg2-862-862-862-859-858-858-858-858-858-858-842-842-842-842-821-821-821-821-408_husband_of_430 ;
+  lemon:objOfProp           :arg1-862-862-862-859-858-858-858-858-858-858-842-842-842-842-821-821-821-821-408_husband_of_430 ;
+  lemon:condition           :husband_of_430_sense_1_condition .
+
+:husband_of_430_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-862-862-862-859-858-858-858-858-858-858-842-842-842-842-821-821-821-821-408_husband_of_430 lemon:marker :husband_of_430_form_preposition .
+## Prepositions ##
+:husband_of_430_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

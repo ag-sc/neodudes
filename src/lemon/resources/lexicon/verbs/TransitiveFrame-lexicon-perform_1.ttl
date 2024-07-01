@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_perform_1 ;
+  lemon:entry    :perform_1ed ;
+  lemon:entry    :form_perform_1_preposition .
+
+:to_perform_1 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_perform_1 ;
+  lemon:otherForm      :form_perform_1s ;
+  lemon:otherForm      :form_perform_1ed ;
+  lemon:otherForm      :form_perform_1perfect ;
+  lemon:sense          :perform_1_sense_1 ;
+  lemon:synBehavior    :perform_1_frame_transitive .
+
+:form_perform_1 a         lemon:Form ;
+  lemon:writtenRep     "perform"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_perform_1s a    lemon:Form ;
+  lemon:writtenRep "performs"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_perform_1ed a   lemon:Form ;
+  lemon:writtenRep "performed"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_perform_1perfect a   lemon:Form ;
+  lemon:writtenRep "performed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:perform_1_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :perform_1_subj ;
+  lexinfo:directObject     :perform_1_obj .
+
+:perform_1_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :perform_1_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/artist> ;
+  lemon:subjOfProp  :perform_1_obj ;
+  lemon:objOfProp   :perform_1_subj ;
+  lemon:condition   :perform_1_sense_1_condition .
+
+
+:perform_1_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/MusicalWork> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Agent> .
+
+
+:perform_1_obj lemon:marker :form_perform_1_preposition .
+
+## Prepositions ##
+:form_perform_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

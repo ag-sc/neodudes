@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :kenyan_109_113_sense_1_res ;
+  lemon:entry    :kenyan_109_113 .
+
+:kenyan_109_113 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :kenyan_109_113_lemma ;
+  lemon:sense          :kenyan_109_113_sense_1 ;
+  lemon:synBehavior    :kenyan_109_113_attrFrame, :kenyan_109_113_predFrame .
+
+:kenyan_109_113_lemma lemon:writtenRep "Kenyan"@en .
+
+:kenyan_109_113_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :kenyan_109_113_PredSynArg .
+
+:kenyan_109_113_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :kenyan_109_113_AttrSynArg .
+
+:kenyan_109_113_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :kenyan_109_113_sense_1_res ;
+  lemon:isA       :kenyan_109_113_AttrSynArg, :kenyan_109_113_PredSynArg .
+
+:kenyan_109_113_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Kenya> .

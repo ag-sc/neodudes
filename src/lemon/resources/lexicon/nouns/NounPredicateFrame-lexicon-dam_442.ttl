@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :dam_442_sense_1_res ;
+  lemon:entry    :dam_442 .
+
+:dam_442 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :dam_442_form ;
+  lemon:otherForm  :dam_442_singular ;
+  lemon:otherForm  :dam_442_plural ;
+  lemon:sense          :dam_442_sense_1 ;
+  lemon:synBehavior    :dam_442_predFrame .
+
+:dam_442_form
+ lemon:writtenRep "dam"@en .
+
+:dam_442_singular a    lemon:Form ;
+  lemon:writtenRep "dam"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:dam_442_plural a   lemon:Form ;
+  lemon:writtenRep "dams"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:dam_442_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :dam_442_sense_1_res ;
+  lemon:isA       :dam_442_PredSynArg .
+
+:dam_442_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Dam> .

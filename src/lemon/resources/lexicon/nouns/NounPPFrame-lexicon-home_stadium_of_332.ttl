@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :home_stadium_of_332 ;
+  lemon:entry    :home_stadium_of_332_form_preposition .
+
+:home_stadium_of_332 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :home_stadium_of_332_form ;
+  lemon:otherForm  :home_stadium_of_332_singular ;
+  lemon:otherForm  :home_stadium_of_332_plural ;
+  lemon:sense          :home_stadium_of_332_sense_1 ;
+  lemon:synBehavior    :home_stadium_of_332_nounpp .
+
+:home_stadium_of_332_form a lemon:Form ;
+  lemon:writtenRep "home stadium"@en .
+
+:home_stadium_of_332_singular a    lemon:Form ;
+  lemon:writtenRep "home stadium"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:home_stadium_of_332_plural a   lemon:Form ;
+  lemon:writtenRep "home stadiums"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:home_stadium_of_332_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1291-1291-1290-1285-1287-1287-1287-1287-1287-1287-1266-1266-1266-1266-1239-1239-1239-1239-622_home_stadium_of_332 ;
+  lexinfo:prepositionalAdjunct :arg2-1291-1291-1290-1285-1287-1287-1287-1287-1287-1287-1266-1266-1266-1266-1239-1239-1239-1239-622_home_stadium_of_332 .
+
+:home_stadium_of_332_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :home_stadium_of_332_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/ground> ;
+  lemon:subjOfProp          :arg2-1291-1291-1290-1285-1287-1287-1287-1287-1287-1287-1266-1266-1266-1266-1239-1239-1239-1239-622_home_stadium_of_332 ;
+  lemon:objOfProp           :arg1-1291-1291-1290-1285-1287-1287-1287-1287-1287-1287-1266-1266-1266-1266-1239-1239-1239-1239-622_home_stadium_of_332 ;
+  lemon:condition           :home_stadium_of_332_sense_1_condition .
+
+:home_stadium_of_332_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/SportsClub> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Stadium> .
+
+:arg2-1291-1291-1290-1285-1287-1287-1287-1287-1287-1287-1266-1266-1266-1266-1239-1239-1239-1239-622_home_stadium_of_332 lemon:marker :home_stadium_of_332_form_preposition .
+## Prepositions ##
+:home_stadium_of_332_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

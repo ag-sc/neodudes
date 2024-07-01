@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :author_of_87 ;
+  lemon:entry    :author_of_87_form_preposition .
+
+:author_of_87 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :author_of_87_form ;
+  lemon:otherForm  :author_of_87_singular ;
+  lemon:otherForm  :author_of_87_plural ;
+  lemon:sense          :author_of_87_sense_1 ;
+  lemon:synBehavior    :author_of_87_nounpp .
+
+:author_of_87_form a lemon:Form ;
+  lemon:writtenRep "author"@en .
+
+:author_of_87_singular a    lemon:Form ;
+  lemon:writtenRep "author"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:author_of_87_plural a   lemon:Form ;
+  lemon:writtenRep "authors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:author_of_87_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-111-111-111-112-112-112-112-112-112-112-109-109-109-109-108-108-108-108-50-50-628_author_of_87 ;
+  lexinfo:prepositionalAdjunct :arg2-111-111-111-112-112-112-112-112-112-112-109-109-109-109-108-108-108-108-50-50-628_author_of_87 .
+
+:author_of_87_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :author_of_87_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg2-111-111-111-112-112-112-112-112-112-112-109-109-109-109-108-108-108-108-50-50-628_author_of_87 ;
+  lemon:objOfProp           :arg1-111-111-111-112-112-112-112-112-112-112-109-109-109-109-108-108-108-108-50-50-628_author_of_87 ;
+  lemon:condition           :author_of_87_sense_1_condition .
+
+:author_of_87_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-111-111-111-112-112-112-112-112-112-112-109-109-109-109-108-108-108-108-50-50-628_author_of_87 lemon:marker :author_of_87_form_preposition .
+## Prepositions ##
+:author_of_87_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

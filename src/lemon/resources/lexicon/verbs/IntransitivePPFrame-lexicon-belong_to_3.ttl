@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :belong_to_3 ;
+  lemon:entry    :form_belong_to_3_preposition .
+
+:belong_to_3 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_belong_to_3 ;
+  lemon:otherForm      :form_belong_to_3_present3rd ;
+  lemon:otherForm      :form_belong_to_3_past ;
+  lemon:otherForm      :form_belong_to_3_perfect ;
+  lemon:sense          :belong_to_3_sense_1 ;
+  lemon:synBehavior    :belong_to_3_frame .
+
+:form_belong_to_3 a           lemon:Form ;
+  lemon:writtenRep     "belong"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_belong_to_3_present3rd a      lemon:Form ;
+  lemon:writtenRep "belongs"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_belong_to_3_past a lemon:Form ;
+  lemon:writtenRep  "belonged"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_belong_to_3_perfect a   lemon:Form ;
+  lemon:writtenRep "belonged"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:belong_to_3_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :belong_to_3_subj ;
+  lexinfo:prepositionalAdjunct :belong_to_3_obj .
+
+:belong_to_3_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :belong_to_3_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/genre> ;
+  lemon:subjOfProp  :belong_to_3_subj ;
+  lemon:objOfProp   :belong_to_3_obj ;
+  lemon:condition   :belong_to_3_sense_1_condition .
+
+:belong_to_3_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Album> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Genre> .
+
+
+:belong_to_3_obj lemon:marker :form_belong_to_3_preposition .
+
+## Prepositions ##
+:form_belong_to_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "to"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :episode-of_24 ;
+  lemon:entry    :episode-of_24_form_preposition .
+
+:episode-of_24 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :episode-of_24_form ;
+  lemon:otherForm  :episode-of_24_singular ;
+  lemon:otherForm  :episode-of_24_plural ;
+  lemon:sense          :episode-of_24_sense_1 ;
+  lemon:synBehavior    :episode-of_24_nounpp .
+
+:episode-of_24_form a lemon:Form ;
+  lemon:writtenRep "episode"@en .
+
+:episode-of_24_singular a    lemon:Form ;
+  lemon:writtenRep "episode"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:episode-of_24_plural a   lemon:Form ;
+  lemon:writtenRep "episodes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:episode-of_24_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1288-1288-1287-1282-1284-1284-1284-1284-1284-1284-1263-1263-1263-1263-1236-1236-1236-1236-616-616-447_episode-of_24 ;
+  lexinfo:prepositionalAdjunct :arg2-1288-1288-1287-1282-1284-1284-1284-1284-1284-1284-1263-1263-1263-1263-1236-1236-1236-1236-616-616-447_episode-of_24 .
+
+:episode-of_24_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :episode-of_24_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/series> ;
+  lemon:subjOfProp          :arg2-1288-1288-1287-1282-1284-1284-1284-1284-1284-1284-1263-1263-1263-1263-1236-1236-1236-1236-616-616-447_episode-of_24 ;
+  lemon:objOfProp           :arg1-1288-1288-1287-1282-1284-1284-1284-1284-1284-1284-1263-1263-1263-1263-1236-1236-1236-1236-616-616-447_episode-of_24 ;
+  lemon:condition           :episode-of_24_sense_1_condition .
+
+:episode-of_24_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionEpisode> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-1288-1288-1287-1282-1284-1284-1284-1284-1284-1284-1263-1263-1263-1263-1236-1236-1236-1236-616-616-447_episode-of_24 lemon:marker :episode-of_24_form_preposition .
+## Prepositions ##
+:episode-of_24_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :son_of_27 ;
+  lemon:entry    :son_of_27_form_preposition .
+
+:son_of_27 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :son_of_27_form ;
+  lemon:otherForm  :son_of_27_singular ;
+  lemon:otherForm  :son_of_27_plural ;
+  lemon:sense          :son_of_27_sense_1 ;
+  lemon:synBehavior    :son_of_27_nounpp .
+
+:son_of_27_form a lemon:Form ;
+  lemon:writtenRep "son"@en .
+
+:son_of_27_singular a    lemon:Form ;
+  lemon:writtenRep "son"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:son_of_27_plural a   lemon:Form ;
+  lemon:writtenRep "sons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:son_of_27_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-316-316-315-315-314-314-314-314-314-314-307-307-307-307-302-302-302-302-149-149-299_son_of_27 ;
+  lexinfo:prepositionalAdjunct :arg2-316-316-315-315-314-314-314-314-314-314-307-307-307-307-302-302-302-302-149-149-299_son_of_27 .
+
+:son_of_27_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :son_of_27_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-316-316-315-315-314-314-314-314-314-314-307-307-307-307-302-302-302-302-149-149-299_son_of_27 ;
+  lemon:objOfProp           :arg1-316-316-315-315-314-314-314-314-314-314-307-307-307-307-302-302-302-302-149-149-299_son_of_27 ;
+  lemon:condition           :son_of_27_sense_1_condition .
+
+:son_of_27_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-316-316-315-315-314-314-314-314-314-314-307-307-307-307-302-302-302-302-149-149-299_son_of_27 lemon:marker :son_of_27_form_preposition .
+## Prepositions ##
+:son_of_27_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

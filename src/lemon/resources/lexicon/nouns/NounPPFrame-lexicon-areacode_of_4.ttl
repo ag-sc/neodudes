@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :areacode_of_4 ;
+  lemon:entry    :areacode_of_4_form_preposition .
+
+:areacode_of_4 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :areacode_of_4_form ;
+  lemon:otherForm  :areacode_of_4_singular ;
+  lemon:otherForm  :areacode_of_4_plural ;
+  lemon:sense          :areacode_of_4_sense_1 ;
+  lemon:synBehavior    :areacode_of_4_nounpp .
+
+:areacode_of_4_form a lemon:Form ;
+  lemon:writtenRep "area code"@en .
+
+:areacode_of_4_singular a    lemon:Form ;
+  lemon:writtenRep "area code"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:areacode_of_4_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:areacode_of_4_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-234-234-233-234-233-233-233-233-233-233-227-227-227-227-223-223-223-223-105-105-273_areacode_of_4 ;
+  lexinfo:prepositionalAdjunct :arg2-234-234-233-234-233-233-233-233-233-233-227-227-227-227-223-223-223-223-105-105-273_areacode_of_4 .
+
+:areacode_of_4_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :areacode_of_4_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaCode> ;
+  lemon:subjOfProp          :arg2-234-234-233-234-233-233-233-233-233-233-227-227-227-227-223-223-223-223-105-105-273_areacode_of_4 ;
+  lemon:objOfProp           :arg1-234-234-233-234-233-233-233-233-233-233-227-227-227-227-223-223-223-223-105-105-273_areacode_of_4 ;
+  lemon:condition           :areacode_of_4_sense_1_condition .
+
+:areacode_of_4_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-234-234-233-234-233-233-233-233-233-233-227-227-227-227-223-223-223-223-105-105-273_areacode_of_4 lemon:marker :areacode_of_4_form_preposition .
+## Prepositions ##
+:areacode_of_4_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

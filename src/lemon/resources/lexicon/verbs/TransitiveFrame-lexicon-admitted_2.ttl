@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_admitted_2 ;
+  lemon:entry    :admitted_2ed ;
+  lemon:entry    :form_admitted_2_preposition .
+
+:to_admitted_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_admitted_2 ;
+  lemon:otherForm      :form_admitted_2s ;
+  lemon:otherForm      :form_admitted_2ed ;
+  lemon:otherForm      :form_admitted_2perfect ;
+  lemon:sense          :admitted_2_sense_1 ;
+  lemon:synBehavior    :admitted_2_frame_transitive .
+
+:form_admitted_2 a         lemon:Form ;
+  lemon:writtenRep     "admitt"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_admitted_2s a    lemon:Form ;
+  lemon:writtenRep "admittes"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_admitted_2ed a   lemon:Form ;
+  lemon:writtenRep "admitted"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_admitted_2perfect a   lemon:Form ;
+  lemon:writtenRep "admitted"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:admitted_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :admitted_2_subj ;
+  lexinfo:directObject     :admitted_2_obj .
+
+:admitted_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :admitted_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/property/admittancedate> ;
+  lemon:subjOfProp  :admitted_2_obj ;
+  lemon:objOfProp   :admitted_2_subj ;
+  lemon:condition   :admitted_2_sense_1_condition .
+
+
+:admitted_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Settlement> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:admitted_2_obj lemon:marker :form_admitted_2_preposition .
+
+## Prepositions ##
+:form_admitted_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

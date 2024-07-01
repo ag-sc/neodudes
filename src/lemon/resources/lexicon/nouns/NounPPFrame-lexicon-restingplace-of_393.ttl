@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :restingplace-of_393 ;
+  lemon:entry    :restingplace-of_393_form_preposition .
+
+:restingplace-of_393 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :restingplace-of_393_form ;
+  lemon:otherForm  :restingplace-of_393_singular ;
+  lemon:otherForm  :restingplace-of_393_plural ;
+  lemon:sense          :restingplace-of_393_sense_1 ;
+  lemon:synBehavior    :restingplace-of_393_nounpp .
+
+:restingplace-of_393_form a lemon:Form ;
+  lemon:writtenRep "resting place"@en .
+
+:restingplace-of_393_singular a    lemon:Form ;
+  lemon:writtenRep "resting place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:restingplace-of_393_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:restingplace-of_393_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-78-78-78-79-79-79-79-79-79-79-77-77-77-77-77-77-77-77-37_restingplace-of_393 ;
+  lexinfo:prepositionalAdjunct :arg2-78-78-78-79-79-79-79-79-79-79-77-77-77-77-77-77-77-77-37_restingplace-of_393 .
+
+:restingplace-of_393_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :restingplace-of_393_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/restingPlace> ;
+  lemon:subjOfProp          :arg2-78-78-78-79-79-79-79-79-79-79-77-77-77-77-77-77-77-77-37_restingplace-of_393 ;
+  lemon:objOfProp           :arg1-78-78-78-79-79-79-79-79-79-79-77-77-77-77-77-77-77-77-37_restingplace-of_393 ;
+  lemon:condition           :restingplace-of_393_sense_1_condition .
+
+:restingplace-of_393_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-78-78-78-79-79-79-79-79-79-79-77-77-77-77-77-77-77-77-37_restingplace-of_393 lemon:marker :restingplace-of_393_form_preposition .
+## Prepositions ##
+:restingplace-of_393_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

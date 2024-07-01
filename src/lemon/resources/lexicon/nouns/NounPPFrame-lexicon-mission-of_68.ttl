@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mission-of_68 ;
+  lemon:entry    :mission-of_68_form_preposition .
+
+:mission-of_68 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mission-of_68_form ;
+  lemon:otherForm  :mission-of_68_singular ;
+  lemon:otherForm  :mission-of_68_plural ;
+  lemon:sense          :mission-of_68_sense_1 ;
+  lemon:sense          :mission-of_68_sense_2 ;
+  lemon:synBehavior    :mission-of_68_nounpp .
+
+:mission-of_68_form a lemon:Form ;
+  lemon:writtenRep "mission"@en .
+
+:mission-of_68_singular a    lemon:Form ;
+  lemon:writtenRep "mission"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mission-of_68_plural a   lemon:Form ;
+  lemon:writtenRep "missions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mission-of_68_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 ;
+  lexinfo:prepositionalAdjunct :arg2-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 .
+
+:mission-of_68_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mission-of_68_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/programme> ;
+  lemon:subjOfProp          :arg2-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 ;
+  lemon:objOfProp           :arg1-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 ;
+  lemon:condition           :mission-of_68_sense_1_condition .
+
+:mission-of_68_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/TelevisionShow> .
+
+:mission-of_68_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mission-of_68_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/programme> ;
+  lemon:subjOfProp          :arg2-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 ;
+  lemon:objOfProp           :arg1-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 ;
+  lemon:condition           :mission-of_68_sense_2_condition .
+
+:mission-of_68_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/TelevisionShow> .
+
+:arg2-1390-1390-1390-1387-1389-1389-1389-1389-1389-1389-1366-1366-1366-1366-1337-1337-1337-1337-657-657-541_mission-of_68 lemon:marker :mission-of_68_form_preposition .
+## Prepositions ##
+:mission-of_68_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

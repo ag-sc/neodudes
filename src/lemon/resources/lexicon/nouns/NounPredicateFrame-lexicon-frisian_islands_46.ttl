@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :frisian_islands_46_sense_1_res ;
+  lemon:entry    :frisian_islands_46 .
+
+:frisian_islands_46 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :frisian_islands_46_form ;
+  lemon:otherForm  :frisian_islands_46_singular ;
+  lemon:otherForm  :frisian_islands_46_plural ;
+  lemon:sense          :frisian_islands_46_sense_1 ;
+  lemon:synBehavior    :frisian_islands_46_predFrame .
+
+:frisian_islands_46_form
+ lemon:writtenRep "frisian island"@en .
+
+:frisian_islands_46_singular a    lemon:Form ;
+  lemon:writtenRep "frisian island"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:frisian_islands_46_plural a   lemon:Form ;
+  lemon:writtenRep "frisian islands"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:frisian_islands_46_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :frisian_islands_46_sense_1_res ;
+  lemon:isA       :frisian_islands_46_PredSynArg .
+
+:frisian_islands_46_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/class/yago/WikicatFrisianIslands> .

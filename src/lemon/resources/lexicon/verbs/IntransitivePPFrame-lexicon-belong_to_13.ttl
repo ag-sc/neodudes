@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :belong_to_13 ;
+  lemon:entry    :form_belong_to_13_preposition .
+
+:belong_to_13 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_belong_to_13 ;
+  lemon:otherForm      :form_belong_to_13_present3rd ;
+  lemon:otherForm      :form_belong_to_13_past ;
+  lemon:otherForm      :form_belong_to_13_perfect ;
+  lemon:sense          :belong_to_13_sense_1 ;
+  lemon:synBehavior    :belong_to_13_frame .
+
+:form_belong_to_13 a           lemon:Form ;
+  lemon:writtenRep     "belong"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_belong_to_13_present3rd a      lemon:Form ;
+  lemon:writtenRep "belongs"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_belong_to_13_past a lemon:Form ;
+  lemon:writtenRep  "belonged"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_belong_to_13_perfect a   lemon:Form ;
+  lemon:writtenRep "belonged"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:belong_to_13_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :belong_to_13_subj ;
+  lexinfo:prepositionalAdjunct :belong_to_13_obj .
+
+:belong_to_13_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :belong_to_13_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/genre> ;
+  lemon:subjOfProp  :belong_to_13_subj ;
+  lemon:objOfProp   :belong_to_13_obj ;
+  lemon:condition   :belong_to_13_sense_1_condition .
+
+:belong_to_13_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Artist> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Genre> .
+
+
+:belong_to_13_obj lemon:marker :form_belong_to_13_preposition .
+
+## Prepositions ##
+:form_belong_to_13_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "to"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

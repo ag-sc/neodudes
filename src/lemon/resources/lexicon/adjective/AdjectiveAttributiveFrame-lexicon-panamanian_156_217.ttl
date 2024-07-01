@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :panamanian_156_217_sense_1_res ;
+  lemon:entry    :panamanian_156_217 .
+
+:panamanian_156_217 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :panamanian_156_217_lemma ;
+  lemon:sense          :panamanian_156_217_sense_1 ;
+  lemon:synBehavior    :panamanian_156_217_attrFrame, :panamanian_156_217_predFrame .
+
+:panamanian_156_217_lemma lemon:writtenRep "Panamanian"@en .
+
+:panamanian_156_217_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :panamanian_156_217_PredSynArg .
+
+:panamanian_156_217_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :panamanian_156_217_AttrSynArg .
+
+:panamanian_156_217_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :panamanian_156_217_sense_1_res ;
+  lemon:isA       :panamanian_156_217_AttrSynArg, :panamanian_156_217_PredSynArg .
+
+:panamanian_156_217_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Panama> .

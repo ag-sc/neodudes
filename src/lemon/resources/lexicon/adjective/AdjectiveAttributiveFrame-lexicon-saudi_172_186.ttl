@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :saudi_172_186_sense_1_res ;
+  lemon:entry    :saudi_172_186 .
+
+:saudi_172_186 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :saudi_172_186_lemma ;
+  lemon:sense          :saudi_172_186_sense_1 ;
+  lemon:synBehavior    :saudi_172_186_attrFrame, :saudi_172_186_predFrame .
+
+:saudi_172_186_lemma lemon:writtenRep "Saudi"@en .
+
+:saudi_172_186_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :saudi_172_186_PredSynArg .
+
+:saudi_172_186_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :saudi_172_186_AttrSynArg .
+
+:saudi_172_186_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :saudi_172_186_sense_1_res ;
+  lemon:isA       :saudi_172_186_AttrSynArg, :saudi_172_186_PredSynArg .
+
+:saudi_172_186_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Saudi_Arabia> .

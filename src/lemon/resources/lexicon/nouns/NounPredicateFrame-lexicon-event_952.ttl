@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :event_952_sense_1_res ;
+  lemon:entry    :event_952 .
+
+:event_952 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :event_952_form ;
+  lemon:otherForm  :event_952_singular ;
+  lemon:otherForm  :event_952_plural ;
+  lemon:sense          :event_952_sense_1 ;
+  lemon:synBehavior    :event_952_predFrame .
+
+:event_952_form
+ lemon:writtenRep "event"@en .
+
+:event_952_singular a    lemon:Form ;
+  lemon:writtenRep "event"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:event_952_plural a   lemon:Form ;
+  lemon:writtenRep "events"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:event_952_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :event_952_sense_1_res ;
+  lemon:isA       :event_952_PredSynArg .
+
+:event_952_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Event> .

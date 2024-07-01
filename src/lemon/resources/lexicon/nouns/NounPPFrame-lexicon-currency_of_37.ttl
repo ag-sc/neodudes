@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :currency_of_37 ;
+  lemon:entry    :currency_of_37_form_preposition .
+
+:currency_of_37 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :currency_of_37_form ;
+  lemon:otherForm  :currency_of_37_singular ;
+  lemon:otherForm  :currency_of_37_plural ;
+  lemon:sense          :currency_of_37_sense_1 ;
+  lemon:synBehavior    :currency_of_37_nounpp .
+
+:currency_of_37_form a lemon:Form ;
+  lemon:writtenRep "currency"@en .
+
+:currency_of_37_singular a    lemon:Form ;
+  lemon:writtenRep "currency"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:currency_of_37_plural a   lemon:Form ;
+  lemon:writtenRep "currencies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:currency_of_37_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1259-1259-1259-1254-1256-1256-1256-1256-1256-1256-1235-1235-1235-1235-1208-1208-1208-1208-598-598-715_currency_of_37 ;
+  lexinfo:prepositionalAdjunct :arg2-1259-1259-1259-1254-1256-1256-1256-1256-1256-1256-1235-1235-1235-1235-1208-1208-1208-1208-598-598-715_currency_of_37 .
+
+:currency_of_37_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :currency_of_37_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/currency> ;
+  lemon:subjOfProp          :arg2-1259-1259-1259-1254-1256-1256-1256-1256-1256-1256-1235-1235-1235-1235-1208-1208-1208-1208-598-598-715_currency_of_37 ;
+  lemon:objOfProp           :arg1-1259-1259-1259-1254-1256-1256-1256-1256-1256-1256-1235-1235-1235-1235-1208-1208-1208-1208-598-598-715_currency_of_37 ;
+  lemon:condition           :currency_of_37_sense_1_condition .
+
+:currency_of_37_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Currency> .
+
+:arg2-1259-1259-1259-1254-1256-1256-1256-1256-1256-1256-1235-1235-1235-1235-1208-1208-1208-1208-598-598-715_currency_of_37 lemon:marker :currency_of_37_form_preposition .
+## Prepositions ##
+:currency_of_37_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

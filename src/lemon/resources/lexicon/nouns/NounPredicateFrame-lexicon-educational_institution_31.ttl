@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :educational_institution_31_sense_1_res ;
+  lemon:entry    :educational_institution_31 .
+
+:educational_institution_31 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :educational_institution_31_form ;
+  lemon:otherForm  :educational_institution_31_singular ;
+  lemon:otherForm  :educational_institution_31_plural ;
+  lemon:sense          :educational_institution_31_sense_1 ;
+  lemon:synBehavior    :educational_institution_31_predFrame .
+
+:educational_institution_31_form
+ lemon:writtenRep "educational institution"@en .
+
+:educational_institution_31_singular a    lemon:Form ;
+  lemon:writtenRep "educational institution"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:educational_institution_31_plural a   lemon:Form ;
+  lemon:writtenRep "educational institutions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:educational_institution_31_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :educational_institution_31_sense_1_res ;
+  lemon:isA       :educational_institution_31_PredSynArg .
+
+:educational_institution_31_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/EducationalInstitution> .

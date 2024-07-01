@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :religion-of_92 ;
+  lemon:entry    :religion-of_92_form_preposition .
+
+:religion-of_92 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :religion-of_92_form ;
+  lemon:otherForm  :religion-of_92_singular ;
+  lemon:otherForm  :religion-of_92_plural ;
+  lemon:sense          :religion-of_92_sense_1 ;
+  lemon:synBehavior    :religion-of_92_nounpp .
+
+:religion-of_92_form a lemon:Form ;
+  lemon:writtenRep "religion"@en .
+
+:religion-of_92_singular a    lemon:Form ;
+  lemon:writtenRep "religion"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:religion-of_92_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:religion-of_92_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1101-1101-1101-1098-1097-1097-1097-1097-1097-1097-1078-1078-1078-1078-1052-1052-1052-1052-530-530-275_religion-of_92 ;
+  lexinfo:prepositionalAdjunct :arg2-1101-1101-1101-1098-1097-1097-1097-1097-1097-1097-1078-1078-1078-1078-1052-1052-1052-1052-530-530-275_religion-of_92 .
+
+:religion-of_92_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :religion-of_92_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/religion> ;
+  lemon:subjOfProp          :arg2-1101-1101-1101-1098-1097-1097-1097-1097-1097-1097-1078-1078-1078-1078-1052-1052-1052-1052-530-530-275_religion-of_92 ;
+  lemon:objOfProp           :arg1-1101-1101-1101-1098-1097-1097-1097-1097-1097-1097-1078-1078-1078-1078-1052-1052-1052-1052-530-530-275_religion-of_92 ;
+  lemon:condition           :religion-of_92_sense_1_condition .
+
+:religion-of_92_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1101-1101-1101-1098-1097-1097-1097-1097-1097-1097-1078-1078-1078-1078-1052-1052-1052-1052-530-530-275_religion-of_92 lemon:marker :religion-of_92_form_preposition .
+## Prepositions ##
+:religion-of_92_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tunisian_208_131_sense_1_res ;
+  lemon:entry    :tunisian_208_131 .
+
+:tunisian_208_131 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :tunisian_208_131_lemma ;
+  lemon:sense          :tunisian_208_131_sense_1 ;
+  lemon:synBehavior    :tunisian_208_131_attrFrame, :tunisian_208_131_predFrame .
+
+:tunisian_208_131_lemma lemon:writtenRep "Tunisian"@en .
+
+:tunisian_208_131_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :tunisian_208_131_PredSynArg .
+
+:tunisian_208_131_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :tunisian_208_131_AttrSynArg .
+
+:tunisian_208_131_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tunisian_208_131_sense_1_res ;
+  lemon:isA       :tunisian_208_131_AttrSynArg, :tunisian_208_131_PredSynArg .
+
+:tunisian_208_131_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Tunisia> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :station_1016_sense_1_res ;
+  lemon:entry    :station_1016 .
+
+:station_1016 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :station_1016_form ;
+  lemon:otherForm  :station_1016_singular ;
+  lemon:otherForm  :station_1016_plural ;
+  lemon:sense          :station_1016_sense_1 ;
+  lemon:synBehavior    :station_1016_predFrame .
+
+:station_1016_form
+ lemon:writtenRep "station"@en .
+
+:station_1016_singular a    lemon:Form ;
+  lemon:writtenRep "station"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:station_1016_plural a   lemon:Form ;
+  lemon:writtenRep "stations"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:station_1016_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :station_1016_sense_1_res ;
+  lemon:isA       :station_1016_PredSynArg .
+
+:station_1016_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Station> .

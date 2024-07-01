@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :salvadorian_60_313_sense_1_res ;
+  lemon:entry    :salvadorian_60_313 .
+
+:salvadorian_60_313 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :salvadorian_60_313_lemma ;
+  lemon:sense          :salvadorian_60_313_sense_1 ;
+  lemon:synBehavior    :salvadorian_60_313_attrFrame, :salvadorian_60_313_predFrame .
+
+:salvadorian_60_313_lemma lemon:writtenRep "Salvadorian"@en .
+
+:salvadorian_60_313_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :salvadorian_60_313_PredSynArg .
+
+:salvadorian_60_313_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :salvadorian_60_313_AttrSynArg .
+
+:salvadorian_60_313_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :salvadorian_60_313_sense_1_res ;
+  lemon:isA       :salvadorian_60_313_AttrSynArg, :salvadorian_60_313_PredSynArg .
+
+:salvadorian_60_313_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/El_Salvador> .

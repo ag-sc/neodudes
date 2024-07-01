@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cave_984_sense_1_res ;
+  lemon:entry    :cave_984 .
+
+:cave_984 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cave_984_form ;
+  lemon:otherForm  :cave_984_singular ;
+  lemon:otherForm  :cave_984_plural ;
+  lemon:sense          :cave_984_sense_1 ;
+  lemon:synBehavior    :cave_984_predFrame .
+
+:cave_984_form
+ lemon:writtenRep "cave"@en .
+
+:cave_984_singular a    lemon:Form ;
+  lemon:writtenRep "cave"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cave_984_plural a   lemon:Form ;
+  lemon:writtenRep "caves"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cave_984_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cave_984_sense_1_res ;
+  lemon:isA       :cave_984_PredSynArg .
+
+:cave_984_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Cave> .

@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :published_on_3 ;
+  lemon:entry    :form_published_on_3_preposition .
+
+:published_on_3 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_published_on_3 ;
+  lemon:otherForm      :form_published_on_3_present3rd ;
+  lemon:otherForm      :form_published_on_3_past ;
+  lemon:otherForm      :form_published_on_3_perfect ;
+  lemon:sense          :published_on_3_sense_1 ;
+  lemon:synBehavior    :published_on_3_frame .
+
+:form_published_on_3 a           lemon:Form ;
+  lemon:writtenRep     "publish"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_published_on_3_present3rd a      lemon:Form ;
+  lemon:writtenRep "publishes"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_published_on_3_past a lemon:Form ;
+  lemon:writtenRep  "published"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_published_on_3_perfect a   lemon:Form ;
+  lemon:writtenRep "published"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:published_on_3_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :published_on_3_subj ;
+  lexinfo:prepositionalAdjunct :published_on_3_obj .
+
+:published_on_3_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :published_on_3_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/publicationDate> ;
+  lemon:subjOfProp  :published_on_3_subj ;
+  lemon:objOfProp   :published_on_3_obj ;
+  lemon:condition   :published_on_3_sense_1_condition .
+
+:published_on_3_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:published_on_3_obj lemon:marker :form_published_on_3_preposition .
+
+## Prepositions ##
+:form_published_on_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "on"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :identifier_398_sense_1_res ;
+  lemon:entry    :identifier_398 .
+
+:identifier_398 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :identifier_398_form ;
+  lemon:otherForm  :identifier_398_singular ;
+  lemon:otherForm  :identifier_398_plural ;
+  lemon:sense          :identifier_398_sense_1 ;
+  lemon:synBehavior    :identifier_398_predFrame .
+
+:identifier_398_form
+ lemon:writtenRep "identifier"@en .
+
+:identifier_398_singular a    lemon:Form ;
+  lemon:writtenRep "identifier"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:identifier_398_plural a   lemon:Form ;
+  lemon:writtenRep "identifiers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:identifier_398_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :identifier_398_sense_1_res ;
+  lemon:isA       :identifier_398_PredSynArg .
+
+:identifier_398_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Identifier> .

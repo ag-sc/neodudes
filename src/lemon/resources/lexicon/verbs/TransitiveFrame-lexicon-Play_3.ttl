@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_Play_3 ;
+  lemon:entry    :Play_3ed ;
+  lemon:entry    :form_Play_3_preposition .
+
+:to_Play_3 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_Play_3 ;
+  lemon:otherForm      :form_Play_3s ;
+  lemon:otherForm      :form_Play_3ed ;
+  lemon:otherForm      :form_Play_3perfect ;
+  lemon:sense          :Play_3_sense_1 ;
+  lemon:synBehavior    :Play_3_frame_transitive .
+
+:form_Play_3 a         lemon:Form ;
+  lemon:writtenRep     "play"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_Play_3s a    lemon:Form ;
+  lemon:writtenRep "playes"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_Play_3ed a   lemon:Form ;
+  lemon:writtenRep "played"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_Play_3perfect a   lemon:Form ;
+  lemon:writtenRep "played"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:Play_3_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :Play_3_subj ;
+  lexinfo:directObject     :Play_3_obj .
+
+:Play_3_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :Play_3_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/starring> ;
+  lemon:subjOfProp  :Play_3_obj ;
+  lemon:objOfProp   :Play_3_subj ;
+  lemon:condition   :Play_3_sense_1_condition .
+
+
+:Play_3_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Film> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:Play_3_obj lemon:marker :form_Play_3_preposition .
+
+## Prepositions ##
+:form_Play_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

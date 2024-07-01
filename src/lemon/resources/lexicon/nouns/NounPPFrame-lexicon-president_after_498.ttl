@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president_after_498 ;
+  lemon:entry    :president_after_498_form_preposition .
+
+:president_after_498 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president_after_498_form ;
+  lemon:otherForm  :president_after_498_singular ;
+  lemon:otherForm  :president_after_498_plural ;
+  lemon:sense          :president_after_498_sense_1 ;
+  lemon:synBehavior    :president_after_498_nounpp .
+
+:president_after_498_form a lemon:Form ;
+  lemon:writtenRep "president"@en .
+
+:president_after_498_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president_after_498_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president_after_498_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-32-32-32-33-33-33-33-33-33-33-33-33-33-33-33-33-33-33-11_president_after_498 ;
+  lexinfo:prepositionalAdjunct :arg2-32-32-32-33-33-33-33-33-33-33-33-33-33-33-33-33-33-33-11_president_after_498 .
+
+:president_after_498_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :president_after_498_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/presidentEnd> ;
+  lemon:subjOfProp          :arg2-32-32-32-33-33-33-33-33-33-33-33-33-33-33-33-33-33-33-11_president_after_498 ;
+  lemon:objOfProp           :arg1-32-32-32-33-33-33-33-33-33-33-33-33-33-33-33-33-33-33-11_president_after_498 ;
+  lemon:condition           :president_after_498_sense_1_condition .
+
+:president_after_498_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-32-32-32-33-33-33-33-33-33-33-33-33-33-33-33-33-33-33-11_president_after_498 lemon:marker :president_after_498_form_preposition .
+## Prepositions ##
+:president_after_498_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "after"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

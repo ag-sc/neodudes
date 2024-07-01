@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :speciality-of_59 ;
+  lemon:entry    :speciality-of_59_form_preposition .
+
+:speciality-of_59 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :speciality-of_59_form ;
+  lemon:otherForm  :speciality-of_59_singular ;
+  lemon:otherForm  :speciality-of_59_plural ;
+  lemon:sense          :speciality-of_59_sense_1 ;
+  lemon:synBehavior    :speciality-of_59_nounpp .
+
+:speciality-of_59_form a lemon:Form ;
+  lemon:writtenRep "speciality"@en .
+
+:speciality-of_59_singular a    lemon:Form ;
+  lemon:writtenRep "speciality"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:speciality-of_59_plural a   lemon:Form ;
+  lemon:writtenRep "specialities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:speciality-of_59_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1554-1554-1554-1551-1553-1553-1553-1553-1553-1553-1527-1527-1527-1527-1497-1497-1497-1497-735-735-668_speciality-of_59 ;
+  lexinfo:prepositionalAdjunct :arg2-1554-1554-1554-1551-1553-1553-1553-1553-1553-1553-1527-1527-1527-1527-1497-1497-1497-1497-735-735-668_speciality-of_59 .
+
+:speciality-of_59_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :speciality-of_59_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/title> ;
+  lemon:subjOfProp          :arg2-1554-1554-1554-1551-1553-1553-1553-1553-1553-1553-1527-1527-1527-1527-1497-1497-1497-1497-735-735-668_speciality-of_59 ;
+  lemon:objOfProp           :arg1-1554-1554-1554-1551-1553-1553-1553-1553-1553-1553-1527-1527-1527-1527-1497-1497-1497-1497-735-735-668_speciality-of_59 ;
+  lemon:condition           :speciality-of_59_sense_1_condition .
+
+:speciality-of_59_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1554-1554-1554-1551-1553-1553-1553-1553-1553-1553-1527-1527-1527-1527-1497-1497-1497-1497-735-735-668_speciality-of_59 lemon:marker :speciality-of_59_form_preposition .
+## Prepositions ##
+:speciality-of_59_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

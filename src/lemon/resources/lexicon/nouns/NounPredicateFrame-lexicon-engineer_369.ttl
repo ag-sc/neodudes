@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :engineer_369_sense_1_res ;
+  lemon:entry    :engineer_369 .
+
+:engineer_369 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :engineer_369_form ;
+  lemon:otherForm  :engineer_369_singular ;
+  lemon:otherForm  :engineer_369_plural ;
+  lemon:sense          :engineer_369_sense_1 ;
+  lemon:synBehavior    :engineer_369_predFrame .
+
+:engineer_369_form
+ lemon:writtenRep "engineer"@en .
+
+:engineer_369_singular a    lemon:Form ;
+  lemon:writtenRep "engineer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:engineer_369_plural a   lemon:Form ;
+  lemon:writtenRep "engineers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:engineer_369_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :engineer_369_sense_1_res ;
+  lemon:isA       :engineer_369_PredSynArg .
+
+:engineer_369_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Engineer> .

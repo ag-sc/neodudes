@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :flow_into_5_4 ;
+  lemon:entry    :form_flow_into_5_4_preposition .
+
+:flow_into_5_4 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_flow_into_5_4 ;
+  lemon:otherForm      :form_flow_into_5_4_present3rd ;
+  lemon:otherForm      :form_flow_into_5_4_past ;
+  lemon:otherForm      :form_flow_into_5_4_perfect ;
+  lemon:sense          :flow_into_5_4_sense_1 ;
+  lemon:synBehavior    :flow_into_5_4_frame .
+
+:form_flow_into_5_4 a           lemon:Form ;
+  lemon:writtenRep     "flow"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_flow_into_5_4_present3rd a      lemon:Form ;
+  lemon:writtenRep "flows"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_flow_into_5_4_past a lemon:Form ;
+  lemon:writtenRep  "flew"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_flow_into_5_4_perfect a   lemon:Form ;
+  lemon:writtenRep "flew"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:flow_into_5_4_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :flow_into_5_4_subj ;
+  lexinfo:prepositionalAdjunct :flow_into_5_4_obj .
+
+:flow_into_5_4_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :flow_into_5_4_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/launched> ;
+  lemon:subjOfProp  :flow_into_5_4_subj ;
+  lemon:objOfProp   :flow_into_5_4_obj ;
+  lemon:condition   :flow_into_5_4_sense_1_condition .
+
+:flow_into_5_4_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/ArtificialSatellite> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#string> .
+
+
+:flow_into_5_4_obj lemon:marker :form_flow_into_5_4_preposition .
+
+## Prepositions ##
+:form_flow_into_5_4_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "into"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

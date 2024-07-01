@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mensch_439_sense_1_res ;
+  lemon:entry    :mensch_439 .
+
+:mensch_439 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mensch_439_form ;
+  lemon:otherForm  :mensch_439_singular ;
+  lemon:otherForm  :mensch_439_plural ;
+  lemon:sense          :mensch_439_sense_1 ;
+  lemon:synBehavior    :mensch_439_predFrame .
+
+:mensch_439_form
+ lemon:writtenRep "mensch"@en .
+
+:mensch_439_singular a    lemon:Form ;
+  lemon:writtenRep "mensch"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mensch_439_plural a   lemon:Form ;
+  lemon:writtenRep "menschen"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mensch_439_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :mensch_439_sense_1_res ;
+  lemon:isA       :mensch_439_PredSynArg .
+
+:mensch_439_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Person> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :elevation-of_429 ;
+  lemon:entry    :elevation-of_429_form_preposition .
+
+:elevation-of_429 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :elevation-of_429_form ;
+  lemon:otherForm  :elevation-of_429_singular ;
+  lemon:otherForm  :elevation-of_429_plural ;
+  lemon:sense          :elevation-of_429_sense_1 ;
+  lemon:synBehavior    :elevation-of_429_nounpp .
+
+:elevation-of_429_form a lemon:Form ;
+  lemon:writtenRep "elevation"@en .
+
+:elevation-of_429_singular a    lemon:Form ;
+  lemon:writtenRep "elevation"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:elevation-of_429_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:elevation-of_429_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1053-1053-1053-1050-1049-1049-1049-1049-1049-1049-1031-1031-1031-1031-1006-1006-1006-1006-501_elevation-of_429 ;
+  lexinfo:prepositionalAdjunct :arg2-1053-1053-1053-1050-1049-1049-1049-1049-1049-1049-1031-1031-1031-1031-1006-1006-1006-1006-501_elevation-of_429 .
+
+:elevation-of_429_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :elevation-of_429_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/elevation> ;
+  lemon:subjOfProp          :arg2-1053-1053-1053-1050-1049-1049-1049-1049-1049-1049-1031-1031-1031-1031-1006-1006-1006-1006-501_elevation-of_429 ;
+  lemon:objOfProp           :arg1-1053-1053-1053-1050-1049-1049-1049-1049-1049-1049-1031-1031-1031-1031-1006-1006-1006-1006-501_elevation-of_429 ;
+  lemon:condition           :elevation-of_429_sense_1_condition .
+
+:elevation-of_429_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1053-1053-1053-1050-1049-1049-1049-1049-1049-1049-1031-1031-1031-1031-1006-1006-1006-1006-501_elevation-of_429 lemon:marker :elevation-of_429_form_preposition .
+## Prepositions ##
+:elevation-of_429_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

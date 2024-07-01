@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tournament_150_sense_1_res ;
+  lemon:entry    :tournament_150 .
+
+:tournament_150 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :tournament_150_form ;
+  lemon:otherForm  :tournament_150_singular ;
+  lemon:otherForm  :tournament_150_plural ;
+  lemon:sense          :tournament_150_sense_1 ;
+  lemon:synBehavior    :tournament_150_predFrame .
+
+:tournament_150_form
+ lemon:writtenRep "tournament"@en .
+
+:tournament_150_singular a    lemon:Form ;
+  lemon:writtenRep "tournament"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:tournament_150_plural a   lemon:Form ;
+  lemon:writtenRep "tournaments"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:tournament_150_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tournament_150_sense_1_res ;
+  lemon:isA       :tournament_150_PredSynArg .
+
+:tournament_150_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Tournament> .

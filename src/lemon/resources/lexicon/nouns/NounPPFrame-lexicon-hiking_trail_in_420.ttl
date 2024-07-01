@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :hiking_trail_in_420 ;
+  lemon:entry    :hiking_trail_in_420_form_preposition .
+
+:hiking_trail_in_420 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :hiking_trail_in_420_form ;
+  lemon:otherForm  :hiking_trail_in_420_singular ;
+  lemon:otherForm  :hiking_trail_in_420_plural ;
+  lemon:sense          :hiking_trail_in_420_sense_1 ;
+  lemon:synBehavior    :hiking_trail_in_420_nounpp .
+
+:hiking_trail_in_420_form a lemon:Form ;
+  lemon:writtenRep "hiking trail"@en .
+
+:hiking_trail_in_420_singular a    lemon:Form ;
+  lemon:writtenRep "hiking trail"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:hiking_trail_in_420_plural a   lemon:Form ;
+  lemon:writtenRep "hiking trails"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:hiking_trail_in_420_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-405-405-404-404-403-403-403-403-403-403-396-396-396-396-388-388-388-388-194_hiking_trail_in_420 ;
+  lexinfo:prepositionalAdjunct :arg2-405-405-404-404-403-403-403-403-403-403-396-396-396-396-388-388-388-388-194_hiking_trail_in_420 .
+
+:hiking_trail_in_420_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :hiking_trail_in_420_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/trailheads> ;
+  lemon:subjOfProp          :arg2-405-405-404-404-403-403-403-403-403-403-396-396-396-396-388-388-388-388-194_hiking_trail_in_420 ;
+  lemon:objOfProp           :arg1-405-405-404-404-403-403-403-403-403-403-396-396-396-396-388-388-388-388-194_hiking_trail_in_420 ;
+  lemon:condition           :hiking_trail_in_420_sense_1_condition .
+
+:hiking_trail_in_420_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-405-405-404-404-403-403-403-403-403-403-396-396-396-396-388-388-388-388-194_hiking_trail_in_420 lemon:marker :hiking_trail_in_420_form_preposition .
+## Prepositions ##
+:hiking_trail_in_420_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :book_in_73 ;
+  lemon:entry    :book_in_73_form_preposition .
+
+:book_in_73 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :book_in_73_form ;
+  lemon:otherForm  :book_in_73_singular ;
+  lemon:otherForm  :book_in_73_plural ;
+  lemon:sense          :book_in_73_sense_1 ;
+  lemon:synBehavior    :book_in_73_nounpp .
+
+:book_in_73_form a lemon:Form ;
+  lemon:writtenRep "book"@en .
+
+:book_in_73_singular a    lemon:Form ;
+  lemon:writtenRep "book"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:book_in_73_plural a   lemon:Form ;
+  lemon:writtenRep "books"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:book_in_73_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-346-346-345-345-344-344-344-344-344-344-337-337-337-337-332-332-332-332-163-163-593_book_in_73 ;
+  lexinfo:prepositionalAdjunct :arg2-346-346-345-345-344-344-344-344-344-344-337-337-337-337-332-332-332-332-163-163-593_book_in_73 .
+
+:book_in_73_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :book_in_73_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/series> ;
+  lemon:subjOfProp          :arg2-346-346-345-345-344-344-344-344-344-344-337-337-337-337-332-332-332-332-163-163-593_book_in_73 ;
+  lemon:objOfProp           :arg1-346-346-345-345-344-344-344-344-344-344-337-337-337-337-332-332-332-332-163-163-593_book_in_73 ;
+  lemon:condition           :book_in_73_sense_1_condition .
+
+:book_in_73_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionEpisode> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-346-346-345-345-344-344-344-344-344-344-337-337-337-337-332-332-332-332-163-163-593_book_in_73 lemon:marker :book_in_73_form_preposition .
+## Prepositions ##
+:book_in_73_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

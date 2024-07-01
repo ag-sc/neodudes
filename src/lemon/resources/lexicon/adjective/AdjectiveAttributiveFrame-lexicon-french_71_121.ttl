@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :french_71_121_sense_1_res ;
+  lemon:entry    :french_71_121 .
+
+:french_71_121 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :french_71_121_lemma ;
+  lemon:sense          :french_71_121_sense_1 ;
+  lemon:synBehavior    :french_71_121_attrFrame, :french_71_121_predFrame .
+
+:french_71_121_lemma lemon:writtenRep "French"@en .
+
+:french_71_121_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :french_71_121_PredSynArg .
+
+:french_71_121_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :french_71_121_AttrSynArg .
+
+:french_71_121_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :french_71_121_sense_1_res ;
+  lemon:isA       :french_71_121_AttrSynArg, :french_71_121_PredSynArg .
+
+:french_71_121_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/France> .

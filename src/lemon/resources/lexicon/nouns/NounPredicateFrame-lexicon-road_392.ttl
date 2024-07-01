@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :road_392_sense_1_res ;
+  lemon:entry    :road_392 .
+
+:road_392 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :road_392_form ;
+  lemon:otherForm  :road_392_singular ;
+  lemon:otherForm  :road_392_plural ;
+  lemon:sense          :road_392_sense_1 ;
+  lemon:synBehavior    :road_392_predFrame .
+
+:road_392_form
+ lemon:writtenRep "road"@en .
+
+:road_392_singular a    lemon:Form ;
+  lemon:writtenRep "road"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:road_392_plural a   lemon:Form ;
+  lemon:writtenRep "roads"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:road_392_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :road_392_sense_1_res ;
+  lemon:isA       :road_392_PredSynArg .
+
+:road_392_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Road> .

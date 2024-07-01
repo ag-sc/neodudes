@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :name-of_376 ;
+  lemon:entry    :name-of_376_form_preposition .
+
+:name-of_376 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :name-of_376_form ;
+  lemon:otherForm  :name-of_376_singular ;
+  lemon:otherForm  :name-of_376_plural ;
+  lemon:sense          :name-of_376_sense_1 ;
+  lemon:synBehavior    :name-of_376_nounpp .
+
+:name-of_376_form a lemon:Form ;
+  lemon:writtenRep "name"@en .
+
+:name-of_376_singular a    lemon:Form ;
+  lemon:writtenRep "name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:name-of_376_plural a   lemon:Form ;
+  lemon:writtenRep "names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:name-of_376_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-968-968-968-965-964-964-964-964-964-964-946-946-946-946-923-923-923-923-459_name-of_376 ;
+  lexinfo:prepositionalAdjunct :arg2-968-968-968-965-964-964-964-964-964-964-946-946-946-946-923-923-923-923-459_name-of_376 .
+
+:name-of_376_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :name-of_376_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/name> ;
+  lemon:subjOfProp          :arg2-968-968-968-965-964-964-964-964-964-964-946-946-946-946-923-923-923-923-459_name-of_376 ;
+  lemon:objOfProp           :arg1-968-968-968-965-964-964-964-964-964-964-946-946-946-946-923-923-923-923-459_name-of_376 ;
+  lemon:condition           :name-of_376_sense_1_condition .
+
+:name-of_376_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-968-968-968-965-964-964-964-964-964-964-946-946-946-946-923-923-923-923-459_name-of_376 lemon:marker :name-of_376_form_preposition .
+## Prepositions ##
+:name-of_376_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

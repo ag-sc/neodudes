@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nepalese_142_343_sense_1_res ;
+  lemon:entry    :nepalese_142_343 .
+
+:nepalese_142_343 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :nepalese_142_343_lemma ;
+  lemon:sense          :nepalese_142_343_sense_1 ;
+  lemon:synBehavior    :nepalese_142_343_attrFrame, :nepalese_142_343_predFrame .
+
+:nepalese_142_343_lemma lemon:writtenRep "Nepalese"@en .
+
+:nepalese_142_343_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :nepalese_142_343_PredSynArg .
+
+:nepalese_142_343_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :nepalese_142_343_AttrSynArg .
+
+:nepalese_142_343_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :nepalese_142_343_sense_1_res ;
+  lemon:isA       :nepalese_142_343_AttrSynArg, :nepalese_142_343_PredSynArg .
+
+:nepalese_142_343_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Nepal> .

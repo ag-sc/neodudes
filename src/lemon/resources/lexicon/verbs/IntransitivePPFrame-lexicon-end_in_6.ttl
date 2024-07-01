@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :end_in_6 ;
+  lemon:entry    :form_end_in_6_preposition .
+
+:end_in_6 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_end_in_6 ;
+  lemon:otherForm      :form_end_in_6_present3rd ;
+  lemon:otherForm      :form_end_in_6_past ;
+  lemon:otherForm      :form_end_in_6_perfect ;
+  lemon:sense          :end_in_6_sense_1 ;
+  lemon:synBehavior    :end_in_6_frame .
+
+:form_end_in_6 a           lemon:Form ;
+  lemon:writtenRep     "end"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_end_in_6_present3rd a      lemon:Form ;
+  lemon:writtenRep "ends"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_end_in_6_past a lemon:Form ;
+  lemon:writtenRep  "ended"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_end_in_6_perfect a   lemon:Form ;
+  lemon:writtenRep "ended"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:end_in_6_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :end_in_6_subj ;
+  lexinfo:prepositionalAdjunct :end_in_6_obj .
+
+:end_in_6_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :end_in_6_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/mouthCountry> ;
+  lemon:subjOfProp  :end_in_6_subj ;
+  lemon:objOfProp   :end_in_6_obj ;
+  lemon:condition   :end_in_6_sense_1_condition .
+
+:end_in_6_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/River> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Country> .
+
+
+:end_in_6_obj lemon:marker :form_end_in_6_preposition .
+
+## Prepositions ##
+:form_end_in_6_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

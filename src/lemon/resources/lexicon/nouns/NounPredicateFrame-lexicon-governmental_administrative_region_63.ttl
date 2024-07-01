@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :governmental_administrative_region_63_sense_1_res ;
+  lemon:entry    :governmental_administrative_region_63 .
+
+:governmental_administrative_region_63 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :governmental_administrative_region_63_form ;
+  lemon:otherForm  :governmental_administrative_region_63_singular ;
+  lemon:otherForm  :governmental_administrative_region_63_plural ;
+  lemon:sense          :governmental_administrative_region_63_sense_1 ;
+  lemon:synBehavior    :governmental_administrative_region_63_predFrame .
+
+:governmental_administrative_region_63_form
+ lemon:writtenRep "governmental administrative region"@en .
+
+:governmental_administrative_region_63_singular a    lemon:Form ;
+  lemon:writtenRep "governmental administrative region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:governmental_administrative_region_63_plural a   lemon:Form ;
+  lemon:writtenRep "governmental administrative regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:governmental_administrative_region_63_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :governmental_administrative_region_63_sense_1_res ;
+  lemon:isA       :governmental_administrative_region_63_PredSynArg .
+
+:governmental_administrative_region_63_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .

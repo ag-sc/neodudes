@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :loyalty_10 ;
+  lemon:entry    :loyalty_10_form_preposition .
+
+:loyalty_10 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :loyalty_10_form ;
+  lemon:otherForm  :loyalty_10_singular ;
+  lemon:otherForm  :loyalty_10_plural ;
+  lemon:sense          :loyalty_10_sense_1 ;
+  lemon:synBehavior    :loyalty_10_nounpp .
+
+:loyalty_10_form a lemon:Form ;
+  lemon:writtenRep "loyalty"@en .
+
+:loyalty_10_singular a    lemon:Form ;
+  lemon:writtenRep "loyalty"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:loyalty_10_plural a   lemon:Form ;
+  lemon:writtenRep "loyalties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:loyalty_10_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1047-1047-1047-1044-1043-1043-1043-1043-1043-1043-1025-1025-1025-1025-1000-1000-1000-1000-503-503-158_loyalty_10 ;
+  lexinfo:prepositionalAdjunct :arg2-1047-1047-1047-1044-1043-1043-1043-1043-1043-1043-1025-1025-1025-1025-1000-1000-1000-1000-503-503-158_loyalty_10 .
+
+:loyalty_10_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :loyalty_10_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/connotation> ;
+  lemon:subjOfProp          :arg2-1047-1047-1047-1044-1043-1043-1043-1043-1043-1043-1025-1025-1025-1025-1000-1000-1000-1000-503-503-158_loyalty_10 ;
+  lemon:objOfProp           :arg1-1047-1047-1047-1044-1043-1043-1043-1043-1043-1043-1025-1025-1025-1025-1000-1000-1000-1000-503-503-158_loyalty_10 ;
+  lemon:condition           :loyalty_10_sense_1_condition .
+
+:loyalty_10_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Loyalty> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Color> .
+
+:arg2-1047-1047-1047-1044-1043-1043-1043-1043-1043-1043-1025-1025-1025-1025-1000-1000-1000-1000-503-503-158_loyalty_10 lemon:marker :loyalty_10_form_preposition .
+## Prepositions ##
+:loyalty_10_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep ""@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

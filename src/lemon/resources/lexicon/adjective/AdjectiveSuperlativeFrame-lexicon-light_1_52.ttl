@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :light_1_52 ;
+  lemon:entry    :form_light_1_52_preposition ;
+  lemon:entry    :light_1_52_res .
+
+:light_1_52 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_light_1_52 ;
+  lemon:otherForm      :form_light_1_52_comperative ;
+  lemon:otherForm      :form_light_1_52_superlative ;
+  lemon:sense          :light_1_52_sense_1 ;
+  lemon:synBehavior    :light_1_52_predFrame .
+
+:form_light_1_52 lemon:writtenRep "light"@en .
+
+:form_light_1_52_comperative lemon:writtenRep "lighter"@en .
+
+:form_light_1_52_superlative lemon:writtenRep "lightest"@en .
+
+:light_1_52_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :light_1_52_PredSynArg .
+
+:light_1_52_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :light_1_52_res ;
+  lemon:isA       :light_1_52_PredSynArg ;
+  lemon:condition :light_1_52_sense_1_condition .
+
+:light_1_52_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/mass> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:light_1_52_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange    <http://www.w3.org/2001/XMLSchema#double> .
+
+## Prepositions ##
+:form_light_1_52_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

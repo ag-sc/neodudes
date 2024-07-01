@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :book_by_343 ;
+  lemon:entry    :book_by_343_form_preposition .
+
+:book_by_343 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :book_by_343_form ;
+  lemon:otherForm  :book_by_343_singular ;
+  lemon:otherForm  :book_by_343_plural ;
+  lemon:sense          :book_by_343_sense_1 ;
+  lemon:synBehavior    :book_by_343_nounpp .
+
+:book_by_343_form a lemon:Form ;
+  lemon:writtenRep "book"@en .
+
+:book_by_343_singular a    lemon:Form ;
+  lemon:writtenRep "book"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:book_by_343_plural a   lemon:Form ;
+  lemon:writtenRep "books"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:book_by_343_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1365-1365-1364-1360-1362-1362-1362-1362-1362-1362-1339-1339-1339-1339-1310-1310-1310-1310-664_book_by_343 ;
+  lexinfo:prepositionalAdjunct :arg1-1365-1365-1364-1360-1362-1362-1362-1362-1362-1362-1339-1339-1339-1339-1310-1310-1310-1310-664_book_by_343 .
+
+:book_by_343_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :book_by_343_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg1-1365-1365-1364-1360-1362-1362-1362-1362-1362-1362-1339-1339-1339-1339-1310-1310-1310-1310-664_book_by_343 ;
+  lemon:objOfProp           :arg2-1365-1365-1364-1360-1362-1362-1362-1362-1362-1362-1339-1339-1339-1339-1310-1310-1310-1310-664_book_by_343 ;
+  lemon:condition           :book_by_343_sense_1_condition .
+
+:book_by_343_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Writer> .
+
+:arg1-1365-1365-1364-1360-1362-1362-1362-1362-1362-1362-1339-1339-1339-1339-1310-1310-1310-1310-664_book_by_343 lemon:marker :book_by_343_form_preposition .
+## Prepositions ##
+:book_by_343_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

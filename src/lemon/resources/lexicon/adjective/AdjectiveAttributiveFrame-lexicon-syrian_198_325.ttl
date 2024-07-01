@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :syrian_198_325_sense_1_res ;
+  lemon:entry    :syrian_198_325 .
+
+:syrian_198_325 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :syrian_198_325_lemma ;
+  lemon:sense          :syrian_198_325_sense_1 ;
+  lemon:synBehavior    :syrian_198_325_attrFrame, :syrian_198_325_predFrame .
+
+:syrian_198_325_lemma lemon:writtenRep "Syrian"@en .
+
+:syrian_198_325_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :syrian_198_325_PredSynArg .
+
+:syrian_198_325_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :syrian_198_325_AttrSynArg .
+
+:syrian_198_325_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :syrian_198_325_sense_1_res ;
+  lemon:isA       :syrian_198_325_AttrSynArg, :syrian_198_325_PredSynArg .
+
+:syrian_198_325_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Syria> .

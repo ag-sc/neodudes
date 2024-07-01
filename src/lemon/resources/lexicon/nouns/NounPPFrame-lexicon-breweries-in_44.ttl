@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :breweries-in_44 ;
+  lemon:entry    :breweries-in_44_form_preposition .
+
+:breweries-in_44 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :breweries-in_44_form ;
+  lemon:otherForm  :breweries-in_44_singular ;
+  lemon:otherForm  :breweries-in_44_plural ;
+  lemon:sense          :breweries-in_44_sense_1 ;
+  lemon:synBehavior    :breweries-in_44_nounpp .
+
+:breweries-in_44_form a lemon:Form ;
+  lemon:writtenRep "brewery"@en .
+
+:breweries-in_44_singular a    lemon:Form ;
+  lemon:writtenRep "brewery"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:breweries-in_44_plural a   lemon:Form ;
+  lemon:writtenRep "breweries"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:breweries-in_44_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-546-546-546-544-543-543-543-543-543-543-533-533-533-533-522-522-522-522-265-265-590_breweries-in_44 ;
+  lexinfo:prepositionalAdjunct :arg2-546-546-546-544-543-543-543-543-543-543-533-533-533-533-522-522-522-522-265-265-590_breweries-in_44 .
+
+:breweries-in_44_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :breweries-in_44_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/location> ;
+  lemon:subjOfProp          :arg2-546-546-546-544-543-543-543-543-543-543-533-533-533-533-522-522-522-522-265-265-590_breweries-in_44 ;
+  lemon:objOfProp           :arg1-546-546-546-544-543-543-543-543-543-543-533-533-533-533-522-522-522-522-265-265-590_breweries-in_44 ;
+  lemon:condition           :breweries-in_44_sense_1_condition .
+
+:breweries-in_44_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-546-546-546-544-543-543-543-543-543-543-533-533-533-533-522-522-522-522-265-265-590_breweries-in_44 lemon:marker :breweries-in_44_form_preposition .
+## Prepositions ##
+:breweries-in_44_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,76 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :timezone-of_419 ;
+  lemon:entry    :timezone-of_419_form_preposition .
+
+:timezone-of_419 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :timezone-of_419_form ;
+  lemon:otherForm  :timezone-of_419_singular ;
+  lemon:otherForm  :timezone-of_419_plural ;
+  lemon:sense          :timezone-of_419_sense_1 ;
+  lemon:sense          :timezone-of_419_sense_2 ;
+  lemon:sense          :timezone-of_419_sense_3 ;
+  lemon:synBehavior    :timezone-of_419_nounpp .
+
+:timezone-of_419_form a lemon:Form ;
+  lemon:writtenRep "time zone"@en .
+
+:timezone-of_419_singular a    lemon:Form ;
+  lemon:writtenRep "time zone"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:timezone-of_419_plural a   lemon:Form ;
+  lemon:writtenRep "time zones"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:timezone-of_419_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lexinfo:prepositionalAdjunct :arg2-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 .
+
+:timezone-of_419_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :timezone-of_419_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:objOfProp           :arg1-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:condition           :timezone-of_419_sense_1_condition .
+
+:timezone-of_419_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:timezone-of_419_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :timezone-of_419_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:objOfProp           :arg1-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:condition           :timezone-of_419_sense_2_condition .
+
+:timezone-of_419_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:timezone-of_419_sense_3 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :timezone-of_419_sense_3 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:objOfProp           :arg1-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 ;
+  lemon:condition           :timezone-of_419_sense_3_condition .
+
+:timezone-of_419_sense_3_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-986-986-986-982-981-981-981-981-981-981-963-963-963-963-940-940-940-940-468_timezone-of_419 lemon:marker :timezone-of_419_form_preposition .
+## Prepositions ##
+:timezone-of_419_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

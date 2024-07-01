@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :holiday-of_61 ;
+  lemon:entry    :holiday-of_61_form_preposition .
+
+:holiday-of_61 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :holiday-of_61_form ;
+  lemon:otherForm  :holiday-of_61_singular ;
+  lemon:otherForm  :holiday-of_61_plural ;
+  lemon:sense          :holiday-of_61_sense_1 ;
+  lemon:synBehavior    :holiday-of_61_nounpp .
+
+:holiday-of_61_form a lemon:Form ;
+  lemon:writtenRep "holiday"@en .
+
+:holiday-of_61_singular a    lemon:Form ;
+  lemon:writtenRep "holiday"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:holiday-of_61_plural a   lemon:Form ;
+  lemon:writtenRep "holidays"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:holiday-of_61_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-656-656-656-654-653-653-653-653-653-653-641-641-641-641-628-628-628-628-326-326-748_holiday-of_61 ;
+  lexinfo:prepositionalAdjunct :arg2-656-656-656-654-653-653-653-653-653-653-641-641-641-641-628-628-628-628-326-326-748_holiday-of_61 .
+
+:holiday-of_61_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :holiday-of_61_sense_1 ;
+  lemon:reference           <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  lemon:subjOfProp          :arg2-656-656-656-654-653-653-653-653-653-653-641-641-641-641-628-628-628-628-326-326-748_holiday-of_61 ;
+  lemon:objOfProp           :arg1-656-656-656-654-653-653-653-653-653-653-641-641-641-641-628-628-628-628-326-326-748_holiday-of_61 ;
+  lemon:condition           :holiday-of_61_sense_1_condition .
+
+:holiday-of_61_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Holiday> .
+
+:arg2-656-656-656-654-653-653-653-653-653-653-641-641-641-641-628-628-628-628-326-326-748_holiday-of_61 lemon:marker :holiday-of_61_form_preposition .
+## Prepositions ##
+:holiday-of_61_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

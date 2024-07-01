@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :store_of_181 ;
+  lemon:entry    :store_of_181_form_preposition .
+
+:store_of_181 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :store_of_181_form ;
+  lemon:otherForm  :store_of_181_singular ;
+  lemon:otherForm  :store_of_181_plural ;
+  lemon:sense          :store_of_181_sense_1 ;
+  lemon:synBehavior    :store_of_181_nounpp .
+
+:store_of_181_form a lemon:Form ;
+  lemon:writtenRep "store"@en .
+
+:store_of_181_singular a    lemon:Form ;
+  lemon:writtenRep "store"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:store_of_181_plural a   lemon:Form ;
+  lemon:writtenRep "stores"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:store_of_181_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-561-561-561-559-558-558-558-558-558-558-548-548-548-548-537-537-537-537-273-273-746_store_of_181 ;
+  lexinfo:prepositionalAdjunct :arg2-561-561-561-559-558-558-558-558-558-558-548-548-548-548-537-537-537-537-273-273-746_store_of_181 .
+
+:store_of_181_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :store_of_181_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfLocations> ;
+  lemon:subjOfProp          :arg2-561-561-561-559-558-558-558-558-558-558-548-548-548-548-537-537-537-537-273-273-746_store_of_181 ;
+  lemon:objOfProp           :arg1-561-561-561-559-558-558-558-558-558-558-548-548-548-548-537-537-537-537-273-273-746_store_of_181 ;
+  lemon:condition           :store_of_181_sense_1_condition .
+
+:store_of_181_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-561-561-561-559-558-558-558-558-558-558-548-548-548-548-537-537-537-537-273-273-746_store_of_181 lemon:marker :store_of_181_form_preposition .
+## Prepositions ##
+:store_of_181_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

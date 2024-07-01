@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :person_function_693_sense_1_res ;
+  lemon:entry    :person_function_693 .
+
+:person_function_693 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :person_function_693_form ;
+  lemon:otherForm  :person_function_693_singular ;
+  lemon:otherForm  :person_function_693_plural ;
+  lemon:sense          :person_function_693_sense_1 ;
+  lemon:synBehavior    :person_function_693_predFrame .
+
+:person_function_693_form
+ lemon:writtenRep "person function"@en .
+
+:person_function_693_singular a    lemon:Form ;
+  lemon:writtenRep "person function"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:person_function_693_plural a   lemon:Form ;
+  lemon:writtenRep "person functions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:person_function_693_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :person_function_693_sense_1_res ;
+  lemon:isA       :person_function_693_PredSynArg .
+
+:person_function_693_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/PersonFunction> .

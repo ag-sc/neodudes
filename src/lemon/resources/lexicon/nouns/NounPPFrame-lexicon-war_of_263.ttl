@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :war_of_263 ;
+  lemon:entry    :war_of_263_form_preposition .
+
+:war_of_263 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :war_of_263_form ;
+  lemon:otherForm  :war_of_263_singular ;
+  lemon:otherForm  :war_of_263_plural ;
+  lemon:sense          :war_of_263_sense_1 ;
+  lemon:synBehavior    :war_of_263_nounpp .
+
+:war_of_263_form a lemon:Form ;
+  lemon:writtenRep "war"@en .
+
+:war_of_263_singular a    lemon:Form ;
+  lemon:writtenRep "war"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:war_of_263_plural a   lemon:Form ;
+  lemon:writtenRep "wars"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:war_of_263_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1316-1316-1315-1310-1312-1312-1312-1312-1312-1312-1291-1291-1291-1291-1262-1262-1262-1262-637_war_of_263 ;
+  lexinfo:prepositionalAdjunct :arg2-1316-1316-1315-1310-1312-1312-1312-1312-1312-1312-1291-1291-1291-1291-1262-1262-1262-1262-637_war_of_263 .
+
+:war_of_263_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :war_of_263_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/battle> ;
+  lemon:subjOfProp          :arg2-1316-1316-1315-1310-1312-1312-1312-1312-1312-1312-1291-1291-1291-1291-1262-1262-1262-1262-637_war_of_263 ;
+  lemon:objOfProp           :arg1-1316-1316-1315-1310-1312-1312-1312-1312-1312-1312-1291-1291-1291-1291-1262-1262-1262-1262-637_war_of_263 ;
+  lemon:condition           :war_of_263_sense_1_condition .
+
+:war_of_263_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MilitaryConflict> .
+
+:arg2-1316-1316-1315-1310-1312-1312-1312-1312-1312-1312-1291-1291-1291-1291-1262-1262-1262-1262-637_war_of_263 lemon:marker :war_of_263_form_preposition .
+## Prepositions ##
+:war_of_263_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

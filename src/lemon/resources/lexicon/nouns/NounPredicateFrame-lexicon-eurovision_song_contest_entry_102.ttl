@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :eurovision_song_contest_entry_102_sense_1_res ;
+  lemon:entry    :eurovision_song_contest_entry_102 .
+
+:eurovision_song_contest_entry_102 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :eurovision_song_contest_entry_102_form ;
+  lemon:otherForm  :eurovision_song_contest_entry_102_singular ;
+  lemon:otherForm  :eurovision_song_contest_entry_102_plural ;
+  lemon:sense          :eurovision_song_contest_entry_102_sense_1 ;
+  lemon:synBehavior    :eurovision_song_contest_entry_102_predFrame .
+
+:eurovision_song_contest_entry_102_form
+ lemon:writtenRep "eurovision song contest entry"@en .
+
+:eurovision_song_contest_entry_102_singular a    lemon:Form ;
+  lemon:writtenRep "eurovision song contest entry"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:eurovision_song_contest_entry_102_plural a   lemon:Form ;
+  lemon:writtenRep "eurovision song contest entries"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:eurovision_song_contest_entry_102_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :eurovision_song_contest_entry_102_sense_1_res ;
+  lemon:isA       :eurovision_song_contest_entry_102_PredSynArg .
+
+:eurovision_song_contest_entry_102_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/EurovisionSongContestEntry> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president-of_3_297 ;
+  lemon:entry    :president-of_3_297_form_preposition .
+
+:president-of_3_297 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president-of_3_297_form ;
+  lemon:otherForm  :president-of_3_297_singular ;
+  lemon:otherForm  :president-of_3_297_plural ;
+  lemon:sense          :president-of_3_297_sense_1 ;
+  lemon:synBehavior    :president-of_3_297_nounpp .
+
+:president-of_3_297_form a lemon:Form ;
+  lemon:writtenRep "president"@en .
+
+:president-of_3_297_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president-of_3_297_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president-of_3_297_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-874-874-874-871-870-870-870-870-870-870-854-854-854-854-833-833-833-833-414_president-of_3_297 ;
+  lexinfo:prepositionalAdjunct :arg2-874-874-874-871-870-870-870-870-870-870-854-854-854-854-833-833-833-833-414_president-of_3_297 .
+
+:president-of_3_297_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :president-of_3_297_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leaderTitle> ;
+  lemon:subjOfProp          :arg2-874-874-874-871-870-870-870-870-870-870-854-854-854-854-833-833-833-833-414_president-of_3_297 ;
+  lemon:objOfProp           :arg1-874-874-874-871-870-870-870-870-870-870-854-854-854-854-833-833-833-833-414_president-of_3_297 ;
+  lemon:condition           :president-of_3_297_sense_1_condition .
+
+:president-of_3_297_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-874-874-874-871-870-870-870-870-870-870-854-854-854-854-833-833-833-833-414_president-of_3_297 lemon:marker :president-of_3_297_form_preposition .
+## Prepositions ##
+:president-of_3_297_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

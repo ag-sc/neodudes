@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president-of_4_225 ;
+  lemon:entry    :president-of_4_225_form_preposition .
+
+:president-of_4_225 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president-of_4_225_form ;
+  lemon:otherForm  :president-of_4_225_singular ;
+  lemon:otherForm  :president-of_4_225_plural ;
+  lemon:sense          :president-of_4_225_sense_1 ;
+  lemon:synBehavior    :president-of_4_225_nounpp .
+
+:president-of_4_225_form a lemon:Form ;
+  lemon:writtenRep "president"@en .
+
+:president-of_4_225_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president-of_4_225_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president-of_4_225_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1226-1226-1226-1221-1223-1223-1223-1223-1223-1223-1202-1202-1202-1202-1176-1176-1176-1176-586-586-272_president-of_4_225 ;
+  lexinfo:prepositionalAdjunct :arg2-1226-1226-1226-1221-1223-1223-1223-1223-1223-1223-1202-1202-1202-1202-1176-1176-1176-1176-586-586-272_president-of_4_225 .
+
+:president-of_4_225_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :president-of_4_225_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leaderTitle> ;
+  lemon:subjOfProp          :arg2-1226-1226-1226-1221-1223-1223-1223-1223-1223-1223-1202-1202-1202-1202-1176-1176-1176-1176-586-586-272_president-of_4_225 ;
+  lemon:objOfProp           :arg1-1226-1226-1226-1221-1223-1223-1223-1223-1223-1223-1202-1202-1202-1202-1176-1176-1176-1176-586-586-272_president-of_4_225 ;
+  lemon:condition           :president-of_4_225_sense_1_condition .
+
+:president-of_4_225_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1226-1226-1226-1221-1223-1223-1223-1223-1223-1223-1202-1202-1202-1202-1176-1176-1176-1176-586-586-272_president-of_4_225 lemon:marker :president-of_4_225_form_preposition .
+## Prepositions ##
+:president-of_4_225_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :club_in_1_36 ;
+  lemon:entry    :club_in_1_36_form_preposition .
+
+:club_in_1_36 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :club_in_1_36_form ;
+  lemon:otherForm  :club_in_1_36_singular ;
+  lemon:otherForm  :club_in_1_36_plural ;
+  lemon:sense          :club_in_1_36_sense_1 ;
+  lemon:synBehavior    :club_in_1_36_nounpp .
+
+:club_in_1_36_form a lemon:Form ;
+  lemon:writtenRep "club"@en .
+
+:club_in_1_36_singular a    lemon:Form ;
+  lemon:writtenRep "club"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:club_in_1_36_plural a   lemon:Form ;
+  lemon:writtenRep "clubs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:club_in_1_36_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-563-563-563-561-560-560-560-560-560-560-550-550-550-550-539-539-539-539-274-274-566_club_in_1_36 ;
+  lexinfo:prepositionalAdjunct :arg2-563-563-563-561-560-560-560-560-560-560-550-550-550-550-539-539-539-539-274-274-566_club_in_1_36 .
+
+:club_in_1_36_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :club_in_1_36_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/ground> ;
+  lemon:subjOfProp          :arg2-563-563-563-561-560-560-560-560-560-560-550-550-550-550-539-539-539-539-274-274-566_club_in_1_36 ;
+  lemon:objOfProp           :arg1-563-563-563-561-560-560-560-560-560-560-550-550-550-550-539-539-539-539-274-274-566_club_in_1_36 ;
+  lemon:condition           :club_in_1_36_sense_1_condition .
+
+:club_in_1_36_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/SoccerClub> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-563-563-563-561-560-560-560-560-560-560-550-550-550-550-539-539-539-539-274-274-566_club_in_1_36 lemon:marker :club_in_1_36_form_preposition .
+## Prepositions ##
+:club_in_1_36_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

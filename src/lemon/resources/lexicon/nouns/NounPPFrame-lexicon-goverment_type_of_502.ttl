@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :goverment_type_of_502 ;
+  lemon:entry    :goverment_type_of_502_form_preposition .
+
+:goverment_type_of_502 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :goverment_type_of_502_form ;
+  lemon:otherForm  :goverment_type_of_502_singular ;
+  lemon:otherForm  :goverment_type_of_502_plural ;
+  lemon:sense          :goverment_type_of_502_sense_1 ;
+  lemon:synBehavior    :goverment_type_of_502_nounpp .
+
+:goverment_type_of_502_form a lemon:Form ;
+  lemon:writtenRep "goverment type"@en .
+
+:goverment_type_of_502_singular a    lemon:Form ;
+  lemon:writtenRep "goverment type"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:goverment_type_of_502_plural a   lemon:Form ;
+  lemon:writtenRep "goverment types"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:goverment_type_of_502_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-786-786-786-784-783-783-783-783-783-783-768-768-768-768-751-751-751-751-371_goverment_type_of_502 ;
+  lexinfo:prepositionalAdjunct :arg2-786-786-786-784-783-783-783-783-783-783-768-768-768-768-751-751-751-751-371_goverment_type_of_502 .
+
+:goverment_type_of_502_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :goverment_type_of_502_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg2-786-786-786-784-783-783-783-783-783-783-768-768-768-768-751-751-751-751-371_goverment_type_of_502 ;
+  lemon:objOfProp           :arg1-786-786-786-784-783-783-783-783-783-783-768-768-768-768-751-751-751-751-371_goverment_type_of_502 ;
+  lemon:condition           :goverment_type_of_502_sense_1_condition .
+
+:goverment_type_of_502_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Organisation> .
+
+:arg2-786-786-786-784-783-783-783-783-783-783-768-768-768-768-751-751-751-751-371_goverment_type_of_502 lemon:marker :goverment_type_of_502_form_preposition .
+## Prepositions ##
+:goverment_type_of_502_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

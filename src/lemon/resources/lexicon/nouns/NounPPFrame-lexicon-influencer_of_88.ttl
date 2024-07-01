@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :influencer_of_88 ;
+  lemon:entry    :influencer_of_88_form_preposition .
+
+:influencer_of_88 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :influencer_of_88_form ;
+  lemon:otherForm  :influencer_of_88_singular ;
+  lemon:otherForm  :influencer_of_88_plural ;
+  lemon:sense          :influencer_of_88_sense_1 ;
+  lemon:synBehavior    :influencer_of_88_nounpp .
+
+:influencer_of_88_form a lemon:Form ;
+  lemon:writtenRep "influencer"@en .
+
+:influencer_of_88_singular a    lemon:Form ;
+  lemon:writtenRep "influencer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:influencer_of_88_plural a   lemon:Form ;
+  lemon:writtenRep "influencers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:influencer_of_88_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1066-1066-1066-1063-1062-1062-1062-1062-1062-1062-1044-1044-1044-1044-1019-1019-1019-1019-513-513-59_influencer_of_88 ;
+  lexinfo:prepositionalAdjunct :arg2-1066-1066-1066-1063-1062-1062-1062-1062-1062-1062-1044-1044-1044-1044-1019-1019-1019-1019-513-513-59_influencer_of_88 .
+
+:influencer_of_88_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :influencer_of_88_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/influenced> ;
+  lemon:subjOfProp          :arg2-1066-1066-1066-1063-1062-1062-1062-1062-1062-1062-1044-1044-1044-1044-1019-1019-1019-1019-513-513-59_influencer_of_88 ;
+  lemon:objOfProp           :arg1-1066-1066-1066-1063-1062-1062-1062-1062-1062-1062-1044-1044-1044-1044-1019-1019-1019-1019-513-513-59_influencer_of_88 ;
+  lemon:condition           :influencer_of_88_sense_1_condition .
+
+:influencer_of_88_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1066-1066-1066-1063-1062-1062-1062-1062-1062-1062-1044-1044-1044-1044-1019-1019-1019-1019-513-513-59_influencer_of_88 lemon:marker :influencer_of_88_form_preposition .
+## Prepositions ##
+:influencer_of_88_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

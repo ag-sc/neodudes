@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :hospital_483_sense_1_res ;
+  lemon:entry    :hospital_483 .
+
+:hospital_483 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :hospital_483_form ;
+  lemon:otherForm  :hospital_483_singular ;
+  lemon:otherForm  :hospital_483_plural ;
+  lemon:sense          :hospital_483_sense_1 ;
+  lemon:synBehavior    :hospital_483_predFrame .
+
+:hospital_483_form
+ lemon:writtenRep "hospital"@en .
+
+:hospital_483_singular a    lemon:Form ;
+  lemon:writtenRep "hospital"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:hospital_483_plural a   lemon:Form ;
+  lemon:writtenRep "hospitals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:hospital_483_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :hospital_483_sense_1_res ;
+  lemon:isA       :hospital_483_PredSynArg .
+
+:hospital_483_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Hospital> .

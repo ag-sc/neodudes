@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :television_station_256_sense_1_res ;
+  lemon:entry    :television_station_256 .
+
+:television_station_256 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :television_station_256_form ;
+  lemon:otherForm  :television_station_256_singular ;
+  lemon:otherForm  :television_station_256_plural ;
+  lemon:sense          :television_station_256_sense_1 ;
+  lemon:synBehavior    :television_station_256_predFrame .
+
+:television_station_256_form
+ lemon:writtenRep "television station"@en .
+
+:television_station_256_singular a    lemon:Form ;
+  lemon:writtenRep "television station"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:television_station_256_plural a   lemon:Form ;
+  lemon:writtenRep "television stations"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:television_station_256_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :television_station_256_sense_1_res ;
+  lemon:isA       :television_station_256_PredSynArg .
+
+:television_station_256_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/TelevisionStation> .

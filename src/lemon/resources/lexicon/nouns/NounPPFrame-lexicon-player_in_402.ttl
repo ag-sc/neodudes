@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :player_in_402 ;
+  lemon:entry    :player_in_402_form_preposition .
+
+:player_in_402 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :player_in_402_form ;
+  lemon:otherForm  :player_in_402_singular ;
+  lemon:otherForm  :player_in_402_plural ;
+  lemon:sense          :player_in_402_sense_1 ;
+  lemon:synBehavior    :player_in_402_nounpp .
+
+:player_in_402_form a lemon:Form ;
+  lemon:writtenRep "player"@en .
+
+:player_in_402_singular a    lemon:Form ;
+  lemon:writtenRep "player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:player_in_402_plural a   lemon:Form ;
+  lemon:writtenRep "players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:player_in_402_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-429-429-428-428-427-427-427-427-427-427-419-419-419-419-411-411-411-411-205_player_in_402 ;
+  lexinfo:prepositionalAdjunct :arg2-429-429-428-428-427-427-427-427-427-427-419-419-419-419-411-411-411-411-205_player_in_402 .
+
+:player_in_402_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :player_in_402_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/team> ;
+  lemon:subjOfProp          :arg2-429-429-428-428-427-427-427-427-427-427-419-419-419-419-411-411-411-411-205_player_in_402 ;
+  lemon:objOfProp           :arg1-429-429-428-428-427-427-427-427-427-427-419-419-419-419-411-411-411-411-205_player_in_402 ;
+  lemon:condition           :player_in_402_sense_1_condition .
+
+:player_in_402_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-429-429-428-428-427-427-427-427-427-427-419-419-419-419-411-411-411-411-205_player_in_402 lemon:marker :player_in_402_form_preposition .
+## Prepositions ##
+:player_in_402_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

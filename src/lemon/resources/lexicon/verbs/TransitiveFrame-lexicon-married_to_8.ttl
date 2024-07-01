@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_married_to_8 ;
+  lemon:entry    :married_to_8ed ;
+  lemon:entry    :form_married_to_8_preposition .
+
+:to_married_to_8 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_married_to_8 ;
+  lemon:otherForm      :form_married_to_8s ;
+  lemon:otherForm      :form_married_to_8ed ;
+  lemon:otherForm      :form_married_to_8perfect ;
+  lemon:sense          :married_to_8_sense_1 ;
+  lemon:synBehavior    :married_to_8_frame_transitive .
+
+:form_married_to_8 a         lemon:Form ;
+  lemon:writtenRep     "marry to"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_married_to_8s a    lemon:Form ;
+  lemon:writtenRep "marries to"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_married_to_8ed a   lemon:Form ;
+  lemon:writtenRep "married to"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_married_to_8perfect a   lemon:Form ;
+  lemon:writtenRep "married to"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:married_to_8_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :married_to_8_subj ;
+  lexinfo:directObject     :married_to_8_obj .
+
+:married_to_8_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :married_to_8_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/spouse> ;
+  lemon:subjOfProp  :married_to_8_obj ;
+  lemon:objOfProp   :married_to_8_subj ;
+  lemon:condition   :married_to_8_sense_1_condition .
+
+
+:married_to_8_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:married_to_8_obj lemon:marker :form_married_to_8_preposition .
+
+## Prepositions ##
+:form_married_to_8_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

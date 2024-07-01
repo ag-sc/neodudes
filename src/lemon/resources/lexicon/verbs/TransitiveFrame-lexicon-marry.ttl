@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_marry ;
+  lemon:entry    :marryed ;
+  lemon:entry    :form_marry_preposition .
+
+:to_marry a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_marry ;
+  lemon:otherForm      :form_marrys ;
+  lemon:otherForm      :form_marryed ;
+  lemon:otherForm      :form_marryperfect ;
+  lemon:sense          :marry_sense_1 ;
+  lemon:synBehavior    :marry_frame_transitive .
+
+:form_marry a         lemon:Form ;
+  lemon:writtenRep     "marry"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_marrys a    lemon:Form ;
+  lemon:writtenRep "marries"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_marryed a   lemon:Form ;
+  lemon:writtenRep "married"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_marryperfect a   lemon:Form ;
+  lemon:writtenRep "married"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:marry_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :marry_subj ;
+  lexinfo:directObject     :marry_obj .
+
+:marry_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :marry_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/spouse> ;
+  lemon:subjOfProp  :marry_obj ;
+  lemon:objOfProp   :marry_subj ;
+  lemon:condition   :marry_sense_1_condition .
+
+
+:marry_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:marry_obj lemon:marker :form_marry_preposition .
+
+## Prepositions ##
+:form_marry_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "to"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :volcano_in_329 ;
+  lemon:entry    :volcano_in_329_form_preposition .
+
+:volcano_in_329 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :volcano_in_329_form ;
+  lemon:otherForm  :volcano_in_329_singular ;
+  lemon:otherForm  :volcano_in_329_plural ;
+  lemon:sense          :volcano_in_329_sense_1 ;
+  lemon:synBehavior    :volcano_in_329_nounpp .
+
+:volcano_in_329_form a lemon:Form ;
+  lemon:writtenRep "Volcano"@en .
+
+:volcano_in_329_singular a    lemon:Form ;
+  lemon:writtenRep "Volcano"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:volcano_in_329_plural a   lemon:Form ;
+  lemon:writtenRep "Volcanos"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:volcano_in_329_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-416-416-415-415-414-414-414-414-414-414-406-406-406-406-398-398-398-398-200_volcano_in_329 ;
+  lexinfo:prepositionalAdjunct :arg2-416-416-415-415-414-414-414-414-414-414-406-406-406-406-398-398-398-398-200_volcano_in_329 .
+
+:volcano_in_329_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :volcano_in_329_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfPages> ;
+  lemon:subjOfProp          :arg2-416-416-415-415-414-414-414-414-414-414-406-406-406-406-398-398-398-398-200_volcano_in_329 ;
+  lemon:objOfProp           :arg1-416-416-415-415-414-414-414-414-414-414-406-406-406-406-398-398-398-398-200_volcano_in_329 ;
+  lemon:condition           :volcano_in_329_sense_1_condition .
+
+:volcano_in_329_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/WrittenWork> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+
+:arg2-416-416-415-415-414-414-414-414-414-414-406-406-406-406-398-398-398-398-200_volcano_in_329 lemon:marker :volcano_in_329_form_preposition .
+## Prepositions ##
+:volcano_in_329_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

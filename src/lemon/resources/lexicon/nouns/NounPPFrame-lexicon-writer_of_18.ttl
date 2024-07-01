@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :writer_of_18 ;
+  lemon:entry    :writer_of_18_form_preposition .
+
+:writer_of_18 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :writer_of_18_form ;
+  lemon:otherForm  :writer_of_18_singular ;
+  lemon:otherForm  :writer_of_18_plural ;
+  lemon:sense          :writer_of_18_sense_1 ;
+  lemon:synBehavior    :writer_of_18_nounpp .
+
+:writer_of_18_form a lemon:Form ;
+  lemon:writtenRep "writer"@en .
+
+:writer_of_18_singular a    lemon:Form ;
+  lemon:writtenRep "writer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:writer_of_18_plural a   lemon:Form ;
+  lemon:writtenRep "writers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:writer_of_18_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1439-1439-1439-1434-1436-1436-1436-1436-1436-1436-1413-1413-1413-1413-1384-1384-1384-1384-678-678-105_writer_of_18 ;
+  lexinfo:prepositionalAdjunct :arg2-1439-1439-1439-1434-1436-1436-1436-1436-1436-1436-1413-1413-1413-1413-1384-1384-1384-1384-678-678-105_writer_of_18 .
+
+:writer_of_18_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :writer_of_18_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/writer> ;
+  lemon:subjOfProp          :arg2-1439-1439-1439-1434-1436-1436-1436-1436-1436-1436-1413-1413-1413-1413-1384-1384-1384-1384-678-678-105_writer_of_18 ;
+  lemon:objOfProp           :arg1-1439-1439-1439-1434-1436-1436-1436-1436-1436-1436-1413-1413-1413-1413-1384-1384-1384-1384-678-678-105_writer_of_18 ;
+  lemon:condition           :writer_of_18_sense_1_condition .
+
+:writer_of_18_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/MusicalWork> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Actor> .
+
+:arg2-1439-1439-1439-1434-1436-1436-1436-1436-1436-1436-1413-1413-1413-1413-1384-1384-1384-1384-678-678-105_writer_of_18 lemon:marker :writer_of_18_form_preposition .
+## Prepositions ##
+:writer_of_18_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

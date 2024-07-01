@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :team_of_84 ;
+  lemon:entry    :team_of_84_form_preposition .
+
+:team_of_84 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :team_of_84_form ;
+  lemon:otherForm  :team_of_84_singular ;
+  lemon:otherForm  :team_of_84_plural ;
+  lemon:sense          :team_of_84_sense_1 ;
+  lemon:synBehavior    :team_of_84_nounpp .
+
+:team_of_84_form a lemon:Form ;
+  lemon:writtenRep "team"@en .
+
+:team_of_84_singular a    lemon:Form ;
+  lemon:writtenRep "team"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:team_of_84_plural a   lemon:Form ;
+  lemon:writtenRep "teams"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:team_of_84_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1217-1217-1217-1212-1214-1214-1214-1214-1214-1214-1193-1193-1193-1193-1167-1167-1167-1167-582-582-238_team_of_84 ;
+  lexinfo:prepositionalAdjunct :arg1-1217-1217-1217-1212-1214-1214-1214-1214-1214-1214-1193-1193-1193-1193-1167-1167-1167-1167-582-582-238_team_of_84 .
+
+:team_of_84_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :team_of_84_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/league> ;
+  lemon:subjOfProp          :arg1-1217-1217-1217-1212-1214-1214-1214-1214-1214-1214-1193-1193-1193-1193-1167-1167-1167-1167-582-582-238_team_of_84 ;
+  lemon:objOfProp           :arg2-1217-1217-1217-1212-1214-1214-1214-1214-1214-1214-1193-1193-1193-1193-1167-1167-1167-1167-582-582-238_team_of_84 ;
+  lemon:condition           :team_of_84_sense_1_condition .
+
+:team_of_84_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/HockeyTeam> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/IceHockeyLeague> .
+
+:arg1-1217-1217-1217-1212-1214-1214-1214-1214-1214-1214-1193-1193-1193-1193-1167-1167-1167-1167-582-582-238_team_of_84 lemon:marker :team_of_84_form_preposition .
+## Prepositions ##
+:team_of_84_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

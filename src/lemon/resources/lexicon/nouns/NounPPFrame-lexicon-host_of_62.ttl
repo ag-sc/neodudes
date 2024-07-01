@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :host_of_62 ;
+  lemon:entry    :host_of_62_form_preposition .
+
+:host_of_62 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :host_of_62_form ;
+  lemon:otherForm  :host_of_62_singular ;
+  lemon:otherForm  :host_of_62_plural ;
+  lemon:sense          :host_of_62_sense_1 ;
+  lemon:synBehavior    :host_of_62_nounpp .
+
+:host_of_62_form a lemon:Form ;
+  lemon:writtenRep "host"@en .
+
+:host_of_62_singular a    lemon:Form ;
+  lemon:writtenRep "host"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:host_of_62_plural a   lemon:Form ;
+  lemon:writtenRep "hosts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:host_of_62_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-774-774-774-772-771-771-771-771-771-771-756-756-756-756-740-740-740-740-373-373-384_host_of_62 ;
+  lexinfo:prepositionalAdjunct :arg2-774-774-774-772-771-771-771-771-771-771-756-756-756-756-740-740-740-740-373-373-384_host_of_62 .
+
+:host_of_62_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :host_of_62_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/presenter> ;
+  lemon:subjOfProp          :arg2-774-774-774-772-771-771-771-771-771-771-756-756-756-756-740-740-740-740-373-373-384_host_of_62 ;
+  lemon:objOfProp           :arg1-774-774-774-772-771-771-771-771-771-771-756-756-756-756-740-740-740-740-373-373-384_host_of_62 ;
+  lemon:condition           :host_of_62_sense_1_condition .
+
+:host_of_62_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-774-774-774-772-771-771-771-771-771-771-756-756-756-756-740-740-740-740-373-373-384_host_of_62 lemon:marker :host_of_62_form_preposition .
+## Prepositions ##
+:host_of_62_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

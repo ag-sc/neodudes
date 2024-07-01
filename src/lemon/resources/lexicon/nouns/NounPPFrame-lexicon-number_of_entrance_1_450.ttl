@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :number_of_entrance_1_450 ;
+  lemon:entry    :number_of_entrance_1_450_form_preposition .
+
+:number_of_entrance_1_450 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :number_of_entrance_1_450_form ;
+  lemon:otherForm  :number_of_entrance_1_450_singular ;
+  lemon:otherForm  :number_of_entrance_1_450_plural ;
+  lemon:sense          :number_of_entrance_1_450_sense_1 ;
+  lemon:synBehavior    :number_of_entrance_1_450_nounpp .
+
+:number_of_entrance_1_450_form a lemon:Form ;
+  lemon:writtenRep "number of entrance"@en .
+
+:number_of_entrance_1_450_singular a    lemon:Form ;
+  lemon:writtenRep "number of entrance"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:number_of_entrance_1_450_plural a   lemon:Form ;
+  lemon:writtenRep "number of entrances"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:number_of_entrance_1_450_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-518-518-517-516-515-515-515-515-515-515-506-506-506-506-496-496-496-496-244_number_of_entrance_1_450 ;
+  lexinfo:prepositionalAdjunct :arg2-518-518-517-516-515-515-515-515-515-515-506-506-506-506-496-496-496-496-244_number_of_entrance_1_450 .
+
+:number_of_entrance_1_450_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :number_of_entrance_1_450_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/entranceCount> ;
+  lemon:subjOfProp          :arg2-518-518-517-516-515-515-515-515-515-515-506-506-506-506-496-496-496-496-244_number_of_entrance_1_450 ;
+  lemon:objOfProp           :arg1-518-518-517-516-515-515-515-515-515-515-506-506-506-506-496-496-496-496-244_number_of_entrance_1_450 ;
+  lemon:condition           :number_of_entrance_1_450_sense_1_condition .
+
+:number_of_entrance_1_450_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Cave> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-518-518-517-516-515-515-515-515-515-515-506-506-506-506-496-496-496-496-244_number_of_entrance_1_450 lemon:marker :number_of_entrance_1_450_form_preposition .
+## Prepositions ##
+:number_of_entrance_1_450_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :astronaut_of_262 ;
+  lemon:entry    :astronaut_of_262_form_preposition .
+
+:astronaut_of_262 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :astronaut_of_262_form ;
+  lemon:otherForm  :astronaut_of_262_singular ;
+  lemon:otherForm  :astronaut_of_262_plural ;
+  lemon:sense          :astronaut_of_262_sense_1 ;
+  lemon:synBehavior    :astronaut_of_262_nounpp .
+
+:astronaut_of_262_form a lemon:Form ;
+  lemon:writtenRep "astronaut"@en .
+
+:astronaut_of_262_singular a    lemon:Form ;
+  lemon:writtenRep "astronaut"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:astronaut_of_262_plural a   lemon:Form ;
+  lemon:writtenRep "astronauts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:astronaut_of_262_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-781-781-781-779-778-778-778-778-778-778-763-763-763-763-746-746-746-746-369_astronaut_of_262 ;
+  lexinfo:prepositionalAdjunct :arg2-781-781-781-779-778-778-778-778-778-778-763-763-763-763-746-746-746-746-369_astronaut_of_262 .
+
+:astronaut_of_262_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :astronaut_of_262_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/mission> ;
+  lemon:subjOfProp          :arg2-781-781-781-779-778-778-778-778-778-778-763-763-763-763-746-746-746-746-369_astronaut_of_262 ;
+  lemon:objOfProp           :arg1-781-781-781-779-778-778-778-778-778-778-763-763-763-763-746-746-746-746-369_astronaut_of_262 ;
+  lemon:condition           :astronaut_of_262_sense_1_condition .
+
+:astronaut_of_262_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/SpaceMission> .
+
+:arg2-781-781-781-779-778-778-778-778-778-778-763-763-763-763-746-746-746-746-369_astronaut_of_262 lemon:marker :astronaut_of_262_form_preposition .
+## Prepositions ##
+:astronaut_of_262_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :area_of_176 ;
+  lemon:entry    :area_of_176_form_preposition .
+
+:area_of_176 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :area_of_176_form ;
+  lemon:otherForm  :area_of_176_singular ;
+  lemon:otherForm  :area_of_176_plural ;
+  lemon:sense          :area_of_176_sense_1 ;
+  lemon:synBehavior    :area_of_176_nounpp .
+
+:area_of_176_form a lemon:Form ;
+  lemon:writtenRep "area"@en .
+
+:area_of_176_singular a    lemon:Form ;
+  lemon:writtenRep "area"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:area_of_176_plural a   lemon:Form ;
+  lemon:writtenRep "areas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:area_of_176_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1007-1007-1007-1004-1003-1003-1003-1003-1003-1003-985-985-985-985-961-961-961-961-482-482-553_area_of_176 ;
+  lexinfo:prepositionalAdjunct :arg2-1007-1007-1007-1004-1003-1003-1003-1003-1003-1003-985-985-985-985-961-961-961-961-482-482-553_area_of_176 .
+
+:area_of_176_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :area_of_176_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaTotal> ;
+  lemon:subjOfProp          :arg2-1007-1007-1007-1004-1003-1003-1003-1003-1003-1003-985-985-985-985-961-961-961-961-482-482-553_area_of_176 ;
+  lemon:objOfProp           :arg1-1007-1007-1007-1004-1003-1003-1003-1003-1003-1003-985-985-985-985-961-961-961-961-482-482-553_area_of_176 ;
+  lemon:condition           :area_of_176_sense_1_condition .
+
+:area_of_176_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1007-1007-1007-1004-1003-1003-1003-1003-1003-1003-985-985-985-985-961-961-961-961-482-482-553_area_of_176 lemon:marker :area_of_176_form_preposition .
+## Prepositions ##
+:area_of_176_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

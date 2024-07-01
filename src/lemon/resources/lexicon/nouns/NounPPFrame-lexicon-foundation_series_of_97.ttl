@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :foundation_series_of_97 ;
+  lemon:entry    :foundation_series_of_97_form_preposition .
+
+:foundation_series_of_97 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :foundation_series_of_97_form ;
+  lemon:otherForm  :foundation_series_of_97_singular ;
+  lemon:otherForm  :foundation_series_of_97_plural ;
+  lemon:sense          :foundation_series_of_97_sense_1 ;
+  lemon:synBehavior    :foundation_series_of_97_nounpp .
+
+:foundation_series_of_97_form a lemon:Form ;
+  lemon:writtenRep "foundation series"@en .
+
+:foundation_series_of_97_singular a    lemon:Form ;
+  lemon:writtenRep "foundation series"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:foundation_series_of_97_plural a   lemon:Form ;
+  lemon:writtenRep "foundation series"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:foundation_series_of_97_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-267-267-266-266-265-265-265-265-265-265-259-259-259-259-254-254-254-254-125-125-276_foundation_series_of_97 ;
+  lexinfo:prepositionalAdjunct :arg2-267-267-266-266-265-265-265-265-265-265-259-259-259-259-254-254-254-254-125-125-276_foundation_series_of_97 .
+
+:foundation_series_of_97_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :foundation_series_of_97_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/series> ;
+  lemon:subjOfProp          :arg2-267-267-266-266-265-265-265-265-265-265-259-259-259-259-254-254-254-254-125-125-276_foundation_series_of_97 ;
+  lemon:objOfProp           :arg1-267-267-266-266-265-265-265-265-265-265-259-259-259-259-254-254-254-254-125-125-276_foundation_series_of_97 ;
+  lemon:condition           :foundation_series_of_97_sense_1_condition .
+
+:foundation_series_of_97_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-267-267-266-266-265-265-265-265-265-265-259-259-259-259-254-254-254-254-125-125-276_foundation_series_of_97 lemon:marker :foundation_series_of_97_form_preposition .
+## Prepositions ##
+:foundation_series_of_97_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

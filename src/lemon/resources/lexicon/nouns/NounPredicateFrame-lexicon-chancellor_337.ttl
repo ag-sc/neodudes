@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :chancellor_337_sense_1_res ;
+  lemon:entry    :chancellor_337 .
+
+:chancellor_337 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :chancellor_337_form ;
+  lemon:otherForm  :chancellor_337_singular ;
+  lemon:otherForm  :chancellor_337_plural ;
+  lemon:sense          :chancellor_337_sense_1 ;
+  lemon:synBehavior    :chancellor_337_predFrame .
+
+:chancellor_337_form
+ lemon:writtenRep "chancellor"@en .
+
+:chancellor_337_singular a    lemon:Form ;
+  lemon:writtenRep "chancellor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:chancellor_337_plural a   lemon:Form ;
+  lemon:writtenRep "chancellors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:chancellor_337_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :chancellor_337_sense_1_res ;
+  lemon:isA       :chancellor_337_PredSynArg .
+
+:chancellor_337_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Chancellor> .

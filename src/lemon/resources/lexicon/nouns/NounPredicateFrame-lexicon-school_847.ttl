@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :school_847_sense_1_res ;
+  lemon:entry    :school_847 .
+
+:school_847 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :school_847_form ;
+  lemon:otherForm  :school_847_singular ;
+  lemon:otherForm  :school_847_plural ;
+  lemon:sense          :school_847_sense_1 ;
+  lemon:synBehavior    :school_847_predFrame .
+
+:school_847_form
+ lemon:writtenRep "school"@en .
+
+:school_847_singular a    lemon:Form ;
+  lemon:writtenRep "school"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:school_847_plural a   lemon:Form ;
+  lemon:writtenRep "schools"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:school_847_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :school_847_sense_1_res ;
+  lemon:isA       :school_847_PredSynArg .
+
+:school_847_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/School> .

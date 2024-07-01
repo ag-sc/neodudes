@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tall_1 ;
+  lemon:entry    :form_tall_1_preposition ;
+  lemon:entry    :tall_1_res .
+
+:tall_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_tall_1 ;
+  lemon:otherForm      :form_tall_1_comperative ;
+  lemon:otherForm      :form_tall_1_superlative ;
+  lemon:sense          :tall_1_sense_1 ;
+  lemon:synBehavior    :tall_1_predFrame .
+
+:form_tall_1 lemon:writtenRep "tall"@en .
+
+:form_tall_1_comperative lemon:writtenRep "taller"@en .
+
+:form_tall_1_superlative lemon:writtenRep "tallest"@en .
+
+:tall_1_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :tall_1_PredSynArg .
+
+:tall_1_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tall_1_res ;
+  lemon:isA       :tall_1_PredSynArg ;
+  lemon:condition :tall_1_sense_1_condition .
+
+:tall_1_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/height> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:tall_1_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BasketballPlayer> .## Prepositions ##
+:form_tall_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

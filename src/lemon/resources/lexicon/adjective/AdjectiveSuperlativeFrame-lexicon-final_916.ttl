@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :final_916 ;
+  lemon:entry    :form_final_916_preposition ;
+  lemon:entry    :final_916_res .
+
+:final_916 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_final_916 ;
+  lemon:otherForm      :form_final_916_comperative ;
+  lemon:otherForm      :form_final_916_superlative ;
+  lemon:sense          :final_916_sense_1 ;
+  lemon:synBehavior    :final_916_predFrame .
+
+:form_final_916 lemon:writtenRep "final"@en .
+
+:form_final_916_comperative lemon:writtenRep "-"@en .
+
+:form_final_916_superlative lemon:writtenRep "-"@en .
+
+:final_916_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :final_916_PredSynArg .
+
+:final_916_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :final_916_res ;
+  lemon:isA       :final_916_PredSynArg ;
+  lemon:condition :final_916_sense_1_condition .
+
+:final_916_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/date> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:final_916_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange    <http://www.w3.org/2001/XMLSchema#string> .
+
+## Prepositions ##
+:form_final_916_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

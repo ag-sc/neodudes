@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :fifa_world__ranking_of_765 ;
+  lemon:entry    :fifa_world__ranking_of_765_form_preposition .
+
+:fifa_world__ranking_of_765 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :fifa_world__ranking_of_765_form ;
+  lemon:otherForm  :fifa_world__ranking_of_765_singular ;
+  lemon:otherForm  :fifa_world__ranking_of_765_plural ;
+  lemon:sense          :fifa_world__ranking_of_765_sense_1 ;
+  lemon:synBehavior    :fifa_world__ranking_of_765_nounpp .
+
+:fifa_world__ranking_of_765_form a lemon:Form ;
+  lemon:writtenRep "FIFA World Ranking"@en .
+
+:fifa_world__ranking_of_765_singular a    lemon:Form ;
+  lemon:writtenRep "FIFA World Ranking"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:fifa_world__ranking_of_765_plural a   lemon:Form ;
+  lemon:writtenRep "FIFA World Rankings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:fifa_world__ranking_of_765_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1266-1266-1266-1261-1263-1263-1263-1263-1263-1263-1242-1242-1242-1242-1215-1215-1215-1215-602-602-400_fifa_world__ranking_of_765 ;
+  lexinfo:prepositionalAdjunct :arg2-1266-1266-1266-1261-1263-1263-1263-1263-1263-1263-1242-1242-1242-1242-1215-1215-1215-1215-602-602-400_fifa_world__ranking_of_765 .
+
+:fifa_world__ranking_of_765_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :fifa_world__ranking_of_765_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/fifaMin> ;
+  lemon:subjOfProp          :arg2-1266-1266-1266-1261-1263-1263-1263-1263-1263-1263-1242-1242-1242-1242-1215-1215-1215-1215-602-602-400_fifa_world__ranking_of_765 ;
+  lemon:objOfProp           :arg1-1266-1266-1266-1261-1263-1263-1263-1263-1263-1263-1242-1242-1242-1242-1215-1215-1215-1215-602-602-400_fifa_world__ranking_of_765 ;
+  lemon:condition           :fifa_world__ranking_of_765_sense_1_condition .
+
+:fifa_world__ranking_of_765_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/SportsClub> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1266-1266-1266-1261-1263-1263-1263-1263-1263-1263-1242-1242-1242-1242-1215-1215-1215-1215-602-602-400_fifa_world__ranking_of_765 lemon:marker :fifa_world__ranking_of_765_form_preposition .
+## Prepositions ##
+:fifa_world__ranking_of_765_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

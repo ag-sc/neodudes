@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :olympic_event_770_sense_1_res ;
+  lemon:entry    :olympic_event_770 .
+
+:olympic_event_770 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :olympic_event_770_form ;
+  lemon:otherForm  :olympic_event_770_singular ;
+  lemon:otherForm  :olympic_event_770_plural ;
+  lemon:sense          :olympic_event_770_sense_1 ;
+  lemon:synBehavior    :olympic_event_770_predFrame .
+
+:olympic_event_770_form
+ lemon:writtenRep "olympic event"@en .
+
+:olympic_event_770_singular a    lemon:Form ;
+  lemon:writtenRep "olympic event"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:olympic_event_770_plural a   lemon:Form ;
+  lemon:writtenRep "olympic events"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:olympic_event_770_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :olympic_event_770_sense_1_res ;
+  lemon:isA       :olympic_event_770_PredSynArg .
+
+:olympic_event_770_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/OlympicEvent> .

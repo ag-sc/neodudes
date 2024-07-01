@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cameroonian_33_336_sense_1_res ;
+  lemon:entry    :cameroonian_33_336 .
+
+:cameroonian_33_336 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :cameroonian_33_336_lemma ;
+  lemon:sense          :cameroonian_33_336_sense_1 ;
+  lemon:synBehavior    :cameroonian_33_336_attrFrame, :cameroonian_33_336_predFrame .
+
+:cameroonian_33_336_lemma lemon:writtenRep "Cameroonian"@en .
+
+:cameroonian_33_336_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :cameroonian_33_336_PredSynArg .
+
+:cameroonian_33_336_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :cameroonian_33_336_AttrSynArg .
+
+:cameroonian_33_336_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cameroonian_33_336_sense_1_res ;
+  lemon:isA       :cameroonian_33_336_AttrSynArg, :cameroonian_33_336_PredSynArg .
+
+:cameroonian_33_336_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Cameroon> .

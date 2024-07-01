@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cheese_753_sense_1_res ;
+  lemon:entry    :cheese_753 .
+
+:cheese_753 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cheese_753_form ;
+  lemon:otherForm  :cheese_753_singular ;
+  lemon:otherForm  :cheese_753_plural ;
+  lemon:sense          :cheese_753_sense_1 ;
+  lemon:synBehavior    :cheese_753_predFrame .
+
+:cheese_753_form
+ lemon:writtenRep "cheese"@en .
+
+:cheese_753_singular a    lemon:Form ;
+  lemon:writtenRep "cheese"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cheese_753_plural a   lemon:Form ;
+  lemon:writtenRep "cheeses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cheese_753_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cheese_753_sense_1_res ;
+  lemon:isA       :cheese_753_PredSynArg .
+
+:cheese_753_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Cheese> .

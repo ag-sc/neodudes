@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :club_moss_417_sense_1_res ;
+  lemon:entry    :club_moss_417 .
+
+:club_moss_417 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :club_moss_417_form ;
+  lemon:otherForm  :club_moss_417_singular ;
+  lemon:otherForm  :club_moss_417_plural ;
+  lemon:sense          :club_moss_417_sense_1 ;
+  lemon:synBehavior    :club_moss_417_predFrame .
+
+:club_moss_417_form
+ lemon:writtenRep "club moss"@en .
+
+:club_moss_417_singular a    lemon:Form ;
+  lemon:writtenRep "club moss"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:club_moss_417_plural a   lemon:Form ;
+  lemon:writtenRep "club mosses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:club_moss_417_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :club_moss_417_sense_1_res ;
+  lemon:isA       :club_moss_417_PredSynArg .
+
+:club_moss_417_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ClubMoss> .

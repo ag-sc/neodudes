@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cardinal_592_sense_1_res ;
+  lemon:entry    :cardinal_592 .
+
+:cardinal_592 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cardinal_592_form ;
+  lemon:otherForm  :cardinal_592_singular ;
+  lemon:otherForm  :cardinal_592_plural ;
+  lemon:sense          :cardinal_592_sense_1 ;
+  lemon:synBehavior    :cardinal_592_predFrame .
+
+:cardinal_592_form
+ lemon:writtenRep "cardinal"@en .
+
+:cardinal_592_singular a    lemon:Form ;
+  lemon:writtenRep "cardinal"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cardinal_592_plural a   lemon:Form ;
+  lemon:writtenRep "cardinals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cardinal_592_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cardinal_592_sense_1_res ;
+  lemon:isA       :cardinal_592_PredSynArg .
+
+:cardinal_592_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Cardinal> .

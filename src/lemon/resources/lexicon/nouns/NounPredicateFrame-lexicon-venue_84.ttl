@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :venue_84_sense_1_res ;
+  lemon:entry    :venue_84 .
+
+:venue_84 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :venue_84_form ;
+  lemon:otherForm  :venue_84_singular ;
+  lemon:otherForm  :venue_84_plural ;
+  lemon:sense          :venue_84_sense_1 ;
+  lemon:synBehavior    :venue_84_predFrame .
+
+:venue_84_form
+ lemon:writtenRep "venue"@en .
+
+:venue_84_singular a    lemon:Form ;
+  lemon:writtenRep "venue"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:venue_84_plural a   lemon:Form ;
+  lemon:writtenRep "venues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:venue_84_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :venue_84_sense_1_res ;
+  lemon:isA       :venue_84_PredSynArg .
+
+:venue_84_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Venue> .

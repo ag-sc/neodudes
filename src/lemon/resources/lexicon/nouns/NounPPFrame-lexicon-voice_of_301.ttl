@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :voice_of_301 ;
+  lemon:entry    :voice_of_301_form_preposition .
+
+:voice_of_301 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :voice_of_301_form ;
+  lemon:otherForm  :voice_of_301_singular ;
+  lemon:otherForm  :voice_of_301_plural ;
+  lemon:sense          :voice_of_301_sense_1 ;
+  lemon:synBehavior    :voice_of_301_nounpp .
+
+:voice_of_301_form a lemon:Form ;
+  lemon:writtenRep "voice"@en .
+
+:voice_of_301_singular a    lemon:Form ;
+  lemon:writtenRep "voice"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:voice_of_301_plural a   lemon:Form ;
+  lemon:writtenRep "voices"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:voice_of_301_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1247-1247-1247-1242-1244-1244-1244-1244-1244-1244-1223-1223-1223-1223-1196-1196-1196-1196-603_voice_of_301 ;
+  lexinfo:prepositionalAdjunct :arg2-1247-1247-1247-1242-1244-1244-1244-1244-1244-1244-1223-1223-1223-1223-1196-1196-1196-1196-603_voice_of_301 .
+
+:voice_of_301_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :voice_of_301_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/voiceactor> ;
+  lemon:subjOfProp          :arg2-1247-1247-1247-1242-1244-1244-1244-1244-1244-1244-1223-1223-1223-1223-1196-1196-1196-1196-603_voice_of_301 ;
+  lemon:objOfProp           :arg1-1247-1247-1247-1242-1244-1244-1244-1244-1244-1244-1223-1223-1223-1223-1196-1196-1196-1196-603_voice_of_301 ;
+  lemon:condition           :voice_of_301_sense_1_condition .
+
+:voice_of_301_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1247-1247-1247-1242-1244-1244-1244-1244-1244-1244-1223-1223-1223-1223-1196-1196-1196-1196-603_voice_of_301 lemon:marker :voice_of_301_form_preposition .
+## Prepositions ##
+:voice_of_301_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

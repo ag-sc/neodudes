@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :photographer_96_sense_1_res ;
+  lemon:entry    :photographer_96 .
+
+:photographer_96 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :photographer_96_form ;
+  lemon:otherForm  :photographer_96_singular ;
+  lemon:otherForm  :photographer_96_plural ;
+  lemon:sense          :photographer_96_sense_1 ;
+  lemon:synBehavior    :photographer_96_predFrame .
+
+:photographer_96_form
+ lemon:writtenRep "photographer"@en .
+
+:photographer_96_singular a    lemon:Form ;
+  lemon:writtenRep "photographer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:photographer_96_plural a   lemon:Form ;
+  lemon:writtenRep "photographers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:photographer_96_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :photographer_96_sense_1_res ;
+  lemon:isA       :photographer_96_PredSynArg .
+
+:photographer_96_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Photographer> .

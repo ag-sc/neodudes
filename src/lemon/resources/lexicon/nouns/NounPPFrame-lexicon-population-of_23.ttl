@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :population-of_23 ;
+  lemon:entry    :population-of_23_form_preposition .
+
+:population-of_23 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :population-of_23_form ;
+  lemon:otherForm  :population-of_23_singular ;
+  lemon:otherForm  :population-of_23_plural ;
+  lemon:sense          :population-of_23_sense_1 ;
+  lemon:synBehavior    :population-of_23_nounpp .
+
+:population-of_23_form a lemon:Form ;
+  lemon:writtenRep "population"@en .
+
+:population-of_23_singular a    lemon:Form ;
+  lemon:writtenRep "population"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:population-of_23_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:population-of_23_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-802-802-802-800-799-799-799-799-799-799-784-784-784-784-765-765-765-765-389-389-545_population-of_23 ;
+  lexinfo:prepositionalAdjunct :arg2-802-802-802-800-799-799-799-799-799-799-784-784-784-784-765-765-765-765-389-389-545_population-of_23 .
+
+:population-of_23_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :population-of_23_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/populationTotal> ;
+  lemon:subjOfProp          :arg2-802-802-802-800-799-799-799-799-799-799-784-784-784-784-765-765-765-765-389-389-545_population-of_23 ;
+  lemon:objOfProp           :arg1-802-802-802-800-799-799-799-799-799-799-784-784-784-784-765-765-765-765-389-389-545_population-of_23 ;
+  lemon:condition           :population-of_23_sense_1_condition .
+
+:population-of_23_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/PopulatedPlace> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-802-802-802-800-799-799-799-799-799-799-784-784-784-784-765-765-765-765-389-389-545_population-of_23 lemon:marker :population-of_23_form_preposition .
+## Prepositions ##
+:population-of_23_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

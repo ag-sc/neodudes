@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :name_after_1 ;
+  lemon:entry    :form_name_after_1_preposition .
+
+:name_after_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_name_after_1 ;
+  lemon:otherForm      :form_name_after_1_present3rd ;
+  lemon:otherForm      :form_name_after_1_past ;
+  lemon:otherForm      :form_name_after_1_perfect ;
+  lemon:sense          :name_after_1_sense_1 ;
+  lemon:synBehavior    :name_after_1_frame .
+
+:form_name_after_1 a           lemon:Form ;
+  lemon:writtenRep     "name"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_name_after_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "named"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_name_after_1_past a lemon:Form ;
+  lemon:writtenRep  "named"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_name_after_1_perfect a   lemon:Form ;
+  lemon:writtenRep "named"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:name_after_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :name_after_1_subj ;
+  lexinfo:prepositionalAdjunct :name_after_1_obj .
+
+:name_after_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :name_after_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/namedAfter> ;
+  lemon:subjOfProp  :name_after_1_subj ;
+  lemon:objOfProp   :name_after_1_obj ;
+  lemon:condition   :name_after_1_sense_1_condition .
+
+:name_after_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Settlement> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Agent> .
+
+
+:name_after_1_obj lemon:marker :form_name_after_1_preposition .
+
+## Prepositions ##
+:form_name_after_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "after"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

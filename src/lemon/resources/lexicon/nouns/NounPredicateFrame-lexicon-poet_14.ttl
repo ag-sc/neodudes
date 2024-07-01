@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :poet_14_sense_1_res ;
+  lemon:entry    :poet_14 .
+
+:poet_14 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :poet_14_form ;
+  lemon:otherForm  :poet_14_singular ;
+  lemon:otherForm  :poet_14_plural ;
+  lemon:sense          :poet_14_sense_1 ;
+  lemon:synBehavior    :poet_14_predFrame .
+
+:poet_14_form
+ lemon:writtenRep "poet"@en .
+
+:poet_14_singular a    lemon:Form ;
+  lemon:writtenRep "poet"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:poet_14_plural a   lemon:Form ;
+  lemon:writtenRep "poets"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:poet_14_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :poet_14_sense_1_res ;
+  lemon:isA       :poet_14_PredSynArg .
+
+:poet_14_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/occupation> ;
+  owl:hasValue   <http://dbpedia.org/resource/Poet> .

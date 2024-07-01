@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :country_312_sense_1_res ;
+  lemon:entry    :country_312 .
+
+:country_312 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :country_312_form ;
+  lemon:otherForm  :country_312_singular ;
+  lemon:otherForm  :country_312_plural ;
+  lemon:sense          :country_312_sense_1 ;
+  lemon:synBehavior    :country_312_predFrame .
+
+:country_312_form
+ lemon:writtenRep "country"@en .
+
+:country_312_singular a    lemon:Form ;
+  lemon:writtenRep "country"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:country_312_plural a   lemon:Form ;
+  lemon:writtenRep "countries"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:country_312_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :country_312_sense_1_res ;
+  lemon:isA       :country_312_PredSynArg .
+
+:country_312_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Country> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :gold_medal_of_276 ;
+  lemon:entry    :gold_medal_of_276_form_preposition .
+
+:gold_medal_of_276 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :gold_medal_of_276_form ;
+  lemon:otherForm  :gold_medal_of_276_singular ;
+  lemon:otherForm  :gold_medal_of_276_plural ;
+  lemon:sense          :gold_medal_of_276_sense_1 ;
+  lemon:synBehavior    :gold_medal_of_276_nounpp .
+
+:gold_medal_of_276_form a lemon:Form ;
+  lemon:writtenRep "gold medal"@en .
+
+:gold_medal_of_276_singular a    lemon:Form ;
+  lemon:writtenRep "gold medal"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:gold_medal_of_276_plural a   lemon:Form ;
+  lemon:writtenRep "gold medals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:gold_medal_of_276_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-77-77-77-78-78-78-78-78-78-78-76-76-76-76-76-76-76-76-36_gold_medal_of_276 ;
+  lexinfo:prepositionalAdjunct :arg2-77-77-77-78-78-78-78-78-78-78-76-76-76-76-76-76-76-76-36_gold_medal_of_276 .
+
+:gold_medal_of_276_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :gold_medal_of_276_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/goldMedalist> ;
+  lemon:subjOfProp          :arg2-77-77-77-78-78-78-78-78-78-78-76-76-76-76-76-76-76-76-36_gold_medal_of_276 ;
+  lemon:objOfProp           :arg1-77-77-77-78-78-78-78-78-78-78-76-76-76-76-76-76-76-76-36_gold_medal_of_276 ;
+  lemon:condition           :gold_medal_of_276_sense_1_condition .
+
+:gold_medal_of_276_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-77-77-77-78-78-78-78-78-78-78-76-76-76-76-76-76-76-76-36_gold_medal_of_276 lemon:marker :gold_medal_of_276_form_preposition .
+## Prepositions ##
+:gold_medal_of_276_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

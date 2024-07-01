@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :shopping_mall_967_sense_1_res ;
+  lemon:entry    :shopping_mall_967 .
+
+:shopping_mall_967 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :shopping_mall_967_form ;
+  lemon:otherForm  :shopping_mall_967_singular ;
+  lemon:otherForm  :shopping_mall_967_plural ;
+  lemon:sense          :shopping_mall_967_sense_1 ;
+  lemon:synBehavior    :shopping_mall_967_predFrame .
+
+:shopping_mall_967_form
+ lemon:writtenRep "shopping mall"@en .
+
+:shopping_mall_967_singular a    lemon:Form ;
+  lemon:writtenRep "shopping mall"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:shopping_mall_967_plural a   lemon:Form ;
+  lemon:writtenRep "shopping malls"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:shopping_mall_967_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :shopping_mall_967_sense_1_res ;
+  lemon:isA       :shopping_mall_967_PredSynArg .
+
+:shopping_mall_967_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ShoppingMall> .

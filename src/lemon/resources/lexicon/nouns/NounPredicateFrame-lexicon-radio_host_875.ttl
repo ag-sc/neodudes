@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :radio_host_875_sense_1_res ;
+  lemon:entry    :radio_host_875 .
+
+:radio_host_875 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :radio_host_875_form ;
+  lemon:otherForm  :radio_host_875_singular ;
+  lemon:otherForm  :radio_host_875_plural ;
+  lemon:sense          :radio_host_875_sense_1 ;
+  lemon:synBehavior    :radio_host_875_predFrame .
+
+:radio_host_875_form
+ lemon:writtenRep "radio host"@en .
+
+:radio_host_875_singular a    lemon:Form ;
+  lemon:writtenRep "radio host"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:radio_host_875_plural a   lemon:Form ;
+  lemon:writtenRep "radio hosts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:radio_host_875_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :radio_host_875_sense_1_res ;
+  lemon:isA       :radio_host_875_PredSynArg .
+
+:radio_host_875_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/RadioHost> .

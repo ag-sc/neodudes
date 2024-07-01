@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :badminton_player_298_sense_1_res ;
+  lemon:entry    :badminton_player_298 .
+
+:badminton_player_298 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :badminton_player_298_form ;
+  lemon:otherForm  :badminton_player_298_singular ;
+  lemon:otherForm  :badminton_player_298_plural ;
+  lemon:sense          :badminton_player_298_sense_1 ;
+  lemon:synBehavior    :badminton_player_298_predFrame .
+
+:badminton_player_298_form
+ lemon:writtenRep "badminton player"@en .
+
+:badminton_player_298_singular a    lemon:Form ;
+  lemon:writtenRep "badminton player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:badminton_player_298_plural a   lemon:Form ;
+  lemon:writtenRep "badminton players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:badminton_player_298_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :badminton_player_298_sense_1_res ;
+  lemon:isA       :badminton_player_298_PredSynArg .
+
+:badminton_player_298_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/BadmintonPlayer> .

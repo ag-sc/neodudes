@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mission_of_389 ;
+  lemon:entry    :mission_of_389_form_preposition .
+
+:mission_of_389 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mission_of_389_form ;
+  lemon:otherForm  :mission_of_389_singular ;
+  lemon:otherForm  :mission_of_389_plural ;
+  lemon:sense          :mission_of_389_sense_1 ;
+  lemon:synBehavior    :mission_of_389_nounpp .
+
+:mission_of_389_form a lemon:Form ;
+  lemon:writtenRep "mission"@en .
+
+:mission_of_389_singular a    lemon:Form ;
+  lemon:writtenRep "mission"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mission_of_389_plural a   lemon:Form ;
+  lemon:writtenRep "missions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mission_of_389_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-353-353-352-352-351-351-351-351-351-351-344-344-344-344-339-339-339-339-171_mission_of_389 ;
+  lexinfo:prepositionalAdjunct :arg2-353-353-352-352-351-351-351-351-351-351-344-344-344-344-339-339-339-339-171_mission_of_389 .
+
+:mission_of_389_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mission_of_389_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/crewMembers> ;
+  lemon:subjOfProp          :arg2-353-353-352-352-351-351-351-351-351-351-344-344-344-344-339-339-339-339-171_mission_of_389 ;
+  lemon:objOfProp           :arg1-353-353-352-352-351-351-351-351-351-351-344-344-344-344-339-339-339-339-171_mission_of_389 ;
+  lemon:condition           :mission_of_389_sense_1_condition .
+
+:mission_of_389_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-353-353-352-352-351-351-351-351-351-351-344-344-344-344-339-339-339-339-171_mission_of_389 lemon:marker :mission_of_389_form_preposition .
+## Prepositions ##
+:mission_of_389_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

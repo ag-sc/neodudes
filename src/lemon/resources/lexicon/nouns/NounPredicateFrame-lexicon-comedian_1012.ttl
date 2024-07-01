@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :comedian_1012_sense_1_res ;
+  lemon:entry    :comedian_1012 .
+
+:comedian_1012 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :comedian_1012_form ;
+  lemon:otherForm  :comedian_1012_singular ;
+  lemon:otherForm  :comedian_1012_plural ;
+  lemon:sense          :comedian_1012_sense_1 ;
+  lemon:synBehavior    :comedian_1012_predFrame .
+
+:comedian_1012_form
+ lemon:writtenRep "comedian"@en .
+
+:comedian_1012_singular a    lemon:Form ;
+  lemon:writtenRep "comedian"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:comedian_1012_plural a   lemon:Form ;
+  lemon:writtenRep "comedians"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:comedian_1012_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :comedian_1012_sense_1_res ;
+  lemon:isA       :comedian_1012_PredSynArg .
+
+:comedian_1012_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Comedian> .

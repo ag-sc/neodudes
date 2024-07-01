@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_write_6 ;
+  lemon:entry    :write_6ed ;
+  lemon:entry    :form_write_6_preposition .
+
+:to_write_6 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_write_6 ;
+  lemon:otherForm      :form_write_6s ;
+  lemon:otherForm      :form_write_6ed ;
+  lemon:otherForm      :form_write_6perfect ;
+  lemon:sense          :write_6_sense_1 ;
+  lemon:synBehavior    :write_6_frame_transitive .
+
+:form_write_6 a         lemon:Form ;
+  lemon:writtenRep     "write"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_write_6s a    lemon:Form ;
+  lemon:writtenRep "writes"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_write_6ed a   lemon:Form ;
+  lemon:writtenRep "wrote"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_write_6perfect a   lemon:Form ;
+  lemon:writtenRep "wrote"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:write_6_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :write_6_subj ;
+  lexinfo:directObject     :write_6_obj .
+
+:write_6_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :write_6_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/writer> ;
+  lemon:subjOfProp  :write_6_obj ;
+  lemon:objOfProp   :write_6_subj ;
+  lemon:condition   :write_6_sense_1_condition .
+
+
+:write_6_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:write_6_obj lemon:marker :form_write_6_preposition .
+
+## Prepositions ##
+:form_write_6_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :state_1_22_sense_1_res ;
+  lemon:entry    :state_1_22 .
+
+:state_1_22 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :state_1_22_form ;
+  lemon:otherForm  :state_1_22_singular ;
+  lemon:otherForm  :state_1_22_plural ;
+  lemon:sense          :state_1_22_sense_1 ;
+  lemon:synBehavior    :state_1_22_predFrame .
+
+:state_1_22_form
+ lemon:writtenRep "state"@en .
+
+:state_1_22_singular a    lemon:Form ;
+  lemon:writtenRep "state"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:state_1_22_plural a   lemon:Form ;
+  lemon:writtenRep "states"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:state_1_22_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :state_1_22_sense_1_res ;
+  lemon:isA       :state_1_22_PredSynArg .
+
+:state_1_22_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AdministrativeRegion> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :homepage_of_270 ;
+  lemon:entry    :homepage_of_270_form_preposition .
+
+:homepage_of_270 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :homepage_of_270_form ;
+  lemon:otherForm  :homepage_of_270_singular ;
+  lemon:otherForm  :homepage_of_270_plural ;
+  lemon:sense          :homepage_of_270_sense_1 ;
+  lemon:synBehavior    :homepage_of_270_nounpp .
+
+:homepage_of_270_form a lemon:Form ;
+  lemon:writtenRep "homepage"@en .
+
+:homepage_of_270_singular a    lemon:Form ;
+  lemon:writtenRep "homepage"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:homepage_of_270_plural a   lemon:Form ;
+  lemon:writtenRep "homepages"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:homepage_of_270_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-419-419-418-418-417-417-417-417-417-417-409-409-409-409-401-401-401-401-202_homepage_of_270 ;
+  lexinfo:prepositionalAdjunct :arg2-419-419-418-418-417-417-417-417-417-417-409-409-409-409-401-401-401-401-202_homepage_of_270 .
+
+:homepage_of_270_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :homepage_of_270_sense_1 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/homepage> ;
+  lemon:subjOfProp          :arg2-419-419-418-418-417-417-417-417-417-417-409-409-409-409-401-401-401-401-202_homepage_of_270 ;
+  lemon:objOfProp           :arg1-419-419-418-418-417-417-417-417-417-417-409-409-409-409-401-401-401-401-202_homepage_of_270 ;
+  lemon:condition           :homepage_of_270_sense_1_condition .
+
+:homepage_of_270_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-419-419-418-418-417-417-417-417-417-417-409-409-409-409-401-401-401-401-202_homepage_of_270 lemon:marker :homepage_of_270_form_preposition .
+## Prepositions ##
+:homepage_of_270_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

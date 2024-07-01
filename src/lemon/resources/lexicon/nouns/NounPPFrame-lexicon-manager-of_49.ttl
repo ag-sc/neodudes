@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :manager-of_49 ;
+  lemon:entry    :manager-of_49_form_preposition .
+
+:manager-of_49 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :manager-of_49_form ;
+  lemon:otherForm  :manager-of_49_singular ;
+  lemon:otherForm  :manager-of_49_plural ;
+  lemon:sense          :manager-of_49_sense_1 ;
+  lemon:synBehavior    :manager-of_49_nounpp .
+
+:manager-of_49_form a lemon:Form ;
+  lemon:writtenRep "manager"@en .
+
+:manager-of_49_singular a    lemon:Form ;
+  lemon:writtenRep "manager"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:manager-of_49_plural a   lemon:Form ;
+  lemon:writtenRep "managers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:manager-of_49_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-175-175-175-176-176-176-176-176-176-176-173-173-173-173-169-169-169-169-77-77-439_manager-of_49 ;
+  lexinfo:prepositionalAdjunct :arg2-175-175-175-176-176-176-176-176-176-176-173-173-173-173-169-169-169-169-77-77-439_manager-of_49 .
+
+:manager-of_49_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :manager-of_49_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/manager> ;
+  lemon:subjOfProp          :arg2-175-175-175-176-176-176-176-176-176-176-173-173-173-173-169-169-169-169-77-77-439_manager-of_49 ;
+  lemon:objOfProp           :arg1-175-175-175-176-176-176-176-176-176-176-173-173-173-173-169-169-169-169-77-77-439_manager-of_49 ;
+  lemon:condition           :manager-of_49_sense_1_condition .
+
+:manager-of_49_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/SoccerManager> .
+
+:arg2-175-175-175-176-176-176-176-176-176-176-173-173-173-173-169-169-169-169-77-77-439_manager-of_49 lemon:marker :manager-of_49_form_preposition .
+## Prepositions ##
+:manager-of_49_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

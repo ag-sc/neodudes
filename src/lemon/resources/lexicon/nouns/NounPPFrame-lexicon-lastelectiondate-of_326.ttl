@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lastelectiondate-of_326 ;
+  lemon:entry    :lastelectiondate-of_326_form_preposition .
+
+:lastelectiondate-of_326 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :lastelectiondate-of_326_form ;
+  lemon:otherForm  :lastelectiondate-of_326_singular ;
+  lemon:otherForm  :lastelectiondate-of_326_plural ;
+  lemon:sense          :lastelectiondate-of_326_sense_1 ;
+  lemon:synBehavior    :lastelectiondate-of_326_nounpp .
+
+:lastelectiondate-of_326_form a lemon:Form ;
+  lemon:writtenRep "last Election Date"@en .
+
+:lastelectiondate-of_326_singular a    lemon:Form ;
+  lemon:writtenRep "last Election Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:lastelectiondate-of_326_plural a   lemon:Form ;
+  lemon:writtenRep "last Election Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:lastelectiondate-of_326_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1257-1257-1257-1252-1254-1254-1254-1254-1254-1254-1233-1233-1233-1233-1206-1206-1206-1206-608_lastelectiondate-of_326 ;
+  lexinfo:prepositionalAdjunct :arg2-1257-1257-1257-1252-1254-1254-1254-1254-1254-1254-1233-1233-1233-1233-1206-1206-1206-1206-608_lastelectiondate-of_326 .
+
+:lastelectiondate-of_326_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :lastelectiondate-of_326_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/lastElectionDate> ;
+  lemon:subjOfProp          :arg2-1257-1257-1257-1252-1254-1254-1254-1254-1254-1254-1233-1233-1233-1233-1206-1206-1206-1206-608_lastelectiondate-of_326 ;
+  lemon:objOfProp           :arg1-1257-1257-1257-1252-1254-1254-1254-1254-1254-1254-1233-1233-1233-1233-1206-1206-1206-1206-608_lastelectiondate-of_326 ;
+  lemon:condition           :lastelectiondate-of_326_sense_1_condition .
+
+:lastelectiondate-of_326_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-1257-1257-1257-1252-1254-1254-1254-1254-1254-1254-1233-1233-1233-1233-1206-1206-1206-1206-608_lastelectiondate-of_326 lemon:marker :lastelectiondate-of_326_form_preposition .
+## Prepositions ##
+:lastelectiondate-of_326_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

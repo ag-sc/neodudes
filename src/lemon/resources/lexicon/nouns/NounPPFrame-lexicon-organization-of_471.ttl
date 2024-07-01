@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :organization-of_471 ;
+  lemon:entry    :organization-of_471_form_preposition .
+
+:organization-of_471 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :organization-of_471_form ;
+  lemon:otherForm  :organization-of_471_singular ;
+  lemon:otherForm  :organization-of_471_plural ;
+  lemon:sense          :organization-of_471_sense_1 ;
+  lemon:synBehavior    :organization-of_471_nounpp .
+
+:organization-of_471_form a lemon:Form ;
+  lemon:writtenRep "organization"@en .
+
+:organization-of_471_singular a    lemon:Form ;
+  lemon:writtenRep "organization"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:organization-of_471_plural a   lemon:Form ;
+  lemon:writtenRep "organizations"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:organization-of_471_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1244-1244-1244-1239-1241-1241-1241-1241-1241-1241-1220-1220-1220-1220-1193-1193-1193-1193-600_organization-of_471 ;
+  lexinfo:prepositionalAdjunct :arg2-1244-1244-1244-1239-1241-1241-1241-1241-1241-1241-1220-1220-1220-1220-1193-1193-1193-1193-600_organization-of_471 .
+
+:organization-of_471_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :organization-of_471_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/industry> ;
+  lemon:subjOfProp          :arg2-1244-1244-1244-1239-1241-1241-1241-1241-1241-1241-1220-1220-1220-1220-1193-1193-1193-1193-600_organization-of_471 ;
+  lemon:objOfProp           :arg1-1244-1244-1244-1239-1241-1241-1241-1241-1241-1241-1220-1220-1220-1220-1193-1193-1193-1193-600_organization-of_471 ;
+  lemon:condition           :organization-of_471_sense_1_condition .
+
+:organization-of_471_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Food> .
+
+:arg2-1244-1244-1244-1239-1241-1241-1241-1241-1241-1241-1220-1220-1220-1220-1193-1193-1193-1193-600_organization-of_471 lemon:marker :organization-of_471_form_preposition .
+## Prepositions ##
+:organization-of_471_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :dancer_939_sense_1_res ;
+  lemon:entry    :dancer_939 .
+
+:dancer_939 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :dancer_939_form ;
+  lemon:otherForm  :dancer_939_singular ;
+  lemon:otherForm  :dancer_939_plural ;
+  lemon:sense          :dancer_939_sense_1 ;
+  lemon:synBehavior    :dancer_939_predFrame .
+
+:dancer_939_form
+ lemon:writtenRep "dancer"@en .
+
+:dancer_939_singular a    lemon:Form ;
+  lemon:writtenRep "dancer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:dancer_939_plural a   lemon:Form ;
+  lemon:writtenRep "dancers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:dancer_939_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :dancer_939_sense_1_res ;
+  lemon:isA       :dancer_939_PredSynArg .
+
+:dancer_939_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Dancer> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :numberofseasons-of_40 ;
+  lemon:entry    :numberofseasons-of_40_form_preposition .
+
+:numberofseasons-of_40 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :numberofseasons-of_40_form ;
+  lemon:otherForm  :numberofseasons-of_40_singular ;
+  lemon:otherForm  :numberofseasons-of_40_plural ;
+  lemon:sense          :numberofseasons-of_40_sense_1 ;
+  lemon:synBehavior    :numberofseasons-of_40_nounpp .
+
+:numberofseasons-of_40_form a lemon:Form ;
+  lemon:writtenRep "number Of Season"@en .
+
+:numberofseasons-of_40_singular a    lemon:Form ;
+  lemon:writtenRep "number Of Season"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:numberofseasons-of_40_plural a   lemon:Form ;
+  lemon:writtenRep "number Of Seasons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:numberofseasons-of_40_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1054-1054-1054-1051-1050-1050-1050-1050-1050-1050-1032-1032-1032-1032-1007-1007-1007-1007-505-505-103_numberofseasons-of_40 ;
+  lexinfo:prepositionalAdjunct :arg2-1054-1054-1054-1051-1050-1050-1050-1050-1050-1050-1032-1032-1032-1032-1007-1007-1007-1007-505-505-103_numberofseasons-of_40 .
+
+:numberofseasons-of_40_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :numberofseasons-of_40_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfSeasons> ;
+  lemon:subjOfProp          :arg2-1054-1054-1054-1051-1050-1050-1050-1050-1050-1050-1032-1032-1032-1032-1007-1007-1007-1007-505-505-103_numberofseasons-of_40 ;
+  lemon:objOfProp           :arg1-1054-1054-1054-1051-1050-1050-1050-1050-1050-1050-1032-1032-1032-1032-1007-1007-1007-1007-505-505-103_numberofseasons-of_40 ;
+  lemon:condition           :numberofseasons-of_40_sense_1_condition .
+
+:numberofseasons-of_40_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-1054-1054-1054-1051-1050-1050-1050-1050-1050-1050-1032-1032-1032-1032-1007-1007-1007-1007-505-505-103_numberofseasons-of_40 lemon:marker :numberofseasons-of_40_form_preposition .
+## Prepositions ##
+:numberofseasons-of_40_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

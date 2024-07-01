@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :astronaut_123_sense_1_res ;
+  lemon:entry    :astronaut_123 .
+
+:astronaut_123 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :astronaut_123_form ;
+  lemon:otherForm  :astronaut_123_singular ;
+  lemon:otherForm  :astronaut_123_plural ;
+  lemon:sense          :astronaut_123_sense_1 ;
+  lemon:synBehavior    :astronaut_123_predFrame .
+
+:astronaut_123_form
+ lemon:writtenRep "astronaut"@en .
+
+:astronaut_123_singular a    lemon:Form ;
+  lemon:writtenRep "astronaut"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:astronaut_123_plural a   lemon:Form ;
+  lemon:writtenRep "astronauts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:astronaut_123_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :astronaut_123_sense_1_res ;
+  lemon:isA       :astronaut_123_PredSynArg .
+
+:astronaut_123_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Astronaut> .

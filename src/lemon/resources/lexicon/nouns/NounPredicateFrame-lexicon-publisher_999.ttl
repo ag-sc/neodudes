@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :publisher_999_sense_1_res ;
+  lemon:entry    :publisher_999 .
+
+:publisher_999 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :publisher_999_form ;
+  lemon:otherForm  :publisher_999_singular ;
+  lemon:otherForm  :publisher_999_plural ;
+  lemon:sense          :publisher_999_sense_1 ;
+  lemon:synBehavior    :publisher_999_predFrame .
+
+:publisher_999_form
+ lemon:writtenRep "publisher"@en .
+
+:publisher_999_singular a    lemon:Form ;
+  lemon:writtenRep "publisher"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:publisher_999_plural a   lemon:Form ;
+  lemon:writtenRep "publishers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:publisher_999_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :publisher_999_sense_1_res ;
+  lemon:isA       :publisher_999_PredSynArg .
+
+:publisher_999_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Publisher> .

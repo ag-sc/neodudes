@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :gangster_from_464 ;
+  lemon:entry    :gangster_from_464_form_preposition .
+
+:gangster_from_464 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :gangster_from_464_form ;
+  lemon:otherForm  :gangster_from_464_singular ;
+  lemon:otherForm  :gangster_from_464_plural ;
+  lemon:sense          :gangster_from_464_sense_1 ;
+  lemon:synBehavior    :gangster_from_464_nounpp .
+
+:gangster_from_464_form a lemon:Form ;
+  lemon:writtenRep "gangster"@en .
+
+:gangster_from_464_singular a    lemon:Form ;
+  lemon:writtenRep "gangster"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:gangster_from_464_plural a   lemon:Form ;
+  lemon:writtenRep "gangsters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:gangster_from_464_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-480-480-479-478-477-477-477-477-477-477-468-468-468-468-458-458-458-458-224_gangster_from_464 ;
+  lexinfo:prepositionalAdjunct :arg2-480-480-479-478-477-477-477-477-477-477-468-468-468-468-458-458-458-458-224_gangster_from_464 .
+
+:gangster_from_464_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :gangster_from_464_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/occupation> ;
+  lemon:subjOfProp          :arg2-480-480-479-478-477-477-477-477-477-477-468-468-468-468-458-458-458-458-224_gangster_from_464 ;
+  lemon:objOfProp           :arg1-480-480-479-478-477-477-477-477-477-477-468-468-468-468-458-458-458-458-224_gangster_from_464 ;
+  lemon:condition           :gangster_from_464_sense_1_condition .
+
+:gangster_from_464_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-480-480-479-478-477-477-477-477-477-477-468-468-468-468-458-458-458-458-224_gangster_from_464 lemon:marker :gangster_from_464_form_preposition .
+## Prepositions ##
+:gangster_from_464_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "from"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

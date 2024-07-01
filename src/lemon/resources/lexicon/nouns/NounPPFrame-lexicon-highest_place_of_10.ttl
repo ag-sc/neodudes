@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :highest_place_of_10 ;
+  lemon:entry    :highest_place_of_10_form_preposition .
+
+:highest_place_of_10 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :highest_place_of_10_form ;
+  lemon:otherForm  :highest_place_of_10_singular ;
+  lemon:otherForm  :highest_place_of_10_plural ;
+  lemon:sense          :highest_place_of_10_sense_1 ;
+  lemon:synBehavior    :highest_place_of_10_nounpp .
+
+:highest_place_of_10_form a lemon:Form ;
+  lemon:writtenRep "highest place"@en .
+
+:highest_place_of_10_singular a    lemon:Form ;
+  lemon:writtenRep "highest place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:highest_place_of_10_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:highest_place_of_10_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1448-1448-1448-1443-1445-1445-1445-1445-1445-1445-1422-1422-1422-1422-1393-1393-1393-1393-681-681-479_highest_place_of_10 ;
+  lexinfo:prepositionalAdjunct :arg2-1448-1448-1448-1443-1445-1445-1445-1445-1445-1445-1422-1422-1422-1422-1393-1393-1393-1393-681-681-479_highest_place_of_10 .
+
+:highest_place_of_10_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :highest_place_of_10_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/highest> ;
+  lemon:subjOfProp          :arg2-1448-1448-1448-1443-1445-1445-1445-1445-1445-1445-1422-1422-1422-1422-1393-1393-1393-1393-681-681-479_highest_place_of_10 ;
+  lemon:objOfProp           :arg1-1448-1448-1448-1443-1445-1445-1445-1445-1445-1445-1422-1422-1422-1422-1393-1393-1393-1393-681-681-479_highest_place_of_10 ;
+  lemon:condition           :highest_place_of_10_sense_1_condition .
+
+:highest_place_of_10_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1448-1448-1448-1443-1445-1445-1445-1445-1445-1445-1422-1422-1422-1422-1393-1393-1393-1393-681-681-479_highest_place_of_10 lemon:marker :highest_place_of_10_form_preposition .
+## Prepositions ##
+:highest_place_of_10_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

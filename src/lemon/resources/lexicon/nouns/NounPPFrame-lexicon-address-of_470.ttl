@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :address-of_470 ;
+  lemon:entry    :address-of_470_form_preposition .
+
+:address-of_470 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :address-of_470_form ;
+  lemon:otherForm  :address-of_470_singular ;
+  lemon:otherForm  :address-of_470_plural ;
+  lemon:sense          :address-of_470_sense_1 ;
+  lemon:synBehavior    :address-of_470_nounpp .
+
+:address-of_470_form a lemon:Form ;
+  lemon:writtenRep "address"@en .
+
+:address-of_470_singular a    lemon:Form ;
+  lemon:writtenRep "address"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:address-of_470_plural a   lemon:Form ;
+  lemon:writtenRep "addresses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:address-of_470_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1121-1121-1121-1118-1117-1117-1117-1117-1117-1117-1098-1098-1098-1098-1072-1072-1072-1072-530_address-of_470 ;
+  lexinfo:prepositionalAdjunct :arg2-1121-1121-1121-1118-1117-1117-1117-1117-1117-1117-1098-1098-1098-1098-1072-1072-1072-1072-530_address-of_470 .
+
+:address-of_470_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :address-of_470_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/address> ;
+  lemon:subjOfProp          :arg2-1121-1121-1121-1118-1117-1117-1117-1117-1117-1117-1098-1098-1098-1098-1072-1072-1072-1072-530_address-of_470 ;
+  lemon:objOfProp           :arg1-1121-1121-1121-1118-1117-1117-1117-1117-1117-1117-1098-1098-1098-1098-1072-1072-1072-1072-530_address-of_470 ;
+  lemon:condition           :address-of_470_sense_1_condition .
+
+:address-of_470_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1121-1121-1121-1118-1117-1117-1117-1117-1117-1117-1098-1098-1098-1098-1072-1072-1072-1072-530_address-of_470 lemon:marker :address-of_470_form_preposition .
+## Prepositions ##
+:address-of_470_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

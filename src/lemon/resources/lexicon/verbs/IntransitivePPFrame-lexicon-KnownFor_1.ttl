@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :KnownFor_1 ;
+  lemon:entry    :form_KnownFor_1_preposition .
+
+:KnownFor_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_KnownFor_1 ;
+  lemon:otherForm      :form_KnownFor_1_present3rd ;
+  lemon:otherForm      :form_KnownFor_1_past ;
+  lemon:otherForm      :form_KnownFor_1_perfect ;
+  lemon:sense          :KnownFor_1_sense_1 ;
+  lemon:synBehavior    :KnownFor_1_frame .
+
+:form_KnownFor_1 a           lemon:Form ;
+  lemon:writtenRep     "known"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_KnownFor_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "known"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_KnownFor_1_past a lemon:Form ;
+  lemon:writtenRep  "known"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_KnownFor_1_perfect a   lemon:Form ;
+  lemon:writtenRep "known"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:KnownFor_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :KnownFor_1_subj ;
+  lexinfo:prepositionalAdjunct :KnownFor_1_obj .
+
+:KnownFor_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :KnownFor_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/knownFor> ;
+  lemon:subjOfProp  :KnownFor_1_subj ;
+  lemon:objOfProp   :KnownFor_1_obj ;
+  lemon:condition   :KnownFor_1_sense_1_condition .
+
+:KnownFor_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Scientist> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/MilitaryUnit> .
+
+
+:KnownFor_1_obj lemon:marker :form_KnownFor_1_preposition .
+
+## Prepositions ##
+:form_KnownFor_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "for"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

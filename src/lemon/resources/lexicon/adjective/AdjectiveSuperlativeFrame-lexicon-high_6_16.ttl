@@ -1,0 +1,62 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :high_6_16 ;
+  lemon:entry    :form_high_6_16_preposition ;
+  lemon:entry    :high_6_16_res .
+
+:high_6_16 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_high_6_16 ;
+  lemon:otherForm      :form_high_6_16_comperative ;
+  lemon:otherForm      :form_high_6_16_superlative ;
+  lemon:sense          :high_6_16_sense_1 ;
+  lemon:sense          :high_6_16_sense_2 ;
+  lemon:synBehavior    :high_6_16_predFrame .
+
+:form_high_6_16 lemon:writtenRep "high"@en .
+
+:form_high_6_16_comperative lemon:writtenRep "higher"@en .
+
+:form_high_6_16_superlative lemon:writtenRep "highest"@en .
+
+:high_6_16_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :high_6_16_PredSynArg .
+
+:high_6_16_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :high_6_16_res ;
+  lemon:isA       :high_6_16_PredSynArg ;
+  lemon:condition :high_6_16_sense_1_condition .
+
+:high_6_16_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/height> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:high_6_16_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BasketballPlayer> .
+:high_6_16_sense_2 a  lemon:LexicalSense ;
+  lemon:reference :high_6_16_res ;
+  lemon:isA       :high_6_16_PredSynArg ;
+  lemon:condition :high_6_16_sense_2_condition .
+
+:high_6_16_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/height> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:high_6_16_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BasketballPlayer> .
+
+## Prepositions ##
+:form_high_6_16_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

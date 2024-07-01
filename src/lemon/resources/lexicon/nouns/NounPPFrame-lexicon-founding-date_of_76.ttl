@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founding-date_of_76 ;
+  lemon:entry    :founding-date_of_76_form_preposition .
+
+:founding-date_of_76 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :founding-date_of_76_form ;
+  lemon:otherForm  :founding-date_of_76_singular ;
+  lemon:otherForm  :founding-date_of_76_plural ;
+  lemon:sense          :founding-date_of_76_sense_1 ;
+  lemon:synBehavior    :founding-date_of_76_nounpp .
+
+:founding-date_of_76_form a lemon:Form ;
+  lemon:writtenRep "founding date"@en .
+
+:founding-date_of_76_singular a    lemon:Form ;
+  lemon:writtenRep "founding date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:founding-date_of_76_plural a   lemon:Form ;
+  lemon:writtenRep "founding dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:founding-date_of_76_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-609-609-609-607-606-606-606-606-606-606-594-594-594-594-582-582-582-582-301-301-44_founding-date_of_76 ;
+  lexinfo:prepositionalAdjunct :arg2-609-609-609-607-606-606-606-606-606-606-594-594-594-594-582-582-582-582-301-301-44_founding-date_of_76 .
+
+:founding-date_of_76_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founding-date_of_76_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundingDate> ;
+  lemon:subjOfProp          :arg2-609-609-609-607-606-606-606-606-606-606-594-594-594-594-582-582-582-582-301-301-44_founding-date_of_76 ;
+  lemon:objOfProp           :arg1-609-609-609-607-606-606-606-606-606-606-594-594-594-594-582-582-582-582-301-301-44_founding-date_of_76 ;
+  lemon:condition           :founding-date_of_76_sense_1_condition .
+
+:founding-date_of_76_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-609-609-609-607-606-606-606-606-606-606-594-594-594-594-582-582-582-582-301-301-44_founding-date_of_76 lemon:marker :founding-date_of_76_form_preposition .
+## Prepositions ##
+:founding-date_of_76_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sailor_325_sense_1_res ;
+  lemon:entry    :sailor_325 .
+
+:sailor_325 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :sailor_325_form ;
+  lemon:otherForm  :sailor_325_singular ;
+  lemon:otherForm  :sailor_325_plural ;
+  lemon:sense          :sailor_325_sense_1 ;
+  lemon:synBehavior    :sailor_325_predFrame .
+
+:sailor_325_form
+ lemon:writtenRep "sailor"@en .
+
+:sailor_325_singular a    lemon:Form ;
+  lemon:writtenRep "sailor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:sailor_325_plural a   lemon:Form ;
+  lemon:writtenRep "sailors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:sailor_325_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sailor_325_sense_1_res ;
+  lemon:isA       :sailor_325_PredSynArg .
+
+:sailor_325_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Sailor> .

@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nickname_of_488 ;
+  lemon:entry    :nickname_of_488_form_preposition .
+
+:nickname_of_488 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :nickname_of_488_form ;
+  lemon:otherForm  :nickname_of_488_singular ;
+  lemon:otherForm  :nickname_of_488_plural ;
+  lemon:sense          :nickname_of_488_sense_1 ;
+  lemon:sense          :nickname_of_488_sense_2 ;
+  lemon:synBehavior    :nickname_of_488_nounpp .
+
+:nickname_of_488_form a lemon:Form ;
+  lemon:writtenRep "nickname"@en .
+
+:nickname_of_488_singular a    lemon:Form ;
+  lemon:writtenRep "nickname"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:nickname_of_488_plural a   lemon:Form ;
+  lemon:writtenRep "Fmayor"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:nickname_of_488_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 ;
+  lexinfo:prepositionalAdjunct :arg2-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 .
+
+:nickname_of_488_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :nickname_of_488_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/nickname> ;
+  lemon:subjOfProp          :arg2-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 ;
+  lemon:objOfProp           :arg1-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 ;
+  lemon:condition           :nickname_of_488_sense_1_condition .
+
+:nickname_of_488_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:nickname_of_488_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :nickname_of_488_sense_2 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/nick> ;
+  lemon:subjOfProp          :arg2-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 ;
+  lemon:objOfProp           :arg1-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 ;
+  lemon:condition           :nickname_of_488_sense_2_condition .
+
+:nickname_of_488_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-409-409-408-408-407-407-407-407-407-407-400-400-400-400-392-392-392-392-196_nickname_of_488 lemon:marker :nickname_of_488_form_preposition .
+## Prepositions ##
+:nickname_of_488_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :coach_of_43 ;
+  lemon:entry    :coach_of_43_form_preposition .
+
+:coach_of_43 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :coach_of_43_form ;
+  lemon:otherForm  :coach_of_43_singular ;
+  lemon:otherForm  :coach_of_43_plural ;
+  lemon:sense          :coach_of_43_sense_1 ;
+  lemon:sense          :coach_of_43_sense_2 ;
+  lemon:synBehavior    :coach_of_43_nounpp .
+
+:coach_of_43_form a lemon:Form ;
+  lemon:writtenRep "coach"@en .
+
+:coach_of_43_singular a    lemon:Form ;
+  lemon:writtenRep "coach"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:coach_of_43_plural a   lemon:Form ;
+  lemon:writtenRep "coaches"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:coach_of_43_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 ;
+  lexinfo:prepositionalAdjunct :arg2-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 .
+
+:coach_of_43_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :coach_of_43_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/coach> ;
+  lemon:subjOfProp          :arg2-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 ;
+  lemon:objOfProp           :arg1-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 ;
+  lemon:condition           :coach_of_43_sense_1_condition .
+
+:coach_of_43_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/IceHockeyLeague> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:coach_of_43_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :coach_of_43_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/coach> ;
+  lemon:subjOfProp          :arg2-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 ;
+  lemon:objOfProp           :arg1-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 ;
+  lemon:condition           :coach_of_43_sense_2_condition .
+
+:coach_of_43_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/HockeyTeam> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-958-958-958-955-954-954-954-954-954-954-936-936-936-936-913-913-913-913-459-459-328_coach_of_43 lemon:marker :coach_of_43_form_preposition .
+## Prepositions ##
+:coach_of_43_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

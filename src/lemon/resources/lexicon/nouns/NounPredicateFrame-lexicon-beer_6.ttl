@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :beer_6_sense_1_res ;
+  lemon:entry    :beer_6 .
+
+:beer_6 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :beer_6_form ;
+  lemon:otherForm  :beer_6_singular ;
+  lemon:otherForm  :beer_6_plural ;
+  lemon:sense          :beer_6_sense_1 ;
+  lemon:synBehavior    :beer_6_predFrame .
+
+:beer_6_form
+ lemon:writtenRep "beer"@en .
+
+:beer_6_singular a    lemon:Form ;
+  lemon:writtenRep "beer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:beer_6_plural a   lemon:Form ;
+  lemon:writtenRep "beers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:beer_6_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :beer_6_sense_1_res ;
+  lemon:isA       :beer_6_PredSynArg .
+
+:beer_6_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Beer> .

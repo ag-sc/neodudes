@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mayor_of_2_81 ;
+  lemon:entry    :mayor_of_2_81_form_preposition .
+
+:mayor_of_2_81 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mayor_of_2_81_form ;
+  lemon:otherForm  :mayor_of_2_81_singular ;
+  lemon:otherForm  :mayor_of_2_81_plural ;
+  lemon:sense          :mayor_of_2_81_sense_1 ;
+  lemon:synBehavior    :mayor_of_2_81_nounpp .
+
+:mayor_of_2_81_form a lemon:Form ;
+  lemon:writtenRep "mayor"@en .
+
+:mayor_of_2_81_singular a    lemon:Form ;
+  lemon:writtenRep "mayor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mayor_of_2_81_plural a   lemon:Form ;
+  lemon:writtenRep "mayors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mayor_of_2_81_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-241-241-240-241-240-240-240-240-240-240-234-234-234-234-230-230-230-230-109-109-497_mayor_of_2_81 ;
+  lexinfo:prepositionalAdjunct :arg2-241-241-240-241-240-240-240-240-240-240-234-234-234-234-230-230-230-230-109-109-497_mayor_of_2_81 .
+
+:mayor_of_2_81_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mayor_of_2_81_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leaderName> ;
+  lemon:subjOfProp          :arg2-241-241-240-241-240-240-240-240-240-240-234-234-234-234-230-230-230-230-109-109-497_mayor_of_2_81 ;
+  lemon:objOfProp           :arg1-241-241-240-241-240-240-240-240-240-240-234-234-234-234-230-230-230-230-109-109-497_mayor_of_2_81 ;
+  lemon:condition           :mayor_of_2_81_sense_1_condition .
+
+:mayor_of_2_81_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-241-241-240-241-240-240-240-240-240-240-234-234-234-234-230-230-230-230-109-109-497_mayor_of_2_81 lemon:marker :mayor_of_2_81_form_preposition .
+## Prepositions ##
+:mayor_of_2_81_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

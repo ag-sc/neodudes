@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :boardgame_by_1 ;
+  lemon:entry    :boardgame_by_1_form_preposition .
+
+:boardgame_by_1 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :boardgame_by_1_form ;
+  lemon:otherForm  :boardgame_by_1_singular ;
+  lemon:otherForm  :boardgame_by_1_plural ;
+  lemon:sense          :boardgame_by_1_sense_1 ;
+  lemon:synBehavior    :boardgame_by_1_nounpp .
+
+:boardgame_by_1_form a lemon:Form ;
+  lemon:writtenRep "boardgame"@en .
+
+:boardgame_by_1_singular a    lemon:Form ;
+  lemon:writtenRep "boardgame"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:boardgame_by_1_plural a   lemon:Form ;
+  lemon:writtenRep "boardgames"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:boardgame_by_1_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1512-1512-1512-1509-1511-1511-1511-1511-1511-1511-1487-1487-1487-1487-1458-1458-1458-1458-715-715-119 ;
+  lexinfo:prepositionalAdjunct :arg2-1512-1512-1512-1509-1511-1511-1511-1511-1511-1511-1487-1487-1487-1487-1458-1458-1458-1458-715-715-119 .
+
+:boardgame_by_1_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :boardgame_by_1_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/publisher> ;
+  lemon:subjOfProp          :arg2-1512-1512-1512-1509-1511-1511-1511-1511-1511-1511-1487-1487-1487-1487-1458-1458-1458-1458-715-715-119 ;
+  lemon:objOfProp           :arg1-1512-1512-1512-1509-1511-1511-1511-1511-1511-1511-1487-1487-1487-1487-1458-1458-1458-1458-715-715-119 ;
+  lemon:condition           :boardgame_by_1_sense_1_condition .
+
+:boardgame_by_1_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1512-1512-1512-1509-1511-1511-1511-1511-1511-1511-1487-1487-1487-1487-1458-1458-1458-1458-715-715-119 lemon:marker :boardgame_by_1_form_preposition .
+## Prepositions ##
+:boardgame_by_1_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

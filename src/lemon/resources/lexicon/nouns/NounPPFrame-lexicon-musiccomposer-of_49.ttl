@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :musiccomposer-of_49 ;
+  lemon:entry    :musiccomposer-of_49_form_preposition .
+
+:musiccomposer-of_49 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :musiccomposer-of_49_form ;
+  lemon:otherForm  :musiccomposer-of_49_singular ;
+  lemon:otherForm  :musiccomposer-of_49_plural ;
+  lemon:sense          :musiccomposer-of_49_sense_1 ;
+  lemon:synBehavior    :musiccomposer-of_49_nounpp .
+
+:musiccomposer-of_49_form a lemon:Form ;
+  lemon:writtenRep "music composer"@en .
+
+:musiccomposer-of_49_singular a    lemon:Form ;
+  lemon:writtenRep "music composer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:musiccomposer-of_49_plural a   lemon:Form ;
+  lemon:writtenRep "music composers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:musiccomposer-of_49_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-648-648-648-646-645-645-645-645-645-645-633-633-633-633-621-621-621-621-321-321-307_musiccomposer-of_49 ;
+  lexinfo:prepositionalAdjunct :arg2-648-648-648-646-645-645-645-645-645-645-633-633-633-633-621-621-621-621-321-321-307_musiccomposer-of_49 .
+
+:musiccomposer-of_49_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :musiccomposer-of_49_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/musicComposer> ;
+  lemon:subjOfProp          :arg2-648-648-648-646-645-645-645-645-645-645-633-633-633-633-621-621-621-621-321-321-307_musiccomposer-of_49 ;
+  lemon:objOfProp           :arg1-648-648-648-646-645-645-645-645-645-645-633-633-633-633-621-621-621-621-321-321-307_musiccomposer-of_49 ;
+  lemon:condition           :musiccomposer-of_49_sense_1_condition .
+
+:musiccomposer-of_49_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-648-648-648-646-645-645-645-645-645-645-633-633-633-633-621-621-621-621-321-321-307_musiccomposer-of_49 lemon:marker :musiccomposer-of_49_form_preposition .
+## Prepositions ##
+:musiccomposer-of_49_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

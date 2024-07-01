@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :year_in_spaceflight_66_sense_1_res ;
+  lemon:entry    :year_in_spaceflight_66 .
+
+:year_in_spaceflight_66 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :year_in_spaceflight_66_form ;
+  lemon:otherForm  :year_in_spaceflight_66_singular ;
+  lemon:otherForm  :year_in_spaceflight_66_plural ;
+  lemon:sense          :year_in_spaceflight_66_sense_1 ;
+  lemon:synBehavior    :year_in_spaceflight_66_predFrame .
+
+:year_in_spaceflight_66_form
+ lemon:writtenRep "year in spaceflight"@en .
+
+:year_in_spaceflight_66_singular a    lemon:Form ;
+  lemon:writtenRep "year in spaceflight"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:year_in_spaceflight_66_plural a   lemon:Form ;
+  lemon:writtenRep "year in spaceflights"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:year_in_spaceflight_66_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :year_in_spaceflight_66_sense_1_res ;
+  lemon:isA       :year_in_spaceflight_66_PredSynArg .
+
+:year_in_spaceflight_66_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/YearInSpaceflight> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :university_204_sense_1_res ;
+  lemon:entry    :university_204 .
+
+:university_204 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :university_204_form ;
+  lemon:otherForm  :university_204_singular ;
+  lemon:otherForm  :university_204_plural ;
+  lemon:sense          :university_204_sense_1 ;
+  lemon:synBehavior    :university_204_predFrame .
+
+:university_204_form
+ lemon:writtenRep "university"@en .
+
+:university_204_singular a    lemon:Form ;
+  lemon:writtenRep "university"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:university_204_plural a   lemon:Form ;
+  lemon:writtenRep "universities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:university_204_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :university_204_sense_1_res ;
+  lemon:isA       :university_204_PredSynArg .
+
+:university_204_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/University> .

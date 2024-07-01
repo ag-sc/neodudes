@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :runtime-of_5 ;
+  lemon:entry    :runtime-of_5_form_preposition .
+
+:runtime-of_5 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :runtime-of_5_form ;
+  lemon:otherForm  :runtime-of_5_singular ;
+  lemon:otherForm  :runtime-of_5_plural ;
+  lemon:sense          :runtime-of_5_sense_1 ;
+  lemon:synBehavior    :runtime-of_5_nounpp .
+
+:runtime-of_5_form a lemon:Form ;
+  lemon:writtenRep "runtime"@en .
+
+:runtime-of_5_singular a    lemon:Form ;
+  lemon:writtenRep "runtime"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:runtime-of_5_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:runtime-of_5_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1523-1523-1523-1520-1522-1522-1522-1522-1522-1522-1497-1497-1497-1497-1468-1468-1468-1468-720-720-9_runtime-of_5 ;
+  lexinfo:prepositionalAdjunct :arg2-1523-1523-1523-1520-1522-1522-1522-1522-1522-1522-1497-1497-1497-1497-1468-1468-1468-1468-720-720-9_runtime-of_5 .
+
+:runtime-of_5_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :runtime-of_5_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/borders> ;
+  lemon:subjOfProp          :arg2-1523-1523-1523-1520-1522-1522-1522-1522-1522-1522-1497-1497-1497-1497-1468-1468-1468-1468-720-720-9_runtime-of_5 ;
+  lemon:objOfProp           :arg1-1523-1523-1523-1520-1522-1522-1522-1522-1522-1522-1497-1497-1497-1497-1468-1468-1468-1468-720-720-9_runtime-of_5 ;
+  lemon:condition           :runtime-of_5_sense_1_condition .
+
+:runtime-of_5_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/PopulatedPlace> .
+
+:arg2-1523-1523-1523-1520-1522-1522-1522-1522-1522-1522-1497-1497-1497-1497-1468-1468-1468-1468-720-720-9_runtime-of_5 lemon:marker :runtime-of_5_form_preposition .
+## Prepositions ##
+:runtime-of_5_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

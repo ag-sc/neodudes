@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :solar_eclipse_154_sense_1_res ;
+  lemon:entry    :solar_eclipse_154 .
+
+:solar_eclipse_154 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :solar_eclipse_154_form ;
+  lemon:otherForm  :solar_eclipse_154_singular ;
+  lemon:otherForm  :solar_eclipse_154_plural ;
+  lemon:sense          :solar_eclipse_154_sense_1 ;
+  lemon:synBehavior    :solar_eclipse_154_predFrame .
+
+:solar_eclipse_154_form
+ lemon:writtenRep "solar eclipse"@en .
+
+:solar_eclipse_154_singular a    lemon:Form ;
+  lemon:writtenRep "solar eclipse"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:solar_eclipse_154_plural a   lemon:Form ;
+  lemon:writtenRep "solar eclipses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:solar_eclipse_154_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :solar_eclipse_154_sense_1_res ;
+  lemon:isA       :solar_eclipse_154_PredSynArg .
+
+:solar_eclipse_154_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SolarEclipse> .

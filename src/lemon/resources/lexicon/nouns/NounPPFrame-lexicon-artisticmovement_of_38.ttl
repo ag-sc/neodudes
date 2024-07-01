@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :artisticmovement_of_38 ;
+  lemon:entry    :artisticmovement_of_38_form_preposition .
+
+:artisticmovement_of_38 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :artisticmovement_of_38_form ;
+  lemon:otherForm  :artisticmovement_of_38_singular ;
+  lemon:otherForm  :artisticmovement_of_38_plural ;
+  lemon:sense          :artisticmovement_of_38_sense_1 ;
+  lemon:sense          :artisticmovement_of_38_sense_2 ;
+  lemon:synBehavior    :artisticmovement_of_38_nounpp .
+
+:artisticmovement_of_38_form a lemon:Form ;
+  lemon:writtenRep "artistic movement"@en .
+
+:artisticmovement_of_38_singular a    lemon:Form ;
+  lemon:writtenRep "artistic movement"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:artisticmovement_of_38_plural a   lemon:Form ;
+  lemon:writtenRep "artistic movements"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:artisticmovement_of_38_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 ;
+  lexinfo:prepositionalAdjunct :arg2-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 .
+
+:artisticmovement_of_38_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :artisticmovement_of_38_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/movement> ;
+  lemon:subjOfProp          :arg2-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 ;
+  lemon:objOfProp           :arg1-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 ;
+  lemon:condition           :artisticmovement_of_38_sense_1_condition .
+
+:artisticmovement_of_38_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Artist> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:artisticmovement_of_38_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :artisticmovement_of_38_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/movement> ;
+  lemon:subjOfProp          :arg2-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 ;
+  lemon:objOfProp           :arg1-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 ;
+  lemon:condition           :artisticmovement_of_38_sense_2_condition .
+
+:artisticmovement_of_38_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Artist> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:arg2-1119-1119-1119-1116-1115-1115-1115-1115-1115-1115-1096-1096-1096-1096-1070-1070-1070-1070-541-541-203_artisticmovement_of_38 lemon:marker :artisticmovement_of_38_form_preposition .
+## Prepositions ##
+:artisticmovement_of_38_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

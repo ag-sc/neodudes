@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :portuguese_165_253_sense_1_res ;
+  lemon:entry    :portuguese_165_253 .
+
+:portuguese_165_253 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :portuguese_165_253_lemma ;
+  lemon:sense          :portuguese_165_253_sense_1 ;
+  lemon:synBehavior    :portuguese_165_253_attrFrame, :portuguese_165_253_predFrame .
+
+:portuguese_165_253_lemma lemon:writtenRep "Portuguese"@en .
+
+:portuguese_165_253_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :portuguese_165_253_PredSynArg .
+
+:portuguese_165_253_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :portuguese_165_253_AttrSynArg .
+
+:portuguese_165_253_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :portuguese_165_253_sense_1_res ;
+  lemon:isA       :portuguese_165_253_AttrSynArg, :portuguese_165_253_PredSynArg .
+
+:portuguese_165_253_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Portugal> .

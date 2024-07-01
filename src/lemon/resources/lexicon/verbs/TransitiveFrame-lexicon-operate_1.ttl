@@ -1,0 +1,76 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_operate_1 ;
+  lemon:entry    :operate_1ed ;
+  lemon:entry    :form_operate_1_preposition .
+
+:to_operate_1 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_operate_1 ;
+  lemon:otherForm      :form_operate_1s ;
+  lemon:otherForm      :form_operate_1ed ;
+  lemon:otherForm      :form_operate_1perfect ;
+  lemon:sense          :operate_1_sense_1 ;
+  lemon:sense          :operate_1_sense_2 ;
+  lemon:synBehavior    :operate_1_frame_transitive .
+
+:form_operate_1 a         lemon:Form ;
+  lemon:writtenRep     "operate"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_operate_1s a    lemon:Form ;
+  lemon:writtenRep "operates"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_operate_1ed a   lemon:Form ;
+  lemon:writtenRep "operated"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_operate_1perfect a   lemon:Form ;
+  lemon:writtenRep "operated"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:operate_1_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :operate_1_subj ;
+  lexinfo:directObject     :operate_1_obj .
+
+:operate_1_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :operate_1_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/operator> ;
+  lemon:subjOfProp  :operate_1_obj ;
+  lemon:objOfProp   :operate_1_subj ;
+  lemon:condition   :operate_1_sense_1_condition .
+
+
+:operate_1_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/LaunchPad> .
+
+:operate_1_sense_2 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :operate_1_sense_2 ;
+  lemon:reference   <http://dbpedia.org/property/operator> ;
+  lemon:subjOfProp  :operate_1_obj ;
+  lemon:objOfProp   :operate_1_subj ;
+  lemon:condition   :operate_1_sense_2_condition .
+
+
+:operate_1_sense_2_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Airport> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Organisation> .
+
+
+:operate_1_obj lemon:marker :form_operate_1_preposition .
+
+## Prepositions ##
+:form_operate_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

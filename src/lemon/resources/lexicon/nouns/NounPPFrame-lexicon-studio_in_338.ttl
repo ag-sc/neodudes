@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :studio_in_338 ;
+  lemon:entry    :studio_in_338_form_preposition .
+
+:studio_in_338 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :studio_in_338_form ;
+  lemon:otherForm  :studio_in_338_singular ;
+  lemon:otherForm  :studio_in_338_plural ;
+  lemon:sense          :studio_in_338_sense_1 ;
+  lemon:synBehavior    :studio_in_338_nounpp .
+
+:studio_in_338_form a lemon:Form ;
+  lemon:writtenRep "studio"@en .
+
+:studio_in_338_singular a    lemon:Form ;
+  lemon:writtenRep "studio"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:studio_in_338_plural a   lemon:Form ;
+  lemon:writtenRep "studios"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:studio_in_338_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1580-1580-1581-1578-1580-1580-1580-1580-1580-1580-1554-1554-1554-1554-1524-1524-1524-1524-774_studio_in_338 ;
+  lexinfo:prepositionalAdjunct :arg2-1580-1580-1581-1578-1580-1580-1580-1580-1580-1580-1554-1554-1554-1554-1524-1524-1524-1524-774_studio_in_338 .
+
+:studio_in_338_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :studio_in_338_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/studio> ;
+  lemon:subjOfProp          :arg2-1580-1580-1581-1578-1580-1580-1580-1580-1580-1580-1554-1554-1554-1554-1524-1524-1524-1524-774_studio_in_338 ;
+  lemon:objOfProp           :arg1-1580-1580-1581-1578-1580-1580-1580-1580-1580-1580-1554-1554-1554-1554-1524-1524-1524-1524-774_studio_in_338 ;
+  lemon:condition           :studio_in_338_sense_1_condition .
+
+:studio_in_338_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Film> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1580-1580-1581-1578-1580-1580-1580-1580-1580-1580-1554-1554-1554-1554-1524-1524-1524-1524-774_studio_in_338 lemon:marker :studio_in_338_form_preposition .
+## Prepositions ##
+:studio_in_338_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

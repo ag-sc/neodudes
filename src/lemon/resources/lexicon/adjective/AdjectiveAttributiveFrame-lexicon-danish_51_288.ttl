@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :danish_51_288_sense_1_res ;
+  lemon:entry    :danish_51_288 .
+
+:danish_51_288 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :danish_51_288_lemma ;
+  lemon:sense          :danish_51_288_sense_1 ;
+  lemon:synBehavior    :danish_51_288_attrFrame, :danish_51_288_predFrame .
+
+:danish_51_288_lemma lemon:writtenRep "Danish"@en .
+
+:danish_51_288_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :danish_51_288_PredSynArg .
+
+:danish_51_288_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :danish_51_288_AttrSynArg .
+
+:danish_51_288_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :danish_51_288_sense_1_res ;
+  lemon:isA       :danish_51_288_AttrSynArg, :danish_51_288_PredSynArg .
+
+:danish_51_288_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Denmark> .

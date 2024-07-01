@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :begin_at_2 ;
+  lemon:entry    :form_begin_at_2_preposition .
+
+:begin_at_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_begin_at_2 ;
+  lemon:otherForm      :form_begin_at_2_present3rd ;
+  lemon:otherForm      :form_begin_at_2_past ;
+  lemon:otherForm      :form_begin_at_2_perfect ;
+  lemon:sense          :begin_at_2_sense_1 ;
+  lemon:synBehavior    :begin_at_2_frame .
+
+:form_begin_at_2 a           lemon:Form ;
+  lemon:writtenRep     "begin"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_begin_at_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "begins"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_begin_at_2_past a lemon:Form ;
+  lemon:writtenRep  "began"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_begin_at_2_perfect a   lemon:Form ;
+  lemon:writtenRep "began"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:begin_at_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :begin_at_2_subj ;
+  lexinfo:prepositionalAdjunct :begin_at_2_obj .
+
+:begin_at_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :begin_at_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/source2Location> ;
+  lemon:subjOfProp  :begin_at_2_subj ;
+  lemon:objOfProp   :begin_at_2_obj ;
+  lemon:condition   :begin_at_2_sense_1_condition .
+
+:begin_at_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/River> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/City> .
+
+
+:begin_at_2_obj lemon:marker :form_begin_at_2_preposition .
+
+## Prepositions ##
+:form_begin_at_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "at"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

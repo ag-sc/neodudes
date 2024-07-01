@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president_111_sense_1_res ;
+  lemon:entry    :president_111 .
+
+:president_111 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president_111_form ;
+  lemon:otherForm  :president_111_singular ;
+  lemon:otherForm  :president_111_plural ;
+  lemon:sense          :president_111_sense_1 ;
+  lemon:synBehavior    :president_111_predFrame .
+
+:president_111_form
+ lemon:writtenRep "president"@en .
+
+:president_111_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president_111_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president_111_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :president_111_sense_1_res ;
+  lemon:isA       :president_111_PredSynArg .
+
+:president_111_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/President> .

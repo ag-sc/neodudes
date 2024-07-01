@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mineral_of_1_174 ;
+  lemon:entry    :mineral_of_1_174_form_preposition .
+
+:mineral_of_1_174 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mineral_of_1_174_form ;
+  lemon:otherForm  :mineral_of_1_174_singular ;
+  lemon:otherForm  :mineral_of_1_174_plural ;
+  lemon:sense          :mineral_of_1_174_sense_1 ;
+  lemon:synBehavior    :mineral_of_1_174_nounpp .
+
+:mineral_of_1_174_form a lemon:Form ;
+  lemon:writtenRep "mineral"@en .
+
+:mineral_of_1_174_singular a    lemon:Form ;
+  lemon:writtenRep "mineral"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mineral_of_1_174_plural a   lemon:Form ;
+  lemon:writtenRep "minerals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mineral_of_1_174_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-29-29-29-30-30-30-30-30-30-30-30-30-30-30-30-30-30-30-19-19-115_mineral_of_1_174 ;
+  lexinfo:prepositionalAdjunct :arg2-29-29-29-30-30-30-30-30-30-30-30-30-30-30-30-30-30-30-19-19-115_mineral_of_1_174 .
+
+:mineral_of_1_174_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mineral_of_1_174_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/mineral> ;
+  lemon:subjOfProp          :arg2-29-29-29-30-30-30-30-30-30-30-30-30-30-30-30-30-30-30-19-19-115_mineral_of_1_174 ;
+  lemon:objOfProp           :arg1-29-29-29-30-30-30-30-30-30-30-30-30-30-30-30-30-30-30-19-19-115_mineral_of_1_174 ;
+  lemon:condition           :mineral_of_1_174_sense_1_condition .
+
+:mineral_of_1_174_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Currency> .
+
+:arg2-29-29-29-30-30-30-30-30-30-30-30-30-30-30-30-30-30-30-19-19-115_mineral_of_1_174 lemon:marker :mineral_of_1_174_form_preposition .
+## Prepositions ##
+:mineral_of_1_174_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

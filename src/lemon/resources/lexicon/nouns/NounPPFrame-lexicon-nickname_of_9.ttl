@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nickname_of_9 ;
+  lemon:entry    :nickname_of_9_form_preposition .
+
+:nickname_of_9 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :nickname_of_9_form ;
+  lemon:otherForm  :nickname_of_9_singular ;
+  lemon:otherForm  :nickname_of_9_plural ;
+  lemon:sense          :nickname_of_9_sense_1 ;
+  lemon:synBehavior    :nickname_of_9_nounpp .
+
+:nickname_of_9_form a lemon:Form ;
+  lemon:writtenRep "nickname"@en .
+
+:nickname_of_9_singular a    lemon:Form ;
+  lemon:writtenRep "nickname"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:nickname_of_9_plural a   lemon:Form ;
+  lemon:writtenRep "nicknames"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:nickname_of_9_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1428-1428-1428_nickname_of_9 ;
+  lexinfo:prepositionalAdjunct :arg2-1428-1428-1428_nickname_of_9 .
+
+:nickname_of_9_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :nickname_of_9_sense_1 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/nick> ;
+  lemon:subjOfProp          :arg2-1428-1428-1428_nickname_of_9 ;
+  lemon:objOfProp           :arg1-1428-1428-1428_nickname_of_9 ;
+  lemon:condition           :nickname_of_9_sense_1_condition .
+
+:nickname_of_9_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1428-1428-1428_nickname_of_9 lemon:marker :nickname_of_9_form_preposition .
+## Prepositions ##
+:nickname_of_9_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

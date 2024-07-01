@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :actor_of_508 ;
+  lemon:entry    :actor_of_508_form_preposition .
+
+:actor_of_508 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :actor_of_508_form ;
+  lemon:otherForm  :actor_of_508_singular ;
+  lemon:otherForm  :actor_of_508_plural ;
+  lemon:sense          :actor_of_508_sense_1 ;
+  lemon:synBehavior    :actor_of_508_nounpp .
+
+:actor_of_508_form a lemon:Form ;
+  lemon:writtenRep "actor"@en .
+
+:actor_of_508_singular a    lemon:Form ;
+  lemon:writtenRep "actor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:actor_of_508_plural a   lemon:Form ;
+  lemon:writtenRep "actors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:actor_of_508_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-587-587-587-585-584-584-584-584-584-584-573-573-573-573-561-561-561-561-272_actor_of_508 ;
+  lexinfo:prepositionalAdjunct :arg2-587-587-587-585-584-584-584-584-584-584-573-573-573-573-561-561-561-561-272_actor_of_508 .
+
+:actor_of_508_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :actor_of_508_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/starring> ;
+  lemon:subjOfProp          :arg2-587-587-587-585-584-584-584-584-584-584-573-573-573-573-561-561-561-561-272_actor_of_508 ;
+  lemon:objOfProp           :arg1-587-587-587-585-584-584-584-584-584-584-573-573-573-573-561-561-561-561-272_actor_of_508 ;
+  lemon:condition           :actor_of_508_sense_1_condition .
+
+:actor_of_508_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-587-587-587-585-584-584-584-584-584-584-573-573-573-573-561-561-561-561-272_actor_of_508 lemon:marker :actor_of_508_form_preposition .
+## Prepositions ##
+:actor_of_508_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

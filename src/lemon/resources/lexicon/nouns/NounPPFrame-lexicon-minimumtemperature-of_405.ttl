@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :minimumtemperature-of_405 ;
+  lemon:entry    :minimumtemperature-of_405_form_preposition .
+
+:minimumtemperature-of_405 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :minimumtemperature-of_405_form ;
+  lemon:otherForm  :minimumtemperature-of_405_singular ;
+  lemon:otherForm  :minimumtemperature-of_405_plural ;
+  lemon:sense          :minimumtemperature-of_405_sense_1 ;
+  lemon:synBehavior    :minimumtemperature-of_405_nounpp .
+
+:minimumtemperature-of_405_form a lemon:Form ;
+  lemon:writtenRep "minimum Temperature"@en .
+
+:minimumtemperature-of_405_singular a    lemon:Form ;
+  lemon:writtenRep "minimum Temperature"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:minimumtemperature-of_405_plural a   lemon:Form ;
+  lemon:writtenRep "minimum Temperatures"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:minimumtemperature-of_405_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1326-1326-1325-1320-1322-1322-1322-1322-1322-1322-1301-1301-1301-1301-1272-1272-1272-1272-643_minimumtemperature-of_405 ;
+  lexinfo:prepositionalAdjunct :arg2-1326-1326-1325-1320-1322-1322-1322-1322-1322-1322-1301-1301-1301-1301-1272-1272-1272-1272-643_minimumtemperature-of_405 .
+
+:minimumtemperature-of_405_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :minimumtemperature-of_405_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/minimumTemperature> ;
+  lemon:subjOfProp          :arg2-1326-1326-1325-1320-1322-1322-1322-1322-1322-1322-1301-1301-1301-1301-1272-1272-1272-1272-643_minimumtemperature-of_405 ;
+  lemon:objOfProp           :arg1-1326-1326-1325-1320-1322-1322-1322-1322-1322-1322-1301-1301-1301-1301-1272-1272-1272-1272-643_minimumtemperature-of_405 ;
+  lemon:condition           :minimumtemperature-of_405_sense_1_condition .
+
+:minimumtemperature-of_405_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Planet> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1326-1326-1325-1320-1322-1322-1322-1322-1322-1322-1301-1301-1301-1301-1272-1272-1272-1272-643_minimumtemperature-of_405 lemon:marker :minimumtemperature-of_405_form_preposition .
+## Prepositions ##
+:minimumtemperature-of_405_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

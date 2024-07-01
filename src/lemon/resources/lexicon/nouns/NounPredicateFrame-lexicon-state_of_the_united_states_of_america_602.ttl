@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :state_of_the_united_states_of_america_602_sense_1_res ;
+  lemon:entry    :state_of_the_united_states_of_america_602 .
+
+:state_of_the_united_states_of_america_602 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :state_of_the_united_states_of_america_602_form ;
+  lemon:otherForm  :state_of_the_united_states_of_america_602_singular ;
+  lemon:otherForm  :state_of_the_united_states_of_america_602_plural ;
+  lemon:sense          :state_of_the_united_states_of_america_602_sense_1 ;
+  lemon:synBehavior    :state_of_the_united_states_of_america_602_predFrame .
+
+:state_of_the_united_states_of_america_602_form
+ lemon:writtenRep "state of the united states of america"@en .
+
+:state_of_the_united_states_of_america_602_singular a    lemon:Form ;
+  lemon:writtenRep "state of the united states of america"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:state_of_the_united_states_of_america_602_plural a   lemon:Form ;
+  lemon:writtenRep "state of the united states of america"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:state_of_the_united_states_of_america_602_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :state_of_the_united_states_of_america_602_sense_1_res ;
+  lemon:isA       :state_of_the_united_states_of_america_602_PredSynArg .
+
+:state_of_the_united_states_of_america_602_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates> .

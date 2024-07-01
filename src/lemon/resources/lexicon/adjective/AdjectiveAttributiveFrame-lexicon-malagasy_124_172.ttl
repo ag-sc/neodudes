@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :malagasy_124_172_sense_1_res ;
+  lemon:entry    :malagasy_124_172 .
+
+:malagasy_124_172 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :malagasy_124_172_lemma ;
+  lemon:sense          :malagasy_124_172_sense_1 ;
+  lemon:synBehavior    :malagasy_124_172_attrFrame, :malagasy_124_172_predFrame .
+
+:malagasy_124_172_lemma lemon:writtenRep "Malagasy"@en .
+
+:malagasy_124_172_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :malagasy_124_172_PredSynArg .
+
+:malagasy_124_172_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :malagasy_124_172_AttrSynArg .
+
+:malagasy_124_172_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :malagasy_124_172_sense_1_res ;
+  lemon:isA       :malagasy_124_172_AttrSynArg, :malagasy_124_172_PredSynArg .
+
+:malagasy_124_172_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Madagascar> .

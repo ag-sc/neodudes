@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :root-of_77 ;
+  lemon:entry    :root-of_77_form_preposition .
+
+:root-of_77 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :root-of_77_form ;
+  lemon:otherForm  :root-of_77_singular ;
+  lemon:otherForm  :root-of_77_plural ;
+  lemon:sense          :root-of_77_sense_1 ;
+  lemon:synBehavior    :root-of_77_nounpp .
+
+:root-of_77_form a lemon:Form ;
+  lemon:writtenRep "root"@en .
+
+:root-of_77_singular a    lemon:Form ;
+  lemon:writtenRep "root"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:root-of_77_plural a   lemon:Form ;
+  lemon:writtenRep "roots"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:root-of_77_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-81-81-81-82-82-82-82-82-82-82-80-80-80-80-80-80-80-80-40-40-455_root-of_77 ;
+  lexinfo:prepositionalAdjunct :arg2-81-81-81-82-82-82-82-82-82-82-80-80-80-80-80-80-80-80-40-40-455_root-of_77 .
+
+:root-of_77_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :root-of_77_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/languageFamily> ;
+  lemon:subjOfProp          :arg2-81-81-81-82-82-82-82-82-82-82-80-80-80-80-80-80-80-80-40-40-455_root-of_77 ;
+  lemon:objOfProp           :arg1-81-81-81-82-82-82-82-82-82-82-80-80-80-80-80-80-80-80-40-40-455_root-of_77 ;
+  lemon:condition           :root-of_77_sense_1_condition .
+
+:root-of_77_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Language> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2-81-81-81-82-82-82-82-82-82-82-80-80-80-80-80-80-80-80-40-40-455_root-of_77 lemon:marker :root-of_77_form_preposition .
+## Prepositions ##
+:root-of_77_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

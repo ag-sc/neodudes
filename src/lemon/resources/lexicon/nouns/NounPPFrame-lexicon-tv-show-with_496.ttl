@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tv-show-with_496 ;
+  lemon:entry    :tv-show-with_496_form_preposition .
+
+:tv-show-with_496 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :tv-show-with_496_form ;
+  lemon:otherForm  :tv-show-with_496_singular ;
+  lemon:otherForm  :tv-show-with_496_plural ;
+  lemon:sense          :tv-show-with_496_sense_1 ;
+  lemon:synBehavior    :tv-show-with_496_nounpp .
+
+:tv-show-with_496_form a lemon:Form ;
+  lemon:writtenRep "TV show"@en .
+
+:tv-show-with_496_singular a    lemon:Form ;
+  lemon:writtenRep "TV show"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:tv-show-with_496_plural a   lemon:Form ;
+  lemon:writtenRep "TV show"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:tv-show-with_496_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-242-242-241-242-241-241-241-241-241-241-235-235-235-235-231-231-231-231-121_tv-show-with_496 ;
+  lexinfo:prepositionalAdjunct :arg2-242-242-241-242-241-241-241-241-241-241-235-235-235-235-231-231-231-231-121_tv-show-with_496 .
+
+:tv-show-with_496_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :tv-show-with_496_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/starring> ;
+  lemon:subjOfProp          :arg2-242-242-241-242-241-241-241-241-241-241-235-235-235-235-231-231-231-231-121_tv-show-with_496 ;
+  lemon:objOfProp           :arg1-242-242-241-242-241-241-241-241-241-241-235-235-235-235-231-231-231-231-121_tv-show-with_496 ;
+  lemon:condition           :tv-show-with_496_sense_1_condition .
+
+:tv-show-with_496_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Actor> .
+
+:arg2-242-242-241-242-241-241-241-241-241-241-235-235-235-235-231-231-231-231-121_tv-show-with_496 lemon:marker :tv-show-with_496_form_preposition .
+## Prepositions ##
+:tv-show-with_496_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "with"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :information_appliance_86_sense_1_res ;
+  lemon:entry    :information_appliance_86 .
+
+:information_appliance_86 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :information_appliance_86_form ;
+  lemon:otherForm  :information_appliance_86_singular ;
+  lemon:otherForm  :information_appliance_86_plural ;
+  lemon:sense          :information_appliance_86_sense_1 ;
+  lemon:synBehavior    :information_appliance_86_predFrame .
+
+:information_appliance_86_form
+ lemon:writtenRep "information appliance"@en .
+
+:information_appliance_86_singular a    lemon:Form ;
+  lemon:writtenRep "information appliance"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:information_appliance_86_plural a   lemon:Form ;
+  lemon:writtenRep "information appliances"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:information_appliance_86_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :information_appliance_86_sense_1_res ;
+  lemon:isA       :information_appliance_86_PredSynArg .
+
+:information_appliance_86_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/InformationAppliance> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :associatedmusicalartist-of_66 ;
+  lemon:entry    :associatedmusicalartist-of_66_form_preposition .
+
+:associatedmusicalartist-of_66 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :associatedmusicalartist-of_66_form ;
+  lemon:otherForm  :associatedmusicalartist-of_66_singular ;
+  lemon:otherForm  :associatedmusicalartist-of_66_plural ;
+  lemon:sense          :associatedmusicalartist-of_66_sense_1 ;
+  lemon:synBehavior    :associatedmusicalartist-of_66_nounpp .
+
+:associatedmusicalartist-of_66_form a lemon:Form ;
+  lemon:writtenRep "associated Musical Artist"@en .
+
+:associatedmusicalartist-of_66_singular a    lemon:Form ;
+  lemon:writtenRep "associated Musical Artist"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:associatedmusicalartist-of_66_plural a   lemon:Form ;
+  lemon:writtenRep "associated Musical Artists"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:associatedmusicalartist-of_66_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1284-1284-1283-1278-1280-1280-1280-1280-1280-1280-1259-1259-1259-1259-1232-1232-1232-1232-613-613-56_associatedmusicalartist-of_66 ;
+  lexinfo:prepositionalAdjunct :arg2-1284-1284-1283-1278-1280-1280-1280-1280-1280-1280-1259-1259-1259-1259-1232-1232-1232-1232-613-613-56_associatedmusicalartist-of_66 .
+
+:associatedmusicalartist-of_66_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :associatedmusicalartist-of_66_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/associatedMusicalArtist> ;
+  lemon:subjOfProp          :arg2-1284-1284-1283-1278-1280-1280-1280-1280-1280-1280-1259-1259-1259-1259-1232-1232-1232-1232-613-613-56_associatedmusicalartist-of_66 ;
+  lemon:objOfProp           :arg1-1284-1284-1283-1278-1280-1280-1280-1280-1280-1280-1259-1259-1259-1259-1232-1232-1232-1232-613-613-56_associatedmusicalartist-of_66 ;
+  lemon:condition           :associatedmusicalartist-of_66_sense_1_condition .
+
+:associatedmusicalartist-of_66_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Band> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1284-1284-1283-1278-1280-1280-1280-1280-1280-1280-1259-1259-1259-1259-1232-1232-1232-1232-613-613-56_associatedmusicalartist-of_66 lemon:marker :associatedmusicalartist-of_66_form_preposition .
+## Prepositions ##
+:associatedmusicalartist-of_66_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

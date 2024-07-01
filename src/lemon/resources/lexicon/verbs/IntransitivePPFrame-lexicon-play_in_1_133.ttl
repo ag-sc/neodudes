@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :play_in_1_133 ;
+  lemon:entry    :form_play_in_1_133_preposition .
+
+:play_in_1_133 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_play_in_1_133 ;
+  lemon:otherForm      :form_play_in_1_133_present3rd ;
+  lemon:otherForm      :form_play_in_1_133_past ;
+  lemon:otherForm      :form_play_in_1_133_perfect ;
+  lemon:sense          :play_in_1_133_sense_1 ;
+  lemon:synBehavior    :play_in_1_133_frame .
+
+:form_play_in_1_133 a           lemon:Form ;
+  lemon:writtenRep     "play"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_play_in_1_133_present3rd a      lemon:Form ;
+  lemon:writtenRep "plays"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_play_in_1_133_past a lemon:Form ;
+  lemon:writtenRep  "played"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_play_in_1_133_perfect a   lemon:Form ;
+  lemon:writtenRep "played"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:play_in_1_133_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :play_in_1_133_subj ;
+  lexinfo:prepositionalAdjunct :play_in_1_133_obj .
+
+:play_in_1_133_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :play_in_1_133_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/member> ;
+  lemon:subjOfProp  :play_in_1_133_subj ;
+  lemon:objOfProp   :play_in_1_133_obj ;
+  lemon:condition   :play_in_1_133_sense_1_condition .
+
+:play_in_1_133_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Band> .
+
+
+:play_in_1_133_obj lemon:marker :form_play_in_1_133_preposition .
+
+## Prepositions ##
+:form_play_in_1_133_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

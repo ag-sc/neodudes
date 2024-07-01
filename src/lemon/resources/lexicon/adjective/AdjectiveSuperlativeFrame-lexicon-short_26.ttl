@@ -1,0 +1,62 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :short_26 ;
+  lemon:entry    :form_short_26_preposition ;
+  lemon:entry    :short_26_res .
+
+:short_26 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_short_26 ;
+  lemon:otherForm      :form_short_26_comperative ;
+  lemon:otherForm      :form_short_26_superlative ;
+  lemon:sense          :short_26_sense_1 ;
+  lemon:sense          :short_26_sense_2 ;
+  lemon:synBehavior    :short_26_predFrame .
+
+:form_short_26 lemon:writtenRep "short"@en .
+
+:form_short_26_comperative lemon:writtenRep "shorter"@en .
+
+:form_short_26_superlative lemon:writtenRep "shortest"@en .
+
+:short_26_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :short_26_PredSynArg .
+
+:short_26_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :short_26_res ;
+  lemon:isA       :short_26_PredSynArg ;
+  lemon:condition :short_26_sense_1_condition .
+
+:short_26_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/length> ;
+  oils:degree   <http://localhost:8000/oils.owl/low> .
+
+:short_26_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BodyOfWater> .
+:short_26_sense_2 a  lemon:LexicalSense ;
+  lemon:reference :short_26_res ;
+  lemon:isA       :short_26_PredSynArg ;
+  lemon:condition :short_26_sense_2_condition .
+
+:short_26_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/length> ;
+  oils:degree   <http://localhost:8000/oils.owl/low> .
+
+:short_26_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/BodyOfWater> .
+
+## Prepositions ##
+:form_short_26_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

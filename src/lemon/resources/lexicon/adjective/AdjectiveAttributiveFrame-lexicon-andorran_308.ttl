@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :andorran_308_sense_1_res ;
+  lemon:entry    :andorran_308 .
+
+:andorran_308 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :andorran_308_lemma ;
+  lemon:sense          :andorran_308_sense_1 ;
+  lemon:synBehavior    :andorran_308_attrFrame, :andorran_308_predFrame .
+
+:andorran_308_lemma lemon:writtenRep "andorran"@en .
+
+:andorran_308_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :andorran_308_PredSynArg .
+
+:andorran_308_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :andorran_308_AttrSynArg .
+
+:andorran_308_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :andorran_308_sense_1_res ;
+  lemon:isA       :andorran_308_AttrSynArg, :andorran_308_PredSynArg .
+
+:andorran_308_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Andorra> .

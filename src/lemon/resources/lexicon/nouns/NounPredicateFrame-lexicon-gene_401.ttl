@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :gene_401_sense_1_res ;
+  lemon:entry    :gene_401 .
+
+:gene_401 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :gene_401_form ;
+  lemon:otherForm  :gene_401_singular ;
+  lemon:otherForm  :gene_401_plural ;
+  lemon:sense          :gene_401_sense_1 ;
+  lemon:synBehavior    :gene_401_predFrame .
+
+:gene_401_form
+ lemon:writtenRep "gene"@en .
+
+:gene_401_singular a    lemon:Form ;
+  lemon:writtenRep "gene"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:gene_401_plural a   lemon:Form ;
+  lemon:writtenRep "genes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:gene_401_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :gene_401_sense_1_res ;
+  lemon:isA       :gene_401_PredSynArg .
+
+:gene_401_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Gene> .

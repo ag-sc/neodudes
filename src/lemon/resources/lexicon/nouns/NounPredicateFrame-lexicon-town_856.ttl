@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :town_856_sense_1_res ;
+  lemon:entry    :town_856 .
+
+:town_856 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :town_856_form ;
+  lemon:otherForm  :town_856_singular ;
+  lemon:otherForm  :town_856_plural ;
+  lemon:sense          :town_856_sense_1 ;
+  lemon:synBehavior    :town_856_predFrame .
+
+:town_856_form
+ lemon:writtenRep "town"@en .
+
+:town_856_singular a    lemon:Form ;
+  lemon:writtenRep "town"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:town_856_plural a   lemon:Form ;
+  lemon:writtenRep "towns"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:town_856_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :town_856_sense_1_res ;
+  lemon:isA       :town_856_PredSynArg .
+
+:town_856_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Town> .

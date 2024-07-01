@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :haitian_82_145_sense_1_res ;
+  lemon:entry    :haitian_82_145 .
+
+:haitian_82_145 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :haitian_82_145_lemma ;
+  lemon:sense          :haitian_82_145_sense_1 ;
+  lemon:synBehavior    :haitian_82_145_attrFrame, :haitian_82_145_predFrame .
+
+:haitian_82_145_lemma lemon:writtenRep "Haitian"@en .
+
+:haitian_82_145_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :haitian_82_145_PredSynArg .
+
+:haitian_82_145_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :haitian_82_145_AttrSynArg .
+
+:haitian_82_145_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :haitian_82_145_sense_1_res ;
+  lemon:isA       :haitian_82_145_AttrSynArg, :haitian_82_145_PredSynArg .
+
+:haitian_82_145_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Haiti> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :castle_314_sense_1_res ;
+  lemon:entry    :castle_314 .
+
+:castle_314 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :castle_314_form ;
+  lemon:otherForm  :castle_314_singular ;
+  lemon:otherForm  :castle_314_plural ;
+  lemon:sense          :castle_314_sense_1 ;
+  lemon:synBehavior    :castle_314_predFrame .
+
+:castle_314_form
+ lemon:writtenRep "castle"@en .
+
+:castle_314_singular a    lemon:Form ;
+  lemon:writtenRep "castle"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:castle_314_plural a   lemon:Form ;
+  lemon:writtenRep "castles"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:castle_314_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :castle_314_sense_1_res ;
+  lemon:isA       :castle_314_PredSynArg .
+
+:castle_314_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Castle> .

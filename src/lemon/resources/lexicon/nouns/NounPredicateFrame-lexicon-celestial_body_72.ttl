@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :celestial_body_72_sense_1_res ;
+  lemon:entry    :celestial_body_72 .
+
+:celestial_body_72 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :celestial_body_72_form ;
+  lemon:otherForm  :celestial_body_72_singular ;
+  lemon:otherForm  :celestial_body_72_plural ;
+  lemon:sense          :celestial_body_72_sense_1 ;
+  lemon:synBehavior    :celestial_body_72_predFrame .
+
+:celestial_body_72_form
+ lemon:writtenRep "celestial body"@en .
+
+:celestial_body_72_singular a    lemon:Form ;
+  lemon:writtenRep "celestial body"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:celestial_body_72_plural a   lemon:Form ;
+  lemon:writtenRep "celestial bodies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:celestial_body_72_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :celestial_body_72_sense_1_res ;
+  lemon:isA       :celestial_body_72_PredSynArg .
+
+:celestial_body_72_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/CelestialBody> .

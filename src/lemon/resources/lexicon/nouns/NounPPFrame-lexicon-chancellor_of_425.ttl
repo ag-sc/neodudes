@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :chancellor_of_425 ;
+  lemon:entry    :chancellor_of_425_form_preposition .
+
+:chancellor_of_425 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :chancellor_of_425_form ;
+  lemon:otherForm  :chancellor_of_425_singular ;
+  lemon:otherForm  :chancellor_of_425_plural ;
+  lemon:sense          :chancellor_of_425_sense_1 ;
+  lemon:synBehavior    :chancellor_of_425_nounpp .
+
+:chancellor_of_425_form a lemon:Form ;
+  lemon:writtenRep "chancellor"@en .
+
+:chancellor_of_425_singular a    lemon:Form ;
+  lemon:writtenRep "chancellor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:chancellor_of_425_plural a   lemon:Form ;
+  lemon:writtenRep "chancellors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:chancellor_of_425_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-27-27-27-28-28-28-28-28-28-28-28-28-28-28-28-28-28-28-9_chancellor_of_425 ;
+  lexinfo:prepositionalAdjunct :arg2-27-27-27-28-28-28-28-28-28-28-28-28-28-28-28-28-28-28-9_chancellor_of_425 .
+
+:chancellor_of_425_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :chancellor_of_425_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/incumbent> ;
+  lemon:subjOfProp          :arg2-27-27-27-28-28-28-28-28-28-28-28-28-28-28-28-28-28-28-9_chancellor_of_425 ;
+  lemon:objOfProp           :arg1-27-27-27-28-28-28-28-28-28-28-28-28-28-28-28-28-28-28-9_chancellor_of_425 ;
+  lemon:condition           :chancellor_of_425_sense_1_condition .
+
+:chancellor_of_425_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-27-27-27-28-28-28-28-28-28-28-28-28-28-28-28-28-28-28-9_chancellor_of_425 lemon:marker :chancellor_of_425_form_preposition .
+## Prepositions ##
+:chancellor_of_425_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

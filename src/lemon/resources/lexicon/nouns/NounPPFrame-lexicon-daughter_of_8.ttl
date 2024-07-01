@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :daughter_of_8 ;
+  lemon:entry    :daughter_of_8_form_preposition .
+
+:daughter_of_8 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :daughter_of_8_form ;
+  lemon:otherForm  :daughter_of_8_singular ;
+  lemon:otherForm  :daughter_of_8_plural ;
+  lemon:sense          :daughter_of_8_sense_1 ;
+  lemon:synBehavior    :daughter_of_8_nounpp .
+
+:daughter_of_8_form a lemon:Form ;
+  lemon:writtenRep "daughter"@en .
+
+:daughter_of_8_singular a    lemon:Form ;
+  lemon:writtenRep "daughter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:daughter_of_8_plural a   lemon:Form ;
+  lemon:writtenRep "daughters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:daughter_of_8_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1446-1446-1446-1441-1443-1443-1443-1443-1443-1443-1420-1420-1420-1420-1391-1391-1391-1391-679-679-207_daughter_of_8 ;
+  lexinfo:prepositionalAdjunct :arg2-1446-1446-1446-1441-1443-1443-1443-1443-1443-1443-1420-1420-1420-1420-1391-1391-1391-1391-679-679-207_daughter_of_8 .
+
+:daughter_of_8_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :daughter_of_8_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-1446-1446-1446-1441-1443-1443-1443-1443-1443-1443-1420-1420-1420-1420-1391-1391-1391-1391-679-679-207_daughter_of_8 ;
+  lemon:objOfProp           :arg1-1446-1446-1446-1441-1443-1443-1443-1443-1443-1443-1420-1420-1420-1420-1391-1391-1391-1391-679-679-207_daughter_of_8 ;
+  lemon:condition           :daughter_of_8_sense_1_condition .
+
+:daughter_of_8_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1446-1446-1446-1441-1443-1443-1443-1443-1443-1443-1420-1420-1420-1420-1391-1391-1391-1391-679-679-207_daughter_of_8 lemon:marker :daughter_of_8_form_preposition .
+## Prepositions ##
+:daughter_of_8_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

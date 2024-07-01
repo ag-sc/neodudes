@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :president-of_2_303 ;
+  lemon:entry    :president-of_2_303_form_preposition .
+
+:president-of_2_303 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :president-of_2_303_form ;
+  lemon:otherForm  :president-of_2_303_singular ;
+  lemon:otherForm  :president-of_2_303_plural ;
+  lemon:sense          :president-of_2_303_sense_1 ;
+  lemon:synBehavior    :president-of_2_303_nounpp .
+
+:president-of_2_303_form a lemon:Form ;
+  lemon:writtenRep "president"@en .
+
+:president-of_2_303_singular a    lemon:Form ;
+  lemon:writtenRep "president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:president-of_2_303_plural a   lemon:Form ;
+  lemon:writtenRep "presidents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:president-of_2_303_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1045-1045-1045-1042-1041-1041-1041-1041-1041-1041-1023-1023-1023-1023-998-998-998-998-496_president-of_2_303 ;
+  lexinfo:prepositionalAdjunct :arg2-1045-1045-1045-1042-1041-1041-1041-1041-1041-1041-1023-1023-1023-1023-998-998-998-998-496_president-of_2_303 .
+
+:president-of_2_303_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :president-of_2_303_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-1045-1045-1045-1042-1041-1041-1041-1041-1041-1041-1023-1023-1023-1023-998-998-998-998-496_president-of_2_303 ;
+  lemon:objOfProp           :arg1-1045-1045-1045-1042-1041-1041-1041-1041-1041-1041-1023-1023-1023-1023-998-998-998-998-496_president-of_2_303 ;
+  lemon:condition           :president-of_2_303_sense_1_condition .
+
+:president-of_2_303_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1045-1045-1045-1042-1041-1041-1041-1041-1041-1041-1023-1023-1023-1023-998-998-998-998-496_president-of_2_303 lemon:marker :president-of_2_303_form_preposition .
+## Prepositions ##
+:president-of_2_303_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :methodist_42_sense_1_res ;
+  lemon:entry    :methodist_42 .
+
+:methodist_42 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :methodist_42_lemma ;
+  lemon:sense          :methodist_42_sense_1 ;
+  lemon:synBehavior    :methodist_42_attrFrame, :methodist_42_predFrame .
+
+:methodist_42_lemma lemon:writtenRep "methodist"@en .
+
+:methodist_42_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :methodist_42_PredSynArg .
+
+:methodist_42_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :methodist_42_AttrSynArg .
+
+:methodist_42_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :methodist_42_sense_1_res ;
+  lemon:isA       :methodist_42_AttrSynArg, :methodist_42_PredSynArg .
+
+:methodist_42_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/religion> ;
+  owl:hasValue   <http://dbpedia.org/resource/Methodism> .

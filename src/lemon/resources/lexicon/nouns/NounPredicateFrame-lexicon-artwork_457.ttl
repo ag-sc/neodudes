@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :artwork_457_sense_1_res ;
+  lemon:entry    :artwork_457 .
+
+:artwork_457 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :artwork_457_form ;
+  lemon:otherForm  :artwork_457_singular ;
+  lemon:otherForm  :artwork_457_plural ;
+  lemon:sense          :artwork_457_sense_1 ;
+  lemon:synBehavior    :artwork_457_predFrame .
+
+:artwork_457_form
+ lemon:writtenRep "artwork"@en .
+
+:artwork_457_singular a    lemon:Form ;
+  lemon:writtenRep "artwork"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:artwork_457_plural a   lemon:Form ;
+  lemon:writtenRep "artworks"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:artwork_457_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :artwork_457_sense_1_res ;
+  lemon:isA       :artwork_457_PredSynArg .
+
+:artwork_457_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Artwork> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :frequent_flyer_program_of_478 ;
+  lemon:entry    :frequent_flyer_program_of_478_form_preposition .
+
+:frequent_flyer_program_of_478 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :frequent_flyer_program_of_478_form ;
+  lemon:otherForm  :frequent_flyer_program_of_478_singular ;
+  lemon:otherForm  :frequent_flyer_program_of_478_plural ;
+  lemon:sense          :frequent_flyer_program_of_478_sense_1 ;
+  lemon:synBehavior    :frequent_flyer_program_of_478_nounpp .
+
+:frequent_flyer_program_of_478_form a lemon:Form ;
+  lemon:writtenRep "frequent flyer program"@en .
+
+:frequent_flyer_program_of_478_singular a    lemon:Form ;
+  lemon:writtenRep "frequent flyer program"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:frequent_flyer_program_of_478_plural a   lemon:Form ;
+  lemon:writtenRep "frequent flyer programs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:frequent_flyer_program_of_478_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-908-908-908-905-904-904-904-904-904-904-887-887-887-887-865-865-865-865-431_frequent_flyer_program_of_478 ;
+  lexinfo:prepositionalAdjunct :arg2-908-908-908-905-904-904-904-904-904-904-887-887-887-887-865-865-865-865-431_frequent_flyer_program_of_478 .
+
+:frequent_flyer_program_of_478_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :frequent_flyer_program_of_478_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/frequentFlyer> ;
+  lemon:subjOfProp          :arg2-908-908-908-905-904-904-904-904-904-904-887-887-887-887-865-865-865-865-431_frequent_flyer_program_of_478 ;
+  lemon:objOfProp           :arg1-908-908-908-905-904-904-904-904-904-904-887-887-887-887-865-865-865-865-431_frequent_flyer_program_of_478 ;
+  lemon:condition           :frequent_flyer_program_of_478_sense_1_condition .
+
+:frequent_flyer_program_of_478_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Airline> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Company> .
+
+:arg2-908-908-908-905-904-904-904-904-904-904-887-887-887-887-865-865-865-865-431_frequent_flyer_program_of_478 lemon:marker :frequent_flyer_program_of_478_form_preposition .
+## Prepositions ##
+:frequent_flyer_program_of_478_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

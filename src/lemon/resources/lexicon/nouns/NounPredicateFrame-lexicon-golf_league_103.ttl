@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :golf_league_103_sense_1_res ;
+  lemon:entry    :golf_league_103 .
+
+:golf_league_103 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :golf_league_103_form ;
+  lemon:otherForm  :golf_league_103_singular ;
+  lemon:otherForm  :golf_league_103_plural ;
+  lemon:sense          :golf_league_103_sense_1 ;
+  lemon:synBehavior    :golf_league_103_predFrame .
+
+:golf_league_103_form
+ lemon:writtenRep "golf league"@en .
+
+:golf_league_103_singular a    lemon:Form ;
+  lemon:writtenRep "golf league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:golf_league_103_plural a   lemon:Form ;
+  lemon:writtenRep "golf leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:golf_league_103_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :golf_league_103_sense_1_res ;
+  lemon:isA       :golf_league_103_PredSynArg .
+
+:golf_league_103_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GolfLeague> .

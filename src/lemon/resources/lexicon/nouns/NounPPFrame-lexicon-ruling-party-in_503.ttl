@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ruling-party-in_503 ;
+  lemon:entry    :ruling-party-in_503_form_preposition .
+
+:ruling-party-in_503 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ruling-party-in_503_form ;
+  lemon:otherForm  :ruling-party-in_503_singular ;
+  lemon:otherForm  :ruling-party-in_503_plural ;
+  lemon:sense          :ruling-party-in_503_sense_1 ;
+  lemon:synBehavior    :ruling-party-in_503_nounpp .
+
+:ruling-party-in_503_form a lemon:Form ;
+  lemon:writtenRep "ruling party"@en .
+
+:ruling-party-in_503_singular a    lemon:Form ;
+  lemon:writtenRep "ruling party"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ruling-party-in_503_plural a   lemon:Form ;
+  lemon:writtenRep "ruling parties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ruling-party-in_503_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1102-1102-1102-1099-1098-1098-1098-1098-1098-1098-1079-1079-1079-1079-1053-1053-1053-1053-522_ruling-party-in_503 ;
+  lexinfo:prepositionalAdjunct :arg2-1102-1102-1102-1099-1098-1098-1098-1098-1098-1098-1079-1079-1079-1079-1053-1053-1053-1053-522_ruling-party-in_503 .
+
+:ruling-party-in_503_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :ruling-party-in_503_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/leaderParty> ;
+  lemon:subjOfProp          :arg2-1102-1102-1102-1099-1098-1098-1098-1098-1098-1098-1079-1079-1079-1079-1053-1053-1053-1053-522_ruling-party-in_503 ;
+  lemon:objOfProp           :arg1-1102-1102-1102-1099-1098-1098-1098-1098-1098-1098-1079-1079-1079-1079-1053-1053-1053-1053-522_ruling-party-in_503 ;
+  lemon:condition           :ruling-party-in_503_sense_1_condition .
+
+:ruling-party-in_503_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1102-1102-1102-1099-1098-1098-1098-1098-1098-1098-1079-1079-1079-1079-1053-1053-1053-1053-522_ruling-party-in_503 lemon:marker :ruling-party-in_503_form_preposition .
+## Prepositions ##
+:ruling-party-in_503_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

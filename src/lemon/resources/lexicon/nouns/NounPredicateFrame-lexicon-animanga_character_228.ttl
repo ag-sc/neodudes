@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :animanga_character_228_sense_1_res ;
+  lemon:entry    :animanga_character_228 .
+
+:animanga_character_228 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :animanga_character_228_form ;
+  lemon:otherForm  :animanga_character_228_singular ;
+  lemon:otherForm  :animanga_character_228_plural ;
+  lemon:sense          :animanga_character_228_sense_1 ;
+  lemon:synBehavior    :animanga_character_228_predFrame .
+
+:animanga_character_228_form
+ lemon:writtenRep "animanga character"@en .
+
+:animanga_character_228_singular a    lemon:Form ;
+  lemon:writtenRep "animanga character"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:animanga_character_228_plural a   lemon:Form ;
+  lemon:writtenRep "animanga characters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:animanga_character_228_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :animanga_character_228_sense_1_res ;
+  lemon:isA       :animanga_character_228_PredSynArg .
+
+:animanga_character_228_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AnimangaCharacter> .

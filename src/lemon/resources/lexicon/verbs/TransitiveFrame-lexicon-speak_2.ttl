@@ -1,0 +1,76 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_speak_2 ;
+  lemon:entry    :speak_2ed ;
+  lemon:entry    :form_speak_2_preposition .
+
+:to_speak_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_speak_2 ;
+  lemon:otherForm      :form_speak_2s ;
+  lemon:otherForm      :form_speak_2ed ;
+  lemon:otherForm      :form_speak_2perfect ;
+  lemon:sense          :speak_2_sense_1 ;
+  lemon:sense          :speak_2_sense_2 ;
+  lemon:synBehavior    :speak_2_frame_transitive .
+
+:form_speak_2 a         lemon:Form ;
+  lemon:writtenRep     "speak"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_speak_2s a    lemon:Form ;
+  lemon:writtenRep "speaks"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_speak_2ed a   lemon:Form ;
+  lemon:writtenRep "spoke"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_speak_2perfect a   lemon:Form ;
+  lemon:writtenRep "spoken"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:speak_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :speak_2_subj ;
+  lexinfo:directObject     :speak_2_obj .
+
+:speak_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :speak_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/officialLanguage> ;
+  lemon:subjOfProp  :speak_2_obj ;
+  lemon:objOfProp   :speak_2_subj ;
+  lemon:condition   :speak_2_sense_1_condition .
+
+
+:speak_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Language> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/PopulatedPlace> .
+
+:speak_2_sense_2 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :speak_2_sense_2 ;
+  lemon:reference   <http://dbpedia.org/ontology/officialLanguage> ;
+  lemon:subjOfProp  :speak_2_obj ;
+  lemon:objOfProp   :speak_2_subj ;
+  lemon:condition   :speak_2_sense_2_condition .
+
+
+:speak_2_sense_2_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Language> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/PopulatedPlace> .
+
+
+:speak_2_obj lemon:marker :form_speak_2_preposition .
+
+## Prepositions ##
+:form_speak_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

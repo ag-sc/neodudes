@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :embryology_421_sense_1_res ;
+  lemon:entry    :embryology_421 .
+
+:embryology_421 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :embryology_421_form ;
+  lemon:otherForm  :embryology_421_singular ;
+  lemon:otherForm  :embryology_421_plural ;
+  lemon:sense          :embryology_421_sense_1 ;
+  lemon:synBehavior    :embryology_421_predFrame .
+
+:embryology_421_form
+ lemon:writtenRep "embryology"@en .
+
+:embryology_421_singular a    lemon:Form ;
+  lemon:writtenRep "embryology"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:embryology_421_plural a   lemon:Form ;
+  lemon:writtenRep "embryologies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:embryology_421_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :embryology_421_sense_1_res ;
+  lemon:isA       :embryology_421_PredSynArg .
+
+:embryology_421_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Embryology> .

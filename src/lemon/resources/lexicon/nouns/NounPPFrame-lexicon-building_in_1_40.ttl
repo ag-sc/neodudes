@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :building_in_1_40 ;
+  lemon:entry    :building_in_1_40_form_preposition .
+
+:building_in_1_40 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :building_in_1_40_form ;
+  lemon:otherForm  :building_in_1_40_singular ;
+  lemon:otherForm  :building_in_1_40_plural ;
+  lemon:sense          :building_in_1_40_sense_1 ;
+  lemon:synBehavior    :building_in_1_40_nounpp .
+
+:building_in_1_40_form a lemon:Form ;
+  lemon:writtenRep "building"@en .
+
+:building_in_1_40_singular a    lemon:Form ;
+  lemon:writtenRep "building"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:building_in_1_40_plural a   lemon:Form ;
+  lemon:writtenRep "buildings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:building_in_1_40_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1117-1117-1117-1114-1113-1113-1113-1113-1113-1113-1094-1094-1094-1094-1068-1068-1068-1068-540-540-474_building_in_1_40 ;
+  lexinfo:prepositionalAdjunct :arg2-1117-1117-1117-1114-1113-1113-1113-1113-1113-1113-1094-1094-1094-1094-1068-1068-1068-1068-540-540-474_building_in_1_40 .
+
+:building_in_1_40_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :building_in_1_40_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/architecturalStyle> ;
+  lemon:subjOfProp          :arg2-1117-1117-1117-1114-1113-1113-1113-1113-1113-1113-1094-1094-1094-1094-1068-1068-1068-1068-540-540-474_building_in_1_40 ;
+  lemon:objOfProp           :arg1-1117-1117-1117-1114-1113-1113-1113-1113-1113-1113-1094-1094-1094-1094-1068-1068-1068-1068-540-540-474_building_in_1_40 ;
+  lemon:condition           :building_in_1_40_sense_1_condition .
+
+:building_in_1_40_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Building> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:arg2-1117-1117-1117-1114-1113-1113-1113-1113-1113-1113-1094-1094-1094-1094-1068-1068-1068-1068-540-540-474_building_in_1_40 lemon:marker :building_in_1_40_form_preposition .
+## Prepositions ##
+:building_in_1_40_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

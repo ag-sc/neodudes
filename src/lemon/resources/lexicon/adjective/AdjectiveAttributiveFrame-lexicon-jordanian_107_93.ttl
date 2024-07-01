@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :jordanian_107_93_sense_1_res ;
+  lemon:entry    :jordanian_107_93 .
+
+:jordanian_107_93 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :jordanian_107_93_lemma ;
+  lemon:sense          :jordanian_107_93_sense_1 ;
+  lemon:synBehavior    :jordanian_107_93_attrFrame, :jordanian_107_93_predFrame .
+
+:jordanian_107_93_lemma lemon:writtenRep "Jordanian"@en .
+
+:jordanian_107_93_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :jordanian_107_93_PredSynArg .
+
+:jordanian_107_93_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :jordanian_107_93_AttrSynArg .
+
+:jordanian_107_93_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :jordanian_107_93_sense_1_res ;
+  lemon:isA       :jordanian_107_93_AttrSynArg, :jordanian_107_93_PredSynArg .
+
+:jordanian_107_93_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Jordan> .

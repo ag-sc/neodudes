@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :moon_of_268 ;
+  lemon:entry    :moon_of_268_form_preposition .
+
+:moon_of_268 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :moon_of_268_form ;
+  lemon:otherForm  :moon_of_268_singular ;
+  lemon:otherForm  :moon_of_268_plural ;
+  lemon:sense          :moon_of_268_sense_1 ;
+  lemon:synBehavior    :moon_of_268_nounpp .
+
+:moon_of_268_form a lemon:Form ;
+  lemon:writtenRep "moon"@en .
+
+:moon_of_268_singular a    lemon:Form ;
+  lemon:writtenRep "moon"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:moon_of_268_plural a   lemon:Form ;
+  lemon:writtenRep "moons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:moon_of_268_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-972-972-972-969-968-968-968-968-968-968-950-950-950-950-927-927-927-927-462_moon_of_268 ;
+  lexinfo:prepositionalAdjunct :arg2-972-972-972-969-968-968-968-968-968-968-950-950-950-950-927-927-927-927-462_moon_of_268 .
+
+:moon_of_268_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :moon_of_268_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/satellites> ;
+  lemon:subjOfProp          :arg2-972-972-972-969-968-968-968-968-968-968-950-950-950-950-927-927-927-927-462_moon_of_268 ;
+  lemon:objOfProp           :arg1-972-972-972-969-968-968-968-968-968-968-950-950-950-950-927-927-927-927-462_moon_of_268 ;
+  lemon:condition           :moon_of_268_sense_1_condition .
+
+:moon_of_268_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#integer> .
+
+:arg2-972-972-972-969-968-968-968-968-968-968-950-950-950-950-927-927-927-927-462_moon_of_268 lemon:marker :moon_of_268_form_preposition .
+## Prepositions ##
+:moon_of_268_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

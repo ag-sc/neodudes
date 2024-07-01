@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :martial_artist_801_sense_1_res ;
+  lemon:entry    :martial_artist_801 .
+
+:martial_artist_801 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :martial_artist_801_form ;
+  lemon:otherForm  :martial_artist_801_singular ;
+  lemon:otherForm  :martial_artist_801_plural ;
+  lemon:sense          :martial_artist_801_sense_1 ;
+  lemon:synBehavior    :martial_artist_801_predFrame .
+
+:martial_artist_801_form
+ lemon:writtenRep "martial artist"@en .
+
+:martial_artist_801_singular a    lemon:Form ;
+  lemon:writtenRep "martial artist"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:martial_artist_801_plural a   lemon:Form ;
+  lemon:writtenRep "martial artists"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:martial_artist_801_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :martial_artist_801_sense_1_res ;
+  lemon:isA       :martial_artist_801_PredSynArg .
+
+:martial_artist_801_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MartialArtist> .

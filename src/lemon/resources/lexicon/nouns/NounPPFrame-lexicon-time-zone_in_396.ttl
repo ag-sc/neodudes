@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :time-zone_in_396 ;
+  lemon:entry    :time-zone_in_396_form_preposition .
+
+:time-zone_in_396 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :time-zone_in_396_form ;
+  lemon:otherForm  :time-zone_in_396_singular ;
+  lemon:otherForm  :time-zone_in_396_plural ;
+  lemon:sense          :time-zone_in_396_sense_1 ;
+  lemon:synBehavior    :time-zone_in_396_nounpp .
+
+:time-zone_in_396_form a lemon:Form ;
+  lemon:writtenRep "time zone"@en .
+
+:time-zone_in_396_singular a    lemon:Form ;
+  lemon:writtenRep "time zone"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:time-zone_in_396_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:time-zone_in_396_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-489-489-488-487-486-486-486-486-486-486-477-477-477-477-467-467-467-467-229_time-zone_in_396 ;
+  lexinfo:prepositionalAdjunct :arg2-489-489-488-487-486-486-486-486-486-486-477-477-477-477-467-467-467-467-229_time-zone_in_396 .
+
+:time-zone_in_396_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :time-zone_in_396_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-489-489-488-487-486-486-486-486-486-486-477-477-477-477-467-467-467-467-229_time-zone_in_396 ;
+  lemon:objOfProp           :arg1-489-489-488-487-486-486-486-486-486-486-477-477-477-477-467-467-467-467-229_time-zone_in_396 ;
+  lemon:condition           :time-zone_in_396_sense_1_condition .
+
+:time-zone_in_396_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-489-489-488-487-486-486-486-486-486-486-477-477-477-477-467-467-467-467-229_time-zone_in_396 lemon:marker :time-zone_in_396_form_preposition .
+## Prepositions ##
+:time-zone_in_396_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

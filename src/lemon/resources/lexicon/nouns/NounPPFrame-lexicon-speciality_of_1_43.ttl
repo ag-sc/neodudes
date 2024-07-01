@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :speciality_of_1_43 ;
+  lemon:entry    :speciality_of_1_43_form_preposition .
+
+:speciality_of_1_43 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :speciality_of_1_43_form ;
+  lemon:otherForm  :speciality_of_1_43_singular ;
+  lemon:otherForm  :speciality_of_1_43_plural ;
+  lemon:sense          :speciality_of_1_43_sense_1 ;
+  lemon:synBehavior    :speciality_of_1_43_nounpp .
+
+:speciality_of_1_43_form a lemon:Form ;
+  lemon:writtenRep "speciality"@en .
+
+:speciality_of_1_43_singular a    lemon:Form ;
+  lemon:writtenRep "speciality"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:speciality_of_1_43_plural a   lemon:Form ;
+  lemon:writtenRep "specialities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:speciality_of_1_43_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-927-927-927-924-923-923-923-923-923-923-905-905-905-905-883-883-883-883-439-439-390_speciality_of_1_43 ;
+  lexinfo:prepositionalAdjunct :arg2-927-927-927-924-923-923-923-923-923-923-905-905-905-905-883-883-883-883-439-439-390_speciality_of_1_43 .
+
+:speciality_of_1_43_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :speciality_of_1_43_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/speciality> ;
+  lemon:subjOfProp          :arg2-927-927-927-924-923-923-923-923-923-923-905-905-905-905-883-883-883-883-439-439-390_speciality_of_1_43 ;
+  lemon:objOfProp           :arg1-927-927-927-924-923-923-923-923-923-923-905-905-905-905-883-883-883-883-439-439-390_speciality_of_1_43 ;
+  lemon:condition           :speciality_of_1_43_sense_1_condition .
+
+:speciality_of_1_43_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Hospital> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Band> .
+
+:arg2-927-927-927-924-923-923-923-923-923-923-905-905-905-905-883-883-883-883-439-439-390_speciality_of_1_43 lemon:marker :speciality_of_1_43_form_preposition .
+## Prepositions ##
+:speciality_of_1_43_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

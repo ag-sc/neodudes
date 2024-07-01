@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :medical_specialty_748_sense_1_res ;
+  lemon:entry    :medical_specialty_748 .
+
+:medical_specialty_748 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :medical_specialty_748_form ;
+  lemon:otherForm  :medical_specialty_748_singular ;
+  lemon:otherForm  :medical_specialty_748_plural ;
+  lemon:sense          :medical_specialty_748_sense_1 ;
+  lemon:synBehavior    :medical_specialty_748_predFrame .
+
+:medical_specialty_748_form
+ lemon:writtenRep "medical specialty"@en .
+
+:medical_specialty_748_singular a    lemon:Form ;
+  lemon:writtenRep "medical specialty"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:medical_specialty_748_plural a   lemon:Form ;
+  lemon:writtenRep "medical specialties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:medical_specialty_748_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :medical_specialty_748_sense_1_res ;
+  lemon:isA       :medical_specialty_748_PredSynArg .
+
+:medical_specialty_748_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MedicalSpecialty> .

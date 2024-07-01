@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :small_1_18 ;
+  lemon:entry    :form_small_1_18_preposition ;
+  lemon:entry    :small_1_18_res .
+
+:small_1_18 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_small_1_18 ;
+  lemon:otherForm      :form_small_1_18_comperative ;
+  lemon:otherForm      :form_small_1_18_superlative ;
+  lemon:sense          :small_1_18_sense_1 ;
+  lemon:synBehavior    :small_1_18_predFrame .
+
+:form_small_1_18 lemon:writtenRep "small"@en .
+
+:form_small_1_18_comperative lemon:writtenRep "smaller"@en .
+
+:form_small_1_18_superlative lemon:writtenRep "smallest"@en .
+
+:small_1_18_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :small_1_18_PredSynArg .
+
+:small_1_18_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :small_1_18_res ;
+  lemon:isA       :small_1_18_PredSynArg ;
+  lemon:condition :small_1_18_sense_1_condition .
+
+:small_1_18_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/areaTotal> ;
+  oils:degree   <http://localhost:8000/oils.owl/low> .
+
+:small_1_18_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Country> .
+
+## Prepositions ##
+:form_small_1_18_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

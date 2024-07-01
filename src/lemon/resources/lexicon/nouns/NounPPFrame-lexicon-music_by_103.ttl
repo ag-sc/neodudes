@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :music_by_103 ;
+  lemon:entry    :music_by_103_form_preposition .
+
+:music_by_103 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :music_by_103_form ;
+  lemon:otherForm  :music_by_103_singular ;
+  lemon:otherForm  :music_by_103_plural ;
+  lemon:sense          :music_by_103_sense_1 ;
+  lemon:synBehavior    :music_by_103_nounpp .
+
+:music_by_103_form a lemon:Form ;
+  lemon:writtenRep "music"@en .
+
+:music_by_103_singular a    lemon:Form ;
+  lemon:writtenRep "music"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:music_by_103_plural a   lemon:Form ;
+  lemon:writtenRep "musics"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:music_by_103_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-553-553-553-551-550-550-550-550-550-550-540-540-540-540-529-529-529-529-268-268-573_music_by_103 ;
+  lexinfo:prepositionalAdjunct :arg1-553-553-553-551-550-550-550-550-550-550-540-540-540-540-529-529-529-529-268-268-573_music_by_103 .
+
+:music_by_103_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :music_by_103_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/musicBy> ;
+  lemon:subjOfProp          :arg1-553-553-553-551-550-550-550-550-550-550-540-540-540-540-529-529-529-529-268-268-573_music_by_103 ;
+  lemon:objOfProp           :arg2-553-553-553-551-550-550-550-550-550-550-540-540-540-540-529-529-529-529-268-268-573_music_by_103 ;
+  lemon:condition           :music_by_103_sense_1_condition .
+
+:music_by_103_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Musical> .
+
+:arg1-553-553-553-551-550-550-550-550-550-550-540-540-540-540-529-529-529-529-268-268-573_music_by_103 lemon:marker :music_by_103_form_preposition .
+## Prepositions ##
+:music_by_103_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

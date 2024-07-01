@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :senator_718_sense_1_res ;
+  lemon:entry    :senator_718 .
+
+:senator_718 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :senator_718_form ;
+  lemon:otherForm  :senator_718_singular ;
+  lemon:otherForm  :senator_718_plural ;
+  lemon:sense          :senator_718_sense_1 ;
+  lemon:synBehavior    :senator_718_predFrame .
+
+:senator_718_form
+ lemon:writtenRep "senator"@en .
+
+:senator_718_singular a    lemon:Form ;
+  lemon:writtenRep "senator"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:senator_718_plural a   lemon:Form ;
+  lemon:writtenRep "senators"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:senator_718_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :senator_718_sense_1_res ;
+  lemon:isA       :senator_718_PredSynArg .
+
+:senator_718_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Senator> .

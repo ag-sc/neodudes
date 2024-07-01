@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :deathdate-of_302 ;
+  lemon:entry    :deathdate-of_302_form_preposition .
+
+:deathdate-of_302 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :deathdate-of_302_form ;
+  lemon:otherForm  :deathdate-of_302_singular ;
+  lemon:otherForm  :deathdate-of_302_plural ;
+  lemon:sense          :deathdate-of_302_sense_1 ;
+  lemon:synBehavior    :deathdate-of_302_nounpp .
+
+:deathdate-of_302_form a lemon:Form ;
+  lemon:writtenRep "death date"@en .
+
+:deathdate-of_302_singular a    lemon:Form ;
+  lemon:writtenRep "death date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:deathdate-of_302_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:deathdate-of_302_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-217-217-216-217-216-216-216-216-216-216-212-212-212-212-208-208-208-208-111_deathdate-of_302 ;
+  lexinfo:prepositionalAdjunct :arg2-217-217-216-217-216-216-216-216-216-216-212-212-212-212-208-208-208-208-111_deathdate-of_302 .
+
+:deathdate-of_302_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :deathdate-of_302_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/deathDate> ;
+  lemon:subjOfProp          :arg2-217-217-216-217-216-216-216-216-216-216-212-212-212-212-208-208-208-208-111_deathdate-of_302 ;
+  lemon:objOfProp           :arg1-217-217-216-217-216-216-216-216-216-216-212-212-212-212-208-208-208-208-111_deathdate-of_302 ;
+  lemon:condition           :deathdate-of_302_sense_1_condition .
+
+:deathdate-of_302_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-217-217-216-217-216-216-216-216-216-216-212-212-212-212-208-208-208-208-111_deathdate-of_302 lemon:marker :deathdate-of_302_form_preposition .
+## Prepositions ##
+:deathdate-of_302_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

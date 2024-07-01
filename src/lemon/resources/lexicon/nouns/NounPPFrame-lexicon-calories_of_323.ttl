@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :calories_of_323 ;
+  lemon:entry    :calories_of_323_form_preposition .
+
+:calories_of_323 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :calories_of_323_form ;
+  lemon:otherForm  :calories_of_323_singular ;
+  lemon:otherForm  :calories_of_323_plural ;
+  lemon:sense          :calories_of_323_sense_1 ;
+  lemon:synBehavior    :calories_of_323_nounpp .
+
+:calories_of_323_form a lemon:Form ;
+  lemon:writtenRep "caloriy"@en .
+
+:calories_of_323_singular a    lemon:Form ;
+  lemon:writtenRep "caloriy"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:calories_of_323_plural a   lemon:Form ;
+  lemon:writtenRep "calories"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:calories_of_323_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-718-718-718-716-715-715-715-715-715-715-700-700-700-700-687-687-687-687-336_calories_of_323 ;
+  lexinfo:prepositionalAdjunct :arg2-718-718-718-716-715-715-715-715-715-715-700-700-700-700-687-687-687-687-336_calories_of_323 .
+
+:calories_of_323_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :calories_of_323_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/calories> ;
+  lemon:subjOfProp          :arg2-718-718-718-716-715-715-715-715-715-715-700-700-700-700-687-687-687-687-336_calories_of_323 ;
+  lemon:objOfProp           :arg1-718-718-718-716-715-715-715-715-715-715-700-700-700-700-687-687-687-687-336_calories_of_323 ;
+  lemon:condition           :calories_of_323_sense_1_condition .
+
+:calories_of_323_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Food> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#integer> .
+
+:arg2-718-718-718-716-715-715-715-715-715-715-700-700-700-700-687-687-687-687-336_calories_of_323 lemon:marker :calories_of_323_form_preposition .
+## Prepositions ##
+:calories_of_323_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :jockey_horse_racer_476_sense_1_res ;
+  lemon:entry    :jockey_horse_racer_476 .
+
+:jockey_horse_racer_476 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :jockey_horse_racer_476_form ;
+  lemon:otherForm  :jockey_horse_racer_476_singular ;
+  lemon:otherForm  :jockey_horse_racer_476_plural ;
+  lemon:sense          :jockey_horse_racer_476_sense_1 ;
+  lemon:synBehavior    :jockey_horse_racer_476_predFrame .
+
+:jockey_horse_racer_476_form
+ lemon:writtenRep "jockey"@en .
+
+:jockey_horse_racer_476_singular a    lemon:Form ;
+  lemon:writtenRep "jockey"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:jockey_horse_racer_476_plural a   lemon:Form ;
+  lemon:writtenRep "jockeys"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:jockey_horse_racer_476_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :jockey_horse_racer_476_sense_1_res ;
+  lemon:isA       :jockey_horse_racer_476_PredSynArg .
+
+:jockey_horse_racer_476_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Jockey> .

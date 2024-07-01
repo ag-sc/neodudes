@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :german_30_sense_1_res ;
+  lemon:entry    :german_30 .
+
+:german_30 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :german_30_lemma ;
+  lemon:sense          :german_30_sense_1 ;
+  lemon:synBehavior    :german_30_attrFrame, :german_30_predFrame .
+
+:german_30_lemma lemon:writtenRep "german"@en .
+
+:german_30_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :german_30_PredSynArg .
+
+:german_30_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :german_30_AttrSynArg .
+
+:german_30_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :german_30_sense_1_res ;
+  lemon:isA       :german_30_AttrSynArg, :german_30_PredSynArg .
+
+:german_30_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Germany> .

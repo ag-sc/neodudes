@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :manga_190_sense_1_res ;
+  lemon:entry    :manga_190 .
+
+:manga_190 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :manga_190_form ;
+  lemon:otherForm  :manga_190_singular ;
+  lemon:otherForm  :manga_190_plural ;
+  lemon:sense          :manga_190_sense_1 ;
+  lemon:synBehavior    :manga_190_predFrame .
+
+:manga_190_form
+ lemon:writtenRep "manga"@en .
+
+:manga_190_singular a    lemon:Form ;
+  lemon:writtenRep "manga"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:manga_190_plural a   lemon:Form ;
+  lemon:writtenRep "mangas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:manga_190_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :manga_190_sense_1_res ;
+  lemon:isA       :manga_190_PredSynArg .
+
+:manga_190_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Manga> .

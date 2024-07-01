@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :aruban_47_sense_1_res ;
+  lemon:entry    :aruban_47 .
+
+:aruban_47 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :aruban_47_lemma ;
+  lemon:sense          :aruban_47_sense_1 ;
+  lemon:synBehavior    :aruban_47_attrFrame, :aruban_47_predFrame .
+
+:aruban_47_lemma lemon:writtenRep "aruban"@en .
+
+:aruban_47_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :aruban_47_PredSynArg .
+
+:aruban_47_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :aruban_47_AttrSynArg .
+
+:aruban_47_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :aruban_47_sense_1_res ;
+  lemon:isA       :aruban_47_AttrSynArg, :aruban_47_PredSynArg .
+
+:aruban_47_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Aruba> .

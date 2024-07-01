@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :residence-of_36 ;
+  lemon:entry    :residence-of_36_form_preposition .
+
+:residence-of_36 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :residence-of_36_form ;
+  lemon:otherForm  :residence-of_36_singular ;
+  lemon:otherForm  :residence-of_36_plural ;
+  lemon:sense          :residence-of_36_sense_1 ;
+  lemon:synBehavior    :residence-of_36_nounpp .
+
+:residence-of_36_form a lemon:Form ;
+  lemon:writtenRep "residence"@en .
+
+:residence-of_36_singular a    lemon:Form ;
+  lemon:writtenRep "residence"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:residence-of_36_plural a   lemon:Form ;
+  lemon:writtenRep "residences"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:residence-of_36_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-933-933-933-930-929-929-929-929-929-929-911-911-911-911-888-888-888-888-442-442-3_residence-of_36 ;
+  lexinfo:prepositionalAdjunct :arg2-933-933-933-930-929-929-929-929-929-929-911-911-911-911-888-888-888-888-442-442-3_residence-of_36 .
+
+:residence-of_36_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :residence-of_36_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/residence> ;
+  lemon:subjOfProp          :arg2-933-933-933-930-929-929-929-929-929-929-911-911-911-911-888-888-888-888-442-442-3_residence-of_36 ;
+  lemon:objOfProp           :arg1-933-933-933-930-929-929-929-929-929-929-911-911-911-911-888-888-888-888-442-442-3_residence-of_36 ;
+  lemon:condition           :residence-of_36_sense_1_condition .
+
+:residence-of_36_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-933-933-933-930-929-929-929-929-929-929-911-911-911-911-888-888-888-888-442-442-3_residence-of_36 lemon:marker :residence-of_36_form_preposition .
+## Prepositions ##
+:residence-of_36_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

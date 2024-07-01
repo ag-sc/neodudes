@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :city-in_6 ;
+  lemon:entry    :city-in_6_form_preposition .
+
+:city-in_6 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :city-in_6_form ;
+  lemon:otherForm  :city-in_6_singular ;
+  lemon:otherForm  :city-in_6_plural ;
+  lemon:sense          :city-in_6_sense_1 ;
+  lemon:synBehavior    :city-in_6_nounpp .
+
+:city-in_6_form a lemon:Form ;
+  lemon:writtenRep "city"@en .
+
+:city-in_6_singular a    lemon:Form ;
+  lemon:writtenRep "city"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:city-in_6_plural a   lemon:Form ;
+  lemon:writtenRep "cities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:city-in_6_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1089-1089-1089-1086-1085-1085-1085-1085-1085-1085-1066-1066-1066-1066-1041-1041-1041-1041-522-522-421_city-in_6 ;
+  lexinfo:prepositionalAdjunct :arg2-1089-1089-1089-1086-1085-1085-1085-1085-1085-1085-1066-1066-1066-1066-1041-1041-1041-1041-522-522-421_city-in_6 .
+
+:city-in_6_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :city-in_6_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/isPartOf> ;
+  lemon:subjOfProp          :arg2-1089-1089-1089-1086-1085-1085-1085-1085-1085-1085-1066-1066-1066-1066-1041-1041-1041-1041-522-522-421_city-in_6 ;
+  lemon:objOfProp           :arg1-1089-1089-1089-1086-1085-1085-1085-1085-1085-1085-1066-1066-1066-1066-1041-1041-1041-1041-522-522-421_city-in_6 ;
+  lemon:condition           :city-in_6_sense_1_condition .
+
+:city-in_6_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/AdministrativeRegion> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-1089-1089-1089-1086-1085-1085-1085-1085-1085-1085-1066-1066-1066-1066-1041-1041-1041-1041-522-522-421_city-in_6 lemon:marker :city-in_6_form_preposition .
+## Prepositions ##
+:city-in_6_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

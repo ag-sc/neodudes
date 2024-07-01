@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :wine_region_of_27 ;
+  lemon:entry    :wine_region_of_27_form_preposition .
+
+:wine_region_of_27 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :wine_region_of_27_form ;
+  lemon:otherForm  :wine_region_of_27_singular ;
+  lemon:otherForm  :wine_region_of_27_plural ;
+  lemon:sense          :wine_region_of_27_sense_1 ;
+  lemon:synBehavior    :wine_region_of_27_nounpp .
+
+:wine_region_of_27_form a lemon:Form ;
+  lemon:writtenRep "wine region"@en .
+
+:wine_region_of_27_singular a    lemon:Form ;
+  lemon:writtenRep "wine region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:wine_region_of_27_plural a   lemon:Form ;
+  lemon:writtenRep "wine regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:wine_region_of_27_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1002-1002-1002-998-997-997-997-997-997-997-979-979-979-979-955-955-955-955-479-479-558_wine_region_of_27 ;
+  lexinfo:prepositionalAdjunct :arg2-1002-1002-1002-998-997-997-997-997-997-997-979-979-979-979-955-955-955-955-479-479-558_wine_region_of_27 .
+
+:wine_region_of_27_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :wine_region_of_27_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/wineRegion> ;
+  lemon:subjOfProp          :arg2-1002-1002-1002-998-997-997-997-997-997-997-979-979-979-979-955-955-955-955-479-479-558_wine_region_of_27 ;
+  lemon:objOfProp           :arg1-1002-1002-1002-998-997-997-997-997-997-997-979-979-979-979-955-955-955-955-479-479-558_wine_region_of_27 ;
+  lemon:condition           :wine_region_of_27_sense_1_condition .
+
+:wine_region_of_27_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Grape> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1002-1002-1002-998-997-997-997-997-997-997-979-979-979-979-955-955-955-955-479-479-558_wine_region_of_27 lemon:marker :wine_region_of_27_form_preposition .
+## Prepositions ##
+:wine_region_of_27_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

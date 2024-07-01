@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :pilot_747_sense_1_res ;
+  lemon:entry    :pilot_747 .
+
+:pilot_747 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :pilot_747_form ;
+  lemon:otherForm  :pilot_747_singular ;
+  lemon:otherForm  :pilot_747_plural ;
+  lemon:sense          :pilot_747_sense_1 ;
+  lemon:synBehavior    :pilot_747_predFrame .
+
+:pilot_747_form
+ lemon:writtenRep "pilot"@en .
+
+:pilot_747_singular a    lemon:Form ;
+  lemon:writtenRep "pilot"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:pilot_747_plural a   lemon:Form ;
+  lemon:writtenRep "pilots"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:pilot_747_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :pilot_747_sense_1_res ;
+  lemon:isA       :pilot_747_PredSynArg .
+
+:pilot_747_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Pilot> .

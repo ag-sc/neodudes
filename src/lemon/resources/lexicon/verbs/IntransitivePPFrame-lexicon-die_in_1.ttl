@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :die_in_1 ;
+  lemon:entry    :form_die_in_1_preposition .
+
+:die_in_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_die_in_1 ;
+  lemon:otherForm      :form_die_in_1_present3rd ;
+  lemon:otherForm      :form_die_in_1_past ;
+  lemon:otherForm      :form_die_in_1_perfect ;
+  lemon:sense          :die_in_1_sense_1 ;
+  lemon:synBehavior    :die_in_1_frame .
+
+:form_die_in_1 a           lemon:Form ;
+  lemon:writtenRep     "die"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_die_in_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "dies"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_die_in_1_past a lemon:Form ;
+  lemon:writtenRep  "died"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_die_in_1_perfect a   lemon:Form ;
+  lemon:writtenRep "died"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:die_in_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :die_in_1_subj ;
+  lexinfo:prepositionalAdjunct :die_in_1_obj .
+
+:die_in_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :die_in_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/deathDate> ;
+  lemon:subjOfProp  :die_in_1_subj ;
+  lemon:objOfProp   :die_in_1_obj ;
+  lemon:condition   :die_in_1_sense_1_condition .
+
+:die_in_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:die_in_1_obj lemon:marker :form_die_in_1_preposition .
+
+## Prepositions ##
+:form_die_in_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

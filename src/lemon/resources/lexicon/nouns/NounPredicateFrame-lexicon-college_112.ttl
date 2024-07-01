@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :college_112_sense_1_res ;
+  lemon:entry    :college_112 .
+
+:college_112 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :college_112_form ;
+  lemon:otherForm  :college_112_singular ;
+  lemon:otherForm  :college_112_plural ;
+  lemon:sense          :college_112_sense_1 ;
+  lemon:synBehavior    :college_112_predFrame .
+
+:college_112_form
+ lemon:writtenRep "college"@en .
+
+:college_112_singular a    lemon:Form ;
+  lemon:writtenRep "college"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:college_112_plural a   lemon:Form ;
+  lemon:writtenRep "colleges"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:college_112_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :college_112_sense_1_res ;
+  lemon:isA       :college_112_PredSynArg .
+
+:college_112_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/College> .

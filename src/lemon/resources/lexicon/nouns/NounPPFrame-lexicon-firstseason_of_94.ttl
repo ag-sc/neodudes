@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :firstseason_of_94 ;
+  lemon:entry    :firstseason_of_94_form_preposition .
+
+:firstseason_of_94 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :firstseason_of_94_form ;
+  lemon:otherForm  :firstseason_of_94_singular ;
+  lemon:otherForm  :firstseason_of_94_plural ;
+  lemon:sense          :firstseason_of_94_sense_1 ;
+  lemon:synBehavior    :firstseason_of_94_nounpp .
+
+:firstseason_of_94_form a lemon:Form ;
+  lemon:writtenRep "first season"@en .
+
+:firstseason_of_94_singular a    lemon:Form ;
+  lemon:writtenRep "first season"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:firstseason_of_94_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:firstseason_of_94_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-739-739-739-737-736-736-736-736-736-736-721-721-721-721-707-707-707-707-359-359-172_firstseason_of_94 ;
+  lexinfo:prepositionalAdjunct :arg2-739-739-739-737-736-736-736-736-736-736-721-721-721-721-707-707-707-707-359-359-172_firstseason_of_94 .
+
+:firstseason_of_94_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :firstseason_of_94_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/seasonNumber> ;
+  lemon:subjOfProp          :arg2-739-739-739-737-736-736-736-736-736-736-721-721-721-721-707-707-707-707-359-359-172_firstseason_of_94 ;
+  lemon:objOfProp           :arg1-739-739-739-737-736-736-736-736-736-736-721-721-721-721-707-707-707-707-359-359-172_firstseason_of_94 ;
+  lemon:condition           :firstseason_of_94_sense_1_condition .
+
+:firstseason_of_94_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-739-739-739-737-736-736-736-736-736-736-721-721-721-721-707-707-707-707-359-359-172_firstseason_of_94 lemon:marker :firstseason_of_94_form_preposition .
+## Prepositions ##
+:firstseason_of_94_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

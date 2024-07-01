@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :english_235_339_sense_1_res ;
+  lemon:entry    :english_235_339 .
+
+:english_235_339 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :english_235_339_lemma ;
+  lemon:sense          :english_235_339_sense_1 ;
+  lemon:synBehavior    :english_235_339_attrFrame, :english_235_339_predFrame .
+
+:english_235_339_lemma lemon:writtenRep "English"@en .
+
+:english_235_339_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :english_235_339_PredSynArg .
+
+:english_235_339_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :english_235_339_AttrSynArg .
+
+:english_235_339_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :english_235_339_sense_1_res ;
+  lemon:isA       :english_235_339_AttrSynArg, :english_235_339_PredSynArg .
+
+:english_235_339_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/United_Kingdom> .

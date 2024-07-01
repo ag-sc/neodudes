@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :wine_region_of_294 ;
+  lemon:entry    :wine_region_of_294_form_preposition .
+
+:wine_region_of_294 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :wine_region_of_294_form ;
+  lemon:otherForm  :wine_region_of_294_singular ;
+  lemon:otherForm  :wine_region_of_294_plural ;
+  lemon:sense          :wine_region_of_294_sense_1 ;
+  lemon:synBehavior    :wine_region_of_294_nounpp .
+
+:wine_region_of_294_form a lemon:Form ;
+  lemon:writtenRep "wine region"@en .
+
+:wine_region_of_294_singular a    lemon:Form ;
+  lemon:writtenRep "wine region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:wine_region_of_294_plural a   lemon:Form ;
+  lemon:writtenRep "wine regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:wine_region_of_294_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-215-215-214-215-214-214-214-214-214-214-210-210-210-210-206-206-206-206-110_wine_region_of_294 ;
+  lexinfo:prepositionalAdjunct :arg2-215-215-214-215-214-214-214-214-214-214-210-210-210-210-206-206-206-206-110_wine_region_of_294 .
+
+:wine_region_of_294_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :wine_region_of_294_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/wineRegion> ;
+  lemon:subjOfProp          :arg2-215-215-214-215-214-214-214-214-214-214-210-210-210-210-206-206-206-206-110_wine_region_of_294 ;
+  lemon:objOfProp           :arg1-215-215-214-215-214-214-214-214-214-214-210-210-210-210-206-206-206-206-110_wine_region_of_294 ;
+  lemon:condition           :wine_region_of_294_sense_1_condition .
+
+:wine_region_of_294_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Grape> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-215-215-214-215-214-214-214-214-214-214-210-210-210-210-206-206-206-206-110_wine_region_of_294 lemon:marker :wine_region_of_294_form_preposition .
+## Prepositions ##
+:wine_region_of_294_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

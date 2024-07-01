@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_found_3 ;
+  lemon:entry    :found_3ed ;
+  lemon:entry    :form_found_3_preposition .
+
+:to_found_3 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_found_3 ;
+  lemon:otherForm      :form_found_3s ;
+  lemon:otherForm      :form_found_3ed ;
+  lemon:otherForm      :form_found_3perfect ;
+  lemon:sense          :found_3_sense_1 ;
+  lemon:synBehavior    :found_3_frame_transitive .
+
+:form_found_3 a         lemon:Form ;
+  lemon:writtenRep     "found"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_found_3s a    lemon:Form ;
+  lemon:writtenRep "founds"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_found_3ed a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_found_3perfect a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:found_3_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :found_3_subj ;
+  lexinfo:directObject     :found_3_obj .
+
+:found_3_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :found_3_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp  :found_3_obj ;
+  lemon:objOfProp   :found_3_subj ;
+  lemon:condition   :found_3_sense_1_condition .
+
+
+:found_3_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:found_3_obj lemon:marker :form_found_3_preposition .
+
+## Prepositions ##
+:form_found_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

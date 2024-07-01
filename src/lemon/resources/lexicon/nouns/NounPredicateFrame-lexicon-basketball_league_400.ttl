@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :basketball_league_400_sense_1_res ;
+  lemon:entry    :basketball_league_400 .
+
+:basketball_league_400 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :basketball_league_400_form ;
+  lemon:otherForm  :basketball_league_400_singular ;
+  lemon:otherForm  :basketball_league_400_plural ;
+  lemon:sense          :basketball_league_400_sense_1 ;
+  lemon:synBehavior    :basketball_league_400_predFrame .
+
+:basketball_league_400_form
+ lemon:writtenRep "basketball league"@en .
+
+:basketball_league_400_singular a    lemon:Form ;
+  lemon:writtenRep "basketball league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:basketball_league_400_plural a   lemon:Form ;
+  lemon:writtenRep "basketball leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:basketball_league_400_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :basketball_league_400_sense_1_res ;
+  lemon:isA       :basketball_league_400_PredSynArg .
+
+:basketball_league_400_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/BasketballLeague> .

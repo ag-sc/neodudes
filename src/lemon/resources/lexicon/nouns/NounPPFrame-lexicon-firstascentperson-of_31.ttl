@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :firstascentperson-of_31 ;
+  lemon:entry    :firstascentperson-of_31_form_preposition .
+
+:firstascentperson-of_31 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :firstascentperson-of_31_form ;
+  lemon:otherForm  :firstascentperson-of_31_singular ;
+  lemon:otherForm  :firstascentperson-of_31_plural ;
+  lemon:sense          :firstascentperson-of_31_sense_1 ;
+  lemon:synBehavior    :firstascentperson-of_31_nounpp .
+
+:firstascentperson-of_31_form a lemon:Form ;
+  lemon:writtenRep "first Ascent Person"@en .
+
+:firstascentperson-of_31_singular a    lemon:Form ;
+  lemon:writtenRep "first Ascent Person"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:firstascentperson-of_31_plural a   lemon:Form ;
+  lemon:writtenRep "first Ascent Persons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:firstascentperson-of_31_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-558-558-558-556-555-555-555-555-555-555-545-545-545-545-534-534-534-534-271-271-461_firstascentperson-of_31 ;
+  lexinfo:prepositionalAdjunct :arg2-558-558-558-556-555-555-555-555-555-555-545-545-545-545-534-534-534-534-271-271-461_firstascentperson-of_31 .
+
+:firstascentperson-of_31_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :firstascentperson-of_31_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/firstAscentPerson> ;
+  lemon:subjOfProp          :arg2-558-558-558-556-555-555-555-555-555-555-545-545-545-545-534-534-534-534-271-271-461_firstascentperson-of_31 ;
+  lemon:objOfProp           :arg1-558-558-558-556-555-555-555-555-555-555-545-545-545-545-534-534-534-534-271-271-461_firstascentperson-of_31 ;
+  lemon:condition           :firstascentperson-of_31_sense_1_condition .
+
+:firstascentperson-of_31_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-558-558-558-556-555-555-555-555-555-555-545-545-545-545-534-534-534-534-271-271-461_firstascentperson-of_31 lemon:marker :firstascentperson-of_31_form_preposition .
+## Prepositions ##
+:firstascentperson-of_31_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

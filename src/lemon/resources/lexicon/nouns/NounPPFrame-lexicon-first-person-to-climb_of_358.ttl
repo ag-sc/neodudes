@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :first-person-to-climb_of_358 ;
+  lemon:entry    :first-person-to-climb_of_358_form_preposition .
+
+:first-person-to-climb_of_358 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :first-person-to-climb_of_358_form ;
+  lemon:otherForm  :first-person-to-climb_of_358_singular ;
+  lemon:otherForm  :first-person-to-climb_of_358_plural ;
+  lemon:sense          :first-person-to-climb_of_358_sense_1 ;
+  lemon:synBehavior    :first-person-to-climb_of_358_nounpp .
+
+:first-person-to-climb_of_358_form a lemon:Form ;
+  lemon:writtenRep "first person to climb"@en .
+
+:first-person-to-climb_of_358_singular a    lemon:Form ;
+  lemon:writtenRep "first person to climb"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:first-person-to-climb_of_358_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:first-person-to-climb_of_358_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1348-1348-1347-1343-1345-1345-1345-1345-1345-1345-1324-1324-1324-1324-1295-1295-1295-1295-655_first-person-to-climb_of_358 ;
+  lexinfo:prepositionalAdjunct :arg2-1348-1348-1347-1343-1345-1345-1345-1345-1345-1345-1324-1324-1324-1324-1295-1295-1295-1295-655_first-person-to-climb_of_358 .
+
+:first-person-to-climb_of_358_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :first-person-to-climb_of_358_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/firstAscentPerson> ;
+  lemon:subjOfProp          :arg2-1348-1348-1347-1343-1345-1345-1345-1345-1345-1345-1324-1324-1324-1324-1295-1295-1295-1295-655_first-person-to-climb_of_358 ;
+  lemon:objOfProp           :arg1-1348-1348-1347-1343-1345-1345-1345-1345-1345-1345-1324-1324-1324-1324-1295-1295-1295-1295-655_first-person-to-climb_of_358 ;
+  lemon:condition           :first-person-to-climb_of_358_sense_1_condition .
+
+:first-person-to-climb_of_358_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1348-1348-1347-1343-1345-1345-1345-1345-1345-1345-1324-1324-1324-1324-1295-1295-1295-1295-655_first-person-to-climb_of_358 lemon:marker :first-person-to-climb_of_358_form_preposition .
+## Prepositions ##
+:first-person-to-climb_of_358_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

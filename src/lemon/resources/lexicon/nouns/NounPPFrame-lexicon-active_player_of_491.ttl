@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :active_player_of_491 ;
+  lemon:entry    :active_player_of_491_form_preposition .
+
+:active_player_of_491 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :active_player_of_491_form ;
+  lemon:otherForm  :active_player_of_491_singular ;
+  lemon:otherForm  :active_player_of_491_plural ;
+  lemon:sense          :active_player_of_491_sense_1 ;
+  lemon:synBehavior    :active_player_of_491_nounpp .
+
+:active_player_of_491_form a lemon:Form ;
+  lemon:writtenRep "active player"@en .
+
+:active_player_of_491_singular a    lemon:Form ;
+  lemon:writtenRep "active player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:active_player_of_491_plural a   lemon:Form ;
+  lemon:writtenRep "active players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:active_player_of_491_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1124-1124-1124-1121-1120-1120-1120-1120-1120-1120-1101-1101-1101-1101-1075-1075-1075-1075-532_active_player_of_491 ;
+  lexinfo:prepositionalAdjunct :arg1-1124-1124-1124-1121-1120-1120-1120-1120-1120-1120-1101-1101-1101-1101-1075-1075-1075-1075-532_active_player_of_491 .
+
+:active_player_of_491_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :active_player_of_491_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/activeYearsEndYear> ;
+  lemon:subjOfProp          :arg1-1124-1124-1124-1121-1120-1120-1120-1120-1120-1120-1101-1101-1101-1101-1075-1075-1075-1075-532_active_player_of_491 ;
+  lemon:objOfProp           :arg2-1124-1124-1124-1121-1120-1120-1120-1120-1120-1120-1101-1101-1101-1101-1075-1075-1075-1075-532_active_player_of_491 ;
+  lemon:condition           :active_player_of_491_sense_1_condition .
+
+:active_player_of_491_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/BasketballPlayer> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg1-1124-1124-1124-1121-1120-1120-1120-1120-1120-1120-1101-1101-1101-1101-1075-1075-1075-1075-532_active_player_of_491 lemon:marker :active_player_of_491_form_preposition .
+## Prepositions ##
+:active_player_of_491_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

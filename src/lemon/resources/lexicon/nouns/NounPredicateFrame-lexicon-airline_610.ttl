@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :airline_610_sense_1_res ;
+  lemon:entry    :airline_610 .
+
+:airline_610 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :airline_610_form ;
+  lemon:otherForm  :airline_610_singular ;
+  lemon:otherForm  :airline_610_plural ;
+  lemon:sense          :airline_610_sense_1 ;
+  lemon:synBehavior    :airline_610_predFrame .
+
+:airline_610_form
+ lemon:writtenRep "airline"@en .
+
+:airline_610_singular a    lemon:Form ;
+  lemon:writtenRep "airline"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:airline_610_plural a   lemon:Form ;
+  lemon:writtenRep "airlines"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:airline_610_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :airline_610_sense_1_res ;
+  lemon:isA       :airline_610_PredSynArg .
+
+:airline_610_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Airline> .

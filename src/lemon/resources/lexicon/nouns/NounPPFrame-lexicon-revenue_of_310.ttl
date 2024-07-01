@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :revenue_of_310 ;
+  lemon:entry    :revenue_of_310_form_preposition .
+
+:revenue_of_310 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :revenue_of_310_form ;
+  lemon:otherForm  :revenue_of_310_singular ;
+  lemon:otherForm  :revenue_of_310_plural ;
+  lemon:sense          :revenue_of_310_sense_1 ;
+  lemon:synBehavior    :revenue_of_310_nounpp .
+
+:revenue_of_310_form a lemon:Form ;
+  lemon:writtenRep "revenue"@en .
+
+:revenue_of_310_singular a    lemon:Form ;
+  lemon:writtenRep "revenue"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:revenue_of_310_plural a   lemon:Form ;
+  lemon:writtenRep "revenues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:revenue_of_310_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-747-747-747-745-744-744-744-744-744-744-729-729-729-729-714-714-714-714-353_revenue_of_310 ;
+  lexinfo:prepositionalAdjunct :arg2-747-747-747-745-744-744-744-744-744-744-729-729-729-729-714-714-714-714-353_revenue_of_310 .
+
+:revenue_of_310_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :revenue_of_310_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/revenue> ;
+  lemon:subjOfProp          :arg2-747-747-747-745-744-744-744-744-744-744-729-729-729-729-714-714-714-714-353_revenue_of_310 ;
+  lemon:objOfProp           :arg1-747-747-747-745-744-744-744-744-744-744-729-729-729-729-714-714-714-714-353_revenue_of_310 ;
+  lemon:condition           :revenue_of_310_sense_1_condition .
+
+:revenue_of_310_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-747-747-747-745-744-744-744-744-744-744-729-729-729-729-714-714-714-714-353_revenue_of_310 lemon:marker :revenue_of_310_form_preposition .
+## Prepositions ##
+:revenue_of_310_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

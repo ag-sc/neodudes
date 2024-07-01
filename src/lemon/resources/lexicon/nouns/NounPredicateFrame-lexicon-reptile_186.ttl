@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :reptile_186_sense_1_res ;
+  lemon:entry    :reptile_186 .
+
+:reptile_186 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :reptile_186_form ;
+  lemon:otherForm  :reptile_186_singular ;
+  lemon:otherForm  :reptile_186_plural ;
+  lemon:sense          :reptile_186_sense_1 ;
+  lemon:synBehavior    :reptile_186_predFrame .
+
+:reptile_186_form
+ lemon:writtenRep "reptile"@en .
+
+:reptile_186_singular a    lemon:Form ;
+  lemon:writtenRep "reptile"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:reptile_186_plural a   lemon:Form ;
+  lemon:writtenRep "reptiles"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:reptile_186_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :reptile_186_sense_1_res ;
+  lemon:isA       :reptile_186_PredSynArg .
+
+:reptile_186_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Reptile> .

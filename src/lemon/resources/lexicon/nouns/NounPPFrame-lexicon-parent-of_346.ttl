@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :parent-of_346 ;
+  lemon:entry    :parent-of_346_form_preposition .
+
+:parent-of_346 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :parent-of_346_form ;
+  lemon:otherForm  :parent-of_346_singular ;
+  lemon:otherForm  :parent-of_346_plural ;
+  lemon:sense          :parent-of_346_sense_1 ;
+  lemon:synBehavior    :parent-of_346_nounpp .
+
+:parent-of_346_form a lemon:Form ;
+  lemon:writtenRep "parent"@en .
+
+:parent-of_346_singular a    lemon:Form ;
+  lemon:writtenRep "parent"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:parent-of_346_plural a   lemon:Form ;
+  lemon:writtenRep "parents"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:parent-of_346_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-909-909-909-906-905-905-905-905-905-905-888-888-888-888-866-866-866-866-432_parent-of_346 ;
+  lexinfo:prepositionalAdjunct :arg2-909-909-909-906-905-905-905-905-905-905-888-888-888-888-866-866-866-866-432_parent-of_346 .
+
+:parent-of_346_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :parent-of_346_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/parent> ;
+  lemon:subjOfProp          :arg2-909-909-909-906-905-905-905-905-905-905-888-888-888-888-866-866-866-866-432_parent-of_346 ;
+  lemon:objOfProp           :arg1-909-909-909-906-905-905-905-905-905-905-888-888-888-888-866-866-866-866-432_parent-of_346 ;
+  lemon:condition           :parent-of_346_sense_1_condition .
+
+:parent-of_346_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-909-909-909-906-905-905-905-905-905-905-888-888-888-888-866-866-866-866-432_parent-of_346 lemon:marker :parent-of_346_form_preposition .
+## Prepositions ##
+:parent-of_346_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

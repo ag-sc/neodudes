@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :party-of_102 ;
+  lemon:entry    :party-of_102_form_preposition .
+
+:party-of_102 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :party-of_102_form ;
+  lemon:otherForm  :party-of_102_singular ;
+  lemon:otherForm  :party-of_102_plural ;
+  lemon:sense          :party-of_102_sense_1 ;
+  lemon:sense          :party-of_102_sense_2 ;
+  lemon:synBehavior    :party-of_102_nounpp .
+
+:party-of_102_form a lemon:Form ;
+  lemon:writtenRep "party"@en .
+
+:party-of_102_singular a    lemon:Form ;
+  lemon:writtenRep "party"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:party-of_102_plural a   lemon:Form ;
+  lemon:writtenRep "parties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:party-of_102_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 ;
+  lexinfo:prepositionalAdjunct :arg2-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 .
+
+:party-of_102_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :party-of_102_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/party> ;
+  lemon:subjOfProp          :arg2-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 ;
+  lemon:objOfProp           :arg1-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 ;
+  lemon:condition           :party-of_102_sense_1_condition .
+
+:party-of_102_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:party-of_102_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :party-of_102_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/party> ;
+  lemon:subjOfProp          :arg2-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 ;
+  lemon:objOfProp           :arg1-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 ;
+  lemon:condition           :party-of_102_sense_2_condition .
+
+:party-of_102_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1072-1072-1072-1069-1068-1068-1068-1068-1068-1068-1049-1049-1049-1049-1024-1024-1024-1024-515-515-236_party-of_102 lemon:marker :party-of_102_form_preposition .
+## Prepositions ##
+:party-of_102_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :budget_of_33 ;
+  lemon:entry    :budget_of_33_form_preposition .
+
+:budget_of_33 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :budget_of_33_form ;
+  lemon:otherForm  :budget_of_33_singular ;
+  lemon:otherForm  :budget_of_33_plural ;
+  lemon:sense          :budget_of_33_sense_1 ;
+  lemon:synBehavior    :budget_of_33_nounpp .
+
+:budget_of_33_form a lemon:Form ;
+  lemon:writtenRep "budget"@en .
+
+:budget_of_33_singular a    lemon:Form ;
+  lemon:writtenRep "budget"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:budget_of_33_plural a   lemon:Form ;
+  lemon:writtenRep "budgets"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:budget_of_33_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-594-594-594-592-591-591-591-591-591-591-580-580-580-580-568-568-568-568-292-292-659_budget_of_33 ;
+  lexinfo:prepositionalAdjunct :arg2-594-594-594-592-591-591-591-591-591-591-580-580-580-580-568-568-568-568-292-292-659_budget_of_33 .
+
+:budget_of_33_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :budget_of_33_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/budget> ;
+  lemon:subjOfProp          :arg2-594-594-594-592-591-591-591-591-591-591-580-580-580-580-568-568-568-568-292-292-659_budget_of_33 ;
+  lemon:objOfProp           :arg1-594-594-594-592-591-591-591-591-591-591-580-580-580-580-568-568-568-568-292-292-659_budget_of_33 ;
+  lemon:condition           :budget_of_33_sense_1_condition .
+
+:budget_of_33_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Film> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-594-594-594-592-591-591-591-591-591-591-580-580-580-580-568-568-568-568-292-292-659_budget_of_33 lemon:marker :budget_of_33_form_preposition .
+## Prepositions ##
+:budget_of_33_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

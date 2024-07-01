@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lao_113_329_sense_1_res ;
+  lemon:entry    :lao_113_329 .
+
+:lao_113_329 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :lao_113_329_lemma ;
+  lemon:sense          :lao_113_329_sense_1 ;
+  lemon:synBehavior    :lao_113_329_attrFrame, :lao_113_329_predFrame .
+
+:lao_113_329_lemma lemon:writtenRep "Lao"@en .
+
+:lao_113_329_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :lao_113_329_PredSynArg .
+
+:lao_113_329_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :lao_113_329_AttrSynArg .
+
+:lao_113_329_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :lao_113_329_sense_1_res ;
+  lemon:isA       :lao_113_329_AttrSynArg, :lao_113_329_PredSynArg .
+
+:lao_113_329_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Laos> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :police_officer_956_sense_1_res ;
+  lemon:entry    :police_officer_956 .
+
+:police_officer_956 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :police_officer_956_form ;
+  lemon:otherForm  :police_officer_956_singular ;
+  lemon:otherForm  :police_officer_956_plural ;
+  lemon:sense          :police_officer_956_sense_1 ;
+  lemon:synBehavior    :police_officer_956_predFrame .
+
+:police_officer_956_form
+ lemon:writtenRep "police officer"@en .
+
+:police_officer_956_singular a    lemon:Form ;
+  lemon:writtenRep "police officer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:police_officer_956_plural a   lemon:Form ;
+  lemon:writtenRep "police officers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:police_officer_956_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :police_officer_956_sense_1_res ;
+  lemon:isA       :police_officer_956_PredSynArg .
+
+:police_officer_956_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/PoliceOfficer> .

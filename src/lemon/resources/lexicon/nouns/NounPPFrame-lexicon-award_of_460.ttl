@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :award_of_460 ;
+  lemon:entry    :award_of_460_form_preposition .
+
+:award_of_460 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :award_of_460_form ;
+  lemon:otherForm  :award_of_460_singular ;
+  lemon:otherForm  :award_of_460_plural ;
+  lemon:sense          :award_of_460_sense_1 ;
+  lemon:synBehavior    :award_of_460_nounpp .
+
+:award_of_460_form a lemon:Form ;
+  lemon:writtenRep "award"@en .
+
+:award_of_460_singular a    lemon:Form ;
+  lemon:writtenRep "award"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:award_of_460_plural a   lemon:Form ;
+  lemon:writtenRep "awards"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:award_of_460_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1385-1385-1385-1382-1384-1384-1384-1384-1384-1384-1361-1361-1361-1361-1332-1332-1332-1332-678_award_of_460 ;
+  lexinfo:prepositionalAdjunct :arg2-1385-1385-1385-1382-1384-1384-1384-1384-1384-1384-1361-1361-1361-1361-1332-1332-1332-1332-678_award_of_460 .
+
+:award_of_460_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :award_of_460_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/awards> ;
+  lemon:subjOfProp          :arg2-1385-1385-1385-1382-1384-1384-1384-1384-1384-1384-1361-1361-1361-1361-1332-1332-1332-1332-678_award_of_460 ;
+  lemon:objOfProp           :arg1-1385-1385-1385-1382-1384-1384-1384-1384-1384-1384-1361-1361-1361-1361-1332-1332-1332-1332-678_award_of_460 ;
+  lemon:condition           :award_of_460_sense_1_condition .
+
+:award_of_460_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1385-1385-1385-1382-1384-1384-1384-1384-1384-1384-1361-1361-1361-1361-1332-1332-1332-1332-678_award_of_460 lemon:marker :award_of_460_form_preposition .
+## Prepositions ##
+:award_of_460_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

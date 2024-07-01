@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :galaxy_285_sense_1_res ;
+  lemon:entry    :galaxy_285 .
+
+:galaxy_285 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :galaxy_285_form ;
+  lemon:otherForm  :galaxy_285_singular ;
+  lemon:otherForm  :galaxy_285_plural ;
+  lemon:sense          :galaxy_285_sense_1 ;
+  lemon:synBehavior    :galaxy_285_predFrame .
+
+:galaxy_285_form
+ lemon:writtenRep "galaxy"@en .
+
+:galaxy_285_singular a    lemon:Form ;
+  lemon:writtenRep "galaxy"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:galaxy_285_plural a   lemon:Form ;
+  lemon:writtenRep "galaxies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:galaxy_285_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :galaxy_285_sense_1_res ;
+  lemon:isA       :galaxy_285_PredSynArg .
+
+:galaxy_285_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Galaxy> .

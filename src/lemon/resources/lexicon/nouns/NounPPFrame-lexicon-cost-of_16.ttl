@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cost-of_16 ;
+  lemon:entry    :cost-of_16_form_preposition .
+
+:cost-of_16 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cost-of_16_form ;
+  lemon:otherForm  :cost-of_16_singular ;
+  lemon:otherForm  :cost-of_16_plural ;
+  lemon:sense          :cost-of_16_sense_1 ;
+  lemon:synBehavior    :cost-of_16_nounpp .
+
+:cost-of_16_form a lemon:Form ;
+  lemon:writtenRep "cost"@en .
+
+:cost-of_16_singular a    lemon:Form ;
+  lemon:writtenRep "cost"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cost-of_16_plural a   lemon:Form ;
+  lemon:writtenRep "costs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cost-of_16_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-372-372-371-371-370-370-370-370-370-370-363-363-363-363-358-358-358-358-176-176-361_cost-of_16 ;
+  lexinfo:prepositionalAdjunct :arg2-372-372-371-371-370-370-370-370-370-370-363-363-363-363-358-358-358-358-176-176-361_cost-of_16 .
+
+:cost-of_16_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :cost-of_16_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/budget> ;
+  lemon:subjOfProp          :arg2-372-372-371-371-370-370-370-370-370-370-363-363-363-363-358-358-358-358-176-176-361_cost-of_16 ;
+  lemon:objOfProp           :arg1-372-372-371-371-370-370-370-370-370-370-363-363-363-363-358-358-358-358-176-176-361_cost-of_16 ;
+  lemon:condition           :cost-of_16_sense_1_condition .
+
+:cost-of_16_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Film> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-372-372-371-371-370-370-370-370-370-370-363-363-363-363-358-358-358-358-176-176-361_cost-of_16 lemon:marker :cost-of_16_form_preposition .
+## Prepositions ##
+:cost-of_16_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

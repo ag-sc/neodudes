@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :real_name_of_415 ;
+  lemon:entry    :real_name_of_415_form_preposition .
+
+:real_name_of_415 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :real_name_of_415_form ;
+  lemon:otherForm  :real_name_of_415_singular ;
+  lemon:otherForm  :real_name_of_415_plural ;
+  lemon:sense          :real_name_of_415_sense_1 ;
+  lemon:synBehavior    :real_name_of_415_nounpp .
+
+:real_name_of_415_form a lemon:Form ;
+  lemon:writtenRep "real name"@en .
+
+:real_name_of_415_singular a    lemon:Form ;
+  lemon:writtenRep "real name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:real_name_of_415_plural a   lemon:Form ;
+  lemon:writtenRep "real names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:real_name_of_415_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-847-847-847-845-844-844-844-844-844-844-828-828-828-828-807-807-807-807-402_real_name_of_415 ;
+  lexinfo:prepositionalAdjunct :arg2-847-847-847-845-844-844-844-844-844-844-828-828-828-828-807-807-807-807-402_real_name_of_415 .
+
+:real_name_of_415_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :real_name_of_415_sense_1 ;
+  lemon:reference           <http://xmlns.com/foaf/0.1/name> ;
+  lemon:subjOfProp          :arg2-847-847-847-845-844-844-844-844-844-844-828-828-828-828-807-807-807-807-402_real_name_of_415 ;
+  lemon:objOfProp           :arg1-847-847-847-845-844-844-844-844-844-844-828-828-828-828-807-807-807-807-402_real_name_of_415 ;
+  lemon:condition           :real_name_of_415_sense_1_condition .
+
+:real_name_of_415_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-847-847-847-845-844-844-844-844-844-844-828-828-828-828-807-807-807-807-402_real_name_of_415 lemon:marker :real_name_of_415_form_preposition .
+## Prepositions ##
+:real_name_of_415_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

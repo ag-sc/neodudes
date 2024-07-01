@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :region_of_428 ;
+  lemon:entry    :region_of_428_form_preposition .
+
+:region_of_428 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :region_of_428_form ;
+  lemon:otherForm  :region_of_428_singular ;
+  lemon:otherForm  :region_of_428_plural ;
+  lemon:sense          :region_of_428_sense_1 ;
+  lemon:synBehavior    :region_of_428_nounpp .
+
+:region_of_428_form a lemon:Form ;
+  lemon:writtenRep "region"@en .
+
+:region_of_428_singular a    lemon:Form ;
+  lemon:writtenRep "region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:region_of_428_plural a   lemon:Form ;
+  lemon:writtenRep "regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:region_of_428_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1528-1528-1528-1525-1527-1527-1527-1527-1527-1527-1502-1502-1502-1502-1473-1473-1473-1473-751_region_of_428 ;
+  lexinfo:prepositionalAdjunct :arg2-1528-1528-1528-1525-1527-1527-1527-1527-1527-1527-1502-1502-1502-1502-1473-1473-1473-1473-751_region_of_428 .
+
+:region_of_428_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :region_of_428_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/wineRegion> ;
+  lemon:subjOfProp          :arg2-1528-1528-1528-1525-1527-1527-1527-1527-1527-1527-1502-1502-1502-1502-1473-1473-1473-1473-751_region_of_428 ;
+  lemon:objOfProp           :arg1-1528-1528-1528-1525-1527-1527-1527-1527-1527-1527-1502-1502-1502-1502-1473-1473-1473-1473-751_region_of_428 ;
+  lemon:condition           :region_of_428_sense_1_condition .
+
+:region_of_428_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Grape> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1528-1528-1528-1525-1527-1527-1527-1527-1527-1527-1502-1502-1502-1502-1473-1473-1473-1473-751_region_of_428 lemon:marker :region_of_428_form_preposition .
+## Prepositions ##
+:region_of_428_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

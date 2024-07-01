@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lastelectiondate-of_45 ;
+  lemon:entry    :lastelectiondate-of_45_form_preposition .
+
+:lastelectiondate-of_45 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :lastelectiondate-of_45_form ;
+  lemon:otherForm  :lastelectiondate-of_45_singular ;
+  lemon:otherForm  :lastelectiondate-of_45_plural ;
+  lemon:sense          :lastelectiondate-of_45_sense_1 ;
+  lemon:synBehavior    :lastelectiondate-of_45_nounpp .
+
+:lastelectiondate-of_45_form a lemon:Form ;
+  lemon:writtenRep "last Election Date"@en .
+
+:lastelectiondate-of_45_singular a    lemon:Form ;
+  lemon:writtenRep "last Election Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:lastelectiondate-of_45_plural a   lemon:Form ;
+  lemon:writtenRep "last Election Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:lastelectiondate-of_45_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-223-223-222-223-222-222-222-222-222-222-218-218-218-218-214-214-214-214-100-100-260_lastelectiondate-of_45 ;
+  lexinfo:prepositionalAdjunct :arg2-223-223-222-223-222-222-222-222-222-222-218-218-218-218-214-214-214-214-100-100-260_lastelectiondate-of_45 .
+
+:lastelectiondate-of_45_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :lastelectiondate-of_45_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/lastElectionDate> ;
+  lemon:subjOfProp          :arg2-223-223-222-223-222-222-222-222-222-222-218-218-218-218-214-214-214-214-100-100-260_lastelectiondate-of_45 ;
+  lemon:objOfProp           :arg1-223-223-222-223-222-222-222-222-222-222-218-218-218-218-214-214-214-214-100-100-260_lastelectiondate-of_45 ;
+  lemon:condition           :lastelectiondate-of_45_sense_1_condition .
+
+:lastelectiondate-of_45_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-223-223-222-223-222-222-222-222-222-222-218-218-218-218-214-214-214-214-100-100-260_lastelectiondate-of_45 lemon:marker :lastelectiondate-of_45_form_preposition .
+## Prepositions ##
+:lastelectiondate-of_45_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

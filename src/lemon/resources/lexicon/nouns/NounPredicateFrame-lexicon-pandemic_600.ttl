@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :pandemic_600_sense_1_res ;
+  lemon:entry    :pandemic_600 .
+
+:pandemic_600 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :pandemic_600_form ;
+  lemon:otherForm  :pandemic_600_singular ;
+  lemon:otherForm  :pandemic_600_plural ;
+  lemon:sense          :pandemic_600_sense_1 ;
+  lemon:synBehavior    :pandemic_600_predFrame .
+
+:pandemic_600_form
+ lemon:writtenRep "pandemic"@en .
+
+:pandemic_600_singular a    lemon:Form ;
+  lemon:writtenRep "pandemic"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:pandemic_600_plural a   lemon:Form ;
+  lemon:writtenRep "pandemics"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:pandemic_600_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :pandemic_600_sense_1_res ;
+  lemon:isA       :pandemic_600_PredSynArg .
+
+:pandemic_600_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Pandemic> .

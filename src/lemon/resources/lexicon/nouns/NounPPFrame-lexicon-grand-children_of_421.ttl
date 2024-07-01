@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :grand-children_of_421 ;
+  lemon:entry    :grand-children_of_421_form_preposition .
+
+:grand-children_of_421 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :grand-children_of_421_form ;
+  lemon:otherForm  :grand-children_of_421_singular ;
+  lemon:otherForm  :grand-children_of_421_plural ;
+  lemon:sense          :grand-children_of_421_sense_1 ;
+  lemon:synBehavior    :grand-children_of_421_nounpp .
+
+:grand-children_of_421_form a lemon:Form ;
+  lemon:writtenRep "grand child"@en .
+
+:grand-children_of_421_singular a    lemon:Form ;
+  lemon:writtenRep "grand child"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:grand-children_of_421_plural a   lemon:Form ;
+  lemon:writtenRep "grand children"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:grand-children_of_421_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-345-345-344-344-343-343-343-343-343-343-336-336-336-336-331-331-331-331-168_grand-children_of_421 ;
+  lexinfo:prepositionalAdjunct :arg2-345-345-344-344-343-343-343-343-343-343-336-336-336-336-331-331-331-331-168_grand-children_of_421 .
+
+:grand-children_of_421_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :grand-children_of_421_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-345-345-344-344-343-343-343-343-343-343-336-336-336-336-331-331-331-331-168_grand-children_of_421 ;
+  lemon:objOfProp           :arg1-345-345-344-344-343-343-343-343-343-343-336-336-336-336-331-331-331-331-168_grand-children_of_421 ;
+  lemon:condition           :grand-children_of_421_sense_1_condition .
+
+:grand-children_of_421_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-345-345-344-344-343-343-343-343-343-343-336-336-336-336-331-331-331-331-168_grand-children_of_421 lemon:marker :grand-children_of_421_form_preposition .
+## Prepositions ##
+:grand-children_of_421_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

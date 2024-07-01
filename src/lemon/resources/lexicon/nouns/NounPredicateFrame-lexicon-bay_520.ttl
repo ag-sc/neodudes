@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bay_520_sense_1_res ;
+  lemon:entry    :bay_520 .
+
+:bay_520 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :bay_520_form ;
+  lemon:otherForm  :bay_520_singular ;
+  lemon:otherForm  :bay_520_plural ;
+  lemon:sense          :bay_520_sense_1 ;
+  lemon:synBehavior    :bay_520_predFrame .
+
+:bay_520_form
+ lemon:writtenRep "bay"@en .
+
+:bay_520_singular a    lemon:Form ;
+  lemon:writtenRep "bay"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:bay_520_plural a   lemon:Form ;
+  lemon:writtenRep "bays"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:bay_520_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bay_520_sense_1_res ;
+  lemon:isA       :bay_520_PredSynArg .
+
+:bay_520_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Bay> .

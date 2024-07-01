@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :work_for_1 ;
+  lemon:entry    :form_work_for_1_preposition .
+
+:work_for_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_work_for_1 ;
+  lemon:otherForm      :form_work_for_1_present3rd ;
+  lemon:otherForm      :form_work_for_1_past ;
+  lemon:otherForm      :form_work_for_1_perfect ;
+  lemon:sense          :work_for_1_sense_1 ;
+  lemon:synBehavior    :work_for_1_frame .
+
+:form_work_for_1 a           lemon:Form ;
+  lemon:writtenRep     "work"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_work_for_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "works"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_work_for_1_past a lemon:Form ;
+  lemon:writtenRep  "worked"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_work_for_1_perfect a   lemon:Form ;
+  lemon:writtenRep "worked"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:work_for_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :work_for_1_subj ;
+  lexinfo:prepositionalAdjunct :work_for_1_obj .
+
+:work_for_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :work_for_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/keyPerson> ;
+  lemon:subjOfProp  :work_for_1_subj ;
+  lemon:objOfProp   :work_for_1_obj ;
+  lemon:condition   :work_for_1_sense_1_condition .
+
+:work_for_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:work_for_1_obj lemon:marker :form_work_for_1_preposition .
+
+## Prepositions ##
+:form_work_for_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "for"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

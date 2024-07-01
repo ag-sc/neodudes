@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_discover_2 ;
+  lemon:entry    :discover_2ed ;
+  lemon:entry    :form_discover_2_preposition .
+
+:to_discover_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_discover_2 ;
+  lemon:otherForm      :form_discover_2s ;
+  lemon:otherForm      :form_discover_2ed ;
+  lemon:otherForm      :form_discover_2perfect ;
+  lemon:sense          :discover_2_sense_1 ;
+  lemon:synBehavior    :discover_2_frame_transitive .
+
+:form_discover_2 a         lemon:Form ;
+  lemon:writtenRep     "discover"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_discover_2s a    lemon:Form ;
+  lemon:writtenRep "discovers"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_discover_2ed a   lemon:Form ;
+  lemon:writtenRep "discovered"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_discover_2perfect a   lemon:Form ;
+  lemon:writtenRep "discovered"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:discover_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :discover_2_subj ;
+  lexinfo:directObject     :discover_2_obj .
+
+:discover_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :discover_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/discoverer> ;
+  lemon:subjOfProp  :discover_2_obj ;
+  lemon:objOfProp   :discover_2_subj ;
+  lemon:condition   :discover_2_sense_1_condition .
+
+
+:discover_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:discover_2_obj lemon:marker :form_discover_2_preposition .
+
+## Prepositions ##
+:form_discover_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

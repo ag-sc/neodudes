@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_adopted_20 ;
+  lemon:entry    :adopted_20ed ;
+  lemon:entry    :form_adopted_20_preposition .
+
+:to_adopted_20 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_adopted_20 ;
+  lemon:otherForm      :form_adopted_20s ;
+  lemon:otherForm      :form_adopted_20ed ;
+  lemon:otherForm      :form_adopted_20perfect ;
+  lemon:sense          :adopted_20_sense_1 ;
+  lemon:synBehavior    :adopted_20_frame_transitive .
+
+:form_adopted_20 a         lemon:Form ;
+  lemon:writtenRep     "adopt"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_adopted_20s a    lemon:Form ;
+  lemon:writtenRep "adopts"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_adopted_20ed a   lemon:Form ;
+  lemon:writtenRep "adopted"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_adopted_20perfect a   lemon:Form ;
+  lemon:writtenRep "adopted"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:adopted_20_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :adopted_20_subj ;
+  lexinfo:directObject     :adopted_20_obj .
+
+:adopted_20_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :adopted_20_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/currency> ;
+  lemon:subjOfProp  :adopted_20_obj ;
+  lemon:objOfProp   :adopted_20_subj ;
+  lemon:condition   :adopted_20_sense_1_condition .
+
+
+:adopted_20_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Currency> .
+
+
+:adopted_20_obj lemon:marker :form_adopted_20_preposition .
+
+## Prepositions ##
+:form_adopted_20_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :numberofpages-of_30 ;
+  lemon:entry    :numberofpages-of_30_form_preposition .
+
+:numberofpages-of_30 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :numberofpages-of_30_form ;
+  lemon:otherForm  :numberofpages-of_30_singular ;
+  lemon:otherForm  :numberofpages-of_30_plural ;
+  lemon:sense          :numberofpages-of_30_sense_1 ;
+  lemon:synBehavior    :numberofpages-of_30_nounpp .
+
+:numberofpages-of_30_form a lemon:Form ;
+  lemon:writtenRep "number of pages"@en .
+
+:numberofpages-of_30_singular a    lemon:Form ;
+  lemon:writtenRep "number of pages"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:numberofpages-of_30_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:numberofpages-of_30_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-433-433-432-432-431-431-431-431-431-431-423-423-423-423-415-415-415-415-208-208-382_numberofpages-of_30 ;
+  lexinfo:prepositionalAdjunct :arg2-433-433-432-432-431-431-431-431-431-431-423-423-423-423-415-415-415-415-208-208-382_numberofpages-of_30 .
+
+:numberofpages-of_30_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :numberofpages-of_30_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfPages> ;
+  lemon:subjOfProp          :arg2-433-433-432-432-431-431-431-431-431-431-423-423-423-423-415-415-415-415-208-208-382_numberofpages-of_30 ;
+  lemon:objOfProp           :arg1-433-433-432-432-431-431-431-431-431-431-423-423-423-423-415-415-415-415-208-208-382_numberofpages-of_30 ;
+  lemon:condition           :numberofpages-of_30_sense_1_condition .
+
+:numberofpages-of_30_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/WrittenWork> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+
+:arg2-433-433-432-432-431-431-431-431-431-431-423-423-423-423-415-415-415-415-208-208-382_numberofpages-of_30 lemon:marker :numberofpages-of_30_form_preposition .
+## Prepositions ##
+:numberofpages-of_30_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

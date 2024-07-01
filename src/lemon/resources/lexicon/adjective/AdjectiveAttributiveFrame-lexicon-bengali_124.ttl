@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bengali_124_sense_1_res ;
+  lemon:entry    :bengali_124 .
+
+:bengali_124 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :bengali_124_lemma ;
+  lemon:sense          :bengali_124_sense_1 ;
+  lemon:synBehavior    :bengali_124_attrFrame, :bengali_124_predFrame .
+
+:bengali_124_lemma lemon:writtenRep "bengali"@en .
+
+:bengali_124_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :bengali_124_PredSynArg .
+
+:bengali_124_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :bengali_124_AttrSynArg .
+
+:bengali_124_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bengali_124_sense_1_res ;
+  lemon:isA       :bengali_124_AttrSynArg, :bengali_124_PredSynArg .
+
+:bengali_124_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Bangladesh> .

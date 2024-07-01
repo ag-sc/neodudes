@@ -1,0 +1,41 @@
+#!/bin/bash
+#SBATCH --gres=gpu:1
+#SBATCH --time=120:00:00
+#SBATCH --array=0-9
+#SBATCH --cpus-per-gpu=16
+#SBATCH --mem=64G
+#SBATCH --chdir=/neodudes
+CUDA_DEVICE=$(echo "$CUDA_VISIBLE_DEVICES," | cut -d',' -f $((SLURM_LOCALID + 1)) );
+T_REGEX='^[0-9]$';
+if ! [[ "$CUDA_DEVICE" =~ $T_REGEX ]]; then
+        echo "error no reserved gpu provided"
+        exit 1;
+fi
+echo "Process $SLURM_PROCID of Job $SLURM_JOBID withe the local id $SLURM_LOCALID using gpu id              +++$CUDA_DEVICE (we may use gpu: $CUDA_VISIBLE_DEVICES on $(hostname))"
+echo "computing on $(nvidia-smi --query-gpu=gpu_name --format=csv -i $CUDA_DEVICE | tail -n 1)"
+echo "stating job with ID $SLURM_ARRAY_TASK_ID"
+export PYTHONPATH=/neodudes/src/
+if [ $SLURM_ARRAY_TASK_ID -eq 0 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21" #
+elif [ $SLURM_ARRAY_TASK_ID -eq 1 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 2 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 3 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 4 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 5 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 6 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 7 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 8 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 9 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+elif [ $SLURM_ARRAY_TASK_ID -eq 10 ]; then
+  python /neodudes/src/llm/query_score_training.py --model "google/flan-t5-small" --batchsize 64 --epochs 2 --ld "0.9013707813420198" --lr "1.3902932441715008e-05" --trials 1 --dataset "clampfp" --optunafile "gen_optuna_2024-06-21-best.log" --studyname "Query Score Best 2024-06-21"
+fi
+echo "done"

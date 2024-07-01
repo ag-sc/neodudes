@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :plant_537_sense_1_res ;
+  lemon:entry    :plant_537 .
+
+:plant_537 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :plant_537_form ;
+  lemon:otherForm  :plant_537_singular ;
+  lemon:otherForm  :plant_537_plural ;
+  lemon:sense          :plant_537_sense_1 ;
+  lemon:synBehavior    :plant_537_predFrame .
+
+:plant_537_form
+ lemon:writtenRep "plant"@en .
+
+:plant_537_singular a    lemon:Form ;
+  lemon:writtenRep "plant"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:plant_537_plural a   lemon:Form ;
+  lemon:writtenRep "plants"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:plant_537_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :plant_537_sense_1_res ;
+  lemon:isA       :plant_537_PredSynArg .
+
+:plant_537_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Plant> .

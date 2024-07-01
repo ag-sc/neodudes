@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :combination_drug_327_sense_1_res ;
+  lemon:entry    :combination_drug_327 .
+
+:combination_drug_327 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :combination_drug_327_form ;
+  lemon:otherForm  :combination_drug_327_singular ;
+  lemon:otherForm  :combination_drug_327_plural ;
+  lemon:sense          :combination_drug_327_sense_1 ;
+  lemon:synBehavior    :combination_drug_327_predFrame .
+
+:combination_drug_327_form
+ lemon:writtenRep "combination drug"@en .
+
+:combination_drug_327_singular a    lemon:Form ;
+  lemon:writtenRep "combination drug"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:combination_drug_327_plural a   lemon:Form ;
+  lemon:writtenRep "combination drugs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:combination_drug_327_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :combination_drug_327_sense_1_res ;
+  lemon:isA       :combination_drug_327_PredSynArg .
+
+:combination_drug_327_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/CombinationDrug> .

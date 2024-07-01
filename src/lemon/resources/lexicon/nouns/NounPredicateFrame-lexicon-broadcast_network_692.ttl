@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :broadcast_network_692_sense_1_res ;
+  lemon:entry    :broadcast_network_692 .
+
+:broadcast_network_692 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :broadcast_network_692_form ;
+  lemon:otherForm  :broadcast_network_692_singular ;
+  lemon:otherForm  :broadcast_network_692_plural ;
+  lemon:sense          :broadcast_network_692_sense_1 ;
+  lemon:synBehavior    :broadcast_network_692_predFrame .
+
+:broadcast_network_692_form
+ lemon:writtenRep "broadcast network"@en .
+
+:broadcast_network_692_singular a    lemon:Form ;
+  lemon:writtenRep "broadcast network"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:broadcast_network_692_plural a   lemon:Form ;
+  lemon:writtenRep "broadcast networks"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:broadcast_network_692_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :broadcast_network_692_sense_1_res ;
+  lemon:isA       :broadcast_network_692_PredSynArg .
+
+:broadcast_network_692_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/BroadcastNetwork> .

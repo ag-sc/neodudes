@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mission-of_495 ;
+  lemon:entry    :mission-of_495_form_preposition .
+
+:mission-of_495 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mission-of_495_form ;
+  lemon:otherForm  :mission-of_495_singular ;
+  lemon:otherForm  :mission-of_495_plural ;
+  lemon:sense          :mission-of_495_sense_1 ;
+  lemon:synBehavior    :mission-of_495_nounpp .
+
+:mission-of_495_form a lemon:Form ;
+  lemon:writtenRep "mission"@en .
+
+:mission-of_495_singular a    lemon:Form ;
+  lemon:writtenRep "mission"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mission-of_495_plural a   lemon:Form ;
+  lemon:writtenRep "missions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mission-of_495_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1085-1085-1085-1082-1081-1081-1081-1081-1081-1081-1062-1062-1062-1062-1037-1037-1037-1037-516_mission-of_495 ;
+  lexinfo:prepositionalAdjunct :arg2-1085-1085-1085-1082-1081-1081-1081-1081-1081-1081-1062-1062-1062-1062-1037-1037-1037-1037-516_mission-of_495 .
+
+:mission-of_495_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :mission-of_495_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/programme> ;
+  lemon:subjOfProp          :arg2-1085-1085-1085-1082-1081-1081-1081-1081-1081-1081-1062-1062-1062-1062-1037-1037-1037-1037-516_mission-of_495 ;
+  lemon:objOfProp           :arg1-1085-1085-1085-1082-1081-1081-1081-1081-1081-1081-1062-1062-1062-1062-1037-1037-1037-1037-516_mission-of_495 ;
+  lemon:condition           :mission-of_495_sense_1_condition .
+
+:mission-of_495_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/TelevisionShow> .
+
+:arg2-1085-1085-1085-1082-1081-1081-1081-1081-1081-1081-1062-1062-1062-1062-1037-1037-1037-1037-516_mission-of_495 lemon:marker :mission-of_495_form_preposition .
+## Prepositions ##
+:mission-of_495_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

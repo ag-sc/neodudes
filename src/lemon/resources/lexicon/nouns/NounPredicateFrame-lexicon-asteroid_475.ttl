@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :asteroid_475_sense_1_res ;
+  lemon:entry    :asteroid_475 .
+
+:asteroid_475 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :asteroid_475_form ;
+  lemon:otherForm  :asteroid_475_singular ;
+  lemon:otherForm  :asteroid_475_plural ;
+  lemon:sense          :asteroid_475_sense_1 ;
+  lemon:synBehavior    :asteroid_475_predFrame .
+
+:asteroid_475_form
+ lemon:writtenRep "asteroid"@en .
+
+:asteroid_475_singular a    lemon:Form ;
+  lemon:writtenRep "asteroid"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:asteroid_475_plural a   lemon:Form ;
+  lemon:writtenRep "asteroids"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:asteroid_475_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :asteroid_475_sense_1_res ;
+  lemon:isA       :asteroid_475_PredSynArg .
+
+:asteroid_475_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Asteroid> .

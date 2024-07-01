@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :gnetophytes_974_sense_1_res ;
+  lemon:entry    :gnetophytes_974 .
+
+:gnetophytes_974 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :gnetophytes_974_form ;
+  lemon:otherForm  :gnetophytes_974_singular ;
+  lemon:otherForm  :gnetophytes_974_plural ;
+  lemon:sense          :gnetophytes_974_sense_1 ;
+  lemon:synBehavior    :gnetophytes_974_predFrame .
+
+:gnetophytes_974_form
+ lemon:writtenRep "gnetophytes"@en .
+
+:gnetophytes_974_singular a    lemon:Form ;
+  lemon:writtenRep "gnetophytes"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:gnetophytes_974_plural a   lemon:Form ;
+  lemon:writtenRep "gnetophytess"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:gnetophytes_974_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :gnetophytes_974_sense_1_res ;
+  lemon:isA       :gnetophytes_974_PredSynArg .
+
+:gnetophytes_974_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Gnetophytes> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :archaea_477_sense_1_res ;
+  lemon:entry    :archaea_477 .
+
+:archaea_477 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :archaea_477_form ;
+  lemon:otherForm  :archaea_477_singular ;
+  lemon:otherForm  :archaea_477_plural ;
+  lemon:sense          :archaea_477_sense_1 ;
+  lemon:synBehavior    :archaea_477_predFrame .
+
+:archaea_477_form
+ lemon:writtenRep "archaea"@en .
+
+:archaea_477_singular a    lemon:Form ;
+  lemon:writtenRep "archaea"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:archaea_477_plural a   lemon:Form ;
+  lemon:writtenRep "archaeas"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:archaea_477_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :archaea_477_sense_1_res ;
+  lemon:isA       :archaea_477_PredSynArg .
+
+:archaea_477_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Archaea> .

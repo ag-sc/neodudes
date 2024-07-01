@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :calory_of_361 ;
+  lemon:entry    :calory_of_361_form_preposition .
+
+:calory_of_361 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :calory_of_361_form ;
+  lemon:otherForm  :calory_of_361_singular ;
+  lemon:otherForm  :calory_of_361_plural ;
+  lemon:sense          :calory_of_361_sense_1 ;
+  lemon:synBehavior    :calory_of_361_nounpp .
+
+:calory_of_361_form a lemon:Form ;
+  lemon:writtenRep "calory"@en .
+
+:calory_of_361_singular a    lemon:Form ;
+  lemon:writtenRep "calory"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:calory_of_361_plural a   lemon:Form ;
+  lemon:writtenRep "calories"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:calory_of_361_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1042-1042-1042-1039-1038-1038-1038-1038-1038-1038-1020-1020-1020-1020-995-995-995-995-494_calory_of_361 ;
+  lexinfo:prepositionalAdjunct :arg1-1042-1042-1042-1039-1038-1038-1038-1038-1038-1038-1020-1020-1020-1020-995-995-995-995-494_calory_of_361 .
+
+:calory_of_361_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :calory_of_361_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/calories> ;
+  lemon:subjOfProp          :arg1-1042-1042-1042-1039-1038-1038-1038-1038-1038-1038-1020-1020-1020-1020-995-995-995-995-494_calory_of_361 ;
+  lemon:objOfProp           :arg2-1042-1042-1042-1039-1038-1038-1038-1038-1038-1038-1020-1020-1020-1020-995-995-995-995-494_calory_of_361 ;
+  lemon:condition           :calory_of_361_sense_1_condition .
+
+:calory_of_361_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Food> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#integer> .
+
+:arg1-1042-1042-1042-1039-1038-1038-1038-1038-1038-1038-1020-1020-1020-1020-995-995-995-995-494_calory_of_361 lemon:marker :calory_of_361_form_preposition .
+## Prepositions ##
+:calory_of_361_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

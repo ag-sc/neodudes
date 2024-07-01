@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :diameter-of_492 ;
+  lemon:entry    :diameter-of_492_form_preposition .
+
+:diameter-of_492 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :diameter-of_492_form ;
+  lemon:otherForm  :diameter-of_492_singular ;
+  lemon:otherForm  :diameter-of_492_plural ;
+  lemon:sense          :diameter-of_492_sense_1 ;
+  lemon:synBehavior    :diameter-of_492_nounpp .
+
+:diameter-of_492_form a lemon:Form ;
+  lemon:writtenRep "diameter"@en .
+
+:diameter-of_492_singular a    lemon:Form ;
+  lemon:writtenRep "diameter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:diameter-of_492_plural a   lemon:Form ;
+  lemon:writtenRep "diameters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:diameter-of_492_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-926-926-926-923-922-922-922-922-922-922-904-904-904-904-882-882-882-882-443_diameter-of_492 ;
+  lexinfo:prepositionalAdjunct :arg2-926-926-926-923-922-922-922-922-922-922-904-904-904-904-882-882-882-882-443_diameter-of_492 .
+
+:diameter-of_492_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :diameter-of_492_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/diameter> ;
+  lemon:subjOfProp          :arg2-926-926-926-923-922-922-922-922-922-922-904-904-904-904-882-882-882-882-443_diameter-of_492 ;
+  lemon:objOfProp           :arg1-926-926-926-923-922-922-922-922-922-922-904-904-904-904-882-882-882-882-443_diameter-of_492 ;
+  lemon:condition           :diameter-of_492_sense_1_condition .
+
+:diameter-of_492_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Device> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-926-926-926-923-922-922-922-922-922-922-904-904-904-904-882-882-882-882-443_diameter-of_492 lemon:marker :diameter-of_492_form_preposition .
+## Prepositions ##
+:diameter-of_492_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :governor-of_259 ;
+  lemon:entry    :governor-of_259_form_preposition .
+
+:governor-of_259 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :governor-of_259_form ;
+  lemon:otherForm  :governor-of_259_singular ;
+  lemon:otherForm  :governor-of_259_plural ;
+  lemon:sense          :governor-of_259_sense_1 ;
+  lemon:synBehavior    :governor-of_259_nounpp .
+
+:governor-of_259_form a lemon:Form ;
+  lemon:writtenRep "governor"@en .
+
+:governor-of_259_singular a    lemon:Form ;
+  lemon:writtenRep "governor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:governor-of_259_plural a   lemon:Form ;
+  lemon:writtenRep "governors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:governor-of_259_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-299-299-298-298-297-297-297-297-297-297-291-291-291-291-286-286-286-286-142_governor-of_259 ;
+  lexinfo:prepositionalAdjunct :arg2-299-299-298-298-297-297-297-297-297-297-291-291-291-291-286-286-286-286-142_governor-of_259 .
+
+:governor-of_259_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :governor-of_259_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governor> ;
+  lemon:subjOfProp          :arg2-299-299-298-298-297-297-297-297-297-297-291-291-291-291-286-286-286-286-142_governor-of_259 ;
+  lemon:objOfProp           :arg1-299-299-298-298-297-297-297-297-297-297-291-291-291-291-286-286-286-286-142_governor-of_259 ;
+  lemon:condition           :governor-of_259_sense_1_condition .
+
+:governor-of_259_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-299-299-298-298-297-297-297-297-297-297-291-291-291-291-286-286-286-286-142_governor-of_259 lemon:marker :governor-of_259_form_preposition .
+## Prepositions ##
+:governor-of_259_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

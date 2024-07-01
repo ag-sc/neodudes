@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :largestcity_of_61 ;
+  lemon:entry    :largestcity_of_61_form_preposition .
+
+:largestcity_of_61 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :largestcity_of_61_form ;
+  lemon:otherForm  :largestcity_of_61_singular ;
+  lemon:otherForm  :largestcity_of_61_plural ;
+  lemon:sense          :largestcity_of_61_sense_1 ;
+  lemon:synBehavior    :largestcity_of_61_nounpp .
+
+:largestcity_of_61_form a lemon:Form ;
+  lemon:writtenRep "largest city"@en .
+
+:largestcity_of_61_singular a    lemon:Form ;
+  lemon:writtenRep "largest city"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:largestcity_of_61_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:largestcity_of_61_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-163-163-163-164-164-164-164-164-164-164-161-161-161-161-157-157-157-157-73-73-525_largestcity_of_61 ;
+  lexinfo:prepositionalAdjunct :arg2-163-163-163-164-164-164-164-164-164-164-161-161-161-161-157-157-157-157-73-73-525_largestcity_of_61 .
+
+:largestcity_of_61_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :largestcity_of_61_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/largestCity> ;
+  lemon:subjOfProp          :arg2-163-163-163-164-164-164-164-164-164-164-161-161-161-161-157-157-157-157-73-73-525_largestcity_of_61 ;
+  lemon:objOfProp           :arg1-163-163-163-164-164-164-164-164-164-164-161-161-161-161-157-157-157-157-73-73-525_largestcity_of_61 ;
+  lemon:condition           :largestcity_of_61_sense_1_condition .
+
+:largestcity_of_61_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-163-163-163-164-164-164-164-164-164-164-161-161-161-161-157-157-157-157-73-73-525_largestcity_of_61 lemon:marker :largestcity_of_61_form_preposition .
+## Prepositions ##
+:largestcity_of_61_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :population-densty-rank-of_319 ;
+  lemon:entry    :population-densty-rank-of_319_form_preposition .
+
+:population-densty-rank-of_319 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :population-densty-rank-of_319_form ;
+  lemon:otherForm  :population-densty-rank-of_319_singular ;
+  lemon:otherForm  :population-densty-rank-of_319_plural ;
+  lemon:sense          :population-densty-rank-of_319_sense_1 ;
+  lemon:synBehavior    :population-densty-rank-of_319_nounpp .
+
+:population-densty-rank-of_319_form a lemon:Form ;
+  lemon:writtenRep "population densty rank"@en .
+
+:population-densty-rank-of_319_singular a    lemon:Form ;
+  lemon:writtenRep "population densty rank"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:population-densty-rank-of_319_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:population-densty-rank-of_319_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-790-790-790-788-787-787-787-787-787-787-772-772-772-772-755-755-755-755-373_population-densty-rank-of_319 ;
+  lexinfo:prepositionalAdjunct :arg2-790-790-790-788-787-787-787-787-787-787-772-772-772-772-755-755-755-755-373_population-densty-rank-of_319 .
+
+:population-densty-rank-of_319_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :population-densty-rank-of_319_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/populationDensityRank> ;
+  lemon:subjOfProp          :arg2-790-790-790-788-787-787-787-787-787-787-772-772-772-772-755-755-755-755-373_population-densty-rank-of_319 ;
+  lemon:objOfProp           :arg1-790-790-790-788-787-787-787-787-787-787-772-772-772-772-755-755-755-755-373_population-densty-rank-of_319 ;
+  lemon:condition           :population-densty-rank-of_319_sense_1_condition .
+
+:population-densty-rank-of_319_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/PopulatedPlace> .
+
+:arg2-790-790-790-788-787-787-787-787-787-787-772-772-772-772-755-755-755-755-373_population-densty-rank-of_319 lemon:marker :population-densty-rank-of_319_form_preposition .
+## Prepositions ##
+:population-densty-rank-of_319_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

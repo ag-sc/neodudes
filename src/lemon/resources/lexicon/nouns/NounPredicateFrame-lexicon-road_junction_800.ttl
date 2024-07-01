@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :road_junction_800_sense_1_res ;
+  lemon:entry    :road_junction_800 .
+
+:road_junction_800 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :road_junction_800_form ;
+  lemon:otherForm  :road_junction_800_singular ;
+  lemon:otherForm  :road_junction_800_plural ;
+  lemon:sense          :road_junction_800_sense_1 ;
+  lemon:synBehavior    :road_junction_800_predFrame .
+
+:road_junction_800_form
+ lemon:writtenRep "road junction"@en .
+
+:road_junction_800_singular a    lemon:Form ;
+  lemon:writtenRep "road junction"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:road_junction_800_plural a   lemon:Form ;
+  lemon:writtenRep "road junctions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:road_junction_800_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :road_junction_800_sense_1_res ;
+  lemon:isA       :road_junction_800_PredSynArg .
+
+:road_junction_800_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/RoadJunction> .

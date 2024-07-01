@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :composer-of_295 ;
+  lemon:entry    :composer-of_295_form_preposition .
+
+:composer-of_295 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :composer-of_295_form ;
+  lemon:otherForm  :composer-of_295_singular ;
+  lemon:otherForm  :composer-of_295_plural ;
+  lemon:sense          :composer-of_295_sense_1 ;
+  lemon:synBehavior    :composer-of_295_nounpp .
+
+:composer-of_295_form a lemon:Form ;
+  lemon:writtenRep "music composer"@en .
+
+:composer-of_295_singular a    lemon:Form ;
+  lemon:writtenRep "music composer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:composer-of_295_plural a   lemon:Form ;
+  lemon:writtenRep "music composers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:composer-of_295_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-194-194-194-195-195-195-195-195-195-195-191-191-191-191-187-187-187-187-101_composer-of_295 ;
+  lexinfo:prepositionalAdjunct :arg2-194-194-194-195-195-195-195-195-195-195-191-191-191-191-187-187-187-187-101_composer-of_295 .
+
+:composer-of_295_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :composer-of_295_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/composer> ;
+  lemon:subjOfProp          :arg2-194-194-194-195-195-195-195-195-195-195-191-191-191-191-187-187-187-187-101_composer-of_295 ;
+  lemon:objOfProp           :arg1-194-194-194-195-195-195-195-195-195-195-191-191-191-191-187-187-187-187-101_composer-of_295 ;
+  lemon:condition           :composer-of_295_sense_1_condition .
+
+:composer-of_295_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-194-194-194-195-195-195-195-195-195-195-191-191-191-191-187-187-187-187-101_composer-of_295 lemon:marker :composer-of_295_form_preposition .
+## Prepositions ##
+:composer-of_295_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

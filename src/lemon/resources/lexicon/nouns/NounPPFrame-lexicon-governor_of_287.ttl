@@ -1,0 +1,76 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :governor_of_287 ;
+  lemon:entry    :governor_of_287_form_preposition .
+
+:governor_of_287 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :governor_of_287_form ;
+  lemon:otherForm  :governor_of_287_singular ;
+  lemon:otherForm  :governor_of_287_plural ;
+  lemon:sense          :governor_of_287_sense_1 ;
+  lemon:sense          :governor_of_287_sense_2 ;
+  lemon:sense          :governor_of_287_sense_3 ;
+  lemon:synBehavior    :governor_of_287_nounpp .
+
+:governor_of_287_form a lemon:Form ;
+  lemon:writtenRep "governor"@en .
+
+:governor_of_287_singular a    lemon:Form ;
+  lemon:writtenRep "governor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:governor_of_287_plural a   lemon:Form ;
+  lemon:writtenRep "governors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:governor_of_287_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lexinfo:prepositionalAdjunct :arg2-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 .
+
+:governor_of_287_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :governor_of_287_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/governor> ;
+  lemon:subjOfProp          :arg2-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:objOfProp           :arg1-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:condition           :governor_of_287_sense_1_condition .
+
+:governor_of_287_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:governor_of_287_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :governor_of_287_sense_2 ;
+  lemon:reference           <http://dbpedia.org/property/governor> ;
+  lemon:subjOfProp          :arg2-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:objOfProp           :arg1-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:condition           :governor_of_287_sense_2_condition .
+
+:governor_of_287_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:governor_of_287_sense_3 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :governor_of_287_sense_3 ;
+  lemon:reference           <http://dbpedia.org/ontology/region> ;
+  lemon:subjOfProp          :arg2-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:objOfProp           :arg1-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 ;
+  lemon:condition           :governor_of_287_sense_3_condition .
+
+:governor_of_287_sense_3_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-700-700-700-698-697-697-697-697-697-697-682-682-682-682-669-669-669-669-323_governor_of_287 lemon:marker :governor_of_287_form_preposition .
+## Prepositions ##
+:governor_of_287_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

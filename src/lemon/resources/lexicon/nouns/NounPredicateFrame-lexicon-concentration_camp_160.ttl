@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :concentration_camp_160_sense_1_res ;
+  lemon:entry    :concentration_camp_160 .
+
+:concentration_camp_160 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :concentration_camp_160_form ;
+  lemon:otherForm  :concentration_camp_160_singular ;
+  lemon:otherForm  :concentration_camp_160_plural ;
+  lemon:sense          :concentration_camp_160_sense_1 ;
+  lemon:synBehavior    :concentration_camp_160_predFrame .
+
+:concentration_camp_160_form
+ lemon:writtenRep "concentration camp"@en .
+
+:concentration_camp_160_singular a    lemon:Form ;
+  lemon:writtenRep "concentration camp"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:concentration_camp_160_plural a   lemon:Form ;
+  lemon:writtenRep "concentration camps"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:concentration_camp_160_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :concentration_camp_160_sense_1_res ;
+  lemon:isA       :concentration_camp_160_PredSynArg .
+
+:concentration_camp_160_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ConcentrationCamp> .

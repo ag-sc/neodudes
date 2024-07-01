@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :store_of_461 ;
+  lemon:entry    :store_of_461_form_preposition .
+
+:store_of_461 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :store_of_461_form ;
+  lemon:otherForm  :store_of_461_singular ;
+  lemon:otherForm  :store_of_461_plural ;
+  lemon:sense          :store_of_461_sense_1 ;
+  lemon:synBehavior    :store_of_461_nounpp .
+
+:store_of_461_form a lemon:Form ;
+  lemon:writtenRep "store"@en .
+
+:store_of_461_singular a    lemon:Form ;
+  lemon:writtenRep "store"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:store_of_461_plural a   lemon:Form ;
+  lemon:writtenRep "stores"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:store_of_461_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-275-275-274-274-273-273-273-273-273-273-267-267-267-267-262-262-262-262-131_store_of_461 ;
+  lexinfo:prepositionalAdjunct :arg2-275-275-274-274-273-273-273-273-273-273-267-267-267-267-262-262-262-262-131_store_of_461 .
+
+:store_of_461_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :store_of_461_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfLocations> ;
+  lemon:subjOfProp          :arg2-275-275-274-274-273-273-273-273-273-273-267-267-267-267-262-262-262-262-131_store_of_461 ;
+  lemon:objOfProp           :arg1-275-275-274-274-273-273-273-273-273-273-267-267-267-267-262-262-262-262-131_store_of_461 ;
+  lemon:condition           :store_of_461_sense_1_condition .
+
+:store_of_461_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-275-275-274-274-273-273-273-273-273-273-267-267-267-267-262-262-262-262-131_store_of_461 lemon:marker :store_of_461_form_preposition .
+## Prepositions ##
+:store_of_461_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

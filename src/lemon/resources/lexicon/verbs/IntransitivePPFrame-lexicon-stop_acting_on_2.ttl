@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :stop_acting_on_2 ;
+  lemon:entry    :form_stop_acting_on_2_preposition .
+
+:stop_acting_on_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_stop_acting_on_2 ;
+  lemon:otherForm      :form_stop_acting_on_2_present3rd ;
+  lemon:otherForm      :form_stop_acting_on_2_past ;
+  lemon:otherForm      :form_stop_acting_on_2_perfect ;
+  lemon:sense          :stop_acting_on_2_sense_1 ;
+  lemon:synBehavior    :stop_acting_on_2_frame .
+
+:form_stop_acting_on_2 a           lemon:Form ;
+  lemon:writtenRep     "stop acting"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_stop_acting_on_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "stops acting"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_stop_acting_on_2_past a lemon:Form ;
+  lemon:writtenRep  "stopped acting"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_stop_acting_on_2_perfect a   lemon:Form ;
+  lemon:writtenRep "stopped acting"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:stop_acting_on_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :stop_acting_on_2_subj ;
+  lexinfo:prepositionalAdjunct :stop_acting_on_2_obj .
+
+:stop_acting_on_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :stop_acting_on_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/activeYearsEndYear> ;
+  lemon:subjOfProp  :stop_acting_on_2_subj ;
+  lemon:objOfProp   :stop_acting_on_2_obj ;
+  lemon:condition   :stop_acting_on_2_sense_1_condition .
+
+:stop_acting_on_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Actor> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:stop_acting_on_2_obj lemon:marker :form_stop_acting_on_2_preposition .
+
+## Prepositions ##
+:form_stop_acting_on_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "on"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

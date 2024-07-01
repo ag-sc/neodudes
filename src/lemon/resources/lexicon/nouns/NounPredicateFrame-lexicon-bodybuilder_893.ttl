@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bodybuilder_893_sense_1_res ;
+  lemon:entry    :bodybuilder_893 .
+
+:bodybuilder_893 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :bodybuilder_893_form ;
+  lemon:otherForm  :bodybuilder_893_singular ;
+  lemon:otherForm  :bodybuilder_893_plural ;
+  lemon:sense          :bodybuilder_893_sense_1 ;
+  lemon:synBehavior    :bodybuilder_893_predFrame .
+
+:bodybuilder_893_form
+ lemon:writtenRep "bodybuilder"@en .
+
+:bodybuilder_893_singular a    lemon:Form ;
+  lemon:writtenRep "bodybuilder"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:bodybuilder_893_plural a   lemon:Form ;
+  lemon:writtenRep "bodybuilders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:bodybuilder_893_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bodybuilder_893_sense_1_res ;
+  lemon:isA       :bodybuilder_893_PredSynArg .
+
+:bodybuilder_893_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Bodybuilder> .

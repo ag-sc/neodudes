@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :starr_in_3_138 ;
+  lemon:entry    :form_starr_in_3_138_preposition .
+
+:starr_in_3_138 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_starr_in_3_138 ;
+  lemon:otherForm      :form_starr_in_3_138_present3rd ;
+  lemon:otherForm      :form_starr_in_3_138_past ;
+  lemon:otherForm      :form_starr_in_3_138_perfect ;
+  lemon:sense          :starr_in_3_138_sense_1 ;
+  lemon:synBehavior    :starr_in_3_138_frame .
+
+:form_starr_in_3_138 a           lemon:Form ;
+  lemon:writtenRep     "star"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_starr_in_3_138_present3rd a      lemon:Form ;
+  lemon:writtenRep "starring"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_starr_in_3_138_past a lemon:Form ;
+  lemon:writtenRep  "starred"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_starr_in_3_138_perfect a   lemon:Form ;
+  lemon:writtenRep "starred"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:starr_in_3_138_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :starr_in_3_138_subj ;
+  lexinfo:prepositionalAdjunct :starr_in_3_138_obj .
+
+:starr_in_3_138_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :starr_in_3_138_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/starring> ;
+  lemon:subjOfProp  :starr_in_3_138_subj ;
+  lemon:objOfProp   :starr_in_3_138_obj ;
+  lemon:condition   :starr_in_3_138_sense_1_condition .
+
+:starr_in_3_138_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Film> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Actor> .
+
+
+:starr_in_3_138_obj lemon:marker :form_starr_in_3_138_preposition .
+
+## Prepositions ##
+:form_starr_in_3_138_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

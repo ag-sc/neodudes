@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :airport_532_sense_1_res ;
+  lemon:entry    :airport_532 .
+
+:airport_532 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :airport_532_form ;
+  lemon:otherForm  :airport_532_singular ;
+  lemon:otherForm  :airport_532_plural ;
+  lemon:sense          :airport_532_sense_1 ;
+  lemon:synBehavior    :airport_532_predFrame .
+
+:airport_532_form
+ lemon:writtenRep "airport"@en .
+
+:airport_532_singular a    lemon:Form ;
+  lemon:writtenRep "airport"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:airport_532_plural a   lemon:Form ;
+  lemon:writtenRep "airports"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:airport_532_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :airport_532_sense_1_res ;
+  lemon:isA       :airport_532_PredSynArg .
+
+:airport_532_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Airport> .

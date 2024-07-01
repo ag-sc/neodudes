@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :clerical_administrative_region_383_sense_1_res ;
+  lemon:entry    :clerical_administrative_region_383 .
+
+:clerical_administrative_region_383 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :clerical_administrative_region_383_form ;
+  lemon:otherForm  :clerical_administrative_region_383_singular ;
+  lemon:otherForm  :clerical_administrative_region_383_plural ;
+  lemon:sense          :clerical_administrative_region_383_sense_1 ;
+  lemon:synBehavior    :clerical_administrative_region_383_predFrame .
+
+:clerical_administrative_region_383_form
+ lemon:writtenRep "clerical administrative region"@en .
+
+:clerical_administrative_region_383_singular a    lemon:Form ;
+  lemon:writtenRep "clerical administrative region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:clerical_administrative_region_383_plural a   lemon:Form ;
+  lemon:writtenRep "clerical administrative regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:clerical_administrative_region_383_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :clerical_administrative_region_383_sense_1_res ;
+  lemon:isA       :clerical_administrative_region_383_PredSynArg .
+
+:clerical_administrative_region_383_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ClericalAdministrativeRegion> .

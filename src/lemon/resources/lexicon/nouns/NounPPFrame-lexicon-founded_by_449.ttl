@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founded_by_449 ;
+  lemon:entry    :founded_by_449_form_preposition .
+
+:founded_by_449 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :founded_by_449_form ;
+  lemon:otherForm  :founded_by_449_singular ;
+  lemon:otherForm  :founded_by_449_plural ;
+  lemon:sense          :founded_by_449_sense_1 ;
+  lemon:synBehavior    :founded_by_449_nounpp .
+
+:founded_by_449_form a lemon:Form ;
+  lemon:writtenRep "founded"@en .
+
+:founded_by_449_singular a    lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:founded_by_449_plural a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:founded_by_449_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1084-1084-1084-1081-1080-1080-1080-1080-1080-1080-1061-1061-1061-1061-1036-1036-1036-1036-515_founded_by_449 ;
+  lexinfo:prepositionalAdjunct :arg2-1084-1084-1084-1081-1080-1080-1080-1080-1080-1080-1061-1061-1061-1061-1036-1036-1036-1036-515_founded_by_449 .
+
+:founded_by_449_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :founded_by_449_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp          :arg2-1084-1084-1084-1081-1080-1080-1080-1080-1080-1080-1061-1061-1061-1061-1036-1036-1036-1036-515_founded_by_449 ;
+  lemon:objOfProp           :arg1-1084-1084-1084-1081-1080-1080-1080-1080-1080-1080-1061-1061-1061-1061-1036-1036-1036-1036-515_founded_by_449 ;
+  lemon:condition           :founded_by_449_sense_1_condition .
+
+:founded_by_449_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/BroadcastNetwork> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Company> .
+
+:arg2-1084-1084-1084-1081-1080-1080-1080-1080-1080-1080-1061-1061-1061-1061-1036-1036-1036-1036-515_founded_by_449 lemon:marker :founded_by_449_form_preposition .
+## Prepositions ##
+:founded_by_449_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

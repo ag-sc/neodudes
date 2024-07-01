@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :trade_union_953_sense_1_res ;
+  lemon:entry    :trade_union_953 .
+
+:trade_union_953 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :trade_union_953_form ;
+  lemon:otherForm  :trade_union_953_singular ;
+  lemon:otherForm  :trade_union_953_plural ;
+  lemon:sense          :trade_union_953_sense_1 ;
+  lemon:synBehavior    :trade_union_953_predFrame .
+
+:trade_union_953_form
+ lemon:writtenRep "trade union"@en .
+
+:trade_union_953_singular a    lemon:Form ;
+  lemon:writtenRep "trade union"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:trade_union_953_plural a   lemon:Form ;
+  lemon:writtenRep "trade unions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:trade_union_953_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :trade_union_953_sense_1_res ;
+  lemon:isA       :trade_union_953_PredSynArg .
+
+:trade_union_953_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/TradeUnion> .

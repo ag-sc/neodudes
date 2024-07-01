@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :maltese_130_266_sense_1_res ;
+  lemon:entry    :maltese_130_266 .
+
+:maltese_130_266 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :maltese_130_266_lemma ;
+  lemon:sense          :maltese_130_266_sense_1 ;
+  lemon:synBehavior    :maltese_130_266_attrFrame, :maltese_130_266_predFrame .
+
+:maltese_130_266_lemma lemon:writtenRep "Maltese"@en .
+
+:maltese_130_266_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :maltese_130_266_PredSynArg .
+
+:maltese_130_266_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :maltese_130_266_AttrSynArg .
+
+:maltese_130_266_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :maltese_130_266_sense_1_res ;
+  lemon:isA       :maltese_130_266_AttrSynArg, :maltese_130_266_PredSynArg .
+
+:maltese_130_266_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Malta> .

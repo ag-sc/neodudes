@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :dissolutiondate_of_353 ;
+  lemon:entry    :dissolutiondate_of_353_form_preposition .
+
+:dissolutiondate_of_353 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :dissolutiondate_of_353_form ;
+  lemon:otherForm  :dissolutiondate_of_353_singular ;
+  lemon:otherForm  :dissolutiondate_of_353_plural ;
+  lemon:sense          :dissolutiondate_of_353_sense_1 ;
+  lemon:synBehavior    :dissolutiondate_of_353_nounpp .
+
+:dissolutiondate_of_353_form a lemon:Form ;
+  lemon:writtenRep "dissolution date"@en .
+
+:dissolutiondate_of_353_singular a    lemon:Form ;
+  lemon:writtenRep "dissolution date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:dissolutiondate_of_353_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:dissolutiondate_of_353_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1074-1074-1074-1071-1070-1070-1070-1070-1070-1070-1051-1051-1051-1051-1026-1026-1026-1026-510_dissolutiondate_of_353 ;
+  lexinfo:prepositionalAdjunct :arg2-1074-1074-1074-1071-1070-1070-1070-1070-1070-1070-1051-1051-1051-1051-1026-1026-1026-1026-510_dissolutiondate_of_353 .
+
+:dissolutiondate_of_353_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :dissolutiondate_of_353_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/dissolutionDate> ;
+  lemon:subjOfProp          :arg2-1074-1074-1074-1071-1070-1070-1070-1070-1070-1070-1051-1051-1051-1051-1026-1026-1026-1026-510_dissolutiondate_of_353 ;
+  lemon:objOfProp           :arg1-1074-1074-1074-1071-1070-1070-1070-1070-1070-1070-1051-1051-1051-1051-1026-1026-1026-1026-510_dissolutiondate_of_353 ;
+  lemon:condition           :dissolutiondate_of_353_sense_1_condition .
+
+:dissolutiondate_of_353_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/AdministrativeRegion> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-1074-1074-1074-1071-1070-1070-1070-1070-1070-1070-1051-1051-1051-1051-1026-1026-1026-1026-510_dissolutiondate_of_353 lemon:marker :dissolutiondate_of_353_form_preposition .
+## Prepositions ##
+:dissolutiondate_of_353_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

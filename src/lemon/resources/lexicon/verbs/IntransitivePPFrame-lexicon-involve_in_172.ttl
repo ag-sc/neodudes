@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :involve_in_172 ;
+  lemon:entry    :form_involve_in_172_preposition .
+
+:involve_in_172 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_involve_in_172 ;
+  lemon:otherForm      :form_involve_in_172_present3rd ;
+  lemon:otherForm      :form_involve_in_172_past ;
+  lemon:otherForm      :form_involve_in_172_perfect ;
+  lemon:sense          :involve_in_172_sense_1 ;
+  lemon:synBehavior    :involve_in_172_frame .
+
+:form_involve_in_172 a           lemon:Form ;
+  lemon:writtenRep     "involve"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_involve_in_172_present3rd a      lemon:Form ;
+  lemon:writtenRep "involves"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_involve_in_172_past a lemon:Form ;
+  lemon:writtenRep  "involved"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_involve_in_172_perfect a   lemon:Form ;
+  lemon:writtenRep "involve"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:involve_in_172_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :involve_in_172_subj ;
+  lexinfo:prepositionalAdjunct :involve_in_172_obj .
+
+:involve_in_172_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :involve_in_172_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/battle> ;
+  lemon:subjOfProp  :involve_in_172_subj ;
+  lemon:objOfProp   :involve_in_172_obj ;
+  lemon:condition   :involve_in_172_sense_1_condition .
+
+:involve_in_172_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Event> .
+
+
+:involve_in_172_obj lemon:marker :form_involve_in_172_preposition .
+
+## Prepositions ##
+:form_involve_in_172_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

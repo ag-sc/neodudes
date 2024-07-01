@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :successor_of_443 ;
+  lemon:entry    :successor_of_443_form_preposition .
+
+:successor_of_443 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :successor_of_443_form ;
+  lemon:otherForm  :successor_of_443_singular ;
+  lemon:otherForm  :successor_of_443_plural ;
+  lemon:sense          :successor_of_443_sense_1 ;
+  lemon:synBehavior    :successor_of_443_nounpp .
+
+:successor_of_443_form a lemon:Form ;
+  lemon:writtenRep "successor"@en .
+
+:successor_of_443_singular a    lemon:Form ;
+  lemon:writtenRep "successor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:successor_of_443_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:successor_of_443_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1378-1378-1377-1374-1376-1376-1376-1376-1376-1376-1353-1353-1353-1353-1324-1324-1324-1324-673_successor_of_443 ;
+  lexinfo:prepositionalAdjunct :arg2-1378-1378-1377-1374-1376-1376-1376-1376-1376-1376-1353-1353-1353-1353-1324-1324-1324-1324-673_successor_of_443 .
+
+:successor_of_443_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :successor_of_443_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/successor> ;
+  lemon:subjOfProp          :arg2-1378-1378-1377-1374-1376-1376-1376-1376-1376-1376-1353-1353-1353-1353-1324-1324-1324-1324-673_successor_of_443 ;
+  lemon:objOfProp           :arg1-1378-1378-1377-1374-1376-1376-1376-1376-1376-1376-1353-1353-1353-1353-1324-1324-1324-1324-673_successor_of_443 ;
+  lemon:condition           :successor_of_443_sense_1_condition .
+
+:successor_of_443_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1378-1378-1377-1374-1376-1376-1376-1376-1376-1376-1353-1353-1353-1353-1324-1324-1324-1324-673_successor_of_443 lemon:marker :successor_of_443_form_preposition .
+## Prepositions ##
+:successor_of_443_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

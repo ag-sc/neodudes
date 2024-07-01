@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :firstascentperson-of_427 ;
+  lemon:entry    :firstascentperson-of_427_form_preposition .
+
+:firstascentperson-of_427 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :firstascentperson-of_427_form ;
+  lemon:otherForm  :firstascentperson-of_427_singular ;
+  lemon:otherForm  :firstascentperson-of_427_plural ;
+  lemon:sense          :firstascentperson-of_427_sense_1 ;
+  lemon:synBehavior    :firstascentperson-of_427_nounpp .
+
+:firstascentperson-of_427_form a lemon:Form ;
+  lemon:writtenRep "first Ascent Person"@en .
+
+:firstascentperson-of_427_singular a    lemon:Form ;
+  lemon:writtenRep "first Ascent Person"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:firstascentperson-of_427_plural a   lemon:Form ;
+  lemon:writtenRep "first Ascent Persons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:firstascentperson-of_427_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1319-1319-1318-1313-1315-1315-1315-1315-1315-1315-1294-1294-1294-1294-1265-1265-1265-1265-638_firstascentperson-of_427 ;
+  lexinfo:prepositionalAdjunct :arg2-1319-1319-1318-1313-1315-1315-1315-1315-1315-1315-1294-1294-1294-1294-1265-1265-1265-1265-638_firstascentperson-of_427 .
+
+:firstascentperson-of_427_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :firstascentperson-of_427_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/firstAscentPerson> ;
+  lemon:subjOfProp          :arg2-1319-1319-1318-1313-1315-1315-1315-1315-1315-1315-1294-1294-1294-1294-1265-1265-1265-1265-638_firstascentperson-of_427 ;
+  lemon:objOfProp           :arg1-1319-1319-1318-1313-1315-1315-1315-1315-1315-1315-1294-1294-1294-1294-1265-1265-1265-1265-638_firstascentperson-of_427 ;
+  lemon:condition           :firstascentperson-of_427_sense_1_condition .
+
+:firstascentperson-of_427_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1319-1319-1318-1313-1315-1315-1315-1315-1315-1315-1294-1294-1294-1294-1265-1265-1265-1265-638_firstascentperson-of_427 lemon:marker :firstascentperson-of_427_form_preposition .
+## Prepositions ##
+:firstascentperson-of_427_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :same_type_as_390 ;
+  lemon:entry    :same_type_as_390_form_preposition .
+
+:same_type_as_390 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :same_type_as_390_form ;
+  lemon:otherForm  :same_type_as_390_singular ;
+  lemon:otherForm  :same_type_as_390_plural ;
+  lemon:sense          :same_type_as_390_sense_1 ;
+  lemon:synBehavior    :same_type_as_390_nounpp .
+
+:same_type_as_390_form a lemon:Form ;
+  lemon:writtenRep "same type"@en .
+
+:same_type_as_390_singular a    lemon:Form ;
+  lemon:writtenRep "same type"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:same_type_as_390_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:same_type_as_390_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1155-1155-1155-1152-1152-1152-1152-1152-1152-1152-1133-1133-1133-1133-1107-1107-1107-1107-551_same_type_as_390 ;
+  lexinfo:prepositionalAdjunct :arg2-1155-1155-1155-1152-1152-1152-1152-1152-1152-1152-1133-1133-1133-1133-1107-1107-1107-1107-551_same_type_as_390 .
+
+:same_type_as_390_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :same_type_as_390_sense_1 ;
+  lemon:reference           <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  lemon:subjOfProp          :arg2-1155-1155-1155-1152-1152-1152-1152-1152-1152-1152-1133-1133-1133-1133-1107-1107-1107-1107-551_same_type_as_390 ;
+  lemon:objOfProp           :arg1-1155-1155-1155-1152-1152-1152-1152-1152-1152-1152-1133-1133-1133-1133-1107-1107-1107-1107-551_same_type_as_390 ;
+  lemon:condition           :same_type_as_390_sense_1_condition .
+
+:same_type_as_390_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Holiday> .
+
+:arg2-1155-1155-1155-1152-1152-1152-1152-1152-1152-1152-1133-1133-1133-1133-1107-1107-1107-1107-551_same_type_as_390 lemon:marker :same_type_as_390_form_preposition .
+## Prepositions ##
+:same_type_as_390_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "as"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

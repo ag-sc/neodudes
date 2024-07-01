@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :developer_of_22 ;
+  lemon:entry    :developer_of_22_form_preposition .
+
+:developer_of_22 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :developer_of_22_form ;
+  lemon:otherForm  :developer_of_22_singular ;
+  lemon:otherForm  :developer_of_22_plural ;
+  lemon:sense          :developer_of_22_sense_1 ;
+  lemon:synBehavior    :developer_of_22_nounpp .
+
+:developer_of_22_form a lemon:Form ;
+  lemon:writtenRep "developer"@en .
+
+:developer_of_22_singular a    lemon:Form ;
+  lemon:writtenRep "developer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:developer_of_22_plural a   lemon:Form ;
+  lemon:writtenRep "developers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:developer_of_22_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-171-171-171-172-172-172-172-172-172-172-169-169-169-169-165-165-165-165-76-76-634_developer_of_22 ;
+  lexinfo:prepositionalAdjunct :arg2-171-171-171-172-172-172-172-172-172-172-169-169-169-169-165-165-165-165-76-76-634_developer_of_22 .
+
+:developer_of_22_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :developer_of_22_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/developer> ;
+  lemon:subjOfProp          :arg2-171-171-171-172-172-172-172-172-172-172-169-169-169-169-165-165-165-165-76-76-634_developer_of_22 ;
+  lemon:objOfProp           :arg1-171-171-171-172-172-172-172-172-172-172-169-169-169-169-165-165-165-165-76-76-634_developer_of_22 ;
+  lemon:condition           :developer_of_22_sense_1_condition .
+
+:developer_of_22_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-171-171-171-172-172-172-172-172-172-172-169-169-169-169-165-165-165-165-76-76-634_developer_of_22 lemon:marker :developer_of_22_form_preposition .
+## Prepositions ##
+:developer_of_22_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

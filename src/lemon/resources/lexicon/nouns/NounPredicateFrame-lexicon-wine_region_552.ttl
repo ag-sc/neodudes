@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :wine_region_552_sense_1_res ;
+  lemon:entry    :wine_region_552 .
+
+:wine_region_552 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :wine_region_552_form ;
+  lemon:otherForm  :wine_region_552_singular ;
+  lemon:otherForm  :wine_region_552_plural ;
+  lemon:sense          :wine_region_552_sense_1 ;
+  lemon:synBehavior    :wine_region_552_predFrame .
+
+:wine_region_552_form
+ lemon:writtenRep "wine region"@en .
+
+:wine_region_552_singular a    lemon:Form ;
+  lemon:writtenRep "wine region"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:wine_region_552_plural a   lemon:Form ;
+  lemon:writtenRep "wine regions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:wine_region_552_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :wine_region_552_sense_1_res ;
+  lemon:isA       :wine_region_552_PredSynArg .
+
+:wine_region_552_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/WineRegion> .

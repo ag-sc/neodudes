@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :fashion_834_sense_1_res ;
+  lemon:entry    :fashion_834 .
+
+:fashion_834 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :fashion_834_form ;
+  lemon:otherForm  :fashion_834_singular ;
+  lemon:otherForm  :fashion_834_plural ;
+  lemon:sense          :fashion_834_sense_1 ;
+  lemon:synBehavior    :fashion_834_predFrame .
+
+:fashion_834_form
+ lemon:writtenRep "fashion"@en .
+
+:fashion_834_singular a    lemon:Form ;
+  lemon:writtenRep "fashion"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:fashion_834_plural a   lemon:Form ;
+  lemon:writtenRep "fashions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:fashion_834_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :fashion_834_sense_1_res ;
+  lemon:isA       :fashion_834_PredSynArg .
+
+:fashion_834_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Fashion> .

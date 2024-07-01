@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :singaporean_179_345_sense_1_res ;
+  lemon:entry    :singaporean_179_345 .
+
+:singaporean_179_345 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :singaporean_179_345_lemma ;
+  lemon:sense          :singaporean_179_345_sense_1 ;
+  lemon:synBehavior    :singaporean_179_345_attrFrame, :singaporean_179_345_predFrame .
+
+:singaporean_179_345_lemma lemon:writtenRep "Singaporean"@en .
+
+:singaporean_179_345_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :singaporean_179_345_PredSynArg .
+
+:singaporean_179_345_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :singaporean_179_345_AttrSynArg .
+
+:singaporean_179_345_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :singaporean_179_345_sense_1_res ;
+  lemon:isA       :singaporean_179_345_AttrSynArg, :singaporean_179_345_PredSynArg .
+
+:singaporean_179_345_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Singapore> .

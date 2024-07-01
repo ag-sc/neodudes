@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :scottish_173_264_sense_1_res ;
+  lemon:entry    :scottish_173_264 .
+
+:scottish_173_264 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :scottish_173_264_lemma ;
+  lemon:sense          :scottish_173_264_sense_1 ;
+  lemon:synBehavior    :scottish_173_264_attrFrame, :scottish_173_264_predFrame .
+
+:scottish_173_264_lemma lemon:writtenRep "Scottish"@en .
+
+:scottish_173_264_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :scottish_173_264_PredSynArg .
+
+:scottish_173_264_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :scottish_173_264_AttrSynArg .
+
+:scottish_173_264_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :scottish_173_264_sense_1_res ;
+  lemon:isA       :scottish_173_264_AttrSynArg, :scottish_173_264_PredSynArg .
+
+:scottish_173_264_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Scotland> .

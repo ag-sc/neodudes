@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :skater_536_sense_1_res ;
+  lemon:entry    :skater_536 .
+
+:skater_536 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :skater_536_form ;
+  lemon:otherForm  :skater_536_singular ;
+  lemon:otherForm  :skater_536_plural ;
+  lemon:sense          :skater_536_sense_1 ;
+  lemon:synBehavior    :skater_536_predFrame .
+
+:skater_536_form
+ lemon:writtenRep "skater"@en .
+
+:skater_536_singular a    lemon:Form ;
+  lemon:writtenRep "skater"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:skater_536_plural a   lemon:Form ;
+  lemon:writtenRep "skaters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:skater_536_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :skater_536_sense_1_res ;
+  lemon:isA       :skater_536_PredSynArg .
+
+:skater_536_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Skater> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :crater_814_sense_1_res ;
+  lemon:entry    :crater_814 .
+
+:crater_814 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :crater_814_form ;
+  lemon:otherForm  :crater_814_singular ;
+  lemon:otherForm  :crater_814_plural ;
+  lemon:sense          :crater_814_sense_1 ;
+  lemon:synBehavior    :crater_814_predFrame .
+
+:crater_814_form
+ lemon:writtenRep "crater"@en .
+
+:crater_814_singular a    lemon:Form ;
+  lemon:writtenRep "crater"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:crater_814_plural a   lemon:Form ;
+  lemon:writtenRep "craters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:crater_814_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :crater_814_sense_1_res ;
+  lemon:isA       :crater_814_PredSynArg .
+
+:crater_814_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Crater> .

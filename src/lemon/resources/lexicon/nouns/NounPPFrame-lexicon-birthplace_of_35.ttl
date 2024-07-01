@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :birthplace_of_35 ;
+  lemon:entry    :birthplace_of_35_form_preposition .
+
+:birthplace_of_35 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :birthplace_of_35_form ;
+  lemon:otherForm  :birthplace_of_35_singular ;
+  lemon:otherForm  :birthplace_of_35_plural ;
+  lemon:sense          :birthplace_of_35_sense_1 ;
+  lemon:synBehavior    :birthplace_of_35_nounpp .
+
+:birthplace_of_35_form a lemon:Form ;
+  lemon:writtenRep "birth place"@en .
+
+:birthplace_of_35_singular a    lemon:Form ;
+  lemon:writtenRep "birth place"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:birthplace_of_35_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:birthplace_of_35_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1489-1489-1489-1484-1486-1486-1486-1486-1486-1486-1462-1462-1462-1462-1433-1433-1433-1433-701-701-83_birthplace_of_35 ;
+  lexinfo:prepositionalAdjunct :arg2-1489-1489-1489-1484-1486-1486-1486-1486-1486-1486-1462-1462-1462-1462-1433-1433-1433-1433-701-701-83_birthplace_of_35 .
+
+:birthplace_of_35_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :birthplace_of_35_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/birthPlace> ;
+  lemon:subjOfProp          :arg2-1489-1489-1489-1484-1486-1486-1486-1486-1486-1486-1462-1462-1462-1462-1433-1433-1433-1433-701-701-83_birthplace_of_35 ;
+  lemon:objOfProp           :arg1-1489-1489-1489-1484-1486-1486-1486-1486-1486-1486-1462-1462-1462-1462-1433-1433-1433-1433-701-701-83_birthplace_of_35 ;
+  lemon:condition           :birthplace_of_35_sense_1_condition .
+
+:birthplace_of_35_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1489-1489-1489-1484-1486-1486-1486-1486-1486-1486-1462-1462-1462-1462-1433-1433-1433-1433-701-701-83_birthplace_of_35 lemon:marker :birthplace_of_35_form_preposition .
+## Prepositions ##
+:birthplace_of_35_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

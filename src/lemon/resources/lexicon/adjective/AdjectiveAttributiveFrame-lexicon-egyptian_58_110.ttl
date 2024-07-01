@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :egyptian_58_110_sense_1_res ;
+  lemon:entry    :egyptian_58_110 .
+
+:egyptian_58_110 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :egyptian_58_110_lemma ;
+  lemon:sense          :egyptian_58_110_sense_1 ;
+  lemon:synBehavior    :egyptian_58_110_attrFrame, :egyptian_58_110_predFrame .
+
+:egyptian_58_110_lemma lemon:writtenRep "Egyptian"@en .
+
+:egyptian_58_110_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :egyptian_58_110_PredSynArg .
+
+:egyptian_58_110_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :egyptian_58_110_AttrSynArg .
+
+:egyptian_58_110_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :egyptian_58_110_sense_1_res ;
+  lemon:isA       :egyptian_58_110_AttrSynArg, :egyptian_58_110_PredSynArg .
+
+:egyptian_58_110_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Egypt> .

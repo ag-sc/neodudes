@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :elevation_of_11 ;
+  lemon:entry    :elevation_of_11_form_preposition .
+
+:elevation_of_11 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :elevation_of_11_form ;
+  lemon:otherForm  :elevation_of_11_singular ;
+  lemon:otherForm  :elevation_of_11_plural ;
+  lemon:sense          :elevation_of_11_sense_1 ;
+  lemon:synBehavior    :elevation_of_11_nounpp .
+
+:elevation_of_11_form a lemon:Form ;
+  lemon:writtenRep "elevation"@en .
+
+:elevation_of_11_singular a    lemon:Form ;
+  lemon:writtenRep "elevation"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:elevation_of_11_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:elevation_of_11_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-953-953-953-950-949-949-949-949-949-949-931-931-931-931-908-908-908-908-454-454-706_elevation_of_11 ;
+  lexinfo:prepositionalAdjunct :arg2-953-953-953-950-949-949-949-949-949-949-931-931-931-931-908-908-908-908-454-454-706_elevation_of_11 .
+
+:elevation_of_11_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :elevation_of_11_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/elevation> ;
+  lemon:subjOfProp          :arg2-953-953-953-950-949-949-949-949-949-949-931-931-931-931-908-908-908-908-454-454-706_elevation_of_11 ;
+  lemon:objOfProp           :arg1-953-953-953-950-949-949-949-949-949-949-931-931-931-931-908-908-908-908-454-454-706_elevation_of_11 ;
+  lemon:condition           :elevation_of_11_sense_1_condition .
+
+:elevation_of_11_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Airport> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-953-953-953-950-949-949-949-949-949-949-931-931-931-931-908-908-908-908-454-454-706_elevation_of_11 lemon:marker :elevation_of_11_form_preposition .
+## Prepositions ##
+:elevation_of_11_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

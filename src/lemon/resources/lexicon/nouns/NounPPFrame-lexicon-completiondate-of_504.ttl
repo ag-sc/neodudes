@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :completiondate-of_504 ;
+  lemon:entry    :completiondate-of_504_form_preposition .
+
+:completiondate-of_504 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :completiondate-of_504_form ;
+  lemon:otherForm  :completiondate-of_504_singular ;
+  lemon:otherForm  :completiondate-of_504_plural ;
+  lemon:sense          :completiondate-of_504_sense_1 ;
+  lemon:synBehavior    :completiondate-of_504_nounpp .
+
+:completiondate-of_504_form a lemon:Form ;
+  lemon:writtenRep "completion date"@en .
+
+:completiondate-of_504_singular a    lemon:Form ;
+  lemon:writtenRep "completion date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:completiondate-of_504_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:completiondate-of_504_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1230-1230-1230-1225-1227-1227-1227-1227-1227-1227-1206-1206-1206-1206-1180-1180-1180-1180-591_completiondate-of_504 ;
+  lexinfo:prepositionalAdjunct :arg2-1230-1230-1230-1225-1227-1227-1227-1227-1227-1227-1206-1206-1206-1206-1180-1180-1180-1180-591_completiondate-of_504 .
+
+:completiondate-of_504_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :completiondate-of_504_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/completionDate> ;
+  lemon:subjOfProp          :arg2-1230-1230-1230-1225-1227-1227-1227-1227-1227-1227-1206-1206-1206-1206-1180-1180-1180-1180-591_completiondate-of_504 ;
+  lemon:objOfProp           :arg1-1230-1230-1230-1225-1227-1227-1227-1227-1227-1227-1206-1206-1206-1206-1180-1180-1180-1180-591_completiondate-of_504 ;
+  lemon:condition           :completiondate-of_504_sense_1_condition .
+
+:completiondate-of_504_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Ship> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-1230-1230-1230-1225-1227-1227-1227-1227-1227-1227-1206-1206-1206-1206-1180-1180-1180-1180-591_completiondate-of_504 lemon:marker :completiondate-of_504_form_preposition .
+## Prepositions ##
+:completiondate-of_504_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

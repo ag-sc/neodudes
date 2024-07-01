@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :name-of_92 ;
+  lemon:entry    :name-of_92_form_preposition .
+
+:name-of_92 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :name-of_92_form ;
+  lemon:otherForm  :name-of_92_singular ;
+  lemon:otherForm  :name-of_92_plural ;
+  lemon:sense          :name-of_92_sense_1 ;
+  lemon:synBehavior    :name-of_92_nounpp .
+
+:name-of_92_form a lemon:Form ;
+  lemon:writtenRep "name"@en .
+
+:name-of_92_singular a    lemon:Form ;
+  lemon:writtenRep "name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:name-of_92_plural a   lemon:Form ;
+  lemon:writtenRep "names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:name-of_92_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-782-782-782-780-779-779-779-779-779-779-764-764-764-764-747-747-747-747-377-377-156_name-of_92 ;
+  lexinfo:prepositionalAdjunct :arg2-782-782-782-780-779-779-779-779-779-779-764-764-764-764-747-747-747-747-377-377-156_name-of_92 .
+
+:name-of_92_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :name-of_92_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/name> ;
+  lemon:subjOfProp          :arg2-782-782-782-780-779-779-779-779-779-779-764-764-764-764-747-747-747-747-377-377-156_name-of_92 ;
+  lemon:objOfProp           :arg1-782-782-782-780-779-779-779-779-779-779-764-764-764-764-747-747-747-747-377-377-156_name-of_92 ;
+  lemon:condition           :name-of_92_sense_1_condition .
+
+:name-of_92_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-782-782-782-780-779-779-779-779-779-779-764-764-764-764-747-747-747-747-377-377-156_name-of_92 lemon:marker :name-of_92_form_preposition .
+## Prepositions ##
+:name-of_92_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

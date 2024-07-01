@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :an-argentine_14_180_sense_1_res ;
+  lemon:entry    :an-argentine_14_180 .
+
+:an-argentine_14_180 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :an-argentine_14_180_lemma ;
+  lemon:sense          :an-argentine_14_180_sense_1 ;
+  lemon:synBehavior    :an-argentine_14_180_attrFrame, :an-argentine_14_180_predFrame .
+
+:an-argentine_14_180_lemma lemon:writtenRep "an Argentine"@en .
+
+:an-argentine_14_180_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :an-argentine_14_180_PredSynArg .
+
+:an-argentine_14_180_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :an-argentine_14_180_AttrSynArg .
+
+:an-argentine_14_180_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :an-argentine_14_180_sense_1_res ;
+  lemon:isA       :an-argentine_14_180_AttrSynArg, :an-argentine_14_180_PredSynArg .
+
+:an-argentine_14_180_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Argentinian> .

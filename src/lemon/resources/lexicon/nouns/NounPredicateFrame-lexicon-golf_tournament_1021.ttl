@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :golf_tournament_1021_sense_1_res ;
+  lemon:entry    :golf_tournament_1021 .
+
+:golf_tournament_1021 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :golf_tournament_1021_form ;
+  lemon:otherForm  :golf_tournament_1021_singular ;
+  lemon:otherForm  :golf_tournament_1021_plural ;
+  lemon:sense          :golf_tournament_1021_sense_1 ;
+  lemon:synBehavior    :golf_tournament_1021_predFrame .
+
+:golf_tournament_1021_form
+ lemon:writtenRep "golf tournament"@en .
+
+:golf_tournament_1021_singular a    lemon:Form ;
+  lemon:writtenRep "golf tournament"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:golf_tournament_1021_plural a   lemon:Form ;
+  lemon:writtenRep "golf tournaments"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:golf_tournament_1021_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :golf_tournament_1021_sense_1_res ;
+  lemon:isA       :golf_tournament_1021_PredSynArg .
+
+:golf_tournament_1021_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GolfTournament> .

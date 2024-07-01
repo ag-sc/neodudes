@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :museum_339_sense_1_res ;
+  lemon:entry    :museum_339 .
+
+:museum_339 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :museum_339_form ;
+  lemon:otherForm  :museum_339_singular ;
+  lemon:otherForm  :museum_339_plural ;
+  lemon:sense          :museum_339_sense_1 ;
+  lemon:synBehavior    :museum_339_predFrame .
+
+:museum_339_form
+ lemon:writtenRep "museum"@en .
+
+:museum_339_singular a    lemon:Form ;
+  lemon:writtenRep "museum"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:museum_339_plural a   lemon:Form ;
+  lemon:writtenRep "museums"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:museum_339_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :museum_339_sense_1_res ;
+  lemon:isA       :museum_339_PredSynArg .
+
+:museum_339_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Museum> .

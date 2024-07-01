@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :instrument-of_296 ;
+  lemon:entry    :instrument-of_296_form_preposition .
+
+:instrument-of_296 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :instrument-of_296_form ;
+  lemon:otherForm  :instrument-of_296_singular ;
+  lemon:otherForm  :instrument-of_296_plural ;
+  lemon:sense          :instrument-of_296_sense_1 ;
+  lemon:synBehavior    :instrument-of_296_nounpp .
+
+:instrument-of_296_form a lemon:Form ;
+  lemon:writtenRep "instrument"@en .
+
+:instrument-of_296_singular a    lemon:Form ;
+  lemon:writtenRep "instrument"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:instrument-of_296_plural a   lemon:Form ;
+  lemon:writtenRep "instruments"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:instrument-of_296_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-64-64-64-65-65-65-65-65-65-65-63-63-63-63-63-63-63-63-28_instrument-of_296 ;
+  lexinfo:prepositionalAdjunct :arg2-64-64-64-65-65-65-65-65-65-65-63-63-63-63-63-63-63-63-28_instrument-of_296 .
+
+:instrument-of_296_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :instrument-of_296_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/instrument> ;
+  lemon:subjOfProp          :arg2-64-64-64-65-65-65-65-65-65-65-63-63-63-63-63-63-63-63-28_instrument-of_296 ;
+  lemon:objOfProp           :arg1-64-64-64-65-65-65-65-65-65-65-63-63-63-63-63-63-63-63-28_instrument-of_296 ;
+  lemon:condition           :instrument-of_296_sense_1_condition .
+
+:instrument-of_296_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MusicalArtist> .
+
+:arg2-64-64-64-65-65-65-65-65-65-65-63-63-63-63-63-63-63-63-28_instrument-of_296 lemon:marker :instrument-of_296_form_preposition .
+## Prepositions ##
+:instrument-of_296_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

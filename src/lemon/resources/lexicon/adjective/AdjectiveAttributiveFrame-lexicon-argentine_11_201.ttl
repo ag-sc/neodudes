@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :argentine_11_201_sense_1_res ;
+  lemon:entry    :argentine_11_201 .
+
+:argentine_11_201 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :argentine_11_201_lemma ;
+  lemon:sense          :argentine_11_201_sense_1 ;
+  lemon:synBehavior    :argentine_11_201_attrFrame, :argentine_11_201_predFrame .
+
+:argentine_11_201_lemma lemon:writtenRep "Argentine"@en .
+
+:argentine_11_201_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :argentine_11_201_PredSynArg .
+
+:argentine_11_201_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :argentine_11_201_AttrSynArg .
+
+:argentine_11_201_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :argentine_11_201_sense_1_res ;
+  lemon:isA       :argentine_11_201_AttrSynArg, :argentine_11_201_PredSynArg .
+
+:argentine_11_201_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Argentina> .

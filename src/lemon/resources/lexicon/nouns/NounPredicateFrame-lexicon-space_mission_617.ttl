@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :space_mission_617_sense_1_res ;
+  lemon:entry    :space_mission_617 .
+
+:space_mission_617 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :space_mission_617_form ;
+  lemon:otherForm  :space_mission_617_singular ;
+  lemon:otherForm  :space_mission_617_plural ;
+  lemon:sense          :space_mission_617_sense_1 ;
+  lemon:synBehavior    :space_mission_617_predFrame .
+
+:space_mission_617_form
+ lemon:writtenRep "space mission"@en .
+
+:space_mission_617_singular a    lemon:Form ;
+  lemon:writtenRep "space mission"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:space_mission_617_plural a   lemon:Form ;
+  lemon:writtenRep "space missions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:space_mission_617_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :space_mission_617_sense_1_res ;
+  lemon:isA       :space_mission_617_PredSynArg .
+
+:space_mission_617_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SpaceMission> .

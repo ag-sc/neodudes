@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :indonesian_92_341_sense_1_res ;
+  lemon:entry    :indonesian_92_341 .
+
+:indonesian_92_341 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :indonesian_92_341_lemma ;
+  lemon:sense          :indonesian_92_341_sense_1 ;
+  lemon:synBehavior    :indonesian_92_341_attrFrame, :indonesian_92_341_predFrame .
+
+:indonesian_92_341_lemma lemon:writtenRep "Indonesian"@en .
+
+:indonesian_92_341_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :indonesian_92_341_PredSynArg .
+
+:indonesian_92_341_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :indonesian_92_341_AttrSynArg .
+
+:indonesian_92_341_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :indonesian_92_341_sense_1_res ;
+  lemon:isA       :indonesian_92_341_AttrSynArg, :indonesian_92_341_PredSynArg .
+
+:indonesian_92_341_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Indonesia> .

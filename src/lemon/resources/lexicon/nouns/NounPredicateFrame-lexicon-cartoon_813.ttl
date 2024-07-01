@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cartoon_813_sense_1_res ;
+  lemon:entry    :cartoon_813 .
+
+:cartoon_813 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cartoon_813_form ;
+  lemon:otherForm  :cartoon_813_singular ;
+  lemon:otherForm  :cartoon_813_plural ;
+  lemon:sense          :cartoon_813_sense_1 ;
+  lemon:synBehavior    :cartoon_813_predFrame .
+
+:cartoon_813_form
+ lemon:writtenRep "cartoon"@en .
+
+:cartoon_813_singular a    lemon:Form ;
+  lemon:writtenRep "cartoon"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cartoon_813_plural a   lemon:Form ;
+  lemon:writtenRep "cartoons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cartoon_813_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cartoon_813_sense_1_res ;
+  lemon:isA       :cartoon_813_PredSynArg .
+
+:cartoon_813_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Cartoon> .

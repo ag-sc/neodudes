@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :model_640_sense_1_res ;
+  lemon:entry    :model_640 .
+
+:model_640 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :model_640_form ;
+  lemon:otherForm  :model_640_singular ;
+  lemon:otherForm  :model_640_plural ;
+  lemon:sense          :model_640_sense_1 ;
+  lemon:synBehavior    :model_640_predFrame .
+
+:model_640_form
+ lemon:writtenRep "model"@en .
+
+:model_640_singular a    lemon:Form ;
+  lemon:writtenRep "model"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:model_640_plural a   lemon:Form ;
+  lemon:writtenRep "models"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:model_640_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :model_640_sense_1_res ;
+  lemon:isA       :model_640_PredSynArg .
+
+:model_640_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Model> .

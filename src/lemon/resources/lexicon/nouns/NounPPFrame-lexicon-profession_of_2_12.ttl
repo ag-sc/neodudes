@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :profession_of_2_12 ;
+  lemon:entry    :profession_of_2_12_form_preposition .
+
+:profession_of_2_12 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :profession_of_2_12_form ;
+  lemon:otherForm  :profession_of_2_12_singular ;
+  lemon:otherForm  :profession_of_2_12_plural ;
+  lemon:sense          :profession_of_2_12_sense_1 ;
+  lemon:synBehavior    :profession_of_2_12_nounpp .
+
+:profession_of_2_12_form a lemon:Form ;
+  lemon:writtenRep "profession"@en .
+
+:profession_of_2_12_singular a    lemon:Form ;
+  lemon:writtenRep "profession"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:profession_of_2_12_plural a   lemon:Form ;
+  lemon:writtenRep "professions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:profession_of_2_12_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-244-244-243_profession_of_2_12 ;
+  lexinfo:prepositionalAdjunct :arg2-244-244-243_profession_of_2_12 .
+
+:profession_of_2_12_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :profession_of_2_12_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/occupation> ;
+  lemon:subjOfProp          :arg2-244-244-243_profession_of_2_12 ;
+  lemon:objOfProp           :arg1-244-244-243_profession_of_2_12 ;
+  lemon:condition           :profession_of_2_12_sense_1_condition .
+
+:profession_of_2_12_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-244-244-243_profession_of_2_12 lemon:marker :profession_of_2_12_form_preposition .
+## Prepositions ##
+:profession_of_2_12_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

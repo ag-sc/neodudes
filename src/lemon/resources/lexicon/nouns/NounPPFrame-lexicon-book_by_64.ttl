@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :book_by_64 ;
+  lemon:entry    :book_by_64_form_preposition .
+
+:book_by_64 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :book_by_64_form ;
+  lemon:otherForm  :book_by_64_singular ;
+  lemon:otherForm  :book_by_64_plural ;
+  lemon:sense          :book_by_64_sense_1 ;
+  lemon:synBehavior    :book_by_64_nounpp .
+
+:book_by_64_form a lemon:Form ;
+  lemon:writtenRep "book"@en .
+
+:book_by_64_singular a    lemon:Form ;
+  lemon:writtenRep "book"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:book_by_64_plural a   lemon:Form ;
+  lemon:writtenRep "books"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:book_by_64_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-881-881-881-878-877-877-877-877-877-877-861-861-861-861-840-840-840-840-421-421-733_book_by_64 ;
+  lexinfo:prepositionalAdjunct :arg1-881-881-881-878-877-877-877-877-877-877-861-861-861-861-840-840-840-840-421-421-733_book_by_64 .
+
+:book_by_64_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :book_by_64_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg1-881-881-881-878-877-877-877-877-877-877-861-861-861-861-840-840-840-840-421-421-733_book_by_64 ;
+  lemon:objOfProp           :arg2-881-881-881-878-877-877-877-877-877-877-861-861-861-861-840-840-840-840-421-421-733_book_by_64 ;
+  lemon:condition           :book_by_64_sense_1_condition .
+
+:book_by_64_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Writer> .
+
+:arg1-881-881-881-878-877-877-877-877-877-877-861-861-861-861-840-840-840-840-421-421-733_book_by_64 lemon:marker :book_by_64_form_preposition .
+## Prepositions ##
+:book_by_64_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

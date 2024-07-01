@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :hungarian_85_301_sense_1_res ;
+  lemon:entry    :hungarian_85_301 .
+
+:hungarian_85_301 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :hungarian_85_301_lemma ;
+  lemon:sense          :hungarian_85_301_sense_1 ;
+  lemon:synBehavior    :hungarian_85_301_attrFrame, :hungarian_85_301_predFrame .
+
+:hungarian_85_301_lemma lemon:writtenRep "Hungarian"@en .
+
+:hungarian_85_301_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :hungarian_85_301_PredSynArg .
+
+:hungarian_85_301_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :hungarian_85_301_AttrSynArg .
+
+:hungarian_85_301_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :hungarian_85_301_sense_1_res ;
+  lemon:isA       :hungarian_85_301_AttrSynArg, :hungarian_85_301_PredSynArg .
+
+:hungarian_85_301_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Hungary> .

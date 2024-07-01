@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :speedway_league_381_sense_1_res ;
+  lemon:entry    :speedway_league_381 .
+
+:speedway_league_381 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :speedway_league_381_form ;
+  lemon:otherForm  :speedway_league_381_singular ;
+  lemon:otherForm  :speedway_league_381_plural ;
+  lemon:sense          :speedway_league_381_sense_1 ;
+  lemon:synBehavior    :speedway_league_381_predFrame .
+
+:speedway_league_381_form
+ lemon:writtenRep "speedway league"@en .
+
+:speedway_league_381_singular a    lemon:Form ;
+  lemon:writtenRep "speedway league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:speedway_league_381_plural a   lemon:Form ;
+  lemon:writtenRep "speedway leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:speedway_league_381_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :speedway_league_381_sense_1_res ;
+  lemon:isA       :speedway_league_381_PredSynArg .
+
+:speedway_league_381_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SpeedwayLeague> .

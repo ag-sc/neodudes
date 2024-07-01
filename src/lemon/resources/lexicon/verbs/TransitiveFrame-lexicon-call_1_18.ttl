@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_call_1_18 ;
+  lemon:entry    :call_1_18ed ;
+  lemon:entry    :form_call_1_18_preposition .
+
+:to_call_1_18 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_call_1_18 ;
+  lemon:otherForm      :form_call_1_18s ;
+  lemon:otherForm      :form_call_1_18ed ;
+  lemon:otherForm      :form_call_1_18perfect ;
+  lemon:sense          :call_1_18_sense_1 ;
+  lemon:synBehavior    :call_1_18_frame_transitive .
+
+:form_call_1_18 a         lemon:Form ;
+  lemon:writtenRep     "call"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_call_1_18s a    lemon:Form ;
+  lemon:writtenRep "calls"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_call_1_18ed a   lemon:Form ;
+  lemon:writtenRep "called"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_call_1_18perfect a   lemon:Form ;
+  lemon:writtenRep "called"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:call_1_18_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :call_1_18_obj ;
+  lexinfo:directObject     :call_1_18_subj .
+
+:call_1_18_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :call_1_18_sense_1 ;
+  lemon:reference   <http://dbpedia.org/property/shipNamesake> ;
+  lemon:subjOfProp  :call_1_18_obj ;
+  lemon:objOfProp   :call_1_18_subj ;
+  lemon:condition   :call_1_18_sense_1_condition .
+
+
+:call_1_18_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Ship> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:call_1_18_obj lemon:marker :form_call_1_18_preposition .
+
+## Prepositions ##
+:form_call_1_18_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

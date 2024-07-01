@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :residence_of_21 ;
+  lemon:entry    :residence_of_21_form_preposition .
+
+:residence_of_21 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :residence_of_21_form ;
+  lemon:otherForm  :residence_of_21_singular ;
+  lemon:otherForm  :residence_of_21_plural ;
+  lemon:sense          :residence_of_21_sense_1 ;
+  lemon:synBehavior    :residence_of_21_nounpp .
+
+:residence_of_21_form a lemon:Form ;
+  lemon:writtenRep "residence"@en .
+
+:residence_of_21_singular a    lemon:Form ;
+  lemon:writtenRep "residence"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:residence_of_21_plural a   lemon:Form ;
+  lemon:writtenRep "residences"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:residence_of_21_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-89-89-89-90-90-90-90-90-90-90-88-88-88-88-88-88-88-88-44-44-117_residence_of_21 ;
+  lexinfo:prepositionalAdjunct :arg2-89-89-89-90-90-90-90-90-90-90-88-88-88-88-88-88-88-88-44-44-117_residence_of_21 .
+
+:residence_of_21_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :residence_of_21_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/residence> ;
+  lemon:subjOfProp          :arg2-89-89-89-90-90-90-90-90-90-90-88-88-88-88-88-88-88-88-44-44-117_residence_of_21 ;
+  lemon:objOfProp           :arg1-89-89-89-90-90-90-90-90-90-90-88-88-88-88-88-88-88-88-44-44-117_residence_of_21 ;
+  lemon:condition           :residence_of_21_sense_1_condition .
+
+:residence_of_21_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-89-89-89-90-90-90-90-90-90-90-88-88-88-88-88-88-88-88-44-44-117_residence_of_21 lemon:marker :residence_of_21_form_preposition .
+## Prepositions ##
+:residence_of_21_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

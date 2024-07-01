@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :stand_for_2 ;
+  lemon:entry    :form_stand_for_2_preposition .
+
+:stand_for_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_stand_for_2 ;
+  lemon:otherForm      :form_stand_for_2_present3rd ;
+  lemon:otherForm      :form_stand_for_2_past ;
+  lemon:otherForm      :form_stand_for_2_perfect ;
+  lemon:sense          :stand_for_2_sense_1 ;
+  lemon:synBehavior    :stand_for_2_frame .
+
+:form_stand_for_2 a           lemon:Form ;
+  lemon:writtenRep     "stand"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_stand_for_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "stands"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_stand_for_2_past a lemon:Form ;
+  lemon:writtenRep  "stood"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_stand_for_2_perfect a   lemon:Form ;
+  lemon:writtenRep "stood"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:stand_for_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :stand_for_2_subj ;
+  lexinfo:prepositionalAdjunct :stand_for_2_obj .
+
+:stand_for_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :stand_for_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/abbreviation> ;
+  lemon:subjOfProp  :stand_for_2_subj ;
+  lemon:objOfProp   :stand_for_2_obj ;
+  lemon:condition   :stand_for_2_sense_1_condition .
+
+:stand_for_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#string> .
+
+
+:stand_for_2_obj lemon:marker :form_stand_for_2_preposition .
+
+## Prepositions ##
+:form_stand_for_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "for"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

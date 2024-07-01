@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :disease_360_sense_1_res ;
+  lemon:entry    :disease_360 .
+
+:disease_360 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :disease_360_form ;
+  lemon:otherForm  :disease_360_singular ;
+  lemon:otherForm  :disease_360_plural ;
+  lemon:sense          :disease_360_sense_1 ;
+  lemon:synBehavior    :disease_360_predFrame .
+
+:disease_360_form
+ lemon:writtenRep "disease"@en .
+
+:disease_360_singular a    lemon:Form ;
+  lemon:writtenRep "disease"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:disease_360_plural a   lemon:Form ;
+  lemon:writtenRep "diseases"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:disease_360_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :disease_360_sense_1_res ;
+  lemon:isA       :disease_360_PredSynArg .
+
+:disease_360_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Disease> .

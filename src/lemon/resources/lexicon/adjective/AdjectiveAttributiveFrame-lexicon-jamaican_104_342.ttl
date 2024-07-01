@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :jamaican_104_342_sense_1_res ;
+  lemon:entry    :jamaican_104_342 .
+
+:jamaican_104_342 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :jamaican_104_342_lemma ;
+  lemon:sense          :jamaican_104_342_sense_1 ;
+  lemon:synBehavior    :jamaican_104_342_attrFrame, :jamaican_104_342_predFrame .
+
+:jamaican_104_342_lemma lemon:writtenRep "Jamaican"@en .
+
+:jamaican_104_342_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :jamaican_104_342_PredSynArg .
+
+:jamaican_104_342_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :jamaican_104_342_AttrSynArg .
+
+:jamaican_104_342_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :jamaican_104_342_sense_1_res ;
+  lemon:isA       :jamaican_104_342_AttrSynArg, :jamaican_104_342_PredSynArg .
+
+:jamaican_104_342_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Jamaica> .

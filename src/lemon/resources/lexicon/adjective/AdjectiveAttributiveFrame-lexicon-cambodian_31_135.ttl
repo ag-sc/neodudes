@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cambodian_31_135_sense_1_res ;
+  lemon:entry    :cambodian_31_135 .
+
+:cambodian_31_135 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :cambodian_31_135_lemma ;
+  lemon:sense          :cambodian_31_135_sense_1 ;
+  lemon:synBehavior    :cambodian_31_135_attrFrame, :cambodian_31_135_predFrame .
+
+:cambodian_31_135_lemma lemon:writtenRep "Cambodian"@en .
+
+:cambodian_31_135_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :cambodian_31_135_PredSynArg .
+
+:cambodian_31_135_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :cambodian_31_135_AttrSynArg .
+
+:cambodian_31_135_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cambodian_31_135_sense_1_res ;
+  lemon:isA       :cambodian_31_135_AttrSynArg, :cambodian_31_135_PredSynArg .
+
+:cambodian_31_135_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Cambodia> .

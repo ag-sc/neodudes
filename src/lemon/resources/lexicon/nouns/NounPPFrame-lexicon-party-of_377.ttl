@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :party-of_377 ;
+  lemon:entry    :party-of_377_form_preposition .
+
+:party-of_377 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :party-of_377_form ;
+  lemon:otherForm  :party-of_377_singular ;
+  lemon:otherForm  :party-of_377_plural ;
+  lemon:sense          :party-of_377_sense_1 ;
+  lemon:synBehavior    :party-of_377_nounpp .
+
+:party-of_377_form a lemon:Form ;
+  lemon:writtenRep "party"@en .
+
+:party-of_377_singular a    lemon:Form ;
+  lemon:writtenRep "party"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:party-of_377_plural a   lemon:Form ;
+  lemon:writtenRep "parties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:party-of_377_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-690-690-690-688-687-687-687-687-687-687-673-673-673-673-660-660-660-660-317_party-of_377 ;
+  lexinfo:prepositionalAdjunct :arg2-690-690-690-688-687-687-687-687-687-687-673-673-673-673-660-660-660-660-317_party-of_377 .
+
+:party-of_377_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :party-of_377_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/party> ;
+  lemon:subjOfProp          :arg2-690-690-690-688-687-687-687-687-687-687-673-673-673-673-660-660-660-660-317_party-of_377 ;
+  lemon:objOfProp           :arg1-690-690-690-688-687-687-687-687-687-687-673-673-673-673-660-660-660-660-317_party-of_377 ;
+  lemon:condition           :party-of_377_sense_1_condition .
+
+:party-of_377_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-690-690-690-688-687-687-687-687-687-687-673-673-673-673-660-660-660-660-317_party-of_377 lemon:marker :party-of_377_form_preposition .
+## Prepositions ##
+:party-of_377_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

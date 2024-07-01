@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :government_agency_207_sense_1_res ;
+  lemon:entry    :government_agency_207 .
+
+:government_agency_207 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :government_agency_207_form ;
+  lemon:otherForm  :government_agency_207_singular ;
+  lemon:otherForm  :government_agency_207_plural ;
+  lemon:sense          :government_agency_207_sense_1 ;
+  lemon:synBehavior    :government_agency_207_predFrame .
+
+:government_agency_207_form
+ lemon:writtenRep "government agency"@en .
+
+:government_agency_207_singular a    lemon:Form ;
+  lemon:writtenRep "government agency"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:government_agency_207_plural a   lemon:Form ;
+  lemon:writtenRep "government agencies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:government_agency_207_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :government_agency_207_sense_1_res ;
+  lemon:isA       :government_agency_207_PredSynArg .
+
+:government_agency_207_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GovernmentAgency> .

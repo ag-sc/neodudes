@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :end_career_on ;
+  lemon:entry    :form_end_career_on_preposition .
+
+:end_career_on a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_end_career_on ;
+  lemon:otherForm      :form_end_career_on_present3rd ;
+  lemon:otherForm      :form_end_career_on_past ;
+  lemon:otherForm      :form_end_career_on_perfect ;
+  lemon:sense          :end_career_on_sense_1 ;
+  lemon:synBehavior    :end_career_on_frame .
+
+:form_end_career_on a           lemon:Form ;
+  lemon:writtenRep     "end his active career"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_end_career_on_present3rd a      lemon:Form ;
+  lemon:writtenRep "ends his active career"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_end_career_on_past a lemon:Form ;
+  lemon:writtenRep  "ended his active career"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_end_career_on_perfect a   lemon:Form ;
+  lemon:writtenRep "ended his active career"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:end_career_on_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :end_career_on_subj ;
+  lexinfo:prepositionalAdjunct :end_career_on_obj .
+
+:end_career_on_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :end_career_on_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/activeYearsEndDate> ;
+  lemon:subjOfProp  :end_career_on_subj ;
+  lemon:objOfProp   :end_career_on_obj ;
+  lemon:condition   :end_career_on_sense_1_condition .
+
+:end_career_on_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Athlete> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:end_career_on_obj lemon:marker :form_end_career_on_preposition .
+
+## Prepositions ##
+:form_end_career_on_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "on"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

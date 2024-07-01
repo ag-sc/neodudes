@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :oceanographer_176_sense_1_res ;
+  lemon:entry    :oceanographer_176 .
+
+:oceanographer_176 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :oceanographer_176_form ;
+  lemon:otherForm  :oceanographer_176_singular ;
+  lemon:otherForm  :oceanographer_176_plural ;
+  lemon:sense          :oceanographer_176_sense_1 ;
+  lemon:synBehavior    :oceanographer_176_predFrame .
+
+:oceanographer_176_form
+ lemon:writtenRep "oceanographer"@en .
+
+:oceanographer_176_singular a    lemon:Form ;
+  lemon:writtenRep "oceanographer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:oceanographer_176_plural a   lemon:Form ;
+  lemon:writtenRep "oceanographers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:oceanographer_176_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :oceanographer_176_sense_1_res ;
+  lemon:isA       :oceanographer_176_PredSynArg .
+
+:oceanographer_176_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/resource/Oceanography> .

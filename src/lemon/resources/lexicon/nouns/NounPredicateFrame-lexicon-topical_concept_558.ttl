@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :topical_concept_558_sense_1_res ;
+  lemon:entry    :topical_concept_558 .
+
+:topical_concept_558 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :topical_concept_558_form ;
+  lemon:otherForm  :topical_concept_558_singular ;
+  lemon:otherForm  :topical_concept_558_plural ;
+  lemon:sense          :topical_concept_558_sense_1 ;
+  lemon:synBehavior    :topical_concept_558_predFrame .
+
+:topical_concept_558_form
+ lemon:writtenRep "topical concept"@en .
+
+:topical_concept_558_singular a    lemon:Form ;
+  lemon:writtenRep "topical concept"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:topical_concept_558_plural a   lemon:Form ;
+  lemon:writtenRep "topical concepts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:topical_concept_558_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :topical_concept_558_sense_1_res ;
+  lemon:isA       :topical_concept_558_PredSynArg .
+
+:topical_concept_558_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/TopicalConcept> .

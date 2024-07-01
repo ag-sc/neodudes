@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :historic_building_518_sense_1_res ;
+  lemon:entry    :historic_building_518 .
+
+:historic_building_518 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :historic_building_518_form ;
+  lemon:otherForm  :historic_building_518_singular ;
+  lemon:otherForm  :historic_building_518_plural ;
+  lemon:sense          :historic_building_518_sense_1 ;
+  lemon:synBehavior    :historic_building_518_predFrame .
+
+:historic_building_518_form
+ lemon:writtenRep "historic building"@en .
+
+:historic_building_518_singular a    lemon:Form ;
+  lemon:writtenRep "historic building"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:historic_building_518_plural a   lemon:Form ;
+  lemon:writtenRep "historic buildings"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:historic_building_518_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :historic_building_518_sense_1_res ;
+  lemon:isA       :historic_building_518_PredSynArg .
+
+:historic_building_518_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/HistoricBuilding> .

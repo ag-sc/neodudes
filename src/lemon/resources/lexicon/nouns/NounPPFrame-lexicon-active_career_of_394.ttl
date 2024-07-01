@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :active_career_of_394 ;
+  lemon:entry    :active_career_of_394_form_preposition .
+
+:active_career_of_394 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :active_career_of_394_form ;
+  lemon:otherForm  :active_career_of_394_singular ;
+  lemon:otherForm  :active_career_of_394_plural ;
+  lemon:sense          :active_career_of_394_sense_1 ;
+  lemon:synBehavior    :active_career_of_394_nounpp .
+
+:active_career_of_394_form a lemon:Form ;
+  lemon:writtenRep "active career"@en .
+
+:active_career_of_394_singular a    lemon:Form ;
+  lemon:writtenRep "active career"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:active_career_of_394_plural a   lemon:Form ;
+  lemon:writtenRep "active careers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:active_career_of_394_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-769-769-769-767-766-766-766-766-766-766-751-751-751-751-736-736-736-736-364_active_career_of_394 ;
+  lexinfo:prepositionalAdjunct :arg2-769-769-769-767-766-766-766-766-766-766-751-751-751-751-736-736-736-736-364_active_career_of_394 .
+
+:active_career_of_394_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :active_career_of_394_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/activeYearsEndDate> ;
+  lemon:subjOfProp          :arg2-769-769-769-767-766-766-766-766-766-766-751-751-751-751-736-736-736-736-364_active_career_of_394 ;
+  lemon:objOfProp           :arg1-769-769-769-767-766-766-766-766-766-766-751-751-751-751-736-736-736-736-364_active_career_of_394 ;
+  lemon:condition           :active_career_of_394_sense_1_condition .
+
+:active_career_of_394_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-769-769-769-767-766-766-766-766-766-766-751-751-751-751-736-736-736-736-364_active_career_of_394 lemon:marker :active_career_of_394_form_preposition .
+## Prepositions ##
+:active_career_of_394_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

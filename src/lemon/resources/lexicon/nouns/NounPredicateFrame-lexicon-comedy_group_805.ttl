@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :comedy_group_805_sense_1_res ;
+  lemon:entry    :comedy_group_805 .
+
+:comedy_group_805 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :comedy_group_805_form ;
+  lemon:otherForm  :comedy_group_805_singular ;
+  lemon:otherForm  :comedy_group_805_plural ;
+  lemon:sense          :comedy_group_805_sense_1 ;
+  lemon:synBehavior    :comedy_group_805_predFrame .
+
+:comedy_group_805_form
+ lemon:writtenRep "comedy group"@en .
+
+:comedy_group_805_singular a    lemon:Form ;
+  lemon:writtenRep "comedy group"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:comedy_group_805_plural a   lemon:Form ;
+  lemon:writtenRep "comedy groups"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:comedy_group_805_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :comedy_group_805_sense_1_res ;
+  lemon:isA       :comedy_group_805_PredSynArg .
+
+:comedy_group_805_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ComedyGroup> .

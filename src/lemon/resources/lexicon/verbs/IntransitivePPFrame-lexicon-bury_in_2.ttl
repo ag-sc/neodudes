@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bury_in_2 ;
+  lemon:entry    :form_bury_in_2_preposition .
+
+:bury_in_2 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_bury_in_2 ;
+  lemon:otherForm      :form_bury_in_2_present3rd ;
+  lemon:otherForm      :form_bury_in_2_past ;
+  lemon:otherForm      :form_bury_in_2_perfect ;
+  lemon:sense          :bury_in_2_sense_1 ;
+  lemon:synBehavior    :bury_in_2_frame .
+
+:form_bury_in_2 a           lemon:Form ;
+  lemon:writtenRep     "bury"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_bury_in_2_present3rd a      lemon:Form ;
+  lemon:writtenRep "buries"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_bury_in_2_past a lemon:Form ;
+  lemon:writtenRep  "buried"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_bury_in_2_perfect a   lemon:Form ;
+  lemon:writtenRep "buried"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:bury_in_2_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :bury_in_2_subj ;
+  lexinfo:prepositionalAdjunct :bury_in_2_obj .
+
+:bury_in_2_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :bury_in_2_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/burialPlace> ;
+  lemon:subjOfProp  :bury_in_2_subj ;
+  lemon:objOfProp   :bury_in_2_obj ;
+  lemon:condition   :bury_in_2_sense_1_condition .
+
+:bury_in_2_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/City> .
+
+
+:bury_in_2_obj lemon:marker :form_bury_in_2_preposition .
+
+## Prepositions ##
+:form_bury_in_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

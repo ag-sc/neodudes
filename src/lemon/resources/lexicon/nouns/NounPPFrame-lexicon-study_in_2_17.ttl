@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :study_in_2_17 ;
+  lemon:entry    :study_in_2_17_form_preposition .
+
+:study_in_2_17 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :study_in_2_17_form ;
+  lemon:otherForm  :study_in_2_17_singular ;
+  lemon:otherForm  :study_in_2_17_plural ;
+  lemon:sense          :study_in_2_17_sense_1 ;
+  lemon:synBehavior    :study_in_2_17_nounpp .
+
+:study_in_2_17_form a lemon:Form ;
+  lemon:writtenRep "study"@en .
+
+:study_in_2_17_singular a    lemon:Form ;
+  lemon:writtenRep "study"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:study_in_2_17_plural a   lemon:Form ;
+  lemon:writtenRep "studies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:study_in_2_17_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1264-1264-1264-1259-1261-1261-1261-1261-1261-1261-1240-1240-1240-1240-1213-1213-1213-1213-601-601-696_study_in_2_17 ;
+  lexinfo:prepositionalAdjunct :arg2-1264-1264-1264-1259-1261-1261-1261-1261-1261-1261-1240-1240-1240-1240-1213-1213-1213-1213-601-601-696_study_in_2_17 .
+
+:study_in_2_17_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :study_in_2_17_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/almaMater> ;
+  lemon:subjOfProp          :arg2-1264-1264-1264-1259-1261-1261-1261-1261-1261-1261-1240-1240-1240-1240-1213-1213-1213-1213-601-601-696_study_in_2_17 ;
+  lemon:objOfProp           :arg1-1264-1264-1264-1259-1261-1261-1261-1261-1261-1261-1240-1240-1240-1240-1213-1213-1213-1213-601-601-696_study_in_2_17 ;
+  lemon:condition           :study_in_2_17_sense_1_condition .
+
+:study_in_2_17_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-1264-1264-1264-1259-1261-1261-1261-1261-1261-1261-1240-1240-1240-1240-1213-1213-1213-1213-601-601-696_study_in_2_17 lemon:marker :study_in_2_17_form_preposition .
+## Prepositions ##
+:study_in_2_17_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

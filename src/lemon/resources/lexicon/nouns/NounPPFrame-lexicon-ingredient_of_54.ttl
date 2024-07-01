@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ingredient_of_54 ;
+  lemon:entry    :ingredient_of_54_form_preposition .
+
+:ingredient_of_54 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ingredient_of_54_form ;
+  lemon:otherForm  :ingredient_of_54_singular ;
+  lemon:otherForm  :ingredient_of_54_plural ;
+  lemon:sense          :ingredient_of_54_sense_1 ;
+  lemon:synBehavior    :ingredient_of_54_nounpp .
+
+:ingredient_of_54_form a lemon:Form ;
+  lemon:writtenRep "ingredient"@en .
+
+:ingredient_of_54_singular a    lemon:Form ;
+  lemon:writtenRep "ingredient"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ingredient_of_54_plural a   lemon:Form ;
+  lemon:writtenRep "ingredients"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ingredient_of_54_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-342-342-341-341-340-340-340-340-340-340-333-333-333-333-328-328-328-328-160-160-15_ingredient_of_54 ;
+  lexinfo:prepositionalAdjunct :arg2-342-342-341-341-340-340-340-340-340-340-333-333-333-333-328-328-328-328-160-160-15_ingredient_of_54 .
+
+:ingredient_of_54_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :ingredient_of_54_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/ingredient> ;
+  lemon:subjOfProp          :arg2-342-342-341-341-340-340-340-340-340-340-333-333-333-333-328-328-328-328-160-160-15_ingredient_of_54 ;
+  lemon:objOfProp           :arg1-342-342-341-341-340-340-340-340-340-340-333-333-333-333-328-328-328-328-160-160-15_ingredient_of_54 ;
+  lemon:condition           :ingredient_of_54_sense_1_condition .
+
+:ingredient_of_54_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Food> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:arg2-342-342-341-341-340-340-340-340-340-340-333-333-333-333-328-328-328-328-160-160-15_ingredient_of_54 lemon:marker :ingredient_of_54_form_preposition .
+## Prepositions ##
+:ingredient_of_54_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

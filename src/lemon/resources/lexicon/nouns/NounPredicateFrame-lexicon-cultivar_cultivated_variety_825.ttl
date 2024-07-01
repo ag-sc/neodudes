@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cultivar_cultivated_variety_825_sense_1_res ;
+  lemon:entry    :cultivar_cultivated_variety_825 .
+
+:cultivar_cultivated_variety_825 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cultivar_cultivated_variety_825_form ;
+  lemon:otherForm  :cultivar_cultivated_variety_825_singular ;
+  lemon:otherForm  :cultivar_cultivated_variety_825_plural ;
+  lemon:sense          :cultivar_cultivated_variety_825_sense_1 ;
+  lemon:synBehavior    :cultivar_cultivated_variety_825_predFrame .
+
+:cultivar_cultivated_variety_825_form
+ lemon:writtenRep "cultivar"@en .
+
+:cultivar_cultivated_variety_825_singular a    lemon:Form ;
+  lemon:writtenRep "cultivar"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cultivar_cultivated_variety_825_plural a   lemon:Form ;
+  lemon:writtenRep "cultivars"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cultivar_cultivated_variety_825_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cultivar_cultivated_variety_825_sense_1_res ;
+  lemon:isA       :cultivar_cultivated_variety_825_PredSynArg .
+
+:cultivar_cultivated_variety_825_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/CultivatedVariety> .

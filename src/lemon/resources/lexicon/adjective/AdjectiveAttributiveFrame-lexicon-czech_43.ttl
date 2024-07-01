@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :czech_43_sense_1_res ;
+  lemon:entry    :czech_43 .
+
+:czech_43 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :czech_43_lemma ;
+  lemon:sense          :czech_43_sense_1 ;
+  lemon:synBehavior    :czech_43_attrFrame, :czech_43_predFrame .
+
+:czech_43_lemma lemon:writtenRep "czech"@en .
+
+:czech_43_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :czech_43_PredSynArg .
+
+:czech_43_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :czech_43_AttrSynArg .
+
+:czech_43_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :czech_43_sense_1_res ;
+  lemon:isA       :czech_43_AttrSynArg, :czech_43_PredSynArg .
+
+:czech_43_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Czech_Republic> .

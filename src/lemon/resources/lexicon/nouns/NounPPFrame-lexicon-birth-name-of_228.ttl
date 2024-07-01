@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :birth-name-of_228 ;
+  lemon:entry    :birth-name-of_228_form_preposition .
+
+:birth-name-of_228 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :birth-name-of_228_form ;
+  lemon:otherForm  :birth-name-of_228_singular ;
+  lemon:otherForm  :birth-name-of_228_plural ;
+  lemon:sense          :birth-name-of_228_sense_1 ;
+  lemon:synBehavior    :birth-name-of_228_nounpp .
+
+:birth-name-of_228_form a lemon:Form ;
+  lemon:writtenRep "birth name"@en .
+
+:birth-name-of_228_singular a    lemon:Form ;
+  lemon:writtenRep "birth name"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:birth-name-of_228_plural a   lemon:Form ;
+  lemon:writtenRep "birth names"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:birth-name-of_228_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-350-350-349-349-348-348-348-348-348-348-341-341-341-341-336-336-336-336-166-166-118_birth-name-of_228 ;
+  lexinfo:prepositionalAdjunct :arg2-350-350-349-349-348-348-348-348-348-348-341-341-341-341-336-336-336-336-166-166-118_birth-name-of_228 .
+
+:birth-name-of_228_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :birth-name-of_228_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/birthName> ;
+  lemon:subjOfProp          :arg2-350-350-349-349-348-348-348-348-348-348-341-341-341-341-336-336-336-336-166-166-118_birth-name-of_228 ;
+  lemon:objOfProp           :arg1-350-350-349-349-348-348-348-348-348-348-341-341-341-341-336-336-336-336-166-166-118_birth-name-of_228 ;
+  lemon:condition           :birth-name-of_228_sense_1_condition .
+
+:birth-name-of_228_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-350-350-349-349-348-348-348-348-348-348-341-341-341-341-336-336-336-336-166-166-118_birth-name-of_228 lemon:marker :birth-name-of_228_form_preposition .
+## Prepositions ##
+:birth-name-of_228_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :discontinue_on_1 ;
+  lemon:entry    :form_discontinue_on_1_preposition .
+
+:discontinue_on_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_discontinue_on_1 ;
+  lemon:otherForm      :form_discontinue_on_1_present3rd ;
+  lemon:otherForm      :form_discontinue_on_1_past ;
+  lemon:otherForm      :form_discontinue_on_1_perfect ;
+  lemon:sense          :discontinue_on_1_sense_1 ;
+  lemon:synBehavior    :discontinue_on_1_frame .
+
+:form_discontinue_on_1 a           lemon:Form ;
+  lemon:writtenRep     "discontinue"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_discontinue_on_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "discontinues"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_discontinue_on_1_past a lemon:Form ;
+  lemon:writtenRep  "discontinued"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_discontinue_on_1_perfect a   lemon:Form ;
+  lemon:writtenRep "discontinued"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:discontinue_on_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :discontinue_on_1_subj ;
+  lexinfo:prepositionalAdjunct :discontinue_on_1_obj .
+
+:discontinue_on_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :discontinue_on_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/discontinued> ;
+  lemon:subjOfProp  :discontinue_on_1_subj ;
+  lemon:objOfProp   :discontinue_on_1_obj ;
+  lemon:condition   :discontinue_on_1_sense_1_condition .
+
+:discontinue_on_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Beverage> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:discontinue_on_1_obj lemon:marker :form_discontinue_on_1_preposition .
+
+## Prepositions ##
+:form_discontinue_on_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "on"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

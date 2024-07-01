@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :afghan_224_sense_1_res ;
+  lemon:entry    :afghan_224 .
+
+:afghan_224 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :afghan_224_lemma ;
+  lemon:sense          :afghan_224_sense_1 ;
+  lemon:synBehavior    :afghan_224_attrFrame, :afghan_224_predFrame .
+
+:afghan_224_lemma lemon:writtenRep "afghan"@en .
+
+:afghan_224_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :afghan_224_PredSynArg .
+
+:afghan_224_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :afghan_224_AttrSynArg .
+
+:afghan_224_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :afghan_224_sense_1_res ;
+  lemon:isA       :afghan_224_AttrSynArg, :afghan_224_PredSynArg .
+
+:afghan_224_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Afghanistan> .

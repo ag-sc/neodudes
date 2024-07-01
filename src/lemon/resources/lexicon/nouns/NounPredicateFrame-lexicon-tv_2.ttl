@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tv_2_sense_1_res ;
+  lemon:entry    :tv_2 .
+
+:tv_2 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :tv_2_form ;
+  lemon:otherForm  :tv_2_singular ;
+  lemon:otherForm  :tv_2_plural ;
+  lemon:sense          :tv_2_sense_1 ;
+  lemon:synBehavior    :tv_2_predFrame .
+
+:tv_2_form
+ lemon:writtenRep "television show"@en .
+
+:tv_2_singular a    lemon:Form ;
+  lemon:writtenRep "television show"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:tv_2_plural a   lemon:Form ;
+  lemon:writtenRep "television shows"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:tv_2_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tv_2_sense_1_res ;
+  lemon:isA       :tv_2_PredSynArg .
+
+:tv_2_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/TelevisionShow> .

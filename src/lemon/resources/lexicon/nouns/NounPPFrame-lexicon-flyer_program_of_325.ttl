@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :flyer_program_of_325 ;
+  lemon:entry    :flyer_program_of_325_form_preposition .
+
+:flyer_program_of_325 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :flyer_program_of_325_form ;
+  lemon:otherForm  :flyer_program_of_325_singular ;
+  lemon:otherForm  :flyer_program_of_325_plural ;
+  lemon:sense          :flyer_program_of_325_sense_1 ;
+  lemon:synBehavior    :flyer_program_of_325_nounpp .
+
+:flyer_program_of_325_form a lemon:Form ;
+  lemon:writtenRep "flyer program"@en .
+
+:flyer_program_of_325_singular a    lemon:Form ;
+  lemon:writtenRep "flyer program"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:flyer_program_of_325_plural a   lemon:Form ;
+  lemon:writtenRep "flyer program of"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:flyer_program_of_325_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1175-1175-1175-1171-1172-1172-1172-1172-1172-1172-1153-1153-1153-1153-1127-1127-1127-1127-560_flyer_program_of_325 ;
+  lexinfo:prepositionalAdjunct :arg2-1175-1175-1175-1171-1172-1172-1172-1172-1172-1172-1153-1153-1153-1153-1127-1127-1127-1127-560_flyer_program_of_325 .
+
+:flyer_program_of_325_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :flyer_program_of_325_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/frequentFlyer> ;
+  lemon:subjOfProp          :arg2-1175-1175-1175-1171-1172-1172-1172-1172-1172-1172-1153-1153-1153-1153-1127-1127-1127-1127-560_flyer_program_of_325 ;
+  lemon:objOfProp           :arg1-1175-1175-1175-1171-1172-1172-1172-1172-1172-1172-1153-1153-1153-1153-1127-1127-1127-1127-560_flyer_program_of_325 ;
+  lemon:condition           :flyer_program_of_325_sense_1_condition .
+
+:flyer_program_of_325_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1175-1175-1175-1171-1172-1172-1172-1172-1172-1172-1153-1153-1153-1153-1127-1127-1127-1127-560_flyer_program_of_325 lemon:marker :flyer_program_of_325_form_preposition .
+## Prepositions ##
+:flyer_program_of_325_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

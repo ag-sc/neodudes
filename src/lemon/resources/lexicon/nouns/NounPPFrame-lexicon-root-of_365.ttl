@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :root-of_365 ;
+  lemon:entry    :root-of_365_form_preposition .
+
+:root-of_365 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :root-of_365_form ;
+  lemon:otherForm  :root-of_365_singular ;
+  lemon:otherForm  :root-of_365_plural ;
+  lemon:sense          :root-of_365_sense_1 ;
+  lemon:synBehavior    :root-of_365_nounpp .
+
+:root-of_365_form a lemon:Form ;
+  lemon:writtenRep "root"@en .
+
+:root-of_365_singular a    lemon:Form ;
+  lemon:writtenRep "root"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:root-of_365_plural a   lemon:Form ;
+  lemon:writtenRep "roots"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:root-of_365_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-167-167-167-168-168-168-168-168-168-168-165-165-165-165-161-161-161-161-86_root-of_365 ;
+  lexinfo:prepositionalAdjunct :arg2-167-167-167-168-168-168-168-168-168-168-165-165-165-165-161-161-161-161-86_root-of_365 .
+
+:root-of_365_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :root-of_365_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/languageFamily> ;
+  lemon:subjOfProp          :arg2-167-167-167-168-168-168-168-168-168-168-165-165-165-165-161-161-161-161-86_root-of_365 ;
+  lemon:objOfProp           :arg1-167-167-167-168-168-168-168-168-168-168-165-165-165-165-161-161-161-161-86_root-of_365 ;
+  lemon:condition           :root-of_365_sense_1_condition .
+
+:root-of_365_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Language> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2-167-167-167-168-168-168-168-168-168-168-165-165-165-165-161-161-161-161-86_root-of_365 lemon:marker :root-of_365_form_preposition .
+## Prepositions ##
+:root-of_365_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

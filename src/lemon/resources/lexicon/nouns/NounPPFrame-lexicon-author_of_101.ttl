@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :author_of_101 ;
+  lemon:entry    :author_of_101_form_preposition .
+
+:author_of_101 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :author_of_101_form ;
+  lemon:otherForm  :author_of_101_singular ;
+  lemon:otherForm  :author_of_101_plural ;
+  lemon:sense          :author_of_101_sense_1 ;
+  lemon:synBehavior    :author_of_101_nounpp .
+
+:author_of_101_form a lemon:Form ;
+  lemon:writtenRep "author"@en .
+
+:author_of_101_singular a    lemon:Form ;
+  lemon:writtenRep "author"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:author_of_101_plural a   lemon:Form ;
+  lemon:writtenRep "authors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:author_of_101_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1451-1451-1451-1446-1448-1448-1448-1448-1448-1448-1425-1425-1425-1425-1396-1396-1396-1396-683-683-247_author_of_101 ;
+  lexinfo:prepositionalAdjunct :arg2-1451-1451-1451-1446-1448-1448-1448-1448-1448-1448-1425-1425-1425-1425-1396-1396-1396-1396-683-683-247_author_of_101 .
+
+:author_of_101_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :author_of_101_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg2-1451-1451-1451-1446-1448-1448-1448-1448-1448-1448-1425-1425-1425-1425-1396-1396-1396-1396-683-683-247_author_of_101 ;
+  lemon:objOfProp           :arg1-1451-1451-1451-1446-1448-1448-1448-1448-1448-1448-1425-1425-1425-1425-1396-1396-1396-1396-683-683-247_author_of_101 ;
+  lemon:condition           :author_of_101_sense_1_condition .
+
+:author_of_101_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1451-1451-1451-1446-1448-1448-1448-1448-1448-1448-1425-1425-1425-1425-1396-1396-1396-1396-683-683-247_author_of_101 lemon:marker :author_of_101_form_preposition .
+## Prepositions ##
+:author_of_101_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :loyalty_400 ;
+  lemon:entry    :loyalty_400_form_preposition .
+
+:loyalty_400 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :loyalty_400_form ;
+  lemon:otherForm  :loyalty_400_singular ;
+  lemon:otherForm  :loyalty_400_plural ;
+  lemon:sense          :loyalty_400_sense_1 ;
+  lemon:synBehavior    :loyalty_400_nounpp .
+
+:loyalty_400_form a lemon:Form ;
+  lemon:writtenRep "loyalty"@en .
+
+:loyalty_400_singular a    lemon:Form ;
+  lemon:writtenRep "loyalty"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:loyalty_400_plural a   lemon:Form ;
+  lemon:writtenRep "loyalties"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:loyalty_400_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-323-323-322-322-321-321-321-321-321-321-314-314-314-314-309-309-309-309-156_loyalty_400 ;
+  lexinfo:prepositionalAdjunct :arg2-323-323-322-322-321-321-321-321-321-321-314-314-314-314-309-309-309-309-156_loyalty_400 .
+
+:loyalty_400_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :loyalty_400_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/connotation> ;
+  lemon:subjOfProp          :arg2-323-323-322-322-321-321-321-321-321-321-314-314-314-314-309-309-309-309-156_loyalty_400 ;
+  lemon:objOfProp           :arg1-323-323-322-322-321-321-321-321-321-321-314-314-314-314-309-309-309-309-156_loyalty_400 ;
+  lemon:condition           :loyalty_400_sense_1_condition .
+
+:loyalty_400_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Loyalty> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Color> .
+
+:arg2-323-323-322-322-321-321-321-321-321-321-314-314-314-314-309-309-309-309-156_loyalty_400 lemon:marker :loyalty_400_form_preposition .
+## Prepositions ##
+:loyalty_400_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep ""@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

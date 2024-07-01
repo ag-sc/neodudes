@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :famous_battle_in_291 ;
+  lemon:entry    :famous_battle_in_291_form_preposition .
+
+:famous_battle_in_291 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :famous_battle_in_291_form ;
+  lemon:otherForm  :famous_battle_in_291_singular ;
+  lemon:otherForm  :famous_battle_in_291_plural ;
+  lemon:sense          :famous_battle_in_291_sense_1 ;
+  lemon:synBehavior    :famous_battle_in_291_nounpp .
+
+:famous_battle_in_291_form a lemon:Form ;
+  lemon:writtenRep "famous battle"@en .
+
+:famous_battle_in_291_singular a    lemon:Form ;
+  lemon:writtenRep "famous battle"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:famous_battle_in_291_plural a   lemon:Form ;
+  lemon:writtenRep "famous battles"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:famous_battle_in_291_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-912-912-912-909-908-908-908-908-908-908-890-890-890-890-868-868-868-868-433_famous_battle_in_291 ;
+  lexinfo:prepositionalAdjunct :arg2-912-912-912-909-908-908-908-908-908-908-890-890-890-890-868-868-868-868-433_famous_battle_in_291 .
+
+:famous_battle_in_291_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :famous_battle_in_291_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/place> ;
+  lemon:subjOfProp          :arg2-912-912-912-909-908-908-908-908-908-908-890-890-890-890-868-868-868-868-433_famous_battle_in_291 ;
+  lemon:objOfProp           :arg1-912-912-912-909-908-908-908-908-908-908-890-890-890-890-868-868-868-868-433_famous_battle_in_291 ;
+  lemon:condition           :famous_battle_in_291_sense_1_condition .
+
+:famous_battle_in_291_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-912-912-912-909-908-908-908-908-908-908-890-890-890-890-868-868-868-868-433_famous_battle_in_291 lemon:marker :famous_battle_in_291_form_preposition .
+## Prepositions ##
+:famous_battle_in_291_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

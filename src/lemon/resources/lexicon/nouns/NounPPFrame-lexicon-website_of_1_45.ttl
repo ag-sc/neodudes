@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :website_of_1_45 ;
+  lemon:entry    :website_of_1_45_form_preposition .
+
+:website_of_1_45 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :website_of_1_45_form ;
+  lemon:otherForm  :website_of_1_45_singular ;
+  lemon:otherForm  :website_of_1_45_plural ;
+  lemon:sense          :website_of_1_45_sense_1 ;
+  lemon:synBehavior    :website_of_1_45_nounpp .
+
+:website_of_1_45_form a lemon:Form ;
+  lemon:writtenRep "website"@en .
+
+:website_of_1_45_singular a    lemon:Form ;
+  lemon:writtenRep "website"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:website_of_1_45_plural a   lemon:Form ;
+  lemon:writtenRep "websites"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:website_of_1_45_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-470-470-469-469-468-468-468-468-468-468-460-460-460-460-450-450-450-450-229-229-567_website_of_1_45 ;
+  lexinfo:prepositionalAdjunct :arg2-470-470-469-469-468-468-468-468-468-468-460-460-460-460-450-450-450-450-229-229-567_website_of_1_45 .
+
+:website_of_1_45_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :website_of_1_45_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/website> ;
+  lemon:subjOfProp          :arg2-470-470-469-469-468-468-468-468-468-468-460-460-460-460-450-450-450-450-229-229-567_website_of_1_45 ;
+  lemon:objOfProp           :arg1-470-470-469-469-468-468-468-468-468-468-460-460-460-460-450-450-450-450-229-229-567_website_of_1_45 ;
+  lemon:condition           :website_of_1_45_sense_1_condition .
+
+:website_of_1_45_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-470-470-469-469-468-468-468-468-468-468-460-460-460-460-450-450-450-450-229-229-567_website_of_1_45 lemon:marker :website_of_1_45_form_preposition .
+## Prepositions ##
+:website_of_1_45_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

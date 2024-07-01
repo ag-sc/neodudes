@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :fijian_68_340_sense_1_res ;
+  lemon:entry    :fijian_68_340 .
+
+:fijian_68_340 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :fijian_68_340_lemma ;
+  lemon:sense          :fijian_68_340_sense_1 ;
+  lemon:synBehavior    :fijian_68_340_attrFrame, :fijian_68_340_predFrame .
+
+:fijian_68_340_lemma lemon:writtenRep "Fijian"@en .
+
+:fijian_68_340_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :fijian_68_340_PredSynArg .
+
+:fijian_68_340_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :fijian_68_340_AttrSynArg .
+
+:fijian_68_340_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :fijian_68_340_sense_1_res ;
+  lemon:isA       :fijian_68_340_AttrSynArg, :fijian_68_340_PredSynArg .
+
+:fijian_68_340_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Fiji> .

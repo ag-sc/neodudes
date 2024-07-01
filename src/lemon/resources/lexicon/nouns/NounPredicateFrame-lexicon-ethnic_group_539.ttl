@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ethnic_group_539_sense_1_res ;
+  lemon:entry    :ethnic_group_539 .
+
+:ethnic_group_539 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ethnic_group_539_form ;
+  lemon:otherForm  :ethnic_group_539_singular ;
+  lemon:otherForm  :ethnic_group_539_plural ;
+  lemon:sense          :ethnic_group_539_sense_1 ;
+  lemon:synBehavior    :ethnic_group_539_predFrame .
+
+:ethnic_group_539_form
+ lemon:writtenRep "ethnic group"@en .
+
+:ethnic_group_539_singular a    lemon:Form ;
+  lemon:writtenRep "ethnic group"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ethnic_group_539_plural a   lemon:Form ;
+  lemon:writtenRep "ethnic groups"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ethnic_group_539_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :ethnic_group_539_sense_1_res ;
+  lemon:isA       :ethnic_group_539_PredSynArg .
+
+:ethnic_group_539_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/EthnicGroup> .

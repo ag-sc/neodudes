@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :batswana_25_130_sense_1_res ;
+  lemon:entry    :batswana_25_130 .
+
+:batswana_25_130 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :batswana_25_130_lemma ;
+  lemon:sense          :batswana_25_130_sense_1 ;
+  lemon:synBehavior    :batswana_25_130_attrFrame, :batswana_25_130_predFrame .
+
+:batswana_25_130_lemma lemon:writtenRep "Batswana"@en .
+
+:batswana_25_130_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :batswana_25_130_PredSynArg .
+
+:batswana_25_130_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :batswana_25_130_AttrSynArg .
+
+:batswana_25_130_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :batswana_25_130_sense_1_res ;
+  lemon:isA       :batswana_25_130_AttrSynArg, :batswana_25_130_PredSynArg .
+
+:batswana_25_130_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Botswana> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :atmosphere_of_7 ;
+  lemon:entry    :atmosphere_of_7_form_preposition .
+
+:atmosphere_of_7 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :atmosphere_of_7_form ;
+  lemon:otherForm  :atmosphere_of_7_singular ;
+  lemon:otherForm  :atmosphere_of_7_plural ;
+  lemon:sense          :atmosphere_of_7_sense_1 ;
+  lemon:synBehavior    :atmosphere_of_7_nounpp .
+
+:atmosphere_of_7_form a lemon:Form ;
+  lemon:writtenRep "atmosphere"@en .
+
+:atmosphere_of_7_singular a    lemon:Form ;
+  lemon:writtenRep "atmosphere"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:atmosphere_of_7_plural a   lemon:Form ;
+  lemon:writtenRep "atmospheres"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:atmosphere_of_7_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-853-853-853_atmosphere_of_7 ;
+  lexinfo:prepositionalAdjunct :arg2-853-853-853_atmosphere_of_7 .
+
+:atmosphere_of_7_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :atmosphere_of_7_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/atmosphereComposition> ;
+  lemon:subjOfProp          :arg2-853-853-853_atmosphere_of_7 ;
+  lemon:objOfProp           :arg1-853-853-853_atmosphere_of_7 ;
+  lemon:condition           :atmosphere_of_7_sense_1_condition .
+
+:atmosphere_of_7_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/CelestialBody> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/SoccerClub> .
+
+:arg2-853-853-853_atmosphere_of_7 lemon:marker :atmosphere_of_7_form_preposition .
+## Prepositions ##
+:atmosphere_of_7_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

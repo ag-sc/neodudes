@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :estonian_64_165_sense_1_res ;
+  lemon:entry    :estonian_64_165 .
+
+:estonian_64_165 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :estonian_64_165_lemma ;
+  lemon:sense          :estonian_64_165_sense_1 ;
+  lemon:synBehavior    :estonian_64_165_attrFrame, :estonian_64_165_predFrame .
+
+:estonian_64_165_lemma lemon:writtenRep "Estonian"@en .
+
+:estonian_64_165_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :estonian_64_165_PredSynArg .
+
+:estonian_64_165_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :estonian_64_165_AttrSynArg .
+
+:estonian_64_165_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :estonian_64_165_sense_1_res ;
+  lemon:isA       :estonian_64_165_AttrSynArg, :estonian_64_165_PredSynArg .
+
+:estonian_64_165_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Estonia> .

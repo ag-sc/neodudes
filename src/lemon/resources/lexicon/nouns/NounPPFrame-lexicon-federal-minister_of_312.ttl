@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :federal-minister_of_312 ;
+  lemon:entry    :federal-minister_of_312_form_preposition .
+
+:federal-minister_of_312 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :federal-minister_of_312_form ;
+  lemon:otherForm  :federal-minister_of_312_singular ;
+  lemon:otherForm  :federal-minister_of_312_plural ;
+  lemon:sense          :federal-minister_of_312_sense_1 ;
+  lemon:synBehavior    :federal-minister_of_312_nounpp .
+
+:federal-minister_of_312_form a lemon:Form ;
+  lemon:writtenRep "federal minister"@en .
+
+:federal-minister_of_312_singular a    lemon:Form ;
+  lemon:writtenRep "federal minister"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:federal-minister_of_312_plural a   lemon:Form ;
+  lemon:writtenRep "federal ministers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:federal-minister_of_312_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-848-848-848-846-845-845-845-845-845-845-829-829-829-829-808-808-808-808-403_federal-minister_of_312 ;
+  lexinfo:prepositionalAdjunct :arg2-848-848-848-846-845-845-845-845-845-845-829-829-829-829-808-808-808-808-403_federal-minister_of_312 .
+
+:federal-minister_of_312_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :federal-minister_of_312_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-848-848-848-846-845-845-845-845-845-845-829-829-829-829-808-808-808-808-403_federal-minister_of_312 ;
+  lemon:objOfProp           :arg1-848-848-848-846-845-845-845-845-845-845-829-829-829-829-808-808-808-808-403_federal-minister_of_312 ;
+  lemon:condition           :federal-minister_of_312_sense_1_condition .
+
+:federal-minister_of_312_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-848-848-848-846-845-845-845-845-845-845-829-829-829-829-808-808-808-808-403_federal-minister_of_312 lemon:marker :federal-minister_of_312_form_preposition .
+## Prepositions ##
+:federal-minister_of_312_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

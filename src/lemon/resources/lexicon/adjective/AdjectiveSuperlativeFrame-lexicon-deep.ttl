@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :deep ;
+  lemon:entry    :form_deep_preposition ;
+  lemon:entry    :deep_res .
+
+:deep a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_deep ;
+  lemon:otherForm      :form_deep_comperative ;
+  lemon:otherForm      :form_deep_superlative ;
+  lemon:sense          :deep_sense_1 ;
+  lemon:synBehavior    :deep_predFrame .
+
+:form_deep lemon:writtenRep "deep"@en .
+
+:form_deep_comperative lemon:writtenRep "deeper"@en .
+
+:form_deep_superlative lemon:writtenRep "deepest"@en .
+
+:deep_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :deep_PredSynArg .
+
+:deep_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :deep_res ;
+  lemon:isA       :deep_PredSynArg ;
+  lemon:condition :deep_sense_1_condition .
+
+:deep_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/maximumDepth> ;
+  oils:degree   <http://localhost:8000/oils.owl/strong> .
+
+:deep_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Lake> .## Prepositions ##
+:form_deep_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :player_1_793 ;
+  lemon:entry    :player_1_793_form_preposition .
+
+:player_1_793 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :player_1_793_form ;
+  lemon:otherForm  :player_1_793_singular ;
+  lemon:otherForm  :player_1_793_plural ;
+  lemon:sense          :player_1_793_sense_1 ;
+  lemon:synBehavior    :player_1_793_nounpp .
+
+:player_1_793_form a lemon:Form ;
+  lemon:writtenRep "player"@en .
+
+:player_1_793_singular a    lemon:Form ;
+  lemon:writtenRep "player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:player_1_793_plural a   lemon:Form ;
+  lemon:writtenRep "players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:player_1_793_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-692-692-692-690-689-689-689-689-689-689-675-675-675-675-662-662-662-662-343-343-330_player_1_793 ;
+  lexinfo:prepositionalAdjunct :arg2-692-692-692-690-689-689-689-689-689-689-675-675-675-675-662-662-662-662-343-343-330_player_1_793 .
+
+:player_1_793_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :player_1_793_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/instrument> ;
+  lemon:subjOfProp          :arg2-692-692-692-690-689-689-689-689-689-689-675-675-675-675-662-662-662-662-343-343-330_player_1_793 ;
+  lemon:objOfProp           :arg1-692-692-692-690-689-689-689-689-689-689-675-675-675-675-662-662-662-662-343-343-330_player_1_793 ;
+  lemon:condition           :player_1_793_sense_1_condition .
+
+:player_1_793_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MusicalArtist> .
+
+:arg2-692-692-692-690-689-689-689-689-689-689-675-675-675-675-662-662-662-662-343-343-330_player_1_793 lemon:marker :player_1_793_form_preposition .
+## Prepositions ##
+:player_1_793_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

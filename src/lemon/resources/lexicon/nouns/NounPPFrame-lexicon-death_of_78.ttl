@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :death_of_78 ;
+  lemon:entry    :death_of_78_form_preposition .
+
+:death_of_78 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :death_of_78_form ;
+  lemon:otherForm  :death_of_78_singular ;
+  lemon:otherForm  :death_of_78_plural ;
+  lemon:sense          :death_of_78_sense_1 ;
+  lemon:synBehavior    :death_of_78_nounpp .
+
+:death_of_78_form a lemon:Form ;
+  lemon:writtenRep "death"@en .
+
+:death_of_78_singular a    lemon:Form ;
+  lemon:writtenRep "death"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:death_of_78_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:death_of_78_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-341-341-340-340-339-339-339-339-339-339-332-332-332-332-327-327-327-327-159-159-200_death_of_78 ;
+  lexinfo:prepositionalAdjunct :arg2-341-341-340-340-339-339-339-339-339-339-332-332-332-332-327-327-327-327-159-159-200_death_of_78 .
+
+:death_of_78_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :death_of_78_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/deathDate> ;
+  lemon:subjOfProp          :arg2-341-341-340-340-339-339-339-339-339-339-332-332-332-332-327-327-327-327-159-159-200_death_of_78 ;
+  lemon:objOfProp           :arg1-341-341-340-340-339-339-339-339-339-339-332-332-332-332-327-327-327-327-159-159-200_death_of_78 ;
+  lemon:condition           :death_of_78_sense_1_condition .
+
+:death_of_78_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-341-341-340-340-339-339-339-339-339-339-332-332-332-332-327-327-327-327-159-159-200_death_of_78 lemon:marker :death_of_78_form_preposition .
+## Prepositions ##
+:death_of_78_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

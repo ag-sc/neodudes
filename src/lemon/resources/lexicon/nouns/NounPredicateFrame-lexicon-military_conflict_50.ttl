@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :military_conflict_50_sense_1_res ;
+  lemon:entry    :military_conflict_50 .
+
+:military_conflict_50 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :military_conflict_50_form ;
+  lemon:otherForm  :military_conflict_50_singular ;
+  lemon:otherForm  :military_conflict_50_plural ;
+  lemon:sense          :military_conflict_50_sense_1 ;
+  lemon:synBehavior    :military_conflict_50_predFrame .
+
+:military_conflict_50_form
+ lemon:writtenRep "military conflict"@en .
+
+:military_conflict_50_singular a    lemon:Form ;
+  lemon:writtenRep "military conflict"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:military_conflict_50_plural a   lemon:Form ;
+  lemon:writtenRep "military conflicts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:military_conflict_50_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :military_conflict_50_sense_1_res ;
+  lemon:isA       :military_conflict_50_PredSynArg .
+
+:military_conflict_50_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MilitaryConflict> .

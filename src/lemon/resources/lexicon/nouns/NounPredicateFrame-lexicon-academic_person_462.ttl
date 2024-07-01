@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :academic_person_462_sense_1_res ;
+  lemon:entry    :academic_person_462 .
+
+:academic_person_462 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :academic_person_462_form ;
+  lemon:otherForm  :academic_person_462_singular ;
+  lemon:otherForm  :academic_person_462_plural ;
+  lemon:sense          :academic_person_462_sense_1 ;
+  lemon:synBehavior    :academic_person_462_predFrame .
+
+:academic_person_462_form
+ lemon:writtenRep "academic person"@en .
+
+:academic_person_462_singular a    lemon:Form ;
+  lemon:writtenRep "academic person"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:academic_person_462_plural a   lemon:Form ;
+  lemon:writtenRep "academic persons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:academic_person_462_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :academic_person_462_sense_1_res ;
+  lemon:isA       :academic_person_462_PredSynArg .
+
+:academic_person_462_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Academic> .

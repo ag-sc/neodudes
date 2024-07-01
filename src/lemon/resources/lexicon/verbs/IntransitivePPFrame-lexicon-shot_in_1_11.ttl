@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :shot_in_1_11 ;
+  lemon:entry    :form_shot_in_1_11_preposition .
+
+:shot_in_1_11 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_shot_in_1_11 ;
+  lemon:otherForm      :form_shot_in_1_11_present3rd ;
+  lemon:otherForm      :form_shot_in_1_11_past ;
+  lemon:otherForm      :form_shot_in_1_11_perfect ;
+  lemon:sense          :shot_in_1_11_sense_1 ;
+  lemon:synBehavior    :shot_in_1_11_frame .
+
+:form_shot_in_1_11 a           lemon:Form ;
+  lemon:writtenRep     "shot"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_shot_in_1_11_present3rd a      lemon:Form ;
+  lemon:writtenRep "shots"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_shot_in_1_11_past a lemon:Form ;
+  lemon:writtenRep  "shot"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_shot_in_1_11_perfect a   lemon:Form ;
+  lemon:writtenRep "shot"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:shot_in_1_11_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :shot_in_1_11_subj ;
+  lexinfo:prepositionalAdjunct :shot_in_1_11_obj .
+
+:shot_in_1_11_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :shot_in_1_11_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/deathDate> ;
+  lemon:subjOfProp  :shot_in_1_11_subj ;
+  lemon:objOfProp   :shot_in_1_11_obj ;
+  lemon:condition   :shot_in_1_11_sense_1_condition .
+
+:shot_in_1_11_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:shot_in_1_11_obj lemon:marker :form_shot_in_1_11_preposition .
+
+## Prepositions ##
+:form_shot_in_1_11_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

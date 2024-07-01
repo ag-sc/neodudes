@@ -1,0 +1,62 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tall_4_27 ;
+  lemon:entry    :form_tall_4_27_preposition ;
+  lemon:entry    :tall_4_27_res .
+
+:tall_4_27 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_tall_4_27 ;
+  lemon:otherForm      :form_tall_4_27_comperative ;
+  lemon:otherForm      :form_tall_4_27_superlative ;
+  lemon:sense          :tall_4_27_sense_1 ;
+  lemon:sense          :tall_4_27_sense_2 ;
+  lemon:synBehavior    :tall_4_27_predFrame .
+
+:form_tall_4_27 lemon:writtenRep "tall"@en .
+
+:form_tall_4_27_comperative lemon:writtenRep "taller"@en .
+
+:form_tall_4_27_superlative lemon:writtenRep "tallest"@en .
+
+:tall_4_27_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :tall_4_27_PredSynArg .
+
+:tall_4_27_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tall_4_27_res ;
+  lemon:isA       :tall_4_27_PredSynArg ;
+  lemon:condition :tall_4_27_sense_1_condition .
+
+:tall_4_27_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/height> ;
+  oils:degree   <http://localhost:8000/oils.owl/strong> .
+
+:tall_4_27_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/SportsTeam> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/VolleyballPlayer> .
+:tall_4_27_sense_2 a  lemon:LexicalSense ;
+  lemon:reference :tall_4_27_res ;
+  lemon:isA       :tall_4_27_PredSynArg ;
+  lemon:condition :tall_4_27_sense_2_condition .
+
+:tall_4_27_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/height> ;
+  oils:degree   <http://localhost:8000/oils.owl/strong> .
+
+:tall_4_27_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/SportsTeam> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/VolleyballPlayer> .
+
+## Prepositions ##
+:form_tall_4_27_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

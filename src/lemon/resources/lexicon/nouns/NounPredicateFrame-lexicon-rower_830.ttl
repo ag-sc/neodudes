@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :rower_830_sense_1_res ;
+  lemon:entry    :rower_830 .
+
+:rower_830 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :rower_830_form ;
+  lemon:otherForm  :rower_830_singular ;
+  lemon:otherForm  :rower_830_plural ;
+  lemon:sense          :rower_830_sense_1 ;
+  lemon:synBehavior    :rower_830_predFrame .
+
+:rower_830_form
+ lemon:writtenRep "rower"@en .
+
+:rower_830_singular a    lemon:Form ;
+  lemon:writtenRep "rower"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:rower_830_plural a   lemon:Form ;
+  lemon:writtenRep "rowers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:rower_830_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :rower_830_sense_1_res ;
+  lemon:isA       :rower_830_PredSynArg .
+
+:rower_830_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Rower> .

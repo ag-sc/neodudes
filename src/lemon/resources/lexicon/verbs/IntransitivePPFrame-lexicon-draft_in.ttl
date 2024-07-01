@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :draft_in ;
+  lemon:entry    :form_draft_in_preposition .
+
+:draft_in a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_draft_in ;
+  lemon:otherForm      :form_draft_in_present3rd ;
+  lemon:otherForm      :form_draft_in_past ;
+  lemon:otherForm      :form_draft_in_perfect ;
+  lemon:sense          :draft_in_sense_1 ;
+  lemon:synBehavior    :draft_in_frame .
+
+:form_draft_in a           lemon:Form ;
+  lemon:writtenRep     "draft"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_draft_in_present3rd a      lemon:Form ;
+  lemon:writtenRep "drafts"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_draft_in_past a lemon:Form ;
+  lemon:writtenRep  "drafted"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_draft_in_perfect a   lemon:Form ;
+  lemon:writtenRep "drafted"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:draft_in_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :draft_in_subj ;
+  lexinfo:prepositionalAdjunct :draft_in_obj .
+
+:draft_in_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :draft_in_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/draftYear> ;
+  lemon:subjOfProp  :draft_in_subj ;
+  lemon:objOfProp   :draft_in_obj ;
+  lemon:condition   :draft_in_sense_1_condition .
+
+:draft_in_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/AmericanFootballPlayer> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+
+:draft_in_obj lemon:marker :form_draft_in_preposition .
+
+## Prepositions ##
+:form_draft_in_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :american_leader_382_sense_1_res ;
+  lemon:entry    :american_leader_382 .
+
+:american_leader_382 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :american_leader_382_form ;
+  lemon:otherForm  :american_leader_382_singular ;
+  lemon:otherForm  :american_leader_382_plural ;
+  lemon:sense          :american_leader_382_sense_1 ;
+  lemon:synBehavior    :american_leader_382_predFrame .
+
+:american_leader_382_form
+ lemon:writtenRep "american leader"@en .
+
+:american_leader_382_singular a    lemon:Form ;
+  lemon:writtenRep "american leader"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:american_leader_382_plural a   lemon:Form ;
+  lemon:writtenRep "american leaders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:american_leader_382_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :american_leader_382_sense_1_res ;
+  lemon:isA       :american_leader_382_PredSynArg .
+
+:american_leader_382_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AmericanLeader> .

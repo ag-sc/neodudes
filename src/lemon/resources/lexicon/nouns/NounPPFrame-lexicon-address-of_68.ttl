@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :address-of_68 ;
+  lemon:entry    :address-of_68_form_preposition .
+
+:address-of_68 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :address-of_68_form ;
+  lemon:otherForm  :address-of_68_singular ;
+  lemon:otherForm  :address-of_68_plural ;
+  lemon:sense          :address-of_68_sense_1 ;
+  lemon:synBehavior    :address-of_68_nounpp .
+
+:address-of_68_form a lemon:Form ;
+  lemon:writtenRep "address"@en .
+
+:address-of_68_singular a    lemon:Form ;
+  lemon:writtenRep "address"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:address-of_68_plural a   lemon:Form ;
+  lemon:writtenRep "addresses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:address-of_68_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1008-1008-1008-1005-1004-1004-1004-1004-1004-1004-986-986-986-986-962-962-962-962-483-483-499_address-of_68 ;
+  lexinfo:prepositionalAdjunct :arg2-1008-1008-1008-1005-1004-1004-1004-1004-1004-1004-986-986-986-986-962-962-962-962-483-483-499_address-of_68 .
+
+:address-of_68_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :address-of_68_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/address> ;
+  lemon:subjOfProp          :arg2-1008-1008-1008-1005-1004-1004-1004-1004-1004-1004-986-986-986-986-962-962-962-962-483-483-499_address-of_68 ;
+  lemon:objOfProp           :arg1-1008-1008-1008-1005-1004-1004-1004-1004-1004-1004-986-986-986-986-962-962-962-962-483-483-499_address-of_68 ;
+  lemon:condition           :address-of_68_sense_1_condition .
+
+:address-of_68_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1008-1008-1008-1005-1004-1004-1004-1004-1004-1004-986-986-986-986-962-962-962-962-483-483-499_address-of_68 lemon:marker :address-of_68_form_preposition .
+## Prepositions ##
+:address-of_68_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

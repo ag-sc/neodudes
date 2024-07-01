@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :composer-of_29 ;
+  lemon:entry    :composer-of_29_form_preposition .
+
+:composer-of_29 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :composer-of_29_form ;
+  lemon:otherForm  :composer-of_29_singular ;
+  lemon:otherForm  :composer-of_29_plural ;
+  lemon:sense          :composer-of_29_sense_1 ;
+  lemon:synBehavior    :composer-of_29_nounpp .
+
+:composer-of_29_form a lemon:Form ;
+  lemon:writtenRep "music composer"@en .
+
+:composer-of_29_singular a    lemon:Form ;
+  lemon:writtenRep "music composer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:composer-of_29_plural a   lemon:Form ;
+  lemon:writtenRep "music composers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:composer-of_29_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1157-1157-1157-1154-1154-1154-1154-1154-1154-1154-1135-1135-1135-1135-1109-1109-1109-1109-557-557-604_composer-of_29 ;
+  lexinfo:prepositionalAdjunct :arg2-1157-1157-1157-1154-1154-1154-1154-1154-1154-1154-1135-1135-1135-1135-1109-1109-1109-1109-557-557-604_composer-of_29 .
+
+:composer-of_29_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :composer-of_29_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/composer> ;
+  lemon:subjOfProp          :arg2-1157-1157-1157-1154-1154-1154-1154-1154-1154-1154-1135-1135-1135-1135-1109-1109-1109-1109-557-557-604_composer-of_29 ;
+  lemon:objOfProp           :arg1-1157-1157-1157-1154-1154-1154-1154-1154-1154-1154-1135-1135-1135-1135-1109-1109-1109-1109-557-557-604_composer-of_29 ;
+  lemon:condition           :composer-of_29_sense_1_condition .
+
+:composer-of_29_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1157-1157-1157-1154-1154-1154-1154-1154-1154-1154-1135-1135-1135-1135-1109-1109-1109-1109-557-557-604_composer-of_29 lemon:marker :composer-of_29_form_preposition .
+## Prepositions ##
+:composer-of_29_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

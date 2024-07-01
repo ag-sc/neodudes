@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :uruguayan_216_269_sense_1_res ;
+  lemon:entry    :uruguayan_216_269 .
+
+:uruguayan_216_269 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :uruguayan_216_269_lemma ;
+  lemon:sense          :uruguayan_216_269_sense_1 ;
+  lemon:synBehavior    :uruguayan_216_269_attrFrame, :uruguayan_216_269_predFrame .
+
+:uruguayan_216_269_lemma lemon:writtenRep "Uruguayan"@en .
+
+:uruguayan_216_269_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :uruguayan_216_269_PredSynArg .
+
+:uruguayan_216_269_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :uruguayan_216_269_AttrSynArg .
+
+:uruguayan_216_269_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :uruguayan_216_269_sense_1_res ;
+  lemon:isA       :uruguayan_216_269_AttrSynArg, :uruguayan_216_269_PredSynArg .
+
+:uruguayan_216_269_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Uruguay> .

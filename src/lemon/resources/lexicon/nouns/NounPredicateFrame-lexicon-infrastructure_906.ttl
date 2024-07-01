@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :infrastructure_906_sense_1_res ;
+  lemon:entry    :infrastructure_906 .
+
+:infrastructure_906 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :infrastructure_906_form ;
+  lemon:otherForm  :infrastructure_906_singular ;
+  lemon:otherForm  :infrastructure_906_plural ;
+  lemon:sense          :infrastructure_906_sense_1 ;
+  lemon:synBehavior    :infrastructure_906_predFrame .
+
+:infrastructure_906_form
+ lemon:writtenRep "infrastructure"@en .
+
+:infrastructure_906_singular a    lemon:Form ;
+  lemon:writtenRep "infrastructure"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:infrastructure_906_plural a   lemon:Form ;
+  lemon:writtenRep "infrastructures"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:infrastructure_906_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :infrastructure_906_sense_1_res ;
+  lemon:isA       :infrastructure_906_PredSynArg .
+
+:infrastructure_906_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Infrastructure> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :muscle_731_sense_1_res ;
+  lemon:entry    :muscle_731 .
+
+:muscle_731 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :muscle_731_form ;
+  lemon:otherForm  :muscle_731_singular ;
+  lemon:otherForm  :muscle_731_plural ;
+  lemon:sense          :muscle_731_sense_1 ;
+  lemon:synBehavior    :muscle_731_predFrame .
+
+:muscle_731_form
+ lemon:writtenRep "muscle"@en .
+
+:muscle_731_singular a    lemon:Form ;
+  lemon:writtenRep "muscle"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:muscle_731_plural a   lemon:Form ;
+  lemon:writtenRep "muscles"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:muscle_731_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :muscle_731_sense_1_res ;
+  lemon:isA       :muscle_731_PredSynArg .
+
+:muscle_731_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Muscle> .

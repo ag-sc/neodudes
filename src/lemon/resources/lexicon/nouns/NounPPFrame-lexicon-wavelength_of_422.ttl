@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :wavelength_of_422 ;
+  lemon:entry    :wavelength_of_422_form_preposition .
+
+:wavelength_of_422 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :wavelength_of_422_form ;
+  lemon:otherForm  :wavelength_of_422_singular ;
+  lemon:otherForm  :wavelength_of_422_plural ;
+  lemon:sense          :wavelength_of_422_sense_1 ;
+  lemon:synBehavior    :wavelength_of_422_nounpp .
+
+:wavelength_of_422_form a lemon:Form ;
+  lemon:writtenRep "wavelength"@en .
+
+:wavelength_of_422_singular a    lemon:Form ;
+  lemon:writtenRep "wavelength"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:wavelength_of_422_plural a   lemon:Form ;
+  lemon:writtenRep "wavelengths"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:wavelength_of_422_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-61-61-61-62-62-62-62-62-62-62-60-60-60-60-60-60-60-60-25_wavelength_of_422 ;
+  lexinfo:prepositionalAdjunct :arg2-61-61-61-62-62-62-62-62-62-62-60-60-60-60-60-60-60-60-25_wavelength_of_422 .
+
+:wavelength_of_422_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :wavelength_of_422_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/wavelength> ;
+  lemon:subjOfProp          :arg2-61-61-61-62-62-62-62-62-62-62-60-60-60-60-60-60-60-60-25_wavelength_of_422 ;
+  lemon:objOfProp           :arg1-61-61-61-62-62-62-62-62-62-62-60-60-60-60-60-60-60-60-25_wavelength_of_422 ;
+  lemon:condition           :wavelength_of_422_sense_1_condition .
+
+:wavelength_of_422_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Colour> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-61-61-61-62-62-62-62-62-62-62-60-60-60-60-60-60-60-60-25_wavelength_of_422 lemon:marker :wavelength_of_422_form_preposition .
+## Prepositions ##
+:wavelength_of_422_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

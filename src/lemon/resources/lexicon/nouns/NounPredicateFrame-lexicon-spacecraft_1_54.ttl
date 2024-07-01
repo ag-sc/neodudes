@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :spacecraft_1_54_sense_1_res ;
+  lemon:entry    :spacecraft_1_54 .
+
+:spacecraft_1_54 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :spacecraft_1_54_form ;
+  lemon:otherForm  :spacecraft_1_54_singular ;
+  lemon:otherForm  :spacecraft_1_54_plural ;
+  lemon:sense          :spacecraft_1_54_sense_1 ;
+  lemon:synBehavior    :spacecraft_1_54_predFrame .
+
+:spacecraft_1_54_form
+ lemon:writtenRep "spacecraft"@en .
+
+:spacecraft_1_54_singular a    lemon:Form ;
+  lemon:writtenRep "spacecraft"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:spacecraft_1_54_plural a   lemon:Form ;
+  lemon:writtenRep "spacecrafts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:spacecraft_1_54_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :spacecraft_1_54_sense_1_res ;
+  lemon:isA       :spacecraft_1_54_PredSynArg .
+
+:spacecraft_1_54_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Satellite> .

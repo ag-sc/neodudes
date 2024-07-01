@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :young_1_20 ;
+  lemon:entry    :form_young_1_20_preposition ;
+  lemon:entry    :young_1_20_res .
+
+:young_1_20 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_young_1_20 ;
+  lemon:otherForm      :form_young_1_20_comperative ;
+  lemon:otherForm      :form_young_1_20_superlative ;
+  lemon:sense          :young_1_20_sense_1 ;
+  lemon:synBehavior    :young_1_20_predFrame .
+
+:form_young_1_20 lemon:writtenRep "young"@en .
+
+:form_young_1_20_comperative lemon:writtenRep "younger"@en .
+
+:form_young_1_20_superlative lemon:writtenRep "youngest"@en .
+
+:young_1_20_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :young_1_20_PredSynArg .
+
+:young_1_20_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :young_1_20_res ;
+  lemon:isA       :young_1_20_PredSynArg ;
+  lemon:condition :young_1_20_sense_1_condition .
+
+:young_1_20_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/birthDate> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:young_1_20_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/DartsPlayer> .
+
+## Prepositions ##
+:form_young_1_20_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

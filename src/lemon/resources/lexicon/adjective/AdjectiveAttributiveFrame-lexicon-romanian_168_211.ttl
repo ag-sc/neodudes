@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :romanian_168_211_sense_1_res ;
+  lemon:entry    :romanian_168_211 .
+
+:romanian_168_211 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :romanian_168_211_lemma ;
+  lemon:sense          :romanian_168_211_sense_1 ;
+  lemon:synBehavior    :romanian_168_211_attrFrame, :romanian_168_211_predFrame .
+
+:romanian_168_211_lemma lemon:writtenRep "Romanian"@en .
+
+:romanian_168_211_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :romanian_168_211_PredSynArg .
+
+:romanian_168_211_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :romanian_168_211_AttrSynArg .
+
+:romanian_168_211_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :romanian_168_211_sense_1_res ;
+  lemon:isA       :romanian_168_211_AttrSynArg, :romanian_168_211_PredSynArg .
+
+:romanian_168_211_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Romania> .

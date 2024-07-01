@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :south-african_183_276_sense_1_res ;
+  lemon:entry    :south-african_183_276 .
+
+:south-african_183_276 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :south-african_183_276_lemma ;
+  lemon:sense          :south-african_183_276_sense_1 ;
+  lemon:synBehavior    :south-african_183_276_attrFrame, :south-african_183_276_predFrame .
+
+:south-african_183_276_lemma lemon:writtenRep "South African"@en .
+
+:south-african_183_276_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :south-african_183_276_PredSynArg .
+
+:south-african_183_276_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :south-african_183_276_AttrSynArg .
+
+:south-african_183_276_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :south-african_183_276_sense_1_res ;
+  lemon:isA       :south-african_183_276_AttrSynArg, :south-african_183_276_PredSynArg .
+
+:south-african_183_276_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/South_Africa> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :screenwriter_358_sense_1_res ;
+  lemon:entry    :screenwriter_358 .
+
+:screenwriter_358 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :screenwriter_358_form ;
+  lemon:otherForm  :screenwriter_358_singular ;
+  lemon:otherForm  :screenwriter_358_plural ;
+  lemon:sense          :screenwriter_358_sense_1 ;
+  lemon:synBehavior    :screenwriter_358_predFrame .
+
+:screenwriter_358_form
+ lemon:writtenRep "screen writer"@en .
+
+:screenwriter_358_singular a    lemon:Form ;
+  lemon:writtenRep "screen writer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:screenwriter_358_plural a   lemon:Form ;
+  lemon:writtenRep "screen writers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:screenwriter_358_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :screenwriter_358_sense_1_res ;
+  lemon:isA       :screenwriter_358_PredSynArg .
+
+:screenwriter_358_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ScreenWriter> .

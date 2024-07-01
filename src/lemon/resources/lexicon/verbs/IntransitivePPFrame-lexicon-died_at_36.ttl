@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :died_at_36 ;
+  lemon:entry    :form_died_at_36_preposition .
+
+:died_at_36 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_died_at_36 ;
+  lemon:otherForm      :form_died_at_36_present3rd ;
+  lemon:otherForm      :form_died_at_36_past ;
+  lemon:otherForm      :form_died_at_36_perfect ;
+  lemon:sense          :died_at_36_sense_1 ;
+  lemon:synBehavior    :died_at_36_frame .
+
+:form_died_at_36 a           lemon:Form ;
+  lemon:writtenRep     "die"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_died_at_36_present3rd a      lemon:Form ;
+  lemon:writtenRep "dies"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_died_at_36_past a lemon:Form ;
+  lemon:writtenRep  "died"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_died_at_36_perfect a   lemon:Form ;
+  lemon:writtenRep "died"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:died_at_36_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :died_at_36_subj ;
+  lexinfo:prepositionalAdjunct :died_at_36_obj .
+
+:died_at_36_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :died_at_36_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/deathPlace> ;
+  lemon:subjOfProp  :died_at_36_subj ;
+  lemon:objOfProp   :died_at_36_obj ;
+  lemon:condition   :died_at_36_sense_1_condition .
+
+:died_at_36_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Place> .
+
+
+:died_at_36_obj lemon:marker :form_died_at_36_preposition .
+
+## Prepositions ##
+:form_died_at_36_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "at"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

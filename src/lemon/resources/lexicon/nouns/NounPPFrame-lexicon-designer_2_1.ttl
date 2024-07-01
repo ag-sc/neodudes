@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :designer_of_1 ;
+  lemon:entry    :designer_of_1_form_preposition .
+
+:designer_of_1 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :designer_of_1_form ;
+  lemon:otherForm  :designer_of_1_singular ;
+  lemon:otherForm  :designer_of_1_plural ;
+  lemon:sense          :designer_of_1_sense_1 ;
+  lemon:synBehavior    :designer_of_1_nounpp .
+
+:designer_of_1_form a lemon:Form ;
+  lemon:writtenRep "designer"@en .
+
+:designer_of_1_singular a    lemon:Form ;
+  lemon:writtenRep "designer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:designer_of_1_plural a   lemon:Form ;
+  lemon:writtenRep "designers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:designer_of_1_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-982-982-982-979-978-978-978-978-978-978-960-960-960-960-937-937-937-937-471-471-751 ;
+  lexinfo:prepositionalAdjunct :arg2-982-982-982-979-978-978-978-978-978-978-960-960-960-960-937-937-937-937-471-471-751 .
+
+:designer_of_1_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :designer_of_1_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/designer> ;
+  lemon:subjOfProp          :arg2-982-982-982-979-978-978-978-978-978-978-960-960-960-960-937-937-937-937-471-471-751 ;
+  lemon:objOfProp           :arg1-982-982-982-979-978-978-978-978-978-978-960-960-960-960-937-937-937-937-471-471-751 ;
+  lemon:condition           :designer_of_1_sense_1_condition .
+
+:designer_of_1_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Weapon> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Organisation> .
+
+:arg2-982-982-982-979-978-978-978-978-978-978-960-960-960-960-937-937-937-937-471-471-751 lemon:marker :designer_of_1_form_preposition .
+## Prepositions ##
+:designer_of_1_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

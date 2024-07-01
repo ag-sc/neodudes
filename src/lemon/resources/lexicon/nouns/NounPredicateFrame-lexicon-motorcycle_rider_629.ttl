@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :motorcycle_rider_629_sense_1_res ;
+  lemon:entry    :motorcycle_rider_629 .
+
+:motorcycle_rider_629 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :motorcycle_rider_629_form ;
+  lemon:otherForm  :motorcycle_rider_629_singular ;
+  lemon:otherForm  :motorcycle_rider_629_plural ;
+  lemon:sense          :motorcycle_rider_629_sense_1 ;
+  lemon:synBehavior    :motorcycle_rider_629_predFrame .
+
+:motorcycle_rider_629_form
+ lemon:writtenRep "motorcycle rider"@en .
+
+:motorcycle_rider_629_singular a    lemon:Form ;
+  lemon:writtenRep "motorcycle rider"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:motorcycle_rider_629_plural a   lemon:Form ;
+  lemon:writtenRep "motorcycle riders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:motorcycle_rider_629_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :motorcycle_rider_629_sense_1_res ;
+  lemon:isA       :motorcycle_rider_629_PredSynArg .
+
+:motorcycle_rider_629_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MotorcycleRider> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :volcano_of_264 ;
+  lemon:entry    :volcano_of_264_form_preposition .
+
+:volcano_of_264 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :volcano_of_264_form ;
+  lemon:otherForm  :volcano_of_264_singular ;
+  lemon:otherForm  :volcano_of_264_plural ;
+  lemon:sense          :volcano_of_264_sense_1 ;
+  lemon:synBehavior    :volcano_of_264_nounpp .
+
+:volcano_of_264_form a lemon:Form ;
+  lemon:writtenRep "volcano"@en .
+
+:volcano_of_264_singular a    lemon:Form ;
+  lemon:writtenRep "volcano"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:volcano_of_264_plural a   lemon:Form ;
+  lemon:writtenRep "volcanoes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:volcano_of_264_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-108-108-108-109-109-109-109-109-109-109-106-106-106-106-105-105-105-105-55_volcano_of_264 ;
+  lexinfo:prepositionalAdjunct :arg2-108-108-108-109-109-109-109-109-109-109-106-106-106-106-105-105-105-105-55_volcano_of_264 .
+
+:volcano_of_264_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :volcano_of_264_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/locatedInArea> ;
+  lemon:subjOfProp          :arg2-108-108-108-109-109-109-109-109-109-109-106-106-106-106-105-105-105-105-55_volcano_of_264 ;
+  lemon:objOfProp           :arg1-108-108-108-109-109-109-109-109-109-109-106-106-106-106-105-105-105-105-55_volcano_of_264 ;
+  lemon:condition           :volcano_of_264_sense_1_condition .
+
+:volcano_of_264_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-108-108-108-109-109-109-109-109-109-109-106-106-106-106-105-105-105-105-55_volcano_of_264 lemon:marker :volcano_of_264_form_preposition .
+## Prepositions ##
+:volcano_of_264_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :postcode-of_372 ;
+  lemon:entry    :postcode-of_372_form_preposition .
+
+:postcode-of_372 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :postcode-of_372_form ;
+  lemon:otherForm  :postcode-of_372_singular ;
+  lemon:otherForm  :postcode-of_372_plural ;
+  lemon:sense          :postcode-of_372_sense_1 ;
+  lemon:synBehavior    :postcode-of_372_nounpp .
+
+:postcode-of_372_form a lemon:Form ;
+  lemon:writtenRep "post code"@en .
+
+:postcode-of_372_singular a    lemon:Form ;
+  lemon:writtenRep "post code"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:postcode-of_372_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:postcode-of_372_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-49-49-49-50-50-50-50-50-50-50-49-49-49-49-49-49-49-49-16_postcode-of_372 ;
+  lexinfo:prepositionalAdjunct :arg2-49-49-49-50-50-50-50-50-50-50-49-49-49-49-49-49-49-49-16_postcode-of_372 .
+
+:postcode-of_372_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :postcode-of_372_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/postalCode> ;
+  lemon:subjOfProp          :arg2-49-49-49-50-50-50-50-50-50-50-49-49-49-49-49-49-49-49-16_postcode-of_372 ;
+  lemon:objOfProp           :arg1-49-49-49-50-50-50-50-50-50-50-49-49-49-49-49-49-49-49-16_postcode-of_372 ;
+  lemon:condition           :postcode-of_372_sense_1_condition .
+
+:postcode-of_372_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-49-49-49-50-50-50-50-50-50-50-49-49-49-49-49-49-49-49-16_postcode-of_372 lemon:marker :postcode-of_372_form_preposition .
+## Prepositions ##
+:postcode-of_372_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

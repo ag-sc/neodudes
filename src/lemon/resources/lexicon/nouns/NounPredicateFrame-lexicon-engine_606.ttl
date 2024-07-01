@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :engine_606_sense_1_res ;
+  lemon:entry    :engine_606 .
+
+:engine_606 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :engine_606_form ;
+  lemon:otherForm  :engine_606_singular ;
+  lemon:otherForm  :engine_606_plural ;
+  lemon:sense          :engine_606_sense_1 ;
+  lemon:synBehavior    :engine_606_predFrame .
+
+:engine_606_form
+ lemon:writtenRep "engine"@en .
+
+:engine_606_singular a    lemon:Form ;
+  lemon:writtenRep "engine"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:engine_606_plural a   lemon:Form ;
+  lemon:writtenRep "engines"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:engine_606_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :engine_606_sense_1_res ;
+  lemon:isA       :engine_606_PredSynArg .
+
+:engine_606_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Engine> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :academic_journal_495_sense_1_res ;
+  lemon:entry    :academic_journal_495 .
+
+:academic_journal_495 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :academic_journal_495_form ;
+  lemon:otherForm  :academic_journal_495_singular ;
+  lemon:otherForm  :academic_journal_495_plural ;
+  lemon:sense          :academic_journal_495_sense_1 ;
+  lemon:synBehavior    :academic_journal_495_predFrame .
+
+:academic_journal_495_form
+ lemon:writtenRep "academic journal"@en .
+
+:academic_journal_495_singular a    lemon:Form ;
+  lemon:writtenRep "academic journal"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:academic_journal_495_plural a   lemon:Form ;
+  lemon:writtenRep "academic journals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:academic_journal_495_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :academic_journal_495_sense_1_res ;
+  lemon:isA       :academic_journal_495_PredSynArg .
+
+:academic_journal_495_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AcademicJournal> .

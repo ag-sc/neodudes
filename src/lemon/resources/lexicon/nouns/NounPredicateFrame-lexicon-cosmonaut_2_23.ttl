@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cosmonaut_2_23_sense_1_res ;
+  lemon:entry    :cosmonaut_2_23 .
+
+:cosmonaut_2_23 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cosmonaut_2_23_form ;
+  lemon:otherForm  :cosmonaut_2_23_singular ;
+  lemon:otherForm  :cosmonaut_2_23_plural ;
+  lemon:sense          :cosmonaut_2_23_sense_1 ;
+  lemon:synBehavior    :cosmonaut_2_23_predFrame .
+
+:cosmonaut_2_23_form
+ lemon:writtenRep "cosmonaut"@en .
+
+:cosmonaut_2_23_singular a    lemon:Form ;
+  lemon:writtenRep "cosmonaut"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cosmonaut_2_23_plural a   lemon:Form ;
+  lemon:writtenRep "cosmonauts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cosmonaut_2_23_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cosmonaut_2_23_sense_1_res ;
+  lemon:isA       :cosmonaut_2_23_PredSynArg .
+
+:cosmonaut_2_23_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Russia> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :causeofdeath_of_65 ;
+  lemon:entry    :causeofdeath_of_65_form_preposition .
+
+:causeofdeath_of_65 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :causeofdeath_of_65_form ;
+  lemon:otherForm  :causeofdeath_of_65_singular ;
+  lemon:otherForm  :causeofdeath_of_65_plural ;
+  lemon:sense          :causeofdeath_of_65_sense_1 ;
+  lemon:synBehavior    :causeofdeath_of_65_nounpp .
+
+:causeofdeath_of_65_form a lemon:Form ;
+  lemon:writtenRep "cause of death"@en .
+
+:causeofdeath_of_65_singular a    lemon:Form ;
+  lemon:writtenRep "cause of death"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:causeofdeath_of_65_plural a   lemon:Form ;
+  lemon:writtenRep "causes of death"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:causeofdeath_of_65_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-630-630-630-628-627-627-627-627-627-627-615-615-615-615-603-603-603-603-311-311-46_causeofdeath_of_65 ;
+  lexinfo:prepositionalAdjunct :arg2-630-630-630-628-627-627-627-627-627-627-615-615-615-615-603-603-603-603-311-311-46_causeofdeath_of_65 .
+
+:causeofdeath_of_65_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :causeofdeath_of_65_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/deathCause> ;
+  lemon:subjOfProp          :arg2-630-630-630-628-627-627-627-627-627-627-615-615-615-615-603-603-603-603-311-311-46_causeofdeath_of_65 ;
+  lemon:objOfProp           :arg1-630-630-630-628-627-627-627-627-627-627-615-615-615-615-603-603-603-603-311-311-46_causeofdeath_of_65 ;
+  lemon:condition           :causeofdeath_of_65_sense_1_condition .
+
+:causeofdeath_of_65_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:arg2-630-630-630-628-627-627-627-627-627-627-615-615-615-615-603-603-603-603-311-311-46_causeofdeath_of_65 lemon:marker :causeofdeath_of_65_form_preposition .
+## Prepositions ##
+:causeofdeath_of_65_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :programming_language_239_sense_1_res ;
+  lemon:entry    :programming_language_239 .
+
+:programming_language_239 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :programming_language_239_form ;
+  lemon:otherForm  :programming_language_239_singular ;
+  lemon:otherForm  :programming_language_239_plural ;
+  lemon:sense          :programming_language_239_sense_1 ;
+  lemon:synBehavior    :programming_language_239_predFrame .
+
+:programming_language_239_form
+ lemon:writtenRep "programming language"@en .
+
+:programming_language_239_singular a    lemon:Form ;
+  lemon:writtenRep "programming language"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:programming_language_239_plural a   lemon:Form ;
+  lemon:writtenRep "programming languages"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:programming_language_239_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :programming_language_239_sense_1_res ;
+  lemon:isA       :programming_language_239_PredSynArg .
+
+:programming_language_239_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/ProgrammingLanguage> .

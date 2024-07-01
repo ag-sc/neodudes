@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :city-in_7 ;
+  lemon:entry    :city-in_7_form_preposition .
+
+:city-in_7 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :city-in_7_form ;
+  lemon:otherForm  :city-in_7_singular ;
+  lemon:otherForm  :city-in_7_plural ;
+  lemon:sense          :city-in_7_sense_1 ;
+  lemon:synBehavior    :city-in_7_nounpp .
+
+:city-in_7_form a lemon:Form ;
+  lemon:writtenRep "city"@en .
+
+:city-in_7_singular a    lemon:Form ;
+  lemon:writtenRep "city"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:city-in_7_plural a   lemon:Form ;
+  lemon:writtenRep "cities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:city-in_7_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-519-519-518-517-516-516-516-516-516-516-507-507-507-507-497-497-497-497-252-252-165_city-in_7 ;
+  lexinfo:prepositionalAdjunct :arg2-519-519-518-517-516-516-516-516-516-516-507-507-507-507-497-497-497-497-252-252-165_city-in_7 .
+
+:city-in_7_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :city-in_7_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/locationCity> ;
+  lemon:subjOfProp          :arg2-519-519-518-517-516-516-516-516-516-516-507-507-507-507-497-497-497-497-252-252-165_city-in_7 ;
+  lemon:objOfProp           :arg1-519-519-518-517-516-516-516-516-516-516-507-507-507-507-497-497-497-497-252-252-165_city-in_7 ;
+  lemon:condition           :city-in_7_sense_1_condition .
+
+:city-in_7_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-519-519-518-517-516-516-516-516-516-516-507-507-507-507-497-497-497-497-252-252-165_city-in_7 lemon:marker :city-in_7_form_preposition .
+## Prepositions ##
+:city-in_7_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :philippine_161_284_sense_1_res ;
+  lemon:entry    :philippine_161_284 .
+
+:philippine_161_284 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :philippine_161_284_lemma ;
+  lemon:sense          :philippine_161_284_sense_1 ;
+  lemon:synBehavior    :philippine_161_284_attrFrame, :philippine_161_284_predFrame .
+
+:philippine_161_284_lemma lemon:writtenRep "Philippine"@en .
+
+:philippine_161_284_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :philippine_161_284_PredSynArg .
+
+:philippine_161_284_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :philippine_161_284_AttrSynArg .
+
+:philippine_161_284_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :philippine_161_284_sense_1_res ;
+  lemon:isA       :philippine_161_284_AttrSynArg, :philippine_161_284_PredSynArg .
+
+:philippine_161_284_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Philippines> .

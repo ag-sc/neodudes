@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :density_1_187 ;
+  lemon:entry    :density_1_187_form_preposition .
+
+:density_1_187 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :density_1_187_form ;
+  lemon:otherForm  :density_1_187_singular ;
+  lemon:otherForm  :density_1_187_plural ;
+  lemon:sense          :density_1_187_sense_1 ;
+  lemon:synBehavior    :density_1_187_nounpp .
+
+:density_1_187_form a lemon:Form ;
+  lemon:writtenRep "density"@en .
+
+:density_1_187_singular a    lemon:Form ;
+  lemon:writtenRep "density"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:density_1_187_plural a   lemon:Form ;
+  lemon:writtenRep "densities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:density_1_187_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-183-183-183-184-184-184-184-184-184-184-180-180-180-180-176-176-176-176-81-81-478_density_1_187 ;
+  lexinfo:prepositionalAdjunct :arg2-183-183-183-184-184-184-184-184-184-184-180-180-180-180-176-176-176-176-81-81-478_density_1_187 .
+
+:density_1_187_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :density_1_187_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/densityrank> ;
+  lemon:subjOfProp          :arg2-183-183-183-184-184-184-184-184-184-184-180-180-180-180-176-176-176-176-81-81-478_density_1_187 ;
+  lemon:objOfProp           :arg1-183-183-183-184-184-184-184-184-184-184-180-180-180-180-176-176-176-176-81-81-478_density_1_187 ;
+  lemon:condition           :density_1_187_sense_1_condition .
+
+:density_1_187_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-183-183-183-184-184-184-184-184-184-184-180-180-180-180-176-176-176-176-81-81-478_density_1_187 lemon:marker :density_1_187_form_preposition .
+## Prepositions ##
+:density_1_187_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

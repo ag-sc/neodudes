@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cosmonaut_1_936_sense_1_res ;
+  lemon:entry    :cosmonaut_1_936 .
+
+:cosmonaut_1_936 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cosmonaut_1_936_form ;
+  lemon:otherForm  :cosmonaut_1_936_singular ;
+  lemon:otherForm  :cosmonaut_1_936_plural ;
+  lemon:sense          :cosmonaut_1_936_sense_1 ;
+  lemon:synBehavior    :cosmonaut_1_936_predFrame .
+
+:cosmonaut_1_936_form
+ lemon:writtenRep "cosmonaut"@en .
+
+:cosmonaut_1_936_singular a    lemon:Form ;
+  lemon:writtenRep "cosmonaut"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cosmonaut_1_936_plural a   lemon:Form ;
+  lemon:writtenRep "cosmonauts"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cosmonaut_1_936_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cosmonaut_1_936_sense_1_res ;
+  lemon:isA       :cosmonaut_1_936_PredSynArg .
+
+:cosmonaut_1_936_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Soviet_Union> .

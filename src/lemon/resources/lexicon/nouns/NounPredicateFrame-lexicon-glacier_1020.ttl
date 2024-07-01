@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :glacier_1020_sense_1_res ;
+  lemon:entry    :glacier_1020 .
+
+:glacier_1020 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :glacier_1020_form ;
+  lemon:otherForm  :glacier_1020_singular ;
+  lemon:otherForm  :glacier_1020_plural ;
+  lemon:sense          :glacier_1020_sense_1 ;
+  lemon:synBehavior    :glacier_1020_predFrame .
+
+:glacier_1020_form
+ lemon:writtenRep "glacier"@en .
+
+:glacier_1020_singular a    lemon:Form ;
+  lemon:writtenRep "glacier"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:glacier_1020_plural a   lemon:Form ;
+  lemon:writtenRep "glaciers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:glacier_1020_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :glacier_1020_sense_1_res ;
+  lemon:isA       :glacier_1020_PredSynArg .
+
+:glacier_1020_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Glacier> .

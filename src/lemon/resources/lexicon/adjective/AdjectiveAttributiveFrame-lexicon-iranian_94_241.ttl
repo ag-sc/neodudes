@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :iranian_94_241_sense_1_res ;
+  lemon:entry    :iranian_94_241 .
+
+:iranian_94_241 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :iranian_94_241_lemma ;
+  lemon:sense          :iranian_94_241_sense_1 ;
+  lemon:synBehavior    :iranian_94_241_attrFrame, :iranian_94_241_predFrame .
+
+:iranian_94_241_lemma lemon:writtenRep "Iranian"@en .
+
+:iranian_94_241_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :iranian_94_241_PredSynArg .
+
+:iranian_94_241_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :iranian_94_241_AttrSynArg .
+
+:iranian_94_241_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :iranian_94_241_sense_1_res ;
+  lemon:isA       :iranian_94_241_AttrSynArg, :iranian_94_241_PredSynArg .
+
+:iranian_94_241_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Iran> .

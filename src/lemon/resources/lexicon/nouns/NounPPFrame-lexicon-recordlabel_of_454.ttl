@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :recordlabel_of_454 ;
+  lemon:entry    :recordlabel_of_454_form_preposition .
+
+:recordlabel_of_454 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :recordlabel_of_454_form ;
+  lemon:otherForm  :recordlabel_of_454_singular ;
+  lemon:otherForm  :recordlabel_of_454_plural ;
+  lemon:sense          :recordlabel_of_454_sense_1 ;
+  lemon:synBehavior    :recordlabel_of_454_nounpp .
+
+:recordlabel_of_454_form a lemon:Form ;
+  lemon:writtenRep "record label"@en .
+
+:recordlabel_of_454_singular a    lemon:Form ;
+  lemon:writtenRep "record label"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:recordlabel_of_454_plural a   lemon:Form ;
+  lemon:writtenRep "record labels"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:recordlabel_of_454_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-921-921-921-918-917-917-917-917-917-917-899-899-899-899-877-877-877-877-441_recordlabel_of_454 ;
+  lexinfo:prepositionalAdjunct :arg2-921-921-921-918-917-917-917-917-917-917-899-899-899-899-877-877-877-877-441_recordlabel_of_454 .
+
+:recordlabel_of_454_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :recordlabel_of_454_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/RecordLabel> ;
+  lemon:subjOfProp          :arg2-921-921-921-918-917-917-917-917-917-917-899-899-899-899-877-877-877-877-441_recordlabel_of_454 ;
+  lemon:objOfProp           :arg1-921-921-921-918-917-917-917-917-917-917-899-899-899-899-877-877-877-877-441_recordlabel_of_454 ;
+  lemon:condition           :recordlabel_of_454_sense_1_condition .
+
+:recordlabel_of_454_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Genre> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-921-921-921-918-917-917-917-917-917-917-899-899-899-899-877-877-877-877-441_recordlabel_of_454 lemon:marker :recordlabel_of_454_form_preposition .
+## Prepositions ##
+:recordlabel_of_454_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

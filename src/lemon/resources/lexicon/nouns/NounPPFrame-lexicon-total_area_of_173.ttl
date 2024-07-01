@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :total_area_of_173 ;
+  lemon:entry    :total_area_of_173_form_preposition .
+
+:total_area_of_173 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :total_area_of_173_form ;
+  lemon:otherForm  :total_area_of_173_singular ;
+  lemon:otherForm  :total_area_of_173_plural ;
+  lemon:sense          :total_area_of_173_sense_1 ;
+  lemon:synBehavior    :total_area_of_173_nounpp .
+
+:total_area_of_173_form a lemon:Form ;
+  lemon:writtenRep "total area"@en .
+
+:total_area_of_173_singular a    lemon:Form ;
+  lemon:writtenRep "total area"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:total_area_of_173_plural a   lemon:Form ;
+  lemon:writtenRep "total area"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:total_area_of_173_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1452-1452-1452-1447-1449-1449-1449-1449-1449-1449-1426-1426-1426-1426-1397-1397-1397-1397-684-684-441_total_area_of_173 ;
+  lexinfo:prepositionalAdjunct :arg2-1452-1452-1452-1447-1449-1449-1449-1449-1449-1449-1426-1426-1426-1426-1397-1397-1397-1397-684-684-441_total_area_of_173 .
+
+:total_area_of_173_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :total_area_of_173_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaTotal> ;
+  lemon:subjOfProp          :arg2-1452-1452-1452-1447-1449-1449-1449-1449-1449-1449-1426-1426-1426-1426-1397-1397-1397-1397-684-684-441_total_area_of_173 ;
+  lemon:objOfProp           :arg1-1452-1452-1452-1447-1449-1449-1449-1449-1449-1449-1426-1426-1426-1426-1397-1397-1397-1397-684-684-441_total_area_of_173 ;
+  lemon:condition           :total_area_of_173_sense_1_condition .
+
+:total_area_of_173_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#double> .
+
+:arg2-1452-1452-1452-1447-1449-1449-1449-1449-1449-1449-1426-1426-1426-1426-1397-1397-1397-1397-684-684-441_total_area_of_173 lemon:marker :total_area_of_173_form_preposition .
+## Prepositions ##
+:total_area_of_173_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

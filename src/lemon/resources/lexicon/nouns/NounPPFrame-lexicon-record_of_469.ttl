@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :record_of_469 ;
+  lemon:entry    :record_of_469_form_preposition .
+
+:record_of_469 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :record_of_469_form ;
+  lemon:otherForm  :record_of_469_singular ;
+  lemon:otherForm  :record_of_469_plural ;
+  lemon:sense          :record_of_469_sense_1 ;
+  lemon:synBehavior    :record_of_469_nounpp .
+
+:record_of_469_form a lemon:Form ;
+  lemon:writtenRep "record"@en .
+
+:record_of_469_singular a    lemon:Form ;
+  lemon:writtenRep "record"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:record_of_469_plural a   lemon:Form ;
+  lemon:writtenRep "records"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:record_of_469_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1134-1134-1134-1131-1131-1131-1131-1131-1131-1131-1112-1112-1112-1112-1086-1086-1086-1086-539_record_of_469 ;
+  lexinfo:prepositionalAdjunct :arg2-1134-1134-1134-1131-1131-1131-1131-1131-1131-1131-1112-1112-1112-1112-1086-1086-1086-1086-539_record_of_469 .
+
+:record_of_469_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :record_of_469_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/releaseDate> ;
+  lemon:subjOfProp          :arg2-1134-1134-1134-1131-1131-1131-1131-1131-1131-1131-1112-1112-1112-1112-1086-1086-1086-1086-539_record_of_469 ;
+  lemon:objOfProp           :arg1-1134-1134-1134-1131-1131-1131-1131-1131-1131-1131-1112-1112-1112-1112-1086-1086-1086-1086-539_record_of_469 ;
+  lemon:condition           :record_of_469_sense_1_condition .
+
+:record_of_469_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-1134-1134-1134-1131-1131-1131-1131-1131-1131-1131-1112-1112-1112-1112-1086-1086-1086-1086-539_record_of_469 lemon:marker :record_of_469_form_preposition .
+## Prepositions ##
+:record_of_469_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :barbadian_37_sense_1_res ;
+  lemon:entry    :barbadian_37 .
+
+:barbadian_37 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :barbadian_37_lemma ;
+  lemon:sense          :barbadian_37_sense_1 ;
+  lemon:synBehavior    :barbadian_37_attrFrame, :barbadian_37_predFrame .
+
+:barbadian_37_lemma lemon:writtenRep "barbadian"@en .
+
+:barbadian_37_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :barbadian_37_PredSynArg .
+
+:barbadian_37_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :barbadian_37_AttrSynArg .
+
+:barbadian_37_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :barbadian_37_sense_1_res ;
+  lemon:isA       :barbadian_37_AttrSynArg, :barbadian_37_PredSynArg .
+
+:barbadian_37_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Barbados> .

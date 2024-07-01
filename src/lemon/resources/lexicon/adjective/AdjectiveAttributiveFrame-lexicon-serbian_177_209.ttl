@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :serbian_177_209_sense_1_res ;
+  lemon:entry    :serbian_177_209 .
+
+:serbian_177_209 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :serbian_177_209_lemma ;
+  lemon:sense          :serbian_177_209_sense_1 ;
+  lemon:synBehavior    :serbian_177_209_attrFrame, :serbian_177_209_predFrame .
+
+:serbian_177_209_lemma lemon:writtenRep "Serbian"@en .
+
+:serbian_177_209_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :serbian_177_209_PredSynArg .
+
+:serbian_177_209_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :serbian_177_209_AttrSynArg .
+
+:serbian_177_209_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :serbian_177_209_sense_1_res ;
+  lemon:isA       :serbian_177_209_AttrSynArg, :serbian_177_209_PredSynArg .
+
+:serbian_177_209_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Serbia> .

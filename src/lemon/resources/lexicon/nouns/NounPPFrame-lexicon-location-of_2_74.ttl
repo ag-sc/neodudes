@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :location-of_2_74 ;
+  lemon:entry    :location-of_2_74_form_preposition .
+
+:location-of_2_74 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :location-of_2_74_form ;
+  lemon:otherForm  :location-of_2_74_singular ;
+  lemon:otherForm  :location-of_2_74_plural ;
+  lemon:sense          :location-of_2_74_sense_1 ;
+  lemon:synBehavior    :location-of_2_74_nounpp .
+
+:location-of_2_74_form a lemon:Form ;
+  lemon:writtenRep "location"@en .
+
+:location-of_2_74_singular a    lemon:Form ;
+  lemon:writtenRep "location"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:location-of_2_74_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:location-of_2_74_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1459-1459-1459-1454-1456-1456-1456-1456-1456-1456-1433-1433-1433-1433-1404-1404-1404-1404-688-688-250_location-of_2_74 ;
+  lexinfo:prepositionalAdjunct :arg2-1459-1459-1459-1454-1456-1456-1456-1456-1456-1456-1433-1433-1433-1433-1404-1404-1404-1404-688-688-250_location-of_2_74 .
+
+:location-of_2_74_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :location-of_2_74_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/locatedInArea> ;
+  lemon:subjOfProp          :arg2-1459-1459-1459-1454-1456-1456-1456-1456-1456-1456-1433-1433-1433-1433-1404-1404-1404-1404-688-688-250_location-of_2_74 ;
+  lemon:objOfProp           :arg1-1459-1459-1459-1454-1456-1456-1456-1456-1456-1456-1433-1433-1433-1433-1404-1404-1404-1404-688-688-250_location-of_2_74 ;
+  lemon:condition           :location-of_2_74_sense_1_condition .
+
+:location-of_2_74_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1459-1459-1459-1454-1456-1456-1456-1456-1456-1456-1433-1433-1433-1433-1404-1404-1404-1404-688-688-250_location-of_2_74 lemon:marker :location-of_2_74_form_preposition .
+## Prepositions ##
+:location-of_2_74_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

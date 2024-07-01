@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :officiallanguage-of_69 ;
+  lemon:entry    :officiallanguage-of_69_form_preposition .
+
+:officiallanguage-of_69 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :officiallanguage-of_69_form ;
+  lemon:otherForm  :officiallanguage-of_69_singular ;
+  lemon:otherForm  :officiallanguage-of_69_plural ;
+  lemon:sense          :officiallanguage-of_69_sense_1 ;
+  lemon:synBehavior    :officiallanguage-of_69_nounpp .
+
+:officiallanguage-of_69_form a lemon:Form ;
+  lemon:writtenRep "official language"@en .
+
+:officiallanguage-of_69_singular a    lemon:Form ;
+  lemon:writtenRep "official language"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:officiallanguage-of_69_plural a   lemon:Form ;
+  lemon:writtenRep "official languages"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:officiallanguage-of_69_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-434-434-433-433-432-432-432-432-432-432-424-424-424-424-416-416-416-416-209-209-578_officiallanguage-of_69 ;
+  lexinfo:prepositionalAdjunct :arg2-434-434-433-433-432-432-432-432-432-432-424-424-424-424-416-416-416-416-209-209-578_officiallanguage-of_69 .
+
+:officiallanguage-of_69_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :officiallanguage-of_69_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/officialLanguage> ;
+  lemon:subjOfProp          :arg2-434-434-433-433-432-432-432-432-432-432-424-424-424-424-416-416-416-416-209-209-578_officiallanguage-of_69 ;
+  lemon:objOfProp           :arg1-434-434-433-433-432-432-432-432-432-432-424-424-424-424-416-416-416-416-209-209-578_officiallanguage-of_69 ;
+  lemon:condition           :officiallanguage-of_69_sense_1_condition .
+
+:officiallanguage-of_69_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2-434-434-433-433-432-432-432-432-432-432-424-424-424-424-416-416-416-416-209-209-578_officiallanguage-of_69 lemon:marker :officiallanguage-of_69_form_preposition .
+## Prepositions ##
+:officiallanguage-of_69_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :populated_1_25 ;
+  lemon:entry    :form_populated_1_25_preposition ;
+  lemon:entry    :populated_1_25_res .
+
+:populated_1_25 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_populated_1_25 ;
+  lemon:otherForm      :form_populated_1_25_comperative ;
+  lemon:otherForm      :form_populated_1_25_superlative ;
+  lemon:sense          :populated_1_25_sense_1 ;
+  lemon:synBehavior    :populated_1_25_predFrame .
+
+:form_populated_1_25 lemon:writtenRep "populated"@en .
+
+:form_populated_1_25_comperative lemon:writtenRep "more populated"@en .
+
+:form_populated_1_25_superlative lemon:writtenRep "most populated"@en .
+
+:populated_1_25_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :populated_1_25_PredSynArg .
+
+:populated_1_25_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :populated_1_25_res ;
+  lemon:isA       :populated_1_25_PredSynArg ;
+  lemon:condition :populated_1_25_sense_1_condition .
+
+:populated_1_25_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/populationTotal> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:populated_1_25_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Country> .
+
+## Prepositions ##
+:form_populated_1_25_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

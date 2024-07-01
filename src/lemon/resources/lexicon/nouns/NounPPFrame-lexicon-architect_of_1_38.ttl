@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :architect_of_1_38 ;
+  lemon:entry    :architect_of_1_38_form_preposition .
+
+:architect_of_1_38 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :architect_of_1_38_form ;
+  lemon:otherForm  :architect_of_1_38_singular ;
+  lemon:otherForm  :architect_of_1_38_plural ;
+  lemon:sense          :architect_of_1_38_sense_1 ;
+  lemon:synBehavior    :architect_of_1_38_nounpp .
+
+:architect_of_1_38_form a lemon:Form ;
+  lemon:writtenRep "architect"@en .
+
+:architect_of_1_38_singular a    lemon:Form ;
+  lemon:writtenRep "architect"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:architect_of_1_38_plural a   lemon:Form ;
+  lemon:writtenRep "architects"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:architect_of_1_38_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-117-117-117-118-118-118-118-118-118-118-115-115-115-115-114-114-114-114-51-51-574_architect_of_1_38 ;
+  lexinfo:prepositionalAdjunct :arg2-117-117-117-118-118-118-118-118-118-118-115-115-115-115-114-114-114-114-51-51-574_architect_of_1_38 .
+
+:architect_of_1_38_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :architect_of_1_38_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/architect> ;
+  lemon:subjOfProp          :arg2-117-117-117-118-118-118-118-118-118-118-115-115-115-115-114-114-114-114-51-51-574_architect_of_1_38 ;
+  lemon:objOfProp           :arg1-117-117-117-118-118-118-118-118-118-118-115-115-115-115-114-114-114-114-51-51-574_architect_of_1_38 ;
+  lemon:condition           :architect_of_1_38_sense_1_condition .
+
+:architect_of_1_38_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-117-117-117-118-118-118-118-118-118-118-115-115-115-115-114-114-114-114-51-51-574_architect_of_1_38 lemon:marker :architect_of_1_38_form_preposition .
+## Prepositions ##
+:architect_of_1_38_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

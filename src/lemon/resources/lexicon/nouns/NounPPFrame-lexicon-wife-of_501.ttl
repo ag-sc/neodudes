@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :wife-of_501 ;
+  lemon:entry    :wife-of_501_form_preposition .
+
+:wife-of_501 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :wife-of_501_form ;
+  lemon:otherForm  :wife-of_501_singular ;
+  lemon:otherForm  :wife-of_501_plural ;
+  lemon:sense          :wife-of_501_sense_1 ;
+  lemon:synBehavior    :wife-of_501_nounpp .
+
+:wife-of_501_form a lemon:Form ;
+  lemon:writtenRep "wife"@en .
+
+:wife-of_501_singular a    lemon:Form ;
+  lemon:writtenRep "wife"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:wife-of_501_plural a   lemon:Form ;
+  lemon:writtenRep "wives"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:wife-of_501_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-85-85-85-86-86-86-86-86-86-86-84-84-84-84-84-84-84-84-42_wife-of_501 ;
+  lexinfo:prepositionalAdjunct :arg2-85-85-85-86-86-86-86-86-86-86-84-84-84-84-84-84-84-84-42_wife-of_501 .
+
+:wife-of_501_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :wife-of_501_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/spouse> ;
+  lemon:subjOfProp          :arg2-85-85-85-86-86-86-86-86-86-86-84-84-84-84-84-84-84-84-42_wife-of_501 ;
+  lemon:objOfProp           :arg1-85-85-85-86-86-86-86-86-86-86-84-84-84-84-84-84-84-84-42_wife-of_501 ;
+  lemon:condition           :wife-of_501_sense_1_condition .
+
+:wife-of_501_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-85-85-85-86-86-86-86-86-86-86-84-84-84-84-84-84-84-84-42_wife-of_501 lemon:marker :wife-of_501_form_preposition .
+## Prepositions ##
+:wife-of_501_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

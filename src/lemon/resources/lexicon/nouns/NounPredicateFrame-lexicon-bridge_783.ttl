@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bridge_783_sense_1_res ;
+  lemon:entry    :bridge_783 .
+
+:bridge_783 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :bridge_783_form ;
+  lemon:otherForm  :bridge_783_singular ;
+  lemon:otherForm  :bridge_783_plural ;
+  lemon:sense          :bridge_783_sense_1 ;
+  lemon:synBehavior    :bridge_783_predFrame .
+
+:bridge_783_form
+ lemon:writtenRep "bridge"@en .
+
+:bridge_783_singular a    lemon:Form ;
+  lemon:writtenRep "bridge"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:bridge_783_plural a   lemon:Form ;
+  lemon:writtenRep "bridges"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:bridge_783_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bridge_783_sense_1_res ;
+  lemon:isA       :bridge_783_PredSynArg .
+
+:bridge_783_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Bridge> .

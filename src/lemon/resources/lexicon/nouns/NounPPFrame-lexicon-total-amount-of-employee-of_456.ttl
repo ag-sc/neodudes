@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :total-amount-of-employee-of_456 ;
+  lemon:entry    :total-amount-of-employee-of_456_form_preposition .
+
+:total-amount-of-employee-of_456 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :total-amount-of-employee-of_456_form ;
+  lemon:otherForm  :total-amount-of-employee-of_456_singular ;
+  lemon:otherForm  :total-amount-of-employee-of_456_plural ;
+  lemon:sense          :total-amount-of-employee-of_456_sense_1 ;
+  lemon:synBehavior    :total-amount-of-employee-of_456_nounpp .
+
+:total-amount-of-employee-of_456_form a lemon:Form ;
+  lemon:writtenRep "total amount of employee"@en .
+
+:total-amount-of-employee-of_456_singular a    lemon:Form ;
+  lemon:writtenRep "total amount of employee"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:total-amount-of-employee-of_456_plural a   lemon:Form ;
+  lemon:writtenRep "total amount of employee"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:total-amount-of-employee-of_456_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-978-978-978-975-974-974-974-974-974-974-956-956-956-956-933-933-933-933-464_total-amount-of-employee-of_456 ;
+  lexinfo:prepositionalAdjunct :arg2-978-978-978-975-974-974-974-974-974-974-956-956-956-956-933-933-933-933-464_total-amount-of-employee-of_456 .
+
+:total-amount-of-employee-of_456_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :total-amount-of-employee-of_456_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/employees> ;
+  lemon:subjOfProp          :arg2-978-978-978-975-974-974-974-974-974-974-956-956-956-956-933-933-933-933-464_total-amount-of-employee-of_456 ;
+  lemon:objOfProp           :arg1-978-978-978-975-974-974-974-974-974-974-956-956-956-956-933-933-933-933-464_total-amount-of-employee-of_456 ;
+  lemon:condition           :total-amount-of-employee-of_456_sense_1_condition .
+
+:total-amount-of-employee-of_456_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Event> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Agent> .
+
+:arg2-978-978-978-975-974-974-974-974-974-974-956-956-956-956-933-933-933-933-464_total-amount-of-employee-of_456 lemon:marker :total-amount-of-employee-of_456_form_preposition .
+## Prepositions ##
+:total-amount-of-employee-of_456_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

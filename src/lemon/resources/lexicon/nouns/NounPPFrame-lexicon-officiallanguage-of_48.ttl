@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :officiallanguage-of_48 ;
+  lemon:entry    :officiallanguage-of_48_form_preposition .
+
+:officiallanguage-of_48 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :officiallanguage-of_48_form ;
+  lemon:otherForm  :officiallanguage-of_48_singular ;
+  lemon:otherForm  :officiallanguage-of_48_plural ;
+  lemon:sense          :officiallanguage-of_48_sense_1 ;
+  lemon:synBehavior    :officiallanguage-of_48_nounpp .
+
+:officiallanguage-of_48_form a lemon:Form ;
+  lemon:writtenRep "official language"@en .
+
+:officiallanguage-of_48_singular a    lemon:Form ;
+  lemon:writtenRep "official language"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:officiallanguage-of_48_plural a   lemon:Form ;
+  lemon:writtenRep "official languages"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:officiallanguage-of_48_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1382-1382-1381-1378-1380-1380-1380-1380-1380-1380-1357-1357-1357-1357-1328-1328-1328-1328-653-653-171_officiallanguage-of_48 ;
+  lexinfo:prepositionalAdjunct :arg2-1382-1382-1381-1378-1380-1380-1380-1380-1380-1380-1357-1357-1357-1357-1328-1328-1328-1328-653-653-171_officiallanguage-of_48 .
+
+:officiallanguage-of_48_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :officiallanguage-of_48_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/officialLanguage> ;
+  lemon:subjOfProp          :arg2-1382-1382-1381-1378-1380-1380-1380-1380-1380-1380-1357-1357-1357-1357-1328-1328-1328-1328-653-653-171_officiallanguage-of_48 ;
+  lemon:objOfProp           :arg1-1382-1382-1381-1378-1380-1380-1380-1380-1380-1380-1357-1357-1357-1357-1328-1328-1328-1328-653-653-171_officiallanguage-of_48 ;
+  lemon:condition           :officiallanguage-of_48_sense_1_condition .
+
+:officiallanguage-of_48_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2-1382-1382-1381-1378-1380-1380-1380-1380-1380-1380-1357-1357-1357-1357-1328-1328-1328-1328-653-653-171_officiallanguage-of_48 lemon:marker :officiallanguage-of_48_form_preposition .
+## Prepositions ##
+:officiallanguage-of_48_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

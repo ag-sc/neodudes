@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :visitor_of_182 ;
+  lemon:entry    :visitor_of_182_form_preposition .
+
+:visitor_of_182 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :visitor_of_182_form ;
+  lemon:otherForm  :visitor_of_182_singular ;
+  lemon:otherForm  :visitor_of_182_plural ;
+  lemon:sense          :visitor_of_182_sense_1 ;
+  lemon:synBehavior    :visitor_of_182_nounpp .
+
+:visitor_of_182_form a lemon:Form ;
+  lemon:writtenRep "visitor"@en .
+
+:visitor_of_182_singular a    lemon:Form ;
+  lemon:writtenRep "visitor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:visitor_of_182_plural a   lemon:Form ;
+  lemon:writtenRep "visitors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:visitor_of_182_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1269-1269-1269-1264-1266-1266-1266-1266-1266-1266-1245-1245-1245-1245-1218-1218-1218-1218-603-603-582_visitor_of_182 ;
+  lexinfo:prepositionalAdjunct :arg2-1269-1269-1269-1264-1266-1266-1266-1266-1266-1266-1245-1245-1245-1245-1218-1218-1218-1218-603-603-582_visitor_of_182 .
+
+:visitor_of_182_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :visitor_of_182_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfVisitors> ;
+  lemon:subjOfProp          :arg2-1269-1269-1269-1264-1266-1266-1266-1266-1266-1266-1245-1245-1245-1245-1218-1218-1218-1218-603-603-582_visitor_of_182 ;
+  lemon:objOfProp           :arg1-1269-1269-1269-1264-1266-1266-1266-1266-1266-1266-1245-1245-1245-1245-1218-1218-1218-1218-603-603-582_visitor_of_182 ;
+  lemon:condition           :visitor_of_182_sense_1_condition .
+
+:visitor_of_182_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Museum> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-1269-1269-1269-1264-1266-1266-1266-1266-1266-1266-1245-1245-1245-1245-1218-1218-1218-1218-603-603-582_visitor_of_182 lemon:marker :visitor_of_182_form_preposition .
+## Prepositions ##
+:visitor_of_182_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :prime_minister_of_22 ;
+  lemon:entry    :prime_minister_of_22_form_preposition .
+
+:prime_minister_of_22 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :prime_minister_of_22_form ;
+  lemon:otherForm  :prime_minister_of_22_singular ;
+  lemon:otherForm  :prime_minister_of_22_plural ;
+  lemon:sense          :prime_minister_of_22_sense_1 ;
+  lemon:synBehavior    :prime_minister_of_22_nounpp .
+
+:prime_minister_of_22_form a lemon:Form ;
+  lemon:writtenRep "prime minister"@en .
+
+:prime_minister_of_22_singular a    lemon:Form ;
+  lemon:writtenRep "prime minister"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:prime_minister_of_22_plural a   lemon:Form ;
+  lemon:writtenRep "prime ministers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:prime_minister_of_22_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-147-147-147-148-148-148-148-148-148-148-145-145-145-145-143-143-143-143-64-64-633_prime_minister_of_22 ;
+  lexinfo:prepositionalAdjunct :arg2-147-147-147-148-148-148-148-148-148-148-145-145-145-145-143-143-143-143-64-64-633_prime_minister_of_22 .
+
+:prime_minister_of_22_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :prime_minister_of_22_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/office> ;
+  lemon:subjOfProp          :arg2-147-147-147-148-148-148-148-148-148-148-145-145-145-145-143-143-143-143-64-64-633_prime_minister_of_22 ;
+  lemon:objOfProp           :arg1-147-147-147-148-148-148-148-148-148-148-145-145-145-145-143-143-143-143-64-64-633_prime_minister_of_22 ;
+  lemon:condition           :prime_minister_of_22_sense_1_condition .
+
+:prime_minister_of_22_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-147-147-147-148-148-148-148-148-148-148-145-145-145-145-143-143-143-143-64-64-633_prime_minister_of_22 lemon:marker :prime_minister_of_22_form_preposition .
+## Prepositions ##
+:prime_minister_of_22_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :gridiron_football_player_209_sense_1_res ;
+  lemon:entry    :gridiron_football_player_209 .
+
+:gridiron_football_player_209 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :gridiron_football_player_209_form ;
+  lemon:otherForm  :gridiron_football_player_209_singular ;
+  lemon:otherForm  :gridiron_football_player_209_plural ;
+  lemon:sense          :gridiron_football_player_209_sense_1 ;
+  lemon:synBehavior    :gridiron_football_player_209_predFrame .
+
+:gridiron_football_player_209_form
+ lemon:writtenRep "gridiron football player"@en .
+
+:gridiron_football_player_209_singular a    lemon:Form ;
+  lemon:writtenRep "gridiron football player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:gridiron_football_player_209_plural a   lemon:Form ;
+  lemon:writtenRep "gridiron football players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:gridiron_football_player_209_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :gridiron_football_player_209_sense_1_res ;
+  lemon:isA       :gridiron_football_player_209_PredSynArg .
+
+:gridiron_football_player_209_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/GridironFootballPlayer> .

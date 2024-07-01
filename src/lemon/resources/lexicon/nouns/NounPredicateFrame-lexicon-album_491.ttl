@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :album_491_sense_1_res ;
+  lemon:entry    :album_491 .
+
+:album_491 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :album_491_form ;
+  lemon:otherForm  :album_491_singular ;
+  lemon:otherForm  :album_491_plural ;
+  lemon:sense          :album_491_sense_1 ;
+  lemon:synBehavior    :album_491_predFrame .
+
+:album_491_form
+ lemon:writtenRep "album"@en .
+
+:album_491_singular a    lemon:Form ;
+  lemon:writtenRep "album"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:album_491_plural a   lemon:Form ;
+  lemon:writtenRep "albums"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:album_491_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :album_491_sense_1_res ;
+  lemon:isA       :album_491_PredSynArg .
+
+:album_491_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Album> .

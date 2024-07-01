@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :editor_of_289 ;
+  lemon:entry    :editor_of_289_form_preposition .
+
+:editor_of_289 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :editor_of_289_form ;
+  lemon:otherForm  :editor_of_289_singular ;
+  lemon:otherForm  :editor_of_289_plural ;
+  lemon:sense          :editor_of_289_sense_1 ;
+  lemon:synBehavior    :editor_of_289_nounpp .
+
+:editor_of_289_form a lemon:Form ;
+  lemon:writtenRep "editor"@en .
+
+:editor_of_289_singular a    lemon:Form ;
+  lemon:writtenRep "editor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:editor_of_289_plural a   lemon:Form ;
+  lemon:writtenRep "editors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:editor_of_289_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-79-79-79-80-80-80-80-80-80-80-78-78-78-78-78-78-78-78-38_editor_of_289 ;
+  lexinfo:prepositionalAdjunct :arg2-79-79-79-80-80-80-80-80-80-80-78-78-78-78-78-78-78-78-38_editor_of_289 .
+
+:editor_of_289_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :editor_of_289_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/editor> ;
+  lemon:subjOfProp          :arg2-79-79-79-80-80-80-80-80-80-80-78-78-78-78-78-78-78-78-38_editor_of_289 ;
+  lemon:objOfProp           :arg1-79-79-79-80-80-80-80-80-80-80-78-78-78-78-78-78-78-78-38_editor_of_289 ;
+  lemon:condition           :editor_of_289_sense_1_condition .
+
+:editor_of_289_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-79-79-79-80-80-80-80-80-80-80-78-78-78-78-78-78-78-78-38_editor_of_289 lemon:marker :editor_of_289_form_preposition .
+## Prepositions ##
+:editor_of_289_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

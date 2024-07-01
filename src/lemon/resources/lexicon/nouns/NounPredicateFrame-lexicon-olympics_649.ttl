@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :olympics_649_sense_1_res ;
+  lemon:entry    :olympics_649 .
+
+:olympics_649 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :olympics_649_form ;
+  lemon:otherForm  :olympics_649_singular ;
+  lemon:otherForm  :olympics_649_plural ;
+  lemon:sense          :olympics_649_sense_1 ;
+  lemon:synBehavior    :olympics_649_predFrame .
+
+:olympics_649_form
+ lemon:writtenRep "olympics"@en .
+
+:olympics_649_singular a    lemon:Form ;
+  lemon:writtenRep "olympics"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:olympics_649_plural a   lemon:Form ;
+  lemon:writtenRep "olympicss"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:olympics_649_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :olympics_649_sense_1_res ;
+  lemon:isA       :olympics_649_PredSynArg .
+
+:olympics_649_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Olympics> .

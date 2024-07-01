@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :industry-of_507 ;
+  lemon:entry    :industry-of_507_form_preposition .
+
+:industry-of_507 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :industry-of_507_form ;
+  lemon:otherForm  :industry-of_507_singular ;
+  lemon:otherForm  :industry-of_507_plural ;
+  lemon:sense          :industry-of_507_sense_1 ;
+  lemon:synBehavior    :industry-of_507_nounpp .
+
+:industry-of_507_form a lemon:Form ;
+  lemon:writtenRep "industry"@en .
+
+:industry-of_507_singular a    lemon:Form ;
+  lemon:writtenRep "industry"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:industry-of_507_plural a   lemon:Form ;
+  lemon:writtenRep "industries"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:industry-of_507_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1491-1491-1491-1486-1488-1488-1488-1488-1488-1488-1464-1464-1464-1464-1435-1435-1435-1435-733_industry-of_507 ;
+  lexinfo:prepositionalAdjunct :arg2-1491-1491-1491-1486-1488-1488-1488-1488-1488-1488-1464-1464-1464-1464-1435-1435-1435-1435-733_industry-of_507 .
+
+:industry-of_507_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :industry-of_507_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/industry> ;
+  lemon:subjOfProp          :arg2-1491-1491-1491-1486-1488-1488-1488-1488-1488-1488-1464-1464-1464-1464-1435-1435-1435-1435-733_industry-of_507 ;
+  lemon:objOfProp           :arg1-1491-1491-1491-1486-1488-1488-1488-1488-1488-1488-1464-1464-1464-1464-1435-1435-1435-1435-733_industry-of_507 ;
+  lemon:condition           :industry-of_507_sense_1_condition .
+
+:industry-of_507_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Food> .
+
+:arg2-1491-1491-1491-1486-1488-1488-1488-1488-1488-1488-1464-1464-1464-1464-1435-1435-1435-1435-733_industry-of_507 lemon:marker :industry-of_507_form_preposition .
+## Prepositions ##
+:industry-of_507_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

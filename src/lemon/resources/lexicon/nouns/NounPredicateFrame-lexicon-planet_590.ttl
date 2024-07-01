@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :planet_590_sense_1_res ;
+  lemon:entry    :planet_590 .
+
+:planet_590 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :planet_590_form ;
+  lemon:otherForm  :planet_590_singular ;
+  lemon:otherForm  :planet_590_plural ;
+  lemon:sense          :planet_590_sense_1 ;
+  lemon:synBehavior    :planet_590_predFrame .
+
+:planet_590_form
+ lemon:writtenRep "planet"@en .
+
+:planet_590_singular a    lemon:Form ;
+  lemon:writtenRep "planet"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:planet_590_plural a   lemon:Form ;
+  lemon:writtenRep "planets"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:planet_590_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :planet_590_sense_1_res ;
+  lemon:isA       :planet_590_PredSynArg .
+
+:planet_590_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Planet> .

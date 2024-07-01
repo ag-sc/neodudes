@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :bacteria_700_sense_1_res ;
+  lemon:entry    :bacteria_700 .
+
+:bacteria_700 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :bacteria_700_form ;
+  lemon:otherForm  :bacteria_700_singular ;
+  lemon:otherForm  :bacteria_700_plural ;
+  lemon:sense          :bacteria_700_sense_1 ;
+  lemon:synBehavior    :bacteria_700_predFrame .
+
+:bacteria_700_form
+ lemon:writtenRep "bacteria"@en .
+
+:bacteria_700_singular a    lemon:Form ;
+  lemon:writtenRep "bacteria"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:bacteria_700_plural a   lemon:Form ;
+  lemon:writtenRep "bacterias"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:bacteria_700_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :bacteria_700_sense_1_res ;
+  lemon:isA       :bacteria_700_PredSynArg .
+
+:bacteria_700_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Bacteria> .

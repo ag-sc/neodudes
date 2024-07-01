@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :established_in_34 ;
+  lemon:entry    :form_established_in_34_preposition .
+
+:established_in_34 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_established_in_34 ;
+  lemon:otherForm      :form_established_in_34_present3rd ;
+  lemon:otherForm      :form_established_in_34_past ;
+  lemon:otherForm      :form_established_in_34_perfect ;
+  lemon:sense          :established_in_34_sense_1 ;
+  lemon:synBehavior    :established_in_34_frame .
+
+:form_established_in_34 a           lemon:Form ;
+  lemon:writtenRep     "establish"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_established_in_34_present3rd a      lemon:Form ;
+  lemon:writtenRep "establishes"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_established_in_34_past a lemon:Form ;
+  lemon:writtenRep  "established"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_established_in_34_perfect a   lemon:Form ;
+  lemon:writtenRep "established"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:established_in_34_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :established_in_34_subj ;
+  lexinfo:prepositionalAdjunct :established_in_34_obj .
+
+:established_in_34_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :established_in_34_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/established> ;
+  lemon:subjOfProp  :established_in_34_subj ;
+  lemon:objOfProp   :established_in_34_obj ;
+  lemon:condition   :established_in_34_sense_1_condition .
+
+:established_in_34_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+
+:established_in_34_obj lemon:marker :form_established_in_34_preposition .
+
+## Prepositions ##
+:form_established_in_34_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

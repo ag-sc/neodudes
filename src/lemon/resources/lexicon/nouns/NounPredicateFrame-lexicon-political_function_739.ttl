@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :political_function_739_sense_1_res ;
+  lemon:entry    :political_function_739 .
+
+:political_function_739 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :political_function_739_form ;
+  lemon:otherForm  :political_function_739_singular ;
+  lemon:otherForm  :political_function_739_plural ;
+  lemon:sense          :political_function_739_sense_1 ;
+  lemon:synBehavior    :political_function_739_predFrame .
+
+:political_function_739_form
+ lemon:writtenRep "political function"@en .
+
+:political_function_739_singular a    lemon:Form ;
+  lemon:writtenRep "political function"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:political_function_739_plural a   lemon:Form ;
+  lemon:writtenRep "political functions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:political_function_739_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :political_function_739_sense_1_res ;
+  lemon:isA       :political_function_739_PredSynArg .
+
+:political_function_739_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/PoliticalFunction> .

@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :first_28 ;
+  lemon:entry    :form_first_28_preposition ;
+  lemon:entry    :first_28_res .
+
+:first_28 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_first_28 ;
+  lemon:otherForm      :form_first_28_comperative ;
+  lemon:otherForm      :form_first_28_superlative ;
+  lemon:sense          :first_28_sense_1 ;
+  lemon:synBehavior    :first_28_predFrame .
+
+:form_first_28 lemon:writtenRep "first"@en .
+
+:form_first_28_comperative lemon:writtenRep "-"@en .
+
+:form_first_28_superlative lemon:writtenRep "-"@en .
+
+:first_28_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :first_28_PredSynArg .
+
+:first_28_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :first_28_res ;
+  lemon:isA       :first_28_PredSynArg ;
+  lemon:condition :first_28_sense_1_condition .
+
+:first_28_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/releaseDate> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:first_28_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Album> ;
+  lemon:propertyRange    <http://www.w3.org/2001/XMLSchema#date> .
+
+## Prepositions ##
+:form_first_28_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

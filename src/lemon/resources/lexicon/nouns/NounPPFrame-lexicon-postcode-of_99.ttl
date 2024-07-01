@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :postcode-of_99 ;
+  lemon:entry    :postcode-of_99_form_preposition .
+
+:postcode-of_99 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :postcode-of_99_form ;
+  lemon:otherForm  :postcode-of_99_singular ;
+  lemon:otherForm  :postcode-of_99_plural ;
+  lemon:sense          :postcode-of_99_sense_1 ;
+  lemon:synBehavior    :postcode-of_99_nounpp .
+
+:postcode-of_99_form a lemon:Form ;
+  lemon:writtenRep "post code"@en .
+
+:postcode-of_99_singular a    lemon:Form ;
+  lemon:writtenRep "post code"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:postcode-of_99_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:postcode-of_99_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-935-935-935-932-931-931-931-931-931-931-913-913-913-913-890-890-890-890-444-444-607_postcode-of_99 ;
+  lexinfo:prepositionalAdjunct :arg2-935-935-935-932-931-931-931-931-931-931-913-913-913-913-890-890-890-890-444-444-607_postcode-of_99 .
+
+:postcode-of_99_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :postcode-of_99_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/postalCode> ;
+  lemon:subjOfProp          :arg2-935-935-935-932-931-931-931-931-931-931-913-913-913-913-890-890-890-890-444-444-607_postcode-of_99 ;
+  lemon:objOfProp           :arg1-935-935-935-932-931-931-931-931-931-931-913-913-913-913-890-890-890-890-444-444-607_postcode-of_99 ;
+  lemon:condition           :postcode-of_99_sense_1_condition .
+
+:postcode-of_99_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-935-935-935-932-931-931-931-931-931-931-913-913-913-913-890-890-890-890-444-444-607_postcode-of_99 lemon:marker :postcode-of_99_form_preposition .
+## Prepositions ##
+:postcode-of_99_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

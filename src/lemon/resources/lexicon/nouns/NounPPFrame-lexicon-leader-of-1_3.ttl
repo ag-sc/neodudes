@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :leader-of-1_3 ;
+  lemon:entry    :leader-of-1_3_form_preposition .
+
+:leader-of-1_3 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :leader-of-1_3_form ;
+  lemon:otherForm  :leader-of-1_3_singular ;
+  lemon:otherForm  :leader-of-1_3_plural ;
+  lemon:sense          :leader-of-1_3_sense_1 ;
+  lemon:synBehavior    :leader-of-1_3_nounpp .
+
+:leader-of-1_3_form a lemon:Form ;
+  lemon:writtenRep "leader"@en .
+
+:leader-of-1_3_singular a    lemon:Form ;
+  lemon:writtenRep "leader"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:leader-of-1_3_plural a   lemon:Form ;
+  lemon:writtenRep "leaders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:leader-of-1_3_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1437-1437-1437-1432-1434-1434-1434-1434-1434-1434-1411-1411-1411-1411-1382-1382-1382-1382-677-677-597_leader-of-1_3 ;
+  lexinfo:prepositionalAdjunct :arg2-1437-1437-1437-1432-1434-1434-1434-1434-1434-1434-1411-1411-1411-1411-1382-1382-1382-1382-677-677-597_leader-of-1_3 .
+
+:leader-of-1_3_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :leader-of-1_3_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/leader> ;
+  lemon:subjOfProp          :arg2-1437-1437-1437-1432-1434-1434-1434-1434-1434-1434-1411-1411-1411-1411-1382-1382-1382-1382-677-677-597_leader-of-1_3 ;
+  lemon:objOfProp           :arg1-1437-1437-1437-1432-1434-1434-1434-1434-1434-1434-1411-1411-1411-1411-1382-1382-1382-1382-677-677-597_leader-of-1_3 ;
+  lemon:condition           :leader-of-1_3_sense_1_condition .
+
+:leader-of-1_3_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Legislature> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Organisation> .
+
+:arg2-1437-1437-1437-1432-1434-1434-1434-1434-1434-1434-1411-1411-1411-1411-1382-1382-1382-1382-677-677-597_leader-of-1_3 lemon:marker :leader-of-1_3_form_preposition .
+## Prepositions ##
+:leader-of-1_3_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

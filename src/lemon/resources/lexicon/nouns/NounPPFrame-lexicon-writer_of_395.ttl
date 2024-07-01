@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :writer_of_395 ;
+  lemon:entry    :writer_of_395_form_preposition .
+
+:writer_of_395 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :writer_of_395_form ;
+  lemon:otherForm  :writer_of_395_singular ;
+  lemon:otherForm  :writer_of_395_plural ;
+  lemon:sense          :writer_of_395_sense_1 ;
+  lemon:synBehavior    :writer_of_395_nounpp .
+
+:writer_of_395_form a lemon:Form ;
+  lemon:writtenRep "writer"@en .
+
+:writer_of_395_singular a    lemon:Form ;
+  lemon:writtenRep "writer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:writer_of_395_plural a   lemon:Form ;
+  lemon:writtenRep "writers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:writer_of_395_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-985-985-985-981-980-980-980-980-980-980-962-962-962-962-939-939-939-939-467_writer_of_395 ;
+  lexinfo:prepositionalAdjunct :arg2-985-985-985-981-980-980-980-980-980-980-962-962-962-962-939-939-939-939-467_writer_of_395 .
+
+:writer_of_395_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :writer_of_395_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/writer> ;
+  lemon:subjOfProp          :arg2-985-985-985-981-980-980-980-980-980-980-962-962-962-962-939-939-939-939-467_writer_of_395 ;
+  lemon:objOfProp           :arg1-985-985-985-981-980-980-980-980-980-980-962-962-962-962-939-939-939-939-467_writer_of_395 ;
+  lemon:condition           :writer_of_395_sense_1_condition .
+
+:writer_of_395_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/MusicalWork> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Actor> .
+
+:arg2-985-985-985-981-980-980-980-980-980-980-962-962-962-962-939-939-939-939-467_writer_of_395 lemon:marker :writer_of_395_form_preposition .
+## Prepositions ##
+:writer_of_395_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

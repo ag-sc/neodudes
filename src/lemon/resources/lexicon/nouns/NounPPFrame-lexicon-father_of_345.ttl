@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :father_of_345 ;
+  lemon:entry    :father_of_345_form_preposition .
+
+:father_of_345 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :father_of_345_form ;
+  lemon:otherForm  :father_of_345_singular ;
+  lemon:otherForm  :father_of_345_plural ;
+  lemon:sense          :father_of_345_sense_1 ;
+  lemon:sense          :father_of_345_sense_2 ;
+  lemon:synBehavior    :father_of_345_nounpp .
+
+:father_of_345_form a lemon:Form ;
+  lemon:writtenRep "father"@en .
+
+:father_of_345_singular a    lemon:Form ;
+  lemon:writtenRep "father"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:father_of_345_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:father_of_345_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 ;
+  lexinfo:prepositionalAdjunct :arg2-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 .
+
+:father_of_345_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :father_of_345_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/father> ;
+  lemon:subjOfProp          :arg2-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 ;
+  lemon:objOfProp           :arg1-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 ;
+  lemon:condition           :father_of_345_sense_1_condition .
+
+:father_of_345_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Royalty> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:father_of_345_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :father_of_345_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/parent> ;
+  lemon:subjOfProp          :arg2-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 ;
+  lemon:objOfProp           :arg1-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 ;
+  lemon:condition           :father_of_345_sense_2_condition .
+
+:father_of_345_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1052-1052-1052-1049-1048-1048-1048-1048-1048-1048-1030-1030-1030-1030-1005-1005-1005-1005-500_father_of_345 lemon:marker :father_of_345_form_preposition .
+## Prepositions ##
+:father_of_345_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

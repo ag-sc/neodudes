@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :causeofdeath_of_43 ;
+  lemon:entry    :causeofdeath_of_43_form_preposition .
+
+:causeofdeath_of_43 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :causeofdeath_of_43_form ;
+  lemon:otherForm  :causeofdeath_of_43_singular ;
+  lemon:otherForm  :causeofdeath_of_43_plural ;
+  lemon:sense          :causeofdeath_of_43_sense_1 ;
+  lemon:synBehavior    :causeofdeath_of_43_nounpp .
+
+:causeofdeath_of_43_form a lemon:Form ;
+  lemon:writtenRep "cause of death"@en .
+
+:causeofdeath_of_43_singular a    lemon:Form ;
+  lemon:writtenRep "cause of death"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:causeofdeath_of_43_plural a   lemon:Form ;
+  lemon:writtenRep "causes of death"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:causeofdeath_of_43_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-554-554-554-552-551-551-551-551-551-551-541-541-541-541-530-530-530-530-269-269-50_causeofdeath_of_43 ;
+  lexinfo:prepositionalAdjunct :arg2-554-554-554-552-551-551-551-551-551-551-541-541-541-541-530-530-530-530-269-269-50_causeofdeath_of_43 .
+
+:causeofdeath_of_43_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :causeofdeath_of_43_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/deathCause> ;
+  lemon:subjOfProp          :arg2-554-554-554-552-551-551-551-551-551-551-541-541-541-541-530-530-530-530-269-269-50_causeofdeath_of_43 ;
+  lemon:objOfProp           :arg1-554-554-554-552-551-551-551-551-551-551-541-541-541-541-530-530-530-530-269-269-50_causeofdeath_of_43 ;
+  lemon:condition           :causeofdeath_of_43_sense_1_condition .
+
+:causeofdeath_of_43_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:arg2-554-554-554-552-551-551-551-551-551-551-541-541-541-541-530-530-530-530-269-269-50_causeofdeath_of_43 lemon:marker :causeofdeath_of_43_form_preposition .
+## Prepositions ##
+:causeofdeath_of_43_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

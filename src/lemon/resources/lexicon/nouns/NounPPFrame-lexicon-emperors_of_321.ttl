@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :emperors_of_321 ;
+  lemon:entry    :emperors_of_321_form_preposition .
+
+:emperors_of_321 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :emperors_of_321_form ;
+  lemon:otherForm  :emperors_of_321_singular ;
+  lemon:otherForm  :emperors_of_321_plural ;
+  lemon:sense          :emperors_of_321_sense_1 ;
+  lemon:synBehavior    :emperors_of_321_nounpp .
+
+:emperors_of_321_form a lemon:Form ;
+  lemon:writtenRep "emperor"@en .
+
+:emperors_of_321_singular a    lemon:Form ;
+  lemon:writtenRep "emperor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:emperors_of_321_plural a   lemon:Form ;
+  lemon:writtenRep "emperors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:emperors_of_321_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-640-640-640-638-637-637-637-637-637-637-625-625-625-625-613-613-613-613-295_emperors_of_321 ;
+  lexinfo:prepositionalAdjunct :arg2-640-640-640-638-637-637-637-637-637-637-625-625-625-625-613-613-613-613-295_emperors_of_321 .
+
+:emperors_of_321_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :emperors_of_321_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/title> ;
+  lemon:subjOfProp          :arg2-640-640-640-638-637-637-637-637-637-637-625-625-625-625-613-613-613-613-295_emperors_of_321 ;
+  lemon:objOfProp           :arg1-640-640-640-638-637-637-637-637-637-637-625-625-625-625-613-613-613-613-295_emperors_of_321 ;
+  lemon:condition           :emperors_of_321_sense_1_condition .
+
+:emperors_of_321_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-640-640-640-638-637-637-637-637-637-637-625-625-625-625-613-613-613-613-295_emperors_of_321 lemon:marker :emperors_of_321_form_preposition .
+## Prepositions ##
+:emperors_of_321_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

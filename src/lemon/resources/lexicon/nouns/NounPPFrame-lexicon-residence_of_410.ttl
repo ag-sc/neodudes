@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :residence_of_410 ;
+  lemon:entry    :residence_of_410_form_preposition .
+
+:residence_of_410 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :residence_of_410_form ;
+  lemon:otherForm  :residence_of_410_singular ;
+  lemon:otherForm  :residence_of_410_plural ;
+  lemon:sense          :residence_of_410_sense_1 ;
+  lemon:synBehavior    :residence_of_410_nounpp .
+
+:residence_of_410_form a lemon:Form ;
+  lemon:writtenRep "residence"@en .
+
+:residence_of_410_singular a    lemon:Form ;
+  lemon:writtenRep "residence"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:residence_of_410_plural a   lemon:Form ;
+  lemon:writtenRep "residences"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:residence_of_410_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1330-1330-1329-1324-1326-1326-1326-1326-1326-1326-1305-1305-1305-1305-1276-1276-1276-1276-645_residence_of_410 ;
+  lexinfo:prepositionalAdjunct :arg2-1330-1330-1329-1324-1326-1326-1326-1326-1326-1326-1305-1305-1305-1305-1276-1276-1276-1276-645_residence_of_410 .
+
+:residence_of_410_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :residence_of_410_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/residence> ;
+  lemon:subjOfProp          :arg2-1330-1330-1329-1324-1326-1326-1326-1326-1326-1326-1305-1305-1305-1305-1276-1276-1276-1276-645_residence_of_410 ;
+  lemon:objOfProp           :arg1-1330-1330-1329-1324-1326-1326-1326-1326-1326-1326-1305-1305-1305-1305-1276-1276-1276-1276-645_residence_of_410 ;
+  lemon:condition           :residence_of_410_sense_1_condition .
+
+:residence_of_410_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-1330-1330-1329-1324-1326-1326-1326-1326-1326-1326-1305-1305-1305-1305-1276-1276-1276-1276-645_residence_of_410 lemon:marker :residence_of_410_form_preposition .
+## Prepositions ##
+:residence_of_410_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :actor_of_1_34 ;
+  lemon:entry    :actor_of_1_34_form_preposition .
+
+:actor_of_1_34 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :actor_of_1_34_form ;
+  lemon:otherForm  :actor_of_1_34_singular ;
+  lemon:otherForm  :actor_of_1_34_plural ;
+  lemon:sense          :actor_of_1_34_sense_1 ;
+  lemon:synBehavior    :actor_of_1_34_nounpp .
+
+:actor_of_1_34_form a lemon:Form ;
+  lemon:writtenRep "actor"@en .
+
+:actor_of_1_34_singular a    lemon:Form ;
+  lemon:writtenRep "actor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:actor_of_1_34_plural a   lemon:Form ;
+  lemon:writtenRep "actors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:actor_of_1_34_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-30-30-30-31-31-31-31-31-31-31-31-31-31-31-31-31-31-31-20-20-11_actor_of_1_34 ;
+  lexinfo:prepositionalAdjunct :arg2-30-30-30-31-31-31-31-31-31-31-31-31-31-31-31-31-31-31-20-20-11_actor_of_1_34 .
+
+:actor_of_1_34_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :actor_of_1_34_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/starring> ;
+  lemon:subjOfProp          :arg2-30-30-30-31-31-31-31-31-31-31-31-31-31-31-31-31-31-31-20-20-11_actor_of_1_34 ;
+  lemon:objOfProp           :arg1-30-30-30-31-31-31-31-31-31-31-31-31-31-31-31-31-31-31-20-20-11_actor_of_1_34 ;
+  lemon:condition           :actor_of_1_34_sense_1_condition .
+
+:actor_of_1_34_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-30-30-30-31-31-31-31-31-31-31-31-31-31-31-31-31-31-31-20-20-11_actor_of_1_34 lemon:marker :actor_of_1_34_form_preposition .
+## Prepositions ##
+:actor_of_1_34_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :critically_endangered_animals_67_sense_1_res ;
+  lemon:entry    :critically_endangered_animals_67 .
+
+:critically_endangered_animals_67 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :critically_endangered_animals_67_form ;
+  lemon:otherForm  :critically_endangered_animals_67_singular ;
+  lemon:otherForm  :critically_endangered_animals_67_plural ;
+  lemon:sense          :critically_endangered_animals_67_sense_1 ;
+  lemon:synBehavior    :critically_endangered_animals_67_predFrame .
+
+:critically_endangered_animals_67_form
+ lemon:writtenRep "critically endangered animal"@en .
+
+:critically_endangered_animals_67_singular a    lemon:Form ;
+  lemon:writtenRep "critically endangered animal"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:critically_endangered_animals_67_plural a   lemon:Form ;
+  lemon:writtenRep "critically endangered animals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:critically_endangered_animals_67_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :critically_endangered_animals_67_sense_1_res ;
+  lemon:isA       :critically_endangered_animals_67_PredSynArg .
+
+:critically_endangered_animals_67_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://purl.org/dc/terms/subject> ;
+  owl:hasValue   <http://dbpedia.org/resource/Category:Critically_endangered_animals> .

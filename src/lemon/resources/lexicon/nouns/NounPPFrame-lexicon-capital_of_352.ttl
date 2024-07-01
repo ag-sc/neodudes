@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :capital_of_352 ;
+  lemon:entry    :capital_of_352_form_preposition .
+
+:capital_of_352 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :capital_of_352_form ;
+  lemon:otherForm  :capital_of_352_singular ;
+  lemon:otherForm  :capital_of_352_plural ;
+  lemon:sense          :capital_of_352_sense_1 ;
+  lemon:synBehavior    :capital_of_352_nounpp .
+
+:capital_of_352_form a lemon:Form ;
+  lemon:writtenRep "capital"@en .
+
+:capital_of_352_singular a    lemon:Form ;
+  lemon:writtenRep "capital"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:capital_of_352_plural a   lemon:Form ;
+  lemon:writtenRep "capitals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:capital_of_352_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-189-189-189-190-190-190-190-190-190-190-186-186-186-186-182-182-182-182-98_capital_of_352 ;
+  lexinfo:prepositionalAdjunct :arg2-189-189-189-190-190-190-190-190-190-190-186-186-186-186-182-182-182-182-98_capital_of_352 .
+
+:capital_of_352_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :capital_of_352_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/capital> ;
+  lemon:subjOfProp          :arg2-189-189-189-190-190-190-190-190-190-190-186-186-186-186-182-182-182-182-98_capital_of_352 ;
+  lemon:objOfProp           :arg1-189-189-189-190-190-190-190-190-190-190-186-186-186-186-182-182-182-182-98_capital_of_352 ;
+  lemon:condition           :capital_of_352_sense_1_condition .
+
+:capital_of_352_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-189-189-189-190-190-190-190-190-190-190-186-186-186-186-182-182-182-182-98_capital_of_352 lemon:marker :capital_of_352_form_preposition .
+## Prepositions ##
+:capital_of_352_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

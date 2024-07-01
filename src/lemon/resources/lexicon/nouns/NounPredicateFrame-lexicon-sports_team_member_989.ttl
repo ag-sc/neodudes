@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sports_team_member_989_sense_1_res ;
+  lemon:entry    :sports_team_member_989 .
+
+:sports_team_member_989 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :sports_team_member_989_form ;
+  lemon:otherForm  :sports_team_member_989_singular ;
+  lemon:otherForm  :sports_team_member_989_plural ;
+  lemon:sense          :sports_team_member_989_sense_1 ;
+  lemon:synBehavior    :sports_team_member_989_predFrame .
+
+:sports_team_member_989_form
+ lemon:writtenRep "sports team member"@en .
+
+:sports_team_member_989_singular a    lemon:Form ;
+  lemon:writtenRep "sports team member"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:sports_team_member_989_plural a   lemon:Form ;
+  lemon:writtenRep "sports team members"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:sports_team_member_989_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sports_team_member_989_sense_1_res ;
+  lemon:isA       :sports_team_member_989_PredSynArg .
+
+:sports_team_member_989_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SportsTeamMember> .

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :moroccan_135_206_sense_1_res ;
+  lemon:entry    :moroccan_135_206 .
+
+:moroccan_135_206 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :moroccan_135_206_lemma ;
+  lemon:sense          :moroccan_135_206_sense_1 ;
+  lemon:synBehavior    :moroccan_135_206_attrFrame, :moroccan_135_206_predFrame .
+
+:moroccan_135_206_lemma lemon:writtenRep "Moroccan"@en .
+
+:moroccan_135_206_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :moroccan_135_206_PredSynArg .
+
+:moroccan_135_206_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :moroccan_135_206_AttrSynArg .
+
+:moroccan_135_206_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :moroccan_135_206_sense_1_res ;
+  lemon:isA       :moroccan_135_206_AttrSynArg, :moroccan_135_206_PredSynArg .
+
+:moroccan_135_206_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Morocco> .

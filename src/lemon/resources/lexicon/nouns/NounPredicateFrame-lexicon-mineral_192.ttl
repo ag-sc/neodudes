@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mineral_192_sense_1_res ;
+  lemon:entry    :mineral_192 .
+
+:mineral_192 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mineral_192_form ;
+  lemon:otherForm  :mineral_192_singular ;
+  lemon:otherForm  :mineral_192_plural ;
+  lemon:sense          :mineral_192_sense_1 ;
+  lemon:synBehavior    :mineral_192_predFrame .
+
+:mineral_192_form
+ lemon:writtenRep "mineral"@en .
+
+:mineral_192_singular a    lemon:Form ;
+  lemon:writtenRep "mineral"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mineral_192_plural a   lemon:Form ;
+  lemon:writtenRep "minerals"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mineral_192_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :mineral_192_sense_1_res ;
+  lemon:isA       :mineral_192_PredSynArg .
+
+:mineral_192_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Mineral> .

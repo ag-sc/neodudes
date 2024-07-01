@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :law_firm_344_sense_1_res ;
+  lemon:entry    :law_firm_344 .
+
+:law_firm_344 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :law_firm_344_form ;
+  lemon:otherForm  :law_firm_344_singular ;
+  lemon:otherForm  :law_firm_344_plural ;
+  lemon:sense          :law_firm_344_sense_1 ;
+  lemon:synBehavior    :law_firm_344_predFrame .
+
+:law_firm_344_form
+ lemon:writtenRep "law firm"@en .
+
+:law_firm_344_singular a    lemon:Form ;
+  lemon:writtenRep "law firm"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:law_firm_344_plural a   lemon:Form ;
+  lemon:writtenRep "law firms"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:law_firm_344_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :law_firm_344_sense_1_res ;
+  lemon:isA       :law_firm_344_PredSynArg .
+
+:law_firm_344_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/LawFirm> .

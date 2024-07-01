@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :winter_sport_player_98_sense_1_res ;
+  lemon:entry    :winter_sport_player_98 .
+
+:winter_sport_player_98 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :winter_sport_player_98_form ;
+  lemon:otherForm  :winter_sport_player_98_singular ;
+  lemon:otherForm  :winter_sport_player_98_plural ;
+  lemon:sense          :winter_sport_player_98_sense_1 ;
+  lemon:synBehavior    :winter_sport_player_98_predFrame .
+
+:winter_sport_player_98_form
+ lemon:writtenRep "winter sport player"@en .
+
+:winter_sport_player_98_singular a    lemon:Form ;
+  lemon:writtenRep "winter sport player"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:winter_sport_player_98_plural a   lemon:Form ;
+  lemon:writtenRep "winter sport players"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:winter_sport_player_98_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :winter_sport_player_98_sense_1_res ;
+  lemon:isA       :winter_sport_player_98_PredSynArg .
+
+:winter_sport_player_98_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/WinterSportPlayer> .

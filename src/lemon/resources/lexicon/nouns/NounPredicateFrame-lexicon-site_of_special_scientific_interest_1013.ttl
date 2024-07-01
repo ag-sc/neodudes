@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :site_of_special_scientific_interest_1013_sense_1_res ;
+  lemon:entry    :site_of_special_scientific_interest_1013 .
+
+:site_of_special_scientific_interest_1013 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :site_of_special_scientific_interest_1013_form ;
+  lemon:otherForm  :site_of_special_scientific_interest_1013_singular ;
+  lemon:otherForm  :site_of_special_scientific_interest_1013_plural ;
+  lemon:sense          :site_of_special_scientific_interest_1013_sense_1 ;
+  lemon:synBehavior    :site_of_special_scientific_interest_1013_predFrame .
+
+:site_of_special_scientific_interest_1013_form
+ lemon:writtenRep "site of special scientific interest"@en .
+
+:site_of_special_scientific_interest_1013_singular a    lemon:Form ;
+  lemon:writtenRep "site of special scientific interest"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:site_of_special_scientific_interest_1013_plural a   lemon:Form ;
+  lemon:writtenRep "site of special scientific interests"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:site_of_special_scientific_interest_1013_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :site_of_special_scientific_interest_1013_sense_1_res ;
+  lemon:isA       :site_of_special_scientific_interest_1013_PredSynArg .
+
+:site_of_special_scientific_interest_1013_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/SiteOfSpecialScientificInterest> .

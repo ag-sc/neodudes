@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :firstairdate-of_269 ;
+  lemon:entry    :firstairdate-of_269_form_preposition .
+
+:firstairdate-of_269 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :firstairdate-of_269_form ;
+  lemon:otherForm  :firstairdate-of_269_singular ;
+  lemon:otherForm  :firstairdate-of_269_plural ;
+  lemon:sense          :firstairdate-of_269_sense_1 ;
+  lemon:synBehavior    :firstairdate-of_269_nounpp .
+
+:firstairdate-of_269_form a lemon:Form ;
+  lemon:writtenRep "first Air Date"@en .
+
+:firstairdate-of_269_singular a    lemon:Form ;
+  lemon:writtenRep "first Air Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:firstairdate-of_269_plural a   lemon:Form ;
+  lemon:writtenRep "first Air Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:firstairdate-of_269_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-701-701-701-699-698-698-698-698-698-698-683-683-683-683-670-670-670-670-324_firstairdate-of_269 ;
+  lexinfo:prepositionalAdjunct :arg2-701-701-701-699-698-698-698-698-698-698-683-683-683-683-670-670-670-670-324_firstairdate-of_269 .
+
+:firstairdate-of_269_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :firstairdate-of_269_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/firstAirDate> ;
+  lemon:subjOfProp          :arg2-701-701-701-699-698-698-698-698-698-698-683-683-683-683-670-670-670-670-324_firstairdate-of_269 ;
+  lemon:objOfProp           :arg1-701-701-701-699-698-698-698-698-698-698-683-683-683-683-670-670-670-670-324_firstairdate-of_269 ;
+  lemon:condition           :firstairdate-of_269_sense_1_condition .
+
+:firstairdate-of_269_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionSeason> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-701-701-701-699-698-698-698-698-698-698-683-683-683-683-670-670-670-670-324_firstairdate-of_269 lemon:marker :firstairdate-of_269_form_preposition .
+## Prepositions ##
+:firstairdate-of_269_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

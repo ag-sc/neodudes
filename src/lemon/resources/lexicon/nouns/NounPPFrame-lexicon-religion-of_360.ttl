@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :religion-of_360 ;
+  lemon:entry    :religion-of_360_form_preposition .
+
+:religion-of_360 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :religion-of_360_form ;
+  lemon:otherForm  :religion-of_360_singular ;
+  lemon:otherForm  :religion-of_360_plural ;
+  lemon:sense          :religion-of_360_sense_1 ;
+  lemon:synBehavior    :religion-of_360_nounpp .
+
+:religion-of_360_form a lemon:Form ;
+  lemon:writtenRep "religion"@en .
+
+:religion-of_360_singular a    lemon:Form ;
+  lemon:writtenRep "religion"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:religion-of_360_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:religion-of_360_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1302-1302-1301-1296-1298-1298-1298-1298-1298-1298-1277-1277-1277-1277-1249-1249-1249-1249-628_religion-of_360 ;
+  lexinfo:prepositionalAdjunct :arg2-1302-1302-1301-1296-1298-1298-1298-1298-1298-1298-1277-1277-1277-1277-1249-1249-1249-1249-628_religion-of_360 .
+
+:religion-of_360_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :religion-of_360_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/religion> ;
+  lemon:subjOfProp          :arg2-1302-1302-1301-1296-1298-1298-1298-1298-1298-1298-1277-1277-1277-1277-1249-1249-1249-1249-628_religion-of_360 ;
+  lemon:objOfProp           :arg1-1302-1302-1301-1296-1298-1298-1298-1298-1298-1298-1277-1277-1277-1277-1249-1249-1249-1249-628_religion-of_360 ;
+  lemon:condition           :religion-of_360_sense_1_condition .
+
+:religion-of_360_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1302-1302-1301-1296-1298-1298-1298-1298-1298-1298-1277-1277-1277-1277-1249-1249-1249-1249-628_religion-of_360 lemon:marker :religion-of_360_form_preposition .
+## Prepositions ##
+:religion-of_360_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :launch_pad_355_sense_1_res ;
+  lemon:entry    :launch_pad_355 .
+
+:launch_pad_355 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :launch_pad_355_form ;
+  lemon:otherForm  :launch_pad_355_singular ;
+  lemon:otherForm  :launch_pad_355_plural ;
+  lemon:sense          :launch_pad_355_sense_1 ;
+  lemon:synBehavior    :launch_pad_355_predFrame .
+
+:launch_pad_355_form
+ lemon:writtenRep "launch pad"@en .
+
+:launch_pad_355_singular a    lemon:Form ;
+  lemon:writtenRep "launch pad"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:launch_pad_355_plural a   lemon:Form ;
+  lemon:writtenRep "launch pads"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:launch_pad_355_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :launch_pad_355_sense_1_res ;
+  lemon:isA       :launch_pad_355_PredSynArg .
+
+:launch_pad_355_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/LaunchPad> .

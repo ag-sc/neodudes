@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :chemical_elements_59_sense_1_res ;
+  lemon:entry    :chemical_elements_59 .
+
+:chemical_elements_59 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :chemical_elements_59_form ;
+  lemon:otherForm  :chemical_elements_59_singular ;
+  lemon:otherForm  :chemical_elements_59_plural ;
+  lemon:sense          :chemical_elements_59_sense_1 ;
+  lemon:synBehavior    :chemical_elements_59_predFrame .
+
+:chemical_elements_59_form
+ lemon:writtenRep "chemical element"@en .
+
+:chemical_elements_59_singular a    lemon:Form ;
+  lemon:writtenRep "chemical element"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:chemical_elements_59_plural a   lemon:Form ;
+  lemon:writtenRep "chemical elements"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:chemical_elements_59_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :chemical_elements_59_sense_1_res ;
+  lemon:isA       :chemical_elements_59_PredSynArg .
+
+:chemical_elements_59_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://purl.org/dc/terms/subject> ;
+  owl:hasValue   <http://dbpedia.org/resource/Category:Chemical_elements> .

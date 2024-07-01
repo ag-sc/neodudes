@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :timezone-of_3_681 ;
+  lemon:entry    :timezone-of_3_681_form_preposition .
+
+:timezone-of_3_681 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :timezone-of_3_681_form ;
+  lemon:otherForm  :timezone-of_3_681_singular ;
+  lemon:otherForm  :timezone-of_3_681_plural ;
+  lemon:sense          :timezone-of_3_681_sense_1 ;
+  lemon:synBehavior    :timezone-of_3_681_nounpp .
+
+:timezone-of_3_681_form a lemon:Form ;
+  lemon:writtenRep "time zone"@en .
+
+:timezone-of_3_681_singular a    lemon:Form ;
+  lemon:writtenRep "time zone"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:timezone-of_3_681_plural a   lemon:Form ;
+  lemon:writtenRep "time zones"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:timezone-of_3_681_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-33-33-33-34-34-34-34-34-34-34-34-34-34-34-34-34-34-34-22-22-378_timezone-of_3_681 ;
+  lexinfo:prepositionalAdjunct :arg2-33-33-33-34-34-34-34-34-34-34-34-34-34-34-34-34-34-34-22-22-378_timezone-of_3_681 .
+
+:timezone-of_3_681_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :timezone-of_3_681_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/timeZone> ;
+  lemon:subjOfProp          :arg2-33-33-33-34-34-34-34-34-34-34-34-34-34-34-34-34-34-34-22-22-378_timezone-of_3_681 ;
+  lemon:objOfProp           :arg1-33-33-33-34-34-34-34-34-34-34-34-34-34-34-34-34-34-34-22-22-378_timezone-of_3_681 ;
+  lemon:condition           :timezone-of_3_681_sense_1_condition .
+
+:timezone-of_3_681_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-33-33-33-34-34-34-34-34-34-34-34-34-34-34-34-34-34-34-22-22-378_timezone-of_3_681 lemon:marker :timezone-of_3_681_form_preposition .
+## Prepositions ##
+:timezone-of_3_681_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

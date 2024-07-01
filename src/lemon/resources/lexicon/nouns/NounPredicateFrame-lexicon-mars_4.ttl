@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mars_4_sense_1_res ;
+  lemon:entry    :mars_4 .
+
+:mars_4 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mars_4_form ;
+  lemon:otherForm  :mars_4_singular ;
+  lemon:otherForm  :mars_4_plural ;
+  lemon:sense          :mars_4_sense_1 ;
+  lemon:synBehavior    :mars_4_predFrame .
+
+:mars_4_form
+ lemon:writtenRep "mars"@en .
+
+:mars_4_singular a    lemon:Form ;
+  lemon:writtenRep "mars"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mars_4_plural a   lemon:Form ;
+  lemon:writtenRep "mars"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mars_4_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :mars_4_sense_1_res ;
+  lemon:isA       :mars_4_PredSynArg .
+
+:mars_4_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://purl.org/dc/terms/subject> ;
+  owl:hasValue   <http://dbpedia.org/resource/Category:Mars_rovers> .

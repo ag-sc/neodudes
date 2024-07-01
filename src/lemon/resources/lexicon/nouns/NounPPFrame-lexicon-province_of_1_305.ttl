@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :province_of_1_305 ;
+  lemon:entry    :province_of_1_305_form_preposition .
+
+:province_of_1_305 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :province_of_1_305_form ;
+  lemon:otherForm  :province_of_1_305_singular ;
+  lemon:otherForm  :province_of_1_305_plural ;
+  lemon:sense          :province_of_1_305_sense_1 ;
+  lemon:synBehavior    :province_of_1_305_nounpp .
+
+:province_of_1_305_form a lemon:Form ;
+  lemon:writtenRep "province"@en .
+
+:province_of_1_305_singular a    lemon:Form ;
+  lemon:writtenRep "province"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:province_of_1_305_plural a   lemon:Form ;
+  lemon:writtenRep "provinces"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:province_of_1_305_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-290-290-289-289-288-288-288-288-288-288-282-282-282-282-277-277-277-277-138_province_of_1_305 ;
+  lexinfo:prepositionalAdjunct :arg2-290-290-289-289-288-288-288-288-288-288-282-282-282-282-277-277-277-277-138_province_of_1_305 .
+
+:province_of_1_305_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :province_of_1_305_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/province> ;
+  lemon:subjOfProp          :arg2-290-290-289-289-288-288-288-288-288-288-282-282-282-282-277-277-277-277-138_province_of_1_305 ;
+  lemon:objOfProp           :arg1-290-290-289-289-288-288-288-288-288-288-282-282-282-282-277-277-277-277-138_province_of_1_305 ;
+  lemon:condition           :province_of_1_305_sense_1_condition .
+
+:province_of_1_305_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Province> .
+
+:arg2-290-290-289-289-288-288-288-288-288-288-282-282-282-282-277-277-277-277-138_province_of_1_305 lemon:marker :province_of_1_305_form_preposition .
+## Prepositions ##
+:province_of_1_305_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

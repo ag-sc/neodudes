@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :new-zealand_145_167_sense_1_res ;
+  lemon:entry    :new-zealand_145_167 .
+
+:new-zealand_145_167 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :new-zealand_145_167_lemma ;
+  lemon:sense          :new-zealand_145_167_sense_1 ;
+  lemon:synBehavior    :new-zealand_145_167_attrFrame, :new-zealand_145_167_predFrame .
+
+:new-zealand_145_167_lemma lemon:writtenRep "New Zealand"@en .
+
+:new-zealand_145_167_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :new-zealand_145_167_PredSynArg .
+
+:new-zealand_145_167_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :new-zealand_145_167_AttrSynArg .
+
+:new-zealand_145_167_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :new-zealand_145_167_sense_1_res ;
+  lemon:isA       :new-zealand_145_167_AttrSynArg, :new-zealand_145_167_PredSynArg .
+
+:new-zealand_145_167_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/New_Zealand> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :pharaoh_492_sense_1_res ;
+  lemon:entry    :pharaoh_492 .
+
+:pharaoh_492 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :pharaoh_492_form ;
+  lemon:otherForm  :pharaoh_492_singular ;
+  lemon:otherForm  :pharaoh_492_plural ;
+  lemon:sense          :pharaoh_492_sense_1 ;
+  lemon:synBehavior    :pharaoh_492_predFrame .
+
+:pharaoh_492_form
+ lemon:writtenRep "pharaoh"@en .
+
+:pharaoh_492_singular a    lemon:Form ;
+  lemon:writtenRep "pharaoh"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:pharaoh_492_plural a   lemon:Form ;
+  lemon:writtenRep "pharaohs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:pharaoh_492_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :pharaoh_492_sense_1_res ;
+  lemon:isA       :pharaoh_492_PredSynArg .
+
+:pharaoh_492_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Pharaoh> .

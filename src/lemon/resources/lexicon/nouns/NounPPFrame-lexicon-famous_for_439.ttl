@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :famous_for_439 ;
+  lemon:entry    :famous_for_439_form_preposition .
+
+:famous_for_439 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :famous_for_439_form ;
+  lemon:otherForm  :famous_for_439_singular ;
+  lemon:otherForm  :famous_for_439_plural ;
+  lemon:sense          :famous_for_439_sense_1 ;
+  lemon:synBehavior    :famous_for_439_nounpp .
+
+:famous_for_439_form a lemon:Form ;
+  lemon:writtenRep "famous"@en .
+
+:famous_for_439_singular a    lemon:Form ;
+  lemon:writtenRep "famous"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:famous_for_439_plural a   lemon:Form ;
+  lemon:writtenRep "famous"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:famous_for_439_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1032-1032-1032-1029-1028-1028-1028-1028-1028-1028-1010-1010-1010-1010-985-985-985-985-489_famous_for_439 ;
+  lexinfo:prepositionalAdjunct :arg2-1032-1032-1032-1029-1028-1028-1028-1028-1028-1028-1010-1010-1010-1010-985-985-985-985-489_famous_for_439 .
+
+:famous_for_439_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :famous_for_439_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/knownFor> ;
+  lemon:subjOfProp          :arg2-1032-1032-1032-1029-1028-1028-1028-1028-1028-1028-1010-1010-1010-1010-985-985-985-985-489_famous_for_439 ;
+  lemon:objOfProp           :arg1-1032-1032-1032-1029-1028-1028-1028-1028-1028-1028-1010-1010-1010-1010-985-985-985-985-489_famous_for_439 ;
+  lemon:condition           :famous_for_439_sense_1_condition .
+
+:famous_for_439_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Scientist> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MilitaryUnit> .
+
+:arg2-1032-1032-1032-1029-1028-1028-1028-1028-1028-1028-1010-1010-1010-1010-985-985-985-985-489_famous_for_439 lemon:marker :famous_for_439_form_preposition .
+## Prepositions ##
+:famous_for_439_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "for"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

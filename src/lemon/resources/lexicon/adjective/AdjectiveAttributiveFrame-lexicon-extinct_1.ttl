@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :extinct_1_sense_1_res ;
+  lemon:entry    :extinct_1 .
+
+:extinct_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :extinct_1_lemma ;
+  lemon:sense          :extinct_1_sense_1 ;
+  lemon:synBehavior    :extinct_1_attrFrame, :extinct_1_predFrame .
+
+:extinct_1_lemma lemon:writtenRep "extinct"@en .
+
+:extinct_1_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :extinct_1_PredSynArg .
+
+:extinct_1_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :extinct_1_AttrSynArg .
+
+:extinct_1_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :extinct_1_sense_1_res ;
+  lemon:isA       :extinct_1_AttrSynArg, :extinct_1_PredSynArg .
+
+:extinct_1_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/conservationStatus> ;
+  owl:hasValue   "EX" .

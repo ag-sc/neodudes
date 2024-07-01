@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :carb_of_178 ;
+  lemon:entry    :carb_of_178_form_preposition .
+
+:carb_of_178 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :carb_of_178_form ;
+  lemon:otherForm  :carb_of_178_singular ;
+  lemon:otherForm  :carb_of_178_plural ;
+  lemon:sense          :carb_of_178_sense_1 ;
+  lemon:synBehavior    :carb_of_178_nounpp .
+
+:carb_of_178_form a lemon:Form ;
+  lemon:writtenRep "carb"@en .
+
+:carb_of_178_singular a    lemon:Form ;
+  lemon:writtenRep "carb"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:carb_of_178_plural a   lemon:Form ;
+  lemon:writtenRep "carbs"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:carb_of_178_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1400-1400-1400-1397-1399-1399-1399-1399-1399-1399-1376-1376-1376-1376-1347-1347-1347-1347-662-662-43_carb_of_178 ;
+  lexinfo:prepositionalAdjunct :arg2-1400-1400-1400-1397-1399-1399-1399-1399-1399-1399-1376-1376-1376-1376-1347-1347-1347-1347-662-662-43_carb_of_178 .
+
+:carb_of_178_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :carb_of_178_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/carbs> ;
+  lemon:subjOfProp          :arg2-1400-1400-1400-1397-1399-1399-1399-1399-1399-1399-1376-1376-1376-1376-1347-1347-1347-1347-662-662-43_carb_of_178 ;
+  lemon:objOfProp           :arg1-1400-1400-1400-1397-1399-1399-1399-1399-1399-1399-1376-1376-1376-1376-1347-1347-1347-1347-662-662-43_carb_of_178 ;
+  lemon:condition           :carb_of_178_sense_1_condition .
+
+:carb_of_178_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Food> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1400-1400-1400-1397-1399-1399-1399-1399-1399-1399-1376-1376-1376-1376-1347-1347-1347-1347-662-662-43_carb_of_178 lemon:marker :carb_of_178_form_preposition .
+## Prepositions ##
+:carb_of_178_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

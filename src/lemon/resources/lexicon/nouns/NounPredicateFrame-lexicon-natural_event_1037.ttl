@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :natural_event_1037_sense_1_res ;
+  lemon:entry    :natural_event_1037 .
+
+:natural_event_1037 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :natural_event_1037_form ;
+  lemon:otherForm  :natural_event_1037_singular ;
+  lemon:otherForm  :natural_event_1037_plural ;
+  lemon:sense          :natural_event_1037_sense_1 ;
+  lemon:synBehavior    :natural_event_1037_predFrame .
+
+:natural_event_1037_form
+ lemon:writtenRep "natural event"@en .
+
+:natural_event_1037_singular a    lemon:Form ;
+  lemon:writtenRep "natural event"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:natural_event_1037_plural a   lemon:Form ;
+  lemon:writtenRep "natural events"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:natural_event_1037_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :natural_event_1037_sense_1_res ;
+  lemon:isA       :natural_event_1037_PredSynArg .
+
+:natural_event_1037_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/NaturalEvent> .

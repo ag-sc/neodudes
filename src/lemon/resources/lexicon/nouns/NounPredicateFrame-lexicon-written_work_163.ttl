@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :written_work_163_sense_1_res ;
+  lemon:entry    :written_work_163 .
+
+:written_work_163 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :written_work_163_form ;
+  lemon:otherForm  :written_work_163_singular ;
+  lemon:otherForm  :written_work_163_plural ;
+  lemon:sense          :written_work_163_sense_1 ;
+  lemon:synBehavior    :written_work_163_predFrame .
+
+:written_work_163_form
+ lemon:writtenRep "written work"@en .
+
+:written_work_163_singular a    lemon:Form ;
+  lemon:writtenRep "written work"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:written_work_163_plural a   lemon:Form ;
+  lemon:writtenRep "written works"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:written_work_163_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :written_work_163_sense_1_res ;
+  lemon:isA       :written_work_163_PredSynArg .
+
+:written_work_163_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/WrittenWork> .

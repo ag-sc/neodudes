@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :entrance_of_1_183 ;
+  lemon:entry    :entrance_of_1_183_form_preposition .
+
+:entrance_of_1_183 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :entrance_of_1_183_form ;
+  lemon:otherForm  :entrance_of_1_183_singular ;
+  lemon:otherForm  :entrance_of_1_183_plural ;
+  lemon:sense          :entrance_of_1_183_sense_1 ;
+  lemon:synBehavior    :entrance_of_1_183_nounpp .
+
+:entrance_of_1_183_form a lemon:Form ;
+  lemon:writtenRep "entrance"@en .
+
+:entrance_of_1_183_singular a    lemon:Form ;
+  lemon:writtenRep "entrance"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:entrance_of_1_183_plural a   lemon:Form ;
+  lemon:writtenRep "entrances"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:entrance_of_1_183_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1283-1283-1282-1277-1279-1279-1279-1279-1279-1279-1258-1258-1258-1258-1231-1231-1231-1231-612-612-288_entrance_of_1_183 ;
+  lexinfo:prepositionalAdjunct :arg2-1283-1283-1282-1277-1279-1279-1279-1279-1279-1279-1258-1258-1258-1258-1231-1231-1231-1231-612-612-288_entrance_of_1_183 .
+
+:entrance_of_1_183_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :entrance_of_1_183_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/entranceCount> ;
+  lemon:subjOfProp          :arg2-1283-1283-1282-1277-1279-1279-1279-1279-1279-1279-1258-1258-1258-1258-1231-1231-1231-1231-612-612-288_entrance_of_1_183 ;
+  lemon:objOfProp           :arg1-1283-1283-1282-1277-1279-1279-1279-1279-1279-1279-1258-1258-1258-1258-1231-1231-1231-1231-612-612-288_entrance_of_1_183 ;
+  lemon:condition           :entrance_of_1_183_sense_1_condition .
+
+:entrance_of_1_183_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Cave> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-1283-1283-1282-1277-1279-1279-1279-1279-1279-1279-1258-1258-1258-1258-1231-1231-1231-1231-612-612-288_entrance_of_1_183 lemon:marker :entrance_of_1_183_form_preposition .
+## Prepositions ##
+:entrance_of_1_183_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

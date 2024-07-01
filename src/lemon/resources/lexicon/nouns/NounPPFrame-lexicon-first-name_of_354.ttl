@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :first-name_of_354 ;
+  lemon:entry    :first-name_of_354_form_preposition .
+
+:first-name_of_354 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :first-name_of_354_form ;
+  lemon:otherForm  :first-name_of_354_singular ;
+  lemon:otherForm  :first-name_of_354_plural ;
+  lemon:sense          :first-name_of_354_sense_1 ;
+  lemon:sense          :first-name_of_354_sense_2 ;
+  lemon:synBehavior    :first-name_of_354_nounpp .
+
+:first-name_of_354_form a lemon:Form ;
+  lemon:writtenRep "headquarter"@en .
+
+:first-name_of_354_singular a    lemon:Form ;
+  lemon:writtenRep "headquarter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:first-name_of_354_plural a   lemon:Form ;
+  lemon:writtenRep "headquarters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:first-name_of_354_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 ;
+  lexinfo:prepositionalAdjunct :arg2-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 .
+
+:first-name_of_354_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :first-name_of_354_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/alias> ;
+  lemon:subjOfProp          :arg2-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 ;
+  lemon:objOfProp           :arg1-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 ;
+  lemon:condition           :first-name_of_354_sense_1_condition .
+
+:first-name_of_354_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:first-name_of_354_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :first-name_of_354_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/alias> ;
+  lemon:subjOfProp          :arg2-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 ;
+  lemon:objOfProp           :arg1-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 ;
+  lemon:condition           :first-name_of_354_sense_2_condition .
+
+:first-name_of_354_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:arg2-46-46-46-47-47-47-47-47-47-47-46-46-46-46-46-46-46-46-15_first-name_of_354 lemon:marker :first-name_of_354_form_preposition .
+## Prepositions ##
+:first-name_of_354_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

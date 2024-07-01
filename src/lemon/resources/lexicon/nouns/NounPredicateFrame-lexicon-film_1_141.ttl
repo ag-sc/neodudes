@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :film_1_141_sense_1_res ;
+  lemon:entry    :film_1_141 .
+
+:film_1_141 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :film_1_141_form ;
+  lemon:otherForm  :film_1_141_singular ;
+  lemon:otherForm  :film_1_141_plural ;
+  lemon:sense          :film_1_141_sense_1 ;
+  lemon:synBehavior    :film_1_141_predFrame .
+
+:film_1_141_form
+ lemon:writtenRep "film"@en .
+
+:film_1_141_singular a    lemon:Form ;
+  lemon:writtenRep "film"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:film_1_141_plural a   lemon:Form ;
+  lemon:writtenRep "films"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:film_1_141_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :film_1_141_sense_1_res ;
+  lemon:isA       :film_1_141_PredSynArg .
+
+:film_1_141_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Film> .

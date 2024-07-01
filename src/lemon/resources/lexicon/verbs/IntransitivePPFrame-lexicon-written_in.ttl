@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :written_in ;
+  lemon:entry    :form_written_in_preposition .
+
+:written_in a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_written_in ;
+  lemon:otherForm      :form_written_in_present3rd ;
+  lemon:otherForm      :form_written_in_past ;
+  lemon:otherForm      :form_written_in_perfect ;
+  lemon:sense          :written_in_sense_1 ;
+  lemon:synBehavior    :written_in_frame .
+
+:form_written_in a           lemon:Form ;
+  lemon:writtenRep     "write"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_written_in_present3rd a      lemon:Form ;
+  lemon:writtenRep "writes"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_written_in_past a lemon:Form ;
+  lemon:writtenRep  "wrote"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_written_in_perfect a   lemon:Form ;
+  lemon:writtenRep "written"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:written_in_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :written_in_subj ;
+  lexinfo:prepositionalAdjunct :written_in_obj .
+
+:written_in_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :written_in_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/programmingLanguage> ;
+  lemon:subjOfProp  :written_in_subj ;
+  lemon:objOfProp   :written_in_obj ;
+  lemon:condition   :written_in_sense_1_condition .
+
+:written_in_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Language> .
+
+
+:written_in_obj lemon:marker :form_written_in_preposition .
+
+## Prepositions ##
+:form_written_in_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

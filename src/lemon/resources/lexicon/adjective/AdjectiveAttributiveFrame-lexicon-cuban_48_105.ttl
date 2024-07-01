@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cuban_48_105_sense_1_res ;
+  lemon:entry    :cuban_48_105 .
+
+:cuban_48_105 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :cuban_48_105_lemma ;
+  lemon:sense          :cuban_48_105_sense_1 ;
+  lemon:synBehavior    :cuban_48_105_attrFrame, :cuban_48_105_predFrame .
+
+:cuban_48_105_lemma lemon:writtenRep "Cuban"@en .
+
+:cuban_48_105_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :cuban_48_105_PredSynArg .
+
+:cuban_48_105_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :cuban_48_105_AttrSynArg .
+
+:cuban_48_105_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cuban_48_105_sense_1_res ;
+  lemon:isA       :cuban_48_105_AttrSynArg, :cuban_48_105_PredSynArg .
+
+:cuban_48_105_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Cuba> .

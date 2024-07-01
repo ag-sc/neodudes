@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :borough-of_494 ;
+  lemon:entry    :borough-of_494_form_preposition .
+
+:borough-of_494 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :borough-of_494_form ;
+  lemon:otherForm  :borough-of_494_singular ;
+  lemon:otherForm  :borough-of_494_plural ;
+  lemon:sense          :borough-of_494_sense_1 ;
+  lemon:synBehavior    :borough-of_494_nounpp .
+
+:borough-of_494_form a lemon:Form ;
+  lemon:writtenRep "borough"@en .
+
+:borough-of_494_singular a    lemon:Form ;
+  lemon:writtenRep "borough"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:borough-of_494_plural a   lemon:Form ;
+  lemon:writtenRep "borough"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:borough-of_494_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-644-644-644-642-641-641-641-641-641-641-629-629-629-629-617-617-617-617-297_borough-of_494 ;
+  lexinfo:prepositionalAdjunct :arg1-644-644-644-642-641-641-641-641-641-641-629-629-629-629-617-617-617-617-297_borough-of_494 .
+
+:borough-of_494_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :borough-of_494_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg1-644-644-644-642-641-641-641-641-641-641-629-629-629-629-617-617-617-617-297_borough-of_494 ;
+  lemon:objOfProp           :arg2-644-644-644-642-641-641-641-641-641-641-629-629-629-629-617-617-617-617-297_borough-of_494 ;
+  lemon:condition           :borough-of_494_sense_1_condition .
+
+:borough-of_494_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Town> ;
+  lemon:propertyRange   <http://www.w3.org/2002/07/owl#Thing> .
+
+:arg1-644-644-644-642-641-641-641-641-641-641-629-629-629-629-617-617-617-617-297_borough-of_494 lemon:marker :borough-of_494_form_preposition .
+## Prepositions ##
+:borough-of_494_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_direct_2 ;
+  lemon:entry    :direct_2ed ;
+  lemon:entry    :form_direct_2_preposition .
+
+:to_direct_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_direct_2 ;
+  lemon:otherForm      :form_direct_2s ;
+  lemon:otherForm      :form_direct_2ed ;
+  lemon:otherForm      :form_direct_2perfect ;
+  lemon:sense          :direct_2_sense_1 ;
+  lemon:synBehavior    :direct_2_frame_transitive .
+
+:form_direct_2 a         lemon:Form ;
+  lemon:writtenRep     "direct"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_direct_2s a    lemon:Form ;
+  lemon:writtenRep "directs"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_direct_2ed a   lemon:Form ;
+  lemon:writtenRep "directed"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_direct_2perfect a   lemon:Form ;
+  lemon:writtenRep "directed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:direct_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :direct_2_subj ;
+  lexinfo:directObject     :direct_2_obj .
+
+:direct_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :direct_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/director> ;
+  lemon:subjOfProp  :direct_2_obj ;
+  lemon:objOfProp   :direct_2_subj ;
+  lemon:condition   :direct_2_sense_1_condition .
+
+
+:direct_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:direct_2_obj lemon:marker :form_direct_2_preposition .
+
+## Prepositions ##
+:form_direct_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

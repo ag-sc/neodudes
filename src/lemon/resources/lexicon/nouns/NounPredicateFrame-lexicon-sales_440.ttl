@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sales_440_sense_1_res ;
+  lemon:entry    :sales_440 .
+
+:sales_440 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :sales_440_form ;
+  lemon:otherForm  :sales_440_singular ;
+  lemon:otherForm  :sales_440_plural ;
+  lemon:sense          :sales_440_sense_1 ;
+  lemon:synBehavior    :sales_440_predFrame .
+
+:sales_440_form
+ lemon:writtenRep "sales"@en .
+
+:sales_440_singular a    lemon:Form ;
+  lemon:writtenRep "sales"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:sales_440_plural a   lemon:Form ;
+  lemon:writtenRep "sales"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:sales_440_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sales_440_sense_1_res ;
+  lemon:isA       :sales_440_PredSynArg .
+
+:sales_440_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Sales> .

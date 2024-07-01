@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :humangenelocation_622_sense_1_res ;
+  lemon:entry    :humangenelocation_622 .
+
+:humangenelocation_622 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :humangenelocation_622_form ;
+  lemon:otherForm  :humangenelocation_622_singular ;
+  lemon:otherForm  :humangenelocation_622_plural ;
+  lemon:sense          :humangenelocation_622_sense_1 ;
+  lemon:synBehavior    :humangenelocation_622_predFrame .
+
+:humangenelocation_622_form
+ lemon:writtenRep "human gene location"@en .
+
+:humangenelocation_622_singular a    lemon:Form ;
+  lemon:writtenRep "human gene location"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:humangenelocation_622_plural a   lemon:Form ;
+  lemon:writtenRep "human gene locations"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:humangenelocation_622_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :humangenelocation_622_sense_1_res ;
+  lemon:isA       :humangenelocation_622_PredSynArg .
+
+:humangenelocation_622_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/HumanGeneLocation> .

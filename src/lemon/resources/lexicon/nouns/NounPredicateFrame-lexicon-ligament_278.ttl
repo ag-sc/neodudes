@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :ligament_278_sense_1_res ;
+  lemon:entry    :ligament_278 .
+
+:ligament_278 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :ligament_278_form ;
+  lemon:otherForm  :ligament_278_singular ;
+  lemon:otherForm  :ligament_278_plural ;
+  lemon:sense          :ligament_278_sense_1 ;
+  lemon:synBehavior    :ligament_278_predFrame .
+
+:ligament_278_form
+ lemon:writtenRep "ligament"@en .
+
+:ligament_278_singular a    lemon:Form ;
+  lemon:writtenRep "ligament"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:ligament_278_plural a   lemon:Form ;
+  lemon:writtenRep "ligaments"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:ligament_278_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :ligament_278_sense_1_res ;
+  lemon:isA       :ligament_278_PredSynArg .
+
+:ligament_278_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Ligament> .

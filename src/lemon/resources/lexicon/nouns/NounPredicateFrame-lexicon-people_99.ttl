@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :people_99_sense_1_res ;
+  lemon:entry    :people_99 .
+
+:people_99 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :people_99_form ;
+  lemon:otherForm  :people_99_singular ;
+  lemon:otherForm  :people_99_plural ;
+  lemon:sense          :people_99_sense_1 ;
+  lemon:synBehavior    :people_99_predFrame .
+
+:people_99_form
+ lemon:writtenRep "people"@en .
+
+:people_99_singular a    lemon:Form ;
+  lemon:writtenRep "people"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:people_99_plural a   lemon:Form ;
+  lemon:writtenRep "people"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:people_99_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :people_99_sense_1_res ;
+  lemon:isA       :people_99_PredSynArg .
+
+:people_99_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Person> .

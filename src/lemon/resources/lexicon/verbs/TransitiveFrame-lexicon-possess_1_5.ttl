@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_possess_1_5 ;
+  lemon:entry    :possess_1_5ed ;
+  lemon:entry    :form_possess_1_5_preposition .
+
+:to_possess_1_5 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_possess_1_5 ;
+  lemon:otherForm      :form_possess_1_5s ;
+  lemon:otherForm      :form_possess_1_5ed ;
+  lemon:otherForm      :form_possess_1_5perfect ;
+  lemon:sense          :possess_1_5_sense_1 ;
+  lemon:synBehavior    :possess_1_5_frame_transitive .
+
+:form_possess_1_5 a         lemon:Form ;
+  lemon:writtenRep     "poss"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_possess_1_5s a    lemon:Form ;
+  lemon:writtenRep "possess"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_possess_1_5ed a   lemon:Form ;
+  lemon:writtenRep "possessed"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_possess_1_5perfect a   lemon:Form ;
+  lemon:writtenRep "possessed"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:possess_1_5_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :possess_1_5_subj ;
+  lexinfo:directObject     :possess_1_5_obj .
+
+:possess_1_5_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :possess_1_5_sense_1 ;
+  lemon:reference   <http://dbpedia.org/property/mineral> ;
+  lemon:subjOfProp  :possess_1_5_obj ;
+  lemon:objOfProp   :possess_1_5_subj ;
+  lemon:condition   :possess_1_5_sense_1_condition .
+
+
+:possess_1_5_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Mineral> .
+
+
+:possess_1_5_obj lemon:marker :form_possess_1_5_preposition .
+
+## Prepositions ##
+:form_possess_1_5_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

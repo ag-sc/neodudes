@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :abbreviation_of_380 ;
+  lemon:entry    :abbreviation_of_380_form_preposition .
+
+:abbreviation_of_380 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :abbreviation_of_380_form ;
+  lemon:otherForm  :abbreviation_of_380_singular ;
+  lemon:otherForm  :abbreviation_of_380_plural ;
+  lemon:sense          :abbreviation_of_380_sense_1 ;
+  lemon:synBehavior    :abbreviation_of_380_nounpp .
+
+:abbreviation_of_380_form a lemon:Form ;
+  lemon:writtenRep "abbreviation"@en .
+
+:abbreviation_of_380_singular a    lemon:Form ;
+  lemon:writtenRep "abbreviation"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:abbreviation_of_380_plural a   lemon:Form ;
+  lemon:writtenRep "abbreviations"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:abbreviation_of_380_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1470-1470-1470-1465-1467-1467-1467-1467-1467-1467-1443-1443-1443-1443-1414-1414-1414-1414-722_abbreviation_of_380 ;
+  lexinfo:prepositionalAdjunct :arg2-1470-1470-1470-1465-1467-1467-1467-1467-1467-1467-1443-1443-1443-1443-1414-1414-1414-1414-722_abbreviation_of_380 .
+
+:abbreviation_of_380_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :abbreviation_of_380_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/postalabbreviation> ;
+  lemon:subjOfProp          :arg2-1470-1470-1470-1465-1467-1467-1467-1467-1467-1467-1443-1443-1443-1443-1414-1414-1414-1414-722_abbreviation_of_380 ;
+  lemon:objOfProp           :arg1-1470-1470-1470-1465-1467-1467-1467-1467-1467-1467-1443-1443-1443-1443-1414-1414-1414-1414-722_abbreviation_of_380 ;
+  lemon:condition           :abbreviation_of_380_sense_1_condition .
+
+:abbreviation_of_380_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#langString> .
+
+:arg2-1470-1470-1470-1465-1467-1467-1467-1467-1467-1467-1443-1443-1443-1443-1414-1414-1414-1414-722_abbreviation_of_380 lemon:marker :abbreviation_of_380_form_preposition .
+## Prepositions ##
+:abbreviation_of_380_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

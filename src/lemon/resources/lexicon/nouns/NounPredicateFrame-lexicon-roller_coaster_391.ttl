@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :roller_coaster_391_sense_1_res ;
+  lemon:entry    :roller_coaster_391 .
+
+:roller_coaster_391 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :roller_coaster_391_form ;
+  lemon:otherForm  :roller_coaster_391_singular ;
+  lemon:otherForm  :roller_coaster_391_plural ;
+  lemon:sense          :roller_coaster_391_sense_1 ;
+  lemon:synBehavior    :roller_coaster_391_predFrame .
+
+:roller_coaster_391_form
+ lemon:writtenRep "roller coaster"@en .
+
+:roller_coaster_391_singular a    lemon:Form ;
+  lemon:writtenRep "roller coaster"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:roller_coaster_391_plural a   lemon:Form ;
+  lemon:writtenRep "roller coasters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:roller_coaster_391_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :roller_coaster_391_sense_1_res ;
+  lemon:isA       :roller_coaster_391_PredSynArg .
+
+:roller_coaster_391_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/RollerCoaster> .

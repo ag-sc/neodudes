@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :biomolecule_515_sense_1_res ;
+  lemon:entry    :biomolecule_515 .
+
+:biomolecule_515 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :biomolecule_515_form ;
+  lemon:otherForm  :biomolecule_515_singular ;
+  lemon:otherForm  :biomolecule_515_plural ;
+  lemon:sense          :biomolecule_515_sense_1 ;
+  lemon:synBehavior    :biomolecule_515_predFrame .
+
+:biomolecule_515_form
+ lemon:writtenRep "biomolecule"@en .
+
+:biomolecule_515_singular a    lemon:Form ;
+  lemon:writtenRep "biomolecule"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:biomolecule_515_plural a   lemon:Form ;
+  lemon:writtenRep "biomolecules"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:biomolecule_515_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :biomolecule_515_sense_1_res ;
+  lemon:isA       :biomolecule_515_PredSynArg .
+
+:biomolecule_515_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Biomolecule> .

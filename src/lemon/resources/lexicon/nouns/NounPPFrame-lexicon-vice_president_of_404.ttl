@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :vice_president_of_404 ;
+  lemon:entry    :vice_president_of_404_form_preposition .
+
+:vice_president_of_404 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :vice_president_of_404_form ;
+  lemon:otherForm  :vice_president_of_404_singular ;
+  lemon:otherForm  :vice_president_of_404_plural ;
+  lemon:sense          :vice_president_of_404_sense_1 ;
+  lemon:synBehavior    :vice_president_of_404_nounpp .
+
+:vice_president_of_404_form a lemon:Form ;
+  lemon:writtenRep "vice president"@en .
+
+:vice_president_of_404_singular a    lemon:Form ;
+  lemon:writtenRep "vice president"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:vice_president_of_404_plural a   lemon:Form ;
+  lemon:writtenRep "vice president"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:vice_president_of_404_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-675-675-675-673-672-672-672-672-672-672-659-659-659-659-646-646-646-646-310_vice_president_of_404 ;
+  lexinfo:prepositionalAdjunct :arg2-675-675-675-673-672-672-672-672-672-672-659-659-659-659-646-646-646-646-310_vice_president_of_404 .
+
+:vice_president_of_404_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :vice_president_of_404_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/vicePresident> ;
+  lemon:subjOfProp          :arg2-675-675-675-673-672-672-672-672-672-672-659-659-659-659-646-646-646-646-310_vice_president_of_404 ;
+  lemon:objOfProp           :arg1-675-675-675-673-672-672-672-672-672-672-659-659-659-659-646-646-646-646-310_vice_president_of_404 ;
+  lemon:condition           :vice_president_of_404_sense_1_condition .
+
+:vice_president_of_404_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Politician> .
+
+:arg2-675-675-675-673-672-672-672-672-672-672-659-659-659-659-646-646-646-646-310_vice_president_of_404 lemon:marker :vice_president_of_404_form_preposition .
+## Prepositions ##
+:vice_president_of_404_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

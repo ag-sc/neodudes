@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :main_business_of_39 ;
+  lemon:entry    :main_business_of_39_form_preposition .
+
+:main_business_of_39 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :main_business_of_39_form ;
+  lemon:otherForm  :main_business_of_39_singular ;
+  lemon:otherForm  :main_business_of_39_plural ;
+  lemon:sense          :main_business_of_39_sense_1 ;
+  lemon:synBehavior    :main_business_of_39_nounpp .
+
+:main_business_of_39_form a lemon:Form ;
+  lemon:writtenRep "main business"@en .
+
+:main_business_of_39_singular a    lemon:Form ;
+  lemon:writtenRep "main business"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:main_business_of_39_plural a   lemon:Form ;
+  lemon:writtenRep "main businesses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:main_business_of_39_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2-1167-1167-1167-1163-1164-1164-1164-1164-1164-1164-1145-1145-1145-1145-1119-1119-1119-1119-563-563-301_main_business_of_39 ;
+  lexinfo:prepositionalAdjunct :arg1-1167-1167-1167-1163-1164-1164-1164-1164-1164-1164-1145-1145-1145-1145-1119-1119-1119-1119-563-563-301_main_business_of_39 .
+
+:main_business_of_39_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :main_business_of_39_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/owner> ;
+  lemon:subjOfProp          :arg1-1167-1167-1167-1163-1164-1164-1164-1164-1164-1164-1145-1145-1145-1145-1119-1119-1119-1119-563-563-301_main_business_of_39 ;
+  lemon:objOfProp           :arg2-1167-1167-1167-1163-1164-1164-1164-1164-1164-1164-1145-1145-1145-1145-1119-1119-1119-1119-563-563-301_main_business_of_39 ;
+  lemon:condition           :main_business_of_39_sense_1_condition .
+
+:main_business_of_39_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg1-1167-1167-1167-1163-1164-1164-1164-1164-1164-1164-1145-1145-1145-1145-1119-1119-1119-1119-563-563-301_main_business_of_39 lemon:marker :main_business_of_39_form_preposition .
+## Prepositions ##
+:main_business_of_39_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

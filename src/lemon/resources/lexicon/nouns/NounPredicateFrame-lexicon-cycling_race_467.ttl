@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :cycling_race_467_sense_1_res ;
+  lemon:entry    :cycling_race_467 .
+
+:cycling_race_467 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :cycling_race_467_form ;
+  lemon:otherForm  :cycling_race_467_singular ;
+  lemon:otherForm  :cycling_race_467_plural ;
+  lemon:sense          :cycling_race_467_sense_1 ;
+  lemon:synBehavior    :cycling_race_467_predFrame .
+
+:cycling_race_467_form
+ lemon:writtenRep "cycling race"@en .
+
+:cycling_race_467_singular a    lemon:Form ;
+  lemon:writtenRep "cycling race"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:cycling_race_467_plural a   lemon:Form ;
+  lemon:writtenRep "cycling races"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:cycling_race_467_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :cycling_race_467_sense_1_res ;
+  lemon:isA       :cycling_race_467_PredSynArg .
+
+:cycling_race_467_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/CyclingRace> .

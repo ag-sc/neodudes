@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :theme_of_182 ;
+  lemon:entry    :theme_of_182_form_preposition .
+
+:theme_of_182 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :theme_of_182_form ;
+  lemon:otherForm  :theme_of_182_singular ;
+  lemon:otherForm  :theme_of_182_plural ;
+  lemon:sense          :theme_of_182_sense_1 ;
+  lemon:synBehavior    :theme_of_182_nounpp .
+
+:theme_of_182_form a lemon:Form ;
+  lemon:writtenRep "theme"@en .
+
+:theme_of_182_singular a    lemon:Form ;
+  lemon:writtenRep "theme"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:theme_of_182_plural a   lemon:Form ;
+  lemon:writtenRep "themes"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:theme_of_182_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-673-673-673-671-670-670-670-670-670-670-657-657-657-657-644-644-644-644-335-335-317_theme_of_182 ;
+  lexinfo:prepositionalAdjunct :arg2-673-673-673-671-670-670-670-670-670-670-657-657-657-657-644-644-644-644-335-335-317_theme_of_182 .
+
+:theme_of_182_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :theme_of_182_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/openingTheme> ;
+  lemon:subjOfProp          :arg2-673-673-673-671-670-670-670-670-670-670-657-657-657-657-644-644-644-644-335-335-317_theme_of_182 ;
+  lemon:objOfProp           :arg1-673-673-673-671-670-670-670-670-670-670-657-657-657-657-644-644-644-644-335-335-317_theme_of_182 ;
+  lemon:condition           :theme_of_182_sense_1_condition .
+
+:theme_of_182_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-673-673-673-671-670-670-670-670-670-670-657-657-657-657-644-644-644-644-335-335-317_theme_of_182 lemon:marker :theme_of_182_form_preposition .
+## Prepositions ##
+:theme_of_182_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

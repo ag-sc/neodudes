@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :flag-of_293 ;
+  lemon:entry    :flag-of_293_form_preposition .
+
+:flag-of_293 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :flag-of_293_form ;
+  lemon:otherForm  :flag-of_293_singular ;
+  lemon:otherForm  :flag-of_293_plural ;
+  lemon:sense          :flag-of_293_sense_1 ;
+  lemon:synBehavior    :flag-of_293_nounpp .
+
+:flag-of_293_form a lemon:Form ;
+  lemon:writtenRep "flag"@en .
+
+:flag-of_293_singular a    lemon:Form ;
+  lemon:writtenRep "flag"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:flag-of_293_plural a   lemon:Form ;
+  lemon:writtenRep "flags"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:flag-of_293_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-462-462-461-461-460-460-460-460-460-460-452-452-452-452-442-442-442-442-216_flag-of_293 ;
+  lexinfo:prepositionalAdjunct :arg2-462-462-461-461-460-460-460-460-460-460-452-452-452-452-442-442-442-442-216_flag-of_293 .
+
+:flag-of_293_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :flag-of_293_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/flag> ;
+  lemon:subjOfProp          :arg2-462-462-461-461-460-460-460-460-460-460-452-452-452-452-442-442-442-442-216_flag-of_293 ;
+  lemon:objOfProp           :arg1-462-462-461-461-460-460-460-460-460-460-452-452-452-452-442-442-442-442-216_flag-of_293 ;
+  lemon:condition           :flag-of_293_sense_1_condition .
+
+:flag-of_293_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-462-462-461-461-460-460-460-460-460-460-452-452-452-452-442-442-442-442-216_flag-of_293 lemon:marker :flag-of_293_form_preposition .
+## Prepositions ##
+:flag-of_293_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

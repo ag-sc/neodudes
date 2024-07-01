@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :young_2_22 ;
+  lemon:entry    :form_young_2_22_preposition ;
+  lemon:entry    :young_2_22_res .
+
+:young_2_22 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_young_2_22 ;
+  lemon:otherForm      :form_young_2_22_comperative ;
+  lemon:otherForm      :form_young_2_22_superlative ;
+  lemon:sense          :young_2_22_sense_1 ;
+  lemon:synBehavior    :young_2_22_predFrame .
+
+:form_young_2_22 lemon:writtenRep "young"@en .
+
+:form_young_2_22_comperative lemon:writtenRep "younger"@en .
+
+:form_young_2_22_superlative lemon:writtenRep "youngest"@en .
+
+:young_2_22_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :young_2_22_PredSynArg .
+
+:young_2_22_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :young_2_22_res ;
+  lemon:isA       :young_2_22_PredSynArg ;
+  lemon:condition :young_2_22_sense_1_condition .
+
+:young_2_22_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/birthDate> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:young_2_22_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Politician> .
+
+## Prepositions ##
+:form_young_2_22_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

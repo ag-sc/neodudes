@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :chilean_38_302_sense_1_res ;
+  lemon:entry    :chilean_38_302 .
+
+:chilean_38_302 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :chilean_38_302_lemma ;
+  lemon:sense          :chilean_38_302_sense_1 ;
+  lemon:synBehavior    :chilean_38_302_attrFrame, :chilean_38_302_predFrame .
+
+:chilean_38_302_lemma lemon:writtenRep "Chilean"@en .
+
+:chilean_38_302_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :chilean_38_302_PredSynArg .
+
+:chilean_38_302_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :chilean_38_302_AttrSynArg .
+
+:chilean_38_302_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :chilean_38_302_sense_1_res ;
+  lemon:isA       :chilean_38_302_AttrSynArg, :chilean_38_302_PredSynArg .
+
+:chilean_38_302_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/Chile> .

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :curling_league_170_sense_1_res ;
+  lemon:entry    :curling_league_170 .
+
+:curling_league_170 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :curling_league_170_form ;
+  lemon:otherForm  :curling_league_170_singular ;
+  lemon:otherForm  :curling_league_170_plural ;
+  lemon:sense          :curling_league_170_sense_1 ;
+  lemon:synBehavior    :curling_league_170_predFrame .
+
+:curling_league_170_form
+ lemon:writtenRep "curling league"@en .
+
+:curling_league_170_singular a    lemon:Form ;
+  lemon:writtenRep "curling league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:curling_league_170_plural a   lemon:Form ;
+  lemon:writtenRep "curling leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:curling_league_170_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :curling_league_170_sense_1_res ;
+  lemon:isA       :curling_league_170_PredSynArg .
+
+:curling_league_170_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/CurlingLeague> .

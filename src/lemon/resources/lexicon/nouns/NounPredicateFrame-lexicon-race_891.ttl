@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :race_891_sense_1_res ;
+  lemon:entry    :race_891 .
+
+:race_891 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :race_891_form ;
+  lemon:otherForm  :race_891_singular ;
+  lemon:otherForm  :race_891_plural ;
+  lemon:sense          :race_891_sense_1 ;
+  lemon:synBehavior    :race_891_predFrame .
+
+:race_891_form
+ lemon:writtenRep "race"@en .
+
+:race_891_singular a    lemon:Form ;
+  lemon:writtenRep "race"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:race_891_plural a   lemon:Form ;
+  lemon:writtenRep "races"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:race_891_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :race_891_sense_1_res ;
+  lemon:isA       :race_891_PredSynArg .
+
+:race_891_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Race> .

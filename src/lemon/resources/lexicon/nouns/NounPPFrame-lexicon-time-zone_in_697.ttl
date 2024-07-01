@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :time-zone_in_697 ;
+  lemon:entry    :time-zone_in_697_form_preposition .
+
+:time-zone_in_697 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :time-zone_in_697_form ;
+  lemon:otherForm  :time-zone_in_697_singular ;
+  lemon:otherForm  :time-zone_in_697_plural ;
+  lemon:sense          :time-zone_in_697_sense_1 ;
+  lemon:synBehavior    :time-zone_in_697_nounpp .
+
+:time-zone_in_697_form a lemon:Form ;
+  lemon:writtenRep "time zone"@en .
+
+:time-zone_in_697_singular a    lemon:Form ;
+  lemon:writtenRep "time zone"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:time-zone_in_697_plural a   lemon:Form ;
+  lemon:writtenRep "time zones"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:time-zone_in_697_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1276-1276-1275-1270-1272-1272-1272-1272-1272-1272-1251-1251-1251-1251-1224-1224-1224-1224-608-608-310_time-zone_in_697 ;
+  lexinfo:prepositionalAdjunct :arg2-1276-1276-1275-1270-1272-1272-1272-1272-1272-1272-1251-1251-1251-1251-1224-1224-1224-1224-608-608-310_time-zone_in_697 .
+
+:time-zone_in_697_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :time-zone_in_697_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/timeZone> ;
+  lemon:subjOfProp          :arg2-1276-1276-1275-1270-1272-1272-1272-1272-1272-1272-1251-1251-1251-1251-1224-1224-1224-1224-608-608-310_time-zone_in_697 ;
+  lemon:objOfProp           :arg1-1276-1276-1275-1270-1272-1272-1272-1272-1272-1272-1251-1251-1251-1251-1224-1224-1224-1224-608-608-310_time-zone_in_697 ;
+  lemon:condition           :time-zone_in_697_sense_1_condition .
+
+:time-zone_in_697_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2-1276-1276-1275-1270-1272-1272-1272-1272-1272-1272-1251-1251-1251-1251-1224-1224-1224-1224-608-608-310_time-zone_in_697 lemon:marker :time-zone_in_697_form_preposition .
+## Prepositions ##
+:time-zone_in_697_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

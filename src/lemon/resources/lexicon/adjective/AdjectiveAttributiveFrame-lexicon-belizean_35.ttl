@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :belizean_35_sense_1_res ;
+  lemon:entry    :belizean_35 .
+
+:belizean_35 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :belizean_35_lemma ;
+  lemon:sense          :belizean_35_sense_1 ;
+  lemon:synBehavior    :belizean_35_attrFrame, :belizean_35_predFrame .
+
+:belizean_35_lemma lemon:writtenRep "belizean"@en .
+
+:belizean_35_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :belizean_35_PredSynArg .
+
+:belizean_35_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :belizean_35_AttrSynArg .
+
+:belizean_35_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :belizean_35_sense_1_res ;
+  lemon:isA       :belizean_35_AttrSynArg, :belizean_35_PredSynArg .
+
+:belizean_35_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Belize> .

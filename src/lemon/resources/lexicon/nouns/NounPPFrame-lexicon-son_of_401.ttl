@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :son_of_401 ;
+  lemon:entry    :son_of_401_form_preposition .
+
+:son_of_401 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :son_of_401_form ;
+  lemon:otherForm  :son_of_401_singular ;
+  lemon:otherForm  :son_of_401_plural ;
+  lemon:sense          :son_of_401_sense_1 ;
+  lemon:synBehavior    :son_of_401_nounpp .
+
+:son_of_401_form a lemon:Form ;
+  lemon:writtenRep "son"@en .
+
+:son_of_401_singular a    lemon:Form ;
+  lemon:writtenRep "son"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:son_of_401_plural a   lemon:Form ;
+  lemon:writtenRep "sons"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:son_of_401_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1427-1427-1427-1423-1425-1425-1425-1425-1425-1425-1402-1402-1402-1402-1373-1373-1373-1373-699_son_of_401 ;
+  lexinfo:prepositionalAdjunct :arg2-1427-1427-1427-1423-1425-1425-1425-1425-1425-1425-1402-1402-1402-1402-1373-1373-1373-1373-699_son_of_401 .
+
+:son_of_401_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :son_of_401_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-1427-1427-1427-1423-1425-1425-1425-1425-1425-1425-1402-1402-1402-1402-1373-1373-1373-1373-699_son_of_401 ;
+  lemon:objOfProp           :arg1-1427-1427-1427-1423-1425-1425-1425-1425-1425-1425-1402-1402-1402-1402-1373-1373-1373-1373-699_son_of_401 ;
+  lemon:condition           :son_of_401_sense_1_condition .
+
+:son_of_401_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1427-1427-1427-1423-1425-1425-1425-1425-1425-1425-1402-1402-1402-1402-1373-1373-1373-1373-699_son_of_401 lemon:marker :son_of_401_form_preposition .
+## Prepositions ##
+:son_of_401_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :latvian_115_243_sense_1_res ;
+  lemon:entry    :latvian_115_243 .
+
+:latvian_115_243 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :latvian_115_243_lemma ;
+  lemon:sense          :latvian_115_243_sense_1 ;
+  lemon:synBehavior    :latvian_115_243_attrFrame, :latvian_115_243_predFrame .
+
+:latvian_115_243_lemma lemon:writtenRep "Latvian"@en .
+
+:latvian_115_243_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :latvian_115_243_PredSynArg .
+
+:latvian_115_243_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :latvian_115_243_AttrSynArg .
+
+:latvian_115_243_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :latvian_115_243_sense_1_res ;
+  lemon:isA       :latvian_115_243_AttrSynArg, :latvian_115_243_PredSynArg .
+
+:latvian_115_243_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Latvia> .

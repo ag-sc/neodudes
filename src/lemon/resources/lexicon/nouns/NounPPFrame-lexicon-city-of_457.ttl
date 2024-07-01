@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :city-of_457 ;
+  lemon:entry    :city-of_457_form_preposition .
+
+:city-of_457 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :city-of_457_form ;
+  lemon:otherForm  :city-of_457_singular ;
+  lemon:otherForm  :city-of_457_plural ;
+  lemon:sense          :city-of_457_sense_1 ;
+  lemon:synBehavior    :city-of_457_nounpp .
+
+:city-of_457_form a lemon:Form ;
+  lemon:writtenRep "city"@en .
+
+:city-of_457_singular a    lemon:Form ;
+  lemon:writtenRep "city"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:city-of_457_plural a   lemon:Form ;
+  lemon:writtenRep "cities"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:city-of_457_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-729-729-729-727-726-726-726-726-726-726-711-711-711-711-698-698-698-698-342_city-of_457 ;
+  lexinfo:prepositionalAdjunct :arg2-729-729-729-727-726-726-726-726-726-726-711-711-711-711-698-698-698-698-342_city-of_457 .
+
+:city-of_457_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :city-of_457_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/isPartOf> ;
+  lemon:subjOfProp          :arg2-729-729-729-727-726-726-726-726-726-726-711-711-711-711-698-698-698-698-342_city-of_457 ;
+  lemon:objOfProp           :arg1-729-729-729-727-726-726-726-726-726-726-711-711-711-711-698-698-698-698-342_city-of_457 ;
+  lemon:condition           :city-of_457_sense_1_condition .
+
+:city-of_457_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/AdministrativeRegion> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-729-729-729-727-726-726-726-726-726-726-711-711-711-711-698-698-698-698-342_city-of_457 lemon:marker :city-of_457_form_preposition .
+## Prepositions ##
+:city-of_457_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

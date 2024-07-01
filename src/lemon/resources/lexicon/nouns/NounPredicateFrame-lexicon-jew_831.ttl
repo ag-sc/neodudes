@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :jew_831_sense_1_res ;
+  lemon:entry    :jew_831 .
+
+:jew_831 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :jew_831_form ;
+  lemon:otherForm  :jew_831_singular ;
+  lemon:otherForm  :jew_831_plural ;
+  lemon:sense          :jew_831_sense_1 ;
+  lemon:synBehavior    :jew_831_predFrame .
+
+:jew_831_form
+ lemon:writtenRep "jew"@en .
+
+:jew_831_singular a    lemon:Form ;
+  lemon:writtenRep "jew"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:jew_831_plural a   lemon:Form ;
+  lemon:writtenRep "jews"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:jew_831_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :jew_831_sense_1_res ;
+  lemon:isA       :jew_831_PredSynArg .
+
+:jew_831_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/property/ethnicity> ;
+  owl:hasValue   <http://dbpedia.org/resource/Jewish> .

@@ -1,0 +1,91 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :founded_in_31 ;
+  lemon:entry    :form_founded_in_31_preposition .
+
+:founded_in_31 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_founded_in_31 ;
+  lemon:otherForm      :form_founded_in_31_present3rd ;
+  lemon:otherForm      :form_founded_in_31_past ;
+  lemon:otherForm      :form_founded_in_31_perfect ;
+  lemon:sense          :founded_in_31_sense_1 ;
+  lemon:sense          :founded_in_31_sense_2 ;
+  lemon:sense          :founded_in_31_sense_3 ;
+  lemon:synBehavior    :founded_in_31_frame .
+
+:form_founded_in_31 a           lemon:Form ;
+  lemon:writtenRep     "found"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_founded_in_31_present3rd a      lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_founded_in_31_past a lemon:Form ;
+  lemon:writtenRep  "founded"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_founded_in_31_perfect a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:founded_in_31_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :founded_in_31_subj ;
+  lexinfo:prepositionalAdjunct :founded_in_31_obj .
+
+:founded_in_31_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :founded_in_31_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/foundingYear> ;
+  lemon:subjOfProp  :founded_in_31_subj ;
+  lemon:objOfProp   :founded_in_31_obj ;
+  lemon:condition   :founded_in_31_sense_1_condition .
+
+:founded_in_31_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+:founded_in_31_sense_2 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :founded_in_31_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/foundingYear> ;
+  lemon:subjOfProp  :founded_in_31_subj ;
+  lemon:objOfProp   :founded_in_31_obj ;
+  lemon:condition   :founded_in_31_sense_2_condition .
+
+:founded_in_31_sense_2_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#gYear> .
+
+:founded_in_31_sense_3 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :founded_in_31_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/founders> ;
+  lemon:subjOfProp  :founded_in_31_subj ;
+  lemon:objOfProp   :founded_in_31_obj ;
+  lemon:condition   :founded_in_31_sense_3_condition .
+
+:founded_in_31_sense_3_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:founded_in_31_obj lemon:marker :form_founded_in_31_preposition .
+
+## Prepositions ##
+:form_founded_in_31_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

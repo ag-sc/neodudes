@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :federal-chancellor-of_80 ;
+  lemon:entry    :federal-chancellor-of_80_form_preposition .
+
+:federal-chancellor-of_80 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :federal-chancellor-of_80_form ;
+  lemon:otherForm  :federal-chancellor-of_80_singular ;
+  lemon:otherForm  :federal-chancellor-of_80_plural ;
+  lemon:sense          :federal-chancellor-of_80_sense_1 ;
+  lemon:synBehavior    :federal-chancellor-of_80_nounpp .
+
+:federal-chancellor-of_80_form a lemon:Form ;
+  lemon:writtenRep "federal chancellor"@en .
+
+:federal-chancellor-of_80_singular a    lemon:Form ;
+  lemon:writtenRep "federal chancellor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:federal-chancellor-of_80_plural a   lemon:Form ;
+  lemon:writtenRep "federal chancellors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:federal-chancellor-of_80_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-450-450-449-449-448-448-448-448-448-448-440-440-440-440-431-431-431-431-220-220-323_federal-chancellor-of_80 ;
+  lexinfo:prepositionalAdjunct :arg2-450-450-449-449-448-448-448-448-448-448-440-440-440-440-431-431-431-431-220-220-323_federal-chancellor-of_80 .
+
+:federal-chancellor-of_80_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :federal-chancellor-of_80_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/office> ;
+  lemon:subjOfProp          :arg2-450-450-449-449-448-448-448-448-448-448-440-440-440-440-431-431-431-431-220-220-323_federal-chancellor-of_80 ;
+  lemon:objOfProp           :arg1-450-450-449-449-448-448-448-448-448-448-440-440-440-440-431-431-431-431-220-220-323_federal-chancellor-of_80 ;
+  lemon:condition           :federal-chancellor-of_80_sense_1_condition .
+
+:federal-chancellor-of_80_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Agent> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-450-450-449-449-448-448-448-448-448-448-440-440-440-440-431-431-431-431-220-220-323_federal-chancellor-of_80 lemon:marker :federal-chancellor-of_80_form_preposition .
+## Prepositions ##
+:federal-chancellor-of_80_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :nickname_of_87 ;
+  lemon:entry    :nickname_of_87_form_preposition .
+
+:nickname_of_87 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :nickname_of_87_form ;
+  lemon:otherForm  :nickname_of_87_singular ;
+  lemon:otherForm  :nickname_of_87_plural ;
+  lemon:sense          :nickname_of_87_sense_1 ;
+  lemon:synBehavior    :nickname_of_87_nounpp .
+
+:nickname_of_87_form a lemon:Form ;
+  lemon:writtenRep "nickname"@en .
+
+:nickname_of_87_singular a    lemon:Form ;
+  lemon:writtenRep "nickname"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:nickname_of_87_plural a   lemon:Form ;
+  lemon:writtenRep "nicknames"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:nickname_of_87_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1511-1511-1511-1508-1510-1510-1510-1510-1510-1510-1486-1486-1486-1486-1457-1457-1457-1457-714-714-697_nickname_of_87 ;
+  lexinfo:prepositionalAdjunct :arg2-1511-1511-1511-1508-1510-1510-1510-1510-1510-1510-1486-1486-1486-1486-1457-1457-1457-1457-714-714-697_nickname_of_87 .
+
+:nickname_of_87_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :nickname_of_87_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/nickname> ;
+  lemon:subjOfProp          :arg2-1511-1511-1511-1508-1510-1510-1510-1510-1510-1510-1486-1486-1486-1486-1457-1457-1457-1457-714-714-697_nickname_of_87 ;
+  lemon:objOfProp           :arg1-1511-1511-1511-1508-1510-1510-1510-1510-1510-1510-1486-1486-1486-1486-1457-1457-1457-1457-714-714-697_nickname_of_87 ;
+  lemon:condition           :nickname_of_87_sense_1_condition .
+
+:nickname_of_87_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2-1511-1511-1511-1508-1510-1510-1510-1510-1510-1510-1486-1486-1486-1486-1457-1457-1457-1457-714-714-697_nickname_of_87 lemon:marker :nickname_of_87_form_preposition .
+## Prepositions ##
+:nickname_of_87_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

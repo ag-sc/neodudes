@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :record_label_541_sense_1_res ;
+  lemon:entry    :record_label_541 .
+
+:record_label_541 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :record_label_541_form ;
+  lemon:otherForm  :record_label_541_singular ;
+  lemon:otherForm  :record_label_541_plural ;
+  lemon:sense          :record_label_541_sense_1 ;
+  lemon:synBehavior    :record_label_541_predFrame .
+
+:record_label_541_form
+ lemon:writtenRep "record label"@en .
+
+:record_label_541_singular a    lemon:Form ;
+  lemon:writtenRep "record label"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:record_label_541_plural a   lemon:Form ;
+  lemon:writtenRep "record labels"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:record_label_541_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :record_label_541_sense_1_res ;
+  lemon:isA       :record_label_541_PredSynArg .
+
+:record_label_541_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/RecordLabel> .

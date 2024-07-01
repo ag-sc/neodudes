@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :numberofstudents-of_306 ;
+  lemon:entry    :numberofstudents-of_306_form_preposition .
+
+:numberofstudents-of_306 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :numberofstudents-of_306_form ;
+  lemon:otherForm  :numberofstudents-of_306_singular ;
+  lemon:otherForm  :numberofstudents-of_306_plural ;
+  lemon:sense          :numberofstudents-of_306_sense_1 ;
+  lemon:synBehavior    :numberofstudents-of_306_nounpp .
+
+:numberofstudents-of_306_form a lemon:Form ;
+  lemon:writtenRep "number Of Student"@en .
+
+:numberofstudents-of_306_singular a    lemon:Form ;
+  lemon:writtenRep "number Of Student"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:numberofstudents-of_306_plural a   lemon:Form ;
+  lemon:writtenRep "number Of Students"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:numberofstudents-of_306_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1275-1275-1274-1269-1271-1271-1271-1271-1271-1271-1250-1250-1250-1250-1223-1223-1223-1223-615_numberofstudents-of_306 ;
+  lexinfo:prepositionalAdjunct :arg2-1275-1275-1274-1269-1271-1271-1271-1271-1271-1271-1250-1250-1250-1250-1223-1223-1223-1223-615_numberofstudents-of_306 .
+
+:numberofstudents-of_306_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :numberofstudents-of_306_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfStudents> ;
+  lemon:subjOfProp          :arg2-1275-1275-1274-1269-1271-1271-1271-1271-1271-1271-1250-1250-1250-1250-1223-1223-1223-1223-615_numberofstudents-of_306 ;
+  lemon:objOfProp           :arg1-1275-1275-1274-1269-1271-1271-1271-1271-1271-1271-1250-1250-1250-1250-1223-1223-1223-1223-615_numberofstudents-of_306 ;
+  lemon:condition           :numberofstudents-of_306_sense_1_condition .
+
+:numberofstudents-of_306_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/School> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2-1275-1275-1274-1269-1271-1271-1271-1271-1271-1271-1250-1250-1250-1250-1223-1223-1223-1223-615_numberofstudents-of_306 lemon:marker :numberofstudents-of_306_form_preposition .
+## Prepositions ##
+:numberofstudents-of_306_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

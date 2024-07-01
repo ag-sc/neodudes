@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :group_449_sense_1_res ;
+  lemon:entry    :group_449 .
+
+:group_449 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :group_449_form ;
+  lemon:otherForm  :group_449_singular ;
+  lemon:otherForm  :group_449_plural ;
+  lemon:sense          :group_449_sense_1 ;
+  lemon:synBehavior    :group_449_predFrame .
+
+:group_449_form
+ lemon:writtenRep "group"@en .
+
+:group_449_singular a    lemon:Form ;
+  lemon:writtenRep "group"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:group_449_plural a   lemon:Form ;
+  lemon:writtenRep "groups"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:group_449_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :group_449_sense_1_res ;
+  lemon:isA       :group_449_PredSynArg .
+
+:group_449_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Group> .

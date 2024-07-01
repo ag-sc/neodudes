@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :convention_885_sense_1_res ;
+  lemon:entry    :convention_885 .
+
+:convention_885 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :convention_885_form ;
+  lemon:otherForm  :convention_885_singular ;
+  lemon:otherForm  :convention_885_plural ;
+  lemon:sense          :convention_885_sense_1 ;
+  lemon:synBehavior    :convention_885_predFrame .
+
+:convention_885_form
+ lemon:writtenRep "convention"@en .
+
+:convention_885_singular a    lemon:Form ;
+  lemon:writtenRep "convention"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:convention_885_plural a   lemon:Form ;
+  lemon:writtenRep "conventions"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:convention_885_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :convention_885_sense_1_res ;
+  lemon:isA       :convention_885_PredSynArg .
+
+:convention_885_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Convention> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :series_of_15 ;
+  lemon:entry    :series_of_15_form_preposition .
+
+:series_of_15 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :series_of_15_form ;
+  lemon:otherForm  :series_of_15_singular ;
+  lemon:otherForm  :series_of_15_plural ;
+  lemon:sense          :series_of_15_sense_1 ;
+  lemon:synBehavior    :series_of_15_nounpp .
+
+:series_of_15_form a lemon:Form ;
+  lemon:writtenRep "series"@en .
+
+:series_of_15_singular a    lemon:Form ;
+  lemon:writtenRep "series"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:series_of_15_plural a   lemon:Form ;
+  lemon:writtenRep "serieses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:series_of_15_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-140-140-140-141-141-141-141-141-141-141-138-138-138-138-136-136-136-136-60-60-672_series_of_15 ;
+  lexinfo:prepositionalAdjunct :arg2-140-140-140-141-141-141-141-141-141-141-138-138-138-138-136-136-136-136-60-60-672_series_of_15 .
+
+:series_of_15_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :series_of_15_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/series> ;
+  lemon:subjOfProp          :arg2-140-140-140-141-141-141-141-141-141-141-138-138-138-138-136-136-136-136-60-60-672_series_of_15 ;
+  lemon:objOfProp           :arg1-140-140-140-141-141-141-141-141-141-141-138-138-138-138-136-136-136-136-60-60-672_series_of_15 ;
+  lemon:condition           :series_of_15_sense_1_condition .
+
+:series_of_15_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionEpisode> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Work> .
+
+:arg2-140-140-140-141-141-141-141-141-141-141-138-138-138-138-136-136-136-136-60-60-672_series_of_15 lemon:marker :series_of_15_form_preposition .
+## Prepositions ##
+:series_of_15_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

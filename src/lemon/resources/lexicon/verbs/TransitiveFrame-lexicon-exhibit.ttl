@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_exhibit ;
+  lemon:entry    :exhibited ;
+  lemon:entry    :form_exhibit_preposition .
+
+:to_exhibit a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_exhibit ;
+  lemon:otherForm      :form_exhibits ;
+  lemon:otherForm      :form_exhibited ;
+  lemon:otherForm      :form_exhibitperfect ;
+  lemon:sense          :exhibit_sense_1 ;
+  lemon:synBehavior    :exhibit_frame_transitive .
+
+:form_exhibit a         lemon:Form ;
+  lemon:writtenRep     "exhibit"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_exhibits a    lemon:Form ;
+  lemon:writtenRep "exhibits"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_exhibited a   lemon:Form ;
+  lemon:writtenRep "exhibited"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_exhibitperfect a   lemon:Form ;
+  lemon:writtenRep "exhibited"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:exhibit_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :exhibit_subj ;
+  lexinfo:directObject     :exhibit_obj .
+
+:exhibit_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :exhibit_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/museum> ;
+  lemon:subjOfProp  :exhibit_obj ;
+  lemon:objOfProp   :exhibit_subj ;
+  lemon:condition   :exhibit_sense_1_condition .
+
+
+:exhibit_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Artwork> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Museum> .
+
+
+:exhibit_obj lemon:marker :form_exhibit_preposition .
+
+## Prepositions ##
+:form_exhibit_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

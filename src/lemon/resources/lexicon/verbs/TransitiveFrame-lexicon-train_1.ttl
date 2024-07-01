@@ -1,0 +1,63 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_train_1 ;
+  lemon:entry    :train_1ed ;
+  lemon:entry    :form_train_1_preposition .
+
+:to_train_1 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_train_1 ;
+  lemon:otherForm      :form_train_1s ;
+  lemon:otherForm      :form_train_1ed ;
+  lemon:otherForm      :form_train_1perfect ;
+  lemon:sense          :train_1_sense_1 ;
+  lemon:synBehavior    :train_1_frame_transitive .
+
+:form_train_1 a         lemon:Form ;
+  lemon:writtenRep     "train"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_train_1s a    lemon:Form ;
+  lemon:writtenRep "trains"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_train_1ed a   lemon:Form ;
+  lemon:writtenRep "trained"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_train_1perfect a   lemon:Form ;
+  lemon:writtenRep "trained"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:train_1_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :train_1_subj ;
+  lexinfo:directObject     :train_1_obj .
+
+:train_1_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :train_1_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/trainer> ;
+  lemon:subjOfProp  :train_1_obj ;
+  lemon:objOfProp   :train_1_subj ;
+  lemon:condition   :train_1_sense_1_condition .
+
+
+:train_1_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Athlete> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+
+:train_1_obj lemon:marker :form_train_1_preposition .
+
+## Prepositions ##
+:form_train_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

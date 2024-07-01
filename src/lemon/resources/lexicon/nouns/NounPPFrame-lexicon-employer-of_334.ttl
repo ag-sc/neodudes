@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :employer-of_334 ;
+  lemon:entry    :employer-of_334_form_preposition .
+
+:employer-of_334 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :employer-of_334_form ;
+  lemon:otherForm  :employer-of_334_singular ;
+  lemon:otherForm  :employer-of_334_plural ;
+  lemon:sense          :employer-of_334_sense_1 ;
+  lemon:synBehavior    :employer-of_334_nounpp .
+
+:employer-of_334_form a lemon:Form ;
+  lemon:writtenRep "employer"@en .
+
+:employer-of_334_singular a    lemon:Form ;
+  lemon:writtenRep "employer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:employer-of_334_plural a   lemon:Form ;
+  lemon:writtenRep "employers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:employer-of_334_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1424-1424-1424-1420-1422-1422-1422-1422-1422-1422-1399-1399-1399-1399-1370-1370-1370-1370-696_employer-of_334 ;
+  lexinfo:prepositionalAdjunct :arg2-1424-1424-1424-1420-1422-1422-1422-1422-1422-1422-1399-1399-1399-1399-1370-1370-1370-1370-696_employer-of_334 .
+
+:employer-of_334_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :employer-of_334_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/employer> ;
+  lemon:subjOfProp          :arg2-1424-1424-1424-1420-1422-1422-1422-1422-1422-1422-1399-1399-1399-1399-1370-1370-1370-1370-696_employer-of_334 ;
+  lemon:objOfProp           :arg1-1424-1424-1424-1420-1422-1422-1422-1422-1422-1422-1399-1399-1399-1399-1370-1370-1370-1370-696_employer-of_334 ;
+  lemon:condition           :employer-of_334_sense_1_condition .
+
+:employer-of_334_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2-1424-1424-1424-1420-1422-1422-1422-1422-1422-1422-1399-1399-1399-1399-1370-1370-1370-1370-696_employer-of_334 lemon:marker :employer-of_334_form_preposition .
+## Prepositions ##
+:employer-of_334_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

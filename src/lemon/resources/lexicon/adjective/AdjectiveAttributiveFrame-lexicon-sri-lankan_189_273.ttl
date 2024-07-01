@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :sri-lankan_189_273_sense_1_res ;
+  lemon:entry    :sri-lankan_189_273 .
+
+:sri-lankan_189_273 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :sri-lankan_189_273_lemma ;
+  lemon:sense          :sri-lankan_189_273_sense_1 ;
+  lemon:synBehavior    :sri-lankan_189_273_attrFrame, :sri-lankan_189_273_predFrame .
+
+:sri-lankan_189_273_lemma lemon:writtenRep "Sri Lankan"@en .
+
+:sri-lankan_189_273_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :sri-lankan_189_273_PredSynArg .
+
+:sri-lankan_189_273_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :sri-lankan_189_273_AttrSynArg .
+
+:sri-lankan_189_273_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :sri-lankan_189_273_sense_1_res ;
+  lemon:isA       :sri-lankan_189_273_AttrSynArg, :sri-lankan_189_273_PredSynArg .
+
+:sri-lankan_189_273_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Sri_Lanka> .

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :movie_with_316 ;
+  lemon:entry    :movie_with_316_form_preposition .
+
+:movie_with_316 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :movie_with_316_form ;
+  lemon:otherForm  :movie_with_316_singular ;
+  lemon:otherForm  :movie_with_316_plural ;
+  lemon:sense          :movie_with_316_sense_1 ;
+  lemon:synBehavior    :movie_with_316_nounpp .
+
+:movie_with_316_form a lemon:Form ;
+  lemon:writtenRep "movie"@en .
+
+:movie_with_316_singular a    lemon:Form ;
+  lemon:writtenRep "movie"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:movie_with_316_plural a   lemon:Form ;
+  lemon:writtenRep "movies"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:movie_with_316_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-779-779-779-777-776-776-776-776-776-776-761-761-761-761-744-744-744-744-368_movie_with_316 ;
+  lexinfo:prepositionalAdjunct :arg2-779-779-779-777-776-776-776-776-776-776-761-761-761-761-744-744-744-744-368_movie_with_316 .
+
+:movie_with_316_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :movie_with_316_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/alias> ;
+  lemon:subjOfProp          :arg2-779-779-779-777-776-776-776-776-776-776-761-761-761-761-744-744-744-744-368_movie_with_316 ;
+  lemon:objOfProp           :arg1-779-779-779-777-776-776-776-776-776-776-761-761-761-761-744-744-744-744-368_movie_with_316 ;
+  lemon:condition           :movie_with_316_sense_1_condition .
+
+:movie_with_316_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:arg2-779-779-779-777-776-776-776-776-776-776-761-761-761-761-744-744-744-744-368_movie_with_316 lemon:marker :movie_with_316_form_preposition .
+## Prepositions ##
+:movie_with_316_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :governor_of_55 ;
+  lemon:entry    :governor_of_55_form_preposition .
+
+:governor_of_55 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :governor_of_55_form ;
+  lemon:otherForm  :governor_of_55_singular ;
+  lemon:otherForm  :governor_of_55_plural ;
+  lemon:sense          :governor_of_55_sense_1 ;
+  lemon:synBehavior    :governor_of_55_nounpp .
+
+:governor_of_55_form a lemon:Form ;
+  lemon:writtenRep "governor"@en .
+
+:governor_of_55_singular a    lemon:Form ;
+  lemon:writtenRep "governor"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:governor_of_55_plural a   lemon:Form ;
+  lemon:writtenRep "governors"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:governor_of_55_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-287-287-286-286-285-285-285-285-285-285-279-279-279-279-274-274-274-274-136-136-519_governor_of_55 ;
+  lexinfo:prepositionalAdjunct :arg2-287-287-286-286-285-285-285-285-285-285-279-279-279-279-274-274-274-274-136-136-519_governor_of_55 .
+
+:governor_of_55_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :governor_of_55_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/governor> ;
+  lemon:subjOfProp          :arg2-287-287-286-286-285-285-285-285-285-285-279-279-279-279-274-274-274-274-136-136-519_governor_of_55 ;
+  lemon:objOfProp           :arg1-287-287-286-286-285-285-285-285-285-285-279-279-279-279-274-274-274-274-136-136-519_governor_of_55 ;
+  lemon:condition           :governor_of_55_sense_1_condition .
+
+:governor_of_55_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-287-287-286-286-285-285-285-285-285-285-279-279-279-279-274-274-274-274-136-136-519_governor_of_55 lemon:marker :governor_of_55_form_preposition .
+## Prepositions ##
+:governor_of_55_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :professional_skateboarder_815_sense_1_res ;
+  lemon:entry    :professional_skateboarder_815 .
+
+:professional_skateboarder_815 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :professional_skateboarder_815_form ;
+  lemon:otherForm  :professional_skateboarder_815_singular ;
+  lemon:otherForm  :professional_skateboarder_815_plural ;
+  lemon:sense          :professional_skateboarder_815_sense_1 ;
+  lemon:synBehavior    :professional_skateboarder_815_predFrame .
+
+:professional_skateboarder_815_form
+ lemon:writtenRep "professional skateboarder"@en .
+
+:professional_skateboarder_815_singular a    lemon:Form ;
+  lemon:writtenRep "professional skateboarder"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:professional_skateboarder_815_plural a   lemon:Form ;
+  lemon:writtenRep "professional skateboarders"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:professional_skateboarder_815_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :professional_skateboarder_815_sense_1_res ;
+  lemon:isA       :professional_skateboarder_815_PredSynArg .
+
+:professional_skateboarder_815_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/occupation> ;
+  owl:hasValue   <http://dbpedia.org/resource/Skateboarder> .

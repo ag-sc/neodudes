@@ -1,0 +1,49 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :heavy_1_49 ;
+  lemon:entry    :form_heavy_1_49_preposition ;
+  lemon:entry    :heavy_1_49_res .
+
+:heavy_1_49 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_heavy_1_49 ;
+  lemon:otherForm      :form_heavy_1_49_comperative ;
+  lemon:otherForm      :form_heavy_1_49_superlative ;
+  lemon:sense          :heavy_1_49_sense_1 ;
+  lemon:synBehavior    :heavy_1_49_predFrame .
+
+:form_heavy_1_49 lemon:writtenRep "heavy"@en .
+
+:form_heavy_1_49_comperative lemon:writtenRep "heavier"@en .
+
+:form_heavy_1_49_superlative lemon:writtenRep "heaviest"@en .
+
+:heavy_1_49_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :heavy_1_49_PredSynArg .
+
+:heavy_1_49_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :heavy_1_49_res ;
+  lemon:isA       :heavy_1_49_PredSynArg ;
+  lemon:condition :heavy_1_49_sense_1_condition .
+
+:heavy_1_49_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/mass> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:heavy_1_49_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange    <http://www.w3.org/2001/XMLSchema#double> .
+
+## Prepositions ##
+:form_heavy_1_49_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

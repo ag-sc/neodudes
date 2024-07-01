@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix oils:     <http://localhost:8000/oils.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :big_1 ;
+  lemon:entry    :form_big_1_preposition ;
+  lemon:entry    :big_1_res .
+
+:big_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_big_1 ;
+  lemon:otherForm      :form_big_1_comperative ;
+  lemon:otherForm      :form_big_1_superlative ;
+  lemon:sense          :big_1_sense_1 ;
+  lemon:synBehavior    :big_1_predFrame .
+
+:form_big_1 lemon:writtenRep "big"@en .
+
+:form_big_1_comperative lemon:writtenRep "bigger"@en .
+
+:form_big_1_superlative lemon:writtenRep "biggest"@en .
+
+:big_1_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :big_1_PredSynArg .
+
+:big_1_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :big_1_res ;
+  lemon:isA       :big_1_PredSynArg ;
+  lemon:condition :big_1_sense_1_condition .
+
+:big_1_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/seatingCapacity> ;
+  oils:degree   <http://localhost:8000/oils.owl/high> .
+
+:big_1_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Stadium> .## Prepositions ##
+:form_big_1_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

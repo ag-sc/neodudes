@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :child_of_409 ;
+  lemon:entry    :child_of_409_form_preposition .
+
+:child_of_409 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :child_of_409_form ;
+  lemon:otherForm  :child_of_409_singular ;
+  lemon:otherForm  :child_of_409_plural ;
+  lemon:sense          :child_of_409_sense_1 ;
+  lemon:synBehavior    :child_of_409_nounpp .
+
+:child_of_409_form a lemon:Form ;
+  lemon:writtenRep "child"@en .
+
+:child_of_409_singular a    lemon:Form ;
+  lemon:writtenRep "child"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:child_of_409_plural a   lemon:Form ;
+  lemon:writtenRep "children"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:child_of_409_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1541-1541-1541-1538-1540-1540-1540-1540-1540-1540-1514-1514-1514-1514-1485-1485-1485-1485-759_child_of_409 ;
+  lexinfo:prepositionalAdjunct :arg2-1541-1541-1541-1538-1540-1540-1540-1540-1540-1540-1514-1514-1514-1514-1485-1485-1485-1485-759_child_of_409 .
+
+:child_of_409_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :child_of_409_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2-1541-1541-1541-1538-1540-1540-1540-1540-1540-1540-1514-1514-1514-1514-1485-1485-1485-1485-759_child_of_409 ;
+  lemon:objOfProp           :arg1-1541-1541-1541-1538-1540-1540-1540-1540-1540-1540-1514-1514-1514-1514-1485-1485-1485-1485-759_child_of_409 ;
+  lemon:condition           :child_of_409_sense_1_condition .
+
+:child_of_409_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-1541-1541-1541-1538-1540-1540-1540-1540-1540-1540-1514-1514-1514-1514-1485-1485-1485-1485-759_child_of_409 lemon:marker :child_of_409_form_preposition .
+## Prepositions ##
+:child_of_409_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

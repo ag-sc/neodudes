@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :videogames_league_897_sense_1_res ;
+  lemon:entry    :videogames_league_897 .
+
+:videogames_league_897 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :videogames_league_897_form ;
+  lemon:otherForm  :videogames_league_897_singular ;
+  lemon:otherForm  :videogames_league_897_plural ;
+  lemon:sense          :videogames_league_897_sense_1 ;
+  lemon:synBehavior    :videogames_league_897_predFrame .
+
+:videogames_league_897_form
+ lemon:writtenRep "videogames league"@en .
+
+:videogames_league_897_singular a    lemon:Form ;
+  lemon:writtenRep "videogames league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:videogames_league_897_plural a   lemon:Form ;
+  lemon:writtenRep "videogames leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:videogames_league_897_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :videogames_league_897_sense_1_res ;
+  lemon:isA       :videogames_league_897_PredSynArg .
+
+:videogames_league_897_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/VideogamesLeague> .

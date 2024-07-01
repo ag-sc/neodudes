@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :mixed_martial_arts_league_788_sense_1_res ;
+  lemon:entry    :mixed_martial_arts_league_788 .
+
+:mixed_martial_arts_league_788 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :mixed_martial_arts_league_788_form ;
+  lemon:otherForm  :mixed_martial_arts_league_788_singular ;
+  lemon:otherForm  :mixed_martial_arts_league_788_plural ;
+  lemon:sense          :mixed_martial_arts_league_788_sense_1 ;
+  lemon:synBehavior    :mixed_martial_arts_league_788_predFrame .
+
+:mixed_martial_arts_league_788_form
+ lemon:writtenRep "mixed martial arts league"@en .
+
+:mixed_martial_arts_league_788_singular a    lemon:Form ;
+  lemon:writtenRep "mixed martial arts league"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:mixed_martial_arts_league_788_plural a   lemon:Form ;
+  lemon:writtenRep "mixed martial arts leagues"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:mixed_martial_arts_league_788_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :mixed_martial_arts_league_788_sense_1_res ;
+  lemon:isA       :mixed_martial_arts_league_788_PredSynArg .
+
+:mixed_martial_arts_league_788_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/MixedMartialArtsLeague> .

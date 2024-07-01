@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :headquarter_of_48 ;
+  lemon:entry    :headquarter_of_48_form_preposition .
+
+:headquarter_of_48 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :headquarter_of_48_form ;
+  lemon:otherForm  :headquarter_of_48_singular ;
+  lemon:otherForm  :headquarter_of_48_plural ;
+  lemon:sense          :headquarter_of_48_sense_1 ;
+  lemon:sense          :headquarter_of_48_sense_2 ;
+  lemon:synBehavior    :headquarter_of_48_nounpp .
+
+:headquarter_of_48_form a lemon:Form ;
+  lemon:writtenRep "headquarter"@en .
+
+:headquarter_of_48_singular a    lemon:Form ;
+  lemon:writtenRep "headquarter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:headquarter_of_48_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:headquarter_of_48_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 ;
+  lexinfo:prepositionalAdjunct :arg2-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 .
+
+:headquarter_of_48_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :headquarter_of_48_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/headquarter> ;
+  lemon:subjOfProp          :arg2-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 ;
+  lemon:objOfProp           :arg1-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 ;
+  lemon:condition           :headquarter_of_48_sense_1_condition .
+
+:headquarter_of_48_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/PopulatedPlace> .
+
+:headquarter_of_48_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :headquarter_of_48_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/location> ;
+  lemon:subjOfProp          :arg2-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 ;
+  lemon:objOfProp           :arg1-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 ;
+  lemon:condition           :headquarter_of_48_sense_2_condition .
+
+:headquarter_of_48_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Building> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-1113-1113-1113-1110-1109-1109-1109-1109-1109-1109-1090-1090-1090-1090-1064-1064-1064-1064-537-537-723_headquarter_of_48 lemon:marker :headquarter_of_48_form_preposition .
+## Prepositions ##
+:headquarter_of_48_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

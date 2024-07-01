@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :creator-of_18 ;
+  lemon:entry    :creator-of_18_form_preposition .
+
+:creator-of_18 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :creator-of_18_form ;
+  lemon:otherForm  :creator-of_18_singular ;
+  lemon:otherForm  :creator-of_18_plural ;
+  lemon:sense          :creator-of_18_sense_1 ;
+  lemon:synBehavior    :creator-of_18_nounpp .
+
+:creator-of_18_form a lemon:Form ;
+  lemon:writtenRep "creator"@en .
+
+:creator-of_18_singular a    lemon:Form ;
+  lemon:writtenRep "creator"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:creator-of_18_plural a   lemon:Form ;
+  lemon:writtenRep "creators"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:creator-of_18_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-414-414-413-413-412-412-412-412-412-412-405-405-405-405-397-397-397-397-197-197-324_creator-of_18 ;
+  lexinfo:prepositionalAdjunct :arg2-414-414-413-413-412-412-412-412-412-412-405-405-405-405-397-397-397-397-197-197-324_creator-of_18 .
+
+:creator-of_18_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :creator-of_18_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/creator> ;
+  lemon:subjOfProp          :arg2-414-414-413-413-412-412-412-412-412-412-405-405-405-405-397-397-397-397-197-197-324_creator-of_18 ;
+  lemon:objOfProp           :arg1-414-414-413-413-412-412-412-412-412-412-405-405-405-405-397-397-397-397-197-197-324_creator-of_18 ;
+  lemon:condition           :creator-of_18_sense_1_condition .
+
+:creator-of_18_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/FictionalCharacter> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2-414-414-413-413-412-412-412-412-412-412-405-405-405-405-397-397-397-397-197-197-324_creator-of_18 lemon:marker :creator-of_18_form_preposition .
+## Prepositions ##
+:creator-of_18_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

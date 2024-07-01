@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :us_852_sense_1_res ;
+  lemon:entry    :us_852 .
+
+:us_852 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :us_852_form ;
+  lemon:otherForm  :us_852_singular ;
+  lemon:otherForm  :us_852_plural ;
+  lemon:sense          :us_852_sense_1 ;
+  lemon:synBehavior    :us_852_predFrame .
+
+:us_852_form
+ lemon:writtenRep "u.s."@en .
+
+:us_852_singular a    lemon:Form ;
+  lemon:writtenRep "u.s."@en ;
+  lexinfo:number   lexinfo:singular .
+
+:us_852_plural a   lemon:Form ;
+  lemon:writtenRep "u.s."@en ;
+  lexinfo:number    lexinfo:plural .
+
+:us_852_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :us_852_sense_1_res ;
+  lemon:isA       :us_852_PredSynArg .
+
+:us_852_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/United_States> .

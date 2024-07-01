@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :capital-of_330 ;
+  lemon:entry    :capital-of_330_form_preposition .
+
+:capital-of_330 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :capital-of_330_form ;
+  lemon:otherForm  :capital-of_330_singular ;
+  lemon:otherForm  :capital-of_330_plural ;
+  lemon:sense          :capital-of_330_sense_1 ;
+  lemon:synBehavior    :capital-of_330_nounpp .
+
+:capital-of_330_form a lemon:Form ;
+  lemon:writtenRep "capital"@en .
+
+:capital-of_330_singular a    lemon:Form ;
+  lemon:writtenRep "capital"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:capital-of_330_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:capital-of_330_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-578-578-578-576-575-575-575-575-575-575-564-564-564-564-552-552-552-552-269_capital-of_330 ;
+  lexinfo:prepositionalAdjunct :arg2-578-578-578-576-575-575-575-575-575-575-564-564-564-564-552-552-552-552-269_capital-of_330 .
+
+:capital-of_330_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :capital-of_330_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/capital> ;
+  lemon:subjOfProp          :arg2-578-578-578-576-575-575-575-575-575-575-564-564-564-564-552-552-552-552-269_capital-of_330 ;
+  lemon:objOfProp           :arg1-578-578-578-576-575-575-575-575-575-575-564-564-564-564-552-552-552-552-269_capital-of_330 ;
+  lemon:condition           :capital-of_330_sense_1_condition .
+
+:capital-of_330_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2-578-578-578-576-575-575-575-575-575-575-564-564-564-564-552-552-552-552-269_capital-of_330 lemon:marker :capital-of_330_form_preposition .
+## Prepositions ##
+:capital-of_330_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

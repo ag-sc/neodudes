@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :restaurant_166_sense_1_res ;
+  lemon:entry    :restaurant_166 .
+
+:restaurant_166 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :restaurant_166_form ;
+  lemon:otherForm  :restaurant_166_singular ;
+  lemon:otherForm  :restaurant_166_plural ;
+  lemon:sense          :restaurant_166_sense_1 ;
+  lemon:synBehavior    :restaurant_166_predFrame .
+
+:restaurant_166_form
+ lemon:writtenRep "restaurant"@en .
+
+:restaurant_166_singular a    lemon:Form ;
+  lemon:writtenRep "restaurant"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:restaurant_166_plural a   lemon:Form ;
+  lemon:writtenRep "restaurants"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:restaurant_166_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :restaurant_166_sense_1_res ;
+  lemon:isA       :restaurant_166_PredSynArg .
+
+:restaurant_166_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/Restaurant> .

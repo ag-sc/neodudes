@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :english_62_158_sense_1_res ;
+  lemon:entry    :english_62_158 .
+
+:english_62_158 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :english_62_158_lemma ;
+  lemon:sense          :english_62_158_sense_1 ;
+  lemon:synBehavior    :english_62_158_attrFrame, :english_62_158_predFrame .
+
+:english_62_158_lemma lemon:writtenRep "English"@en .
+
+:english_62_158_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :english_62_158_PredSynArg .
+
+:english_62_158_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :english_62_158_AttrSynArg .
+
+:english_62_158_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :english_62_158_sense_1_res ;
+  lemon:isA       :english_62_158_AttrSynArg, :english_62_158_PredSynArg .
+
+:english_62_158_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/nationality> ;
+  owl:hasValue   <http://dbpedia.org/resource/England> .

@@ -1,0 +1,67 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :live_in_4 ;
+  lemon:entry    :form_live_in_4_preposition .
+
+:live_in_4 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_live_in_4 ;
+  lemon:otherForm      :form_live_in_4_present3rd ;
+  lemon:otherForm      :form_live_in_4_past ;
+  lemon:otherForm      :form_live_in_4_perfect ;
+  lemon:sense          :live_in_4_sense_1 ;
+  lemon:synBehavior    :live_in_4_frame .
+
+:form_live_in_4 a           lemon:Form ;
+  lemon:writtenRep     "People live"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:form_live_in_4_present3rd a      lemon:Form ;
+  lemon:writtenRep "People lives"@en ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:form_live_in_4_past a lemon:Form ;
+  lemon:writtenRep  "People lived"@en ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+
+:form_live_in_4_perfect a   lemon:Form ;
+  lemon:writtenRep "People lived"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:live_in_4_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :live_in_4_subj ;
+  lexinfo:prepositionalAdjunct :live_in_4_obj .
+
+:live_in_4_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :live_in_4_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/populationTotal> ;
+  lemon:subjOfProp  :live_in_4_obj ;
+  lemon:objOfProp   :live_in_4_subj ;
+  lemon:condition   :live_in_4_sense_1_condition .
+
+:live_in_4_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#double> .
+
+
+:live_in_4_obj lemon:marker :form_live_in_4_preposition .
+
+## Prepositions ##
+:form_live_in_4_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

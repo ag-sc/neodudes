@@ -1,0 +1,39 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :amateur_boxer_573_sense_1_res ;
+  lemon:entry    :amateur_boxer_573 .
+
+:amateur_boxer_573 a  lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :amateur_boxer_573_form ;
+  lemon:otherForm  :amateur_boxer_573_singular ;
+  lemon:otherForm  :amateur_boxer_573_plural ;
+  lemon:sense          :amateur_boxer_573_sense_1 ;
+  lemon:synBehavior    :amateur_boxer_573_predFrame .
+
+:amateur_boxer_573_form
+ lemon:writtenRep "amateur boxer"@en .
+
+:amateur_boxer_573_singular a    lemon:Form ;
+  lemon:writtenRep "amateur boxer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:amateur_boxer_573_plural a   lemon:Form ;
+  lemon:writtenRep "amateur boxers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:amateur_boxer_573_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :amateur_boxer_573_sense_1_res ;
+  lemon:isA       :amateur_boxer_573_PredSynArg .
+
+:amateur_boxer_573_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+  owl:hasValue   <http://dbpedia.org/ontology/AmateurBoxer> .

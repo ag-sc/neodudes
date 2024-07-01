@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8000/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :releasedate-of_387 ;
+  lemon:entry    :releasedate-of_387_form_preposition .
+
+:releasedate-of_387 a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :releasedate-of_387_form ;
+  lemon:otherForm  :releasedate-of_387_singular ;
+  lemon:otherForm  :releasedate-of_387_plural ;
+  lemon:sense          :releasedate-of_387_sense_1 ;
+  lemon:synBehavior    :releasedate-of_387_nounpp .
+
+:releasedate-of_387_form a lemon:Form ;
+  lemon:writtenRep "release date"@en .
+
+:releasedate-of_387_singular a    lemon:Form ;
+  lemon:writtenRep "release date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:releasedate-of_387_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:releasedate-of_387_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-1_releasedate-of_387 ;
+  lexinfo:prepositionalAdjunct :arg2-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-1_releasedate-of_387 .
+
+:releasedate-of_387_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :releasedate-of_387_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/releaseDate> ;
+  lemon:subjOfProp          :arg2-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-1_releasedate-of_387 ;
+  lemon:objOfProp           :arg1-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-1_releasedate-of_387 ;
+  lemon:condition           :releasedate-of_387_sense_1_condition .
+
+:releasedate-of_387_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-3-1_releasedate-of_387 lemon:marker :releasedate-of_387_form_preposition .
+## Prepositions ##
+:releasedate-of_387_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

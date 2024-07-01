@@ -1,0 +1,34 @@
+@prefix :        <http://localhost:8000/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://localhost:8000/lemon.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@base            <http://localhost:8000#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :azerbaijani_41_sense_1_res ;
+  lemon:entry    :azerbaijani_41 .
+
+:azerbaijani_41 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :azerbaijani_41_lemma ;
+  lemon:sense          :azerbaijani_41_sense_1 ;
+  lemon:synBehavior    :azerbaijani_41_attrFrame, :azerbaijani_41_predFrame .
+
+:azerbaijani_41_lemma lemon:writtenRep "azerbaijani"@en .
+
+:azerbaijani_41_predFrame a        lexinfo:AdjectivePredicateFrame ;
+  lexinfo:copulativeSubject :azerbaijani_41_PredSynArg .
+
+:azerbaijani_41_attrFrame a     lexinfo:AdjectiveAttributiveFrame ;
+  lexinfo:attributiveArg :azerbaijani_41_AttrSynArg .
+
+:azerbaijani_41_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :azerbaijani_41_sense_1_res ;
+  lemon:isA       :azerbaijani_41_AttrSynArg, :azerbaijani_41_PredSynArg .
+
+:azerbaijani_41_sense_1_res a   owl:Restriction ;
+  owl:onProperty <http://dbpedia.org/ontology/country> ;
+  owl:hasValue   <http://dbpedia.org/resource/Azerbaijan> .
