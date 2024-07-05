@@ -1,0 +1,3873 @@
+"id","question","Strategy","Gold SPARQL","Generated SPARQL","Generated SPARQL Full","True Positive","False Positive","False Negative","Precision","Recall","F1","Exact matches","Runtime","Combinations","DUDES"
+99,"What is the time zone of Salt Lake City?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City <http://dbpedia.org/ontology/timeZone> ?uri }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Salt_Lake_City> <http://dbpedia.org/ontology/timeZone> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Salt_Lake_City> <http://dbpedia.org/ontology/timeZone> ?v1 . 
+} ",1,0,0,1,1,1,1,"346,218131303787","2/896/940","
+[x5 | l5]
+l5: {
+[x10, x5]
+x10 == ""dbr:Salt_Lake_City""
+dbo:timeZone(x10, x5) == True
+what(x5) == True
+is(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+98,"Who killed Caesar?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dct:subject dbc:Assassins_of_Julius_Caesar }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Caesar_%28disambiguation%29> <http://dbpedia.org/property/conviction> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Caesar_%28disambiguation%29> <http://dbpedia.org/property/conviction> ?v0 . 
+} ",0,0,9,0,0,0,0,"75,7480812072754","2/37/37","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Caesar_%28disambiguation%29""
+dbp:conviction(x7, x5) == True
+who(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+86,"What is the highest mountain in Germany?","BestScoreEval","SELECT ?uri WHERE { ?uri rdf:type onto:Mountain ; onto:elevation ?elevation ; onto:locatedInArea <http://dbpedia.org/resource/Germany> } ORDER BY DESC(?elevation) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Germany> . 
+   ?v2 <http://dbpedia.org/ontology/elevation> ?v0 . 
+}  ORDER BY DESC(?v0) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Germany> . 
+   ?v2 <http://dbpedia.org/ontology/elevation> ?v0 . 
+}  ORDER BY DESC(?v0) LIMIT 1",1,0,0,1,1,1,1,"1998,64286279678","3/701/701","
+[None | l5]
+l5: {
+[x5, x16, x2]
+x16 == ""dbr:Germany""
+is(x2) == True
+dbo:elevation(x2, x5) == True
+dbo:locatedInArea(x2, x16) == True
+what(x5) == True
+local:top(""1"", x5, ""Degree.HIGH"") == True
+}
+---- 
+(x2, l5)
+(x5, l5)
+---- 
+
+--------
+"
+84,"Which American presidents were in office during the Vietnam War?","BestScoreEval","SELECT ?uri WHERE { ?uri dct:subject dbc:Presidents_of_the_United_States . res:Vietnam_War dbo:commander ?uri }","
+SELECT DISTINCT ?v2
+WHERE {
+   ""during_the_Vietnam_War"" <http://dbpedia.org/ontology/location> ?v2 . 
+   ?v2 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3APresidents_of_the_United_States> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ""during_the_Vietnam_War"" <http://dbpedia.org/ontology/location> ?v2 . 
+   ?v2 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3APresidents_of_the_United_States> . 
+} ",0,0,3,0,0,0,0,"351,859270095825","2/4353/4353","
+            [None | l14]
+            l14: {
+            [x3-fixed0, x14, x3]
+            which(x3) == True
+            dbo:location(x14, x3) == True
+            x14 == ""during_the_Vietnam_War""
+            dct:subject(x3, x3-fixed0) == True
+            were(x14) == True
+            x3-fixed0 ==
+""dbr:Category%3APresidents_of_the_United_States""
+            }
+            ---- 
+            (x3, l14)
+            ---- 
+
+            --------
+"
+81,"Butch Otter is the governor of which U.S. state?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates> ; <http://dbpedia.org/property/governor> <http://dbpedia.org/resource/Butch_Otter> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+   <http://dbpedia.org/resource/Butch_Otter> <http://dbpedia.org/ontology/region> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+   <http://dbpedia.org/resource/Butch_Otter> <http://dbpedia.org/ontology/region> ?v0 . 
+} ",1,0,0,1,1,1,1,"748,478649616242","4/13105/13105","
+[x6-1 | l4]
+l4: {
+[x4, x9-fixed0, x2, x6-1]
+is(x2) == True
+which(x6-1) == True
+dbo:region(x4, x6-1) == True
+x9-fixed0 == ""dbr:United_States""
+dbo:country(x6-1, x9-fixed0) == True
+x4 == ""dbr:Butch_Otter""
+}
+---- 
+(x6-1, l4)
+(x2, l4)
+---- 
+
+--------
+"
+73,"How many gold medals did Michael Phelps win at the 2008 Olympics?","BestScoreEval","SELECT Count(?sub) as ?c WHERE { ?sub dbo:goldMedalist dbr:Michael_Phelps . filter (contains (str(?sub), ""2008"") && contains (str(?sub), ""Olympics"")) }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/award> ""2008"" . 
+   <http://dbpedia.org/resource/Michael_Phelps> <http://dbpedia.org/ontology/goldMedalist> ?v2 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/award> ""2008"" . 
+   <http://dbpedia.org/resource/Michael_Phelps> <http://dbpedia.org/ontology/goldMedalist> ?v2 . 
+} ",0,0,1,0,0,0,0,"531,711964130402","2/14055/14055","
+[None | l7]
+l7: {
+[x7, x12, x3-1]
+x7 == ""dbr:Michael_Phelps""
+dbo:goldMedalist(x7, x3-1) == True
+how_many(x3-1) == True
+dbo:award(x3-1, x12) == True
+x12 == ""2008""
+}
+---- 
+(x3-1, l7)
+---- 
+
+--------
+"
+66,"Which artists were born on the same date as Rachel Stevens?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a dbo:Artist . dbr:Rachel_Stevens dbo:birthDate ?birthdate . ?uri dbo:birthDate ?birthdate }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/The_Same> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Artist> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/The_Same> . 
+   <http://dbpedia.org/resource/Rachel_Stevens> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/resource/The_Same> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Artist> . 
+} ",0,0,3,0,0,0,0,"254,347538948059","2/4005/4017","
+[None | l8]
+l8: {
+[x13, x3-fixed0, x8, x16]
+x3-fixed0 == ""dbo:Artist""
+dbo:birthPlace(x8, x13) == True
+x13 == ""dbr:The_Same""
+which(x8) == True
+rdf:type(x8, x3-fixed0) == True
+x16 == ""dbr:Rachel_Stevens""
+rdf:type(x16, x13) == True
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+64,"What is the profession of Frank Herbert?","BestScoreEval","SELECT DISTINCT ?string WHERE { res:Frank_Herbert dbpedia2:occupation ?string }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Frank_Herbert> <http://dbpedia.org/property/occupation> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Frank_Herbert> <http://dbpedia.org/property/occupation> ?v0 . 
+} ",1,0,0,1,1,1,1,"232,096756219864","2/182/182","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+x10 == ""dbr:Frank_Herbert""
+what(x6-1) == True
+dbp:occupation(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+6,"Are Taiko some kind of Japanese musical instrument?","BestScoreEval","ASK WHERE { <http://dbpedia.org/resource/Taiko> a <http://dbpedia.org/class/yago/WikicatJapaneseMusicalInstruments> }","
+ASK WHERE {
+   <http://dbpedia.org/resource/Taiko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatJapaneseMusicalInstruments> . 
+} ","
+ASK WHERE {
+   <http://dbpedia.org/resource/Taiko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatJapaneseMusicalInstruments> . 
+} ",1,0,0,1,1,1,1,"891,842862844467","2/6172/6172","
+[x7 | l4]
+l4: {
+[x4, x9-fixed0, x7]
+rdf:type(x4, x9-fixed0) == True
+x7 == ""dbr:KIND""
+x4 == ""dbr:Taiko""
+are(x4) == True
+x9-fixed0 == ""yago:WikicatJapaneseMusicalInstruments""
+}
+---- 
+
+---- 
+
+--------
+"
+56,"How many seats does the home stadium of FC Porto have?","BestScoreEval","SELECT ?capacity WHERE { { dbr:FC_Porto dbo:ground ?ground . ?ground dbo:capacity ?capacity } UNION { dbr:FC_Porto dbo:ground ?ground . ?ground dbp:capacity ?capacity } }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/The_Stadium> ?v5 ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/ground> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/The_Stadium> ?v5 ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/ground> ?v1 . 
+} ",0,0,1,0,0,0,0,"925,821877479553","2/383/383","
+[None | l6]
+l6: {
+[x6-0, x6-1, x10, x16, x19]
+local:with(x10, x6-1) == True
+x19 == ""dbr:FC_Porto""
+how_many(x6-1) == True
+x16 == ""dbr:Home""
+dbo:ground(x6-0, x6-1) == True
+x10 == ""dbr:The_Stadium""
+}
+---- 
+(x6-0, l6, ['of', 'of'])
+(x6-1, l6)
+---- 
+
+--------
+"
+49,"Which frequent flyer program has the most airlines?","BestScoreEval","SELECT ?uri WHERE { ?airline <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Airline> . ?airline <http://dbpedia.org/property/frequentFlyer> ?uri. } GROUP BY ?uri ORDER BY DESC(COUNT(DISTINCT ?airline)) OFFSET 0 LIMIT 1","No valid result yet.","No valid result yet.",0,0,1,0,0,0,0,"1073,432949543","1/7357/7357","None"
+44,"Which European countries have a constitutional monarchy?","BestScoreEval","SELECT ?uri WHERE { ?uri dct:subject dbc:Countries_in_Europe ; dbo:governmentType dbr:Constitutional_monarchy }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 ?v3 <http://dbpedia.org/resource/Constitutional_monarchy> . 
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3ACountries_in_Europe> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 ?v3 <http://dbpedia.org/resource/Constitutional_monarchy> . 
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3ACountries_in_Europe> . 
+} ",0,0,4,0,0,0,0,"1529,32867002487","2/1489/1489","
+[None | l10]
+l10: {
+[x6-fixed0, x6, x10]
+local:with(x6, x10) == True
+x6-fixed0 == ""dbr:Category%3ACountries_in_Europe""
+dct:subject(x6, x6-fixed0) == True
+which(x6) == True
+x10 == ""dbr:Constitutional_monarchy""
+}
+---- 
+(x6, l10)
+---- 
+
+--------
+"
+42,"Which countries have places with more than two caves?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )","
+SELECT DISTINCT ?v5
+WHERE {
+   ?v2 ?v8 ?v3 . 
+   ?v7 ?v9 ?v5 . 
+   ?v5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+   ?v7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Cave> . 
+   FILTER (""two"" > ?v7)
+} ","
+SELECT DISTINCT ?v5
+WHERE {
+   ?v2 ?v8 ?v3 . 
+   ?v7 ?v9 ?v5 . 
+   ?v5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+   ?v7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Cave> . 
+   FILTER (""two"" > ?v7)
+} ",0,0,31,0,0,0,0,"494,869102478027","2/36/56","
+[None | l6]
+l6: {
+[x6-fixed0, x21-fixed0, x6, x2, x24, x9, x9-fixed0, x21]
+local:with(x21, x9) == True
+rdf:type(x6, x6-fixed0) == True
+x6-fixed0 == ""dbo:Country""
+local:comp(x24, x21, ""Degree.STRONG"") == True
+which(x6) == True
+x9-fixed0 == ""dbo:Place""
+x21-fixed0 == ""dbo:Cave""
+local:with(x6, x2) == True
+x24 == ""two""
+rdf:type(x21, x21-fixed0) == True
+rdf:type(x9, x9-fixed0) == True
+}
+---- 
+(x2, l6)
+(x21, l6)
+(x9, l6)
+(x6, l6)
+---- 
+
+--------
+"
+4,"Which airports are located in California, USA?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Airport> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/California> } UNION { ?uri <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/California> } UNION { ?uri <http://dbpedia.org/ontology/city> ?city . ?city <http://dbpedia.org/ontology/isPartOf> <http://dbpedia.org/resource/California> } UNION { ?uri <http://dbpedia.org/ontology/operator> <http://dbpedia.org/resource/California> } }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/California> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Airport> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/California> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Airport> . 
+} ",73,0,131,1,"0,357843137254902","0,527075812274368",0,"358,679267168045","2/1080/1080","
+[None | l8]
+l8: {
+[x10, x3-fixed0, x8]
+x3-fixed0 == ""dbo:Airport""
+which(x8) == True
+rdf:type(x8, x3-fixed0) == True
+are(x8) == True
+dbo:location(x8, x10) == True
+x10 == ""dbr:California""
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+37,"What are the nicknames of San Francisco?","BestScoreEval","PREFIX foaf:<http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?string WHERE { res:San_Francisco foaf:nick ?string }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/San_Francisco> <http://xmlns.com/foaf/0.1/nick> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/San_Francisco> <http://xmlns.com/foaf/0.1/nick> ?v0 . 
+} ",1,0,0,1,1,1,1,"722,90505194664","2/912/912","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+what(x6-1) == True
+foaf:nick(x10, x6-1) == True
+x10 == ""dbr:San_Francisco""
+are(x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+32,"What is Angela Merkel’s birth name?","BestScoreEval","SELECT DISTINCT ?string WHERE { res:Angela_Merkel dbp:birthName ?string }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/birthName> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/birthName> ?v0 . 
+} ",1,0,0,1,1,1,1,"1201,10556530952","2/37778/37778","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+what(x6-1) == True
+dbp:birthName(x10, x6-1) == True
+x10 == ""dbr:Angela_Merkel""
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+31,"Who is the mayor of Berlin?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Berlin dbp:leader ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Berlin> <http://dbpedia.org/property/leader> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Berlin> <http://dbpedia.org/property/leader> ?v0 . 
+} ",1,0,0,1,1,1,1,"145,502796411514","2/57/57","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+who(x6-1) == True
+x10 == ""dbr:Berlin""
+dbp:leader(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+29,"Which countries in the European Union adopted the Euro?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Euro> } UNION { ?uri <http://dbpedia.org/property/currencyCode> ""EUR""@en } }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/currency> ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/locationCity> ?v3 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/currency> ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/locationCity> ?v3 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+} ",17,70,30,"0,195402298850575","0,361702127659575","0,253731343283582",0,"737,14864897728","6/3024/3024","
+[None | l6]
+l6: {
+[x6-0, x0-1, x6-2, x6-1, x11, x6-3]
+x11 == ""the_Euro""
+dbo:locationCity(x6-0, x6-1) == True
+x6-2 == ""dbo:Company""
+rdf:type(x6-1, x6-3) == True
+rdf:type(x6-0, x6-2) == True
+x6-3 == ""dbo:Place""
+dbo:currency(x6-1, x0-1) == True
+}
+---- 
+(x0-1, l6)
+(x6-0, l6, ['in', 'in'])
+(x6-1, l6)
+---- 
+
+--------
+"
+23,"Which software has been published by Mean Hamster Software?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Software { ?uri prop:publisher ""Mean Hamster Software""@en } UNION { ?uri onto:publisher res:Mean_Hamster_Software } }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Mean_Hamster_Software> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Mean_Hamster_Software> . 
+   <http://dbpedia.org/resource/Mean_Hamster_Software> <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Software> . 
+} ",2,0,0,1,1,1,1,"180,075529575348","3/4233/4233","
+[None | l8]
+l8: {
+[x10, x3-fixed0, x8]
+x3-fixed0 == ""http://dbpedia.org/resource/Software""
+dbo:publisher(x8, x10) == True
+x10 == ""dbr:Mean_Hamster_Software""
+has(x8) == True
+http://dbpedia.org/ontology/industry(x10, x3-fixed0) == True
+which(x10) == True
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+68,"Which country was Bill Gates born in?","BestScoreEval","SELECT DISTINCT ?country WHERE { { dbr:Bill_Gates dbo:birthPlace ?birthPlace . ?birthPlace dbo:country ?country } UNION { dbr:Bill_Gates dbo:birthPlace ?birthPlace . ?birthPlace dbo:isPartOf ?place . ?place dbo:country ?country } }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Bill_Gates> <http://dbpedia.org/ontology/birthPlace> ?v1 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Bill_Gates> <http://dbpedia.org/ontology/birthPlace> ?v1 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ",0,0,1,0,0,0,0,"158,100940227509","2/298/298","
+[None | l4]
+l4: {
+[x6-fixed0, x4, x6]
+rdf:type(x6, x6-fixed0) == True
+x4 == ""dbr:Bill_Gates""
+x6-fixed0 == ""dbo:Country""
+which(x6) == True
+dbo:birthPlace(x4, x6) == True
+}
+---- 
+(x6, l4)
+---- 
+
+--------
+"
+22,"How many grand-children did Jacques Cousteau have?","BestScoreEval","SELECT COUNT(DISTINCT ?y AS ?y) WHERE { <http://dbpedia.org/resource/Jacques_Cousteau> <http://dbpedia.org/ontology/child> ?x . ?x <http://dbpedia.org/ontology/child> ?y . }","
+SELECT DISTINCT COUNT(DISTINCT ?v1)
+WHERE {
+   <http://dbpedia.org/resource/Jacques_Cousteau> ?v3 ?v2 . 
+   ?v2 <http://dbpedia.org/ontology/child> ?v1 . 
+} ","
+SELECT DISTINCT COUNT(DISTINCT ?v1)
+WHERE {
+   <http://dbpedia.org/resource/Jacques_Cousteau> ?v3 ?v2 . 
+   ?v2 <http://dbpedia.org/ontology/child> ?v1 . 
+} ",1,0,0,1,1,1,1,"430,489497184753","3/8225/8225","
+[None | l12]
+l12: {
+[x10, x12-1, x12-0]
+x10 == ""dbr:Jacques_Cousteau""
+many(x12-0) == True
+dbo:child(x12-0, x12-1) == True
+local:with(x10, x12-0) == True
+how(x12-0) == True
+did(x12-0) == True
+}
+---- 
+(x12-0, l12, ['of', 'of'])
+(x12-1, l12)
+---- 
+
+--------
+"
+214,"Give me all professional skateboarders from Sweden.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation dbr:Skateboarder { ?uri dbo:birthPlace dbr:Sweden } UNION { ?uri dbo:birthPlace ?place . ?place dbo:country dbr:Sweden } }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Sweden> . 
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Skateboarder> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Sweden> . 
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Skateboarder> . 
+} ",0,0,2,0,0,0,0,"300,104607820511","2/10183/10183","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x13, x5, x2-1]
+me(x5) == True
+x13 == ""dbr:Sweden""
+give(x5, x2-1) == True
+x6-fixed0 == ""dbr:Skateboarder""
+dbo:nationality(x6, x13) == True
+dbo:occupation(x6, x6-fixed0) == True
+}
+---- 
+(x2-1, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+210,"Which monarchs of the United Kingdom were married to a German?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatMonarchsOfTheUnitedKingdom ; dbo:spouse ?spouse . ?spouse dbo:birthPlace res:Germany }","
+SELECT DISTINCT ?v2
+WHERE {
+   ""1"" <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatMonarchsOfTheUnitedKingdom> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ""1"" <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ""1"" <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatMonarchsOfTheUnitedKingdom> . 
+} ",0,0,1,0,0,0,0,"2358,9175491333","2/20448/20448","
+[None | l3]
+l3: {
+[x6-fixed0, x3-fixed0, x3, x12]
+x6-fixed0 == ""dbr:Germany""
+x3-fixed0 == ""yago:WikicatMonarchsOfTheUnitedKingdom""
+which(x3) == True
+rdf:type(x3, x3-fixed0) == True
+x12 == ""1""
+dbo:spouse(x12, x3) == True
+dbo:country(x12, x6-fixed0) == True
+}
+---- 
+(x3, l3)
+---- 
+
+--------
+"
+199,"Give me all Argentine films.","BestScoreEval","SELECT DISTINCT ?uri WHERE { { ?uri rdf:type yago:ArgentineFilms } UNION { ?uri rdf:type dbo:Film { ?uri dbo:country res:Argentina } UNION { ?uri dbp:country ""Argentina""@en } } }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Argentina> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Argentina> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ",243,0,0,1,1,1,1,"12,5227580070496","3/498/498","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x5, x9-fixed0]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+give(x6, x5) == True
+x6-fixed0 == ""dbo:Film""
+dbo:country(x6, x9-fixed0) == True
+x9-fixed0 == ""dbr:Argentina""
+}
+---- 
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+203,"How did Michael Jackson die?","BestScoreEval","SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/property/deathCause> ?s }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Michaels_%28disambiguation%29> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Michaels_%28disambiguation%29> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ",0,0,1,0,0,0,0,"235,317614793777","2/9371/9371","
+[None | l5]
+l5: {
+[x10, x5]
+how(x5) == True
+dbo:deathPlace(x10, x5) == True
+did(x5) == True
+x10 == ""dbr:Michaels_%28disambiguation%29""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+197,"Which U.S. state has been admitted latest?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dct:subject dbc:States_of_the_United_States ; <http://dbpedia.org/property/admittancedate> ?x } ORDER BY DESC(?x) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/property/admittancedate> <http://dbpedia.org/resource/Slatest> . 
+   ?v2 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/property/admittancedate> <http://dbpedia.org/resource/Slatest> . 
+   ?v2 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+} ",0,0,1,0,0,0,0,"480,854539632797","2/23634/23634","
+[None | l8]
+l8: {
+[x10, x3-fixed0, x8]
+which(x8) == True
+has(x8) == True
+x3-fixed0 == ""dbr:United_States""
+x10 == ""dbr:Slatest""
+dbp:admittancedate(x8, x10) == True
+dbo:country(x8, x3-fixed0) == True
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+196,"Which classes does the Millepede belong to?","BestScoreEval","SELECT DISTINCT ?String WHERE { res:Millipede dbp:taxon ?String }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Mill_%28post-production%29> <http://dbpedia.org/ontology/subdivision> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Mill_%28post-production%29> <http://dbpedia.org/ontology/subdivision> ?v0 . 
+} ",0,0,1,0,0,0,0,"442,475918531418","2/5178/5178","
+[None | l5]
+l5: {
+[x5, x7]
+classes(x5) == True
+x7 == ""dbr:The_Mill_%28post-production%29""
+which(x5) == True
+dbo:subdivision(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+188,"Give me the homepage of Forbes.","BestScoreEval","SELECT DISTINCT ?string WHERE { res:Forbes foaf:homepage ?string }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://xmlns.com/foaf/0.1/homepage> ?v1 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#string> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/child> ?v6 . 
+   ?v0 <http://xmlns.com/foaf/0.1/homepage> ?v1 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#string> . 
+} ",0,0,1,0,0,0,0,"120,855618238449","2/518/518","
+[None | l5]
+l5: {
+[x6-0, x6-1, x6-2, x9-0, x5, x6-3, x9-1]
+me(x5) == True
+x6-2 == ""dbo:Person""
+foaf:homepage(x6-0, x6-1) == True
+give(x9-1, x5) == True
+x6-3 == ""xsd:string""
+dbo:child(x9-0, x9-1) == True
+rdf:type(x6-1, x6-3) == True
+rdf:type(x6-0, x6-2) == True
+}
+---- 
+(x9-0, l5)
+(x9-1, l5)
+(x6-0, l5)
+(x6-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+187,"Who is the husband of Amanda Palmer?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Amanda_Palmer> }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Amanda_Palmer> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Amanda_Palmer> . 
+} ",1,0,0,1,1,1,1,"2018,48844361305","3/814/814","
+[x10 | l5]
+l5: {
+[x10, x5]
+x10 == ""dbr:Amanda_Palmer""
+dbo:spouse(x5, x10) == True
+is(x5) == True
+who(x10) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+176,"Who painted The Storm on the Sea of Galilee?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:The_Storm_on_the_Sea_of_Galilee dbo:author ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Storm_on_the_Sea_of_Galilee> <http://dbpedia.org/ontology/author> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Storm_on_the_Sea_of_Galilee> <http://dbpedia.org/ontology/author> ?v0 . 
+} ",1,0,0,1,1,1,1,"358,446035861969","2/499/499","
+[None | l5]
+l5: {
+[x5, x7]
+who(x5) == True
+x7 == ""dbr:The_Storm_on_the_Sea_of_Galilee""
+dbo:author(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+62,"What is the highest place of Karakoram?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Karakoram dbp:highest ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Karakoram> <http://dbpedia.org/property/highest> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Karakoram> <http://dbpedia.org/property/highest> ?v0 . 
+} ",1,0,0,1,1,1,1,"243,196622371674","2/1347/1347","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+what(x6-1) == True
+x10 == ""dbr:Karakoram""
+dbp:highest(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+173,"When did Finland join the EU?","BestScoreEval","SELECT DISTINCT ?date WHERE { res:Finland dbp:accessioneudate ?date }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Finland> <http://dbpedia.org/property/accessioneudate> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Finland> <http://dbpedia.org/property/accessioneudate> ?v0 . 
+} ",1,0,0,1,1,1,1,"91,8372068405151","2/1790/1790","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Finland""
+when(x5) == True
+dbp:accessioneudate(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+168,"Which actors play in Big Bang Theory?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Big_Bang_Theory> <http://dbpedia.org/ontology/starring> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Big_Bang_Theory> <http://dbpedia.org/ontology/starring> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Big_Bang_Theory> <http://dbpedia.org/ontology/starring> ?v0 . 
+   <http://dbpedia.org/resource/The_Big_Bang_Theory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . 
+} ",10,0,0,1,1,1,1,"127,22531414032","3/1805/1805","
+[None | l7]
+l7: {
+[x0-1, x3-fixed0, x7]
+which(x7) == True
+dbo:starring(x7, x0-1) == True
+x7 == ""dbr:The_Big_Bang_Theory""
+rdf:type(x7, x3-fixed0) == True
+x3-fixed0 == ""dbo:Actor""
+}
+---- 
+(x0-1, l7)
+---- 
+
+--------
+"
+166,"Which computer scientist won an oscar?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/field> <http://dbpedia.org/resource/Computer_science> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Academy_Award> }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Oscar> . 
+   ?v2 <http://dbpedia.org/ontology/field> <http://dbpedia.org/resource/Computer_science> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Oscar> . 
+   ?v2 <http://dbpedia.org/ontology/field> <http://dbpedia.org/resource/Computer_science> . 
+} ",0,0,1,0,0,0,0,"300,066133975983","2/7930/7930","
+[None | l7]
+l7: {
+[x3-fixed0, x7, x3]
+x7 == ""dbr:Oscar""
+dbo:award(x3, x7) == True
+which(x3) == True
+dbo:field(x3, x3-fixed0) == True
+x3-fixed0 == ""dbr:Computer_science""
+}
+---- 
+(x3, l7)
+---- 
+
+--------
+"
+160,"Who wrote Harry Potter?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Harry_Potter> <http://dbpedia.org/property/author> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Harry_Potter> <http://dbpedia.org/property/author> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Harry_Potter> <http://dbpedia.org/property/author> ?v0 . 
+} ",1,0,0,1,1,1,1,"90,9018850326538","2/1058/1058","
+[None | l5]
+l5: {
+[x5, x7]
+dbp:author(x7, x5) == True
+who(x5) == True
+x7 == ""dbr:Harry_Potter""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+158,"Give me all writers that won the Nobel Prize in literature.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Writer> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Writer> . 
+} ",21,0,0,1,1,1,1,"531,817442893982","3/4120/4127","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x19, x5, x2-1, x16]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+x16 == ""dbr:Nobel_Prize_in_Literature""
+give(x5, x2-1) == True
+dbo:award(x6, x16) == True
+x6-fixed0 == ""dbo:Writer""
+x19 == ""dbr:LiteraTure""
+that(x6) == True
+}
+---- 
+(x2-1, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+157,"Give me English actors starring in Lovesick.","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lovesick_(1983_film)> dbo:starring ?uri . ?uri dbo:birthPlace ?city . ?city dbo:country <http://dbpedia.org/resource/United_Kingdom> }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/location> ?v2 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/location> ?v2 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . 
+} ",0,0,2,0,0,0,0,"434,472083330154","2/2074/2074","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x11, x5, x2-1]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+x6-fixed0 == ""dbo:Actor""
+give(x5, x2-1) == True
+dbo:location(x6, x11) == True
+}
+---- 
+(x2-1, l5)
+(x11, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+155,"What is the nick name of Baghdad?","BestScoreEval","SELECT ?nm WHERE { dbr:Baghdad foaf:nick ?nm }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Baghdad> <http://xmlns.com/foaf/0.1/nick> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Baghdad> <http://xmlns.com/foaf/0.1/nick> ?v0 . 
+} ",1,0,0,1,1,1,1,"149,966666221619","2/607/607","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+what(x6-1) == True
+foaf:nick(x10, x6-1) == True
+x10 == ""dbr:Baghdad""
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+150,"In which city was the president of Montenegro born?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/title> dbr:President_of_Montenegro ; dbo:birthPlace ?uri . ?uri dbo:type dbr:Capital_city }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v4 <http://dbpedia.org/ontology/birthPlace> ?v0 . 
+   <http://dbpedia.org/resource/Montenegro> <http://dbpedia.org/ontology/leader> ?v4 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v4 <http://dbpedia.org/ontology/birthPlace> ?v0 . 
+   <http://dbpedia.org/resource/Montenegro> <http://dbpedia.org/ontology/leader> ?v4 . 
+   ?v2 <http://dbpedia.org/ontology/location> ?v3 . 
+} ",1,4,0,"0,2",1,"0,333333333333333",0,"906,40257024765","3/2936/2936","
+[None | l11]
+l11: {
+[x11, x19, x17, x5, x12-1]
+dbo:birthPlace(x12-1, x11) == True
+dbo:location(x17, x5) == True
+dbo:leader(x19, x12-1) == True
+was(x11) == True
+x19 == ""dbr:Montenegro""
+which(x17) == True
+}
+---- 
+(x12-1, l11)
+(x5, l11)
+(x17, l11)
+(x11, l11)
+---- 
+
+--------
+"
+149,"Which U.S. state has the highest population density?","BestScoreEval","SELECT ?uri WHERE { ?uri <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . ?uri <http://dbpedia.org/ontology/capital> ?capital . ?uri <http://dbpedia.org/property/densityrank> ?density . OPTIONAL {?uri <http://www.w3.org/2000/01/rdf-schema#label> ?string. FILTER (lang(?string) = 'en') } } ORDER BY ASC(?density) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/height> ?v4 . 
+   ?v1 <http://dbpedia.org/property/densityrank> ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+}  ORDER BY DESC(?v4) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/height> ?v4 . 
+   ?v1 <http://dbpedia.org/property/densityrank> ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+}  ORDER BY DESC(?v4) LIMIT 1",0,0,1,0,0,0,0,"428,739060401917","2/332/333","
+[None | l3]
+l3: {
+[x12-1, x3-fixed0, x6-0, x6-1, x3]
+dbp:densityrank(x6-0, x6-1) == True
+dbo:country(x3, x3-fixed0) == True
+x3-fixed0 == ""dbr:United_States""
+dbo:height(x6-1, x12-1) == True
+which(x3) == True
+local:top(""1"", x12-1, ""Degree.HIGH"") == True
+has(x6-1, x3) == True
+}
+---- 
+(x12-1, l3)
+(x6-0, l3)
+(x6-1, l3)
+(x3, l3)
+---- 
+
+--------
+"
+25,"What is the longest river in China?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/China> ; <http://dbpedia.org/property/length> ?l } ORDER BY DESC(?l) OFFSET 0 LIMIT 1","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/World%27s_longest_river> <http://dbpedia.org/ontology/location> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/World%27s_longest_river> <http://dbpedia.org/ontology/location> ?v0 . 
+} ",0,0,1,0,0,0,0,"172,020818471909","2/105/105","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:World%27s_longest_river""
+dbo:location(x7, x5) == True
+what(x5) == True
+is(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+143,"What is the area code of Berlin?","BestScoreEval","SELECT DISTINCT ?string WHERE { res:Berlin dbo:areaCode ?string }","No valid result yet.","No valid result yet.",0,0,1,0,0,0,0,"0,00518488883972168","1/0/0","None"
+140,"How many scientists graduated from an Ivy League university?","BestScoreEval","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Scientist> ; <http://dbpedia.org/ontology/almaMater> ?university . ?university <http://dbpedia.org/ontology/affiliation> <http://dbpedia.org/resource/Ivy_League> ; a <http://dbpedia.org/ontology/University> }","No valid result yet.","No valid result yet.",0,0,1,0,0,0,0,"1648,55565571785","1/17169/17189","None"
+139,"Which professional surfers were born in Australia?","BestScoreEval","SELECT DISTINCT ?uri WHERE { { ?uri dbo:occupation res:Surfer ; dbo:birthPlace res:Australia } UNION { ?uri dbo:occupation res:Surfer ; dbo:birthPlace ?place . ?place dbo:country res:Australia } }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/birthYear> ?v1 . 
+   ?v3 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfer> . 
+} ","
+SELECT DISTINCT ?v4
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/birthYear> ?v1 . 
+   ?v2 <http://dbpedia.org/ontology/location> ?v4 . 
+   ?v3 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfer> . 
+} ",2,5,0,"0,285714285714286",1,"0,444444444444445",0,"884,353162050247","5/10867/10867","
+[None | l3]
+l3: {
+[x3-fixed0, x8, x0-1, x7, x3]
+dbo:birthYear(x3, x0-1) == True
+dbo:occupation(x3, x3-fixed0) == True
+x3-fixed0 == ""dbr:Surfer""
+which(x3) == True
+dbo:location(x7, x8) == True
+}
+---- 
+(x0-1, l3)
+(x7, l3)
+(x8, l3)
+(x3, l3)
+---- 
+
+--------
+"
+137,"Give me all Dutch parties.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/PoliticalParty> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Netherlands> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Netherlands> . 
+   ?v3 <http://dbpedia.org/ontology/party> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Netherlands> . 
+   ?v3 <http://dbpedia.org/ontology/party> ?v0 . 
+} ",7,0,4,1,"0,636363636363636","0,777777777777778",0,"86,2308983802795","2/650/650","
+[None | l5]
+l5: {
+[x5, x9-fixed0, x6-0, x6-1]
+me(x5) == True
+x9-fixed0 == ""dbr:Netherlands""
+dbo:party(x6-0, x6-1) == True
+dbo:country(x6-1, x9-fixed0) == True
+give(x6-1, x5) == True
+}
+---- 
+(x6-0, l5)
+(x6-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+136,"How many moons does Mars have?","BestScoreEval","SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Mars> <http://dbpedia.org/property/satellites> ?n }","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   <http://dbpedia.org/resource/Mars> ?v3 ?v0 . 
+   ?v2 <http://dbpedia.org/property/satellites> ?v0 . 
+} ","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   <http://dbpedia.org/resource/Mars> ?v3 ?v0 . 
+   ?v2 <http://dbpedia.org/property/satellites> ?v0 . 
+} ",1,0,0,1,1,1,1,"125,308796167374","4/3827/3827","
+[None | l6]
+l6: {
+[x6-1, x10, x6-0]
+local:with(x10, x6-1) == True
+how(x6-1) == True
+dbp:satellites(x6-0, x6-1) == True
+x10 == ""dbr:Mars""
+many(x6-1) == True
+}
+---- 
+(x6-0, l6, ['of', 'of'])
+(x6-1, l6)
+---- 
+
+--------
+"
+134,"What is Batman's real name?","BestScoreEval","SELECT DISTINCT ?label WHERE { <http://dbpedia.org/resource/Batman> <http://xmlns.com/foaf/0.1/name> ?label FILTER ( str(?label) != ""Batman"" ) }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Batman> <http://xmlns.com/foaf/0.1/name> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Batman> <http://xmlns.com/foaf/0.1/name> ?v0 . 
+} ",1,1,0,"0,5",1,"0,666666666666667",0,"310,604222297668","2/8056/8056","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+x10 == ""dbr:Batman""
+what(x6-1) == True
+foaf:name(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+132,"What is Elon Musk famous for?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Elon_Musk> <http://dbpedia.org/ontology/knownFor> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Elon_Musk> <http://dbpedia.org/ontology/knownFor> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Elon_Musk> <http://dbpedia.org/ontology/knownFor> ?v0 . 
+} ",6,0,0,1,1,1,1,"560,618447780609","3/22406/22406","
+[x6-1 | l4]
+l4: {
+[x6-1, x4]
+dbo:knownFor(x4, x6-1) == True
+is(x6-1) == True
+what(x4) == True
+x4 == ""dbr:Elon_Musk""
+}
+---- 
+(x6-1, l4)
+---- 
+
+--------
+"
+128,"Who is the author of WikiLeaks?","BestScoreEval","SELECT ?uri WHERE { res:WikiLeaks onto:author ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/WikiLeaks> <http://dbpedia.org/ontology/author> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/WikiLeaks> <http://dbpedia.org/ontology/author> ?v0 . 
+} ",1,0,0,1,1,1,1,"1435,73789548874","2/23/23","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+x10 == ""dbr:WikiLeaks""
+who(x6-1) == True
+dbo:author(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+126,"Sean Parnell was the governor of which U.S. state?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Sean_Parnell dbo:region ?uri }","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/Sean_Parnell> <http://dbpedia.org/ontology/region> ?v2 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/Sean_Parnell> <http://dbpedia.org/ontology/region> ?v2 . 
+   <http://dbpedia.org/resource/Sean_Parnell> <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States> . 
+} ",1,0,0,1,1,1,1,"2875,95702910423","3/7351/7351","
+[x2 | l4]
+l4: {
+[x4, x9-fixed0, x2]
+dbo:country(x4, x9-fixed0) == True
+dbo:region(x4, x2) == True
+was(x2) == True
+x9-fixed0 == ""dbr:United_States""
+x4 == ""dbr:Sean_Parnell""
+which(x4) == True
+}
+---- 
+(x2, l4)
+---- 
+
+--------
+"
+125,"How many years was the Ford Model T manufactured?","BestScoreEval","SELECT ?years WHERE { res:Ford_Model_T dbo:productionEndYear ?end ; dbo:productionStartYear ?start. BIND ( ( year(xsd:date(?end)) - year(xsd:date(?start)) ) AS ?years) }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Year> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Model> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Year> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Model> . 
+} ",0,0,1,0,0,0,0,"1168,45586514473","2/6904/6904","
+[None | l5]
+l5: {
+[x5, x12-fixed0, x9-fixed0, x2-1, x7]
+manufactured(x7, x2-1) == True
+x7 == ""dbr:Ford_Model_T""
+how(x5) == True
+was(x5) == True
+rdf:type(x5, x12-fixed0) == True
+rdf:type(x5, x9-fixed0) == True
+x12-fixed0 == ""dbo:Model""
+x9-fixed0 == ""dbo:Year""
+}
+---- 
+(x2-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+123,"Give me all animals that are extinct.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Animal> ; <http://dbpedia.org/ontology/conservationStatus> ""EX"" }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/conservationStatus> ""EX"" . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Animal> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/conservationStatus> ""EX"" . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Animal> . 
+} ",914,0,0,1,1,1,1,"82,1622836589813","2/144/144","
+[None | l5]
+l5: {
+[x6-fixed0, x5, x6, x15-fixed0]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+give(x6, x5) == True
+x15-fixed0 == ""EX""
+are(x6) == True
+that(x6) == True
+x6-fixed0 == ""dbo:Animal""
+dbo:conservationStatus(x6, x15-fixed0) == True
+}
+---- 
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+122,"Who was the wife of President Lincoln?","BestScoreEval","SELECT ?uri ?string WHERE { dbr:Abraham_Lincoln onto:spouse ?uri }","
+SELECT DISTINCT ?v3
+WHERE {
+   <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/spouse> ?v3 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/spouse> ?v3 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+} ",1,0,0,1,1,1,1,"194,178948640823","2/2138/2138","
+[x2 | l2]
+l2: {
+[x2, x10, x12-fixed0, x12]
+was(x2) == True
+who(x2) == True
+x12-fixed0 == ""dbo:President""
+rdf:type(x12, x12-fixed0) == True
+dbo:spouse(x10, x2) == True
+x10 == ""dbr:Abraham_Lincoln""
+}
+---- 
+(x12, l2)
+(x2, l2)
+---- 
+
+--------
+"
+111,"How many awards has Bertrand Russell?","BestScoreEval","SELECT (COUNT(?Awards) AS ?Counter) WHERE { dbr:Bertrand_Russell dbp:awards ?Awards }","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   <http://dbpedia.org/resource/Bertrand_Russell> <http://dbpedia.org/property/awards> ?v0 . 
+} ","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   <http://dbpedia.org/resource/Bertrand_Russell> <http://dbpedia.org/property/awards> ?v0 . 
+} ",1,0,0,1,1,1,1,"120,012597799301","3/3196/3196","
+[None | l7]
+l7: {
+[x3-1, x7, x2-1]
+many(x3-1) == True
+x7 == ""dbr:Bertrand_Russell""
+how(x3-1) == True
+dbp:awards(x7, x3-1) == True
+has(x3-1, x2-1) == True
+}
+---- 
+(x2-1, l7)
+(x3-1, l7)
+---- 
+
+--------
+"
+117,"Is Pamela Anderson a vegan?","BestScoreEval","ASK WHERE { dbr:Pamela_Anderson a <http://dbpedia.org/class/yago/WikicatAmericanVegans> }","
+ASK WHERE {
+} ","
+ASK WHERE {
+} ",1,0,0,1,1,1,1,"98,9558448791504","2/67/67","
+[x7 | l7]
+l7: {
+[x5, x7]
+x7 == ""dbr:Vega_%28rocket%29""
+x5 == ""Pamela_Anderson""
+is(x7) == True
+}
+---- 
+
+---- 
+
+--------
+"
+59,"Which space probes were sent into orbit around the sun?","BestScoreEval","SELECT DISTINCT ?s WHERE { ?s dct:subject dbc:Missions_to_the_Sun ; rdf:type ?type FILTER ( ?type IN (dbo:Satellite, dbo:ArtificialSatellite) ) }","No valid result yet.","No valid result yet.",0,0,16,0,0,0,0,"1976,54503107071","1/6336/6336","None"
+113,"Which German cities have more than 250000 inhabitants?","BestScoreEval","SELECT DISTINCT ?uri WHERE { { ?uri a <http://dbpedia.org/ontology/City> } UNION { ?uri a <http://dbpedia.org/ontology/Town> } ?uri <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> ; <http://dbpedia.org/ontology/populationTotal> ?population FILTER ( ?population > 250000 ) }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v4 ?v5 ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/populationTotal> ?v4 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v4 ?v5 ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/populationTotal> ?v4 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+} ",0,0,25,0,0,0,0,"589,889639854431","2/130/162","
+[None | l6]
+l6: {
+[x15, x6-fixed0, x6, x9-1, x9-0]
+x15 == ""250000""
+rdf:type(x6, x6-fixed0) == True
+dbo:populationTotal(x9-0, x9-1) == True
+local:with(x9-1, x6) == True
+which(x6) == True
+x6-fixed0 == ""dbo:City""
+}
+---- 
+(x9-0, l6)
+(x9-1, l6)
+(x6, l6)
+---- 
+
+--------
+"
+104,"Who is the daughter of Robert Kennedy married to?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Robert_F._Kennedy> <http://dbpedia.org/ontology/child> ?child . ?child <http://dbpedia.org/ontology/spouse> ?uri }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/spouse> ?v2 . 
+   <http://dbpedia.org/resource/Robert_F._Kennedy> <http://dbpedia.org/ontology/child> ?v0 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/spouse> ?v2 . 
+   <http://dbpedia.org/resource/Robert_F._Kennedy> <http://dbpedia.org/ontology/child> ?v0 . 
+} ",1,0,0,1,1,1,1,"461,864298582077","2/2241/2241","
+[None | l5]
+l5: {
+[x6-1, x10, x5]
+dbo:spouse(x6-1, x5) == True
+dbo:child(x10, x6-1) == True
+who(x5) == True
+x10 == ""dbr:Robert_F._Kennedy""
+}
+---- 
+(x6-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+10,"How many students does the Free University of Amsterdam have?","BestScoreEval","SELECT DISTINCT ?num WHERE { dbr:Vrije_Universiteit_Amsterdam <http://dbpedia.org/ontology/numberOfStudents> ?num }","No valid result yet.","No valid result yet.",0,0,1,0,0,0,0,"434,695059537888","1/85/86","None"
+1,"What is the revenue of IBM?","BestScoreEval","SELECT ?number WHERE { res:IBM onto:revenue ?number }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/IBM> <http://dbpedia.org/ontology/revenue> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/IBM> <http://dbpedia.org/ontology/revenue> ?v0 . 
+} ",1,0,0,1,1,1,1,"309,020410299301","2/1745/1745","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+x10 == ""dbr:IBM""
+what(x6-1) == True
+dbo:revenue(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+178,"How many James Bond movies do exist?","BestScoreEval","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri dct:subject <http://dbpedia.org/resource/Category:James_Bond_films> }","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/Bond%C3%A9> <http://dbpedia.org/ontology/alias> ?v2 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/Bond%C3%A9> <http://dbpedia.org/ontology/alias> ?v2 . 
+} ",0,0,1,0,0,0,0,"138,208096027374","2/737/737","
+[None | l8]
+l8: {
+[x13, x8, x3-1]
+dbo:alias(x13, x3-1) == True
+x13 == ""dbr:Bond%C3%A9""
+exist(x3-1, x8) == True
+how_many(x3-1) == True
+do(x8) == True
+}
+---- 
+(x3-1, l8)
+(x8, l8)
+---- 
+
+--------
+"
+129,"Who does the voice of Bart Simpson?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Bart_Simpson> <http://dbpedia.org/property/voiceactor> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Bart_Simpson> <http://dbpedia.org/property/voiceactor> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Bart_Simpson> <http://dbpedia.org/property/voiceactor> ?v0 . 
+} ",1,0,0,1,1,1,1,"627,003057956696","2/3077/3077","
+[None | l5]
+l5: {
+[x6-1, x10, x5]
+x10 == ""dbr:Bart_Simpson""
+does(x6-1, x5) == True
+dbp:voiceactor(x10, x6-1) == True
+who(x5) == True
+}
+---- 
+(x6-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+183,"Who was Tom Hanks married to?","BestScoreEval","SELECT DISTINCT ?uri WHERE { dbr:Tom_Hanks dbo:spouse ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Tom_Hanks> <http://dbpedia.org/ontology/spouse> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Tom_Hanks> <http://dbpedia.org/ontology/spouse> ?v0 . 
+} ",1,0,0,1,1,1,1,"515,585208892822","2/5521/5553","
+[None | l5]
+l5: {
+[x5, x7]
+who(x5) == True
+x7 == ""dbr:Tom_Hanks""
+dbo:spouse(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+181,"Through which countries does the Yenisei river flow?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Yenisei_River <http://dbpedia.org/ontology/country> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Yenisei_River> <http://dbpedia.org/property/country> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Yenisei_River> <http://dbpedia.org/property/country> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ",2,0,0,1,1,1,1,"931,468817710877","3/878/888","
+[None | l5]
+l5: {
+[x5, x9-fixed0, x7]
+x9-fixed0 == ""dbo:Country""
+rdf:type(x5, x9-fixed0) == True
+dbp:country(x7, x5) == True
+does(x5) == True
+x7 == ""dbr:Yenisei_River""
+which(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+7,"Give me all cars that are produced in Germany.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Automobile> { ?uri <http://dbpedia.org/ontology/assembly> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/property/assembly> <http://dbpedia.org/resource/Germany> } UNION { { ?uri <http://dbpedia.org/ontology/manufacturer> ?x } UNION { ?uri <http://dbpedia.org/property/manufacturer> ?x } { ?x <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Germany> } UNION { ?x <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Germany> } } }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/assembly> <http://dbpedia.org/resource/Germany> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/assembly> <http://dbpedia.org/resource/Germany> . 
+} ",212,0,281,1,"0,430020283975659","0,601418439716312",0,"205,219559907913","3/1217/1217","
+[None | l5]
+l5: {
+[x5, x8, x2-1, x16]
+me(x5) == True
+x16 == ""dbr:Germany""
+give(x5, x2-1) == True
+all_cars(x8) == True
+dbo:assembly(x8, x16) == True
+that(x8) == True
+}
+---- 
+(x2-1, l5)
+(x8, l5)
+(x5, l5)
+---- 
+
+--------
+"
+135,"When did Michael Jackson die?","BestScoreEval","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/ontology/deathDate> ?date }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/ontology/deathDate> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Michael_Jackson> <http://dbpedia.org/ontology/deathDate> ?v1 . 
+} ",1,0,0,1,1,1,1,"120,015607595444","3/3121/3121","
+[None | l5]
+l5: {
+[x10, x5]
+when(x5) == True
+did(x5) == True
+x10 == ""dbr:Michael_Jackson""
+dbo:deathDate(x10, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+50,"What is the highest volcano in Africa?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> ?area . ?area dct:subject dbc:Countries_in_Africa . ?uri <http://dbpedia.org/ontology/elevation> ?elevation } ORDER BY DESC(?elevation) LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/height> ?v1 . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Volcano> . 
+   ?v3 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3ACountries_in_Africa> . 
+}  ORDER BY DESC(?v1) LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/height> ?v1 . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Volcano> . 
+   ?v3 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3ACountries_in_Africa> . 
+}  ORDER BY DESC(?v1) LIMIT 1",0,0,1,0,0,0,0,"642,631633996964","2/7040/7040","
+[x12 | l12]
+l12: {
+[x6-fixed0, x12-fixed0, x9-1, x12]
+what(x12) == True
+is(x12) == True
+x6-fixed0 == ""dbo:Volcano""
+local:top(""1"", x9-1, ""Degree.HIGH"") == True
+x12-fixed0 == ""dbr:Category%3ACountries_in_Africa""
+rdf:type(x12, x6-fixed0) == True
+dbo:height(x12, x9-1) == True
+dct:subject(x12, x12-fixed0) == True
+}
+---- 
+(x9-1, l12)
+(x12, l12)
+---- 
+
+--------
+"
+39,"Which poet wrote the most books?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Poet> . ?x <http://dbpedia.org/ontology/author> ?uri . ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v0 <http://dbpedia.org/property/writer> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/series> ?v3 . 
+   ?v3 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Poet> . 
+}  ORDER BY DESC(?v3) LIMIT 1","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v0 <http://dbpedia.org/property/writer> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/series> ?v3 . 
+   ?v3 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Poet> . 
+}  ORDER BY DESC(?v3) LIMIT 1",1,0,0,1,1,1,1,"638,09245800972","3/7450/7450","
+[None | l3]
+l3: {
+[x3-fixed0, x6-0, x0-0, x3]
+dbo:occupation(x3, x3-fixed0) == True
+local:top(""1"", x3, ""Degree.STRONG"") == True
+dbo:series(x6-0, x3) == True
+which(x3) == True
+x3-fixed0 == ""dbr:Poet""
+dbp:writer(x0-0, x3) == True
+}
+---- 
+(x0-0, l3)
+(x6-0, l3)
+(x3, l3)
+---- 
+
+--------
+"
+83,"Give me all gangsters from the prohibition era.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation dbr:Gangster ; dct:subject dbc:Prohibition-era_gangsters }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Gangster> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Gangster> . 
+   ?v2 <http://dbpedia.org/ontology/occupation> ?v5 . 
+} ",22,56,0,"0,282051282051282",1,"0,44",0,"486,328259944916","3/18806/18806","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x9-0, x13, x5, x9-1]
+me(x5) == True
+x13 == ""dbr:The_Prohibition""
+give(x9-1, x5) == True
+x6-fixed0 == ""dbr:Gangster""
+dbo:occupation(x6, x6-fixed0) == True
+dbo:occupation(x9-0, x9-1) == True
+}
+---- 
+(x9-0, l5)
+(x9-1, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+71,"Give me all spacecrafts that flew to Mars.","BestScoreEval","SELECT DISTINCT ?s WHERE { ?s dct:subject dbc:Mars_rovers ; rdf:type ?type FILTER ( ?type IN (dbo:Satellite, dbo:ArtificialSatellite) ) }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/riverMouth> ?v4 . 
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3AMars_rovers> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Satellite> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/riverMouth> ?v4 . 
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3AMars_rovers> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Satellite> . 
+} ",0,0,14,0,0,0,0,"442,205819129944","2/19024/19024","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x15-fixed0, x5, x14, x2-1]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+dct:subject(x6, x15-fixed0) == True
+give(x5, x2-1) == True
+dbo:riverMouth(x6, x14) == True
+x6-fixed0 == ""dbo:Satellite""
+x15-fixed0 == ""dbr:Category%3AMars_rovers""
+that(x14) == True
+}
+---- 
+(x2-1, l5)
+(x14, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+213,"Show me all Czech movies.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Czech_Republic> }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Czech_Republic> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/starring> ?v2 . 
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Czech_Republic> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ",48,0,0,1,1,1,1,"240,040181875229","2/10677/10797","
+[x0-1 | l0]
+l0: {
+[x6-fixed0, x6, x0-1, x0-0, x5, x9-fixed0]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+x6-fixed0 == ""dbo:Film""
+dbo:country(x6, x9-fixed0) == True
+x9-fixed0 == ""dbr:Czech_Republic""
+dbo:starring(x0-0, x0-1) == True
+}
+---- 
+(x0-0, l0, ['of', 'of'])
+(x0-1, l0)
+(x6, l0)
+(x5, l0)
+---- 
+
+--------
+"
+209,"Give me all taikonauts.","BestScoreEval","SELECT DISTINCT ?uri WHERE { { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/People's_Republic_of_China> } UNION { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/China> } }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/People%27s_Republic_of_China> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/People%27s_Republic_of_China> . 
+} ",0,0,7,0,0,0,0,"73,1379163265228","2/16/16","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x5]
+all(x6) == True
+me(x5) == True
+give(x6, x5) == True
+x6-fixed0 == ""dbr:People%27s_Republic_of_China""
+dbo:nationality(x6, x6-fixed0) == True
+}
+---- 
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+105,"Which countries have more than ten volcanoes?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?x a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> ?uri . ?uri a <http://dbpedia.org/ontology/Country> } GROUP BY ?uri HAVING ( COUNT(?x) > 10 )","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 ?v5 ?v2 . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Volcano> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+   FILTER (""ten"" > ?v3)
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 ?v5 ?v2 . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Volcano> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+   FILTER (""ten"" > ?v3)
+} ",0,0,18,0,0,0,0,"128,797430038452","2/18/26","
+[None | l6]
+l6: {
+[x15, x9, x6, x6-fixed0, x9-fixed0]
+rdf:type(x6, x6-fixed0) == True
+x15 == ""ten""
+local:comp(x15, x9, ""Degree.STRONG"") == True
+x6-fixed0 == ""dbo:Country""
+local:with(x9, x6) == True
+which(x6) == True
+x9-fixed0 == ""dbo:Volcano""
+rdf:type(x9, x9-fixed0) == True
+}
+---- 
+(x9, l6)
+(x6, l6)
+---- 
+
+--------
+"
+52,"Give me all movies with Tom Cruise.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Film { ?uri prop:starring res:Tom_Cruise } UNION { ?uri onto:starring res:Tom_Cruise } OPTIONAL { ?uri rdfs:label ?string FILTER ( lang(?string) = ""en"" ) } }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/property/starring> <http://dbpedia.org/resource/Tom_Cruise> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/property/starring> <http://dbpedia.org/resource/Tom_Cruise> . 
+} ",24,0,2,1,"0,923076923076923","0,96",0,"581,73840546608","3/13935/13935","
+[None | l5]
+l5: {
+[x16, x5, x6-0]
+me(x5) == True
+dbp:starring(x6-0, x16) == True
+with(x16) == True
+x16 == ""dbr:Tom_Cruise""
+give(x16, x5) == True
+}
+---- 
+(x6-0, l5)
+(x5, l5)
+---- 
+
+--------
+"
+102,"When did Dracula's creator die?","BestScoreEval","SELECT DISTINCT xsd:date(?date) WHERE { <http://dbpedia.org/resource/Count_Dracula> <http://dbpedia.org/ontology/creator> ?x . ?x <http://dbpedia.org/ontology/deathDate> ?date. }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Dracula%27s_Death> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Dracula%27s_Death> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ",0,0,1,0,0,0,0,"646,519601345062","2/21292/23340","
+[None | l5]
+l5: {
+[x10, x5]
+x10 == ""dbr:Dracula%27s_Death""
+dbo:deathPlace(x10, x5) == True
+did(x5) == True
+when(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+21,"Who created English Wikipedia?","BestScoreEval","SELECT ?uri WHERE { <http://dbpedia.org/resource/Wikipedia> onto:author ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/English_Wikipedia> <http://dbpedia.org/ontology/author> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/English_Wikipedia> <http://dbpedia.org/ontology/author> ?v0 . 
+} ",2,0,0,1,1,1,1,"143,453151941299","3/2882/2882","
+[None | l5]
+l5: {
+[x5, x7]
+who(x5) == True
+x7 == ""dbr:English_Wikipedia""
+dbo:author(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+34,"Give me all female German chancellors.","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Chancellor_of_Germany dbp:incumbent ?uri }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/gender> <http://dbpedia.org/resource/Female> . 
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Chancellor> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/gender> <http://dbpedia.org/resource/Female> . 
+   ?v1 <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Chancellor> . 
+} ",0,0,1,0,0,0,0,"245,354150295258","2/7177/7177","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x12-fixed0, x5, x9-fixed0]
+x9-fixed0 == ""dbr:Female""
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+give(x6, x5) == True
+dbo:country(x6, x12-fixed0) == True
+x12-fixed0 == ""dbr:Germany""
+x6-fixed0 == ""dbo:Chancellor""
+dbo:gender(x6, x9-fixed0) == True
+}
+---- 
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+145,"Who owns Aldi?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Aldi dbp:founders ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Aldi> <http://dbpedia.org/property/founders> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Aldi> <http://dbpedia.org/property/founders> ?v0 . 
+} ",2,0,0,1,1,1,1,"77,3675813674927","2/24/24","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Aldi""
+dbp:founders(x7, x5) == True
+who(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+154,"Which books were written by Danielle Steel?","BestScoreEval","SELECT ?uri WHERE { ?uri rdf:type onto:Book ; onto:author <http://dbpedia.org/resource/Danielle_Steel> }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Danielle_Steel> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Danielle_Steel> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . 
+} ",47,0,0,1,1,1,1,"460,809480428696","3/4143/4143","
+[None | l3]
+l3: {
+[x10, x3-fixed0, x3]
+x10 == ""dbr:Danielle_Steel""
+rdf:type(x3, x3-fixed0) == True
+x3-fixed0 == ""dbo:Book""
+which(x3) == True
+dbo:author(x3, x10) == True
+}
+---- 
+(x3, l3)
+---- 
+
+--------
+"
+198,"Who was influenced by Socrates?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Socrates> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Socrates> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Socrates> . 
+} ",22,0,0,1,1,1,1,"616,82457447052","3/11469/11469","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Socrates""
+who(x5) == True
+dbo:influencedBy(x5, x7) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+162,"How deep is Lake Chiemsee?","BestScoreEval","SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Chiemsee> <http://dbpedia.org/ontology/maximumDepth> ?n }","
+SELECT DISTINCT ?v3
+WHERE {
+   <http://dbpedia.org/resource/Chiemsee> <http://dbpedia.org/ontology/maximumDepth> ?v3 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Lake> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   <http://dbpedia.org/resource/Chiemsee> <http://dbpedia.org/ontology/maximumDepth> ?v3 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Lake> . 
+} ",1,0,0,1,1,1,1,"125,668565511703","3/1566/1566","
+[None | l7]
+l7: {
+[x12-fixed0, x2, x7, x12]
+x12-fixed0 == ""dbo:Lake""
+is(x2) == True
+dbo:maximumDepth(x7, x2) == True
+rdf:type(x12, x12-fixed0) == True
+x7 == ""dbr:Chiemsee""
+how(x7) == True
+}
+---- 
+(x2, l7)
+(x12, l7)
+---- 
+
+--------
+"
+212,"Which companies work in the aerospace industry as well as in medicine?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a dbo:Company ; dbo:industry dbr:Aerospace ; dbo:industry dbr:Medical }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/admittancedate> ?v4 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/location> ?v3 . 
+   ?v1 <http://dbpedia.org/property/admittancedate> ?v4 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+} ",0,0,2,0,0,0,0,"1008,51166439056","2/4628/4916","
+[None | l23]
+l23: {
+[x6-fixed0, x6, x23, x14, x20]
+rdf:type(x6, x6-fixed0) == True
+x6-fixed0 == ""dbo:Company""
+the_aerospace_industry(x14) == True
+which(x6) == True
+well(x20) == True
+dbo:location(x23, x14) == True
+medicine(x23) == True
+dbp:admittancedate(x6, x20) == True
+}
+---- 
+(x20, l23)
+(x14, l23)
+(x6, l23)
+(x23, l23)
+---- 
+
+--------
+"
+96,"Which professional surfers were born on the Philippines?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation dbr:Surfer ; dbo:birthPlace res:Philippines }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Philippines> . 
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfer> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Philippines> . 
+   ?v1 <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfer> . 
+} ",1,0,0,1,1,1,1,"260,277444124222","2/4639/4639","
+[None | l5]
+l5: {
+[x10, x5, x6-fixed0]
+dbo:birthPlace(x5, x10) == True
+x10 == ""dbr:Philippines""
+x6-fixed0 == ""dbr:Surfer""
+dbo:occupation(x5, x6-fixed0) == True
+which(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+40,"Who were the parents of Queen Victoria?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Queen_Victoria dbo:parent ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Queen_Victoria> <http://dbpedia.org/ontology/parent> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Queen_Victoria> <http://dbpedia.org/ontology/parent> ?v0 . 
+} ",2,0,0,1,1,1,1,"2263,72493577004","2/477/477","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+who(x6-1) == True
+were(x6-1) == True
+x10 == ""dbr:Queen_Victoria""
+dbo:parent(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+79,"Are there any castles in the United States?","BestScoreEval","ASK WHERE { ?uri dct:subject dbc:Castles_in_the_United_States }","
+ASK WHERE {
+   ""in_the_States"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Castle> . 
+} ","
+ASK WHERE {
+   ""in_the_States"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Castle> . 
+} ",1,0,0,1,1,1,1,"285,003321170807","2/103/103","
+[None | l5]
+l5: {
+[x6-fixed0, x5, x13, x11]
+x6-fixed0 == ""dbo:Castle""
+x13 == ""dbr:United%21""
+are(x11, x5) == True
+x11 == ""in_the_States""
+there(x5) == True
+rdf:type(x11, x6-fixed0) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+141,"Which languages are spoken in Estonia?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> . 
+} ",8,0,0,1,1,1,1,"483,520859718323","3/1841/1841","
+[None | l5]
+l5: {
+[x5, x7]
+which_languages(x5) == True
+x7 == ""dbr:Estonia""
+dbo:spokenIn(x5, x7) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+80,"Give me a list of all critically endangered birds.","BestScoreEval","SELECT DISTINCT ?uri ?p WHERE { ?uri rdf:type dbo:Bird { ?uri dbo:conservationStatus ""CR"" } UNION { ?uri dct:subject dbc:Critically_endangered_animals } }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/conservationStatus> ""CR"" . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Bird> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/conservationStatus> ""CR"" . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Bird> . 
+} ",196,0,2,1,"0,98989898989899","0,99492385786802",0,"460,195139884949","2/135/135","
+[None | l5]
+l5: {
+[x5, x9-fixed0, x8, x12-fixed0]
+x9-fixed0 == ""dbo:Bird""
+me(x5) == True
+rdf:type(x8, x9-fixed0) == True
+give(x8, x5) == True
+x12-fixed0 == ""CR""
+dbo:conservationStatus(x8, x12-fixed0) == True
+a_list_of_all(x8) == True
+}
+---- 
+(x8, l5)
+(x5, l5)
+---- 
+
+--------
+"
+159,"Which countries are connected by the Rhine?","BestScoreEval","SELECT DISTINCT ?uri WHERE { {<http://dbpedia.org/resource/Rhine> dbo:country ?uri } UNION {dbr:Rhine dbp:country ?uri} }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/country> ""by_the_Rhine"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/country> ""by_the_Rhine"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+} ",0,0,11,0,0,0,0,"686,911526441574","2/970/970","
+[None | l8]
+l8: {
+[x8, x3-fixed0, x11]
+which(x8) == True
+dbo:country(x8, x11) == True
+x3-fixed0 == ""dbo:Country""
+rdf:type(x8, x3-fixed0) == True
+x11 == ""by_the_Rhine""
+are(x8) == True
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+107,"Who was the father of Queen Elizabeth II?","BestScoreEval","SELECT DISTINCT * WHERE { res:Elizabeth_II dbo:parent ?uri . ?uri <http://xmlns.com/foaf/0.1/gender> ""male""@en }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Elizabeth_II> <http://dbpedia.org/property/father> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Elizabeth_II> <http://dbpedia.org/property/father> ?v1 . 
+} ",1,0,0,1,1,1,1,"1713,71767807007","2/1204/1204","
+[x2 | l2]
+l2: {
+[x10, x2]
+x10 == ""dbr:Elizabeth_II""
+was(x2) == True
+who(x2) == True
+dbp:father(x10, x2) == True
+}
+---- 
+(x2, l2)
+---- 
+
+--------
+"
+163,"Give me all chemical elements.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type owl:Thing ; dct:subject dbc:Chemical_elements }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3AChemical_elements> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3AChemical_elements> . 
+} ",0,0,119,0,0,0,0,"41,7251601219177","2/56/56","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x5]
+me(x5) == True
+x6-fixed0 == ""dbr:Category%3AChemical_elements""
+dct:subject(x6, x6-fixed0) == True
+give(x6, x5) == True
+}
+---- 
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+211,"Give me all American presidents of the last 20 years.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Person ; dct:subject dbc:Presidents_of_the_United_States ; dbo:activeYearsEndDate ?termEnd FILTER ( ( year(now()) - year(?termEnd) ) <= 20 ) }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3APresidents_of_the_United_States> . 
+}  ORDER BY ASC(?v1) LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category%3APresidents_of_the_United_States> . 
+}  ORDER BY ASC(?v1) LIMIT 1",0,0,2,0,0,0,0,"6014,28951954842","2/8599/8599","
+            [None | l5]
+            l5: {
+            [x6-fixed0, x6, x5]
+            me(x5) == True
+            give(x6, x5) == True
+            x6-fixed0 ==
+""dbr:Category%3APresidents_of_the_United_States""
+            the_20_years(x6) == True
+            local:top(""1"", x6, ""Degree.WEAK"") == True
+            dct:subject(x6, x6-fixed0) == True
+            }
+            ---- 
+            (x6, l5)
+            (x5, l5)
+            ---- 
+
+            --------
+"
+51,"When is the movie Worst Case Scenario going to be in cinemas in the Netherlands?","BestScoreEval","SELECT DISTINCT ?rel WHERE { <http://dbpedia.org/resource/Worst_Case_Scenario_(film)> ?p ?o ; dbo:releaseDate ?rel FILTER contains(lcase(str(?o)), ""netherlands"") }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v4 <http://dbpedia.org/property/taxon> ?v3 . 
+   <http://dbpedia.org/resource/The_Netherlands> <http://dbpedia.org/ontology/location> ?v1 . 
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Case> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v4 <http://dbpedia.org/property/taxon> ?v3 . 
+   <http://dbpedia.org/resource/The_Netherlands> <http://dbpedia.org/ontology/location> ?v1 . 
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Case> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ",0,0,1,0,0,0,0,"3697,69133138657","2/4642/4642","
+[None | l5]
+l5: {
+[x6-fixed0, x2, x22, x9, x5, x9-fixed0]
+dbo:location(x22, x2) == True
+dbp:taxon(x5, x9) == True
+rdf:type(x5, x6-fixed0) == True
+x9-fixed0 == ""dbo:Film""
+is(x5) == True
+x6-fixed0 == ""dbo:Case""
+when(x2) == True
+x22 == ""dbr:The_Netherlands""
+rdf:type(x9, x9-fixed0) == True
+}
+---- 
+(x9, l5)
+(x2, l5)
+(x5, l5)
+---- 
+
+--------
+"
+144,"Whom did Lance Bass marry?","BestScoreEval","SELECT DISTINCT ?uri WHERE { {<http://dbpedia.org/resource/Lance_Bass> dbo:spouse ?uri} UNION {?uri dbo:spouse <http://dbpedia.org/resource/Lance_Bass>} }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Lance_Bass> <http://dbpedia.org/ontology/spouse> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Lance_Bass> <http://dbpedia.org/ontology/spouse> ?v1 . 
+} ",1,0,0,1,1,1,1,"75,6071116924286","2/186/186","
+[None | l5]
+l5: {
+[x10, x5]
+x10 == ""dbr:Lance_Bass""
+whom(x5) == True
+dbo:spouse(x10, x5) == True
+did(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+167,"Which subsidiary of TUI Travel serves both Glasgow and Dublin?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/subsidiary> ?uri . ?uri <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Glasgow_International_Airport> ; <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Dublin_Airport> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Glasgow> . 
+   ?v0 <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Dublin> . 
+   <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+   <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Glasgow> . 
+   <http://dbpedia.org/resource/Glasgow> <http://dbpedia.org/ontology/targetAirport> None . 
+   ?v0 <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Dublin> . 
+   <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+   <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Glasgow> . 
+   <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+} ",0,0,1,0,0,0,0,"171,093989610672","2/25/25","<DuplexCondition [
+[None | l7]
+l7: {
+[x3-1, x22, x2]
+dbo:targetAirport(x3-1, x2) == True
+x22 == ""dbr:TUI_Travel""
+x2 == ""dbr:Glasgow""
+dbo:headquarter(x22, x3-1) == True
+which(x3-1) == True
+}
+---- 
+(x3-1, l7)
+---- 
+
+--------
+] AND x2 [
+[None | l19]
+l19: {
+[x3-1, x22, x2]
+dbo:targetAirport(x3-1, x2) == True
+x2 == ""dbr:Dublin""
+x22 == ""dbr:TUI_Travel""
+dbo:headquarter(x22, x3-1) == True
+which(x3-1) == True
+}
+---- 
+(x3-1, l19)
+---- 
+
+--------
+]>"
+131,"What languages are spoken in Pakistan?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pakistan> <http://dbpedia.org/ontology/language> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Pakistan> <http://dbpedia.org/ontology/language> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Pakistan> <http://dbpedia.org/ontology/language> ?v0 . 
+} ",16,0,0,1,1,1,1,"539,317453622818","3/1582/1582","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Pakistan""
+what_languages(x5) == True
+dbo:language(x7, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+120,"Who is the daughter of Bill Clinton married to?","BestScoreEval","SELECT DISTINCT ?uri WHERE { dbr:Bill_Clinton dbo:child ?child . ?child dbo:spouse ?uri . ?uri rdfs:label ?string }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/spouse> ?v0 . 
+   <http://dbpedia.org/resource/Bill_Clinton> <http://dbpedia.org/ontology/child> ?v2 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/spouse> ?v0 . 
+   <http://dbpedia.org/resource/Bill_Clinton> <http://dbpedia.org/ontology/child> ?v2 . 
+} ",1,0,0,1,1,1,1,"1119,85289978981","2/3379/3379","
+[None | l8]
+l8: {
+[x0-1, x10, x8]
+dbo:child(x10, x8) == True
+who(x8) == True
+dbo:spouse(x8, x0-1) == True
+x10 == ""dbr:Bill_Clinton""
+}
+---- 
+(x0-1, l8)
+(x8, l8)
+---- 
+
+--------
+"
+164,"Who was on the Apollo 11 mission?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Apollo_11> <http://dbpedia.org/property/crewMembers> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Apollo_11> <http://dbpedia.org/property/crewMembers> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Apollo_11> <http://dbpedia.org/property/crewMembers> ?v0 . 
+} ",3,0,0,1,1,1,1,"728,287825584412","3/12142/12142","
+[x5 | l5]
+l5: {
+[x5, x11]
+was_on(x5) == True
+dbp:crewMembers(x11, x5) == True
+who(x5) == True
+x11 == ""dbr:Apollo_11""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+88,"What is the wavelength of Indigo?","BestScoreEval","SELECT ?n WHERE { dbr:Indigo dbo:wavelength ?n }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Indigo> <http://dbpedia.org/ontology/wavelength> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Indigo> <http://dbpedia.org/ontology/wavelength> ?v0 . 
+} ",1,0,0,1,1,1,1,"406,891768217087","2/150/150","
+[x6-1 | l10]
+l10: {
+[x6-1, x10]
+is(x6-1) == True
+what(x6-1) == True
+x10 == ""dbr:Indigo""
+dbo:wavelength(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+151,"Give me all B-sides of the Ramones.","BestScoreEval","SELECT DISTINCT ?string WHERE { ?x dbo:musicalArtist res:Ramones ; dbo:bSide ?string }","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/The_Ramones_%28album%29> <http://dbpedia.org/ontology/child> ?v2 . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/The_Ramones_%28album%29> <http://dbpedia.org/ontology/child> ?v2 . 
+} ",0,0,11,0,0,0,0,"235,103636741638","2/247/247","
+[None | l5]
+l5: {
+[x13, x5, x8]
+me(x5) == True
+dbo:child(x13, x8) == True
+give(x8, x5) == True
+x13 == ""dbr:The_Ramones_%28album%29""
+all_b_sides(x8) == True
+}
+---- 
+(x8, l5)
+(x5, l5)
+---- 
+
+--------
+"
+63,"Who was called Scarface?","BestScoreEval","SELECT ?uri WHERE { ?uri dbo:alias ?alias FILTER contains(lcase(?alias), ""scarface"") }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> <http://dbpedia.org/resource/Scarface> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> <http://dbpedia.org/resource/Scarface> . 
+} ",0,0,2,0,0,0,0,"3,34263300895691","2/88/88","
+[None | l5]
+l5: {
+[x10, x5]
+was(x5) == True
+x10 == ""dbr:Scarface""
+rdfs:label(x5, x10) == True
+who(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+27,"Which rivers flow into the North Sea?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> ; <http://dbpedia.org/ontology/riverMouth> <http://dbpedia.org/resource/North_Sea> }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/riverMouth> <http://dbpedia.org/resource/North_Sea> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/riverMouth> <http://dbpedia.org/resource/North_Sea> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River> . 
+} ",17,0,0,1,1,1,1,"420,192967891693","2/9643/9643","
+[None | l5]
+l5: {
+[x10, x5, x6-fixed0]
+dbo:riverMouth(x5, x10) == True
+rdf:type(x5, x6-fixed0) == True
+x6-fixed0 == ""dbo:River""
+which(x5) == True
+x10 == ""dbr:North_Sea""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+156,"Where is Fort Knox located?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/ontology/location> ?uri. ?uri a <http://dbpedia.org/ontology/Place>. }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/ontology/location> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/ontology/location> ?v1 . 
+} ",1,0,0,1,1,1,1,"180,367155313492","2/6322/6322","
+[None | l5]
+l5: {
+[x10, x5]
+where(x5) == True
+is(x5) == True
+x10 == ""dbr:Fort_Knox""
+dbo:location(x10, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+207,"Which daughters of British earls died at the same place they were born at?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatDaughtersOfBritishEarls ; dbo:birthPlace ?x ; dbo:deathPlace ?y FILTER ( ?x = ?y ) }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/child> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/child> ?v3 . 
+   ?v0 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/United_Kingdom> . 
+   ?v5 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Same_Place> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v3 <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+   ?v0 <http://dbpedia.org/ontology/child> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/child> ?v3 . 
+   ?v0 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/United_Kingdom> . 
+   ?v5 <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Same_Place> . 
+} ",0,0,13,0,0,0,0,"812,58248758316","2/12685/12685","
+[None | l3]
+l3: {
+[x15, x0-1, x3-0, x15-fixed0, x3-1, x23, x13]
+dbo:birthPlace(x23, x13) == True
+dbo:child(x3-0, x3-1) == True
+dbo:nationality(x15, x15-fixed0) == True
+which(x3-1) == True
+they(x23) == True
+dbo:child(x15, x3-1) == True
+x13 == ""dbr:Same_Place""
+dbo:deathPlace(x3-1, x0-1) == True
+x15-fixed0 == ""dbr:United_Kingdom""
+}
+---- 
+(x0-1, l3)
+(x15, l3)
+(x3-0, l3, ['of', 'of'])
+(x3-1, l3)
+(x23, l3)
+---- 
+
+--------
+"
+24,"How many emperors did China have?","BestScoreEval","SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/Emperor_of_China> . }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/China_%28disambiguation%29> ?v2 ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/China_%28disambiguation%29> ?v2 ?v1 . 
+} ",0,0,1,0,0,0,0,"409,736532449722","2/29/29","
+[None | l8]
+l8: {
+[x10, x8]
+x10 == ""dbr:China_%28disambiguation%29""
+local:with(x10, x8) == True
+how_many_emperors(x8) == True
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+133,"What are the names of the Teenage Mutant Ninja Turtles?","BestScoreEval","PREFIX foaf:<http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Teenage_Mutant_Ninja_Turtles> <http://dbpedia.org/property/members> ?x . ?x foaf:givenName ?s }","No valid result yet.","No valid result yet.",0,0,4,0,0,0,0,"233,587996006012","1/1/1","None"
+103,"Where does Piccadilly start?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v0 <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly> . 
+} ",1,0,0,1,1,1,1,"5,80215001106262","3/177/177","
+[None | l5]
+l5: {
+[x5, x7]
+dbo:routeStart(x5, x7) == True
+where(x5) == True
+x7 == ""dbr:Piccadilly""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+165,"What is the name of the university where Obama's wife studied?","BestScoreEval","SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/spouse> ?x . ?x <http://dbpedia.org/ontology/almaMater> ?s }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/education> <http://dbpedia.org/resource/The_University> . 
+   <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/University> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/education> <http://dbpedia.org/resource/The_University> . 
+   <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/University> . 
+} ",0,0,2,0,0,0,0,"433,147296190262","2/5574/5574","
+[None | l5]
+l5: {
+[x13, x5, x9-fixed0, x25]
+x9-fixed0 == ""dbo:University""
+x13 == ""dbr:The_University""
+the_name_of(x5) == True
+dbo:spouse(x25, x5) == True
+rdf:type(x5, x9-fixed0) == True
+x25 == ""dbr:Barack_Obama""
+dbo:education(x5, x13) == True
+where(x13) == True
+what(x5) == True
+is(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+108,"When did Paraguay proclaim its independence?","BestScoreEval","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/foundingDate> ?date }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+} ",2,0,0,1,1,1,1,"9,67471241950989","3/238/238","
+[None | l5]
+l5: {
+[x10, x5]
+when(x5) == True
+dbo:foundingDate(x10, x5) == True
+did(x5) == True
+x10 == ""dbr:Paraguay""
+its_independence(x10) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+15,"How short is the shortest active NBA player?","BestScoreEval","SELECT DISTINCT ?n WHERE { ?x a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/National_Basketball_Association> ; <http://dbpedia.org/ontology/height> ?n FILTER NOT EXISTS { ?x <http://dbpedia.org/ontology/activeYearsEndYear> ?d } } ORDER BY ASC(?n) OFFSET 0 LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/length> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/length> ""NBA"" . 
+   ?v1 <http://dbpedia.org/ontology/activeYearsEndYear> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#date> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . 
+}  ORDER BY ASC(""NBA"") LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/length> ?v3 . 
+   ?v2 <http://dbpedia.org/ontology/length> ""NBA"" . 
+   ?v1 <http://dbpedia.org/ontology/activeYearsEndYear> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#date> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . 
+}  ORDER BY ASC(""NBA"") LIMIT 1",0,0,1,0,0,0,0,"297,611053943634","2/5625/5625","
+[None | l8]
+l8: {
+[x3-2, x3-0, x3-1, x14, x8, x3-3]
+dbo:activeYearsEndYear(x3-0, x3-1) == True
+dbo:length(x3-1, x14) == True
+x14 == ""NBA""
+rdf:type(x3-1, x3-3) == True
+x3-2 == ""dbo:BasketballPlayer""
+local:top(""1"", x14, ""Degree.LOW"") == True
+how(x8) == True
+rdf:type(x3-0, x3-2) == True
+x3-3 == ""xsd:date""
+dbo:length(x3-1, x8) == True
+}
+---- 
+(x3-0, l8)
+(x3-1, l8)
+(x8, l8)
+---- 
+
+--------
+"
+45,"Where did Abraham Lincoln die?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ",2,0,0,1,1,1,1,"100,568893194199","2/4002/4002","
+[None | l5]
+l5: {
+[x10, x5]
+where(x5) == True
+dbo:deathPlace(x10, x5) == True
+did(x5) == True
+x10 == ""dbr:Abraham_Lincoln""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+82,"When was Jack Wolfskin founded?","BestScoreEval","SELECT DISTINCT xsd:date(?year) WHERE { res:Jack_Wolfskin dbo:foundingYear ?year }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Wolf_%28disambiguation%29> <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Wolf_%28disambiguation%29> <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+} ",0,0,1,0,0,0,0,"143,138337135315","2/4055/4055","
+[None | l5]
+l5: {
+[x10, x5]
+was(x5) == True
+when(x5) == True
+x10 == ""dbr:Wolf_%28disambiguation%29""
+dbo:foundingDate(x10, x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+9,"In which city is the headquarter of Air China?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Air_China> <http://dbpedia.org/ontology/headquarter> ?uri . ?uri a <http://dbpedia.org/class/yago/City108524735> }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/location> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+   <http://dbpedia.org/resource/Air_China> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/location> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+   <http://dbpedia.org/resource/Air_China> <http://dbpedia.org/ontology/headquarter> ?v0 . 
+} ",1,0,0,1,1,1,1,"517,109889030457","3/1396/1406","
+[None | l16]
+l16: {
+[x9-fixed0, x6-1, x1, x16]
+dbo:location(x1, x6-1) == True
+dbo:headquarter(x16, x6-1) == True
+rdf:type(x6-1, x9-fixed0) == True
+x9-fixed0 == ""dbo:City""
+which(x6-1) == True
+x16 == ""dbr:Air_China""
+}
+---- 
+(x1, l16)
+(x6-1, l16)
+---- 
+
+--------
+"
+201,"What is the founding year of the brewery that produces Pilsner Urquell?","BestScoreEval","SELECT DISTINCT xsd:date(?num) WHERE { <http://dbpedia.org/resource/Pilsner_Urquell> <http://dbpedia.org/property/brewery> ?uri . ?uri dbo:foundingYear ?num }","
+SELECT DISTINCT ?v1
+WHERE {
+   ""Pilsner_Urquell"" <http://dbpedia.org/ontology/producer> ?v1 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Year> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Brewery> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ""Pilsner_Urquell"" <http://dbpedia.org/ontology/producer> ?v1 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Year> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Brewery> . 
+} ",0,0,1,0,0,0,0,"188,068941116333","2/3288/3288","
+[None | l5]
+l5: {
+[x23, x5, x6-fixed0, x12-fixed0]
+rdf:type(x5, x12-fixed0) == True
+that(x5) == True
+x12-fixed0 == ""dbo:Brewery""
+x6-fixed0 == ""dbo:Year""
+rdf:type(x5, x6-fixed0) == True
+what(x5) == True
+dbo:producer(x23, x5) == True
+founding(x5) == True
+x23 == ""Pilsner_Urquell""
+is(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+171,"When did the Boston Tea Party take place?","BestScoreEval","SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Boston_Tea_Party> <http://dbpedia.org/property/date> ?d }","
+SELECT DISTINCT ?v4
+WHERE {
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+   ""the_Boston_Tea_Party"" <http://dbpedia.org/ontology/location> ?v4 . 
+} ","
+SELECT DISTINCT ?v4
+WHERE {
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> . 
+   ""the_Boston_Tea_Party"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> . 
+   ""the_Boston_Tea_Party"" <http://dbpedia.org/ontology/location> ?v4 . 
+} ",0,0,1,0,0,0,0,"120,05490732193","2/4719/4719","
+[None | l5]
+l5: {
+[x5, x9-2, x8, x9-3, x9-1]
+dbo:location(x8, x9-1) == True
+x9-2 == ""dbo:Organisation""
+x8 == ""the_Boston_Tea_Party""
+rdf:type(x9-1, x9-3) == True
+x9-3 == ""dbo:Place""
+when(x5) == True
+rdf:type(x8, x9-2) == True
+did_take(x9-1, x5) == True
+}
+---- 
+(x9-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+182,"Which animals are critically endangered?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Animal> ; <http://dbpedia.org/ontology/conservationStatus> ""CR"" }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/conservationStatus> ""CR"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Animal> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/conservationStatus> ""CR"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Animal> . 
+} ",1503,0,0,1,1,1,1,"5,05681610107422","2/41/41","
+[x3 | l3]
+l3: {
+[x3-fixed0, x0-fixed0, x3]
+x0-fixed0 == ""CR""
+rdf:type(x3, x3-fixed0) == True
+dbo:conservationStatus(x3, x0-fixed0) == True
+x3-fixed0 == ""dbo:Animal""
+which(x3) == True
+}
+---- 
+(x3, l3)
+---- 
+
+--------
+"
+13,"Which politicians were married to a German?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Politician> ; <http://dbpedia.org/ontology/spouse> ?spouse { ?spouse <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?spouse <http://dbpedia.org/ontology/birthPlace> ?p . ?p <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Politician> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v3 <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Germany> . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Politician> . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v3 <http://dbpedia.org/ontology/spouse> ?v2 . 
+   ?v3 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Germany> . 
+} ",3,3,8,"0,5","0,272727272727273","0,352941176470588",0,"120,035032749176","5/3353/3353","
+[None | l3]
+l3: {
+[x6-fixed0, x3-fixed0, x0-1, x3, x0-3, x0-2]
+x6-fixed0 == ""dbr:Germany""
+x3-fixed0 == ""dbo:Politician""
+dbo:nationality(x3, x6-fixed0) == True
+x0-3 == ""dbo:Person""
+which(x3) == True
+dbo:spouse(x3, x0-1) == True
+rdf:type(x3, x3-fixed0) == True
+rdf:type(x3, x0-2) == True
+x0-2 == ""dbo:Person""
+rdf:type(x0-1, x0-3) == True
+}
+---- 
+(x0-1, l3)
+(x3, l3)
+---- 
+
+--------
+"
+114,"How big is the earth's diameter?","BestScoreEval","SELECT DISTINCT (( xsd:double(?radius) * 2 ) AS ?diameter) WHERE { res:Earth dbo:meanRadius ?radius }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/seatingCapacity> <http://dbpedia.org/resource/Earth%27s_diameter> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/seatingCapacity> <http://dbpedia.org/resource/Earth%27s_diameter> . 
+} ",0,0,1,0,0,0,0,"1486,20971298218","2/59310/59310","
+[None | l4]
+l4: {
+[x4, x8]
+x4 == ""dbr:Earth%27s_diameter""
+how(x8) == True
+dbo:seatingCapacity(x8, x4) == True
+}
+---- 
+(x8, l4)
+---- 
+
+--------
+"
+92,"Is the wife of President Obama called Michelle?","BestScoreEval","ASK WHERE { res:Barack_Obama onto:spouse ?spouse . ?spouse rdfs:label ?name FILTER regex(?name, ""Michelle"") }","
+ASK WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> ?v3 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+   ?v0 <http://dbpedia.org/ontology/spouse> ?v1 . 
+} ","
+ASK WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> ?v3 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+   ?v0 <http://dbpedia.org/ontology/spouse> ?v1 . 
+} ",1,0,0,1,1,1,1,"442,423267364502","2/10185/10185","
+[None | l5]
+l5: {
+[x6-0, x6-1, x12-fixed0, x5, x10]
+rdf:type(x6-1, x12-fixed0) == True
+dbo:spouse(x6-0, x6-1) == True
+x12-fixed0 == ""dbo:President""
+x10 == ""dbr:Michelle""
+rdfs:label(x6-1, x5) == True
+is(x5) == True
+}
+---- 
+(x6-0, l5)
+(x6-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+194,"Which U.S. state has the abbreviation MN?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a yago:WikicatStatesOfTheUnitedStates ; <http://dbpedia.org/property/postalabbreviation> ""MN""^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> }","
+SELECT DISTINCT ?v4
+WHERE {
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AdministrativeRegion> . 
+   ?v4 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/United_States> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v1 <http://dbpedia.org/property/postalabbreviation> ?v2 . 
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AdministrativeRegion> . 
+   ?v4 <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/United_States> . 
+} ",0,0,1,0,0,0,0,"633,415785551071","2/28505/28505","
+[None | l12]
+l12: {
+[x3-fixed0, x6-0, x6-1, x16, x12-fixed0, x12]
+which(x12) == True
+dbp:postalabbreviation(x6-0, x6-1) == True
+x16 == ""dbr:MN""
+has(x6-1, x12) == True
+x12-fixed0 == ""dbr:United_States""
+rdf:type(x12, x3-fixed0) == True
+x3-fixed0 == ""dbo:AdministrativeRegion""
+dbo:nationality(x12, x12-fixed0) == True
+}
+---- 
+(x6-0, l12)
+(x6-1, l12)
+(x12, l12)
+---- 
+
+--------
+"
+175,"When did Muhammad die?","BestScoreEval","SELECT DISTINCT xsd:date(?date) WHERE { res:Muhammad dbo:deathDate ?date }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Muhammad> <http://dbpedia.org/ontology/deathDate> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Muhammad> <http://dbpedia.org/ontology/deathDate> ?v0 . 
+} ",1,1,0,"0,5",1,"0,666666666666667",0,"19,5590629577637","3/550/550","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Muhammad""
+dbo:deathDate(x7, x5) == True
+when(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+26,"What is the atmosphere of the Moon composed of?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Moon> <http://dbpedia.org/property/atmosphereComposition> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Moon> <http://dbpedia.org/property/atmosphereComposition> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Moon> <http://dbpedia.org/property/atmosphereComposition> ?v0 . 
+} ",7,0,0,1,1,1,1,"397,047252655029","2/441/441","
+[x6-1 | l10]
+l10: {
+[x6-1, x10, x13]
+is(x6-1) == True
+x13 == ""dbr:Composed_of""
+x10 == ""dbr:Moon""
+what(x6-1) == True
+dbp:atmosphereComposition(x10, x6-1) == True
+}
+---- 
+(x6-1, l10)
+---- 
+
+--------
+"
+60,"Who is the governor of Texas?","BestScoreEval","SELECT DISTINCT ?string WHERE { res:Texas dbp:governor ?string }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Texas> <http://dbpedia.org/property/governor> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Texas> <http://dbpedia.org/property/governor> ?v1 . 
+} ",1,0,0,1,1,1,1,"160,407463312149","2/129/129","
+[x2 | l2]
+l2: {
+[x10, x2]
+is(x2) == True
+dbp:governor(x10, x2) == True
+x10 == ""dbr:Texas""
+who(x2) == True
+}
+---- 
+(x2, l2)
+---- 
+
+--------
+"
+110,"Which movies did Kurosawa direct?","BestScoreEval","SELECT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:director res:Akira_Kurosawa }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/director> ""Kurosawa"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/director> ""Kurosawa"" . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+} ",0,0,32,0,0,0,0,"74,405695438385","2/1910/1910","
+[None | l8]
+l8: {
+[x8, x3-fixed0, x11]
+which(x8) == True
+did(x8) == True
+x11 == ""Kurosawa""
+rdf:type(x8, x3-fixed0) == True
+dbo:director(x8, x11) == True
+x3-fixed0 == ""dbo:Film""
+}
+---- 
+(x8, l8)
+---- 
+
+--------
+"
+206,"What was the name of the famous battle in 1836 in San Antonio?","BestScoreEval","SELECT ?uri WHERE { ?uri a dbo:MilitaryConflict ; dbo:place dbr:San_Antonio ; dbo:date ?date FILTER ( ?date > ""1835-12-31T00:00:00Z""^^xsd:dateTime ) FILTER ( ?date <= ""1836-12-31T00:00:00Z""^^xsd:dateTime ) }","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v1 <http://dbpedia.org/property/name> ?v3 . 
+   <http://dbpedia.org/resource/San_Antonio> <http://dbpedia.org/ontology/date> ?v1 . 
+} ","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v1 <http://dbpedia.org/property/name> ?v3 . 
+   <http://dbpedia.org/resource/San_Antonio> <http://dbpedia.org/ontology/date> ?v1 . 
+} ",0,0,1,0,0,0,0,"1604,29374170303","2/710/710","
+[x6-1 | l20]
+l20: {
+[x15, x20, x6-1, x9-1]
+dbo:date(x20, x9-1) == True
+x20 == ""dbr:San_Antonio""
+dbp:name(x9-1, x6-1) == True
+was(x6-1) == True
+what(x6-1) == True
+x15 == ""1836""
+}
+---- 
+(x6-1, l20)
+(x9-1, l20)
+---- 
+
+--------
+"
+97,"Give me the official websites of actors of the television show Charmed.","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Charmed> onto:starring ?actors . ?actors foaf:homepage ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://xmlns.com/foaf/0.1/homepage> ?v0 . 
+   <http://dbpedia.org/resource/Charmed> <http://dbpedia.org/ontology/starring> ?v2 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://xmlns.com/foaf/0.1/homepage> ?v0 . 
+   <http://dbpedia.org/resource/Charmed> <http://dbpedia.org/ontology/starring> ?v2 . 
+   <http://dbpedia.org/resource/Charmed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow> . 
+} ",2,0,0,1,1,1,1,"1107,17978739738","3/20068/20544","
+[None | l5]
+l5: {
+[x6-1, x15-fixed0, x12-1, x5, x10]
+me(x5) == True
+give(x6-1, x5) == True
+x15-fixed0 == ""dbo:TelevisionShow""
+x10 == ""dbr:Charmed""
+dbo:starring(x10, x12-1) == True
+rdf:type(x10, x15-fixed0) == True
+foaf:homepage(x12-1, x6-1) == True
+}
+---- 
+(x6-1, l5)
+(x12-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+20,"How many calories does a baguette have?","BestScoreEval","SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Baguette> <http://dbpedia.org/property/calories> ?n }","
+SELECT DISTINCT  *
+WHERE {
+   <http://dbpedia.org/resource/Cars_%26_Calories> ?v2 <http://dbpedia.org/resource/Baguette_%28disambiguation%29> . 
+} ","
+SELECT DISTINCT  *
+WHERE {
+   <http://dbpedia.org/resource/Cars_%26_Calories> ?v2 <http://dbpedia.org/resource/Baguette_%28disambiguation%29> . 
+} ",0,0,1,0,0,0,0,"422,036925554276","2/12632/12632","
+[None | l10]
+l10: {
+[x10, x7]
+local:with(x7, x10) == True
+x10 == ""dbr:Baguette_%28disambiguation%29""
+many(x7) == True
+x7 == ""dbr:Cars_%26_Calories""
+how(x7) == True
+}
+---- 
+
+---- 
+
+--------
+"
+169,"Give me all libraries established before 1400.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Library> ; <http://dbpedia.org/property/established> ?year FILTER ( ?year < 1400 ) }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/established> ?v4 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Library> . 
+   FILTER (?v4 < 1400)
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/established> ?v4 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Library> . 
+   FILTER (?v4 < 1400)
+} ",11,0,0,1,1,1,1,"483,719627857208","3/8758/17712","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x19, x5, x14, x2-1]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+x6-fixed0 == ""dbo:Library""
+give(x5, x2-1) == True
+x19 == ""1400""
+local:comp(x19, x14, ""Degree.WEAK"") == True
+dbp:established(x6, x14) == True
+}
+---- 
+(x2-1, l5)
+(x14, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+38,"Give me all Frisian islands that belong to the Netherlands.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatFrisianIslands ; dbo:country res:Netherlands }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/country> ?v5 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatFrisianIslands> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/country> ?v5 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/class/yago/WikicatFrisianIslands> . 
+} ",1,6,0,"0,142857142857143",1,"0,25",0,"60,0246338844299","3/1786/1786","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x5, x2-1, x16, x9-1]
+me(x5) == True
+x6-fixed0 == ""yago:WikicatFrisianIslands""
+rdf:type(x6, x6-fixed0) == True
+give(x5, x2-1) == True
+dbo:country(x6, x9-1) == True
+x16 == ""dbr:The_Netherlands""
+that(x6) == True
+}
+---- 
+(x2-1, l5)
+(x9-1, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+192,"Which museum exhibits The Scream by Munch?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:The_Scream dbo:museum ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Scream> <http://dbpedia.org/ontology/museum> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/The_Scream> <http://dbpedia.org/ontology/museum> ?v0 . 
+} ",1,0,0,1,1,1,1,"1566,80924677849","3/20373/20373","
+[None | l4]
+l4: {
+[x0-1, x10, x4]
+dbo:museum(x4, x0-1) == True
+x10 == ""dbr:Edvard_Munch""
+x4 == ""dbr:The_Scream""
+which(x4) == True
+}
+---- 
+(x0-1, l4)
+---- 
+
+--------
+"
+78,"When was the De Beers company founded?","BestScoreEval","SELECT DISTINCT xsd:date(?date) WHERE { res:De_Beers dbo:foundingYear ?date }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/foundingDate> ?v0 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Beer> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/foundingDate> ?v0 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Beer> . 
+} ",0,0,1,0,0,0,0,"360,096672058105","2/16646/16646","
+[None | l5]
+l5: {
+[x5, x9-fixed0, x8, x12-fixed0]
+rdf:type(x5, x12-fixed0) == True
+dbo:foundingDate(x5, x8) == True
+rdf:type(x5, x9-fixed0) == True
+x9-fixed0 == ""dbo:Company""
+when(x5) == True
+was(x8) == True
+x12-fixed0 == ""dbo:Beer""
+}
+---- 
+(x8, l5)
+(x5, l5)
+---- 
+
+--------
+"
+19,"Who became president after JFK died?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/property/presidentEnd> ?x . ?uri <http://dbpedia.org/property/presidentStart> ?x; a <http://dbpedia.org/ontology/Person>. }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/presidentStart> ?v3 . 
+   ?v4 <http://dbpedia.org/ontology/deathPlace> <http://dbpedia.org/resource/John_F._Kennedy> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+   FILTER (?v2 > ?v4)
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/presidentStart> ?v3 . 
+   ?v4 <http://dbpedia.org/ontology/deathPlace> <http://dbpedia.org/resource/John_F._Kennedy> . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/President> . 
+   FILTER (?v2 > ?v4)
+} ",0,0,1,0,0,0,0,"588,955854892731","2/15713/24468","
+[None | l5]
+l5: {
+[x6-fixed0, x6, x13, x5, x14, x20]
+rdf:type(x6, x6-fixed0) == True
+who(x5) == True
+local:comp(x13, x14, ""Degree.STRONG"") == True
+dbo:deathPlace(x14, x20) == True
+x20 == ""dbr:John_F._Kennedy""
+x6-fixed0 == ""dbo:President""
+dbp:presidentStart(x6, x5) == True
+}
+---- 
+(x13, l5)
+(x14, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+190,"Who are the parents of the wife of Juan Carlos I?","BestScoreEval","SELECT DISTINCT ?uri WHERE { res:Juan_Carlos_I_of_Spain dbo:spouse ?x . ?x dbo:parent ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/parent> ?v0 . 
+   <http://dbpedia.org/resource/Juan_Carlos_I_of_Spain> <http://dbpedia.org/ontology/spouse> ?v2 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/parent> ?v0 . 
+   <http://dbpedia.org/resource/Juan_Carlos_I_of_Spain> <http://dbpedia.org/ontology/spouse> ?v2 . 
+} ",2,0,0,1,1,1,1,"376,528758764267","2/115/115","
+[x6-1 | l13]
+l13: {
+[x6-1, x13, x9-1]
+dbo:spouse(x13, x9-1) == True
+dbo:parent(x9-1, x6-1) == True
+x13 == ""dbr:Juan_Carlos_I_of_Spain""
+are(x6-1) == True
+who(x6-1) == True
+}
+---- 
+(x6-1, l13)
+(x9-1, l13)
+---- 
+
+--------
+"
+174,"Who is the novelist of the work a song of ice and fire?","BestScoreEval","SELECT ?Novelist WHERE { dbr:A_Song_of_Ice_and_Fire dbp:author ?Novelist }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/A_Song_of_Ice_and_Fire> <http://dbpedia.org/property/author> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/A_Song_of_Ice_and_Fire> <http://dbpedia.org/property/author> ?v0 . 
+   <http://dbpedia.org/resource/A_Song_of_Ice_and_Fire> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Work> . 
+} ",1,0,0,1,1,1,1,"3609,74459886551","2/1390/1390","
+[x6-1 | l13]
+l13: {
+[x6-1, x13, x9-fixed0]
+x9-fixed0 == ""dbo:Work""
+dbp:author(x13, x6-1) == True
+x13 == ""dbr:A_Song_of_Ice_and_Fire""
+is(x6-1) == True
+who(x6-1) == True
+rdf:type(x13, x9-fixed0) == True
+}
+---- 
+(x6-1, l13)
+---- 
+
+--------
+"
+189,"In which studio did the Beatles record their first album?","BestScoreEval","SELECT ?studio WHERE { ?album dbo:artist dbr:The_Beatles ; rdf:type dbo:Album ; dbo:releaseDate ?date ; dbp:studio ?studio } ORDER BY ASC(?date) LIMIT 1","
+SELECT DISTINCT ?v0
+WHERE {
+   ""the_Beatles"" <http://dbpedia.org/ontology/recordLabel> ?v3 . 
+   ?v0 <http://dbpedia.org/property/studio> ?v3 . 
+}  ORDER BY DESC(""the_Beatles"") LIMIT 1","
+SELECT DISTINCT ?v0
+WHERE {
+   ""the_Beatles"" <http://dbpedia.org/ontology/recordLabel> ?v3 . 
+   ""the_Beatles"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Album> . 
+   ?v0 <http://dbpedia.org/property/studio> ?v3 . 
+}  ORDER BY DESC(""the_Beatles"") LIMIT 1",0,0,1,0,0,0,0,"483,955871343613","2/711/736","
+[None | l8]
+l8: {
+[x9-fixed0, x8, x3-0, x3-1]
+rdf:type(x8, x9-fixed0) == True
+x8 == ""the_Beatles""
+dbp:studio(x3-0, x3-1) == True
+which(x3-1) == True
+x9-fixed0 == ""dbo:Album""
+their(x8) == True
+dbo:recordLabel(x8, x3-1) == True
+local:top(""1"", x8, ""Degree.STRONG"") == True
+}
+---- 
+(x3-0, l8)
+(x3-1, l8)
+---- 
+
+--------
+"
+152,"Which beer brewing companies are located in North-Rhine Westphalia?","BestScoreEval","SELECT ?company WHERE { ?company dct:subject dbc:Companies_based_in_North_Rhine-Westphalia ; rdf:type dbo:Brewery }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/numEmployees> ?v2 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Brewery> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/property/numEmployees> ?v2 . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Brewery> . 
+} ",3,24,1,"0,111111111111111","0,75","0,193548387096774",0,"509,966347932816","3/8241/8241","
+[None | l10]
+l10: {
+[x6-fixed0, x6, x10, x16, x3-1]
+x6-fixed0 == ""dbo:Brewery""
+rdf:type(x6, x6-fixed0) == True
+which(x6) == True
+dbp:numEmployees(x6, x3-1) == True
+are_located_in(x3-1, x10) == True
+x10 == ""dbr:Westphalia_%28disambiguation%29""
+x16 == ""dbr:North_%28disambiguation%29""
+}
+---- 
+(x3-1, l10)
+(x6, l10)
+---- 
+
+--------
+"
+94,"When did princess Diana die?","BestScoreEval","SELECT DISTINCT xsd:date(?d) WHERE { <http://dbpedia.org/resource/Diana,_Princess_of_Wales> <http://dbpedia.org/ontology/deathDate> ?d }","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Indiana> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   <http://dbpedia.org/resource/Indiana> <http://dbpedia.org/ontology/deathPlace> ?v1 . 
+} ",0,0,1,0,0,0,0,"41,1497533321381","2/1400/1400","
+[None | l5]
+l5: {
+[x10, x5]
+x10 == ""dbr:Indiana""
+dbo:deathPlace(x10, x5) == True
+did(x5) == True
+when(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+8,"Who founded Intel?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Intel> <http://dbpedia.org/property/founders> ?uri }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Intel> <http://dbpedia.org/property/founders> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Intel> <http://dbpedia.org/property/founders> ?v0 . 
+} ",2,0,0,1,1,1,1,"5,14810800552368","3/132/132","
+[None | l5]
+l5: {
+[x5, x7]
+x7 == ""dbr:Intel""
+dbp:founders(x7, x5) == True
+who(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+95,"Who is the youngest player in the Premier League?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri dbo:team ?team . ?league dbo:league res:Premier_League . ?league dbo:team ?team . ?uri dbo:birthDate ?date } ORDER BY DESC(?date) LIMIT 1","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v5 <http://dbpedia.org/ontology/location> ?v4 . 
+   ?v0 <http://dbpedia.org/ontology/league> ?v4 . 
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Agent> . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v5 <http://dbpedia.org/ontology/birthDate> ?v3 . 
+}  ORDER BY DESC(?v3) LIMIT 1","
+SELECT DISTINCT ?v3
+WHERE {
+   ?v5 <http://dbpedia.org/ontology/location> ?v4 . 
+   ?v0 <http://dbpedia.org/ontology/league> ?v4 . 
+   ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Agent> . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . 
+   ?v5 <http://dbpedia.org/ontology/birthDate> ?v3 . 
+}  ORDER BY DESC(?v3) LIMIT 1",0,0,1,0,0,0,0,"403,364735603333","2/526/526","
+[None | l5]
+l5: {
+[x15-2, x15-3, x2, x12-1, x5, x12-0]
+dbo:league(x2, x5) == True
+is(x2) == True
+dbo:birthDate(x12-0, x12-1) == True
+who(x5) == True
+rdf:type(x5, x15-3) == True
+x15-3 == ""dbo:Agent""
+rdf:type(x2, x15-2) == True
+x15-2 == ""dbo:Person""
+dbo:location(x12-0, x5) == True
+local:top(""1"", x12-1, ""Degree.HIGH"") == True
+}
+---- 
+(x12-0, l5)
+(x12-1, l5)
+(x2, l5)
+(x5, l5)
+---- 
+
+--------
+"
+119,"Which instruments does Cat Stevens play?","BestScoreEval","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/instrument> ?uri }","
+SELECT DISTINCT ?v2
+WHERE {
+   <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/instrument> ?v2 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/instrument> ?v0 . 
+   <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/instrument> ?v2 . 
+} ",10,0,0,1,1,1,1,"563,046742200851","3/12501/12573","
+[None | l7]
+l7: {
+[x0-1, x7, x3-1]
+dbo:instrument(x3-1, x0-1) == True
+dbo:instrument(x7, x3-1) == True
+which(x3-1) == True
+x7 == ""dbr:Cat_Stevens""
+}
+---- 
+(x0-1, l7)
+(x3-1, l7)
+---- 
+
+--------
+"
+115,"How many rivers and lakes are in South Carolina?","BestScoreEval","SELECT (COUNT(DISTINCT ?uri) AS ?count) WHERE { { ?uri dbo:location dbr:South_Carolina ; rdf:type dbo:Lake } UNION { ?uri dct:subject dbc:Rivers_and_streams_of_South_Carolina } }","
+SELECT DISTINCT ?v0
+WHERE {
+   ""Carolina"" <http://dbpedia.org/ontology/location> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River> . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Lake> . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ""Carolina"" <http://dbpedia.org/ontology/location> ?v0 . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River> . 
+   ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Lake> . 
+} ",0,0,1,0,0,0,0,"1246,15280938149","2/11415/18193","
+[None | l15]
+l15: {
+[x15, x3-fixed0, x2, x15-fixed0]
+dbo:location(x2, x15) == True
+x3-fixed0 == ""dbo:River""
+x15-fixed0 == ""dbo:Lake""
+rdf:type(x15, x3-fixed0) == True
+rdf:type(x15, x15-fixed0) == True
+how_many(x15) == True
+x2 == ""Carolina""
+}
+---- 
+(x15, l15)
+---- 
+
+--------
+"
+116,"Who was called Rodzilla?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://xmlns.com/foaf/0.1/nick> ""Rodzilla""@en }","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> <http://dbpedia.org/resource/Rodzilla> . 
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://www.w3.org/2000/01/rdf-schema#label> <http://dbpedia.org/resource/Rodzilla> . 
+} ",0,0,1,0,0,0,0,"1,94168996810913","2/24/24","
+[None | l5]
+l5: {
+[x10, x5]
+was(x5) == True
+rdfs:label(x5, x10) == True
+who(x5) == True
+x10 == ""dbr:Rodzilla""
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+138,"Give me the capitals of all countries in Africa.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?country dct:subject dbc:Countries_in_Africa ; dbo:capital ?uri }","No valid result yet.","No valid result yet.",0,0,59,0,0,0,0,"71,2927198410034","1/1/1","None"
+177,"Which bridges are of the same type as the Manhattan Bridge?","BestScoreEval","SELECT DISTINCT ?bridge WHERE { dbr:Manhattan_Bridge dbo:type ?type . ?bridge dbo:type ?type ; rdf:type dbo:Bridge }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/child> ?v3 . 
+   ""the_Manhattan_Bridge"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Bridge> . 
+} ","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/child> ?v3 . 
+   ""the_Manhattan_Bridge"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Bridge> . 
+} ",0,0,160,0,0,0,0,"713,760404825211","2/2294/2294","
+[x2 | l3]
+l3: {
+[x17, x3-fixed0, x2, x3]
+are(x2) == True
+rdf:type(x17, x3) == True
+rdf:type(x3, x3-fixed0) == True
+dbo:child(x3, x2) == True
+which(x3) == True
+x17 == ""the_Manhattan_Bridge""
+x3-fixed0 == ""dbo:Bridge""
+}
+---- 
+(x2, l3)
+(x3, l3)
+---- 
+
+--------
+"
+101,"How many companies were founded by the founder of Facebook?","BestScoreEval","SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?uri . ?x <http://dbpedia.org/ontology/foundedBy> ?uri }","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+   ?v0 <http://dbpedia.org/property/numEmployees> ?v1 . 
+} ","
+SELECT DISTINCT COUNT(DISTINCT ?v0)
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/foundingDate> ?v1 . 
+   ?v0 <http://dbpedia.org/property/numEmployees> ?v1 . 
+} ",1,0,0,1,1,1,1,"368,172824859619","3/2943/2943","
+[None | l8]
+l8: {
+[x3-0, x3-1, x8, x10, x16]
+dbo:foundingDate(x8, x3-1) == True
+x10 == ""dbr:The_Founder""
+many(x3-1) == True
+x16 == ""dbr:Facebook""
+how(x3-1) == True
+dbp:numEmployees(x3-0, x3-1) == True
+were(x8) == True
+}
+---- 
+(x3-0, l8)
+(x3-1, l8)
+(x8, l8)
+---- 
+
+--------
+"
+14,"Show me hiking trails in the Grand Canyon where there's no danger of flash floods.","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/trailheads> <http://dbpedia.org/resource/Grand_Canyon> FILTER NOT EXISTS { ?uri <http://dbpedia.org/property/hazards> <http://dbpedia.org/resource/Flash_flood> } }","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Flash_floods> <http://dbpedia.org/property/hazards> ?v0 . 
+   <http://dbpedia.org/resource/Grand_Canyon> <http://dbpedia.org/property/trailheads> ?v3 . 
+   ?v1 <http://dbpedia.org/ontology/starring> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   <http://dbpedia.org/resource/Flash_floods> <http://dbpedia.org/property/hazards> ?v0 . 
+   <http://dbpedia.org/resource/Grand_Canyon> <http://dbpedia.org/property/trailheads> ?v3 . 
+   ?v1 <http://dbpedia.org/ontology/starring> ?v0 . 
+} ",0,0,1,0,0,0,0,"1387,29959559441","2/20866/20866","
+[None | l5]
+l5: {
+[x0-1, x0-0, x13, x5, x25]
+me(x5) == True
+x13 == ""dbr:Grand_Canyon""
+where(x0-1) == True
+dbp:trailheads(x13, x5) == True
+'s(x0-1, x5) == True
+dbp:hazards(x25, x0-1) == True
+x25 == ""dbr:Flash_floods""
+there(x5) == True
+dbo:starring(x0-0, x0-1) == True
+}
+---- 
+(x0-0, l5)
+(x0-1, l5)
+(x5, l5)
+---- 
+
+--------
+"
+87,"Which book has the most pages?","BestScoreEval","SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:numberOfPages ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/numberOfPages> ?v0 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . 
+}  ORDER BY DESC(?v0) LIMIT 1","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v2 <http://dbpedia.org/ontology/numberOfPages> ?v0 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . 
+}  ORDER BY DESC(?v0) LIMIT 1",1,0,0,1,1,1,1,"151,841242313385","2/8984/8984","
+[None | l3]
+l3: {
+[x3-fixed0, x2-1, x6-1, x3]
+which(x3) == True
+dbo:numberOfPages(x3, x6-1) == True
+local:top(""1"", x6-1, ""Degree.STRONG"") == True
+rdf:type(x3, x3-fixed0) == True
+x3-fixed0 == ""dbo:Book""
+has(x6-1, x2-1) == True
+}
+---- 
+(x2-1, l3)
+(x6-1, l3)
+(x3, l3)
+---- 
+
+--------
+"
+148,"What is the largest state in the United States?","BestScoreEval","SELECT ?uri WHERE { ?uri dct:subject dbc:States_of_the_United_States ; rdf:type dbo:AdministrativeRegion ; dbo:areaTotal ?area } ORDER BY DESC(?area) OFFSET 0 LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/areaTotal> ""in_the_United_States"" . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AdministrativeRegion> . 
+}  ORDER BY DESC(""in_the_United_States"") LIMIT 1","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v1 <http://dbpedia.org/ontology/areaTotal> ""in_the_United_States"" . 
+   ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AdministrativeRegion> . 
+}  ORDER BY DESC(""in_the_United_States"") LIMIT 1",0,0,1,0,0,0,0,"468,802246570587","2/785/785","
+[x5 | l5]
+l5: {
+[x6-fixed0, x5, x14]
+dbo:areaTotal(x5, x14) == True
+x6-fixed0 == ""dbo:AdministrativeRegion""
+rdf:type(x5, x6-fixed0) == True
+is(x5) == True
+x14 == ""in_the_United_States""
+local:top(""1"", x14, ""Degree.HIGH"") == True
+what(x5) == True
+}
+---- 
+(x5, l5)
+---- 
+
+--------
+"
+43,"Give me the websites of companies with more than 500000 employees.","BestScoreEval","SELECT distinct ?web WHERE { ?sub dbo:numberOfEmployees ?obj . ?sub foaf:homepage ?web FILTER( xsd:integer(?obj) > 500000 ) . }","
+SELECT DISTINCT ?v2
+WHERE {
+   ?v4 ?v9 ?v2 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Website> . 
+   FILTER (?v5 > ?v4)
+} ","
+SELECT DISTINCT ?v1
+WHERE {
+   ?v4 ?v9 ?v2 . 
+   ?v6 <http://dbpedia.org/property/numEmployees> ?v1 . 
+   ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Website> . 
+   FILTER (?v5 > ?v4)
+} ",0,0,37,0,0,0,0,"65,6831538677216","2/1/1","
+[None | l5]
+l5: {
+[x6-fixed0, x15-1, x6, x18, x24, x23, x15-0, x5, x2-1]
+me(x5) == True
+rdf:type(x6, x6-fixed0) == True
+give(x5, x2-1) == True
+x18 == ""500000""
+local:with(x24, x6) == True
+dbp:numEmployees(x15-0, x15-1) == True
+x6-fixed0 == ""dbo:Website""
+local:comp(x23, x24, ""Degree.STRONG"") == True
+}
+---- 
+(x2-1, l5)
+(x23, l5)
+(x24, l5)
+(x15-0, l5)
+(x15-1, l5)
+(x6, l5)
+(x5, l5)
+---- 
+
+--------
+"
+179,"What were the names of the three ships by Columbus?","BestScoreEval","SELECT ?uri WHERE { ?uri rdf:type dbo:Ship ; dct:subject dbc:Christopher_Columbus ; dct:subject dbc:Exploration_ships }","
+SELECT DISTINCT ?v0
+WHERE {
+   ""Columbus"" <http://dbpedia.org/property/name> ?v0 . 
+} ","
+SELECT DISTINCT ?v0
+WHERE {
+   ""Columbus"" <http://dbpedia.org/property/name> ?v0 . 
+   ""Columbus"" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Ship> . 
+} ",0,0,3,0,0,0,0,"620,150722503662","2/2157/2457","
+[x6-1 | l18]
+l18: {
+[x9-fixed0, x6-1, x18, x12]
+x9-fixed0 == ""dbo:Ship""
+x12 == ""3""
+x18 == ""Columbus""
+dbp:name(x18, x6-1) == True
+were(x6-1) == True
+rdf:type(x18, x9-fixed0) == True
+what(x6-1) == True
+}
+---- 
+(x6-1, l18)
+---- 
+
+--------
+"
