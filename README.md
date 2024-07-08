@@ -1,5 +1,9 @@
 # NeoDUDES - A Compositional Question Answering System Using DUDES
 
+## Results
+
+The results and other files generated during the experiments from the paper can be found in `results/`. For further details please see the `README.md` there.
+
 ## Setup
 
 The easiest way to run the NeoDUDES question answering system is using Docker. Either run 
