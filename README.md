@@ -54,6 +54,28 @@ Inside the container, there are a few prepared scripts which you can run:
 
 Running the benchmark can be done using qald-eval-newpipeline.py, which by default launches four processes running in parralel. To change the number of spawned processes, you need to change the `cpu_count` variable.
 
+## Citation
 
+Please consider citing our work if you find the provided resources useful:
+
+```bibtex
+@InProceedings{schmidt-etal-2025-neodudes,
+    author="Schmidt, David Maria
+    and Elahi, Mohammad Fazleh
+    and Cimiano, Philipp",
+    editor="Alam, Mehwish
+    and Rospocher, Marco
+    and van Erp, Marieke
+    and Hollink, Laura
+    and Gesese, Genet Asefa",
+    title="Lexicalization Is All You Need: Examining the Impact of Lexical Knowledge in a Compositional QALD System",
+    booktitle="Knowledge Engineering and Knowledge Management",
+    year="2025",
+    publisher="Springer Nature Switzerland",
+    address="Cham",
+    pages="102--122",
+    isbn="978-3-031-77792-9"
+}
+```
 
 
