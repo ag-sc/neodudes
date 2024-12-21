@@ -15,7 +15,7 @@ docker pull neodudes:latest
 on your machine or build the image yourself:
 
 ```bash
-ocker build . -t neodudes
+docker build . -t neodudes
 ``` 
 
 After that, you can run the container as follows:
