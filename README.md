@@ -1,5 +1,13 @@
 # NeoDUDES - A Compositional Question Answering System Using DUDES
 
+Software Artifact - Lexicalization Is All You Need: Examining the Impact of Lexical Knowledge in a Compositional QALD System
+
+* DOI: [http://doi.org/10.1007/978-3-031-77792-9_7](http://doi.org/10.1007/978-3-031-77792-9_7)
+* Preprint: [http://doi.org/10.48550/arXiv.2411.03906](http://doi.org/10.48550/arXiv.2411.03906)
+* Zenodo: [https://doi.org/10.5281/zenodo.12610054](https://doi.org/10.5281/zenodo.12610054)
+* Docker: [https://hub.docker.com/r/dvs23/neodudes](https://hub.docker.com/r/dvs23/neodudes)
+
+
 ## Results
 
 The results and other files generated during the experiments from the paper can be found in `results/`. For further details please see the `README.md` there.
